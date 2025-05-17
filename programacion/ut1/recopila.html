@@ -32,7 +32,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Cargar el componente curso-banner -->
     <script src="/js/curso-banner.js" defer></script>
-
+    <!-- Cargar el componente newsletter -->
+    <script src="/js/newsletter-component.js" defer></script>
 </head>
 
 <body
@@ -59,32 +60,12 @@
                       texto-boton="Inscribirse">
         </curso-banner>
 
-        <!-- Newsletter -->
-		<div class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice" id="id2">
-		  <div class="iDevice emphasis_parasabermasfpd">
-			<div class="iDevice_header">
-			  <h2 class="iDeviceTitle">Para saber más</h2>
-			</div>
-			<div class="iDevice_inner">
-			  <div class="iDevice_content_wrapper">
-				<div id="ta2_47" class="block iDevice_content">
-				  <p>
-					No te pierdas las <strong>nuevas unidades</strong> de trabajo que se van añadiendo
-					contínuamente a la plataforma, así como todas las actualizaciones de contenido.
-					Suscríbete al <strong>Newsletter</strong> y mantente contínuamente informado. Puedes
-					darte de baja en cualquier momento.
-	
-				  </p>
-				  <p class="enlace_centrado">
-					<a href="https://www.getrevue.co/profile/javigutiblogger" title="Acceso al Newsletter"
-					  target="_blank">Seguir Actualizaciones</a>
-				  </p>
-	
-				</div>
-			  </div>
-			</div>
-		  </div>
-		</div>
+        <newsletter-component
+                titulo="Para saber más"
+                descripcion="No te pierdas las <strong>nuevas unidades</strong> de trabajo que se van añadiendo contínuamente a la plataforma, así como todas las actualizaciones de contenido. Suscríbete al <strong>Newsletter</strong> y mantente contínuamente informado. Puedes darte de baja en cualquier momento."
+                texto-boton="Seguir Actualizaciones"
+                enlace="https://www.getrevue.co/profile/javigutiblogger">
+        </newsletter-component>
 	  </header> 
     
     <div id="outer">
