@@ -1,0 +1,347 @@
+@CHARSET "ISO-8859-1";
+
+a:link {
+	text-decoration: none;
+	color: #0087FF;
+}
+
+a:visited {
+	text-decoration: none;
+	color: #0087FF;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #0087FF;
+}
+
+a:active {
+	text-decoration: underline;
+	color: #0087FF;
+}
+
+body {
+	background-color: white;
+	width: 97%;
+	min-height: 600px;
+	height: 100%;
+}
+
+.tab {
+	float: left;
+	min-width: 50px;
+	min-height: 1px;
+}
+
+.cabecera {
+	width: 100%;
+	min-height: 68px;
+	max-height: 68px;
+	overflow: hidden;
+	background: url(https://www.juntadeandalucia.es/educacion/gestionafp/datos/tareas/DAW/EIE_44495190/2021-22/DAW_EIE_1_2021-22_Individual__61844/imagenes/logo_FPD.jpg) no-repeat 0% 100%;
+	margin-bottom: 8px;
+	background-color: #BBD7EF;
+}
+
+.login {
+	font-size: small;
+	font-style: normal;
+	color: #000;
+	text-decoration: none;
+	float: left;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-top: 5px;
+	margin-left: 660px;
+	border-left-style: solid;
+	border-left-color: #0F5CA9;
+	border-left-width: 2px;
+	min-height: 57px;
+	max-height: 57px;
+}
+
+.usuario {
+	font-weight: bold;
+	font-size: medium;
+}
+
+.boton {
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.menu {
+	float: left;
+	width: 20%;
+	text-align: left;
+	font-weight: bold;
+}
+
+.portada {
+	float: left;
+	background: url(https://www.juntadeandalucia.es/educacion/gestionafp/datos/tareas/DAW/EIE_44495190/2021-22/DAW_EIE_1_2021-22_Individual__61844/imagenes/imgportada_fpd.jpg) no-repeat 100% 0%;
+	width: 100%;
+	min-height: 300px;
+}
+
+.contenidoPortada {
+	font-size: small;
+	font-style: normal;
+	color: #000;
+	text-decoration: none;
+	float: left;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-top: 60px;
+	margin-left: 80px;
+}
+
+.cuerpo {
+	float: left;
+	border-left-style: solid;
+	border-left-color: #BBD7EF;
+	border-left-width: 2px;
+	padding-left: 2px;
+	margin-bottom: 2px;
+}
+
+.cuerpoSCORM {
+	float: left;
+	border-left-style: solid;
+	border-left-color: #0F5CA9;
+	border-left-width: 2px;
+	padding-left: 2px;
+	margin-bottom: 2px;
+	max-width: 79%;
+}
+
+.centrar {
+	margin: 0 auto 0 auto;
+	width: 400px;
+	min-height: 600px;
+	height: 100%;
+	overflow: hidden;
+}
+
+.dosColumnas {
+	overflow: hidden;
+}
+
+.lista {
+	float: left;
+	border-left-style: solid;
+	border-left-color: #BBD7EF;
+	border-left-width: 2px;
+	padding-left: 2px;
+	margin-bottom: 2px;
+}
+
+.elementoLista {
+	border-style: dotted;
+	border-color: #BBD7EF;
+	margin-left: 2px;
+	margin-bottom: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+	cursor: pointer;
+	font-size: large;
+}
+
+.notificacion {
+	border: 1px dashed;
+	border-color: #7CA3D3;
+	width: 100%;
+	min-height: 15px;
+	background-color: #E5F1FA;
+	text-align: center;
+}
+
+.campo {
+	background-color: white;
+	border: 2px solid #0087FF;
+	font-size: 12pt;
+	color: grey;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.pie {
+	overflow: hidden;
+	font-size: x-large;
+	font-style: normal;
+	text-decoration: none;
+	background-color: #BBD7EF;
+	color: #9CDFFE;
+	padding-left: 5px;
+	width: 100%;
+	height: 10px;
+}
+
+.barra {
+	overflow: hidden;
+	font-size: x-large;
+	font-style: italic;
+	text-decoration: none;
+	margin-bottom: 2px;
+	background-color: #BBD7EF;
+	color: #0F5CA9;
+	padding-left: 5px;
+	font-family: arial;
+	font-weight: bold;
+}
+
+.barra a:link {
+	text-decoration: none;
+	color: #0F5CA9;
+}
+
+.barra a:visited {
+	text-decoration: none;
+	color: #0F5CA9;
+}
+
+.barra a:hover {
+	text-decoration: underline;
+	color: #0F5CA9;
+}
+
+.barra a:active {
+	text-decoration: underline;
+	color: #0F5CA9;
+}
+
+@font-face {
+	font-family: jenna;
+	src: url('https://www.juntadeandalucia.es/educacion/gestionafp/datos/tareas/DAW/EIE_44495190/2021-22/DAW_EIE_1_2021-22_Individual__61844/JennaSue.ttf');
+}
+
+.blanco {
+	color: white;
+	font-family: jenna;
+	font-weight: normal;
+	font-style: italic;
+}
+
+.titulo {
+	overflow: hidden;
+	font-size: x-large;
+	text-decoration: none;
+	margin-bottom: 2px;
+	color: #00710F;
+	padding-left: 5px;
+	font-family: arial;
+	font-weight: bold;
+}
+
+.tarea {
+	overflow: hidden;
+	font-size: large;
+	font-style: italic;
+	text-decoration: none;
+	margin-bottom: 2px;
+	color: #0087FF;
+	padding-left: 25px;
+	font-family: arial;
+	font-weight: bold;
+}
+
+.ayuda {
+	font-size: 12pt;
+	color: grey;
+}
+
+.formulario {
+	text-align: right;
+}
+
+form {
+	text-align: right;
+}
+
+form label {
+	display: inline-block;
+}
+
+form input {
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+.boton_0 {
+	overflow: hidden;
+	cursor: pointer;
+	font-size: small;
+	font-style: normal;
+	text-decoration: underline;
+	color: #095DA9;
+	font-size: small;
+}
+
+.boton_0:hover {
+	color: #7CA3D3;
+}
+
+.boton_1 {
+	overflow: hidden;
+	cursor: pointer;
+	font-size: small;
+	font-style: normal;
+	text-decoration: none;
+	color: #095DA9;
+}
+
+.boton_1:hover {
+	color: #7CA3D3;
+}
+
+.boton_2 {
+	overflow: hidden;
+	cursor: pointer;
+	font-size: small;
+	font-style: oblique;
+	text-decoration: none;
+	color: #095DA9;
+	padding-left: 10px;
+}
+
+.boton_2:hover {
+	color: #7CA3D3;
+}
+
+.boton_3 {
+	overflow: hidden;
+	cursor: pointer;
+	font-size: small;
+	font-style: oblique;
+	text-decoration: none;
+	color: #095DA9;
+	padding-left: 20px;
+}
+
+.boton_3:hover {
+	color: #7CA3D3;
+}
+
+.boton_4 {
+	overflow: hidden;
+	cursor: pointer;
+	font-size: small;
+	font-style: oblique;
+	text-decoration: none;
+	color: #095DA9;
+	padding-left: 30px;
+}
+
+.boton_4:hover {
+	color: #7CA3D3;
+}
+
+#main{
+	position: absolute;
+border-left-style: solid;
+border-left-color: #0F5CA9;
+border-left-width: 2px;
+padding-left: 10px;
+width: 75%;
+}
+
