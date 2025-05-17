@@ -1,2 +1,5 @@
 text-snippes.html
 .DS_Store
+node_modules
+.idea
+.vscode
