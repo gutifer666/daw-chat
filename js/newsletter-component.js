@@ -14,7 +14,7 @@ class NewsletterComponent extends HTMLElement {
 
         // Construir el contenido HTML interno del componente
         this.innerHTML = `
-        <div class="iDevice_wrapper ParasabermasfpdIdevice em_iDevice" id="id2">
+        <div class="cta-newsletter" id="id2">
           <div class="iDevice emphasis_parasabermasfpd">
             <div class="iDevice_header">
               <h2 class="iDeviceTitle">${titulo}</h2>
