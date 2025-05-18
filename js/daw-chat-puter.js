@@ -22,15 +22,19 @@ function agregarMensaje(texto, rol) {
     messagesDiv.scrollTop = messagesDiv.scrollHeight;  // desplazarse al final
 }
 
-// Función para obtener el contenido de la página actual
-function obtenerContextoPagina() {
-    const mainContent = document.getElementById('main');
-    if (!mainContent) return '';
+// Función para obtener el contenido de un fichero de texto
+function obtenerContextoPagina(path) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', path || 'contexto.txt', false); // Sincrónico para simplificar
+    xhr.send();
+    if (xhr.status === 200) {
+        console.log(xhr.responseText);
+        return xhr.responseText;
+    } else {
+        console.error('Error al cargar el contexto:', xhr.statusText);
+        return '';
+    }
 
-    // Obtener solo los primeros 1000 caracteres del contenido para no exceder límites
-    const contenido = mainContent.innerText.substring(0, 1000);
-    console.log(contenido);
-    return contenido;
 }
 
 // Manejar el envío de la pregunta
@@ -49,7 +53,7 @@ async function enviarPregunta() {
 
     try {
         // Obtener contexto de la página actual
-        const contexto = obtenerContextoPagina();
+        const contexto = obtenerContextoPagina("/resources/summary/resumen_programacion_UT1.txt");
 
         // Crear prompt con contexto
         const promptConContexto = [

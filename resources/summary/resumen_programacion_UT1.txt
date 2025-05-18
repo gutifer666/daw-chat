@@ -1,0 +1,89 @@
+﻿Este documento presenta un resumen del Tema 1 del módulo de Programación para el ciclo de Desarrollo de Aplicaciones Web (DAW), titulado "Introducción a la programación". El objetivo es proporcionar una base conceptual sólida sobre los fundamentos de la programación, los lenguajes y el proceso de desarrollo de software, con un enfoque particular en el lenguaje Java.
+Introducción a la Programación
+La programación está omnipresente en nuestra vida diaria, desde las alarmas de nuestros teléfonos hasta los electrodomésticos. El gran volumen de datos y las posibilidades de su tratamiento hacen que la programación sea un campo crucial. Esta unidad introduce los conceptos fundamentales, técnicas y objetivos de la programación de aplicaciones. Se exploran las diferentes formas de programación, las fases del desarrollo de software, las características de los lenguajes de programación y se presenta una visión general de Java. Finalmente, se abordan las herramientas para desarrollar programas en Java.
+1. Programas: Buscando una Solución
+Resolver un problema mediante medios informáticos implica seguir pasos análogos a la resolución de problemas en la vida real. Las fases principales son:
+* Análisis del problema: Definir y comprender el problema en detalle, identificando entradas y salidas.
+* Diseño o desarrollo de algoritmos: Crear un procedimiento paso a paso para solucionar el problema.
+* Resolución del algoritmo en la computadora: Convertir el algoritmo en un programa, ejecutarlo y verificar que resuelve el problema.
+Las soluciones deben ser correctas, eficaces (resolver el problema) y eficientes (en tiempo y uso de recursos). Para lograrlo, se aplican conceptos como:
+* Abstracción: Descomponer un problema grande en subproblemas más pequeños ("Divide y vencerás").
+* Encapsulación: Ocultar detalles de implementación para permitir modificaciones sin afectar otros elementos.
+* Modularidad: Estructurar el programa en módulos independientes con funciones específicas.
+1.1. Algoritmos y Programas
+Un algoritmo es una secuencia ordenada y no ambigua de pasos para resolver un problema. Son independientes del lenguaje de programación y del hardware. Un programa es un algoritmo escrito en un lenguaje de programación específico para ser ejecutado en un ordenador. Los lenguajes de programación son el medio para expresar algoritmos, y el ordenador, el procesador para ejecutarlos. El diseño de algoritmos requiere creatividad y conocimiento de técnicas de programación.
+Las características fundamentales de un algoritmo son:
+* Preciso: Indica el orden de los pasos.
+* Bien definido: Produce el mismo resultado cada vez que se ejecuta con los mismos datos.
+* Finito: Tiene un número limitado de pasos.
+Para problemas complejos, se utiliza el diseño descendente o diseño modular (top-down design), basado en "divide y vencerás". Las herramientas para representar algoritmos incluyen:
+* Diagramas de flujo: Usan símbolos gráficos (útiles en la fase de análisis).
+* Pseudocódigo: Usa palabras clave en lenguaje natural, constantes, variables e instrucciones de programación (la técnica más utilizada).
+* Tablas de decisión: Representan condiciones y acciones correspondientes (apoyo al pseudocódigo para condiciones complejas).
+2. Paradigmas de la Programación
+Un paradigma de programación es un modelo básico para el diseño e implementación de programas, que determina el proceso de diseño y la estructura del programa. Representa un enfoque o filosofía para construir software. No hay un paradigma universalmente mejor; cada uno tiene ventajas y desventajas y es más apropiado para ciertos tipos de problemas. Algunos lenguajes soportan múltiples paradigmas (como Python), mientras que otros se centran en uno (como Smalltalk para POO o Scheme para funcional).
+Los objetivos de aplicar diferentes paradigmas son:
+* Reducir la dificultad del mantenimiento.
+* Mejorar el rendimiento del programador.
+* Mejorar la productividad y calidad del software.
+3. Fases de la Programación
+El proceso de creación de software se divide en fases, aplicando un método de trabajo definido:
+* Fase de resolución del problema: Definir y comprender el problema.
+   * Análisis: Especificar los requisitos de la aplicación mediante interacción con el cliente, identificando entradas y salidas. La creación de prototipos es útil.
+   * Diseño: Convertir la especificación en un diseño detallado, definiendo la secuencia lógica de instrucciones (algoritmo). Se descompone el problema en operaciones más sencillas y se asignan a módulos. Es crucial realizar pruebas o trazas del algoritmo con datos concretos para detectar errores antes de la implementación.
+* Fase de implementación: Llevar el algoritmo a la realidad.
+   * Codificación o construcción: Traducir el algoritmo a un lenguaje de programación, respetando su sintaxis y gramática, para obtener el código fuente. Se realizan pruebas unitarias, de interconexión y de integración. El código fuente debe ser traducido a lenguaje máquina mediante compilación (con un compilador que genera código objeto y luego ejecutable tras el enlazado de bibliotecas) o interpretación (con un intérprete que traduce y ejecuta instrucción a instrucción sin generar código objeto).
+   * Prueba de ejecución y validación: Implantar la aplicación y verificar su funcionamiento con datos de prueba, gestionando errores y evaluando la interfaz. La documentación (interna en el código y externa en manuales y diagramas) es esencial.
+* Fase de explotación y mantenimiento: El programa está en uso por los usuarios. Se realizan evaluaciones periódicas y modificaciones para adaptar el programa a nuevas necesidades, corregir errores y añadir funcionalidades. El mantenimiento del software es este proceso de mejora y optimización post-entrega.
+4. Ciclo de Vida del Software
+Independientemente de las fases de desarrollo, se aplica un modelo de ciclo de vida, que es la sucesión de estados o fases por las que pasa el software a lo largo de su "vida". Las etapas mínimas suelen incluir: Especificación y Análisis de requisitos, Diseño, Codificación, Pruebas, Instalación y paso a Producción, y Mantenimiento.
+5. Lenguajes de Programación
+Un lenguaje de programación es un conjunto de reglas sintácticas y semánticas, símbolos y palabras especiales para construir programas. Es un lenguaje artificial con su propia gramática, léxico (vocabulario), sintaxis (forma) y semántica (significado). Permite la construcción colaborativa de programas. Se clasifican según su cercanía al lenguaje humano o al de las computadoras (códigos binarios).
+5.1. Lenguaje Máquina
+Es el lenguaje de instrucciones codificadas en binario (ceros y unos) que el procesador entiende directamente. Fue el primer lenguaje, pero presentaba inconvenientes: dependencia del procesador, dificultad de lectura y modificación, necesidad de memorizar códigos binarios y largos tiempos de preparación. Todos los programas deben traducirse a lenguaje máquina para ser ejecutados.
+5.2. Lenguaje Ensamblador
+Evolución del lenguaje máquina, donde las instrucciones binarias se sustituyen por mnemotécnicos (palabras especiales). Es un lenguaje de bajo nivel, dependiente del hardware. Aunque más cercano al humano que el lenguaje máquina, seguía presentando dificultades: dependencia del hardware, necesidad de conocer la máquina en detalle y dificultades en lectura/modificación. Un programa ensamblador traduce el código fuente en ensamblador a código máquina (programa objeto).
+5.3. Lenguajes Compilados
+Nacieron para acercar la programación al lenguaje humano (lenguajes de alto nivel). Ejemplos: Pascal, Fortran, C, C++. Ventajas: más fáciles de aprender y usar, reducen tiempo y costes de desarrollo, son independientes del hardware, y facilitan lectura/modificación. Un compilador traduce el código fuente de alto nivel a lenguaje máquina, generando código objeto y luego código ejecutable tras el proceso de enlazado de bibliotecas.
+5.4. Lenguajes Interpretados
+Diseñados para ejecutarse a través de un intérprete, que analiza, traduce y ejecuta cada instrucción simultáneamente, sin generar código objeto o ejecutable. Ejemplos: Perl, PHP, Python, JavaScript. Son algo más lentos que los compilados y requieren que el intérprete esté presente en la máquina de ejecución.
+Existen lenguajes pseudo-compilados o pseudo-interpretados como Java. El código fuente Java se compila a bytecodes (instrucciones intermedias independientes de la máquina) que luego son interpretados por la Máquina Virtual Java (MVJ o JVM), específica para cada plataforma, para traducirlos a código nativo.
+6. El Lenguaje de Programación Java
+Java es un lenguaje sencillo, con sintaxis similar a C++, pero eliminando elementos complejos. Es orientado a objetos, facilitando la reutilización de código y el uso de bibliotecas. Fue creado para satisfacer nuevas necesidades no cubiertas por lenguajes anteriores. Su principal virtud es la independencia del hardware ("Write once, run everywhere") gracias a los bytecodes y la JVM. También destaca por su capacidad para crear aplicaciones que trabajan en red mediante librerías para protocolos como HTTP y FTP.
+6.1. Breve Historia
+Java surgió en 1991 en Sun Microsystems para programar pequeños dispositivos electrónicos, buscando independencia del dispositivo. En 1995 se lanzó como lenguaje para computadoras. Su expansión se debió a su inclusión en navegadores web y a sus sucesivas versiones (Java 1.1, Java 2). El objetivo de Java es ser un nexo universal entre usuarios e información. Para desarrollar en Java se necesita el Java Development Kit (JDK), que incluye compilador y entorno de ejecución (JRE). Java 2 incluye el lenguaje, bibliotecas estándar (Java Core), herramientas de desarrollo y el entorno de ejecución (JVM). Existen ediciones de la plataforma Java: Java SE (base para escritorio y applets), Java EE (empresarial y servidor) y Java ME (dispositivos móviles).
+6.2. La POO y Java
+En Java, datos y código se combinan en objetos, que tienen comportamiento (código) y estado (datos). Los objetos son reutilizables, reduciendo el tiempo de desarrollo. Java incorpora las características de la Programación Orientada a Objetos (POO): Encapsulación (ocultar datos internos), Herencia (derivar clases para extender funcionalidad) y Polimorfismo (mismo método se comporta diferente en clases derivadas). Los patrones de objetos se llaman clases, y los objetos creados a partir de ellas son instancias. La POO simplifica la construcción de programas al dividir problemas en objetos que interactúan.
+6.3. Independencia de la Plataforma y Trabajo en Red
+Dos características clave de Java son la independencia de la plataforma y la capacidad de trabajar en red.
+* Independencia: El código fuente se compila a Java Bytecode (instrucciones intermedias) que la Máquina Virtual Java (JVM) interpreta y traduce a código nativo de la plataforma específica. La JVM y las librerías básicas son la parte dependiente del sistema.
+* Trabajo en red: Java facilita la comunicación vía TCP/IP con librerías para protocolos como HTTP y FTP.
+6.4. Seguridad y Simplicidad
+Java destaca por su seguridad (elimina accesos peligrosos a memoria, verifica código para evitar efectos no deseados) y simplicidad (curva de aprendizaje rápida, elimina elementos complejos como aritmética de punteros, gestión manual de memoria). El Recolector de Basura (Garbage Collector) gestiona la memoria automáticamente, liberando al programador.
+6.5. Java y los Bytecodes
+El proceso de ejecución de un programa Java implica: código fuente (.java) -> precompilación a Bytecodes (.class) -> interpretación y ejecución por la Máquina Virtual Java (JVM). Los Bytecodes son instrucciones intermedias no específicas de un procesador. Un verificador de bytecodes asegura que el código cumple las especificaciones de la JVM, no amenaza la integridad del sistema, no produce desbordamientos, y los parámetros y conversiones son seguros. La JVM, específica para cada plataforma, es necesaria para ejecutar los bytecodes.
+7. Programas en Java
+Se introduce la estructura básica de un programa Java, que reside dentro de una clase principal pública con el mismo nombre que el archivo .java. Esta clase contiene el método main(), el punto de entrada del programa. Java distingue entre mayúsculas y minúsculas. Dentro de main(), se incluyen las instrucciones.
+Elementos básicos de un programa Java:
+* Clase principal: Contiene el código del programa.
+* Método main(): public static void main(String args[]) - punto de inicio de la ejecución.
+* Comentarios: Para aclaraciones en el código. Pueden ser de una línea (//) o de bloque (/* */).
+* Bloques de código: Conjuntos de instrucciones delimitados por llaves {}.
+* Punto y coma ;: Finaliza cada sentencia.
+Se presenta una plantilla básica para programas Java, estructurada en declaración de la clase principal, método main() con secciones para declaración de constantes/variables (entrada, salida, auxiliares), entrada de datos, procesamiento y salida de resultados.
+8. Entornos de Desarrollo Integrado (IDE)
+Aunque se puede programar en Java con un editor de texto simple y la línea de comandos, los Entornos de Desarrollo Integrado (IDE) facilitan el proceso. Un IDE típico incluye un editor de texto con resaltado de sintaxis, un compilador, un depurador y herramientas para la gestión de proyectos. Se menciona NetBeans como un ejemplo de IDE gratuito y potente para Java.
+9. Variables e Identificadores
+Los datos en un programa se almacenan en variables o constantes. Un identificador es el nombre que se les da a estos elementos, así como a clases, métodos, etc. En Java, los identificadores deben seguir reglas: comenzar con letra, _ o $, seguidos por letras, dígitos, _ o $. No pueden ser palabras reservadas. Se sugieren convenciones de nomenclatura (camelCase para variables/métodos, PascalCase para clases, mayúsculas con guiones bajos para constantes).
+10. Tipos de Datos
+Los datos tienen un tipo asociado que determina el rango de valores que pueden almacenar y las operaciones permitidas. Java es un lenguaje de tipado fuerte, lo que implica un control exhaustivo de tipos en tiempo de compilación, lo que ayuda a detectar errores tempranamente y optimizar el código. Los tipos de datos se dividen en:
+* Tipos primitivos: Datos sencillos (números, caracteres, booleanos). No son objetos en Java y tienen tamaño y comportamiento idénticos en todas las plataformas, asegurando portabilidad.
+* Tipos referenciados: Construidos a partir de tipos primitivos, como arrays, clases e interfaces. Permiten manejar estructuras de datos más complejas. Se mencionan brevemente los tipos enumerados (enum) como un tipo especial de clase.
+11. Literales de los Tipos Primitivos
+Se refiere a los valores constantes que se pueden asignar a variables de tipos primitivos (ej: 10 para un entero, 3.14 para un decimal, 'a' para un carácter, true para un booleano).
+12. Operadores
+Los operadores son símbolos que indican una operación a realizar sobre uno o más operandos. Se mencionan los operadores relacionales (==, !=, >, <, >=, <=) que se utilizan para comparar valores y devuelven un resultado booleano.
+13. Conversión de Tipos
+En ocasiones, es necesario convertir un valor de un tipo de dato a otro. Java permite conversiones automáticas (implícitas) si no hay pérdida de información, o conversiones explícitas (casting) cuando puede haber pérdida de información, requiriendo que el programador lo especifique.
+14. Comentarios
+Los comentarios son esenciales para documentar el código y mejorar su comprensión. En Java, se usan // para comentarios de una línea y /* */ para comentarios de bloque. Se recomienda incluir información como descripción, autor y fecha de modificación al inicio de cada programa. También se menciona Javadoc como una herramienta para generar documentación a partir de comentarios especiales.
