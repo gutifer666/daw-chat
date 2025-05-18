@@ -25,7 +25,7 @@ function loadHeader(title, description) {
     <title>${title}</title>
     <meta name="description" content="${description}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Cargar el componentes -->
+    <!-- Cargar los componentes -->
     <script src="/js/newsletter-component.js" defer></script>
   `);
 }
