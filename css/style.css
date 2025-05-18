@@ -47,6 +47,7 @@ a {
 .header-menu {
     /* position: fixed;
     z-index: 1; */
+	position: fixed;
 	padding-top: .5em;
 	padding-bottom: .5em;
 	border: 1px solid #a2a2a2;
