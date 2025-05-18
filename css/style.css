@@ -1,3 +1,14 @@
+/* Fuentes */
+
+html {
+	font-size: 125%; /* Puedes ajustar este valor según necesites */
+}
+
+/* O alternativamente */
+body {
+	font-size: 125%; /* Puedes ajustar este valor según necesites */
+}
+
 /* Menú de Navegación */
 
 ul {
