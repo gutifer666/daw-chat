@@ -60,6 +60,10 @@ a {
 	border-radius: 5px;
 }
 
+.header-menu {
+	position: sticky;
+}
+
 
 /* ================================= 
   Media Queries
