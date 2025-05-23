@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8">
-<meta name="author" content="Universo Santa Tecla">
-<title>SVG</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-<style>
-/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Asciidoctor 2.0.8" name="generator"/>
+  <meta content="Universo Santa Tecla" name="author"/>
+  <title>
+   SVG
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700" rel="stylesheet"/>
+  <style>
+   /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
@@ -434,328 +436,742 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="book">
-<div id="header">
-<h1>SVG</h1>
-<div class="details">
-<span id="author" class="author">Universo Santa Tecla</span><br>
-<span id="email" class="email"><a href="mailto:USantaTecla@gmail.com">USantaTecla@gmail.com</a></span><br>
-<span id="revnumber">version 0.0.1</span>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Índice</div>
-<ul class="sectlevel1">
-<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
-<li><a href="#qué"><strong>¿Qué?</strong></a></li>
-<li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
-<li><a href="#cómo"><strong>¿Cómo?</strong></a>
-<ul class="sectlevel2">
-<li><a href="#elemento-raíz-svg">Elemento raíz <em>svg</em></a></li>
-<li><a href="#elemento-path">Elemento <em>path</em></a></li>
-<li><a href="#reutilización">Reutilización</a></li>
-<li><a href="#estilos">Estilos</a></li>
-<li><a href="#elementos">Elementos</a></li>
-<li><a href="#animaciones">Animaciones</a></li>
-</ul>
-</li>
-<li><a href="#sintesis"><strong>Sintesis</strong></a></li>
-<li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
-<li><a href="#ponente">Ponente</a></li>
-</ul>
-</div>
-</div>
-<div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/SVG.png" alt="SVG" width="250" height="330"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Códigos disponibles en <a href="https://github.com/USantaTecla-tech-svg">git</a>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="por-qué"><strong>¿Por qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="4">Publicación de contabilidad, poder, leyes, historia, ciencia, &#8230;&#8203; todo?!?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ornamentos.png" alt="ornamentos"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/egipcios.png" alt="egipcios"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/estatua.png" alt="estatua"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/iglecia.png" alt="iglecia"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/telar.png" alt="telar"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/biblioteca.png" alt="biblioteca"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ordenador.png" alt="ordenador"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/redesSociales.png" alt="redesSociales"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="qué"><strong>¿Qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 70%;">
-<col style="width: 30%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Los <strong class="blue">gráficos vectoriales escalables</strong> o gráficos vectoriales redimensionables (<em>Scalable Vector Graphics</em>, <strong class="blue">SVG</strong>) es</p>
-<div class="ulist">
-<ul>
-<li>
-<p>un formato de gráficos vectoriales bidimensionales, tanto <strong class="blue">estáticos como animados</strong>,</p>
-</li>
-<li>
-<p>en formato de lenguaje de marcado extensible <em>XML</em>, es decir que se compone por código cuya especificación es un <strong class="green">estándar abierto</strong> desarrollado por el <strong class="green">W3C</strong> desde 1999.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/noVectorial.jpg" alt="noVectorial">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>a diferencia de los dibujos en otros formatos como los <span class="red"><em>Webp, JPG, PNG, TIFF</em>(<em>Rasters</em>)</span> entre otros, los códigos <strong class="blue">SVG pueden ser interactivos y dinámicos</strong> y esto se debe a que</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">no se componen por mapa de bits</strong>,</p>
-</li>
-<li>
-<p>sino que están compuestos por <strong class="green">vectores</strong>, que son instrucciones matemáticas que se le dan al navegador o programas de ediciones de estos gráficos vectoriales, para <strong class="green">escalarlos de manera infinita y no perder resolución o calidad en la imagen</strong>, dibujo, etcétera</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="para-qué"><strong>¿Para qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><a href="https://github.com/USantaTecla-0-domains/manager-countries/blob/master/docs/images/country.svg?short_path=ecaf394">manager-countries</a></th>
-<th class="tableblock halign-left valign-top"><a href="https://github.com/USantaTecla-0-domains/game-ticTacToe/blob/master/docs/diagrams/out/vocabulary/vocabulary.svg?short_path=5e34438">game-TicTacToe</a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/country.svg" alt="country"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/vocabulary.svg" alt="vocabulary"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cómo"><strong>¿Cómo?</strong></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="elemento-raíz-svg">Elemento raíz <em>svg</em></h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>svg</em></strong>, raíz del documento</p>
-<div class="ulist">
-<ul>
-<li>
-<p>con atributos:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>version</em></strong> indica la versión de SVG empleada, actualmente 1.1.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Opcional pero recomendado para ayudar a los navegadores aunque en la práctica parece que los navegadores no lo tienen en cuenta.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>xmlns</em></strong> indica el espacio de nombres empleado, siempre <a href="https://www.w3.org/2000/svg" class="bare">https://www.w3.org/2000/svg</a>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><span class="blue">Obligatorio</span> cuando la imagen SVG se encuentra referenciada desde otro fichero (HTML, &#8230;&#8203;)</p>
-</li>
-<li>
-<p><span class="blue">Optativo</span> cuando la imagen SVG se encuentra incluida en un fichero (HTML, &#8230;&#8203;).</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>width</em> y <em>height</em></strong> indican el tamaño</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Con elementos:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>title</em></strong>, interno, no visualizado</p>
-</li>
-<li>
-<p><strong class="blue"><em>desc</em></strong>, interno, no visualizado</p>
-</li>
-<li>
-<p>todos los siguientes</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width=&quot;100px&quot; height=&quot;100px&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+ </head>
+ <body class="book">
+  <div id="header">
+   <h1>
+    SVG
+   </h1>
+   <div class="details">
+    <span class="author" id="author">
+     Universo Santa Tecla
+    </span>
+    <br/>
+    <span class="email" id="email">
+     <a href="mailto:USantaTecla@gmail.com">
+      USantaTecla@gmail.com
+     </a>
+    </span>
+    <br/>
+    <span id="revnumber">
+     version 0.0.1
+    </span>
+   </div>
+   <div class="toc" id="toc">
+    <div id="toctitle">
+     Índice
+    </div>
+    <ul class="sectlevel1">
+     <li>
+      <a href="#por-qué">
+       <strong>
+        ¿Por qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#qué">
+       <strong>
+        ¿Qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#para-qué">
+       <strong>
+        ¿Para qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#cómo">
+       <strong>
+        ¿Cómo?
+       </strong>
+      </a>
+      <ul class="sectlevel2">
+       <li>
+        <a href="#elemento-raíz-svg">
+         Elemento raíz
+         <em>
+          svg
+         </em>
+        </a>
+       </li>
+       <li>
+        <a href="#elemento-path">
+         Elemento
+         <em>
+          path
+         </em>
+        </a>
+       </li>
+       <li>
+        <a href="#reutilización">
+         Reutilización
+        </a>
+       </li>
+       <li>
+        <a href="#estilos">
+         Estilos
+        </a>
+       </li>
+       <li>
+        <a href="#elementos">
+         Elementos
+        </a>
+       </li>
+       <li>
+        <a href="#animaciones">
+         Animaciones
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="#sintesis">
+       <strong>
+        Sintesis
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#bibliografía">
+       <strong>
+        Bibliografía
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#ponente">
+       Ponente
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div id="content">
+   <div id="preamble">
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="sintesis" src="images/sintesis.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="SVG" height="330" src="images/SVG.png" width="250"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="admonitionblock caution">
+      <table>
+       <tr>
+        <td class="icon">
+         <i class="fa icon-caution" title="Caution">
+         </i>
+        </td>
+        <td class="content">
+         Códigos disponibles en
+         <a href="https://github.com/USantaTecla-tech-svg">
+          git
+         </a>
+        </td>
+       </tr>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="por-qué">
+     <strong>
+      ¿Por qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="4">
+         Publicación de contabilidad, poder, leyes, historia, ciencia, …​ todo?!?
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="ornamentos" src="images/ornamentos.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="egipcios" src="images/egipcios.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="estatua" src="images/estatua.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="iglecia" src="images/iglecia.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="telar" src="images/telar.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="biblioteca" src="images/biblioteca.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="ordenador" src="images/ordenador.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="redesSociales" src="images/redesSociales.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="qué">
+     <strong>
+      ¿Qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 70%;"/>
+       <col style="width: 30%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Los
+              <strong class="blue">
+               gráficos vectoriales escalables
+              </strong>
+              o gráficos vectoriales redimensionables (
+              <em>
+               Scalable Vector Graphics
+              </em>
+              ,
+              <strong class="blue">
+               SVG
+              </strong>
+              ) es
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 un formato de gráficos vectoriales bidimensionales, tanto
+                 <strong class="blue">
+                  estáticos como animados
+                 </strong>
+                 ,
+                </p>
+               </li>
+               <li>
+                <p>
+                 en formato de lenguaje de marcado extensible
+                 <em>
+                  XML
+                 </em>
+                 , es decir que se compone por código cuya especificación es un
+                 <strong class="green">
+                  estándar abierto
+                 </strong>
+                 desarrollado por el
+                 <strong class="green">
+                  W3C
+                 </strong>
+                 desde 1999.
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="noVectorial" src="images/noVectorial.jpg"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top" colspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              a diferencia de los dibujos en otros formatos como los
+              <span class="red">
+               <em>
+                Webp, JPG, PNG, TIFF
+               </em>
+               (
+               <em>
+                Rasters
+               </em>
+               )
+              </span>
+              entre otros, los códigos
+              <strong class="blue">
+               SVG pueden ser interactivos y dinámicos
+              </strong>
+              y esto se debe a que
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong class="red">
+                  no se componen por mapa de bits
+                 </strong>
+                 ,
+                </p>
+               </li>
+               <li>
+                <p>
+                 sino que están compuestos por
+                 <strong class="green">
+                  vectores
+                 </strong>
+                 , que son instrucciones matemáticas que se le dan al navegador o programas de ediciones de estos gráficos vectoriales, para
+                 <strong class="green">
+                  escalarlos de manera infinita y no perder resolución o calidad en la imagen
+                 </strong>
+                 , dibujo, etcétera
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="para-qué">
+     <strong>
+      ¿Para qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         <a href="https://github.com/USantaTecla-0-domains/manager-countries/blob/master/docs/images/country.svg?short_path=ecaf394">
+          manager-countries
+         </a>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <a href="https://github.com/USantaTecla-0-domains/game-ticTacToe/blob/master/docs/diagrams/out/vocabulary/vocabulary.svg?short_path=5e34438">
+          game-TicTacToe
+         </a>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="country" src="images/country.svg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="vocabulary" src="images/vocabulary.svg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="cómo">
+     <strong>
+      ¿Cómo?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="sect2">
+      <h3 id="elemento-raíz-svg">
+       Elemento raíz
+       <em>
+        svg
+       </em>
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 60%;"/>
+        <col style="width: 40%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top" rowspan="2">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="blue">
+                <em>
+                 svg
+                </em>
+               </strong>
+               , raíz del documento
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  con atributos:
+                 </p>
+                 <div class="ulist">
+                  <ul>
+                   <li>
+                    <p>
+                     <strong class="blue">
+                      <em>
+                       version
+                      </em>
+                     </strong>
+                     indica la versión de SVG empleada, actualmente 1.1.
+                    </p>
+                   </li>
+                  </ul>
+                 </div>
+                </li>
+                <li>
+                 <p>
+                  Opcional pero recomendado para ayudar a los navegadores aunque en la práctica parece que los navegadores no lo tienen en cuenta.
+                 </p>
+                 <div class="ulist">
+                  <ul>
+                   <li>
+                    <p>
+                     <strong class="blue">
+                      <em>
+                       xmlns
+                      </em>
+                     </strong>
+                     indica el espacio de nombres empleado, siempre
+                     <a class="bare" href="https://www.w3.org/2000/svg">
+                      https://www.w3.org/2000/svg
+                     </a>
+                     .
+                    </p>
+                   </li>
+                  </ul>
+                 </div>
+                </li>
+                <li>
+                 <p>
+                  <span class="blue">
+                   Obligatorio
+                  </span>
+                  cuando la imagen SVG se encuentra referenciada desde otro fichero (HTML, …​)
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <span class="blue">
+                   Optativo
+                  </span>
+                  cuando la imagen SVG se encuentra incluida en un fichero (HTML, …​).
+                 </p>
+                 <div class="ulist">
+                  <ul>
+                   <li>
+                    <p>
+                     <strong class="blue">
+                      <em>
+                       width
+                      </em>
+                      y
+                      <em>
+                       height
+                      </em>
+                     </strong>
+                     indican el tamaño
+                    </p>
+                   </li>
+                  </ul>
+                 </div>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Con elementos:
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   <em>
+                    title
+                   </em>
+                  </strong>
+                  , interno, no visualizado
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   <em>
+                    desc
+                   </em>
+                  </strong>
+                  , interno, no visualizado
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  todos los siguientes
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width="100px" height="100px" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
   &lt;title&gt;Titulo no visualizado&lt;/title&gt;
   &lt;desc&gt;descripción del documento&lt;/desc&gt;
   &lt;!-- y los comentarios para qué?!?! --&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="elemento-path">Elemento <em>path</em></h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Rectas</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>path</em></strong>, para trazar caminos punto por punto mediante la siguiente sintaxis de comandos del atributo <strong><em>d</em></strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>Mx,y</em></strong> (moveto), mueve, sin trazo, hasta sus coordendas</p>
-</li>
-<li>
-<p><strong class="blue"><em>Lx,y</em></strong> (lineto), traza línea desde el punto actual hasta sus coordenadas</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="rectas"><table class="CodeRay"><tr>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="elemento-path">
+       Elemento
+       <em>
+        path
+       </em>
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 30%;"/>
+        <col style="width: 70%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          <strong class="blue">
+           Rectas
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="blue">
+                <em>
+                 path
+                </em>
+               </strong>
+               , para trazar caminos punto por punto mediante la siguiente sintaxis de comandos del atributo
+               <strong>
+                <em>
+                 d
+                </em>
+               </strong>
+               :
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   <em>
+                    Mx,y
+                   </em>
+                  </strong>
+                  (moveto), mueve, sin trazo, hasta sus coordendas
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   <em>
+                    Lx,y
+                   </em>
+                  </strong>
+                  (lineto), traza línea desde el punto actual hasta sus coordenadas
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="rectas"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
 2
 3
@@ -765,55 +1181,90 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-svg">git</a
 7
 8
 </pre></td>
-  <td class="code"><pre>&lt;svg width=&quot;300px&quot; height=&quot;300px&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;path d=&quot;M50,25 L100,25 L100,75 L50,75 L50,25&quot; fill=&quot;none&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M75,50 L50,125 L100,125 L75,50&quot; fill=&quot;none&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M-1000,100 L1000,100&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M25,125 L50,175 L75,125 L100,175 L125,125&quot; fill=&quot;none&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M200,0 L171,90 L248,35 L152,35 L229,90 L200,0&quot; fill=&quot;none&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M200,100 L171,190 L248,135 L152,135 L229,190 L200,100&quot; fill=&quot;none&quot; stroke=&quot;black&quot; /&gt;
+  <td class="code"><pre>&lt;svg width="300px" height="300px" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;path d="M50,25 L100,25 L100,75 L50,75 L50,25" fill="none" stroke="black" /&gt;
+  &lt;path d="M75,50 L50,125 L100,125 L75,50" fill="none" stroke="black" /&gt;
+  &lt;path d="M-1000,100 L1000,100" stroke="black" /&gt;
+  &lt;path d="M25,125 L50,175 L75,125 L100,175 L125,125" fill="none" stroke="black" /&gt;
+  &lt;path d="M200,0 L171,90 L248,35 L152,35 L229,90 L200,0" fill="none" stroke="black" /&gt;
+  &lt;path d="M200,100 L171,190 L248,135 L152,135 L229,190 L200,100" fill="none" stroke="black" /&gt;
 &lt;/svg&gt;</pre></td>
 </tr></table></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Abreviaturas</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Comandos:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>Hx</em></strong> (horizontal), traza línea horizontal hasta la coordenada indicada</p>
-</li>
-<li>
-<p><strong class="blue"><em>Vy</em></strong> (vertical), traza línea vertical hasta la coordenada indicada</p>
-</li>
-<li>
-<p><strong class="blue"><em>Z</em></strong> (), cierra el camino uniendo la posición de partida con el última posición</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="abreviaturas"><table class="CodeRay"><tr>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 30%;"/>
+        <col style="width: 70%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          <strong class="blue">
+           Abreviaturas
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Comandos:
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   <em>
+                    Hx
+                   </em>
+                  </strong>
+                  (horizontal), traza línea horizontal hasta la coordenada indicada
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   <em>
+                    Vy
+                   </em>
+                  </strong>
+                  (vertical), traza línea vertical hasta la coordenada indicada
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   <em>
+                    Z
+                   </em>
+                  </strong>
+                  (), cierra el camino uniendo la posición de partida con el última posición
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="abreviaturas"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
 2
 3
@@ -823,61 +1274,106 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-svg">git</a
 7
 8
 </pre></td>
-  <td class="code"><pre>&lt;svg width=&quot;300px&quot; height=&quot;300px&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;path d=&quot;M50,25 H100 V75 H50 Z&quot; fill=&quot;none&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M75,50 L50 125 H100 Z&quot; fill=&quot;none&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M-1000,100 H1000&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M25 125 L50 175 L75 125 L100 175 L125 125&quot; fill=&quot;none&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M200,0 L171,90 L248,35 L152,35 L229,90 Z&quot; fill=&quot;none&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M200,100 L171,190 L248,135 L152,135 L229,190 Z&quot; fill=&quot;none&quot; stroke=&quot;black&quot; /&gt;
+  <td class="code"><pre>&lt;svg width="300px" height="300px" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;path d="M50,25 H100 V75 H50 Z" fill="none" stroke="black" /&gt;
+  &lt;path d="M75,50 L50 125 H100 Z" fill="none" stroke="black" /&gt;
+  &lt;path d="M-1000,100 H1000" stroke="black" /&gt;
+  &lt;path d="M25 125 L50 175 L75 125 L100 175 L125 125" fill="none" stroke="black" /&gt;
+  &lt;path d="M200,0 L171,90 L248,35 L152,35 L229,90 Z" fill="none" stroke="black" /&gt;
+  &lt;path d="M200,100 L171,190 L248,135 L152,135 L229,190 Z" fill="none" stroke="black" /&gt;
 &lt;/svg&gt;</pre></td>
 </tr></table></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Curvas</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Comandos:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>A</em></strong>, arco</p>
-</li>
-<li>
-<p><strong class="blue"><em>C</em></strong></p>
-</li>
-<li>
-<p><strong class="blue"><em>T</em></strong></p>
-</li>
-<li>
-<p><strong class="blue"><em>Q</em></strong></p>
-</li>
-<li>
-<p><strong class="blue"><em>S</em></strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="curvas"><table class="CodeRay"><tr>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 30%;"/>
+        <col style="width: 70%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          <strong class="blue">
+           Curvas
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Comandos:
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   <em>
+                    A
+                   </em>
+                  </strong>
+                  , arco
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   <em>
+                    C
+                   </em>
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   <em>
+                    T
+                   </em>
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   <em>
+                    Q
+                   </em>
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   <em>
+                    S
+                   </em>
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="curvas"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
 2
 3
@@ -897,73 +1393,142 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-svg">git</a
 17
 18
 </pre></td>
-  <td class="code"><pre>&lt;svg width=&quot;300px&quot; height=&quot;300px&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;path d=&quot;M100,50 A25,25 0 1 1 100,49&quot; fill=&quot;none&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M100,87 A25,37 0 1 1 100,86&quot; fill=&quot;none&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M-25,100 C50,125 100,75 175,100&quot; fill=&quot;none&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M25,125 Q50,175 75,125 100,175 125,125&quot; fill=&quot;none&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M150,20
+  <td class="code"><pre>&lt;svg width="300px" height="300px" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;path d="M100,50 A25,25 0 1 1 100,49" fill="none" stroke="black" /&gt;
+  &lt;path d="M100,87 A25,37 0 1 1 100,86" fill="none" stroke="black" /&gt;
+  &lt;path d="M-25,100 C50,125 100,75 175,100" fill="none" stroke="black" /&gt;
+  &lt;path d="M25,125 Q50,175 75,125 100,175 125,125" fill="none" stroke="black" /&gt;
+  &lt;path d="M150,20
            A45,45 0 0 0 195,65
-           L195,20 Z&quot; fill=&quot;none&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M250,20
+           L195,20 Z" fill="none" stroke="black" /&gt;
+  &lt;path d="M250,20
            A45,45 0 1 0 295,65
-           L295,20 Z&quot; fill=&quot;none&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M180,180
+           L295,20 Z" fill="none" stroke="black" /&gt;
+  &lt;path d="M180,180
            A45,45 0 0 1 225,225
-           L225,180 Z&quot; fill=&quot;none&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M250,180
+           L225,180 Z" fill="none" stroke="black" /&gt;
+  &lt;path d="M250,180
            A45,45 0 1 1 295,225
-           L295,180 Z&quot; fill=&quot;none&quot; stroke=&quot;black&quot; /&gt;
+           L295,180 Z" fill="none" stroke="black" /&gt;
 &lt;/svg&gt;</pre></td>
 </tr></table></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="reutilización">Reutilización</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>symbol</em></strong>, para agrupar varios elementos bajo un único identificador, con atributos:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>id</em></strong>, para identificación desde <strong><em>use</em></strong></p>
-</li>
-<li>
-<p><strong class="blue"><em>witdh</em></strong> y <strong><em>height</em></strong>, para su tamaño</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong class="blue"><em>use</em></strong>, para su reutilización</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>href</em></strong>, con el identificador del símbolo</p>
-</li>
-<li>
-<p><strong class="blue"><em>x</em></strong> e <strong><em>y</em></strong>, con su posición particular</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="rectas"><table class="CodeRay"><tr>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="reutilización">
+       Reutilización
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 30%;"/>
+        <col style="width: 70%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="blue">
+                <em>
+                 symbol
+                </em>
+               </strong>
+               , para agrupar varios elementos bajo un único identificador, con atributos:
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   <em>
+                    id
+                   </em>
+                  </strong>
+                  , para identificación desde
+                  <strong>
+                   <em>
+                    use
+                   </em>
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   <em>
+                    witdh
+                   </em>
+                  </strong>
+                  y
+                  <strong>
+                   <em>
+                    height
+                   </em>
+                  </strong>
+                  , para su tamaño
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+             <li>
+              <p>
+               <strong class="blue">
+                <em>
+                 use
+                </em>
+               </strong>
+               , para su reutilización
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   <em>
+                    href
+                   </em>
+                  </strong>
+                  , con el identificador del símbolo
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   <em>
+                    x
+                   </em>
+                  </strong>
+                  e
+                  <strong>
+                   <em>
+                    y
+                   </em>
+                  </strong>
+                  , con su posición particular
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="rectas"><table class="CodeRay"><tr>
   <td class="line-numbers"><pre>1
 2
 3
@@ -976,868 +1541,1404 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-svg">git</a
 10
 11
 </pre></td>
-  <td class="code"><pre>&lt;svg width=&quot;80&quot; height=&quot;20&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;symbol id=&quot;dot&quot; y=&quot;5&quot; width=&quot;10&quot; height=&quot;10&quot;&gt;
-    &lt;circle cx=&quot;5&quot; cy=&quot;5&quot; r=&quot;5&quot; /&gt;
+  <td class="code"><pre>&lt;svg width="80" height="20" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;symbol id="dot" y="5" width="10" height="10"&gt;
+    &lt;circle cx="5" cy="5" r="5" /&gt;
   &lt;/symbol&gt;
-  &lt;path d=&quot;M0,10 h80 M10,0 v20 M25,0 v20 M40,0 v20 M55,0 v20 M70,0 v20&quot; fill=&quot;none&quot; stroke=&quot;pink&quot; /&gt;
-  &lt;use href=&quot;#dot&quot; x=&quot;5&quot; /&gt;
-  &lt;use href=&quot;#dot&quot; x=&quot;20&quot; /&gt;
-  &lt;use href=&quot;#dot&quot; x=&quot;35&quot; /&gt;
-  &lt;use href=&quot;#dot&quot; x=&quot;50&quot; /&gt;
-  &lt;use href=&quot;#dot&quot; x=&quot;65&quot; /&gt;
+  &lt;path d="M0,10 h80 M10,0 v20 M25,0 v20 M40,0 v20 M55,0 v20 M70,0 v20" fill="none" stroke="pink" /&gt;
+  &lt;use href="#dot" x="5" /&gt;
+  &lt;use href="#dot" x="20" /&gt;
+  &lt;use href="#dot" x="35" /&gt;
+  &lt;use href="#dot" x="50" /&gt;
+  &lt;use href="#dot" x="65" /&gt;
 &lt;/svg&gt;</pre></td>
 </tr></table></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>g</em></strong>, permite compartir los mismos valores de atributos a todos los elementos</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/1-grupo.svg" alt="1 grupo"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg viewBox=&quot;0 0 100 100&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;g fill=&quot;white&quot; stroke=&quot;green&quot; stroke-width=&quot;5&quot;&gt;
-    &lt;circle cx=&quot;40&quot; cy=&quot;40&quot; r=&quot;25&quot; /&gt;
-    &lt;circle cx=&quot;60&quot; cy=&quot;60&quot; r=&quot;25&quot; /&gt;
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 30%;"/>
+        <col style="width: 70%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="blue">
+                <em>
+                 g
+                </em>
+               </strong>
+               , permite compartir los mismos valores de atributos a todos los elementos
+              </p>
+             </li>
+            </ul>
+           </div>
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="1 grupo" src="images/1-grupo.svg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;g fill="white" stroke="green" stroke-width="5"&gt;
+    &lt;circle cx="40" cy="40" r="25" /&gt;
+    &lt;circle cx="60" cy="60" r="25" /&gt;
   &lt;/g&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="estilos">Estilos</h3>
-<div class="sect3">
-<h4 id="rellenos">Rellenos</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>fill</em></strong>, se especifica el color de relleno: <em>red, green, blue, yellow, &#8230;&#8203;</em></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/1-fill.svg" alt="1 fill"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width=&quot;300px&quot; height=&quot;300px&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;path d=&quot;M50 25 H100 V75 H50 Z&quot; fill=&quot;red&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M75 50 L50 125 H100 Z&quot; fill=&quot;green&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M-1000 100 H1000&quot; fill=&quot;blue&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M25 125 L50 175 L75 125 L100 175 L125 125&quot; fill=&quot;#808080&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M200,0 L171,90 L248,35 L152,35 L229,90 Z&quot; fill=&quot;black&quot; stroke=&quot;red&quot; /&gt;
-  &lt;path d=&quot;M200,100 L171,190 L248,135 L152,135 L229,190 Z&quot; fill=&quot;black&quot; stroke=&quot;red&quot; /&gt;
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="estilos">
+       Estilos
+      </h3>
+      <div class="sect3">
+       <h4 id="rellenos">
+        Rellenos
+       </h4>
+       <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+         <col style="width: 20%;"/>
+         <col style="width: 80%;"/>
+        </colgroup>
+        <tbody>
+         <tr>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <strong class="blue">
+                 <em>
+                  fill
+                 </em>
+                </strong>
+                , se especifica el color de relleno:
+                <em>
+                 red, green, blue, yellow, …​
+                </em>
+               </p>
+              </li>
+             </ul>
+            </div>
+            <div class="paragraph">
+             <p>
+              <span class="image">
+               <img alt="1 fill" src="images/1-fill.svg"/>
+              </span>
+             </p>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width="300px" height="300px" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;path d="M50 25 H100 V75 H50 Z" fill="red" stroke="black" /&gt;
+  &lt;path d="M75 50 L50 125 H100 Z" fill="green" stroke="black" /&gt;
+  &lt;path d="M-1000 100 H1000" fill="blue" stroke="black" /&gt;
+  &lt;path d="M25 125 L50 175 L75 125 L100 175 L125 125" fill="#808080" stroke="black" /&gt;
+  &lt;path d="M200,0 L171,90 L248,35 L152,35 L229,90 Z" fill="black" stroke="red" /&gt;
+  &lt;path d="M200,100 L171,190 L248,135 L152,135 L229,190 Z" fill="black" stroke="red" /&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>fill-rule</em></strong>, con valores: <em>evenodd</em> o <em>nonzero</em></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/2-fill-rule.svg" alt="2 fill rule"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width=&quot;300px&quot; height=&quot;300px&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;path d=&quot;M50 25 H100 V75 H50 Z&quot; fill=&quot;red&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M75 50 L50 125 H100 Z&quot; fill=&quot;green&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M-1000 100 H1000&quot; fill=&quot;blue&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M25 125 L50 175 L75 125 L100 175 L125 125&quot; fill=&quot;#808080&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M200,0 L171,90 L248,35 L152,35 L229,90 Z&quot; fill=&quot;black&quot; fill-rule=&quot;evenodd&quot; stroke=&quot;red&quot; /&gt;
-  &lt;path d=&quot;M200,100 L171,190 L248,135 L152,135 L229,190 Z&quot; fill=&quot;black&quot; fill-rule=&quot;nonzero&quot; stroke=&quot;red&quot; /&gt;
+             </div>
+            </div>
+           </div>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+         <col style="width: 20%;"/>
+         <col style="width: 80%;"/>
+        </colgroup>
+        <tbody>
+         <tr>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <strong class="blue">
+                 <em>
+                  fill-rule
+                 </em>
+                </strong>
+                , con valores:
+                <em>
+                 evenodd
+                </em>
+                o
+                <em>
+                 nonzero
+                </em>
+               </p>
+              </li>
+             </ul>
+            </div>
+            <div class="paragraph">
+             <p>
+              <span class="image">
+               <img alt="2 fill rule" src="images/2-fill-rule.svg"/>
+              </span>
+             </p>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width="300px" height="300px" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;path d="M50 25 H100 V75 H50 Z" fill="red" stroke="black" /&gt;
+  &lt;path d="M75 50 L50 125 H100 Z" fill="green" stroke="black" /&gt;
+  &lt;path d="M-1000 100 H1000" fill="blue" stroke="black" /&gt;
+  &lt;path d="M25 125 L50 175 L75 125 L100 175 L125 125" fill="#808080" stroke="black" /&gt;
+  &lt;path d="M200,0 L171,90 L248,35 L152,35 L229,90 Z" fill="black" fill-rule="evenodd" stroke="red" /&gt;
+  &lt;path d="M200,100 L171,190 L248,135 L152,135 L229,190 Z" fill="black" fill-rule="nonzero" stroke="red" /&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>defs</em></strong>, para definir gradientes, y posteriormente otros objetos, con elementos:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>linearGradient</em></strong>, para definir el gradiente</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>id</em></strong>, para posterior referenciación</p>
-</li>
-<li>
-<p><strong class="blue"><em>x1</em></strong>, <strong><em>x2</em></strong>, <strong><em>y1</em></strong> y <strong><em>y2</em></strong>, para definir el incremento horizontal y vertical</p>
-</li>
-<li>
-<p>con elementos:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>stop</em></strong>, para definir puntos de control con atributos:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>offset</em></strong>, porcentaje hasta llegar al punto</p>
-</li>
-<li>
-<p><strong class="blue"><em>stop-color</em></strong>, color alcanzado</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/1-gradienteLineal.svg" alt="1 gradienteLineal"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width=&quot;150px&quot; height=&quot;150px&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+             </div>
+            </div>
+           </div>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+         <col style="width: 30%;"/>
+         <col style="width: 70%;"/>
+        </colgroup>
+        <tbody>
+         <tr>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <strong class="blue">
+                 <em>
+                  defs
+                 </em>
+                </strong>
+                , para definir gradientes, y posteriormente otros objetos, con elementos:
+               </p>
+               <div class="ulist">
+                <ul>
+                 <li>
+                  <p>
+                   <strong class="blue">
+                    <em>
+                     linearGradient
+                    </em>
+                   </strong>
+                   , para definir el gradiente
+                  </p>
+                  <div class="ulist">
+                   <ul>
+                    <li>
+                     <p>
+                      <strong class="blue">
+                       <em>
+                        id
+                       </em>
+                      </strong>
+                      , para posterior referenciación
+                     </p>
+                    </li>
+                    <li>
+                     <p>
+                      <strong class="blue">
+                       <em>
+                        x1
+                       </em>
+                      </strong>
+                      ,
+                      <strong>
+                       <em>
+                        x2
+                       </em>
+                      </strong>
+                      ,
+                      <strong>
+                       <em>
+                        y1
+                       </em>
+                      </strong>
+                      y
+                      <strong>
+                       <em>
+                        y2
+                       </em>
+                      </strong>
+                      , para definir el incremento horizontal y vertical
+                     </p>
+                    </li>
+                    <li>
+                     <p>
+                      con elementos:
+                     </p>
+                     <div class="ulist">
+                      <ul>
+                       <li>
+                        <p>
+                         <strong class="blue">
+                          <em>
+                           stop
+                          </em>
+                         </strong>
+                         , para definir puntos de control con atributos:
+                        </p>
+                        <div class="ulist">
+                         <ul>
+                          <li>
+                           <p>
+                            <strong class="blue">
+                             <em>
+                              offset
+                             </em>
+                            </strong>
+                            , porcentaje hasta llegar al punto
+                           </p>
+                          </li>
+                          <li>
+                           <p>
+                            <strong class="blue">
+                             <em>
+                              stop-color
+                             </em>
+                            </strong>
+                            , color alcanzado
+                           </p>
+                          </li>
+                         </ul>
+                        </div>
+                       </li>
+                      </ul>
+                     </div>
+                    </li>
+                   </ul>
+                  </div>
+                 </li>
+                </ul>
+               </div>
+              </li>
+             </ul>
+            </div>
+            <div class="paragraph">
+             <p>
+              <span class="image">
+               <img alt="1 gradienteLineal" src="images/1-gradienteLineal.svg"/>
+              </span>
+             </p>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width="150px" height="150px" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
   &lt;defs&gt;
-    &lt;linearGradient id=&quot;verticalGradient&quot;
-        x1=&quot;0%&quot; x2=&quot;100%&quot; y1=&quot;0%&quot; y2=&quot;0%&quot; spreadMethod=&quot;pad&quot;&gt;
-      &lt;stop offset=&quot;25%&quot; stop-color=&quot;red&quot; /&gt;
-      &lt;stop offset=&quot;75%&quot; stop-color=&quot;green&quot; /&gt;
+    &lt;linearGradient id="verticalGradient"
+        x1="0%" x2="100%" y1="0%" y2="0%" spreadMethod="pad"&gt;
+      &lt;stop offset="25%" stop-color="red" /&gt;
+      &lt;stop offset="75%" stop-color="green" /&gt;
     &lt;/linearGradient&gt;
-    &lt;linearGradient id=&quot;horizontalGradient&quot;
-        x1=&quot;0%&quot; x2=&quot;0%&quot; y1=&quot;100%&quot; y2=&quot;0%&quot; spreadMethod=&quot;pad&quot;&gt;
-      &lt;stop offset=&quot;10%&quot; stop-color=&quot;red&quot; stop-opacity=&quot;1&quot; /&gt;
-      &lt;stop offset=&quot;90%&quot; stop-color=&quot;green&quot; stop-opacity=&quot;1&quot; /&gt;
+    &lt;linearGradient id="horizontalGradient"
+        x1="0%" x2="0%" y1="100%" y2="0%" spreadMethod="pad"&gt;
+      &lt;stop offset="10%" stop-color="red" stop-opacity="1" /&gt;
+      &lt;stop offset="90%" stop-color="green" stop-opacity="1" /&gt;
     &lt;/linearGradient&gt;
-    &lt;linearGradient id=&quot;obliqueGradient&quot;
-        x1=&quot;0%&quot; x2=&quot;100%&quot; y1=&quot;100%&quot; y2=&quot;0%&quot; spreadMethod=&quot;pad&quot;&gt;
-      &lt;stop offset=&quot;10%&quot; stop-color=&quot;#00cc00&quot; stop-opacity=&quot;1&quot; /&gt;
-      &lt;stop offset=&quot;30%&quot; stop-color=&quot;#006600&quot; stop-opacity=&quot;1&quot; /&gt;
-      &lt;stop offset=&quot;70%&quot; stop-color=&quot;#cc0000&quot; stop-opacity=&quot;1&quot; /&gt;
-      &lt;stop offset=&quot;90%&quot; stop-color=&quot;#000099&quot; stop-opacity=&quot;1&quot; /&gt;
+    &lt;linearGradient id="obliqueGradient"
+        x1="0%" x2="100%" y1="100%" y2="0%" spreadMethod="pad"&gt;
+      &lt;stop offset="10%" stop-color="#00cc00" stop-opacity="1" /&gt;
+      &lt;stop offset="30%" stop-color="#006600" stop-opacity="1" /&gt;
+      &lt;stop offset="70%" stop-color="#cc0000" stop-opacity="1" /&gt;
+      &lt;stop offset="90%" stop-color="#000099" stop-opacity="1" /&gt;
     &lt;/linearGradient&gt;
   &lt;/defs&gt;
-  &lt;path d=&quot;M50 25 H100 V75 H50 Z&quot; fill=&quot;url(#verticalGradient)&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M75 50 L50 125 H100 Z&quot; fill=&quot;url(#horizontalGradient)&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M-1000 100 H1000&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M25 125 L50 175 L75 125 L100 175 L125 125&quot; fill=&quot;url(#obliqueGradient)&quot; stroke=&quot;black&quot; /&gt;
+  &lt;path d="M50 25 H100 V75 H50 Z" fill="url(#verticalGradient)" stroke="black" /&gt;
+  &lt;path d="M75 50 L50 125 H100 Z" fill="url(#horizontalGradient)" stroke="black" /&gt;
+  &lt;path d="M-1000 100 H1000" stroke="black" /&gt;
+  &lt;path d="M25 125 L50 175 L75 125 L100 175 L125 125" fill="url(#obliqueGradient)" stroke="black" /&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/2-gradienteRadial.svg" alt="2 gradienteRadial"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg viewBox=&quot;0 0 10 10&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;
-     xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;
+             </div>
+            </div>
+           </div>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+         <col style="width: 25%;"/>
+         <col style="width: 75%;"/>
+        </colgroup>
+        <tbody>
+         <tr>
+          <td class="tableblock halign-center valign-middle">
+           <div class="content">
+            <div class="paragraph">
+             <p>
+              <span class="image">
+               <img alt="2 gradienteRadial" src="images/2-gradienteRadial.svg"/>
+              </span>
+             </p>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"&gt;
   &lt;defs&gt;
-    &lt;radialGradient id=&quot;gradient&quot;&gt;
-      &lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot; /&gt;
-      &lt;stop offset=&quot;95%&quot; stop-color=&quot;red&quot; /&gt;
+    &lt;radialGradient id="gradient"&gt;
+      &lt;stop offset="10%" stop-color="gold" /&gt;
+      &lt;stop offset="95%" stop-color="red" /&gt;
     &lt;/radialGradient&gt;
   &lt;/defs&gt;
-  &lt;circle cx=&quot;5&quot; cy=&quot;5&quot; r=&quot;4&quot; fill=&quot;url('#gradient')&quot; /&gt;
+  &lt;circle cx="5" cy="5" r="4" fill="url('#gradient')" /&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="trazos">Trazos</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>stroke</em></strong>, se especifica el color del trazo: <em>red, green, blue, yellow, &#8230;&#8203;</em></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/1-fill.svg" alt="1 fill"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width=&quot;300px&quot; height=&quot;300px&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;path d=&quot;M50 25 H100 V75 H50 Z&quot; fill=&quot;red&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M75 50 L50 125 H100 Z&quot; fill=&quot;green&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M-1000 100 H1000&quot; fill=&quot;blue&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M25 125 L50 175 L75 125 L100 175 L125 125&quot; fill=&quot;#808080&quot; stroke=&quot;black&quot; /&gt;
-  &lt;path d=&quot;M200,0 L171,90 L248,35 L152,35 L229,90 Z&quot; fill=&quot;black&quot; stroke=&quot;red&quot; /&gt;
-  &lt;path d=&quot;M200,100 L171,190 L248,135 L152,135 L229,190 Z&quot; fill=&quot;black&quot; stroke=&quot;red&quot; /&gt;
+             </div>
+            </div>
+           </div>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+      <div class="sect3">
+       <h4 id="trazos">
+        Trazos
+       </h4>
+       <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+         <col style="width: 20%;"/>
+         <col style="width: 80%;"/>
+        </colgroup>
+        <tbody>
+         <tr>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <strong class="blue">
+                 <em>
+                  stroke
+                 </em>
+                </strong>
+                , se especifica el color del trazo:
+                <em>
+                 red, green, blue, yellow, …​
+                </em>
+               </p>
+              </li>
+             </ul>
+            </div>
+            <div class="paragraph">
+             <p>
+              <span class="image">
+               <img alt="1 fill" src="images/1-fill.svg"/>
+              </span>
+             </p>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width="300px" height="300px" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;path d="M50 25 H100 V75 H50 Z" fill="red" stroke="black" /&gt;
+  &lt;path d="M75 50 L50 125 H100 Z" fill="green" stroke="black" /&gt;
+  &lt;path d="M-1000 100 H1000" fill="blue" stroke="black" /&gt;
+  &lt;path d="M25 125 L50 175 L75 125 L100 175 L125 125" fill="#808080" stroke="black" /&gt;
+  &lt;path d="M200,0 L171,90 L248,35 L152,35 L229,90 Z" fill="black" stroke="red" /&gt;
+  &lt;path d="M200,100 L171,190 L248,135 L152,135 L229,190 Z" fill="black" stroke="red" /&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>stroke-width</em></strong>, define el ancho del trazo</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/2-stroke-width.svg" alt="2 stroke width"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width=&quot;150px&quot; height=&quot;150px&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;path d=&quot;M50 25 H100 V75 H50 Z&quot; fill=&quot;red&quot; stroke=&quot;green&quot; stroke-width=&quot;5&quot; /&gt;
-  &lt;path d=&quot;M75 50 L50 125 H100 Z&quot; fill=&quot;green&quot; stroke=&quot;blue&quot; stroke-width=&quot;3&quot; /&gt;
-  &lt;path d=&quot;M-1000 100 H1000&quot; fill=&quot;blue&quot; stroke=&quot;red&quot; stroke-width=&quot;1&quot; /&gt;
-  &lt;path d=&quot;M25 125 L50 175 L75 125 L100 175 L125 125&quot; fill=&quot;#808080&quot; stroke=&quot;black&quot; stroke-width=&quot;3&quot; /&gt;
+             </div>
+            </div>
+           </div>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+         <col style="width: 20%;"/>
+         <col style="width: 80%;"/>
+        </colgroup>
+        <tbody>
+         <tr>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <strong class="blue">
+                 <em>
+                  stroke-width
+                 </em>
+                </strong>
+                , define el ancho del trazo
+               </p>
+              </li>
+             </ul>
+            </div>
+            <div class="paragraph">
+             <p>
+              <span class="image">
+               <img alt="2 stroke width" src="images/2-stroke-width.svg"/>
+              </span>
+             </p>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width="150px" height="150px" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;path d="M50 25 H100 V75 H50 Z" fill="red" stroke="green" stroke-width="5" /&gt;
+  &lt;path d="M75 50 L50 125 H100 Z" fill="green" stroke="blue" stroke-width="3" /&gt;
+  &lt;path d="M-1000 100 H1000" fill="blue" stroke="red" stroke-width="1" /&gt;
+  &lt;path d="M25 125 L50 175 L75 125 L100 175 L125 125" fill="#808080" stroke="black" stroke-width="3" /&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>stroke-dasharray</em></strong>, hacer el trazo con líneas discontinuas con la proporción alterna de trazo y no-trazo</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/3-stroke-dasharray.svg" alt="3 stroke dasharray"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width=&quot;150px&quot; height=&quot;150px&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;path d=&quot;M50 25 H100 V75 H50 Z&quot; fill=&quot;red&quot; stroke=&quot;green&quot; stroke-width=&quot;5&quot; stroke-dasharray=&quot;50 50&quot; /&gt;
-  &lt;path d=&quot;M75 50 L50 125 H100 Z&quot; fill=&quot;green&quot; stroke=&quot;blue&quot; stroke-width=&quot;3&quot; stroke-dasharray=&quot;5 2&quot; /&gt;
-  &lt;path d=&quot;M-1000 100 H1000&quot; fill=&quot;blue&quot; stroke=&quot;red&quot; stroke-width=&quot;1&quot; stroke-dasharray=&quot;1 1&quot; /&gt;
-  &lt;path d=&quot;M25 125 L50 175 L75 125 L100 175 L125 125&quot; fill=&quot;#808080&quot; stroke=&quot;black&quot; stroke-width=&quot;3&quot; stroke-dasharray=&quot;10 5&quot;/&gt;
+             </div>
+            </div>
+           </div>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+         <col style="width: 50%;"/>
+         <col style="width: 50%;"/>
+        </colgroup>
+        <tbody>
+         <tr>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <strong class="blue">
+                 <em>
+                  stroke-dasharray
+                 </em>
+                </strong>
+                , hacer el trazo con líneas discontinuas con la proporción alterna de trazo y no-trazo
+               </p>
+              </li>
+             </ul>
+            </div>
+            <div class="paragraph">
+             <p>
+              <span class="image">
+               <img alt="3 stroke dasharray" src="images/3-stroke-dasharray.svg"/>
+              </span>
+             </p>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width="150px" height="150px" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;path d="M50 25 H100 V75 H50 Z" fill="red" stroke="green" stroke-width="5" stroke-dasharray="50 50" /&gt;
+  &lt;path d="M75 50 L50 125 H100 Z" fill="green" stroke="blue" stroke-width="3" stroke-dasharray="5 2" /&gt;
+  &lt;path d="M-1000 100 H1000" fill="blue" stroke="red" stroke-width="1" stroke-dasharray="1 1" /&gt;
+  &lt;path d="M25 125 L50 175 L75 125 L100 175 L125 125" fill="#808080" stroke="black" stroke-width="3" stroke-dasharray="10 5"/&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 35%;">
-<col style="width: 65%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>stroke-linecap</em></strong>, para indicar la forma final de los extremos: <strong>butt</strong> (un límite de línea que se corta exactamente donde termina la línea), <strong>square</strong> (un límite de línea que que se extiende un poco más allá de donde termina la línea) y <strong>round</strong> (un límite de línea redondo)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/4-stroke-linecap.svg" alt="4 stroke linecap"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width=&quot;150px&quot; height=&quot;150px&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;path d=&quot;M50 25 H100 V75 H50 Z&quot; stroke=&quot;green&quot; stroke-width=&quot;5&quot; stroke-dasharray=&quot;50 50&quot; stroke-linecap=&quot;square&quot; fill=&quot;red&quot;/&gt;
-  &lt;path d=&quot;M75 50 L50 125 H100 Z&quot; stroke=&quot;blue&quot; stroke-width=&quot;3&quot; stroke-dasharray=&quot;5 2&quot; stroke-linecap=&quot;butt&quot; fill=&quot;green&quot;/&gt;
-  &lt;path d=&quot;M-1000 100 H1000&quot; stroke=&quot;red&quot; stroke-width=&quot;1&quot; stroke-dasharray=&quot;1 1&quot; stroke-linecap=&quot;round&quot; fill=&quot;blue&quot;/&gt;
-  &lt;path d=&quot;M25 125 L50 175 L75 125 L100 175 L125 125&quot; stroke=&quot;none&quot; stroke-width=&quot;0&quot; stroke-dasharray=&quot;10 5&quot; fill=&quot;#808080&quot;/&gt;
+             </div>
+            </div>
+           </div>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+         <col style="width: 35%;"/>
+         <col style="width: 65%;"/>
+        </colgroup>
+        <tbody>
+         <tr>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <strong class="blue">
+                 <em>
+                  stroke-linecap
+                 </em>
+                </strong>
+                , para indicar la forma final de los extremos:
+                <strong>
+                 butt
+                </strong>
+                (un límite de línea que se corta exactamente donde termina la línea),
+                <strong>
+                 square
+                </strong>
+                (un límite de línea que que se extiende un poco más allá de donde termina la línea) y
+                <strong>
+                 round
+                </strong>
+                (un límite de línea redondo)
+               </p>
+              </li>
+             </ul>
+            </div>
+            <div class="paragraph">
+             <p>
+              <span class="image">
+               <img alt="4 stroke linecap" src="images/4-stroke-linecap.svg"/>
+              </span>
+             </p>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width="150px" height="150px" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;path d="M50 25 H100 V75 H50 Z" stroke="green" stroke-width="5" stroke-dasharray="50 50" stroke-linecap="square" fill="red"/&gt;
+  &lt;path d="M75 50 L50 125 H100 Z" stroke="blue" stroke-width="3" stroke-dasharray="5 2" stroke-linecap="butt" fill="green"/&gt;
+  &lt;path d="M-1000 100 H1000" stroke="red" stroke-width="1" stroke-dasharray="1 1" stroke-linecap="round" fill="blue"/&gt;
+  &lt;path d="M25 125 L50 175 L75 125 L100 175 L125 125" stroke="none" stroke-width="0" stroke-dasharray="10 5" fill="#808080"/&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>stroke-linejoin</em></strong>, define cómo se representa la unión entre dos líneas en una forma.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/5-stroke-linejoin.svg" alt="5 stroke linejoin"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width=&quot;150px&quot; height=&quot;150px&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;path d=&quot;M50 25 H100 V75 H50 Z&quot; stroke=&quot;green&quot; stroke-width=&quot;5&quot; stroke-dasharray=&quot;50 50&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;bevel&quot; fill=&quot;red&quot;/&gt;
-  &lt;path d=&quot;M75 50 L50 125 H100 Z&quot; stroke=&quot;blue&quot; stroke-width=&quot;3&quot; stroke-dasharray=&quot;5 2&quot; stroke-linecap=&quot;butt&quot; stroke-linejoin=&quot;miter&quot; fill=&quot;green&quot;/&gt;
-  &lt;path d=&quot;M-1000 100 H1000&quot; stroke=&quot;red&quot; stroke-width=&quot;1&quot; stroke-dasharray=&quot;1 1&quot; fill=&quot;blue&quot;/&gt;
-  &lt;path d=&quot;M25 125 L50 175 L75 125 L100 175 L125 125&quot; stroke=&quot;none&quot; stroke-width=&quot;0&quot; stroke-dasharray=&quot;10 5&quot; stroke-linejoin=&quot;round&quot; fill=&quot;#808080&quot;/&gt;
+             </div>
+            </div>
+           </div>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+         <col style="width: 20%;"/>
+         <col style="width: 80%;"/>
+        </colgroup>
+        <tbody>
+         <tr>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <strong class="blue">
+                 <em>
+                  stroke-linejoin
+                 </em>
+                </strong>
+                , define cómo se representa la unión entre dos líneas en una forma.
+               </p>
+              </li>
+             </ul>
+            </div>
+            <div class="paragraph">
+             <p>
+              <span class="image">
+               <img alt="5 stroke linejoin" src="images/5-stroke-linejoin.svg"/>
+              </span>
+             </p>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width="150px" height="150px" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;path d="M50 25 H100 V75 H50 Z" stroke="green" stroke-width="5" stroke-dasharray="50 50" stroke-linecap="square" stroke-linejoin="bevel" fill="red"/&gt;
+  &lt;path d="M75 50 L50 125 H100 Z" stroke="blue" stroke-width="3" stroke-dasharray="5 2" stroke-linecap="butt" stroke-linejoin="miter" fill="green"/&gt;
+  &lt;path d="M-1000 100 H1000" stroke="red" stroke-width="1" stroke-dasharray="1 1" fill="blue"/&gt;
+  &lt;path d="M25 125 L50 175 L75 125 L100 175 L125 125" stroke="none" stroke-width="0" stroke-dasharray="10 5" stroke-linejoin="round" fill="#808080"/&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="filtros-y-efectos">Filtros y efectos</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/1-clipPath.svg" alt="1 clipPath"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg viewBox=&quot;0 0 100 100&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;clipPath id=&quot;myClip&quot;&gt;
-    &lt;circle cx=&quot;40&quot; cy=&quot;35&quot; r=&quot;35&quot; /&gt;
+             </div>
+            </div>
+           </div>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+      <div class="sect3">
+       <h4 id="filtros-y-efectos">
+        Filtros y efectos
+       </h4>
+       <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+         <col style="width: 25%;"/>
+         <col style="width: 75%;"/>
+        </colgroup>
+        <tbody>
+         <tr>
+          <td class="tableblock halign-center valign-middle">
+           <div class="content">
+            <div class="paragraph">
+             <p>
+              <span class="image">
+               <img alt="1 clipPath" src="images/1-clipPath.svg"/>
+              </span>
+             </p>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;clipPath id="myClip"&gt;
+    &lt;circle cx="40" cy="35" r="35" /&gt;
   &lt;/clipPath&gt;
-  &lt;path id=&quot;heart&quot; d=&quot;M10,30 A20,20,0,0,1,50,30 A20,20,0,0,1,90,30 Q90,60,50,90 Q10,60,10,30 Z&quot; /&gt;
-  &lt;use clip-path=&quot;url(#myClip)&quot; href=&quot;#heart&quot; fill=&quot;red&quot; /&gt;
+  &lt;path id="heart" d="M10,30 A20,20,0,0,1,50,30 A20,20,0,0,1,90,30 Q90,60,50,90 Q10,60,10,30 Z" /&gt;
+  &lt;use clip-path="url(#myClip)" href="#heart" fill="red" /&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/1-desenfoque.svg" alt="1 desenfoque"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width=&quot;150px&quot; height=&quot;150px&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+             </div>
+            </div>
+           </div>
+          </td>
+         </tr>
+         <tr>
+          <td class="tableblock halign-center valign-middle">
+           <div class="content">
+            <div class="paragraph">
+             <p>
+              <span class="image">
+               <img alt="1 desenfoque" src="images/1-desenfoque.svg"/>
+              </span>
+             </p>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width="150px" height="150px" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
 &lt;defs&gt;
-  &lt;filter id=&quot;blurFilter&quot; y=&quot;-5&quot; height=&quot;40&quot;&gt;
-    &lt;feGaussianBlur in=&quot;SourceGraphic&quot; stdDeviation=&quot;3&quot; y=&quot;-&quot; /&gt;
+  &lt;filter id="blurFilter" y="-5" height="40"&gt;
+    &lt;feGaussianBlur in="SourceGraphic" stdDeviation="3" y="-" /&gt;
   &lt;/filter&gt;
-  &lt;filter id=&quot;offsetFilter&quot; y=&quot;-5&quot; height=&quot;5&quot;&gt;
-    &lt;feOffset result=&quot;offOut&quot; in=&quot;SourceAlpha&quot; dx=&quot;20&quot; dy=&quot;20&quot; /&gt;
+  &lt;filter id="offsetFilter" y="-5" height="5"&gt;
+    &lt;feOffset result="offOut" in="SourceAlpha" dx="20" dy="20" /&gt;
   &lt;/filter&gt;
 
 &lt;/defs&gt;
-  &lt;path d=&quot;M50 25 H100 V75 H50 Z&quot; stroke=&quot;green&quot; fill=&quot;red&quot; filter=&quot;url(#blurFilter)&quot; /&gt;
-  &lt;path d=&quot;M75 50 L50 125 H100 Z&quot; stroke=&quot;blue&quot; fill=&quot;green&quot; /&gt;
-  &lt;path d=&quot;M75 50 L50 125 H100 Z&quot; stroke=&quot;blue&quot; fill=&quot;green&quot; filter=&quot;url(#offsetFilter)&quot;/&gt;
-  &lt;path d=&quot;M-1000 100 H1000&quot; stroke=&quot;red&quot; fill=&quot;blue&quot; /&gt;
-  &lt;path d=&quot;M25 125 L50 175 L75 125 L100 175 L125 125&quot; stroke=&quot;none&quot; fill=&quot;#808080&quot; /&gt;
+  &lt;path d="M50 25 H100 V75 H50 Z" stroke="green" fill="red" filter="url(#blurFilter)" /&gt;
+  &lt;path d="M75 50 L50 125 H100 Z" stroke="blue" fill="green" /&gt;
+  &lt;path d="M75 50 L50 125 H100 Z" stroke="blue" fill="green" filter="url(#offsetFilter)"/&gt;
+  &lt;path d="M-1000 100 H1000" stroke="red" fill="blue" /&gt;
+  &lt;path d="M25 125 L50 175 L75 125 L100 175 L125 125" stroke="none" fill="#808080" /&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/2-clipPathUnits.svg" alt="2 clipPathUnits"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg viewBox=&quot;0 0 100 100&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;clipPath id=&quot;myClip1&quot; clipPathUnits=&quot;userSpaceOnUse&quot;&gt;
-    &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;35&quot; /&gt;
+             </div>
+            </div>
+           </div>
+          </td>
+         </tr>
+         <tr>
+          <td class="tableblock halign-center valign-middle">
+           <div class="content">
+            <div class="paragraph">
+             <p>
+              <span class="image">
+               <img alt="2 clipPathUnits" src="images/2-clipPathUnits.svg"/>
+              </span>
+             </p>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;clipPath id="myClip1" clipPathUnits="userSpaceOnUse"&gt;
+    &lt;circle cx="50" cy="50" r="35" /&gt;
   &lt;/clipPath&gt;
 
-  &lt;clipPath id=&quot;myClip2&quot; clipPathUnits=&quot;objectBoundingBox&quot;&gt;
-    &lt;circle cx=&quot;.5&quot; cy=&quot;.5&quot; r=&quot;.35&quot; /&gt;
+  &lt;clipPath id="myClip2" clipPathUnits="objectBoundingBox"&gt;
+    &lt;circle cx=".5" cy=".5" r=".35" /&gt;
   &lt;/clipPath&gt;
 
   &lt;!-- Some reference rect to materialized to clip path --&gt;
-  &lt;rect id=&quot;r1&quot; x=&quot;0&quot;  y=&quot;0&quot;  width=&quot;45&quot; height=&quot;45&quot; /&gt;
-  &lt;rect id=&quot;r2&quot; x=&quot;0&quot;  y=&quot;55&quot; width=&quot;45&quot; height=&quot;45&quot; /&gt;
-  &lt;rect id=&quot;r3&quot; x=&quot;55&quot; y=&quot;55&quot; width=&quot;45&quot; height=&quot;45&quot; /&gt;
-  &lt;rect id=&quot;r4&quot; x=&quot;55&quot; y=&quot;0&quot;  width=&quot;45&quot; height=&quot;45&quot; /&gt;
+  &lt;rect id="r1" x="0"  y="0"  width="45" height="45" /&gt;
+  &lt;rect id="r2" x="0"  y="55" width="45" height="45" /&gt;
+  &lt;rect id="r3" x="55" y="55" width="45" height="45" /&gt;
+  &lt;rect id="r4" x="55" y="0"  width="45" height="45" /&gt;
 
   &lt;!-- The first 3 rect are clipped with useSpaceOnUse units --&gt;
-  &lt;use clip-path=&quot;url(#myClip1)&quot; href=&quot;#r1&quot; fill=&quot;red&quot; /&gt;
-  &lt;use clip-path=&quot;url(#myClip1)&quot; href=&quot;#r2&quot; fill=&quot;red&quot; /&gt;
-  &lt;use clip-path=&quot;url(#myClip1)&quot; href=&quot;#r3&quot; fill=&quot;red&quot; /&gt;
+  &lt;use clip-path="url(#myClip1)" href="#r1" fill="red" /&gt;
+  &lt;use clip-path="url(#myClip1)" href="#r2" fill="red" /&gt;
+  &lt;use clip-path="url(#myClip1)" href="#r3" fill="red" /&gt;
 
   &lt;!-- The last rect is clipped with objectBoundingBox units --&gt;
-  &lt;use clip-path=&quot;url(#myClip2)&quot; href=&quot;#r4&quot; fill=&quot;red&quot; /&gt;
+  &lt;use clip-path="url(#myClip2)" href="#r4" fill="red" /&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="elementos">Elementos</h3>
-<div class="sect3">
-<h4 id="simples">Simples</h4>
-<div class="sect4">
-<h5 id="figuras">Figuras</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/1-figuras.svg" alt="1 figuras"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width=&quot;300px&quot; height=&quot;200px&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;rect x=&quot;50&quot; y=&quot;25&quot; width=&quot;50&quot; height=&quot;50&quot; stroke=&quot;black&quot; fill=&quot;none&quot; /&gt;
-  &lt;polygon points=&quot;75,50  50,125  100,125&quot; stroke=&quot;black&quot; fill=&quot;none&quot; /&gt;
-  &lt;line x1=&quot;-1000&quot; y1=&quot;100&quot; x2=&quot;1000&quot; y2=&quot;100&quot; stroke=&quot;black&quot; fill=&quot;none&quot; /&gt;
-  &lt;polyline points=&quot;25 125 50 175 75 125 100 175 125 125&quot; stroke=&quot;black&quot; fill=&quot;none&quot; /&gt;
+             </div>
+            </div>
+           </div>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+     </div>
+     <div class="sect2">
+      <h3 id="elementos">
+       Elementos
+      </h3>
+      <div class="sect3">
+       <h4 id="simples">
+        Simples
+       </h4>
+       <div class="sect4">
+        <h5 id="figuras">
+         Figuras
+        </h5>
+        <table class="tableblock frame-all grid-all stretch">
+         <colgroup>
+          <col style="width: 25%;"/>
+          <col style="width: 75%;"/>
+         </colgroup>
+         <tbody>
+          <tr>
+           <td class="tableblock halign-left valign-top">
+            <div class="content">
+             <div class="paragraph">
+              <p>
+               <span class="image">
+                <img alt="1 figuras" src="images/1-figuras.svg"/>
+               </span>
+              </p>
+             </div>
+            </div>
+           </td>
+           <td class="tableblock halign-left valign-top">
+            <div class="content">
+             <div class="listingblock">
+              <div class="content">
+               <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width="300px" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;rect x="50" y="25" width="50" height="50" stroke="black" fill="none" /&gt;
+  &lt;polygon points="75,50  50,125  100,125" stroke="black" fill="none" /&gt;
+  &lt;line x1="-1000" y1="100" x2="1000" y2="100" stroke="black" fill="none" /&gt;
+  &lt;polyline points="25 125 50 175 75 125 100 175 125 125" stroke="black" fill="none" /&gt;
 
-  &lt;circle cx=&quot;40&quot; cy=&quot;40&quot; r=&quot;24&quot; stroke=&quot;black&quot; fill=&quot;none&quot; /&gt;
-  &lt;ellipse cx=&quot;40&quot; cy=&quot;40&quot; rx=&quot;30&quot; ry=&quot;15&quot; stroke=&quot;black&quot; fill=&quot;none&quot; /&gt;
+  &lt;circle cx="40" cy="40" r="24" stroke="black" fill="none" /&gt;
+  &lt;ellipse cx="40" cy="40" rx="30" ry="15" stroke="black" fill="none" /&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="textos">Textos</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/2-textos.png" alt="2 textos"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width=&quot;1000px&quot; height=&quot;1000px&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;text x=&quot;25&quot; y=&quot;60&quot;
-    stroke=&quot;red&quot; stroke-width=&quot;3&quot;
-    font-family=&quot;serif&quot; font-size=&quot;50&quot;&gt;Texto simple&lt;/text&gt;
-  &lt;text x=&quot;50&quot; y=&quot;120&quot;
-    stroke=&quot;blue&quot; stroke-width=&quot;2&quot;
-    font-family=&quot;sans-serif&quot; font-size=&quot;30&quot;&gt;
+              </div>
+             </div>
+            </div>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div class="sect4">
+        <h5 id="textos">
+         Textos
+        </h5>
+        <table class="tableblock frame-all grid-all stretch">
+         <colgroup>
+          <col style="width: 30%;"/>
+          <col style="width: 70%;"/>
+         </colgroup>
+         <tbody>
+          <tr>
+           <td class="tableblock halign-center valign-middle">
+            <div class="content">
+             <div class="paragraph">
+              <p>
+               <span class="image">
+                <img alt="2 textos" src="images/2-textos.png"/>
+               </span>
+              </p>
+             </div>
+            </div>
+           </td>
+           <td class="tableblock halign-left valign-top">
+            <div class="content">
+             <div class="listingblock">
+              <div class="content">
+               <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width="1000px" height="1000px" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;text x="25" y="60"
+    stroke="red" stroke-width="3"
+    font-family="serif" font-size="50"&gt;Texto simple&lt;/text&gt;
+  &lt;text x="50" y="120"
+    stroke="blue" stroke-width="2"
+    font-family="sans-serif" font-size="30"&gt;
       Texto
-      &lt;tspan font-size=&quot;20&quot; dx=&quot;5&quot; dy=&quot;-20&quot;
-        stroke=&quot;green&quot; stroke-width=&quot;1&quot;&gt;en varias&lt;/tspan&gt;
+      &lt;tspan font-size="20" dx="5" dy="-20"
+        stroke="green" stroke-width="1"&gt;en varias&lt;/tspan&gt;
       líneas
   &lt;/text&gt;
-  &lt;text x=&quot;150&quot; y=&quot;150&quot; rotate=&quot;45&quot;&gt;Letras inclinadas&lt;/text&gt;
-  &lt;text x=&quot;150&quot; y=&quot;175&quot; rotate=&quot;180&quot;&gt;Letras al revés&lt;/text&gt;
-  &lt;text x=&quot;150&quot; y=&quot;200&quot; textlength=&quot;10px&quot;&gt;Texto cortado&lt;/text&gt;
-  &lt;text x=&quot;150&quot; y=&quot;225&quot; lengthAdjust=&quot;150%&quot;&gt;Texto ajustado&lt;/text&gt;
-  &lt;path id=&quot;path&quot; d=&quot;M50,250 L75,150 L150,250&quot; fill=&quot;transparent&quot; /&gt;
+  &lt;text x="150" y="150" rotate="45"&gt;Letras inclinadas&lt;/text&gt;
+  &lt;text x="150" y="175" rotate="180"&gt;Letras al revés&lt;/text&gt;
+  &lt;text x="150" y="200" textlength="10px"&gt;Texto cortado&lt;/text&gt;
+  &lt;text x="150" y="225" lengthAdjust="150%"&gt;Texto ajustado&lt;/text&gt;
+  &lt;path id="path" d="M50,250 L75,150 L150,250" fill="transparent" /&gt;
   &lt;text&gt;
-    &lt;textPath href=&quot;#path&quot;&gt;
+    &lt;textPath href="#path"&gt;
         Un texto siguiendo un caminito
     &lt;/textPath&gt;
   &lt;/text&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="imágenes">Imágenes</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/3-imagenes.png" alt="3 imagenes"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width=&quot;300px&quot; height=&quot;200px&quot; version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;image x=&quot;0&quot; y=&quot;0&quot; width=&quot;50&quot; height=&quot;50&quot; href=&quot;svg.png&quot;/&gt;
-  &lt;image x=&quot;50&quot; y=&quot;50&quot; width=&quot;100&quot; height=&quot;100&quot; href=&quot;svg.png&quot;/&gt;
+              </div>
+             </div>
+            </div>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+       <div class="sect4">
+        <h5 id="imágenes">
+         Imágenes
+        </h5>
+        <table class="tableblock frame-all grid-all stretch">
+         <colgroup>
+          <col style="width: 30%;"/>
+          <col style="width: 70%;"/>
+         </colgroup>
+         <tbody>
+          <tr>
+           <td class="tableblock halign-left valign-top">
+            <div class="content">
+             <div class="paragraph">
+              <p>
+               <span class="image">
+                <img alt="3 imagenes" src="images/3-imagenes.png"/>
+               </span>
+              </p>
+             </div>
+            </div>
+           </td>
+           <td class="tableblock halign-left valign-top">
+            <div class="content">
+             <div class="listingblock">
+              <div class="content">
+               <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width="300px" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;image x="0" y="0" width="50" height="50" href="svg.png"/&gt;
+  &lt;image x="50" y="50" width="100" height="100" href="svg.png"/&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="compuestos">Compuestos</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/4-mascaras.svg" alt="4 mascaras"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg viewBox=&quot;-10 -10 120 120&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;mask id=&quot;myMask&quot;&gt;
+              </div>
+             </div>
+            </div>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+      </div>
+      <div class="sect3">
+       <h4 id="compuestos">
+        Compuestos
+       </h4>
+       <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+         <col style="width: 20%;"/>
+         <col style="width: 80%;"/>
+        </colgroup>
+        <tbody>
+         <tr>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="paragraph">
+             <p>
+              <span class="image">
+               <img alt="4 mascaras" src="images/4-mascaras.svg"/>
+              </span>
+             </p>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg viewBox="-10 -10 120 120" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;mask id="myMask"&gt;
 &lt;!-- Everything under a white pixel will be visible --&gt;
-    &lt;rect x=&quot;0&quot; y=&quot;0&quot; width=&quot;100&quot; height=&quot;100&quot; fill=&quot;white&quot; /&gt;
+    &lt;rect x="0" y="0" width="100" height="100" fill="white" /&gt;
 
 &lt;!-- Everything under a black pixel will be invisible --&gt;
-    &lt;path d=&quot;M10,35 A20,20,0,0,1,50,35 A20,20,0,0,1,90,35 Q90,65,50,95 Q10,65,10,35 Z&quot; fill=&quot;black&quot; /&gt;
+    &lt;path d="M10,35 A20,20,0,0,1,50,35 A20,20,0,0,1,90,35 Q90,65,50,95 Q10,65,10,35 Z" fill="black" /&gt;
   &lt;/mask&gt;
 
-  &lt;polygon points=&quot;-10,110 110,110 110,-10&quot; fill=&quot;orange&quot; /&gt;
+  &lt;polygon points="-10,110 110,110 110,-10" fill="orange" /&gt;
 
-&lt;!-- with this mask applied, we &quot;punch&quot; a heart shape hole into the circle --&gt;
-  &lt;circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot; mask=&quot;url(#myMask)&quot; /&gt;
+&lt;!-- with this mask applied, we "punch" a heart shape hole into the circle --&gt;
+  &lt;circle cx="50" cy="50" r="50" mask="url(#myMask)" /&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/3-patrones.svg" alt="3 patrones"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg viewBox=&quot;0 0 230 100&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+             </div>
+            </div>
+           </div>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+         <col style="width: 20%;"/>
+         <col style="width: 80%;"/>
+        </colgroup>
+        <tbody>
+         <tr>
+          <td class="tableblock halign-center valign-middle">
+           <div class="content">
+            <div class="paragraph">
+             <p>
+              <span class="image">
+               <img alt="3 patrones" src="images/3-patrones.svg"/>
+              </span>
+             </p>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg viewBox="0 0 230 100" xmlns="http://www.w3.org/2000/svg"&gt;
   &lt;defs&gt;
-    &lt;pattern id=&quot;star&quot; viewBox=&quot;0,0,10,10&quot; width=&quot;10%&quot; height=&quot;10%&quot;&gt;
-      &lt;polygon points=&quot;0,0 2,5 0,10 5,8 10,10 8,5 10,0 5,2&quot;/&gt;
+    &lt;pattern id="star" viewBox="0,0,10,10" width="10%" height="10%"&gt;
+      &lt;polygon points="0,0 2,5 0,10 5,8 10,10 8,5 10,0 5,2"/&gt;
     &lt;/pattern&gt;
   &lt;/defs&gt;
 
-  &lt;circle cx=&quot;50&quot;  cy=&quot;50&quot; r=&quot;50&quot; fill=&quot;url(#star)&quot;/&gt;
-  &lt;circle cx=&quot;180&quot; cy=&quot;50&quot; r=&quot;40&quot; fill=&quot;none&quot; stroke-width=&quot;20&quot; stroke=&quot;url(#star)&quot;/&gt;
+  &lt;circle cx="50"  cy="50" r="50" fill="url(#star)"/&gt;
+  &lt;circle cx="180" cy="50" r="40" fill="none" stroke-width="20" stroke="url(#star)"/&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="animaciones">Animaciones</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><object type="image/svg+xml" data="images/1-cambiar.svg" width="300"><span class="alt">nteractive</span></object></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg version=&quot;1.1&quot; width=&quot;300&quot; height=&quot;200&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-    &lt;circle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;25&quot; stroke=&quot;none&quot; fill=&quot;green&quot;&gt;
-        &lt;set attributeName=&quot;r&quot; to=&quot;100&quot; begin=&quot;1s&quot; attributeType=&quot;XML&quot; /&gt;
+             </div>
+            </div>
+           </div>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+     </div>
+     <div class="sect2">
+      <h3 id="animaciones">
+       Animaciones
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 20%;"/>
+        <col style="width: 80%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <object data="images/1-cambiar.svg" type="image/svg+xml" width="300">
+               <span class="alt">
+                nteractive
+               </span>
+              </object>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"&gt;
+    &lt;circle cx="30" cy="30" r="25" stroke="none" fill="green"&gt;
+        &lt;set attributeName="r" to="100" begin="1s" attributeType="XML" /&gt;
     &lt;/circle&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><object type="image/svg+xml" data="images/2-desplazar.svg" width="300"><span class="alt">interactive</span></object></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg version=&quot;1.1&quot; width=&quot;150&quot; height=&quot;120&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-    &lt;circle cx=&quot;-25&quot; cy=&quot;30&quot; r=&quot;25&quot; fill=&quot;green&quot;&gt;
-        &lt;animate attributeName=&quot;cx&quot; from=&quot;-25&quot; to=&quot;205&quot;
-            begin=&quot;0s&quot; dur=&quot;3s&quot; repeatCount=&quot;indefinite&quot; /&gt;
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 20%;"/>
+        <col style="width: 80%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <object data="images/2-desplazar.svg" type="image/svg+xml" width="300">
+               <span class="alt">
+                interactive
+               </span>
+              </object>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg version="1.1" width="150" height="120" xmlns="http://www.w3.org/2000/svg"&gt;
+    &lt;circle cx="-25" cy="30" r="25" fill="green"&gt;
+        &lt;animate attributeName="cx" from="-25" to="205"
+            begin="0s" dur="3s" repeatCount="indefinite" /&gt;
     &lt;/circle&gt;
-    &lt;text x=&quot;-90&quot; y=&quot;70&quot; fill=&quot;red&quot;&gt;
-        &lt;animate attributeName=&quot;x&quot; from=&quot;-90&quot; to=&quot;140&quot;
-            begin=&quot;0s&quot; dur=&quot;3s&quot; repeatCount=&quot;indefinite&quot; /&gt;
+    &lt;text x="-90" y="70" fill="red"&gt;
+        &lt;animate attributeName="x" from="-90" to="140"
+            begin="0s" dur="3s" repeatCount="indefinite" /&gt;
         ¿a dónde vas?
     &lt;/text&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/3-desplazarCamino.svg" alt="3 desplazarCamino"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg viewBox=&quot;0 0 200 100&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
-  &lt;path fill=&quot;none&quot; stroke=&quot;lightgrey&quot;
-    d=&quot;M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z&quot; /&gt;
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 20%;"/>
+        <col style="width: 80%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="3 desplazarCamino" src="images/3-desplazarCamino.svg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;path fill="none" stroke="lightgrey"
+    d="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" /&gt;
 
-  &lt;circle r=&quot;5&quot; fill=&quot;red&quot;&gt;
-    &lt;animateMotion dur=&quot;10s&quot; repeatCount=&quot;indefinite&quot;
-      path=&quot;M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z&quot; /&gt;
+  &lt;circle r="5" fill="red"&gt;
+    &lt;animateMotion dur="10s" repeatCount="indefinite"
+      path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" /&gt;
   &lt;/circle&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/4-desplazarCamino.svg" alt="4 desplazarCamino"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width=&quot;100%&quot; height=&quot;100%&quot;  viewBox=&quot;0 0 500 300&quot;
-     xmlns=&quot;http://www.w3.org/2000/svg&quot;
-     xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; &gt;
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="4 desplazarCamino" src="images/4-desplazarCamino.svg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width="100%" height="100%"  viewBox="0 0 500 300"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink" &gt;
 
-  &lt;rect x=&quot;1&quot; y=&quot;1&quot; width=&quot;498&quot; height=&quot;298&quot;
-        fill=&quot;none&quot; stroke=&quot;blue&quot; stroke-width=&quot;2&quot; /&gt;
+  &lt;rect x="1" y="1" width="498" height="298"
+        fill="none" stroke="blue" stroke-width="2" /&gt;
 
-  &lt;path id=&quot;path1&quot; d=&quot;M100,250 C 100,50 400,50 400,250&quot;
-        fill=&quot;none&quot; stroke=&quot;blue&quot; stroke-width=&quot;7.06&quot;  /&gt;
-  &lt;circle cx=&quot;100&quot; cy=&quot;250&quot; r=&quot;17.64&quot; fill=&quot;blue&quot;  /&gt;
-  &lt;circle cx=&quot;250&quot; cy=&quot;100&quot; r=&quot;17.64&quot; fill=&quot;blue&quot;  /&gt;
-  &lt;circle cx=&quot;400&quot; cy=&quot;250&quot; r=&quot;17.64&quot; fill=&quot;blue&quot;  /&gt;
+  &lt;path id="path1" d="M100,250 C 100,50 400,50 400,250"
+        fill="none" stroke="blue" stroke-width="7.06"  /&gt;
+  &lt;circle cx="100" cy="250" r="17.64" fill="blue"  /&gt;
+  &lt;circle cx="250" cy="100" r="17.64" fill="blue"  /&gt;
+  &lt;circle cx="400" cy="250" r="17.64" fill="blue"  /&gt;
 
-  &lt;path d=&quot;M-25,-12.5 L25,-12.5 L 0,-87.5 z&quot;
-        fill=&quot;yellow&quot; stroke=&quot;red&quot; stroke-width=&quot;7.06&quot;  &gt;
-    &lt;animateMotion dur=&quot;6s&quot; repeatCount=&quot;indefinite&quot; rotate=&quot;auto&quot; &gt;
-       &lt;mpath xlink:href=&quot;#path1&quot;/&gt;
+  &lt;path d="M-25,-12.5 L25,-12.5 L 0,-87.5 z"
+        fill="yellow" stroke="red" stroke-width="7.06"  &gt;
+    &lt;animateMotion dur="6s" repeatCount="indefinite" rotate="auto" &gt;
+       &lt;mpath xlink:href="#path1"/&gt;
     &lt;/animateMotion&gt;
   &lt;/path&gt;
 
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/5-transformacion.svg" alt="5 transformacion"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width=&quot;120&quot; height=&quot;120&quot; viewBox=&quot;0 0 120 120&quot;
-     xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="5 transformacion" src="images/5-transformacion.svg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="svg">&lt;svg width="120" height="120" viewBox="0 0 120 120"
+     xmlns="http://www.w3.org/2000/svg"&gt;
 
-    &lt;polygon points=&quot;60,30 90,90 30,90&quot;&gt;
-        &lt;animateTransform attributeName=&quot;transform&quot;
-                          attributeType=&quot;XML&quot;
-                          type=&quot;rotate&quot;
-                          from=&quot;0 60 70&quot;
-                          to=&quot;360 60 70&quot;
-                          dur=&quot;10s&quot;
-                          repeatCount=&quot;indefinite&quot;/&gt;
+    &lt;polygon points="60,30 90,90 30,90"&gt;
+        &lt;animateTransform attributeName="transform"
+                          attributeType="XML"
+                          type="rotate"
+                          from="0 60 70"
+                          to="360 60 70"
+                          dur="10s"
+                          repeatCount="indefinite"/&gt;
     &lt;/polygon&gt;
 &lt;/svg&gt;</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="sintesis"><strong>Sintesis</strong></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="bibliografía"><strong>Bibliografía</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ponente">Ponente</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 30%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Luis Fernández Muñoz</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Formador/Consultor</em></p>
-</li>
-<li>
-<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
-</li>
-<li>
-<p><em>Ingeniero en Informática por la UMA</em></p>
-</li>
-<li>
-<p><em>Diplomado en Informática por la UPM</em></p>
-</li>
-<li>
-<p><em>Profesor Titular de ETSISI de la UPM</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="footer">
-<div id="footer-text">
-Version 0.0.1<br>
-Last updated 2022-11-14 10:54:06 +0100
-</div>
-</div>
-<style>
-/* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="sintesis">
+     <strong>
+      Sintesis
+     </strong>
+    </h2>
+    <div class="sectionbody">
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="bibliografía">
+     <strong>
+      Bibliografía
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="ponente">
+     Ponente
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Luis Fernández Muñoz
+               </em>
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Formador/Consultor
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://es.linkedin.com/in/luisfernandezmunyoz">
+                  <em>
+                   Linkedin
+                  </em>
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="setillo" src="images/setillo.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Doctor en Inteligencia Artificial por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Ingeniero en Informática por la UMA
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Diplomado en Informática por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Profesor Titular de ETSISI de la UPM
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div id="footer-text">
+    Version 0.0.1
+    <br/>
+    Last updated 2022-11-14 10:54:06 +0100
+   </div>
+  </div>
+  <style>
+   /* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
 pre.CodeRay{background:#f7f7f8}
 .CodeRay .line-numbers{border-right:1px solid currentColor;opacity:.35;padding:0 .5em 0 0}
 .CodeRay span.line-numbers{display:inline-block;margin-right:.75em}
@@ -1924,9 +3025,9 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 .CodeRay .delete .delete{color:#800}
 .CodeRay .change .change{color:#66f}
 .CodeRay .head .head{color:#f4f}
-</style>
-<script>
-                let speed = 50;
+  </style>
+  <script>
+   let speed = 50;
                 
                 function typeWriter(v) {
                   let i = v.getAttribute("typewriter-index")
@@ -1958,6 +3059,6 @@ table.CodeRay td.code{padding:0 0 0 .75em}
                 })
                 
                 setTimeout(typeWriterAll, speed);
-                
-                </script>
+  </script>
+ </body>
 </html>

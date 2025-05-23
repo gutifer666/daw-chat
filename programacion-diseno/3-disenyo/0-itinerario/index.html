@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8">
-<meta name="author" content="Universo Santa Tecla">
-<title>Disciplina de Diseño</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-<style>
-/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Asciidoctor 2.0.8" name="generator"/>
+  <meta content="Universo Santa Tecla" name="author"/>
+  <title>
+   Disciplina de Diseño
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700" rel="stylesheet"/>
+  <style>
+   /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
@@ -434,1565 +436,3440 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="book">
-<div id="header">
-<h1>Disciplina de Diseño</h1>
-<div class="details">
-<span id="author" class="author">Universo Santa Tecla</span><br>
-<span id="email" class="email"><a href="mailto:USantaTecla@gmail.com">USantaTecla@gmail.com</a></span><br>
-<span id="revnumber">version 0.0.1</span>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Índice</div>
-<ul class="sectlevel1">
-<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
-<li><a href="#qué"><strong>¿Qué?</strong></a></li>
-<li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
-<li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
-<li><a href="#sencillez">Sencillez</a></li>
-<li><a href="#kiss">KISS</a></li>
-<li><a href="#código-limpio">Código Limpio</a></li>
-<li><a href="#itinerario">Itinerario</a></li>
-<li><a href="#sintesis"><strong>Sintesis</strong></a></li>
-<li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
-<li><a href="#ponente">Ponente</a></li>
-</ul>
-</div>
-</div>
-<div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="por-qué"><strong>¿Por qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">malas variables en su economía</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">ámbito incumplido</strong> y/o</p>
-</li>
-<li>
-<p><strong class="red">tiempo incumplido</strong> y/o</p>
-</li>
-<li>
-<p><strong class="red">coste incumplido</strong>;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">mala calidad del software</strong>, <span class="red">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">mala mantenibilidad</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">viscoso</strong>, porque <span class="red">no se puede entender con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">rígido</strong>, porque <span class="red">no se puede cambiar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">frágil</strong>, porque <span class="red">no se puede probar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">inmovil</strong>, porque <span class="red">no se puede reutilizar con facilidad</span> y/o</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">complejidad arbitraria</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/davidProyectoImplantacionDiseñoMal.png" alt="davidProyectoImplantacionDiseñoMal"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/arbolNoMantenible.jpeg" alt="arbolNoMantenible"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="imageblock">
-<div class="content">
-<img src="images/diagramaCitas.svg" alt="diagramaCitas" width="1262" height="2483">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="qué"><strong>¿Qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/disenyoRAE.png" alt="disenyoRAE"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/disenyosUML.jpg" alt="disenyosUML"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="yellow">Análisis</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="green">Diseño</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="yellow">analizar los requisitos a través de su refinamiento y estructura para realizar una compresión más precisa de los requisitos, una descripción de los requisitos que es fácil de mantener y ayuda a estructurar el sistema</strong>:</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="green">desarrollar enfocados en los requisitos no funcionales y en el dominio de la solución para preparar para la implementación y pruebas del sistema</strong>:</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Dar una <strong class="yellow">especificación más precisa de los requisitos</strong> obtenidos en la captura de requisitos</p>
-</li>
-<li>
-<p>Describir <strong class="yellow">usando el lenguaje de los desarrolladores</strong> y poder introducir más formalismo y ser utilizado para razonar sobre el funcionamiento interno del sistema</p>
-</li>
-<li>
-<p><strong class="yellow">Estructurar los requisitos</strong> de manera que facilite su comprensión, cambiándolos y, en general, mantenerlos</p>
-</li>
-<li>
-<p><strong class="yellow">Acercase al diseño</strong>, aunque sea un modelo en sí mismo, y es por tanto un elemento esencial cuando el sistema está conformado en diseño e implementación</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Adquirir una <strong class="green">comprensión profunda sobre los aspectos de los requisitos no funcionales y limitaciones</strong> relacionadas con:</p>
-</li>
-<li>
-<p>los <strong class="green">lenguajes de programación</strong>,</p>
-</li>
-<li>
-<p>la <strong class="green">reutilización de componentes</strong>,</p>
-</li>
-<li>
-<p><strong class="green">sistemas operativos</strong>,</p>
-</li>
-<li>
-<p><strong class="green">tecnologías de distribución y concurrencia</strong>,</p>
-</li>
-<li>
-<p><strong class="green">tecnologías de bases de datos</strong>,</p>
-</li>
-<li>
-<p><strong class="green">tecnologías de interfaz de usuario</strong>,</p>
-</li>
-<li>
-<p><strong class="green">tecnologías de gestión de transacciones</strong>,</p>
-</li>
-<li>
-<p>y así sucesivamente</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.softdevbigideas.com/just-enough-design-up-front.html"><strong><em>Diseño suficiente</em></strong></a> (<em>JEDUF, Just Enough Design Upfront vs BDUF, Big Design Upfront</em>)</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Vista de Diseño/Lógica</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Diseño sistemas</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Vistas de Implementación/Desarrollo</strong></p>
-</li>
-<li>
-<p><strong>Vista Física/Despligue</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="para-qué"><strong>¿Para qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Efectividad, eficacia y eficiencia, del Proyecto Software</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buenas variables en su economía</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">ámbito cumplido</strong> y</p>
-</li>
-<li>
-<p><strong class="green">tiempo cumplido</strong> y</p>
-</li>
-<li>
-<p><strong class="green">coste cumplido</strong>;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buena calidad del software</strong>, <span class="green">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buena mantenibilidad</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">fluido</strong>, porque <span class="green">se puede entender con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">flexible</strong>, porque <span class="green">se puede cambiar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">fuerte</strong>, porque <span class="green">se puede probar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">reusable</strong>, porque <span class="green">se puede reutilizar con facilidad</span> y/o</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">complejidad inherente</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/davidProyectoImplantacionDiseño.png" alt="davidProyectoImplantacionDiseño"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/arbolMantenible.jpeg" alt="arbolMantenible"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 8.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 16.6666%;">
-<col style="width: 25%;">
-<col style="width: 16.6668%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="5"><strong class="blue">Objetivos</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Capacitar para <strong class="blue">visualizar y razonar sobre el diseño</strong> utilizando una notación común</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Crear una abstracción sin fisuras de la implementación del sistema, en el sentido de que la aplicación es un refinamiento sencillo del diseño mediante la cumplimentación de la "carne", pero sin cambiar la estructura, el esqueleto. Esto permite el uso de técnicas como la generación de código con <strong class="blue">ingeniería directa e inversa</strong> entre el diseño y la implementación</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Crear una entrada apropiada como <strong class="blue">punto de partida para las disciplinas posteriores</strong> mediante la captura de los requisitos correspondientes a los distintos subsistemas, interfaces y clases</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Captura las <strong class="blue">interfaces principales entre los subsistemas</strong> del ciclo de vida del software. Esto es útil cuando razonamos sobre la arquitectura y cuando usamos las interfaces como instrumentos de sincronización entre los diferentes equipos de desarrollo</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Capacitar para la <strong class="blue">descomposición del trabajo</strong> de implementación en piezas más manejables gestionados por diferentes equipos de desarrollo, posiblemente al mismo tiempo</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Lenguaje Unificado de Desarrollo</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Disciplina de <strong class="aqua">Implementación</strong>, <strong class="blue">Pruebas</strong> y <strong class="fuchsia">Despliegue</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="gray">Disciplina de Gestión</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cómo"><strong>¿Cómo?</strong></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="sencillez">Sencillez</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-Divide et impera (divide y vencerás)
-</blockquote>
-<div class="attribution">
-&#8212; Máxima Latina<br>
-<cite>Julio César, Napoleón, Imperio Británico, ...</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-En igualdad de condiciones, la explicación <strong>más sencilla suele ser la correcta</strong>
-</blockquote>
-<div class="attribution">
-&#8212; Navaja de Occam
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-Cualquier <strong>tonto inteligente</strong> puede hacer <strong>cosas más grandes y más complejas</strong> &#8230;&#8203; se necesita un <strong>toque de genialidad y mucho coraje</strong> para moverse en la <strong>dirección opuesta</strong>"
-</blockquote>
-<div class="attribution">
-&#8212; Einstein<br>
-<cite>A.</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-El descubrimiento de un <strong>orden no es tarea fácil</strong>. . . . sin embargo, una vez que el orden ha sido <strong>descubierto no hay dificultad alguna en reconocerlo</strong>
-</blockquote>
-<div class="attribution">
-&#8212; Descartes
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 25%;">
-<col style="width: 15%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>Circulo</strong> con 3 valores, abcisa, ordenada y radio, se definen infinitos puntos con máxima área para el mismo perímetro</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>Simetría</strong>, la explicación de una parte se reutiliza para la otra</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>Sistema de numeración binario</strong> con secuencias de 2 símbolos permite construir infinitos números</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>Proporciones, razones, relaciones, funciones, ecuaciones, &#8230;&#8203;</strong></em>: <em>y=2^x, con 5 elementos defino infinitos puntos correspondientes a otro dado</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>Orden, criterio, &#8230;&#8203;</strong>: determina la localización de elementos en una posición precisa</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="5"><div class="content"><div class="paragraph">
-<p><em><strong>Reusabilidad</strong>: disfrutando de la misma distancia, fórmula, manera, &#8230;&#8203; para ahorrar esfuerzos</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="5"><div class="content"><div class="paragraph">
-<p><em>Cuando el grajo vuela bajo, hace un frio del carajo!!! &#8230;&#8203;</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="kiss">KISS</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Antónimos</th>
-<th class="tableblock halign-left valign-top">Antonyms</th>
-<th class="tableblock halign-left valign-top">Libro</th>
-<th class="tableblock halign-left valign-top">Autor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="green">Mantenlo sencillo, estúpido!</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Keep it simple, stupid!</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>En un portaviones?!?</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Kelly Jhonson</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="green">Mantenlo pequeño y sencillo!</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Keep it short and simple</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="green">Mantenlo pequeño y simple!</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Keep it small and simple</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Comprender el algoritmo</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Understand the Algorithm</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Smell Code (Clean Code)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Robert Martin</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Antónimos</th>
-<th class="tableblock halign-left valign-top">Antonyms</th>
-<th class="tableblock halign-left valign-top">Libro</th>
-<th class="tableblock halign-left valign-top">Autor</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">Código Espagueti</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Spaghetti Code</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Antipatrón de Desarrollo</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>William H. Brown et al</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Generalidad Espculativa</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Speculative Generality</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Smell Code -(Refactoring)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Martin Fowler</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Intenciones obscuras</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Obscured Intent</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Smell Code (Clean Code)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Robert Martin</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 30%;">
-<col style="width: 25%;">
-<col style="width: 20%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-Hay dos maneras de diseñar software: una es <strong class="green">hacerlo tan simple que sea obvia su falta de deficiencias</strong>, y la otra es <strong class="red">hacerlo tan complejo que no haya deficiencias obvias</strong>
-</blockquote>
-<div class="attribution">
-&#8212; C.A.R. Hoare<br>
-<cite>1980 ACM Turing Award Lecture</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-“Sin embargo, <strong class="red">no es suficiente para dejar las comillas alrededor de la palabra ‘funciona’</strong>. Usted debe saber que la solución es correcta. A menudo, la mejor manera de obtener este conocimiento y comprensión es refactorizar la función en algo que es <strong class="green">tan limpio y expresivo que es obvio cómo funciona</strong>".
-</blockquote>
-<div class="attribution">
-&#8212; Martin Fowler
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-La diferencia entre un programador inteligente y un programador profesional es que el profesional entiende que <strong class="green">la claridad es el rey</strong>. Los profesionales utilizan su potencia para lo bueno y <strong class="green">escribir código que otros puedan entender</strong>
-</blockquote>
-<div class="attribution">
-&#8212; Martin Fowler
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<strong class="red">Cualquier tonto puede escribir código que entienda un ordenador</strong>. Sólo los <strong class="green">buenos programadores escriben código que puedan entender los humanos</strong>
-</blockquote>
-<div class="attribution">
-&#8212; Martin Fowler<br>
-<cite>Refactoring</cite>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 70%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2">- <strong class="red">Violaciones</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Nombres de métodos con <strong class="red">extraños nombres abstractos</strong> deben ser renombrados para “traerlos a la tierra”</p>
-</li>
-<li>
-<p>Métodos que <strong class="red">no usan parámetros</strong> deberían ser eliminados</p>
-</li>
-<li>
-<p>Si tienes <strong class="red">clases abstractas que no están haciendo mucho</strong>, colapsa la jerarquía</p>
-</li>
-<li>
-<p><strong class="red">Innecesaria delegación</strong> puede ser eliminadacon la clase “en línea”</p>
-</li>
-<li>
-<p><strong class="red">Complejos algoritmos generalistas</strong> para situaciones muy concretas</p>
-</li>
-<li>
-<p><strong class="red">Complejos algritmos muy eficientes</strong> cuando no hay necesidad</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red"><strong>Casa de herrero, cuchara de palo</strong>, organizamos sistemas de información de los clientes perfectamente estructurados con sistemas de información de software preñados de ciclos, repeticiones, lastres, ilegibles, &#8230;&#8203; sin pruebas para probar cómo funciona si toco algo!!!</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="código-limpio">Código Limpio</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><em>Clean code</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-El código limpio es <strong>simple</strong> y <strong>directo</strong>. El código limpio se lee <strong>como una prosa bien escrita</strong>. El código limpio nunca oscurece la intención del diseñador, sino que está lleno de <strong>abstracciones nítidas</strong> y líneas directas de control
-</blockquote>
-<div class="attribution">
-&#8212; Grady Booch<br>
-<cite>Rational Unified Process</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-Sabes que estás trabajando en un código limpio cuando <strong>cada rutina que lees resulta ser más o menos lo que esperabas</strong>. Puede llamarlo <strong>código hermoso</strong> cuando el código también hace que parezca que el lenguaje fue creado para el problema
-</blockquote>
-<div class="attribution">
-&#8212; Ward Cunningham<br>
-<cite>Wiki</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<strong>Duplicación reducida</strong>, <strong>alta expresividad</strong> y construcción temprana de <strong>abstracciones simples</strong>. Eso es lo que hace que el código sea limpio para mí
-</blockquote>
-<div class="attribution">
-&#8212; Ron Jeffries<br>
-<cite>Extreme Programming Installed</cite>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-Me gusta que mi código sea elegante y eficiente. La <strong>lógica debe ser sencilla</strong> para dificultar la ocultación de los errores, las <strong>dependencias mínimas</strong> para facilitar el mantenimiento, el <strong>manejo de errores completo</strong> de acuerdo con una estrategia articulada y el rendimiento cercano al óptimo para no tentar a las personas a ensuciar el código con optimizaciones sin principios. El <strong>código limpio hace una cosa bien</strong>
-</blockquote>
-<div class="attribution">
-&#8212; Bjarne Stroustrup<br>
-<cite>The C++ Programming Language</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-El código limpio puede ser <strong>leído y mejorado por un desarrollador que no sea su autor original</strong>. Tiene <strong>pruebas unitarias y de aceptación</strong>. Tiene <strong>nombres significativos</strong>. Proporciona <strong>una forma en lugar de muchas formas de hacer una sola cosa</strong>. Tiene <strong>dependencias mínimas</strong>, que se definen explícitamente, y proporciona una <strong>API clara y mínima</strong>
-</blockquote>
-<div class="attribution">
-&#8212; Dave Thomas<br>
-<cite>Eclipse</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-Podría enumerar todas las cualidades que noto en un código limpio, pero hay una cualidad general que conduce a todas ellas. El código limpio siempre parece <strong>haber sido escrito por alguien a quien le importa</strong>. No hay <strong>nada obvio que puedas hacer para mejorarlo</strong>. El autor del código pensó en todas esas cosas, y si intentas imaginar mejoras, volverás a donde estás, sentándote apreciando el código que alguien te dejó, código dejado por alguien que se <strong>preocupa profundamente por el artesanía</strong>
-</blockquote>
-<div class="attribution">
-&#8212; Michael Feathers<br>
-<cite>Working Effectively with Legacy Code</cite>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="itinerario">Itinerario</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 60%;">
-<col style="width: 15%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Temas</th>
-<th class="tableblock halign-left valign-top">Contenidos</th>
-<th class="tableblock halign-left valign-top">Nivel</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="5"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaDisenyo.svg" alt="diagramaDisenyo" width="179" height="763">
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Arquitecturas MVC</strong>: Modelo/Vista/Controlador (MVP, MVVM, &#8230;&#8203;), <em>Data Access Object</em>, Arquitecturas Ágiles: <em>Hexagonal Architecture , Clean Architecture, Onion Architecture</em></p>
-</li>
-<li>
-<p><strong>Arquitectura del Software</strong>: actores, documentación 4+1 vistas, principios de cohesión y acoplamiento de paquetes</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Paquetes</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Patrones de Diseño</strong>: creacionales, estructurales, de comportamiento, <em>Object Value,</em> &#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Prácticas recurrentes</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Diseño Orientado a Objetos</strong>: Principios Open/Close, Sustitución de Liskov, Patrón Método Plantilla, Inversión de Dependencias, Inversión de Control, Inyección de Dependencias, &#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Jerarquías de Clasificación</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Diseño Modular</strong>: Cohesión, Acoplamiento, Granularidad, &#8230;&#8203;, <em>Smell Code,</em> &#8230;&#8203;, Modelo, Vista, Controlador, &#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Clase y Método</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Diseño</strong>: Modelo del Dominio, Gestión de Dependencias, DRY, YAGNI, nombrado,  comentarios, &#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Línea</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="sintesis"><strong>Sintesis</strong></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="bibliografía"><strong>Bibliografía</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>The Unified Modeling Language User Guide</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Booch, Jacobson, Rumbaugh</strong></p>
-</li>
-<li>
-<p>Pearson Education, 2005</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheUnifiedModelingLanguageUserGuide.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>UML Distilled. A Brief Guide to the Standard Object Modeling Language</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Fowler, Scott</strong></p>
-</li>
-<li>
-<p>Addison-Wesley, 2003</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/UMLDistilledABriefGuideToTheStandardObjectModelingLanguage.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Object Oriented Analysis and Design with Applications</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2011)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ObjectOrientedAnalysisAndDesignWithApplications.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Larman Craig</strong></p>
-</li>
-<li>
-<p>Prentice Hall; (2004)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ApplyingUML.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Object-Oriented Software Construction</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Bertrand Meyer</strong></p>
-</li>
-<li>
-<p>Prentice Hall; (1997)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ObjectOrientedSoftwareConstruction.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Eiffel : The Language (PRENTICE HALL OBJECT-ORIENTED SERIES)</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Bertrand Meyer</strong></p>
-</li>
-<li>
-<p>Prentice Hall; (1991)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Eiffel.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Code Complete</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Steve McConnell</strong></p>
-</li>
-<li>
-<p>Microsoft Press; (2004)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/CodeComplete.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Clean Code. A Handbook of Agile Software Craftsmanship</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Robert C. Martin</strong></p>
-</li>
-<li>
-<p>Prentice Hall; (2008)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/CleanCodeAHandbookOfAgileSoftwareCraftsmanship.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>An Introduction to Object-Oriented Programming</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Timothy A. Budd</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2001)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/AnIntroduction.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Agile Software Development, Principles, Patterns and Practices</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Robert-C Martin</strong></p>
-</li>
-<li>
-<p>Pearson; (2006)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/AgileSoftware.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>The Mythical Man Month. Essays on Software Engineering</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Frederick P. Brooks</strong></p>
-</li>
-<li>
-<p>Prentice Hall; (1995)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheMythicalManMonthEssaysOnSoftwareEngineering.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Object Solutions. Managing the Object Oriented Project</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (1789)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ObjectSolutionsManagingTheObjectOrientedProject.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Patrones de diseño</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Erich Gamma et al</strong></p>
-</li>
-<li>
-<p>Anaya (2002)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/PatronesDeDiseño.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>AntiPatterns: Refactoring Software, Architectures, and Projects in Crisis</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>William J. Brown</strong></p>
-</li>
-<li>
-<p>John Wiley &amp; Sons (1998)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/AntiPatterns.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Patterns of Enterprise Application Architecture</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Martin Fowler</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2002)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/PatternsOfEnterpriseApplicationArchitecture.jpg" alt="PatternsOfEnterpriseApplicationArchitecture" width="200" height="260"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Clean Architecture: A Craftsman&#8217;s Guide to Software Structure and Design</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Robert C Martin</strong></p>
-</li>
-<li>
-<p>Prentice Hall; (2017)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/CleanArchitecture.jpg" alt="CleanArchitecture" width="200" height="260"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>The Art of Software Architecture: Design Methods and Techniques</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Stephen T. Albin</strong></p>
-</li>
-<li>
-<p>Wiley; (2003)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheArtOfSoftwareArchitecture.jpg" alt="TheArtOfSoftwareArchitecture" width="200" height="260"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Software Systems Architecture: Working With Stakeholders Using Viewpoints and Perspectives</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Nick Rozanski</strong>, <strong>Eóin Woods</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2011)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/SoftwareSystemsArchitecture.jpg" alt="SoftwareSystemsArchitecture" width="200" height="260"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Software Architecture in Practice</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Len Bass</strong>, <strong>Paul Clements</strong>, <strong>Rick Kazman</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2012)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/SoftwareArchitectureInPractice.jpg" alt="SoftwareArchitectureInPractice" width="200" height="260"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Pattern-oriented Software Architecture: A System of Patterns</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Frank Buschmann</strong>, <strong>Regine Meunier</strong>, <strong>Hans Rohnert</strong>, <strong>Peter Sommerlad</strong></p>
-</li>
-<li>
-<p>Wiley (1996)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/PatternOrientedSoftwareArchitecture.jpg" alt="PatternOrientedSoftwareArchitecture" width="200" height="260"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Documenting Software Architectures</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Paul Clements</strong>, <strong>Felix Bachmann</strong>, <strong>Len Bass</strong> ..</p>
-</li>
-<li>
-<p>(2001)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/DocumentingSoftwareArchitectures.png" alt="DocumentingSoftwareArchitectures" width="200" height="260"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Integrating Software Architecture-Centric Methods into Extreme Programming</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Robert L. Nord</strong>, <strong>James E. Tomayko</strong>, <strong>Rob Wojcik</strong></p>
-</li>
-<li>
-<p>(2004)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/IntegratingSoftwareArchitectureCentricMethods.png" alt="IntegratingSoftwareArchitectureCentricMethods" width="200" height="260"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Refactoring. Improving the Design of Existing Code</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Martin Fowler,Kent Beck,John Brant,William Opdyke,Don Roberts</strong></p>
-</li>
-<li>
-<p>Addison Wesley; (1999)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/RefactoringImprovingTheDesignOfExistingCode.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Extreme Programming Explained. Embrace Change. Embracing Change</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Kent Beck,Cynthia Andres</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2004)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ExtremeProgrammingExplainedEmbraceChangeEmbracingChange.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>C++ Programming Language</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Stroustrup Bjarne</strong></p>
-</li>
-<li>
-<p>Addison Wesley; (2013)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/C++.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>The Clean Coder: A Code of Conduct for Professional Programmers</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Robert C. Martin</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2011)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheCleanCoder.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Desarrollo ágil esencial: Vuelta a las raíces</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Robert C. Martin</strong></p>
-</li>
-<li>
-<p>Anaya; (2020)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/DesarrolloAgil.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ponente">Ponente</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 30%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Luis Fernández Muñoz</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Formador/Consultor</em></p>
-</li>
-<li>
-<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
-</li>
-<li>
-<p><em>Ingeniero en Informática por la UMA</em></p>
-</li>
-<li>
-<p><em>Diplomado en Informática por la UPM</em></p>
-</li>
-<li>
-<p><em>Profesor Titular de ETSISI de la UPM</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="footer">
-<div id="footer-text">
-Version 0.0.1<br>
-Last updated 2022-10-16 16:25:40 +0200
-</div>
-</div>
-<script>
-                let speed = 50;
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+ </head>
+ <body class="book">
+  <div id="header">
+   <h1>
+    Disciplina de Diseño
+   </h1>
+   <div class="details">
+    <span class="author" id="author">
+     Universo Santa Tecla
+    </span>
+    <br/>
+    <span class="email" id="email">
+     <a href="mailto:USantaTecla@gmail.com">
+      USantaTecla@gmail.com
+     </a>
+    </span>
+    <br/>
+    <span id="revnumber">
+     version 0.0.1
+    </span>
+   </div>
+   <div class="toc" id="toc">
+    <div id="toctitle">
+     Índice
+    </div>
+    <ul class="sectlevel1">
+     <li>
+      <a href="#por-qué">
+       <strong>
+        ¿Por qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#qué">
+       <strong>
+        ¿Qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#para-qué">
+       <strong>
+        ¿Para qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#cómo">
+       <strong>
+        ¿Cómo?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#sencillez">
+       Sencillez
+      </a>
+     </li>
+     <li>
+      <a href="#kiss">
+       KISS
+      </a>
+     </li>
+     <li>
+      <a href="#código-limpio">
+       Código Limpio
+      </a>
+     </li>
+     <li>
+      <a href="#itinerario">
+       Itinerario
+      </a>
+     </li>
+     <li>
+      <a href="#sintesis">
+       <strong>
+        Sintesis
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#bibliografía">
+       <strong>
+        Bibliografía
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#ponente">
+       Ponente
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div id="content">
+   <div id="preamble">
+    <div class="sectionbody">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="por-qué">
+     <strong>
+      ¿Por qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  malas variables en su economía
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     ámbito incumplido
+                    </strong>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     tiempo incumplido
+                    </strong>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     coste incumplido
+                    </strong>
+                    ;
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  mala calidad del software
+                 </strong>
+                 ,
+                 <span class="red">
+                  fiabilidad, usabilidad, interoperatividad, seguirdad, …​ (
+                  <em>
+                   -ilities
+                  </em>
+                  )
+                 </span>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  mala mantenibilidad
+                 </strong>
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     viscoso
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede entender con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     rígido
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede cambiar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     frágil
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede probar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     inmovil
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede reutilizar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  complejidad arbitraria
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="davidProyectoImplantacionDiseñoMal" src="images/davidProyectoImplantacionDiseñoMal.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="arbolNoMantenible" src="images/arbolNoMantenible.jpeg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="imageblock">
+      <div class="content">
+       <img alt="diagramaCitas" height="2483" src="images/diagramaCitas.svg" width="1262"/>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="qué">
+     <strong>
+      ¿Qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="disenyoRAE" src="images/disenyoRAE.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="disenyosUML" src="images/disenyosUML.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         <strong class="yellow">
+          Análisis
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="green">
+          Diseño
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="yellow">
+             analizar los requisitos a través de su refinamiento y estructura para realizar una compresión más precisa de los requisitos, una descripción de los requisitos que es fácil de mantener y ayuda a estructurar el sistema
+            </strong>
+            :
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="green">
+             desarrollar enfocados en los requisitos no funcionales y en el dominio de la solución para preparar para la implementación y pruebas del sistema
+            </strong>
+            :
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Dar una
+              <strong class="yellow">
+               especificación más precisa de los requisitos
+              </strong>
+              obtenidos en la captura de requisitos
+             </p>
+            </li>
+            <li>
+             <p>
+              Describir
+              <strong class="yellow">
+               usando el lenguaje de los desarrolladores
+              </strong>
+              y poder introducir más formalismo y ser utilizado para razonar sobre el funcionamiento interno del sistema
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="yellow">
+               Estructurar los requisitos
+              </strong>
+              de manera que facilite su comprensión, cambiándolos y, en general, mantenerlos
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="yellow">
+               Acercase al diseño
+              </strong>
+              , aunque sea un modelo en sí mismo, y es por tanto un elemento esencial cuando el sistema está conformado en diseño e implementación
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Adquirir una
+              <strong class="green">
+               comprensión profunda sobre los aspectos de los requisitos no funcionales y limitaciones
+              </strong>
+              relacionadas con:
+             </p>
+            </li>
+            <li>
+             <p>
+              los
+              <strong class="green">
+               lenguajes de programación
+              </strong>
+              ,
+             </p>
+            </li>
+            <li>
+             <p>
+              la
+              <strong class="green">
+               reutilización de componentes
+              </strong>
+              ,
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="green">
+               sistemas operativos
+              </strong>
+              ,
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="green">
+               tecnologías de distribución y concurrencia
+              </strong>
+              ,
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="green">
+               tecnologías de bases de datos
+              </strong>
+              ,
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="green">
+               tecnologías de interfaz de usuario
+              </strong>
+              ,
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="green">
+               tecnologías de gestión de transacciones
+              </strong>
+              ,
+             </p>
+            </li>
+            <li>
+             <p>
+              y así sucesivamente
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <a href="https://www.softdevbigideas.com/just-enough-design-up-front.html">
+               <strong>
+                <em>
+                 Diseño suficiente
+                </em>
+               </strong>
+              </a>
+              (
+              <em>
+               JEDUF, Just Enough Design Upfront vs BDUF, Big Design Upfront
+              </em>
+              )
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Vista de Diseño/Lógica
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Diseño sistemas
+               </em>
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Vistas de Implementación/Desarrollo
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  Vista Física/Despligue
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="para-qué">
+     <strong>
+      ¿Para qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Efectividad, eficacia y eficiencia, del Proyecto Software
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buenas variables en su economía
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     ámbito cumplido
+                    </strong>
+                    y
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     tiempo cumplido
+                    </strong>
+                    y
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     coste cumplido
+                    </strong>
+                    ;
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buena calidad del software
+                 </strong>
+                 ,
+                 <span class="green">
+                  fiabilidad, usabilidad, interoperatividad, seguirdad, …​ (
+                  <em>
+                   -ilities
+                  </em>
+                  )
+                 </span>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buena mantenibilidad
+                 </strong>
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     fluido
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede entender con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     flexible
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede cambiar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     fuerte
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede probar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     reusable
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede reutilizar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  complejidad inherente
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="davidProyectoImplantacionDiseño" src="images/davidProyectoImplantacionDiseño.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="arbolMantenible" src="images/arbolMantenible.jpeg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 8.3333%;"/>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 16.6666%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 16.6668%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="5">
+         <strong class="blue">
+          Objetivos
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Capacitar para
+              <strong class="blue">
+               visualizar y razonar sobre el diseño
+              </strong>
+              utilizando una notación común
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Crear una abstracción sin fisuras de la implementación del sistema, en el sentido de que la aplicación es un refinamiento sencillo del diseño mediante la cumplimentación de la "carne", pero sin cambiar la estructura, el esqueleto. Esto permite el uso de técnicas como la generación de código con
+              <strong class="blue">
+               ingeniería directa e inversa
+              </strong>
+              entre el diseño y la implementación
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Crear una entrada apropiada como
+              <strong class="blue">
+               punto de partida para las disciplinas posteriores
+              </strong>
+              mediante la captura de los requisitos correspondientes a los distintos subsistemas, interfaces y clases
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Captura las
+              <strong class="blue">
+               interfaces principales entre los subsistemas
+              </strong>
+              del ciclo de vida del software. Esto es útil cuando razonamos sobre la arquitectura y cuando usamos las interfaces como instrumentos de sincronización entre los diferentes equipos de desarrollo
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Capacitar para la
+              <strong class="blue">
+               descomposición del trabajo
+              </strong>
+              de implementación en piezas más manejables gestionados por diferentes equipos de desarrollo, posiblemente al mismo tiempo
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top" colspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Lenguaje Unificado de Desarrollo
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Disciplina de
+              <strong class="aqua">
+               Implementación
+              </strong>
+              ,
+              <strong class="blue">
+               Pruebas
+              </strong>
+              y
+              <strong class="fuchsia">
+               Despliegue
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top" colspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="gray">
+               Disciplina de Gestión
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="cómo">
+     <strong>
+      ¿Cómo?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="sencillez">
+     Sencillez
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            Divide et impera (divide y vencerás)
+           </blockquote>
+           <div class="attribution">
+            — Máxima Latina
+            <br/>
+            <cite>
+             Julio César, Napoleón, Imperio Británico, ...
+            </cite>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            En igualdad de condiciones, la explicación
+            <strong>
+             más sencilla suele ser la correcta
+            </strong>
+           </blockquote>
+           <div class="attribution">
+            — Navaja de Occam
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            Cualquier
+            <strong>
+             tonto inteligente
+            </strong>
+            puede hacer
+            <strong>
+             cosas más grandes y más complejas
+            </strong>
+            …​ se necesita un
+            <strong>
+             toque de genialidad y mucho coraje
+            </strong>
+            para moverse en la
+            <strong>
+             dirección opuesta
+            </strong>
+            "
+           </blockquote>
+           <div class="attribution">
+            — Einstein
+            <br/>
+            <cite>
+             A.
+            </cite>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            El descubrimiento de un
+            <strong>
+             orden no es tarea fácil
+            </strong>
+            . . . . sin embargo, una vez que el orden ha sido
+            <strong>
+             descubierto no hay dificultad alguna en reconocerlo
+            </strong>
+           </blockquote>
+           <div class="attribution">
+            — Descartes
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 15%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 15%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               <strong>
+                Circulo
+               </strong>
+               con 3 valores, abcisa, ordenada y radio, se definen infinitos puntos con máxima área para el mismo perímetro
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               <strong>
+                Simetría
+               </strong>
+               , la explicación de una parte se reutiliza para la otra
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               <strong>
+                Sistema de numeración binario
+               </strong>
+               con secuencias de 2 símbolos permite construir infinitos números
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               <strong>
+                Proporciones, razones, relaciones, funciones, ecuaciones, …​
+               </strong>
+              </em>
+              :
+              <em>
+               y=2^x, con 5 elementos defino infinitos puntos correspondientes a otro dado
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               <strong>
+                Orden, criterio, …​
+               </strong>
+               : determina la localización de elementos en una posición precisa
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle" colspan="5">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             <strong>
+              Reusabilidad
+             </strong>
+             : disfrutando de la misma distancia, fórmula, manera, …​ para ahorrar esfuerzos
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle" colspan="5">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Cuando el grajo vuela bajo, hace un frio del carajo!!! …​
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="kiss">
+     KISS
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Antónimos
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Antonyms
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Libro
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Autor
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="green">
+             Mantenlo sencillo, estúpido!
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Keep it simple, stupid!
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            En un portaviones?!?
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Kelly Jhonson
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="green">
+             Mantenlo pequeño y sencillo!
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Keep it short and simple
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="green">
+             Mantenlo pequeño y simple!
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Keep it small and simple
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Comprender el algoritmo
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Understand the Algorithm
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Smell Code (Clean Code)
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Robert Martin
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Antónimos
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Antonyms
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Libro
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Autor
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             Código Espagueti
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Spaghetti Code
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Antipatrón de Desarrollo
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            William H. Brown et al
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Generalidad Espculativa
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Speculative Generality
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Smell Code -(Refactoring)
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Martin Fowler
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Intenciones obscuras
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Obscured Intent
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Smell Code (Clean Code)
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Robert Martin
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 20%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            Hay dos maneras de diseñar software: una es
+            <strong class="green">
+             hacerlo tan simple que sea obvia su falta de deficiencias
+            </strong>
+            , y la otra es
+            <strong class="red">
+             hacerlo tan complejo que no haya deficiencias obvias
+            </strong>
+           </blockquote>
+           <div class="attribution">
+            — C.A.R. Hoare
+            <br/>
+            <cite>
+             1980 ACM Turing Award Lecture
+            </cite>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            “Sin embargo,
+            <strong class="red">
+             no es suficiente para dejar las comillas alrededor de la palabra ‘funciona’
+            </strong>
+            . Usted debe saber que la solución es correcta. A menudo, la mejor manera de obtener este conocimiento y comprensión es refactorizar la función en algo que es
+            <strong class="green">
+             tan limpio y expresivo que es obvio cómo funciona
+            </strong>
+            ".
+           </blockquote>
+           <div class="attribution">
+            — Martin Fowler
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            La diferencia entre un programador inteligente y un programador profesional es que el profesional entiende que
+            <strong class="green">
+             la claridad es el rey
+            </strong>
+            . Los profesionales utilizan su potencia para lo bueno y
+            <strong class="green">
+             escribir código que otros puedan entender
+            </strong>
+           </blockquote>
+           <div class="attribution">
+            — Martin Fowler
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            <strong class="red">
+             Cualquier tonto puede escribir código que entienda un ordenador
+            </strong>
+            . Sólo los
+            <strong class="green">
+             buenos programadores escriben código que puedan entender los humanos
+            </strong>
+           </blockquote>
+           <div class="attribution">
+            — Martin Fowler
+            <br/>
+            <cite>
+             Refactoring
+            </cite>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 70%;"/>
+       <col style="width: 30%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="2">
+         -
+         <strong class="red">
+          Violaciones
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Nombres de métodos con
+              <strong class="red">
+               extraños nombres abstractos
+              </strong>
+              deben ser renombrados para “traerlos a la tierra”
+             </p>
+            </li>
+            <li>
+             <p>
+              Métodos que
+              <strong class="red">
+               no usan parámetros
+              </strong>
+              deberían ser eliminados
+             </p>
+            </li>
+            <li>
+             <p>
+              Si tienes
+              <strong class="red">
+               clases abstractas que no están haciendo mucho
+              </strong>
+              , colapsa la jerarquía
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="red">
+               Innecesaria delegación
+              </strong>
+              puede ser eliminadacon la clase “en línea”
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="red">
+               Complejos algoritmos generalistas
+              </strong>
+              para situaciones muy concretas
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="red">
+               Complejos algritmos muy eficientes
+              </strong>
+              cuando no hay necesidad
+             </p>
+            </li>
+            <li>
+             <p>
+              …​
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               <strong>
+                Casa de herrero, cuchara de palo
+               </strong>
+               , organizamos sistemas de información de los clientes perfectamente estructurados con sistemas de información de software preñados de ciclos, repeticiones, lastres, ilegibles, …​ sin pruebas para probar cómo funciona si toco algo!!!
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="código-limpio">
+     Código Limpio
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3334%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="3">
+         <em>
+          Clean code
+         </em>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            El código limpio es
+            <strong>
+             simple
+            </strong>
+            y
+            <strong>
+             directo
+            </strong>
+            . El código limpio se lee
+            <strong>
+             como una prosa bien escrita
+            </strong>
+            . El código limpio nunca oscurece la intención del diseñador, sino que está lleno de
+            <strong>
+             abstracciones nítidas
+            </strong>
+            y líneas directas de control
+           </blockquote>
+           <div class="attribution">
+            — Grady Booch
+            <br/>
+            <cite>
+             Rational Unified Process
+            </cite>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            Sabes que estás trabajando en un código limpio cuando
+            <strong>
+             cada rutina que lees resulta ser más o menos lo que esperabas
+            </strong>
+            . Puede llamarlo
+            <strong>
+             código hermoso
+            </strong>
+            cuando el código también hace que parezca que el lenguaje fue creado para el problema
+           </blockquote>
+           <div class="attribution">
+            — Ward Cunningham
+            <br/>
+            <cite>
+             Wiki
+            </cite>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            <strong>
+             Duplicación reducida
+            </strong>
+            ,
+            <strong>
+             alta expresividad
+            </strong>
+            y construcción temprana de
+            <strong>
+             abstracciones simples
+            </strong>
+            . Eso es lo que hace que el código sea limpio para mí
+           </blockquote>
+           <div class="attribution">
+            — Ron Jeffries
+            <br/>
+            <cite>
+             Extreme Programming Installed
+            </cite>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            Me gusta que mi código sea elegante y eficiente. La
+            <strong>
+             lógica debe ser sencilla
+            </strong>
+            para dificultar la ocultación de los errores, las
+            <strong>
+             dependencias mínimas
+            </strong>
+            para facilitar el mantenimiento, el
+            <strong>
+             manejo de errores completo
+            </strong>
+            de acuerdo con una estrategia articulada y el rendimiento cercano al óptimo para no tentar a las personas a ensuciar el código con optimizaciones sin principios. El
+            <strong>
+             código limpio hace una cosa bien
+            </strong>
+           </blockquote>
+           <div class="attribution">
+            — Bjarne Stroustrup
+            <br/>
+            <cite>
+             The C++ Programming Language
+            </cite>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            El código limpio puede ser
+            <strong>
+             leído y mejorado por un desarrollador que no sea su autor original
+            </strong>
+            . Tiene
+            <strong>
+             pruebas unitarias y de aceptación
+            </strong>
+            . Tiene
+            <strong>
+             nombres significativos
+            </strong>
+            . Proporciona
+            <strong>
+             una forma en lugar de muchas formas de hacer una sola cosa
+            </strong>
+            . Tiene
+            <strong>
+             dependencias mínimas
+            </strong>
+            , que se definen explícitamente, y proporciona una
+            <strong>
+             API clara y mínima
+            </strong>
+           </blockquote>
+           <div class="attribution">
+            — Dave Thomas
+            <br/>
+            <cite>
+             Eclipse
+            </cite>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            Podría enumerar todas las cualidades que noto en un código limpio, pero hay una cualidad general que conduce a todas ellas. El código limpio siempre parece
+            <strong>
+             haber sido escrito por alguien a quien le importa
+            </strong>
+            . No hay
+            <strong>
+             nada obvio que puedas hacer para mejorarlo
+            </strong>
+            . El autor del código pensó en todas esas cosas, y si intentas imaginar mejoras, volverás a donde estás, sentándote apreciando el código que alguien te dejó, código dejado por alguien que se
+            <strong>
+             preocupa profundamente por el artesanía
+            </strong>
+           </blockquote>
+           <div class="attribution">
+            — Michael Feathers
+            <br/>
+            <cite>
+             Working Effectively with Legacy Code
+            </cite>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="itinerario">
+     Itinerario
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 60%;"/>
+       <col style="width: 15%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Temas
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Contenidos
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Nivel
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="5">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="diagramaDisenyo" height="763" src="images/diagramaDisenyo.svg" width="179"/>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Arquitecturas MVC
+              </strong>
+              : Modelo/Vista/Controlador (MVP, MVVM, …​),
+              <em>
+               Data Access Object
+              </em>
+              , Arquitecturas Ágiles:
+              <em>
+               Hexagonal Architecture , Clean Architecture, Onion Architecture
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               Arquitectura del Software
+              </strong>
+              : actores, documentación 4+1 vistas, principios de cohesión y acoplamiento de paquetes
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Paquetes
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Patrones de Diseño
+              </strong>
+              : creacionales, estructurales, de comportamiento,
+              <em>
+               Object Value,
+              </em>
+              …​
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Prácticas recurrentes
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Diseño Orientado a Objetos
+              </strong>
+              : Principios Open/Close, Sustitución de Liskov, Patrón Método Plantilla, Inversión de Dependencias, Inversión de Control, Inyección de Dependencias, …​
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Jerarquías de Clasificación
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Diseño Modular
+              </strong>
+              : Cohesión, Acoplamiento, Granularidad, …​,
+              <em>
+               Smell Code,
+              </em>
+              …​, Modelo, Vista, Controlador, …​
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Clase y Método
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Diseño
+              </strong>
+              : Modelo del Dominio, Gestión de Dependencias, DRY, YAGNI, nombrado,  comentarios, …​
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Línea
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="sintesis">
+     <strong>
+      Sintesis
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="bibliografía">
+     <strong>
+      Bibliografía
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              The Unified Modeling Language User Guide
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Booch, Jacobson, Rumbaugh
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Pearson Education, 2005
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/TheUnifiedModelingLanguageUserGuide.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              UML Distilled. A Brief Guide to the Standard Object Modeling Language
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Fowler, Scott
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley, 2003
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/UMLDistilledABriefGuideToTheStandardObjectModelingLanguage.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Object Oriented Analysis and Design with Applications
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2011)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ObjectOrientedAnalysisAndDesignWithApplications.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Larman Craig
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Prentice Hall; (2004)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ApplyingUML.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Object-Oriented Software Construction
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Bertrand Meyer
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Prentice Hall; (1997)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ObjectOrientedSoftwareConstruction.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Eiffel : The Language (PRENTICE HALL OBJECT-ORIENTED SERIES)
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Bertrand Meyer
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Prentice Hall; (1991)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/Eiffel.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Code Complete
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Steve McConnell
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Microsoft Press; (2004)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/CodeComplete.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Clean Code. A Handbook of Agile Software Craftsmanship
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Robert C. Martin
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Prentice Hall; (2008)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/CleanCodeAHandbookOfAgileSoftwareCraftsmanship.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              An Introduction to Object-Oriented Programming
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Timothy A. Budd
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2001)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/AnIntroduction.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Agile Software Development, Principles, Patterns and Practices
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Robert-C Martin
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Pearson; (2006)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/AgileSoftware.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              The Mythical Man Month. Essays on Software Engineering
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Frederick P. Brooks
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Prentice Hall; (1995)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/TheMythicalManMonthEssaysOnSoftwareEngineering.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Object Solutions. Managing the Object Oriented Project
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (1789)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ObjectSolutionsManagingTheObjectOrientedProject.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Patrones de diseño
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Erich Gamma et al
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Anaya (2002)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/PatronesDeDiseño.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              AntiPatterns: Refactoring Software, Architectures, and Projects in Crisis
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  William J. Brown
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 John Wiley &amp; Sons (1998)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/AntiPatterns.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Patterns of Enterprise Application Architecture
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Martin Fowler
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2002)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="PatternsOfEnterpriseApplicationArchitecture" height="260" src="images/PatternsOfEnterpriseApplicationArchitecture.jpg" width="200"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Clean Architecture: A Craftsman’s Guide to Software Structure and Design
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Robert C Martin
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Prentice Hall; (2017)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="CleanArchitecture" height="260" src="images/CleanArchitecture.jpg" width="200"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              The Art of Software Architecture: Design Methods and Techniques
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Stephen T. Albin
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Wiley; (2003)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="TheArtOfSoftwareArchitecture" height="260" src="images/TheArtOfSoftwareArchitecture.jpg" width="200"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Software Systems Architecture: Working With Stakeholders Using Viewpoints and Perspectives
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Nick Rozanski
+                 </strong>
+                 ,
+                 <strong>
+                  Eóin Woods
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2011)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="SoftwareSystemsArchitecture" height="260" src="images/SoftwareSystemsArchitecture.jpg" width="200"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Software Architecture in Practice
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Len Bass
+                 </strong>
+                 ,
+                 <strong>
+                  Paul Clements
+                 </strong>
+                 ,
+                 <strong>
+                  Rick Kazman
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2012)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="SoftwareArchitectureInPractice" height="260" src="images/SoftwareArchitectureInPractice.jpg" width="200"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Pattern-oriented Software Architecture: A System of Patterns
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Frank Buschmann
+                 </strong>
+                 ,
+                 <strong>
+                  Regine Meunier
+                 </strong>
+                 ,
+                 <strong>
+                  Hans Rohnert
+                 </strong>
+                 ,
+                 <strong>
+                  Peter Sommerlad
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Wiley (1996)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="PatternOrientedSoftwareArchitecture" height="260" src="images/PatternOrientedSoftwareArchitecture.jpg" width="200"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Documenting Software Architectures
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Paul Clements
+                 </strong>
+                 ,
+                 <strong>
+                  Felix Bachmann
+                 </strong>
+                 ,
+                 <strong>
+                  Len Bass
+                 </strong>
+                 ..
+                </p>
+               </li>
+               <li>
+                <p>
+                 (2001)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="DocumentingSoftwareArchitectures" height="260" src="images/DocumentingSoftwareArchitectures.png" width="200"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Integrating Software Architecture-Centric Methods into Extreme Programming
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Robert L. Nord
+                 </strong>
+                 ,
+                 <strong>
+                  James E. Tomayko
+                 </strong>
+                 ,
+                 <strong>
+                  Rob Wojcik
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 (2004)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="IntegratingSoftwareArchitectureCentricMethods" height="260" src="images/IntegratingSoftwareArchitectureCentricMethods.png" width="200"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Refactoring. Improving the Design of Existing Code
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Martin Fowler,Kent Beck,John Brant,William Opdyke,Don Roberts
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison Wesley; (1999)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/RefactoringImprovingTheDesignOfExistingCode.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Extreme Programming Explained. Embrace Change. Embracing Change
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Kent Beck,Cynthia Andres
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2004)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ExtremeProgrammingExplainedEmbraceChangeEmbracingChange.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              C++ Programming Language
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Stroustrup Bjarne
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison Wesley; (2013)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/C++.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              The Clean Coder: A Code of Conduct for Professional Programmers
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Robert C. Martin
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2011)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/TheCleanCoder.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Desarrollo ágil esencial: Vuelta a las raíces
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Robert C. Martin
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Anaya; (2020)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/DesarrolloAgil.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="ponente">
+     Ponente
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Luis Fernández Muñoz
+               </em>
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Formador/Consultor
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://es.linkedin.com/in/luisfernandezmunyoz">
+                  <em>
+                   Linkedin
+                  </em>
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="setillo" src="images/setillo.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Doctor en Inteligencia Artificial por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Ingeniero en Informática por la UMA
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Diplomado en Informática por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Profesor Titular de ETSISI de la UPM
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div id="footer-text">
+    Version 0.0.1
+    <br/>
+    Last updated 2022-10-16 16:25:40 +0200
+   </div>
+  </div>
+  <script>
+   let speed = 50;
                 
                 function typeWriter(v) {
                   let i = v.getAttribute("typewriter-index")
@@ -2024,6 +3901,6 @@ Last updated 2022-10-16 16:25:40 +0200
                 })
                 
                 setTimeout(typeWriterAll, speed);
-                
-                </script>
+  </script>
+ </body>
 </html>

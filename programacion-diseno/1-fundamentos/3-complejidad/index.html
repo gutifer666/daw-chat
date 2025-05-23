@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8">
-<meta name="author" content="Universo Santa Tecla">
-<title>Complejidad</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-<style>
-/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Asciidoctor 2.0.8" name="generator"/>
+  <meta content="Universo Santa Tecla" name="author"/>
+  <title>
+   Complejidad
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700" rel="stylesheet"/>
+  <style>
+   /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
@@ -434,1707 +436,3652 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="book">
-<div id="header">
-<h1>Complejidad</h1>
-<div class="details">
-<span id="author" class="author">Universo Santa Tecla</span><br>
-<span id="email" class="email"><a href="mailto:USantaTecla@gmail.com">USantaTecla@gmail.com</a></span><br>
-<span id="revnumber">version 0.0.1</span>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Índice</div>
-<ul class="sectlevel0">
-<li><a href="#por-qué"><strong>¿Por qué?</strong></a>
-<ul class="sectlevel1">
-<li><a href="#capacidades-cuantitativas">Capacidades cuantitativas</a></li>
-</ul>
-</li>
-<li><a href="#qué"><strong>¿Qué?</strong></a></li>
-<li><a href="#para-qué"><strong>¿Para qué?</strong></a>
-<ul class="sectlevel1">
-<li><a href="#efectividad">Efectividad</a></li>
-</ul>
-</li>
-<li><a href="#cómo"><strong>¿Cómo?</strong></a>
-<ul class="sectlevel1">
-<li><a href="#características-de-sistemas-complejos">Características de Sistemas Complejos</a></li>
-<li><a href="#capacidades-cualitativas">Capacidades cualitativas</a>
-<ul class="sectlevel2">
-<li><a href="#abstracción">Abstracción</a></li>
-<li><a href="#encapsulación">Encapsulación</a></li>
-<li><a href="#modularización">Modularización</a></li>
-<li><a href="#jeararquización">Jeararquización</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#síntesis"><strong>Síntesis</strong></a></li>
-<li><a href="#bibliografía"><strong>Bibliografía</strong></a>
-<ul class="sectlevel1">
-<li><a href="#ponente">Ponente</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="images/sintesis.png" alt="sintesis">
-</div>
-</div>
-</div>
-</div>
-<h1 id="por-qué" class="sect0"><strong>¿Por qué?</strong></h1>
-<div class="sect1">
-<h2 id="capacidades-cuantitativas">Capacidades cuantitativas</h2>
-<div class="sectionbody">
-<div class="exampleblock">
-<div class="title">¿Qué tal manejas estos sencillos sistemas? Escenario con Puntos</div>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Dime cúantos elementos hay en cada imagen de arriba a abajo y de izqiuerda a derecha sin fallar, sin prisas</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/puntos.png" alt="puntos" width="1000" height="600"></span></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Dime cúantos elementos hay en cada imagen de arriba a abajo y de izqiuerda a derecha sin fallar, sin prisas y sé consciente sobre cuándo los cuentas (siguiendo uno por uno con "golpes" de vista) o cuándo los ves (sin seguimiento, con un solo golpe de vista)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/puntos2.png" alt="puntos2" width="1000" height="600"></span></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>La media en las personas es que hasta 4 elementos se ven y a partir de 5 se cuentan</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="exampleblock">
-<div class="title">¿Qué tal manejas estos sencillos sistemas? Escenario con Códigos</div>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Te voy a transmitir una clave con estos códigos, aprendetelos de memoria!</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/codigossincuadro.jpg" alt="codigossincuadro" width="1000" height="400"></span></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Te voy a transmitir una clave con estos códigos: cada número con su contorno, excepto el exterior, aprendetelos de memoria!</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/nueveCifras.png" alt="nueveCifras" width="1000" height="400"></span></p>
-</div>
-</div>
-</div>
-<div class="exampleblock">
-<div class="title">¿Qué tal manejas estos sencillos sistemas? Escenario con Figuras</div>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Mira el dibujo durante 5 segundos para memorizarlo y repetirlo con lápiz y papel</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/casaDeshecha.png" alt="casaDeshecha" width="1000" height="350"></span></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Mira el dibujo durante 5 segundos para memorizarlo y repetirlo con lápiz y papel</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/casaHecha.png" alt="casaHecha" width="1000" height="350"></span></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Asociamos <strong>muchos elementos</strong> en <strong>un todo</strong></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong>Limitación para el tamaño de la carga del área de trabajo</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Número Mágico de Miller</strong>: el número de objetos que una persona promedio puede tener en la memoria de trabajo es 7 ± 2. <em>Ejemplos</em>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Película de espías, 21 gramos, juego de tronos, 100 años de soledad, &#8230;&#8203; muchas historias paralelas poco relacionadas hasta el final</em></p>
-</li>
-<li>
-<p><em>Código de números en cuadrícula, &#8230;&#8203; muchas frente a pocas reglas</em></p>
-</li>
-<li>
-<p><em>Lenguaje natural, &#8230;&#8203; muchas palabras en muchas estructuras sintácticas</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Enfoque Visual</strong>: Ver hasta 4 elementos vs Contar a partir de 5 elementos</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Incluso no ves lo que ves! <a href="https://www.youtube.com/watch?v=hWqWL9SH09o">contar pases de pelota con &#8230;&#8203;</a></em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/capacidadCuantitativa.svg" alt="capacidadCuantitativa" width="423" height="545">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<h1 id="qué" class="sect0"><strong>¿Qué?</strong></h1>
-<div class="openblock partintro">
-<div class="content">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Sistema</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Sistema Complejo</strong></th>
-<th class="tableblock halign-left valign-top"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<span class="blue">Un Sistema es un conjunto de componentes interactuando o interdependientes formando un todo integrado. Cada sistema está delimitado por sus límites espacio/temporales e influenciado por su entorno, descrito por su estructura y propósito y expresado en su funcionamiento</span>
-</blockquote>
-<div class="attribution">
-&#8212; Wiki?
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<strong class="blue">Un Sistema Complejo es aquel cuya complejida excede la capacidad intelectual humana</strong>
-</blockquote>
-<div class="attribution">
-&#8212; Booch
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/sistema.svg" alt="sistema" width="530" height="519">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><span class="blue">Sistema</span></th>
-<th class="tableblock halign-left valign-top"><em>Sistema respiratorio</em></th>
-<th class="tableblock halign-left valign-top"><em>Película de amor</em></th>
-<th class="tableblock halign-left valign-top"><em>Numeros Romanos</em></th>
-<th class="tableblock halign-left valign-top"><em>Semaforo</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="blue">conjunto de componentes interactuando o interdependientes formando un todo integrado</span>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>nariz, laringe, faringe, traquea, pulmones, alveolos, &#8230;&#8203;</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>personajes</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>I, V, X, L, C, D y M</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Rojo, verde y amarillo</em></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="blue">Cada sistema está delimitado por sus límites espacio/temporales</span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>fechas y lugares de la vida del ser vivo que contiene el sistema respiratorio</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>fechas y lugares de los personajes</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>fechas y lugar donde estén escritos</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>fechas y lugar de la instalación del semáforo</em></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="blue">e influenciado por su entorno,</span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>lo que respira: aire limpio vs contaminado, &#8230;&#8203;</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>la sociedad, las familias, una ex-pareja, &#8230;&#8203;</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>en desuso en favor de sistemas de numeración poscionales (indo-arábigo, maya, chino, &#8230;&#8203;) mucho más efectivos</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>fuente de energía, climatología, vándalos, artistas, &#8230;&#8203;</em></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="blue">descrito por su estructura</span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>la nariz se conecta con la laringe, la laringe con la traquea, &#8230;&#8203;</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>argumento que relaciona los personajes de la historia</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>grupos de máximo 3 elementos consecutivos, grupo con elemento y opcionalmente un elemento inferiro prefijo o sufijo, &#8230;&#8203;</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>de rojo a verde, de verda a amarillo y de amarillo a verdo y/o rojo, &#8230;&#8203;</em></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="blue">y propósito</span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>inyectar oxigeno al sistema circulatorio extrayendo monóxido de carbono, &#8230;&#8203;</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>transmitir emociones</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>regsitrar información cuantitativa</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>controlar el tráfico</em></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="blue">y expresado en su funcionamiento.</span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>inspiración y expiración</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>reproducción de la película</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>suma, resta, producto, división, &#8230;&#8203; son información cuantitativas registrada</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>luces con alimentación electrica</em></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<h1 id="para-qué" class="sect0"><strong>¿Para qué?</strong></h1>
-<div class="sect1">
-<h2 id="efectividad">Efectividad</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Efectividad</strong> en una capacidad es un <strong class="blue">equilibrio, compromiso</strong> entre:</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Eficacia</strong>, alto <span class="blue">cumplimiento de objetivos</span> frente a incumplimientos por errores, desmotivación, cansancio, &#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Eficiencia</strong>, <span class="blue">bajo consumo de recursos</span> (tiempo, energía, espacio, &#8230;&#8203;) frente a consumos disparatados comparado con otras soluciones</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/efectividad.svg" alt="efectividad" width="316" height="469">
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/efectividad.jpg" alt="efectividad"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top">Eficientemente</th>
-<th class="tableblock halign-left valign-top">Ineficientemente</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
-<p>Efectividad <em>para Comprar el pan</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Eficazmente</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Trae el pan en cinco minutos y devuelve la vuelta</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Trae el pan en 20 minutos y no devuelve la vuelta</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Ineficazmente</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Trae el pan pero no la cantidad, tipos, &#8230;&#8203; oportunos en cinco minutos y devuelve la vuelta</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Trae el pan pero no la cantidad, tipos, &#8230;&#8203; oportunos en 20 minutos y no devuelve la vuelta</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
-<p>Efectividad <em>para un Producto Software</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Eficazmente</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Responde a la funcionalidad establecida con el consumo de tiempo y memoria establecido</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Responde a la funcionalidad establecida con el consumo de tiempo y memoria establecido más un 50%, 100%, 300%, &#8230;&#8203;</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Ineficazmente</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Responde a la funcionalidad establecida menos el 33%, 66%, &#8230;&#8203; con el consumo de tiempo y memoria establecido</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Responde a la funcionalidad establecida menos el 33%, 66%, &#8230;&#8203; con el consumo de tiempo y memoria establecido más un 50%, 100%, 300%, &#8230;&#8203;</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
-<p>Efectividad <em>para Desarrollar Software</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Eficazmente</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Entrega de producto establecido en el tiempo y coste establecidos</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Entrega de producto establecido en el tiempo y costes establecidos más un 50%, 100%, 300%, &#8230;&#8203;</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Ineficazmente</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Entrega de producto establecido menos el 33%, 66%, &#8230;&#8203; en el tiempo y coste establecidos</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Entrega de producto establecido menos el 33%, 66%, &#8230;&#8203; en el tiempo y coste establecidos más un 50%, 100%, 300%, &#8230;&#8203;</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 70%;">
-<col style="width: 30%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="exampleblock">
-<div class="title">Ejemplo: Escenario con tu propia experiencia</div>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Las personas no son efectivas con tamaños elevados de elementos a gestionar por imposibilidad, agotamiento, desmotivación, distracción, &#8230;&#8203;)</p>
-<div class="ulist">
-<ul>
-<li>
-<p>No son eficaces por errores (<em>¿nunca te has equivocado?, &#8230;&#8203;</em>)</p>
-</li>
-<li>
-<p>No son eficientes por</p>
-<div class="ulist">
-<ul>
-<li>
-<p>consumo de tiempo (<em>calcula los primos del primer billón, a relación de un segundo por cálculo de si un número es primo, no hay segundos en la vida de una persona, &#8230;&#8203;</em>)</p>
-</li>
-<li>
-<p>consumo de espacio (<em>calcula con lapiz y papel los posibles caminos entre todas las poblaciones de tu tierra natal, suponiendo que habrá miles, no hay hojas en el planeta, &#8230;&#8203;</em>)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/eficaciaEficiencia.jpg" alt="eficaciaEficiencia"></span></p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/doThings.gif" alt="doThings"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<h1 id="cómo" class="sect0"><strong>¿Cómo?</strong></h1>
-<div class="sect1">
-<h2 id="características-de-sistemas-complejos">Características de Sistemas Complejos</h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="images/sistemaComplejo.svg" alt="sistemaComplejo" width="853" height="451">
-</div>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Estructura jerárquica</strong>. Frecuentemente, la complejidad adquiere una forma jerárquica donde el sistema complejo está compuesto de <strong class="blue">subsistemas interrelacionados que a su vez tienen sus propios subsistemas y así hasta que se alcanza algún elemento del más bajo nivel</strong>. No solo son sistemas complejos jerárquicos sino que los niveles de su jerarquía representan los diferentes <strong class="blue">niveles de abstracción cada uno construido sobre otro y cada uno comprensible por sí mismo</strong>. En cada nivel de abstracción, encontramos una <strong class="blue">colección de elementos que colaboran para proveer servicios a niveles superiores</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Separación de asuntos</strong>. <strong>Las intra-conexiones de componentes son más fuertes que las inter-conexiones de componentes</strong>. Este hecho tiene el efecto de separar los componentes con dinámica de alta frecuencia (involucrando la interacción entre componentes) de los de dinámica de baja frecuencia. En términos sencillos, hay una clara separación de asuntos <strong class="blue">entre las partes de diferentes niveles de abstracción</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Patrones comunes</strong>. Los sistemas jerárquicos se componen generalmente de <strong class="blue">sólo unos pocos tipos diferentes de subsistemas en varias combinaciones y órdenes</strong>. Nos encontramos con una gran similitud en la forma de mecanismos compartidos unificando esta vasta jerarquía</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Elementos primitivos relativos</strong>. La elección de qué componentes en un sistema son primitivos es relativamente <strong class="blue">arbritraria y mayormente está a discrección del observador del sistema</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Formas intermedias estables</strong>. Un sistema complejo que funciona <strong class="blue">invariablemente se encuentra que ha evolucionado a partir de un sistema sencillo que funcionó</strong>. Un sistema complejo diseñado desde cero no funciona y no puede ser remendado para hacer que funcione. Usted tiene que comenzar de nuevo, a partir de un sistema sencillo de trabajo</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="capacidades-cualitativas">Capacidades cualitativas</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La historia del ser humano disfruta de cuatro <strong>mecanismos mentales</strong> que facilitan enormemente nuestra comprensión de los sistemas complejos:</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Abstracción</strong></p>
-</li>
-<li>
-<p><strong class="blue">Encapsulación</strong></p>
-</li>
-<li>
-<p><strong class="blue">Modularización</strong></p>
-</li>
-<li>
-<p><strong class="blue">Jerarquización</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="sect2">
-<h3 id="abstracción">Abstracción</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30.7692%;">
-<col style="width: 46.1538%;">
-<col style="width: 23.077%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-La abstracción surge de un reconocimiento de similitudes entre ciertos objetos, situaciones o procesos en el mundo real, y la decisión de concentrarse en estas similitudes e ignorar por el momento, las diferencias
-</blockquote>
-<div class="attribution">
-&#8212; Dahl<br>
-<cite>Dijkstra y Hoare</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-La abstracción es "una descripción simplificada, o especificación, de un sistema que hace hincapié en algunos de los detalles o propiedades mientras que suprime otros del sistema. Una buena abstracción es la que hace hincapié en los detalles que son importantes para el lector o usuario y suprime detalles que son, al menos por ahora, de distracción
-</blockquote>
-<div class="attribution">
-&#8212; Shaw
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<span class="blue">La abstracción es el proceso mental de extracción de las características esenciales de algo, ignorando los detalles superfluos</span>
-</blockquote>
-<div class="attribution">
-&#8212; Booch
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 38.0952%;">
-<col style="width: 23.8095%;">
-<col style="width: 9.5238%;">
-<col style="width: 28.5715%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="4">Implicaciones:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Una abstracción denota las <strong class="blue">características esenciales</strong> de un objeto que lo distinguen de todos los otros tipos de objetos y por lo tanto proporciona <strong class="blue">límites conceptuales nítidamente definidos</strong>, en relación con la perspectiva del espectador.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Una abstracción se centra en la <strong class="blue">visión exterior</strong> de un objeto y sirve para separar el comportamiento esencial de un objeto de su implantación</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La abstracción es <strong class="blue">eminentemente subjetiva</strong>, dependiendo del interés del observador</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Nos esforzamos para construir <strong class="blue">abstracciones de las entidades porque son directamente paralelos al vocabulario del dominio de un determinado problema</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="exampleblock">
-<div class="title">Ejemplo: Varios</div>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Mundo real: un autobús de un pasajero o un mecánico, un ordenador, &#8230;&#8203;</p>
-</li>
-<li>
-<p>Software orientado a procesos: factorial, mostrar menú, ordenar, &#8230;&#8203;</p>
-</li>
-<li>
-<p>Software orientado a objetos: una fecha, un intervalo, un gestor de comunicaciones, un colección de datos, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="encapsulación">Encapsulación</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<strong class="blue">La encapsulación es proceso por el que se ocultan los detalles del soporte de las características esenciales de una abstracción</strong>
-</blockquote>
-<div class="attribution">
-&#8212; Booch
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Principio de Ocultación de la información</strong>: <span class="blue">todo aquello que no sea necesario dar a conocer, no se debe dar a conocer</span></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Variables locales inacesibles desde fuera de su ámbito, &#8230;&#8203;</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="3"><div class="content"><div class="paragraph">
-<p>Hacer notar que en ninguno de los casos <strong class="red">no se trata de ocultar la información</strong> en sí misma sino de <strong class="green">ocultar los detalles del soporte de dicha información</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La encapsulación se logra con mayor frecuencia a través de ocultación de información, que es el proceso de <strong class="blue">ocultar todos los secretos de un objeto que no contribuyen a sus características esenciales</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La encapsulación proporciona barreras explícitas entre las diferentes abstracciones y por lo tanto conduce a una clara <strong class="blue">separación de asuntos</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>El beneficio inmediato será la posibilidad de <strong class="blue">cambiar los soportes de las características de una abstracción sin afectar a todos los elementos que dependan</strong> de esas características porque ni los conocen, ni los mencionan</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 29.1666%;">
-<col style="width: 29.1666%;">
-<col style="width: 8.3333%;">
-<col style="width: 12.5%;">
-<col style="width: 20.8335%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="5">Implicaciones:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="5"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Una vez realizada cierta abstracción hay que <strong class="blue">“trasladarlas” al lenguaje de programación</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Esto conlleva decidir entre diversas <strong class="blue">estructuras de datos</strong> (estáticas o dinámicas, en memoria principal o secundaria, etc.) y/o diversos <strong class="blue">algoritmos</strong> (¿con variables auxiliares o no? ¿recursivo o iterativo?, etc.), siendo diversas las alternativas que recogen dichas características esenciales.</p>
-</li>
-<li>
-<p>Una vez que se selecciona una implantación, debe ser <strong class="blue">tratado como un secreto de la abstracción y oculta a la mayoría de los clientes</strong>. En la práctica, esto significa que cada clase debe tener dos partes:</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La <strong class="blue">interfaz</strong> de una clase capta sólo su vista exterior, que abarca nuestra abstracción del comportamiento común a todas las instancias de la clase.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>La interfaz de una clase es el único lugar donde establecemos <strong class="blue">todas los suposiciones que un cliente puede hacer</strong> sobre cualquier instancia de la clase</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La <strong class="blue">implementación</strong> de una clase comprende la representación de la abstracción, así como los <strong class="blue">mecanismos para conseguir el comportamiento deseado</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>La implementación encapsula detalles sobre los qué ningún cliente puede hacer suposiciones.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La <strong class="blue">abstracción de un objeto debe preceder a las decisiones acerca de su implantación</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Ninguna parte de un sistema complejo debe depender de los detalles internos de cualquier otra parte</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Mientras que la <strong class="blue">abstracción ayuda a las personas a pensar</strong> en lo que están haciendo, la <strong class="blue">encapsulación permite hacer cambios fiables</strong> en el programa con un esfuerzo limitado.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="exampleblock">
-<div class="title">Ejemplo: Varios</div>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Mundo real: un autobús, un ordenador, una universidad, &#8230;&#8203;</p>
-</li>
-<li>
-<p>Software orientado a procesos: factorial, mostrar menú, ordenar, &#8230;&#8203;</p>
-</li>
-<li>
-<p>Software orientado a objetos: una fecha, un intervalo, un gestor de
-comunicaciones, un colección de datos, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="modularización">Modularización</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 23.8095%;">
-<col style="width: 57.1428%;">
-<col style="width: 19.0477%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<strong class="blue">La modularidad es el proceso de descomposición de un sistema en un conjunto de piezas poco acoplados y cohesivos</strong>
-</blockquote>
-<div class="attribution">
-&#8212; Booch<br>
-<cite>96</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-El <strong class="blue">acoplamiento</strong> “[&#8230;&#8203;] es la medida de <span class="blue">fuerza de la asociación establecida por una conexión ente un módulo -elemento- y otro</span>. El <span class="blue">acoplamiento fuerte complica un sistema</span> porque los módulos son más difíciles de comprender, cambiar o corregir por sí mismos si están muy interrelacionados con otros módulos
-</blockquote>
-<div class="attribution">
-&#8212; Booch<br>
-<cite>96</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-La <strong class="blue">cohesión</strong> mide el <span class="blue">grado de conectividad entre los elementos de un solo módulo</span>
-</blockquote>
-<div class="attribution">
-&#8212; Booch<br>
-<cite>96</cite>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 36.3636%;">
-<col style="width: 36.3636%;">
-<col style="width: 27.2728%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="3"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Al <strong class="blue">diseñar un sistema de software complejo, es esencial</strong> para descomponer en partes más pequeñas y más pequeñas, cada una de las cuales podemos entonces refinar independientemente. De esta manera, satisfacemos la restricción muy real que existe sobre <strong class="blue">la capacidad del canal de la cognición humana</strong>: para entender cualquier nivel dado de un sistema, sólo necesitamos comprender algunas partes (en lugar de todas las partes) a la vez.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Para modularizar hay que <strong class="blue">minimizar las dependencias entre módulos</strong> (acoplamiento) que deben tener significado propio por sí mismo <strong class="blue">agrupando abstracciones lógicamente relacionadas</strong> (cohesión)</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>El <strong class="blue">bajo acoplamiento de un modulo se basa en la abstracción</strong> que limita su interfaz a lo esencial <strong class="blue">y en la encapsulación</strong> que oculta todos los detalles necesarios para su implantación pero innecesarios para otros módulos que se relacionen con éste</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Dividir un programa en una serie de límites documentados bien definidos dentro del programa es de <strong class="blue">gran valor en la comprensión del programa</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<span class="blue">La descomposición inteligente se dirige directamente a la complejidad inherente del software al obligar a una división del espacio de estados de un sistema</span>
-</blockquote>
-<div class="attribution">
-&#8212; Parnas
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/modularizacion.svg" alt="modularizacion" width="522" height="513">
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="exampleblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Mundo real: un autobús, un ordenador, una universidad, &#8230;&#8203;</p>
-</li>
-<li>
-<p>Software orientado a procesos: factorial, mostrar menú, ordenar, &#8230;&#8203;</p>
-</li>
-<li>
-<p>Software orientado a objetos: una fecha, un intervalo, un gestor de comunicaciones, un colección de datos, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="jeararquización">Jeararquización</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 28.5714%;">
-<col style="width: 57.1428%;">
-<col style="width: 14.2858%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-Jerarquía es una clasificación u ordenamiento de las abstracciones
-</blockquote>
-<div class="attribution">
-&#8212; Booch
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<span class="blue">La jerarquización es el proceso de estructuración por el que se produce una organización de un conjunto de elementos en grados o niveles de responsabilidad, de clasificación o de composición, &#8230;&#8203; entre otros</span>
-</blockquote>
-<div class="attribution">
-&#8212; Fernando Arroyo
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Grafo dirigido acíclico</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La <strong class="blue">abstracción</strong> es una buena cosa pero en todos los casos, excepto las aplicaciones más triviales, podemos encontrar muchas más abstracciones diferentes de lo que podemos comprender a la vez.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La <strong class="blue">encapsulación</strong> ayuda a gestionar esta complejidad al ocultar el interior de la vista de nuestras abstracciones.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La <strong class="blue">modularidad</strong> ayuda también, por que nos da una manera de agrupar abstracciones relacionados lógicamente.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="3"><div class="content"><div class="paragraph">
-<p>Aún así, esto <strong class="red">no es suficiente</strong>. Un conjunto de abstracciones a menudo forma una jerarquía, y <strong class="green">mediante la identificación de estas jerarquías en nuestro diseño se simplifica enormemente nuestra comprensión del problema</strong>.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2">Implicaciones:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La identificación de las jerarquías dentro de un sistema de software complejo a menudo <strong class="red">no es fácil</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Una vez que se exponen esas jerarquías, la estructura de un sistema complejo se vuelve muy <strong class="green">simple y obtenemos la comprensión</strong> de la misma.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Si no revelamos la estructura de clases de un sistema, tendríamos que multiplicar nuestro conocimiento sobre las propiedades de cada parte individual.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Con la inclusión de la estructura de clases, captamos estas <strong class="blue">propiedades comunes en un solo lugar</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 37.7358%;">
-<col style="width: 31.132%;">
-<col style="width: 31.1322%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Existen <strong class="blue">dos jerarquías ortogonales del sistema: la estructura de clases y la estructura de objetos</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Cada jerarquía está <strong class="blue">en capas</strong>, con clases más abstractas y objetos construidos sobre otros más primitivos.</p>
-</li>
-<li>
-<p>La clase u objeto que se elija como <strong class="blue">primitivo está en relación con el problema</strong> en cuestión.</p>
-</li>
-<li>
-<p>Mirando dentro de <strong class="blue">cualquier nivel dado revela otro nivel de complejidad</strong>.</p>
-</li>
-<li>
-<p>Especialmente entre las partes de la estructura del objeto, <strong class="blue">existe una estrecha colaboración entre los objetos de ese mismo nivel de abstracción</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">La estructura de clases y la estructura de objetos no son completamente independientes</strong>; más bien, cada objeto en la estructura de objetos representa una instancia específica de una clase.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Por lo general hay muchos más objetos que clases de objetos dentro de un sistema complejo.</p>
-</li>
-<li>
-<p>Al mostrar la "parte de", así como la jerarquía "es un", exponemos de <strong class="green">forma explícita la redundancia del sistema considerado</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La mayoría de los sistemas interesantes <strong class="red">no incorporan una única jerarquía</strong>; en cambio, nos encontramos con que muchas jerarquías diferentes suelen estar presentes dentro del mismo sistema complejo.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>En nuestra experiencia, hemos encontrado que es <strong class="green">esencial para ver un sistema desde ambas perspectivas</strong>, estudiando su jerarquía "es un" (clasificación), así como su jerarquía "parte de“ (composición)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 35%;">
-<col style="width: 65%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="quoteblock">
-<blockquote>
-<span class="blue">Nuestra experiencia es que los <strong class="green">sistemas de software complejos más  exitosos</strong> son aquellos cuyos diseños incluyen explícitamente las <strong class="green">estructuras de clases y objetos bien diseñadas y encarnan los cinco atributos de sistemas complejos</strong> descritos en la sección anterior. […] <strong class="red">Muy raramente nos encontramos con sistemas de software que se entregan a tiempo, que están dentro del presupuesto y que cumplen con sus requisitos, a menos que estén diseñados con estos factores en mente</strong></span>
-</blockquote>
-<div class="attribution">
-&#8212; Booch
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="exampleblock">
-<div class="title">Ejemplo: Varios</div>
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Mundo real: un autobús, un ordenador, una universidad, &#8230;&#8203; se componen de otros elementos y los hay de varias clases similares</p>
-</li>
-<li>
-<p>Software orientado a procesos: factorial, mostrar menú, ordenar, &#8230;&#8203; se componen de otros elementos y los hay de varias clases similares</p>
-</li>
-<li>
-<p>Software orientado a objetos: una fecha, un intervalo, un gestor de comunicaciones, un colección de datos, &#8230;&#8203; se componen de otros elementos y los hay de varias clases similares</p>
-</li>
-</ul>
-</div>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/capacidadesCualitativas.svg" alt="capacidadesCualitativas" width="630" height="827">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<h1 id="síntesis" class="sect0"><strong>Síntesis</strong></h1>
-<div class="openblock partintro">
-<div class="content">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Complejidad</th>
-<th class="tableblock halign-left valign-top">Sencillez</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>muchas</strong> reglas, explicaciones, argumentos, &#8230;&#8203;</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>pocas</strong> reglas, explicaciones, argumentos, &#8230;&#8203;</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>leyes, patentes, productos bancarios, edificios, &#8230;&#8203;</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>grandes novelas, juegos, empresas, teorías, &#8230;&#8203; Máquina de Turing: mover cinta izquierda/derecha, escribir/leer 0/1&#8217;s, 3 dualidades "explican" lo computable!!!</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>a causa de la <strong>limitación mental cuantitativa</strong>: número mágico de Miller, &#8230;&#8203;</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>gracias a nuestras <strong>capacidades cualitativas</strong>: <strong>abstracción</strong>, <strong>encapsulación</strong>, <strong>modularidad</strong> y <strong>jerarquía</strong></em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/personaCompleja.jpg" alt="personaCompleja"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/personaSencilla.jpg" alt="personaSencilla"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Rápido, más rápido!!!, más, quiero más!!!, &#8230;&#8203;, ansia viva, &#8230;&#8203; Círculos viciosos</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Poco a poco, paso a paso, &#8230;&#8203;, templanza, &#8230;&#8203; Círculos virtuosos</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<strong>Lo complejo es feo</strong>
-</blockquote>
-<div class="attribution">
-&#8212; ¿Firmas tú?<br>
-<cite>Yo no!</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-<strong>Lo sencillo es bello</strong>
-</blockquote>
-<div class="attribution">
-&#8212; E. F. Schumacher<br>
-<cite>Small Is Beautiful. A Study of Economics As If People Mattered</cite>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Musa de la Jerarquización</strong>, por encima de la fila, organiza el ataque de destrucción total &#8230;&#8203; de la complejidad</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/musaJerarquizacion.jpg" alt="musaJerarquizacion"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Musa de la Abstracción</strong>, la primera de la fila, ataca a lo esencial, ignorando detalles</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Musa de la Modularidad</strong>, la segunda de la fila, te parte en piezas poco acopladas y cohesivas</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Musa de la Encapsulación</strong>, la última de la fila, oculta el soporte de sus armas</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/musaAbstraccion.jpg" alt="musaAbstraccion"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/musaModularizacion.jpg" alt="musaModularizacion"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/musaEncapsulacion.jpg" alt="musaEncapsulacion"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Santa Tecla, Epifanía <strong>Cualitativa</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>Sin</strong> detalles, <strong>con</strong> esencia</em></p>
-</li>
-<li>
-<p><em>mi musa <strong>Abstracción</strong></em></p>
-</li>
-<li>
-<p><em><strong>Sin</strong> acoplamiento, <strong>con</strong> cohesion</em></p>
-</li>
-<li>
-<p><em>mimosa <strong>Modularización</strong></em></p>
-</li>
-<li>
-<p><em><strong>Sin</strong> detalles del soporte</em></p>
-</li>
-<li>
-<p><em>mi musa <strong>Encapsulación</strong></em></p>
-</li>
-<li>
-<p><em><strong>Con</strong> niveles de organización</em></p>
-</li>
-<li>
-<p><em>mimosa <strong>Jearquización</strong></em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/balanza.png" alt="balanza"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-<div class="imageblock">
-<div class="content">
-<img src="images/mecanismoMental.svg" alt="mecanismoMental" width="1609" height="1001">
-</div>
-</div>
-</div>
-</div>
-<h1 id="bibliografía" class="sect0"><strong>Bibliografía</strong></h1>
-<div class="openblock partintro">
-<div class="content">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Object Solutions. Managing the Object Oriented Project</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Addison-Wesley Professional (1789)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ObjectSolutionsManagingTheObjectOrientedProject.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Object Oriented Analysis and Design with Applications</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Imprint Addison-Wesley Educational s Inc (3 de junio de 2011)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ObjectOrientedAnalysisAndDesignWithApplications.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>The Unified Modeling Language User Guide</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Pearson Education (US); Edición: 2 ed (28 de junio de 2005)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheUnifiedModelingLanguageUserGuide.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>The Mythical Man Month. Essays on Software Engineering</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Frederick P. Brooks</strong></p>
-</li>
-<li>
-<p>Prentice Hall; Edición: Nachdr. 20th Anniversary (1 de enero de 1995)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheMythicalManMonthEssaysOnSoftwareEngineering.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Extreme Programming Explained. Embrace Change. Embracing Change</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Kent Beck,Cynthia Andres</strong></p>
-</li>
-<li>
-<p>Addison-Wesley Educational Publishers Inc; Edición: 2nd edition (16 de noviembre de 2004)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ExtremeProgrammingExplainedEmbraceChangeEmbracingChange.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Refactoring. Improving the Design of Existing Code</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Martin Fowler,Kent Beck,John Brant,William Opdyke,Don Roberts</strong></p>
-</li>
-<li>
-<p>Addison Wesley; Edición: 01 (1 de octubre de 1999)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/RefactoringImprovingTheDesignOfExistingCode.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>UML Distilled. A Brief Guide to the Standard Object Modeling Language</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Martin Fowler,Kendall Scott</strong></p>
-</li>
-<li>
-<p>Addison-Wesley Educational Publishers Inc; Edición: 3 ed (15 de septiembre de 2003)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/UMLDistilledABriefGuideToTheStandardObjectModelingLanguage.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Patrones de diseño</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Erich Gamma et al</strong></p>
-</li>
-<li>
-<p>Grupo Anaya Publicaciones Generales; Edición: 1 (1 de noviembre de 2002)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/PatronesDeDiseño.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Clean Code. A Handbook of Agile Software Craftsmanship</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Robert C. Martin</strong></p>
-</li>
-<li>
-<p>Prentice Hall; Edición: 01 (1 de agosto de 2008)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/CleanCodeAHandbookOfAgileSoftwareCraftsmanship.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Object-Oriented Software Construction</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Bertrand Meyer</strong></p>
-</li>
-<li>
-<p>Prentice Hall; Edición: 2 ed (3 de abril de 1997)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ObjectOrientedSoftwareConstruction.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ponente">Ponente</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 30%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Luis Fernández Muñoz</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Formador/Consultor</em></p>
-</li>
-<li>
-<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
-</li>
-<li>
-<p><em>Ingeniero en Informática por la UMA</em></p>
-</li>
-<li>
-<p><em>Diplomado en Informática por la UPM</em></p>
-</li>
-<li>
-<p><em>Profesor Titular de ETSISI de la UPM</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="footer">
-<div id="footer-text">
-Version 0.0.1<br>
-Last updated 2022-10-16 16:23:03 +0200
-</div>
-</div>
-<script>
-                let speed = 50;
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+ </head>
+ <body class="book">
+  <div id="header">
+   <h1>
+    Complejidad
+   </h1>
+   <div class="details">
+    <span class="author" id="author">
+     Universo Santa Tecla
+    </span>
+    <br/>
+    <span class="email" id="email">
+     <a href="mailto:USantaTecla@gmail.com">
+      USantaTecla@gmail.com
+     </a>
+    </span>
+    <br/>
+    <span id="revnumber">
+     version 0.0.1
+    </span>
+   </div>
+   <div class="toc" id="toc">
+    <div id="toctitle">
+     Índice
+    </div>
+    <ul class="sectlevel0">
+     <li>
+      <a href="#por-qué">
+       <strong>
+        ¿Por qué?
+       </strong>
+      </a>
+      <ul class="sectlevel1">
+       <li>
+        <a href="#capacidades-cuantitativas">
+         Capacidades cuantitativas
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="#qué">
+       <strong>
+        ¿Qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#para-qué">
+       <strong>
+        ¿Para qué?
+       </strong>
+      </a>
+      <ul class="sectlevel1">
+       <li>
+        <a href="#efectividad">
+         Efectividad
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="#cómo">
+       <strong>
+        ¿Cómo?
+       </strong>
+      </a>
+      <ul class="sectlevel1">
+       <li>
+        <a href="#características-de-sistemas-complejos">
+         Características de Sistemas Complejos
+        </a>
+       </li>
+       <li>
+        <a href="#capacidades-cualitativas">
+         Capacidades cualitativas
+        </a>
+        <ul class="sectlevel2">
+         <li>
+          <a href="#abstracción">
+           Abstracción
+          </a>
+         </li>
+         <li>
+          <a href="#encapsulación">
+           Encapsulación
+          </a>
+         </li>
+         <li>
+          <a href="#modularización">
+           Modularización
+          </a>
+         </li>
+         <li>
+          <a href="#jeararquización">
+           Jeararquización
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="#síntesis">
+       <strong>
+        Síntesis
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#bibliografía">
+       <strong>
+        Bibliografía
+       </strong>
+      </a>
+      <ul class="sectlevel1">
+       <li>
+        <a href="#ponente">
+         Ponente
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div id="content">
+   <div id="preamble">
+    <div class="sectionbody">
+     <div class="imageblock">
+      <div class="content">
+       <img alt="sintesis" src="images/sintesis.png"/>
+      </div>
+     </div>
+    </div>
+   </div>
+   <h1 class="sect0" id="por-qué">
+    <strong>
+     ¿Por qué?
+    </strong>
+   </h1>
+   <div class="sect1">
+    <h2 id="capacidades-cuantitativas">
+     Capacidades cuantitativas
+    </h2>
+    <div class="sectionbody">
+     <div class="exampleblock">
+      <div class="title">
+       ¿Qué tal manejas estos sencillos sistemas? Escenario con Puntos
+      </div>
+      <div class="content">
+       <div class="ulist">
+        <ul>
+         <li>
+          <p>
+           Dime cúantos elementos hay en cada imagen de arriba a abajo y de izqiuerda a derecha sin fallar, sin prisas
+          </p>
+         </li>
+        </ul>
+       </div>
+       <div class="paragraph">
+        <p>
+         <span class="image">
+          <img alt="puntos" height="600" src="images/puntos.png" width="1000"/>
+         </span>
+        </p>
+       </div>
+       <div class="ulist">
+        <ul>
+         <li>
+          <p>
+           Dime cúantos elementos hay en cada imagen de arriba a abajo y de izqiuerda a derecha sin fallar, sin prisas y sé consciente sobre cuándo los cuentas (siguiendo uno por uno con "golpes" de vista) o cuándo los ves (sin seguimiento, con un solo golpe de vista)
+          </p>
+         </li>
+        </ul>
+       </div>
+       <div class="paragraph">
+        <p>
+         <span class="image">
+          <img alt="puntos2" height="600" src="images/puntos2.png" width="1000"/>
+         </span>
+        </p>
+       </div>
+       <div class="ulist">
+        <ul>
+         <li>
+          <p>
+           La media en las personas es que hasta 4 elementos se ven y a partir de 5 se cuentan
+          </p>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <div class="exampleblock">
+      <div class="title">
+       ¿Qué tal manejas estos sencillos sistemas? Escenario con Códigos
+      </div>
+      <div class="content">
+       <div class="ulist">
+        <ul>
+         <li>
+          <p>
+           Te voy a transmitir una clave con estos códigos, aprendetelos de memoria!
+          </p>
+         </li>
+        </ul>
+       </div>
+       <div class="paragraph">
+        <p>
+         <span class="image">
+          <img alt="codigossincuadro" height="400" src="images/codigossincuadro.jpg" width="1000"/>
+         </span>
+        </p>
+       </div>
+       <div class="ulist">
+        <ul>
+         <li>
+          <p>
+           Te voy a transmitir una clave con estos códigos: cada número con su contorno, excepto el exterior, aprendetelos de memoria!
+          </p>
+         </li>
+        </ul>
+       </div>
+       <div class="paragraph">
+        <p>
+         <span class="image">
+          <img alt="nueveCifras" height="400" src="images/nueveCifras.png" width="1000"/>
+         </span>
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="exampleblock">
+      <div class="title">
+       ¿Qué tal manejas estos sencillos sistemas? Escenario con Figuras
+      </div>
+      <div class="content">
+       <div class="ulist">
+        <ul>
+         <li>
+          <p>
+           Mira el dibujo durante 5 segundos para memorizarlo y repetirlo con lápiz y papel
+          </p>
+         </li>
+        </ul>
+       </div>
+       <div class="paragraph">
+        <p>
+         <span class="image">
+          <img alt="casaDeshecha" height="350" src="images/casaDeshecha.png" width="1000"/>
+         </span>
+        </p>
+       </div>
+       <div class="ulist">
+        <ul>
+         <li>
+          <p>
+           Mira el dibujo durante 5 segundos para memorizarlo y repetirlo con lápiz y papel
+          </p>
+         </li>
+        </ul>
+       </div>
+       <div class="paragraph">
+        <p>
+         <span class="image">
+          <img alt="casaHecha" height="350" src="images/casaHecha.png" width="1000"/>
+         </span>
+        </p>
+       </div>
+       <div class="ulist">
+        <ul>
+         <li>
+          <p>
+           Asociamos
+           <strong>
+            muchos elementos
+           </strong>
+           en
+           <strong>
+            un todo
+           </strong>
+          </p>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="2">
+         <strong>
+          Limitación para el tamaño de la carga del área de trabajo
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Número Mágico de Miller
+              </strong>
+              : el número de objetos que una persona promedio puede tener en la memoria de trabajo es 7 ± 2.
+              <em>
+               Ejemplos
+              </em>
+              :
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Película de espías, 21 gramos, juego de tronos, 100 años de soledad, …​ muchas historias paralelas poco relacionadas hasta el final
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <em>
+                  Código de números en cuadrícula, …​ muchas frente a pocas reglas
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <em>
+                  Lenguaje natural, …​ muchas palabras en muchas estructuras sintácticas
+                 </em>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+            <li>
+             <p>
+              <strong>
+               Enfoque Visual
+              </strong>
+              : Ver hasta 4 elementos vs Contar a partir de 5 elementos
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Incluso no ves lo que ves!
+                  <a href="https://www.youtube.com/watch?v=hWqWL9SH09o">
+                   contar pases de pelota con …​
+                  </a>
+                 </em>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="capacidadCuantitativa" height="545" src="images/capacidadCuantitativa.svg" width="423"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <h1 class="sect0" id="qué">
+    <strong>
+     ¿Qué?
+    </strong>
+   </h1>
+   <div class="openblock partintro">
+    <div class="content">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 40%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         <strong class="blue">
+          Sistema
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="blue">
+          Sistema Complejo
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            <span class="blue">
+             Un Sistema es un conjunto de componentes interactuando o interdependientes formando un todo integrado. Cada sistema está delimitado por sus límites espacio/temporales e influenciado por su entorno, descrito por su estructura y propósito y expresado en su funcionamiento
+            </span>
+           </blockquote>
+           <div class="attribution">
+            — Wiki?
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            <strong class="blue">
+             Un Sistema Complejo es aquel cuya complejida excede la capacidad intelectual humana
+            </strong>
+           </blockquote>
+           <div class="attribution">
+            — Booch
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="sistema" height="519" src="images/sistema.svg" width="530"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 20%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 20%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         <span class="blue">
+          Sistema
+         </span>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <em>
+          Sistema respiratorio
+         </em>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <em>
+          Película de amor
+         </em>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <em>
+          Numeros Romanos
+         </em>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <em>
+          Semaforo
+         </em>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <span class="blue">
+           conjunto de componentes interactuando o interdependientes formando un todo integrado
+          </span>
+          .
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           nariz, laringe, faringe, traquea, pulmones, alveolos, …​
+          </em>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           personajes
+          </em>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           I, V, X, L, C, D y M
+          </em>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           Rojo, verde y amarillo
+          </em>
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <span class="blue">
+           Cada sistema está delimitado por sus límites espacio/temporales
+          </span>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           fechas y lugares de la vida del ser vivo que contiene el sistema respiratorio
+          </em>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           fechas y lugares de los personajes
+          </em>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           fechas y lugar donde estén escritos
+          </em>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           fechas y lugar de la instalación del semáforo
+          </em>
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <span class="blue">
+           e influenciado por su entorno,
+          </span>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           lo que respira: aire limpio vs contaminado, …​
+          </em>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           la sociedad, las familias, una ex-pareja, …​
+          </em>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           en desuso en favor de sistemas de numeración poscionales (indo-arábigo, maya, chino, …​) mucho más efectivos
+          </em>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           fuente de energía, climatología, vándalos, artistas, …​
+          </em>
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <span class="blue">
+           descrito por su estructura
+          </span>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           la nariz se conecta con la laringe, la laringe con la traquea, …​
+          </em>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           argumento que relaciona los personajes de la historia
+          </em>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           grupos de máximo 3 elementos consecutivos, grupo con elemento y opcionalmente un elemento inferiro prefijo o sufijo, …​
+          </em>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           de rojo a verde, de verda a amarillo y de amarillo a verdo y/o rojo, …​
+          </em>
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <span class="blue">
+           y propósito
+          </span>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           inyectar oxigeno al sistema circulatorio extrayendo monóxido de carbono, …​
+          </em>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           transmitir emociones
+          </em>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           regsitrar información cuantitativa
+          </em>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           controlar el tráfico
+          </em>
+         </p>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <span class="blue">
+           y expresado en su funcionamiento.
+          </span>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           inspiración y expiración
+          </em>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           reproducción de la película
+          </em>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           suma, resta, producto, división, …​ son información cuantitativas registrada
+          </em>
+         </p>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <p class="tableblock">
+          <em>
+           luces con alimentación electrica
+          </em>
+         </p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <h1 class="sect0" id="para-qué">
+    <strong>
+     ¿Para qué?
+    </strong>
+   </h1>
+   <div class="sect1">
+    <h2 id="efectividad">
+     Efectividad
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3334%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Efectividad
+              </strong>
+              en una capacidad es un
+              <strong class="blue">
+               equilibrio, compromiso
+              </strong>
+              entre:
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Eficacia
+              </strong>
+              , alto
+              <span class="blue">
+               cumplimiento de objetivos
+              </span>
+              frente a incumplimientos por errores, desmotivación, cansancio, …​
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Eficiencia
+              </strong>
+              ,
+              <span class="blue">
+               bajo consumo de recursos
+              </span>
+              (tiempo, energía, espacio, …​) frente a consumos disparatados comparado con otras soluciones
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="efectividad" height="469" src="images/efectividad.svg" width="316"/>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top" colspan="2">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="efectividad" src="images/efectividad.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 20%;"/>
+       <col style="width: 40%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Eficientemente
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Ineficientemente
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle" colspan="2">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Efectividad
+            <em>
+             para Comprar el pan
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             Eficazmente
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Trae el pan en cinco minutos y devuelve la vuelta
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Trae el pan en 20 minutos y no devuelve la vuelta
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             Ineficazmente
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Trae el pan pero no la cantidad, tipos, …​ oportunos en cinco minutos y devuelve la vuelta
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Trae el pan pero no la cantidad, tipos, …​ oportunos en 20 minutos y no devuelve la vuelta
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle" colspan="2">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Efectividad
+            <em>
+             para un Producto Software
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             Eficazmente
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Responde a la funcionalidad establecida con el consumo de tiempo y memoria establecido
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Responde a la funcionalidad establecida con el consumo de tiempo y memoria establecido más un 50%, 100%, 300%, …​
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             Ineficazmente
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Responde a la funcionalidad establecida menos el 33%, 66%, …​ con el consumo de tiempo y memoria establecido
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Responde a la funcionalidad establecida menos el 33%, 66%, …​ con el consumo de tiempo y memoria establecido más un 50%, 100%, 300%, …​
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle" colspan="2">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Efectividad
+            <em>
+             para Desarrollar Software
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             Eficazmente
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Entrega de producto establecido en el tiempo y coste establecidos
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Entrega de producto establecido en el tiempo y costes establecidos más un 50%, 100%, 300%, …​
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             Ineficazmente
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Entrega de producto establecido menos el 33%, 66%, …​ en el tiempo y coste establecidos
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Entrega de producto establecido menos el 33%, 66%, …​ en el tiempo y coste establecidos más un 50%, 100%, 300%, …​
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 70%;"/>
+       <col style="width: 30%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="exampleblock">
+           <div class="title">
+            Ejemplo: Escenario con tu propia experiencia
+           </div>
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                Las personas no son efectivas con tamaños elevados de elementos a gestionar por imposibilidad, agotamiento, desmotivación, distracción, …​)
+               </p>
+               <div class="ulist">
+                <ul>
+                 <li>
+                  <p>
+                   No son eficaces por errores (
+                   <em>
+                    ¿nunca te has equivocado?, …​
+                   </em>
+                   )
+                  </p>
+                 </li>
+                 <li>
+                  <p>
+                   No son eficientes por
+                  </p>
+                  <div class="ulist">
+                   <ul>
+                    <li>
+                     <p>
+                      consumo de tiempo (
+                      <em>
+                       calcula los primos del primer billón, a relación de un segundo por cálculo de si un número es primo, no hay segundos en la vida de una persona, …​
+                      </em>
+                      )
+                     </p>
+                    </li>
+                    <li>
+                     <p>
+                      consumo de espacio (
+                      <em>
+                       calcula con lapiz y papel los posibles caminos entre todas las poblaciones de tu tierra natal, suponiendo que habrá miles, no hay hojas en el planeta, …​
+                      </em>
+                      )
+                     </p>
+                    </li>
+                   </ul>
+                  </div>
+                 </li>
+                </ul>
+               </div>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="eficaciaEficiencia" src="images/eficaciaEficiencia.jpg"/>
+            </span>
+           </p>
+          </div>
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="doThings" src="images/doThings.gif"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <h1 class="sect0" id="cómo">
+    <strong>
+     ¿Cómo?
+    </strong>
+   </h1>
+   <div class="sect1">
+    <h2 id="características-de-sistemas-complejos">
+     Características de Sistemas Complejos
+    </h2>
+    <div class="sectionbody">
+     <div class="imageblock">
+      <div class="content">
+       <img alt="sistemaComplejo" height="451" src="images/sistemaComplejo.svg" width="853"/>
+      </div>
+     </div>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Estructura jerárquica
+              </strong>
+              . Frecuentemente, la complejidad adquiere una forma jerárquica donde el sistema complejo está compuesto de
+              <strong class="blue">
+               subsistemas interrelacionados que a su vez tienen sus propios subsistemas y así hasta que se alcanza algún elemento del más bajo nivel
+              </strong>
+              . No solo son sistemas complejos jerárquicos sino que los niveles de su jerarquía representan los diferentes
+              <strong class="blue">
+               niveles de abstracción cada uno construido sobre otro y cada uno comprensible por sí mismo
+              </strong>
+              . En cada nivel de abstracción, encontramos una
+              <strong class="blue">
+               colección de elementos que colaboran para proveer servicios a niveles superiores
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Separación de asuntos
+              </strong>
+              .
+              <strong>
+               Las intra-conexiones de componentes son más fuertes que las inter-conexiones de componentes
+              </strong>
+              . Este hecho tiene el efecto de separar los componentes con dinámica de alta frecuencia (involucrando la interacción entre componentes) de los de dinámica de baja frecuencia. En términos sencillos, hay una clara separación de asuntos
+              <strong class="blue">
+               entre las partes de diferentes niveles de abstracción
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Patrones comunes
+              </strong>
+              . Los sistemas jerárquicos se componen generalmente de
+              <strong class="blue">
+               sólo unos pocos tipos diferentes de subsistemas en varias combinaciones y órdenes
+              </strong>
+              . Nos encontramos con una gran similitud en la forma de mecanismos compartidos unificando esta vasta jerarquía
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Elementos primitivos relativos
+              </strong>
+              . La elección de qué componentes en un sistema son primitivos es relativamente
+              <strong class="blue">
+               arbritraria y mayormente está a discrección del observador del sistema
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top" colspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Formas intermedias estables
+              </strong>
+              . Un sistema complejo que funciona
+              <strong class="blue">
+               invariablemente se encuentra que ha evolucionado a partir de un sistema sencillo que funcionó
+              </strong>
+              . Un sistema complejo diseñado desde cero no funciona y no puede ser remendado para hacer que funcione. Usted tiene que comenzar de nuevo, a partir de un sistema sencillo de trabajo
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="capacidades-cualitativas">
+     Capacidades cualitativas
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 70%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              La historia del ser humano disfruta de cuatro
+              <strong>
+               mecanismos mentales
+              </strong>
+              que facilitan enormemente nuestra comprensión de los sistemas complejos:
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Abstracción
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               Encapsulación
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               Modularización
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               Jerarquización
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="sect2">
+      <h3 id="abstracción">
+       Abstracción
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 30.7692%;"/>
+        <col style="width: 46.1538%;"/>
+        <col style="width: 23.077%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="quoteblock">
+            <blockquote>
+             La abstracción surge de un reconocimiento de similitudes entre ciertos objetos, situaciones o procesos en el mundo real, y la decisión de concentrarse en estas similitudes e ignorar por el momento, las diferencias
+            </blockquote>
+            <div class="attribution">
+             — Dahl
+             <br/>
+             <cite>
+              Dijkstra y Hoare
+             </cite>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="quoteblock">
+            <blockquote>
+             La abstracción es "una descripción simplificada, o especificación, de un sistema que hace hincapié en algunos de los detalles o propiedades mientras que suprime otros del sistema. Una buena abstracción es la que hace hincapié en los detalles que son importantes para el lector o usuario y suprime detalles que son, al menos por ahora, de distracción
+            </blockquote>
+            <div class="attribution">
+             — Shaw
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="quoteblock">
+            <blockquote>
+             <span class="blue">
+              La abstracción es el proceso mental de extracción de las características esenciales de algo, ignorando los detalles superfluos
+             </span>
+            </blockquote>
+            <div class="attribution">
+             — Booch
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 38.0952%;"/>
+        <col style="width: 23.8095%;"/>
+        <col style="width: 9.5238%;"/>
+        <col style="width: 28.5715%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="4">
+          Implicaciones:
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Una abstracción denota las
+               <strong class="blue">
+                características esenciales
+               </strong>
+               de un objeto que lo distinguen de todos los otros tipos de objetos y por lo tanto proporciona
+               <strong class="blue">
+                límites conceptuales nítidamente definidos
+               </strong>
+               , en relación con la perspectiva del espectador.
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Una abstracción se centra en la
+               <strong class="blue">
+                visión exterior
+               </strong>
+               de un objeto y sirve para separar el comportamiento esencial de un objeto de su implantación
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               La abstracción es
+               <strong class="blue">
+                eminentemente subjetiva
+               </strong>
+               , dependiendo del interés del observador
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Nos esforzamos para construir
+               <strong class="blue">
+                abstracciones de las entidades porque son directamente paralelos al vocabulario del dominio de un determinado problema
+               </strong>
+               .
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="exampleblock">
+       <div class="title">
+        Ejemplo: Varios
+       </div>
+       <div class="content">
+        <div class="ulist">
+         <ul>
+          <li>
+           <p>
+            Mundo real: un autobús de un pasajero o un mecánico, un ordenador, …​
+           </p>
+          </li>
+          <li>
+           <p>
+            Software orientado a procesos: factorial, mostrar menú, ordenar, …​
+           </p>
+          </li>
+          <li>
+           <p>
+            Software orientado a objetos: una fecha, un intervalo, un gestor de comunicaciones, un colección de datos, …​
+           </p>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="sect2">
+      <h3 id="encapsulación">
+       Encapsulación
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="quoteblock">
+            <blockquote>
+             <strong class="blue">
+              La encapsulación es proceso por el que se ocultan los detalles del soporte de las características esenciales de una abstracción
+             </strong>
+            </blockquote>
+            <div class="attribution">
+             — Booch
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="blue">
+                Principio de Ocultación de la información
+               </strong>
+               :
+               <span class="blue">
+                todo aquello que no sea necesario dar a conocer, no se debe dar a conocer
+               </span>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <em>
+                   Variables locales inacesibles desde fuera de su ámbito, …​
+                  </em>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3334%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-center valign-middle" colspan="3">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             Hacer notar que en ninguno de los casos
+             <strong class="red">
+              no se trata de ocultar la información
+             </strong>
+             en sí misma sino de
+             <strong class="green">
+              ocultar los detalles del soporte de dicha información
+             </strong>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               La encapsulación se logra con mayor frecuencia a través de ocultación de información, que es el proceso de
+               <strong class="blue">
+                ocultar todos los secretos de un objeto que no contribuyen a sus características esenciales
+               </strong>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               La encapsulación proporciona barreras explícitas entre las diferentes abstracciones y por lo tanto conduce a una clara
+               <strong class="blue">
+                separación de asuntos
+               </strong>
+               .
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               El beneficio inmediato será la posibilidad de
+               <strong class="blue">
+                cambiar los soportes de las características de una abstracción sin afectar a todos los elementos que dependan
+               </strong>
+               de esas características porque ni los conocen, ni los mencionan
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 29.1666%;"/>
+        <col style="width: 29.1666%;"/>
+        <col style="width: 8.3333%;"/>
+        <col style="width: 12.5%;"/>
+        <col style="width: 20.8335%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="5">
+          Implicaciones:
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="5">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Una vez realizada cierta abstracción hay que
+               <strong class="blue">
+                “trasladarlas” al lenguaje de programación
+               </strong>
+               .
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Esto conlleva decidir entre diversas
+                  <strong class="blue">
+                   estructuras de datos
+                  </strong>
+                  (estáticas o dinámicas, en memoria principal o secundaria, etc.) y/o diversos
+                  <strong class="blue">
+                   algoritmos
+                  </strong>
+                  (¿con variables auxiliares o no? ¿recursivo o iterativo?, etc.), siendo diversas las alternativas que recogen dichas características esenciales.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Una vez que se selecciona una implantación, debe ser
+                  <strong class="blue">
+                   tratado como un secreto de la abstracción y oculta a la mayoría de los clientes
+                  </strong>
+                  . En la práctica, esto significa que cada clase debe tener dos partes:
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               La
+               <strong class="blue">
+                interfaz
+               </strong>
+               de una clase capta sólo su vista exterior, que abarca nuestra abstracción del comportamiento común a todas las instancias de la clase.
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  La interfaz de una clase es el único lugar donde establecemos
+                  <strong class="blue">
+                   todas los suposiciones que un cliente puede hacer
+                  </strong>
+                  sobre cualquier instancia de la clase
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               La
+               <strong class="blue">
+                implementación
+               </strong>
+               de una clase comprende la representación de la abstracción, así como los
+               <strong class="blue">
+                mecanismos para conseguir el comportamiento deseado
+               </strong>
+               .
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  La implementación encapsula detalles sobre los qué ningún cliente puede hacer suposiciones.
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               La
+               <strong class="blue">
+                abstracción de un objeto debe preceder a las decisiones acerca de su implantación
+               </strong>
+               .
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="blue">
+                Ninguna parte de un sistema complejo debe depender de los detalles internos de cualquier otra parte
+               </strong>
+               .
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Mientras que la
+               <strong class="blue">
+                abstracción ayuda a las personas a pensar
+               </strong>
+               en lo que están haciendo, la
+               <strong class="blue">
+                encapsulación permite hacer cambios fiables
+               </strong>
+               en el programa con un esfuerzo limitado.
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="exampleblock">
+       <div class="title">
+        Ejemplo: Varios
+       </div>
+       <div class="content">
+        <div class="ulist">
+         <ul>
+          <li>
+           <p>
+            Mundo real: un autobús, un ordenador, una universidad, …​
+           </p>
+          </li>
+          <li>
+           <p>
+            Software orientado a procesos: factorial, mostrar menú, ordenar, …​
+           </p>
+          </li>
+          <li>
+           <p>
+            Software orientado a objetos: una fecha, un intervalo, un gestor de
+comunicaciones, un colección de datos, …​
+           </p>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="sect2">
+      <h3 id="modularización">
+       Modularización
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 23.8095%;"/>
+        <col style="width: 57.1428%;"/>
+        <col style="width: 19.0477%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="quoteblock">
+            <blockquote>
+             <strong class="blue">
+              La modularidad es el proceso de descomposición de un sistema en un conjunto de piezas poco acoplados y cohesivos
+             </strong>
+            </blockquote>
+            <div class="attribution">
+             — Booch
+             <br/>
+             <cite>
+              96
+             </cite>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="quoteblock">
+            <blockquote>
+             El
+             <strong class="blue">
+              acoplamiento
+             </strong>
+             “[…​] es la medida de
+             <span class="blue">
+              fuerza de la asociación establecida por una conexión ente un módulo -elemento- y otro
+             </span>
+             . El
+             <span class="blue">
+              acoplamiento fuerte complica un sistema
+             </span>
+             porque los módulos son más difíciles de comprender, cambiar o corregir por sí mismos si están muy interrelacionados con otros módulos
+            </blockquote>
+            <div class="attribution">
+             — Booch
+             <br/>
+             <cite>
+              96
+             </cite>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="quoteblock">
+            <blockquote>
+             La
+             <strong class="blue">
+              cohesión
+             </strong>
+             mide el
+             <span class="blue">
+              grado de conectividad entre los elementos de un solo módulo
+             </span>
+            </blockquote>
+            <div class="attribution">
+             — Booch
+             <br/>
+             <cite>
+              96
+             </cite>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 36.3636%;"/>
+        <col style="width: 36.3636%;"/>
+        <col style="width: 27.2728%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="3">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Al
+               <strong class="blue">
+                diseñar un sistema de software complejo, es esencial
+               </strong>
+               para descomponer en partes más pequeñas y más pequeñas, cada una de las cuales podemos entonces refinar independientemente. De esta manera, satisfacemos la restricción muy real que existe sobre
+               <strong class="blue">
+                la capacidad del canal de la cognición humana
+               </strong>
+               : para entender cualquier nivel dado de un sistema, sólo necesitamos comprender algunas partes (en lugar de todas las partes) a la vez.
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Para modularizar hay que
+               <strong class="blue">
+                minimizar las dependencias entre módulos
+               </strong>
+               (acoplamiento) que deben tener significado propio por sí mismo
+               <strong class="blue">
+                agrupando abstracciones lógicamente relacionadas
+               </strong>
+               (cohesión)
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               El
+               <strong class="blue">
+                bajo acoplamiento de un modulo se basa en la abstracción
+               </strong>
+               que limita su interfaz a lo esencial
+               <strong class="blue">
+                y en la encapsulación
+               </strong>
+               que oculta todos los detalles necesarios para su implantación pero innecesarios para otros módulos que se relacionen con éste
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Dividir un programa en una serie de límites documentados bien definidos dentro del programa es de
+               <strong class="blue">
+                gran valor en la comprensión del programa
+               </strong>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-none grid-none stretch">
+       <colgroup>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3334%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="quoteblock">
+            <blockquote>
+             <span class="blue">
+              La descomposición inteligente se dirige directamente a la complejidad inherente del software al obligar a una división del espacio de estados de un sistema
+             </span>
+            </blockquote>
+            <div class="attribution">
+             — Parnas
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="modularizacion" height="513" src="images/modularizacion.svg" width="522"/>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="exampleblock">
+            <div class="content">
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Mundo real: un autobús, un ordenador, una universidad, …​
+                </p>
+               </li>
+               <li>
+                <p>
+                 Software orientado a procesos: factorial, mostrar menú, ordenar, …​
+                </p>
+               </li>
+               <li>
+                <p>
+                 Software orientado a objetos: una fecha, un intervalo, un gestor de comunicaciones, un colección de datos, …​
+                </p>
+               </li>
+              </ul>
+             </div>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="jeararquización">
+       Jeararquización
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 28.5714%;"/>
+        <col style="width: 57.1428%;"/>
+        <col style="width: 14.2858%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="quoteblock">
+            <blockquote>
+             Jerarquía es una clasificación u ordenamiento de las abstracciones
+            </blockquote>
+            <div class="attribution">
+             — Booch
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="quoteblock">
+            <blockquote>
+             <span class="blue">
+              La jerarquización es el proceso de estructuración por el que se produce una organización de un conjunto de elementos en grados o niveles de responsabilidad, de clasificación o de composición, …​ entre otros
+             </span>
+            </blockquote>
+            <div class="attribution">
+             — Fernando Arroyo
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="blue">
+                Grafo dirigido acíclico
+               </strong>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3334%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               La
+               <strong class="blue">
+                abstracción
+               </strong>
+               es una buena cosa pero en todos los casos, excepto las aplicaciones más triviales, podemos encontrar muchas más abstracciones diferentes de lo que podemos comprender a la vez.
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               La
+               <strong class="blue">
+                encapsulación
+               </strong>
+               ayuda a gestionar esta complejidad al ocultar el interior de la vista de nuestras abstracciones.
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               La
+               <strong class="blue">
+                modularidad
+               </strong>
+               ayuda también, por que nos da una manera de agrupar abstracciones relacionados lógicamente.
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle" colspan="3">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             Aún así, esto
+             <strong class="red">
+              no es suficiente
+             </strong>
+             . Un conjunto de abstracciones a menudo forma una jerarquía, y
+             <strong class="green">
+              mediante la identificación de estas jerarquías en nuestro diseño se simplifica enormemente nuestra comprensión del problema
+             </strong>
+             .
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          Implicaciones:
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               La identificación de las jerarquías dentro de un sistema de software complejo a menudo
+               <strong class="red">
+                no es fácil
+               </strong>
+               .
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Una vez que se exponen esas jerarquías, la estructura de un sistema complejo se vuelve muy
+                  <strong class="green">
+                   simple y obtenemos la comprensión
+                  </strong>
+                  de la misma.
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Si no revelamos la estructura de clases de un sistema, tendríamos que multiplicar nuestro conocimiento sobre las propiedades de cada parte individual.
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Con la inclusión de la estructura de clases, captamos estas
+                  <strong class="blue">
+                   propiedades comunes en un solo lugar
+                  </strong>
+                  .
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 37.7358%;"/>
+        <col style="width: 31.132%;"/>
+        <col style="width: 31.1322%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Existen
+               <strong class="blue">
+                dos jerarquías ortogonales del sistema: la estructura de clases y la estructura de objetos
+               </strong>
+               .
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Cada jerarquía está
+                  <strong class="blue">
+                   en capas
+                  </strong>
+                  , con clases más abstractas y objetos construidos sobre otros más primitivos.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  La clase u objeto que se elija como
+                  <strong class="blue">
+                   primitivo está en relación con el problema
+                  </strong>
+                  en cuestión.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Mirando dentro de
+                  <strong class="blue">
+                   cualquier nivel dado revela otro nivel de complejidad
+                  </strong>
+                  .
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Especialmente entre las partes de la estructura del objeto,
+                  <strong class="blue">
+                   existe una estrecha colaboración entre los objetos de ese mismo nivel de abstracción
+                  </strong>
+                  .
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="blue">
+                La estructura de clases y la estructura de objetos no son completamente independientes
+               </strong>
+               ; más bien, cada objeto en la estructura de objetos representa una instancia específica de una clase.
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Por lo general hay muchos más objetos que clases de objetos dentro de un sistema complejo.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Al mostrar la "parte de", así como la jerarquía "es un", exponemos de
+                  <strong class="green">
+                   forma explícita la redundancia del sistema considerado
+                  </strong>
+                  .
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               La mayoría de los sistemas interesantes
+               <strong class="red">
+                no incorporan una única jerarquía
+               </strong>
+               ; en cambio, nos encontramos con que muchas jerarquías diferentes suelen estar presentes dentro del mismo sistema complejo.
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  En nuestra experiencia, hemos encontrado que es
+                  <strong class="green">
+                   esencial para ver un sistema desde ambas perspectivas
+                  </strong>
+                  , estudiando su jerarquía "es un" (clasificación), así como su jerarquía "parte de“ (composición)
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 35%;"/>
+        <col style="width: 65%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top" rowspan="2">
+          <div class="content">
+           <div class="quoteblock">
+            <blockquote>
+             <span class="blue">
+              Nuestra experiencia es que los
+              <strong class="green">
+               sistemas de software complejos más  exitosos
+              </strong>
+              son aquellos cuyos diseños incluyen explícitamente las
+              <strong class="green">
+               estructuras de clases y objetos bien diseñadas y encarnan los cinco atributos de sistemas complejos
+              </strong>
+              descritos en la sección anterior. […]
+              <strong class="red">
+               Muy raramente nos encontramos con sistemas de software que se entregan a tiempo, que están dentro del presupuesto y que cumplen con sus requisitos, a menos que estén diseñados con estos factores en mente
+              </strong>
+             </span>
+            </blockquote>
+            <div class="attribution">
+             — Booch
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="exampleblock">
+            <div class="title">
+             Ejemplo: Varios
+            </div>
+            <div class="content">
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Mundo real: un autobús, un ordenador, una universidad, …​ se componen de otros elementos y los hay de varias clases similares
+                </p>
+               </li>
+               <li>
+                <p>
+                 Software orientado a procesos: factorial, mostrar menú, ordenar, …​ se componen de otros elementos y los hay de varias clases similares
+                </p>
+               </li>
+               <li>
+                <p>
+                 Software orientado a objetos: una fecha, un intervalo, un gestor de comunicaciones, un colección de datos, …​ se componen de otros elementos y los hay de varias clases similares
+                </p>
+               </li>
+              </ul>
+             </div>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="capacidadesCualitativas" height="827" src="images/capacidadesCualitativas.svg" width="630"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <h1 class="sect0" id="síntesis">
+    <strong>
+     Síntesis
+    </strong>
+   </h1>
+   <div class="openblock partintro">
+    <div class="content">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Complejidad
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Sencillez
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             <strong>
+              muchas
+             </strong>
+             reglas, explicaciones, argumentos, …​
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             <strong>
+              pocas
+             </strong>
+             reglas, explicaciones, argumentos, …​
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             leyes, patentes, productos bancarios, edificios, …​
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             grandes novelas, juegos, empresas, teorías, …​ Máquina de Turing: mover cinta izquierda/derecha, escribir/leer 0/1’s, 3 dualidades "explican" lo computable!!!
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             a causa de la
+             <strong>
+              limitación mental cuantitativa
+             </strong>
+             : número mágico de Miller, …​
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             gracias a nuestras
+             <strong>
+              capacidades cualitativas
+             </strong>
+             :
+             <strong>
+              abstracción
+             </strong>
+             ,
+             <strong>
+              encapsulación
+             </strong>
+             ,
+             <strong>
+              modularidad
+             </strong>
+             y
+             <strong>
+              jerarquía
+             </strong>
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="personaCompleja" src="images/personaCompleja.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="personaSencilla" src="images/personaSencilla.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Rápido, más rápido!!!, más, quiero más!!!, …​, ansia viva, …​ Círculos viciosos
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Poco a poco, paso a paso, …​, templanza, …​ Círculos virtuosos
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            <strong>
+             Lo complejo es feo
+            </strong>
+           </blockquote>
+           <div class="attribution">
+            — ¿Firmas tú?
+            <br/>
+            <cite>
+             Yo no!
+            </cite>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            <strong>
+             Lo sencillo es bello
+            </strong>
+           </blockquote>
+           <div class="attribution">
+            — E. F. Schumacher
+            <br/>
+            <cite>
+             Small Is Beautiful. A Study of Economics As If People Mattered
+            </cite>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3334%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             Musa de la Jerarquización
+            </strong>
+            , por encima de la fila, organiza el ataque de destrucción total …​ de la complejidad
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="musaJerarquizacion" src="images/musaJerarquizacion.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             Musa de la Abstracción
+            </strong>
+            , la primera de la fila, ataca a lo esencial, ignorando detalles
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             Musa de la Modularidad
+            </strong>
+            , la segunda de la fila, te parte en piezas poco acopladas y cohesivas
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             Musa de la Encapsulación
+            </strong>
+            , la última de la fila, oculta el soporte de sus armas
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="musaAbstraccion" src="images/musaAbstraccion.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="musaModularizacion" src="images/musaModularizacion.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="musaEncapsulacion" src="images/musaEncapsulacion.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Santa Tecla, Epifanía
+             <strong>
+              Cualitativa
+             </strong>
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               <strong>
+                Sin
+               </strong>
+               detalles,
+               <strong>
+                con
+               </strong>
+               esencia
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               mi musa
+               <strong>
+                Abstracción
+               </strong>
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               <strong>
+                Sin
+               </strong>
+               acoplamiento,
+               <strong>
+                con
+               </strong>
+               cohesion
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               mimosa
+               <strong>
+                Modularización
+               </strong>
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               <strong>
+                Sin
+               </strong>
+               detalles del soporte
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               mi musa
+               <strong>
+                Encapsulación
+               </strong>
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               <strong>
+                Con
+               </strong>
+               niveles de organización
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               mimosa
+               <strong>
+                Jearquización
+               </strong>
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="balanza" src="images/balanza.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="imageblock">
+      <div class="content">
+       <img alt="mecanismoMental" height="1001" src="images/mecanismoMental.svg" width="1609"/>
+      </div>
+     </div>
+    </div>
+   </div>
+   <h1 class="sect0" id="bibliografía">
+    <strong>
+     Bibliografía
+    </strong>
+   </h1>
+   <div class="openblock partintro">
+    <div class="content">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Object Solutions. Managing the Object Oriented Project
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley Professional (1789)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ObjectSolutionsManagingTheObjectOrientedProject.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Object Oriented Analysis and Design with Applications
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Imprint Addison-Wesley Educational s Inc (3 de junio de 2011)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ObjectOrientedAnalysisAndDesignWithApplications.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              The Unified Modeling Language User Guide
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Pearson Education (US); Edición: 2 ed (28 de junio de 2005)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/TheUnifiedModelingLanguageUserGuide.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              The Mythical Man Month. Essays on Software Engineering
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Frederick P. Brooks
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Prentice Hall; Edición: Nachdr. 20th Anniversary (1 de enero de 1995)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/TheMythicalManMonthEssaysOnSoftwareEngineering.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Extreme Programming Explained. Embrace Change. Embracing Change
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Kent Beck,Cynthia Andres
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley Educational Publishers Inc; Edición: 2nd edition (16 de noviembre de 2004)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ExtremeProgrammingExplainedEmbraceChangeEmbracingChange.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Refactoring. Improving the Design of Existing Code
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Martin Fowler,Kent Beck,John Brant,William Opdyke,Don Roberts
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison Wesley; Edición: 01 (1 de octubre de 1999)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/RefactoringImprovingTheDesignOfExistingCode.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              UML Distilled. A Brief Guide to the Standard Object Modeling Language
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Martin Fowler,Kendall Scott
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley Educational Publishers Inc; Edición: 3 ed (15 de septiembre de 2003)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/UMLDistilledABriefGuideToTheStandardObjectModelingLanguage.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Patrones de diseño
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Erich Gamma et al
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Grupo Anaya Publicaciones Generales; Edición: 1 (1 de noviembre de 2002)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/PatronesDeDiseño.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Clean Code. A Handbook of Agile Software Craftsmanship
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Robert C. Martin
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Prentice Hall; Edición: 01 (1 de agosto de 2008)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/CleanCodeAHandbookOfAgileSoftwareCraftsmanship.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Object-Oriented Software Construction
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Bertrand Meyer
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Prentice Hall; Edición: 2 ed (3 de abril de 1997)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ObjectOrientedSoftwareConstruction.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="ponente">
+     Ponente
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Luis Fernández Muñoz
+               </em>
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Formador/Consultor
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://es.linkedin.com/in/luisfernandezmunyoz">
+                  <em>
+                   Linkedin
+                  </em>
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="setillo" src="images/setillo.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Doctor en Inteligencia Artificial por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Ingeniero en Informática por la UMA
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Diplomado en Informática por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Profesor Titular de ETSISI de la UPM
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div id="footer-text">
+    Version 0.0.1
+    <br/>
+    Last updated 2022-10-16 16:23:03 +0200
+   </div>
+  </div>
+  <script>
+   let speed = 50;
                 
                 function typeWriter(v) {
                   let i = v.getAttribute("typewriter-index")
@@ -2166,6 +4113,6 @@ Last updated 2022-10-16 16:23:03 +0200
                 })
                 
                 setTimeout(typeWriterAll, speed);
-                
-                </script>
+  </script>
+ </body>
 </html>

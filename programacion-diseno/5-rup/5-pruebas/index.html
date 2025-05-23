@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8">
-<meta name="author" content="Universo Santa Tecla">
-<title>Disciplina de Pruebas</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-<style>
-/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Asciidoctor 2.0.8" name="generator"/>
+  <meta content="Universo Santa Tecla" name="author"/>
+  <title>
+   Disciplina de Pruebas
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700" rel="stylesheet"/>
+  <style>
+   /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
@@ -434,1104 +436,2339 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="book">
-<div id="header">
-<h1>Disciplina de Pruebas</h1>
-<div class="details">
-<span id="author" class="author">Universo Santa Tecla</span><br>
-<span id="email" class="email"><a href="mailto:universoSantaTecla@gmail.com">universoSantaTecla@gmail.com</a></span><br>
-<span id="revnumber">version 0.0.1</span>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Índice</div>
-<ul class="sectlevel1">
-<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
-<li><a href="#qué"><strong>¿Qué?</strong></a></li>
-<li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
-<li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
-<li><a href="#actividades">Actividades</a>
-<ul class="sectlevel2">
-<li><a href="#planificar-pruebas">Planificar Pruebas</a></li>
-<li><a href="#diseñar-pruebas">Diseñar Pruebas</a></li>
-<li><a href="#implementar-pruebas">Implementar Pruebas</a></li>
-<li><a href="#realizar-pruebas-de-integración">Realizar Pruebas de Integración</a></li>
-<li><a href="#realizar-pruebas-de-sistemas">Realizar Pruebas de Sistemas</a></li>
-<li><a href="#evaluar-pruebas">Evaluar Pruebas</a></li>
-</ul>
-</li>
-<li><a href="#síntesis"><strong>Síntesis</strong></a></li>
-<li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
-<li><a href="#ponente">Ponente</a></li>
-</ul>
-</div>
-</div>
-<div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="por-qué"><strong>¿Por qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">malas variables en su economía</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">ámbito incumplido</strong> y/o</p>
-</li>
-<li>
-<p><strong class="red">tiempo incumplido</strong> y/o</p>
-</li>
-<li>
-<p><strong class="red">coste incumplido</strong>;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">mala calidad del software</strong>, <span class="red">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">mala mantenibilidad</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">viscoso</strong>, porque <span class="red">no se puede entender con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">rígido</strong>, porque <span class="red">no se puede cambiar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">frágil</strong>, porque <span class="red">no se puede probar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">inmovil</strong>, porque <span class="red">no se puede reutilizar con facilidad</span> y/o</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">complejidad arbitraria</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/davidProyectoImplantacionDiseñoMal.png" alt="davidProyectoImplantacionDiseñoMal"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/arbolNoMantenible.jpeg" alt="arbolNoMantenible"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="green">Soy el cliente de la aplicación que deseo</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="red">Eres el jefe de proyecto de la aplicación</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="red">Soy un miembro del equipo directivos de tu empresa</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="green">¿Sabrías qué y cómo preguntarme, en qué orden y hasta qué nivel de detalle y cuándo?</em></p>
-</li>
-<li>
-<p><em class="green">¿Cuál sería el formato adecuado del resultado de las reuniones?</em></p>
-</li>
-<li>
-<p><em class="green">¿Cómo repartirías las tareas de requisitos entre las personas del equipo de desarrollo? ¿Con cuántas personas empezarías?</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="cyan"><em>¿Por qué parte comenzarías, continuarías y terminarias la producción de código?</em></strong></p>
-</li>
-<li>
-<p><strong class="cyan"><em>¿Qué medidas aplicarías para obtener la calidad del software adecuada para facilitar la depuración de errores, la mantenibilidad corrective, perfective o adaptativa?</em></strong></p>
-</li>
-<li>
-<p><strong class="cyan"><em>¿Cómo repartirías las tareas de producción entre las personas del equipo de desarrollo?</em></strong></p>
-</li>
-<li>
-<p><strong class="cyan"><em>¿Cuánta gente incorporarías?</em></strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red">¿Sabrías justificarme mes a mes qué tiempo se tardará en terminar el proyecto con el personal asignado en distintos momentos de proyecto?</em></p>
-</li>
-<li>
-<p><em class="red">¿Sabrías justificarme el grado de satisfacción del cliente durante el transcurso del proyecto?</em></p>
-</li>
-<li>
-<p><em class="red">¿Sabrías justificarme cuántas personas añadir al proyecto para reducir el tiempo de desarrollo?</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="qué"><strong>¿Qué?</strong></h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Flujo de trabajo</strong> (realización de un caso de uso que incluye trabajadores, actividades y diagramas) cuyo principal propósito es <strong class="blue">comprobar el resultado de la implementación probando cada construcción, incluyendo construcciones de versiones intermedias y final que se entregará</strong></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="para-qué"><strong>¿Para qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Efectividad, eficacia y eficiencia, del Proyecto Software</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buenas variables en su economía</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">ámbito cumplido</strong> y</p>
-</li>
-<li>
-<p><strong class="green">tiempo cumplido</strong> y</p>
-</li>
-<li>
-<p><strong class="green">coste cumplido</strong>;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buena calidad del software</strong>, <span class="green">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buena mantenibilidad</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">fluido</strong>, porque <span class="green">se puede entender con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">flexible</strong>, porque <span class="green">se puede cambiar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">fuerte</strong>, porque <span class="green">se puede probar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">reusable</strong>, porque <span class="green">se puede reutilizar con facilidad</span> y/o</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">complejidad necesaria</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/davidProyectoImplantacionDiseño.png" alt="davidProyectoImplantacionDiseño"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/arbolMantenible.jpeg" alt="arbolMantenible"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 21.4285%;">
-<col style="width: 17.8571%;">
-<col style="width: 28.5714%;">
-<col style="width: 17.8571%;">
-<col style="width: 14.2859%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong><span class="blue">Encontrar y documentar errores</span></strong> en el producto de software: defectos, problemas.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Asesorar a la dirección sobre la <strong><span class="blue">calidad del software</span></strong> percibida</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Evaluar las suposiciones hechas en las especificaciones de diseño y de requisitos a través de una <strong><span class="blue">demostración concreta</span></strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Validar que el producto de software <strong><span class="blue">funciona como se diseño</span></strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Validar que los <strong><span class="blue">requisitos son implementados apropiadamente</span></strong></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cómo"><strong>¿Cómo?</strong></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="actividades">Actividades</h2>
-<div class="sectionbody">
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/Tests.svg" alt="Tests" width="1369" height="1441">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Introduccion.jpg" alt="Introduccion"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="sect2">
-<h3 id="planificar-pruebas">Planificar Pruebas</h3>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/Plan%20Tests.svg" alt="Plan Tests" width="1713" height="634">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/PlanificarPruebas.jpg" alt="PlanificarPruebas"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 29.6296%;">
-<col style="width: 51.8518%;">
-<col style="width: 18.5186%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Describir una estrategia de prueba para la iteración</span></strong></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Estimar los requisitos para el esfuerzo de prueba</span></strong></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Planificación del esfuerzo de prueba</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Qué sujeto bajo prueba</strong>, <strong class="blue"><em>SUT</em></strong>, ejecutar, <strong class="blue">cómo</strong> ejecutarlos, <strong class="blue">cuándo</strong> ejecutarlos y cómo determinar que el esfuerzo de prueba es exitoso</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Como los <strong class="blue">recursos del sistema y humanos necesarios</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>El principio general es desarrollar casos de prueba y procedimientos con una <strong class="blue">superposición mínima</strong> para probar los <strong class="blue">casos de uso más importantes</strong> y para probar los requisitos que están asociados con el <strong class="blue">mayor riesgo</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="diseñar-pruebas">Diseñar Pruebas</h3>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/designTest.svg" alt="designTest" width="1823" height="660">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/DiseñarPruebas.jpg" alt="DiseñarPruebas"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Diseño de casos de prueba de integración</span></strong>.</th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Diseño de casos de prueba de sistemas</span></strong>.</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Encontrar un conjunto de casos de prueba con una <strong class="blue">superposición mínima</strong>, cada uno de los cuales prueba una ruta o escenario interesante a través de la realización de un caso de uso.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Considerar los <strong class="blue">diagramas de interacción</strong> de las realizaciones de casos de uso como entrada</p>
-</li>
-<li>
-<p>Buscan una combinación de <strong class="blue">entrada, salida y estado de inicio</strong> del sistema del actor que conducen a escenarios interesantes que emplean clases que participan en los diagramas.</p>
-</li>
-<li>
-<p><strong class="blue">Capturan las interacciones reales de los objetos</strong> dentro del sistema.</p>
-</li>
-<li>
-<p>Luego, <strong class="blue">comparan esas interacciones reales</strong> con el diagrama de interacción.</p>
-</li>
-<li>
-<p>Deberían ser <strong class="blue">iguales</strong>; de lo contrario, se detecta un <strong class="red">defecto</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Prueba principalmente combinaciones de casos de uso instanciados en diferentes condiciones, incluidas diferentes configuraciones de hardware, diferentes niveles de cargas del sistema, varios números de actores y diferentes tamaños de la base de datos</strong>.</p>
-</li>
-<li>
-<p>Los diseñadores de pruebas deben <strong class="blue">priorizar las combinaciones</strong> de casos de uso que:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Se requieren para <strong class="blue">funcionar en paralelo</strong>.</p>
-</li>
-<li>
-<p>Es probable que se <strong class="blue">realicen en paralelo</strong></p>
-</li>
-<li>
-<p>Es probable que se <strong class="blue">influyan entre sí</strong> si se realizan en paralelo</p>
-</li>
-<li>
-<p>Involucrar <strong class="blue">múltiples procesos</strong></p>
-</li>
-<li>
-<p><strong class="blue">Utilizar con frecuencia los recursos del sistema</strong>, como procesos, procesadores, bases de datos y software de comunicación, quizás de <strong class="blue">formas complejas e impredecibles</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Diseño de casos de prueba de regresión</span></strong>.</th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Identificación y estructuración de procedimientos de prueba</span></strong>.</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Algunos casos de prueba de construcciones anteriores pueden usarse</strong> para pruebas de regresión en construcciones posteriores, <strong class="red">pero no todos los casos de prueba son adecuados</strong> para pruebas de regresión.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Intentamos <strong class="blue">reutilizar los procedimientos de prueba existentes tanto como sea posible</strong>, lo que significa que es posible que tengamos que modificarlos para que se utilicen para especificar cómo realizar un caso de prueba nuevo y/o modificado</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="implementar-pruebas">Implementar Pruebas</h3>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/implementTest.svg" alt="implementTest" width="901" height="660">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ImplementarPruebas.jpg" alt="ImplementarPruebas"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 20%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="blue">Automatizar los procedimientos creando componentes de prueba</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Cuando utilizamos una herramienta de automatización de pruebas, <strong class="blue">realizamos o especificamos las acciones descritas en los procedimientos de prueba</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Estas acciones luego se <strong class="blue">registran</strong>, dando como resultado un componente de prueba</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Al programar el componente de prueba de forma explícita, <strong class="blue">utilizamos los procedimientos de prueba como las especificaciones principales del esfuerzo de programación</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Los componentes de la prueba a menudo usan <strong class="blue">grandes cantidades de datos de entrada para ser probados y procesan grandes cantidades de datos de salida</strong> como resultados de la prueba.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Es útil poder <strong class="blue">visualizar estos datos de forma clara e intuitiva</strong> para que se puedan especificar correctamente y se puedan interpretar los resultados de las pruebas.</p>
-</li>
-<li>
-<p>Usamos aplicaciones de <strong class="blue">hojas de cálculo y bases de datos</strong> para este propósito.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="realizar-pruebas-de-integración">Realizar Pruebas de Integración</h3>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/performIntegrationTests.svg" alt="performIntegrationTests" width="1040" height="660">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Realizarpruebas.jpg" alt="Realizarpruebas"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 31.8181%;">
-<col style="width: 22.7272%;">
-<col style="width: 22.7272%;">
-<col style="width: 22.7275%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="4"><strong class="blue">Pruebas de integración necesarias para cada construcción creada dentro de una iteración</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Realice las pruebas de integración relevantes para la construcción realizando <strong class="blue">manualmente</strong> los procedimientos de prueba para cada caso de prueba o ejecutando cualquier componente de prueba <strong class="blue">automatizando</strong> los procedimientos de prueba</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Compare los resultados de la prueba con los resultados esperados e <strong class="blue">investigue los resultados de la prueba que se desvíen de lo esperado</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Informe los defectos al ingeniero de componentes</strong> que es responsable de los componentes que probablemente contengan la falla</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Informar los defectos a los diseñadores de pruebas</strong>, quienes luego utilizan los defectos para evaluar los resultados generales del esfuerzo de prueba.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="realizar-pruebas-de-sistemas">Realizar Pruebas de Sistemas</h3>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/performSystemTest.svg" alt="performSystemTest" width="1052" height="660">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/RealizarPruebas2.jpg" alt="RealizarPruebas2"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 75%;">
-<col style="width: 25%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Las pruebas del sistema pueden <strong class="blue">comenzar</strong> cuando las pruebas de integración indican que el sistema cumple con los objetivos de calidad de integración establecidos en el plan de prueba para la iteración actual</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Es decir, el <strong class="blue">95% de los casos de prueba de integración</strong> se ejecutan con un resultado esperado</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Las pruebas del sistema se realizan de <strong class="blue">forma análoga a las pruebas de integración</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="evaluar-pruebas">Evaluar Pruebas</h3>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/evaluateResult.svg" alt="evaluateResult" width="805" height="660">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/EvaluarPruebas.jpg" alt="EvaluarPruebas"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Los diseñadores de prueba <strong class="blue">evalúan los resultados del esfuerzo de prueba</strong> comparando los resultados con los objetivos descritos en el plan de prueba.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Preparan métricas que les permiten determinar el nivel de calidad del software</strong> y determinar cuántas pruebas más se deben realizar:</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Integridad</strong>, que se deriva de la <strong class="blue">cobertura de casos de prueba y la cobertura de los componentes probados</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Esto indica qué porcentaje de los casos de prueba se han ejecutado y el porcentaje del código que se ha probado</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Fiabilidad</strong>, que se basa en <strong class="blue">análisis de tendencias en los defectos descubiertos</strong> y en tendencias en las pruebas que se ejecutan con un resultado esperado.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red"><strong>No parchear, reescribirlo</strong></em></p>
-</li>
-<li>
-<p><em class="red">A menudo, puede ser mucho más barato y menos doloroso tirar un fragmento de código que tiene un montón de errores y reescribirlo desde cero</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="síntesis"><strong>Síntesis</strong></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 22.7272%;">
-<col style="width: 50%;">
-<col style="width: 27.2728%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><em class="blue">Eres el jefe de proyecto de la aplicación</em>:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red">¿Sabrías justificarme mes a mes qué tiempo se tardará en terminar el proyecto con el personal asignado en distintos momentos de proyecto?</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red">¿Sabrías justificarme el grado de satisfacción del cliente durante el transcurso del proyecto?</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red">¿Sabrías justificarme cuántas personas añadir al proyecto para reducir el tiempo de desarrollo?</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Proyectando las estimaciones de las actividades pasadas sobre el futuro en las actividades pendientes</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Curva de Porcentajes de Casos de Uso completados frente a los planificados iteración a iteración</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Estimando cada actividad</strong>, entre 2 y 20 horas, y</p>
-</li>
-<li>
-<p><strong class="green">Repartiendo cohesivamente</strong> entre el equipo de desarrollo incorporado</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" colspan="3"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203; con <strong class="green">trazabilidad</strong> de todo!</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="bibliografía"><strong>Bibliografía</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Unified Software Development Process</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch, Ivar Jacobson y James Rumbaugh</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (1999)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheUnifiedSoftwareDevelopmentProcess.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Rational Unified Process Made Easy, The: A Practitioner&#8217;s Guide to the RUP</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch, , Ivar Jacobson y James Rumbaugh</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2003)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/RationalUnifiedProcessMadeEasy.png" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Craig Larman</strong></p>
-</li>
-<li>
-<p>Pearson; (2004)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ApplyingUML.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Object Solutions. Managing the Object Oriented Project</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Benjamin Cummings; (1995)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ObjectSolutionsManagingObjectOrientedProject.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Object Oriented Analysis and Design with Applications</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2011)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ObjectOrientedAnalysisAndDesingnWhitApplications.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>The Unified Modeling Language User Guide</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Pearson; (2005)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheUnifiedModelingLanguageUserGuide.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>UML Distilled. A Brief Guide to the Standard Object Modeling Language</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Martin Fowler,Kendall Scott</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2003)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/UMLDistilledABriefGuideStandardObjectModelingLanguage.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ponente">Ponente</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 30%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Luis Fernández Muñoz</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Formador/Consultor</em></p>
-</li>
-<li>
-<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
-</li>
-<li>
-<p><em>Ingeniero en Informática por la UMA</em></p>
-</li>
-<li>
-<p><em>Diplomado en Informática por la UPM</em></p>
-</li>
-<li>
-<p><em>Profesor Titular de ETSISI de la UPM</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="footer">
-<div id="footer-text">
-Version 0.0.1<br>
-Last updated 2022-10-16 16:31:37 +0200
-</div>
-</div>
-<script>
-                let speed = 50;
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+ </head>
+ <body class="book">
+  <div id="header">
+   <h1>
+    Disciplina de Pruebas
+   </h1>
+   <div class="details">
+    <span class="author" id="author">
+     Universo Santa Tecla
+    </span>
+    <br/>
+    <span class="email" id="email">
+     <a href="mailto:universoSantaTecla@gmail.com">
+      universoSantaTecla@gmail.com
+     </a>
+    </span>
+    <br/>
+    <span id="revnumber">
+     version 0.0.1
+    </span>
+   </div>
+   <div class="toc" id="toc">
+    <div id="toctitle">
+     Índice
+    </div>
+    <ul class="sectlevel1">
+     <li>
+      <a href="#por-qué">
+       <strong>
+        ¿Por qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#qué">
+       <strong>
+        ¿Qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#para-qué">
+       <strong>
+        ¿Para qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#cómo">
+       <strong>
+        ¿Cómo?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#actividades">
+       Actividades
+      </a>
+      <ul class="sectlevel2">
+       <li>
+        <a href="#planificar-pruebas">
+         Planificar Pruebas
+        </a>
+       </li>
+       <li>
+        <a href="#diseñar-pruebas">
+         Diseñar Pruebas
+        </a>
+       </li>
+       <li>
+        <a href="#implementar-pruebas">
+         Implementar Pruebas
+        </a>
+       </li>
+       <li>
+        <a href="#realizar-pruebas-de-integración">
+         Realizar Pruebas de Integración
+        </a>
+       </li>
+       <li>
+        <a href="#realizar-pruebas-de-sistemas">
+         Realizar Pruebas de Sistemas
+        </a>
+       </li>
+       <li>
+        <a href="#evaluar-pruebas">
+         Evaluar Pruebas
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="#síntesis">
+       <strong>
+        Síntesis
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#bibliografía">
+       <strong>
+        Bibliografía
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#ponente">
+       Ponente
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div id="content">
+   <div id="preamble">
+    <div class="sectionbody">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="por-qué">
+     <strong>
+      ¿Por qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  malas variables en su economía
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     ámbito incumplido
+                    </strong>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     tiempo incumplido
+                    </strong>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     coste incumplido
+                    </strong>
+                    ;
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  mala calidad del software
+                 </strong>
+                 ,
+                 <span class="red">
+                  fiabilidad, usabilidad, interoperatividad, seguirdad, …​ (
+                  <em>
+                   -ilities
+                  </em>
+                  )
+                 </span>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  mala mantenibilidad
+                 </strong>
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     viscoso
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede entender con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     rígido
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede cambiar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     frágil
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede probar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     inmovil
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede reutilizar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  complejidad arbitraria
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="davidProyectoImplantacionDiseñoMal" src="images/davidProyectoImplantacionDiseñoMal.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="arbolNoMantenible" src="images/arbolNoMantenible.jpeg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3334%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         <strong class="green">
+          Soy el cliente de la aplicación que deseo
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="red">
+          Eres el jefe de proyecto de la aplicación
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="red">
+          Soy un miembro del equipo directivos de tu empresa
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="green">
+               ¿Sabrías qué y cómo preguntarme, en qué orden y hasta qué nivel de detalle y cuándo?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="green">
+               ¿Cuál sería el formato adecuado del resultado de las reuniones?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="green">
+               ¿Cómo repartirías las tareas de requisitos entre las personas del equipo de desarrollo? ¿Con cuántas personas empezarías?
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="cyan">
+               <em>
+                ¿Por qué parte comenzarías, continuarías y terminarias la producción de código?
+               </em>
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="cyan">
+               <em>
+                ¿Qué medidas aplicarías para obtener la calidad del software adecuada para facilitar la depuración de errores, la mantenibilidad corrective, perfective o adaptativa?
+               </em>
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="cyan">
+               <em>
+                ¿Cómo repartirías las tareas de producción entre las personas del equipo de desarrollo?
+               </em>
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="cyan">
+               <em>
+                ¿Cuánta gente incorporarías?
+               </em>
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               ¿Sabrías justificarme mes a mes qué tiempo se tardará en terminar el proyecto con el personal asignado en distintos momentos de proyecto?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="red">
+               ¿Sabrías justificarme el grado de satisfacción del cliente durante el transcurso del proyecto?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="red">
+               ¿Sabrías justificarme cuántas personas añadir al proyecto para reducir el tiempo de desarrollo?
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="qué">
+     <strong>
+      ¿Qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="ulist">
+      <ul>
+       <li>
+        <p>
+         <strong class="blue">
+          Flujo de trabajo
+         </strong>
+         (realización de un caso de uso que incluye trabajadores, actividades y diagramas) cuyo principal propósito es
+         <strong class="blue">
+          comprobar el resultado de la implementación probando cada construcción, incluyendo construcciones de versiones intermedias y final que se entregará
+         </strong>
+        </p>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="para-qué">
+     <strong>
+      ¿Para qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Efectividad, eficacia y eficiencia, del Proyecto Software
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buenas variables en su economía
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     ámbito cumplido
+                    </strong>
+                    y
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     tiempo cumplido
+                    </strong>
+                    y
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     coste cumplido
+                    </strong>
+                    ;
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buena calidad del software
+                 </strong>
+                 ,
+                 <span class="green">
+                  fiabilidad, usabilidad, interoperatividad, seguirdad, …​ (
+                  <em>
+                   -ilities
+                  </em>
+                  )
+                 </span>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buena mantenibilidad
+                 </strong>
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     fluido
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede entender con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     flexible
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede cambiar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     fuerte
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede probar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     reusable
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede reutilizar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  complejidad necesaria
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="davidProyectoImplantacionDiseño" src="images/davidProyectoImplantacionDiseño.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="arbolMantenible" src="images/arbolMantenible.jpeg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 21.4285%;"/>
+       <col style="width: 17.8571%;"/>
+       <col style="width: 28.5714%;"/>
+       <col style="width: 17.8571%;"/>
+       <col style="width: 14.2859%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             <span class="blue">
+              Encontrar y documentar errores
+             </span>
+            </strong>
+            en el producto de software: defectos, problemas.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Asesorar a la dirección sobre la
+            <strong>
+             <span class="blue">
+              calidad del software
+             </span>
+            </strong>
+            percibida
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Evaluar las suposiciones hechas en las especificaciones de diseño y de requisitos a través de una
+            <strong>
+             <span class="blue">
+              demostración concreta
+             </span>
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Validar que el producto de software
+            <strong>
+             <span class="blue">
+              funciona como se diseño
+             </span>
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Validar que los
+            <strong>
+             <span class="blue">
+              requisitos son implementados apropiadamente
+             </span>
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="cómo">
+     <strong>
+      ¿Cómo?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="actividades">
+     Actividades
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-none grid-none stretch">
+      <colgroup>
+       <col style="width: 100%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="Tests" height="1441" src="images/Tests.svg" width="1369"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="Introduccion" src="images/Introduccion.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="sect2">
+      <h3 id="planificar-pruebas">
+       Planificar Pruebas
+      </h3>
+      <table class="tableblock frame-none grid-none stretch">
+       <colgroup>
+        <col style="width: 100%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="Plan Tests" height="634" src="images/Plan%20Tests.svg" width="1713"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="PlanificarPruebas" src="images/PlanificarPruebas.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 29.6296%;"/>
+        <col style="width: 51.8518%;"/>
+        <col style="width: 18.5186%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Describir una estrategia de prueba para la iteración
+           </span>
+          </strong>
+         </th>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Estimar los requisitos para el esfuerzo de prueba
+           </span>
+          </strong>
+         </th>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Planificación del esfuerzo de prueba
+           </span>
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="blue">
+                Qué sujeto bajo prueba
+               </strong>
+               ,
+               <strong class="blue">
+                <em>
+                 SUT
+                </em>
+               </strong>
+               , ejecutar,
+               <strong class="blue">
+                cómo
+               </strong>
+               ejecutarlos,
+               <strong class="blue">
+                cuándo
+               </strong>
+               ejecutarlos y cómo determinar que el esfuerzo de prueba es exitoso
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Como los
+               <strong class="blue">
+                recursos del sistema y humanos necesarios
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  El principio general es desarrollar casos de prueba y procedimientos con una
+                  <strong class="blue">
+                   superposición mínima
+                  </strong>
+                  para probar los
+                  <strong class="blue">
+                   casos de uso más importantes
+                  </strong>
+                  y para probar los requisitos que están asociados con el
+                  <strong class="blue">
+                   mayor riesgo
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="diseñar-pruebas">
+       Diseñar Pruebas
+      </h3>
+      <table class="tableblock frame-none grid-none stretch">
+       <colgroup>
+        <col style="width: 100%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="designTest" height="660" src="images/designTest.svg" width="1823"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="DiseñarPruebas" src="images/DiseñarPruebas.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Diseño de casos de prueba de integración
+           </span>
+          </strong>
+          .
+         </th>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Diseño de casos de prueba de sistemas
+           </span>
+          </strong>
+          .
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Encontrar un conjunto de casos de prueba con una
+               <strong class="blue">
+                superposición mínima
+               </strong>
+               , cada uno de los cuales prueba una ruta o escenario interesante a través de la realización de un caso de uso.
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Considerar los
+                  <strong class="blue">
+                   diagramas de interacción
+                  </strong>
+                  de las realizaciones de casos de uso como entrada
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Buscan una combinación de
+                  <strong class="blue">
+                   entrada, salida y estado de inicio
+                  </strong>
+                  del sistema del actor que conducen a escenarios interesantes que emplean clases que participan en los diagramas.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   Capturan las interacciones reales de los objetos
+                  </strong>
+                  dentro del sistema.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Luego,
+                  <strong class="blue">
+                   comparan esas interacciones reales
+                  </strong>
+                  con el diagrama de interacción.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Deberían ser
+                  <strong class="blue">
+                   iguales
+                  </strong>
+                  ; de lo contrario, se detecta un
+                  <strong class="red">
+                   defecto
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="blue">
+                Prueba principalmente combinaciones de casos de uso instanciados en diferentes condiciones, incluidas diferentes configuraciones de hardware, diferentes niveles de cargas del sistema, varios números de actores y diferentes tamaños de la base de datos
+               </strong>
+               .
+              </p>
+             </li>
+             <li>
+              <p>
+               Los diseñadores de pruebas deben
+               <strong class="blue">
+                priorizar las combinaciones
+               </strong>
+               de casos de uso que:
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Se requieren para
+                  <strong class="blue">
+                   funcionar en paralelo
+                  </strong>
+                  .
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Es probable que se
+                  <strong class="blue">
+                   realicen en paralelo
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Es probable que se
+                  <strong class="blue">
+                   influyan entre sí
+                  </strong>
+                  si se realizan en paralelo
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Involucrar
+                  <strong class="blue">
+                   múltiples procesos
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   Utilizar con frecuencia los recursos del sistema
+                  </strong>
+                  , como procesos, procesadores, bases de datos y software de comunicación, quizás de
+                  <strong class="blue">
+                   formas complejas e impredecibles
+                  </strong>
+                  .
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 42.8571%;"/>
+        <col style="width: 57.1429%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Diseño de casos de prueba de regresión
+           </span>
+          </strong>
+          .
+         </th>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Identificación y estructuración de procedimientos de prueba
+           </span>
+          </strong>
+          .
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="blue">
+                Algunos casos de prueba de construcciones anteriores pueden usarse
+               </strong>
+               para pruebas de regresión en construcciones posteriores,
+               <strong class="red">
+                pero no todos los casos de prueba son adecuados
+               </strong>
+               para pruebas de regresión.
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Intentamos
+               <strong class="blue">
+                reutilizar los procedimientos de prueba existentes tanto como sea posible
+               </strong>
+               , lo que significa que es posible que tengamos que modificarlos para que se utilicen para especificar cómo realizar un caso de prueba nuevo y/o modificado
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="implementar-pruebas">
+       Implementar Pruebas
+      </h3>
+      <table class="tableblock frame-none grid-none stretch">
+       <colgroup>
+        <col style="width: 100%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="implementTest" height="660" src="images/implementTest.svg" width="901"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="ImplementarPruebas" src="images/ImplementarPruebas.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 30%;"/>
+        <col style="width: 20%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="3">
+          <strong class="blue">
+           Automatizar los procedimientos creando componentes de prueba
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Cuando utilizamos una herramienta de automatización de pruebas,
+               <strong class="blue">
+                realizamos o especificamos las acciones descritas en los procedimientos de prueba
+               </strong>
+               .
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Estas acciones luego se
+                  <strong class="blue">
+                   registran
+                  </strong>
+                  , dando como resultado un componente de prueba
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Al programar el componente de prueba de forma explícita,
+               <strong class="blue">
+                utilizamos los procedimientos de prueba como las especificaciones principales del esfuerzo de programación
+               </strong>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Los componentes de la prueba a menudo usan
+               <strong class="blue">
+                grandes cantidades de datos de entrada para ser probados y procesan grandes cantidades de datos de salida
+               </strong>
+               como resultados de la prueba.
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Es útil poder
+                  <strong class="blue">
+                   visualizar estos datos de forma clara e intuitiva
+                  </strong>
+                  para que se puedan especificar correctamente y se puedan interpretar los resultados de las pruebas.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Usamos aplicaciones de
+                  <strong class="blue">
+                   hojas de cálculo y bases de datos
+                  </strong>
+                  para este propósito.
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="realizar-pruebas-de-integración">
+       Realizar Pruebas de Integración
+      </h3>
+      <table class="tableblock frame-none grid-none stretch">
+       <colgroup>
+        <col style="width: 100%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="performIntegrationTests" height="660" src="images/performIntegrationTests.svg" width="1040"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="Realizarpruebas" src="images/Realizarpruebas.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 31.8181%;"/>
+        <col style="width: 22.7272%;"/>
+        <col style="width: 22.7272%;"/>
+        <col style="width: 22.7275%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="4">
+          <strong class="blue">
+           Pruebas de integración necesarias para cada construcción creada dentro de una iteración
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Realice las pruebas de integración relevantes para la construcción realizando
+               <strong class="blue">
+                manualmente
+               </strong>
+               los procedimientos de prueba para cada caso de prueba o ejecutando cualquier componente de prueba
+               <strong class="blue">
+                automatizando
+               </strong>
+               los procedimientos de prueba
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Compare los resultados de la prueba con los resultados esperados e
+               <strong class="blue">
+                investigue los resultados de la prueba que se desvíen de lo esperado
+               </strong>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="blue">
+                Informe los defectos al ingeniero de componentes
+               </strong>
+               que es responsable de los componentes que probablemente contengan la falla
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="blue">
+                Informar los defectos a los diseñadores de pruebas
+               </strong>
+               , quienes luego utilizan los defectos para evaluar los resultados generales del esfuerzo de prueba.
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="realizar-pruebas-de-sistemas">
+       Realizar Pruebas de Sistemas
+      </h3>
+      <table class="tableblock frame-none grid-none stretch">
+       <colgroup>
+        <col style="width: 100%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="performSystemTest" height="660" src="images/performSystemTest.svg" width="1052"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="RealizarPruebas2" src="images/RealizarPruebas2.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 75%;"/>
+        <col style="width: 25%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Las pruebas del sistema pueden
+               <strong class="blue">
+                comenzar
+               </strong>
+               cuando las pruebas de integración indican que el sistema cumple con los objetivos de calidad de integración establecidos en el plan de prueba para la iteración actual
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Es decir, el
+                  <strong class="blue">
+                   95% de los casos de prueba de integración
+                  </strong>
+                  se ejecutan con un resultado esperado
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Las pruebas del sistema se realizan de
+               <strong class="blue">
+                forma análoga a las pruebas de integración
+               </strong>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="evaluar-pruebas">
+       Evaluar Pruebas
+      </h3>
+      <table class="tableblock frame-none grid-none stretch">
+       <colgroup>
+        <col style="width: 100%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="evaluateResult" height="660" src="images/evaluateResult.svg" width="805"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="EvaluarPruebas" src="images/EvaluarPruebas.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 60%;"/>
+        <col style="width: 40%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Los diseñadores de prueba
+               <strong class="blue">
+                evalúan los resultados del esfuerzo de prueba
+               </strong>
+               comparando los resultados con los objetivos descritos en el plan de prueba.
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   Preparan métricas que les permiten determinar el nivel de calidad del software
+                  </strong>
+                  y determinar cuántas pruebas más se deben realizar:
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="blue">
+                Integridad
+               </strong>
+               , que se deriva de la
+               <strong class="blue">
+                cobertura de casos de prueba y la cobertura de los componentes probados
+               </strong>
+               .
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Esto indica qué porcentaje de los casos de prueba se han ejecutado y el porcentaje del código que se ha probado
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="blue">
+                Fiabilidad
+               </strong>
+               , que se basa en
+               <strong class="blue">
+                análisis de tendencias en los defectos descubiertos
+               </strong>
+               y en tendencias en las pruebas que se ejecutan con un resultado esperado.
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle" colspan="2">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <em class="red">
+                <strong>
+                 No parchear, reescribirlo
+                </strong>
+               </em>
+              </p>
+             </li>
+             <li>
+              <p>
+               <em class="red">
+                A menudo, puede ser mucho más barato y menos doloroso tirar un fragmento de código que tiene un montón de errores y reescribirlo desde cero
+               </em>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="síntesis">
+     <strong>
+      Síntesis
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 22.7272%;"/>
+       <col style="width: 50%;"/>
+       <col style="width: 27.2728%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="3">
+         <em class="blue">
+          Eres el jefe de proyecto de la aplicación
+         </em>
+         :
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               ¿Sabrías justificarme mes a mes qué tiempo se tardará en terminar el proyecto con el personal asignado en distintos momentos de proyecto?
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               ¿Sabrías justificarme el grado de satisfacción del cliente durante el transcurso del proyecto?
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               ¿Sabrías justificarme cuántas personas añadir al proyecto para reducir el tiempo de desarrollo?
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Proyectando las estimaciones de las actividades pasadas sobre el futuro en las actividades pendientes
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Curva de Porcentajes de Casos de Uso completados frente a los planificados iteración a iteración
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Estimando cada actividad
+              </strong>
+              , entre 2 y 20 horas, y
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="green">
+               Repartiendo cohesivamente
+              </strong>
+              entre el equipo de desarrollo incorporado
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-top" colspan="3">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              …​ con
+              <strong class="green">
+               trazabilidad
+              </strong>
+              de todo!
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="bibliografía">
+     <strong>
+      Bibliografía
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Unified Software Development Process
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch, Ivar Jacobson y James Rumbaugh
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (1999)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/TheUnifiedSoftwareDevelopmentProcess.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Rational Unified Process Made Easy, The: A Practitioner’s Guide to the RUP
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch, , Ivar Jacobson y James Rumbaugh
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2003)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/RationalUnifiedProcessMadeEasy.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Craig Larman
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Pearson; (2004)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ApplyingUML.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Object Solutions. Managing the Object Oriented Project
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Benjamin Cummings; (1995)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ObjectSolutionsManagingObjectOrientedProject.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Object Oriented Analysis and Design with Applications
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2011)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ObjectOrientedAnalysisAndDesingnWhitApplications.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              The Unified Modeling Language User Guide
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Pearson; (2005)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/TheUnifiedModelingLanguageUserGuide.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              UML Distilled. A Brief Guide to the Standard Object Modeling Language
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Martin Fowler,Kendall Scott
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2003)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/UMLDistilledABriefGuideStandardObjectModelingLanguage.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="ponente">
+     Ponente
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Luis Fernández Muñoz
+               </em>
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Formador/Consultor
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://es.linkedin.com/in/luisfernandezmunyoz">
+                  <em>
+                   Linkedin
+                  </em>
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="setillo" src="images/setillo.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Doctor en Inteligencia Artificial por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Ingeniero en Informática por la UMA
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Diplomado en Informática por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Profesor Titular de ETSISI de la UPM
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div id="footer-text">
+    Version 0.0.1
+    <br/>
+    Last updated 2022-10-16 16:31:37 +0200
+   </div>
+  </div>
+  <script>
+   let speed = 50;
                 
                 function typeWriter(v) {
                   let i = v.getAttribute("typewriter-index")
@@ -1563,6 +2800,6 @@ Last updated 2022-10-16 16:31:37 +0200
                 })
                 
                 setTimeout(typeWriterAll, speed);
-                
-                </script>
+  </script>
+ </body>
 </html>

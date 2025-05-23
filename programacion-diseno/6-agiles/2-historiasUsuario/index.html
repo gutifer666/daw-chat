@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8">
-<meta name="author" content="Universo Santa Tecla">
-<title>Historias de Usuario</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-<style>
-/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Asciidoctor 2.0.8" name="generator"/>
+  <meta content="Universo Santa Tecla" name="author"/>
+  <title>
+   Historias de Usuario
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700" rel="stylesheet"/>
+  <style>
+   /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
@@ -434,1499 +436,3288 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="book">
-<div id="header">
-<h1>Historias de Usuario</h1>
-<div class="details">
-<span id="author" class="author">Universo Santa Tecla</span><br>
-<span id="email" class="email"><a href="mailto:universoSantaTecla@gmail.com">universoSantaTecla@gmail.com</a></span><br>
-<span id="revnumber">version 0.0.1</span>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Índice</div>
-<ul class="sectlevel1">
-<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
-<li><a href="#qué"><strong>¿Qué?</strong></a></li>
-<li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
-<li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
-<li><a href="#autor">Autor</a></li>
-<li><a href="#roles-de-usuario">Roles de Usuario</a></li>
-<li><a href="#elementos">Elementos</a></li>
-<li><a href="#historias-técnicas">Historias técnicas</a></li>
-<li><a href="#características">Características</a></li>
-<li><a href="#documentación">Documentación</a></li>
-<li><a href="#sintesis"><strong>Sintesis</strong></a></li>
-<li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
-<li><a href="#ponente">Ponente</a></li>
-</ul>
-</div>
-</div>
-<div id="content">
-<div class="sect1">
-<h2 id="por-qué"><strong>¿Por qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">malas variables en su economía</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">ámbito incumplido</strong> y/o</p>
-</li>
-<li>
-<p><strong class="red">tiempo incumplido</strong> y/o</p>
-</li>
-<li>
-<p><strong class="red">coste incumplido</strong>;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">mala calidad del software</strong>, <span class="red">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">mala mantenibilidad</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">viscoso</strong>, porque <span class="red">no se puede entender con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">rígido</strong>, porque <span class="red">no se puede cambiar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">frágil</strong>, porque <span class="red">no se puede probar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">inmovil</strong>, porque <span class="red">no se puede reutilizar con facilidad</span> y/o</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">complejidad arbitraria</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/davidProyectoImplantacionDiseñoMal.png" alt="davidProyectoImplantacionDiseñoMal"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/arbolNoMantenible.jpeg" alt="arbolNoMantenible"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="qué"><strong>¿Qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-Una historia de usuario describe la <strong class="blue">funcionalidad que será valiosa para un usuario o comprador de un sistema o software</strong>.Las Historias de Usuario deben ser escritos para que el cliente pueda valorarlos
-</blockquote>
-<div class="attribution">
-&#8212; Cohn<br>
-<cite>M.</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/EstructuraHistoriaDeUsuarioTarjeta.jpg" alt="EstructuraHistoriaDeUsuarioTarjeta"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="para-qué"><strong>¿Para qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Efectividad, eficacia y eficiencia, del Proyecto Software</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buenas variables en su economía</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">ámbito cumplido</strong> y</p>
-</li>
-<li>
-<p><strong class="green">tiempo cumplido</strong> y</p>
-</li>
-<li>
-<p><strong class="green">coste cumplido</strong>;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buena calidad del software</strong>, <span class="green">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buena mantenibilidad</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">fluido</strong>, porque <span class="green">se puede entender con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">flexible</strong>, porque <span class="green">se puede cambiar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">fuerte</strong>, porque <span class="green">se puede probar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">reusable</strong>, porque <span class="green">se puede reutilizar con facilidad</span> y/o</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">complejidad necesaria</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/davidProyectoImplantacionDiseño.png" alt="davidProyectoImplantacionDiseño"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/arbolMantenible.jpeg" alt="arbolMantenible"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cómo"><strong>¿Cómo?</strong></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="autor">Autor</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><strong class="blue">El equipo cliente</strong>, en lugar de los desarrolladores, escribe las historias de usuario, por dos razones principales:</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>En primer lugar, <strong class="blue">cada historia debe ser escrito en el lenguaje de los negocios</strong>, <strong>no en la jerga técnica</strong>, por lo que el equipo cliente puede dar prioridad a las historias para su inclusión en iteraciones y comunicados.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>En segundo lugar, como <strong class="blue">visionarios del producto básico, el equipo de atención al cliente está en la mejor posición para describir el comportamiento del producto</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="roles-de-usuario">Roles de Usuario</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Un rol de usuario</strong> es una <strong class="blue">colección de atributos que definen las características de una población de usuarios y sus interacciones con el sistema</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Cada rol de usuario llega a su software con una experiencia diferente y con diferentes objetivos, es posible agregar <strong class="blue">usuarios individuales y pensar en ellos en términos de roles de usuario</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 85%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Pasos</th>
-<th class="tableblock halign-left valign-top">Descripción</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Lluvia de ideas sobre un conjunto inicial de roles de usuario</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Para identificar los roles de usuario, <strong class="blue">el cliente</strong> y <strong class="red">tantos desarrolladores como sea posible</strong>, se reúnen en una <strong class="blue">habitación</strong>, ya sea con una gran mesa o una <strong class="blue">pared</strong> a la que pueden pegar o <strong class="blue">pinchar tarjetas</strong>.</p>
-</li>
-<li>
-<p>La habitación se llenará de <strong class="blue">discusiones sobre las tarjetas</strong>, de vez en cuando, será apuntado por alguien una nueva tarjeta y se lee el nombre de rol.</p>
-</li>
-<li>
-<p>Continúe <strong class="blue">hasta que el progreso se estabiliza</strong> y los participantes están necesitando tiempo para idear nuevos roles.</p>
-</li>
-<li>
-<p>En ese momento <strong class="blue">puedes no haber identificado todos</strong> los roles pero estás lo suficientemente cerca.</p>
-</li>
-<li>
-<p>Es raro que esta necesidad de durar más de <strong class="blue">quince minutos</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Organizar el conjunto inicial</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>las tarjetas se mueven alrededor de la mesa o pared de modo que sus posiciones indican las <strong class="blue">relaciones entre los roles</strong>.</p>
-</li>
-<li>
-<p><strong class="blue">Superposición de funciones</strong> se colocan de manera que sus tarjetas se superponen.</p>
-</li>
-<li>
-<p>Si los papeles se superponen un poco, se <strong class="blue">superponen las tarjetas un poco</strong>.</p>
-</li>
-<li>
-<p>Si los roles se superponen completamente, se <strong class="blue">superponen las tarjetas enteramente</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Consolidar roles</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Comience con las <strong class="blue">tarjetas que son totalmente solapadas</strong>. Los autores de las tarjetas de superposición describen lo que querían decir con esos nombres de rol. Después de una breve discusión, el grupo decide si los <strong class="blue">roles son equivalentes</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Si son equivalentes los roles, se pueden consolidar en un solo rol tal vez tomando su <strong class="blue">nombre de los dos roles iniciales o una de las primeras tarjetas de rol</strong> pueden ser elegidas.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Además, el grupo también debe <strong class="blue">abandonar cualquier tarjeta para los roles que no son importantes</strong> para el éxito del sistema.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Redefinir los roles</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Es posible modelar estas funciones mediante la <strong class="blue">definición de atributos</strong> de cada rol.</p>
-</li>
-<li>
-<p>Un atributo de rol es un <strong class="blue">hecho o información útil</strong> acerca de los usuarios que cumplan el papel.</p>
-</li>
-<li>
-<p>Éstos son <strong class="blue">algunos</strong> de los atributos que se sugieren considerar en la preparación de cualquier modelo a seguir:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>La <strong class="blue">frecuencia</strong> con la que el usuario podrá utilizar el software.</p>
-</li>
-<li>
-<p>El <strong class="blue">nivel de experiencia del usuario con el dominio</strong>.</p>
-</li>
-<li>
-<p>Nivel general de <strong class="blue">habilidad del usuario con los ordenadores y software</strong>.</p>
-</li>
-<li>
-<p>El nivel de <strong class="blue">dominio de usuario con el software que se está desarrollando</strong>.</p>
-</li>
-<li>
-<p><strong class="blue">Objetivo general del usuario</strong> para utilizar el software.</p>
-</li>
-<li>
-<p>Además de identificar los atributos interesantes para un rol, <strong class="blue">escribir notas en la tarjeta</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Cuando haya terminado, usted puede <strong class="blue">colgar las tarjetas</strong> de rol en un área común utilizado por el equipo para que puedan ser usados como <strong class="blue">recordatorios</strong></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2">Dos técnicas adicionales</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Una persona es una <strong class="blue">representación imaginaria</strong> de un rol de usuario.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Una persona debe ser descrito suficientemente para que todos en el equipo se sientan como si conocieran la persona (p.e.: Mario, incluso con foto)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Uso de <strong class="blue">personajes extremos</strong> al considerar el diseño de un nuevo sistema.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Por ejemplo, es fácil imaginar el traficante de drogas y una mujer con varios novios.</p>
-</li>
-<li>
-<p>Así, mediante los personajes extremos se puede conducir a nuevas historias. Es difícil saber si estas historias serán las que se deban incluir en el producto.</p>
-</li>
-<li>
-<p>Probablemente no es mucha inversión y vale la pena el tiempo. Como mínimo, puede tener unos minutos de diversión al pensar en cómo el Papa podría utilizar su software y aunque sólo pueda conducir a una idea o dos.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="elementos">Elementos</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 37.3737%;">
-<col style="width: 25.2525%;">
-<col style="width: 37.3738%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-top"><strong class="blue">Tarjeta</strong></th>
-<th class="tableblock halign-center valign-top"><strong class="blue">Conversación</strong></th>
-<th class="tableblock halign-center valign-top"><strong class="blue">Confirmación</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Descripción escrita de la historia utilizada para la planificación y como un recordatorio</strong>. Se escriben tradicionalmente a mano en <strong>tarjetas de papel</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">&lt;Rol&gt; quiere &lt;función&gt; para &lt;valor de negocio&gt;</strong></p>
-</li>
-<li>
-<p><strong class="green">Ejemplos</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Un usuario puede buscar puestos de trabajo.</em></p>
-</li>
-<li>
-<p><em>Una empresa puede publicar nuevos puestos de trabajo.</em></p>
-</li>
-<li>
-<p><em>Un usuario puede limitar quién puede ver su hoja de vida</em></p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong class="red">Contraejemplos:</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>El software será escrito en C ++.</em></p>
-</li>
-<li>
-<p><em>El programa se conectará a la base de datos a través de una agrupación de conexiones.</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Sirve para <strong class="blue">profundizar en los detalles</strong> de la historia.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">En lugar de escribir todos estos detalles</strong> como las historias, el mejor enfoque es que el <strong class="green">equipo de desarrollo y el cliente discutan estos detalles</strong>. Es decir, tener una conversación sobre los detalles en el momento en que los detalles se vuelven importantes.</p>
-</li>
-<li>
-<p><strong class="red">No hay nada de malo en hacer un par de anotaciones</strong> basadas en la discusión en una tarjeta de historia de usuario</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Pruebas que transmiten la documentación de los detalles que se puede utilizar para determinar cuándo una historia está completa</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Las <strong class="red">descripciones de prueba están destinadas a ser cortas e incompletas</strong>.</p>
-</li>
-<li>
-<p>Así, las pruebas de aceptación son el <strong class="green">proceso de verificación</strong> de que las historias se desarrollaron de tal manera que cada uno trabaja exactamente en la forma en que el equipo cliente espera que funcione.</p>
-</li>
-<li>
-<p>Estas expectativas se captan mejor en la forma de las <strong class="green">pruebas de aceptación</strong>, en lugar de escribir largas listas de "El sistema deberá &#8230;&#8203;“, … con el estilo de <strong class="red">declaraciones de requisitos</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 33.3333%;">
-<col style="width: 23.8096%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-top" colspan="3"><strong class="blue">Pruebas de Aceptación</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="3"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>El <strong class="blue">cliente debe centrar sus esfuerzos en la escritura de pruebas</strong> que aclaran la intención de la historia a los desarrolladores.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">No buscamos necesariamente metas de cobertura de código del 100%</strong> o las pruebas de todas las condiciones de entorno.</p>
-</li>
-<li>
-<p><strong class="red">Utilizamos nuestra intuición, nuestro conocimiento y nuestra experiencia pasada para guiar nuestro esfuerzo de la prueba</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Responsabilidad</strong></p>
-</div></div></td>
-<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Desarrollo</strong></p>
-</div></div></td>
-<td class="tableblock halign-center valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Ejecución</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La especificación de las pruebas es a menudo una <strong class="blue">responsabilidad compartida</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Debido a que el software que se está desarrollando para cumplir una visión propia del cliente, las pruebas de aceptación deben ser especificadas por el cliente. <strong class="blue">El propietario de producto traerá su conocimiento de los objetivos de la organización que impulsan el proyecto</strong></p>
-</li>
-<li>
-<p><strong class="red">Pero un desarrollador de pruebas dedicado y cualificado traerá su mentalidad suspicaz para los aspectos más técnicos de esta actividad</strong>. Por lo general, aumentará algunas de las historias con las pruebas que considere porque el cliente no es responsable de la identificación de todas las pruebas posibles. Además, tenga en cuenta que un buen equipo de programación tendrá pruebas de unidad para muchos de los casos de bajo nivel.</p>
-</li>
-<li>
-<p>La prueba se ve mejor como un proceso de <strong class="blue">dos pasos</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Primero, <strong class="blue">señalar futuras pruebas apuntadas</strong> en la parte posterior de las tarjetas de la historia.</p>
-</li>
-<li>
-<p>Segundo, las <strong class="blue">notas de las pruebas se convierten en pruebas de pleno derecho</strong> que se utilizan para demostrar que la historia ha sido codificada correcta y completamente.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Es vital que las <strong class="blue">pruebas de las historias de usuario se vean como parte del proceso de desarrollo</strong>, no es algo que sucede "después de la codificación que se añade"</p>
-</li>
-<li>
-<p>Las <strong class="blue">pruebas pueden ser añadidas o eliminadas en cualquier momento</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pero escribir pruebas tempranamente es muy útil debido a que la mayoría de las suposiciones del equipo del cliente y sus expectativas son comunicados a los desarrolladores antes de la codificación de la historia. <strong class="blue">Al inicio de una iteración, se reunirán y especificarán tantas pruebas iniciales como se puedan imaginar</strong>.</p>
-</li>
-<li>
-<p>Pero no se detiene ahí y no se detiene con reunirse una vez por semana con el cliente. <strong class="blue">Como los detalles de una historia se elaboran, se especifican pruebas adicionales</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Como mínimo, las <strong class="blue">pruebas de aceptación deben ser ejecutadas al final de cada iteración</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Debido a que el código que funciona en una iteración puede ser roto por el desarrollo en una iteración posterior, es importante <strong class="blue">ejecutar pruebas de aceptación de todas las iteraciones anteriores</strong>. Esto significa que la ejecución de pruebas de aceptación se vuelve más lento con cada iteración que pasa.</p>
-</li>
-<li>
-<p>Si es posible, el equipo de desarrollo debe mirar por la <strong class="blue">automatización de algunas o todas las pruebas de aceptación</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="historias-técnicas">Historias técnicas</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Elementos no-funcionales, cosas que deben hacerse pero que no son un entregable ni están directamente relacionadas con ninguna historia específica, y no son de valor inmediato para el Dueño de Producto</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Ejemplos</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Instalar un servidor de compilación continua</em></p>
-</li>
-<li>
-<p><strong class="red"><em>Refactorizar la capa de acceso a datos</em></strong></p>
-</li>
-<li>
-<p><strong class="red"><em>Escribir una descripción general del diseño</em></strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Intentamos evitar las historias técnicas</strong>. Busca efusivamente formas de transformar las historias técnicas en historias normales con valor de negocio mensurable. Así el Dueño de Producto tendrá mejores oportunidades para realizar decisiones correctas entre los pros y los contras.</p>
-</li>
-<li>
-<p>Si no podemos transformar una historia técnica en una historia normal, intentamos ver si es posible hacerla <strong class="blue">como una tarea dentro de otra historia</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Por ejemplo, “refactorizar la capa de acceso a datos” podría ser una tarea dentro de la historia “editar usuario”, ya que esto involucra utilizar la capa de acceso a datos.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Si lo anterior falla, definirla como historia técnica y <strong class="blue">mantener una lista separada con dichas historias</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Permitimos al Dueño de Producto que vea dicha lista, pero no que la modifique</strong>.</p>
-</li>
-<li>
-<p>Usamos los factores de dedicación y la velocidad estimada para negociar con el Dueño de Producto y sacar algo de tiempo del Sprint para implementar estas historias.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Por supuesto, la otra opción es simplemente mantener al <strong class="red">Dueño de Producto fuera del ciclo o darle un factor de dedicación no negociable</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="características">Características</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">De valor para los usuarios o clientes</strong>.La mejor manera de asegurarse es que el <strong class="blue">cliente tenga que escribir las historias</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Los <strong class="red">clientes están a menudo incómodos</strong> con este principio, probablemente porque los desarrolladores los han entrenado para pensar en todo lo que escriben como algo que puede ser utilizado en su contra más tarde.</p>
-</li>
-<li>
-<p>La mayoría de los clientes comienzan a escribir historias en sí mismas una vez que se sientan cómodos con el concepto de que las tarjetas de historia son <strong class="blue">recordatorios para hablar más tarde en lugar de compromisos formales o descripciones de la funcionalidad específica</strong>.</p>
-</li>
-<li>
-<p>De la misma manera, vale la pena tratar de <strong class="blue">mantener asunciones de interfaz para historias de usuario</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Independientes</strong>. Las <strong class="blue">dependencias entre historias conducen a problemas de priorización, planificación y la estimación mucho más difícil de lo que debe ser</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Cuando se presentan con este tipo de dependencia, hay dos formas de sortearlo:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Combine las historias dependientes</strong> en una más grande, pero la historia independiente</p>
-</li>
-<li>
-<p>Encontrar una <strong>manera diferente de dividir las historias</strong></p>
-</li>
-<li>
-<p>Si no desea combinar las historias y no puede encontrar una buena manera de separarlos, siempre se puede tomar el <strong class="red">enfoque simple de poner dos estimaciones de la tarjeta</strong>: una estimación si la historia se hace antes de la otra historia, una estimación más baja si se hace después</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Estimables</strong>. Hay tres razones por las que pueden no ser estimables:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Los desarrolladores <strong class="blue">carecen de conocimiento del dominio</strong>. Si no la entienden como está escrita, deben <strong class="red">discutirlo con el cliente</strong>. Una vez más, no es necesario entender todos los detalles pero necesitan tener un conocimiento general de la historia.</p>
-</li>
-<li>
-<p>Los desarrolladores <strong class="blue">carecen de conocimientos técnicos</strong>. La solución es enviar uno o más desarrolladores a un spike (pico), que es un <strong class="blue">breve experimento para aprender sobre un área de la aplicación</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Al spike en sí siempre se le da una cantidad definida de <strong class="red">tiempo máximo</strong>.</p>
-</li>
-<li>
-<p>Así, una historia inestimable se convierte en dos: un <strong class="blue"><em>spike</em> para reunir información</strong> y luego una para hacer <strong class="red">el trabajo real</strong></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong class="blue">La historia es demasiado grande</strong>. A pesar de que son demasiado grandes para estimar de forma fiable, las <strong class="red">epopeyas son útiles como recordatorios sobre grandes partes de un sistema que necesitan ser desarrolladas</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Pequeñas</strong>. Es mejor tener más historias que tener historias que son demasiado grandes. Es bueno tener <strong class="blue">historias que pueden codificarse y probarse entre medio día y tal vez dos semanas por un o un par de programadores</strong>. La determinación final de si una historia tiene el tamaño adecuado se basa en el equipo, sus capacidades y la tecnologías en uso.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Cuando una <strong class="blue">historia es demasiado grande se refiere a veces como una epopeya</strong>. Se pueden dividir en dos categorías:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Historias complejas</strong>. Una historia de usuario que es de por sí grande y no puede ser fácilmente desglosada en un conjunto de historias constituyentes.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Si una historia es compleja debido a la incertidumbre asociada a ella, es posible que desee dividir la historia en dos historias: <strong class="blue">una de investigación</strong> (<em>spike</em>) y <strong class="blue">una de desarrollo de la nueva característica</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong class="blue">Historias compuestas</strong>. Normalmente hay muchas maneras de desglosar una historia compuesta. <strong class="red">Este desglose anterior es en el sentido de operaciones de crear, editar y eliminar (CRUD)</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Una alternativa es <strong class="blue">desglosar a lo “largo” con límites de los datos</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>A veces las <strong class="blue">historias son demasiado pequeñas</strong>. Típicamente, una que <strong class="blue">el desarrollador dice de ella que no quiere que se escriba o estime porque haciendo eso puede llevar más tiempo que hacer el cambio</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Los informes de fallos y cambios en la interfaz de usuario son ejemplos comunes de historias que a menudo son demasiado pequeñas.</p>
-</li>
-<li>
-<p>Un buen enfoque para las historias pequeñas, comunes entre los equipos XP, es <strong class="blue">combinarlas en historias más grandes que representan aproximadamente medio día a varios días de trabajo</strong>. La historia combinada se le da un nombre y se programa y trabaja como con cualquier otra historia.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Negociables</strong>.Son <strong class="blue">breves descripciones de la funcionalidad y los detalles son lo que debe ser negociado en una conversación entre el cliente y el equipo de desarrollo.</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Comprobables</strong>. Las historias deberán ser escritas con el fin de ser comprobables. <strong>Con el éxito de pasar sus pruebas se demuestra que una historia se ha desarrollado con éxito</strong>. Si la historia no puede ser probada, ¿cómo pueden saber los desarrolladores cuando han terminado de codificación?</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="documentación">Documentación</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Mantenemos la Pila de Producto en un documento <strong class="blue">Excel con “compartir” habilitado</strong> (es decir, muchos usuarios pueden editar simultáneamente la hoja).</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Esta demostrado ser la manera <strong class="blue">más simple de permitir múltiples editores</strong> diferentes sin causar problemas de bloqueo o fusión de documentos.</p>
-</li>
-<li>
-<p>Por la misma razón, <strong class="blue">no colocamos este documento en el repositorio de control de versiones</strong>; en vez de eso, lo almacenamos en una unidad de red compartida.</p>
-</li>
-<li>
-<p>Oficialmente, <strong class="blue">el Dueño de Producto es el propietario</strong> del documento, pero no queremos dejar al resto de usuarios fuera. Muchas veces un <strong class="blue">desarrollador necesita abrir el documento para clarificar algo o cambiar una estimación</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Identificador</strong></p>
-</li>
-<li>
-<p><strong class="blue">Nombre</strong></p>
-</li>
-<li>
-<p><strong class="blue">Notas</strong></p>
-</li>
-<li>
-<p><strong class="blue">Importancia</strong></p>
-</li>
-<li>
-<p><strong class="blue">Estimación inicial</strong></p>
-</li>
-<li>
-<p><strong class="blue">Como probarlo</strong></p>
-</li>
-<li>
-<p>Opcionales:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Componentes</strong></p>
-</li>
-<li>
-<p><strong class="blue">Categoría</strong></p>
-</li>
-<li>
-<p><strong class="blue">Bug tracking ID</strong></p>
-</li>
-<li>
-<p><strong class="blue">Solicitante</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/PilaDeProducto.png" alt="height32"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">ID</strong>: un identificador único, simplemente un número auto-incremental. Esto nos permite <strong class="blue">no perder la pista a las historias cuando cambiamos su nombre</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Importancia</strong>: Todos los elementos importantes deberían tener <strong class="blue">ratios de importancia</strong> asignados, diferentes ratios de importancia.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Cualquier historia sobre la que el Dueño de Producto piense que tiene una <strong class="blue">remota posibilidad de incluirse en el Sprint debería tener un nivel de importancia único definido</strong>.</p>
-</li>
-<li>
-<p>El ratio de importancia se emplea <strong class="blue">solo para ordenar</strong> los elementos por relevancia.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Es útil dejar <strong class="blue">espacio entre la secuencia de números</strong></p>
-</li>
-<li>
-<p>En realidad, <strong class="blue">da igual si los elementos menos importantes tienen todos el mismo valor</strong>, ya que probablemente no se discutirán durante la planificación de Sprint en cualquier caso.</p>
-</li>
-<li>
-<p>Así que si el elemento A tiene una importancia de 20 y el elemento B una importancia de 100, <strong class="blue">simplemente significa que B es más importante que A</strong>. <strong class="red">No significa que B sea cinco veces más importante que A</strong>. <strong class="blue">Si B tuviera una importancia de 21, ¡aun significaría lo mismo!</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Nombre</strong>: una descripción corta de la historia (<strong class="blue">normalmente, 2 a 10 palabras</strong>).</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Suficientemente claro como para que el Dueño de Producto comprenda aproximadamente de qué estamos hablando, y suficientemente clara como para distinguirla de las otras historias</strong>.</p>
-</li>
-<li>
-<p>Por ejemplo, <em>Ver tu historial de transacciones</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Notas</strong>: <strong class="blue">cualquier otra información</strong>, clarificación, referencia a otras fuentes de información, etc.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Normalmente muy breve</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Estimación inicial</strong>: la <strong class="blue">valoración inicial del Equipo acerca de cuanto trabajo es necesario para implementar la historia, comparada con otras historias</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>La unidad son “<strong class="blue">puntos de historia</strong>” y usualmente <strong class="blue">corresponde a “días-persona ideales”</strong>.</p>
-</li>
-<li>
-<p>Pregunta al Equipo: “<strong class="blue">si tuvierais el número óptimo de personas para esta historia (ni muchos ni pocos, típicamente 2) y os encerraseis en una habitación con cantidad de comida, y trabajaseis sin distracciones, ¿en cuantos días saldríais con una implementación terminada, demostrable, testeada y liberable?</strong>”.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Si la respuesta es “con 3 tíos encerrados en una habitación nos llevaría 4 días”, entonces la estimación inicial son 12 puntos.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Lo <strong class="blue">importante no es que las estimaciones absolutas sean correctas</strong> (es decir, que una historia de 2 puntos deba durar 2 días), <strong class="blue">lo importante es que las estimaciones relativas sean correctas</strong> (es decir, que una historia de 2 puntos debería durar la mitad que una historia de 4 puntos).</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Como probarlo</strong>: una <strong class="blue">descripción a alto nivel de como se demostrará esta historia en la Demo al final del Sprint</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Se trata, esencialmente, de una <strong class="blue">simple especificación de un test</strong>: “Haz esto, entonces haz lo otro, y entonces debería ocurrir aquello”.</p>
-</li>
-<li>
-<p>Si practicáis desarrollo dirigido por pruebas, esta descripción puede <strong class="blue">usarse como pseudo-código para vuestro test de aceptación</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Componentes (opcional)</strong>: usualmente implementado en la forma de “check-boxes” en el documento Excel, por ejemplo <strong class="red">“base de datos, servidor, cliente”</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Aquí, el Dueño de Producto puede identificar qué componentes técnicos estarán involucrados en la implementación de la historia. Esto es útil <strong class="red">cuando tienes varios equipos Scrum</strong>, por ejemplo un equipo de back-office y otro equipo de cliente, y quieres que sea fácil para cada equipo saber a qué historias deben dedicarse.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Categoría (opcional)</strong>: una categorización básica de la historia</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Por ejemplo “back-office” o <strong class="red">“optimización”</strong>.</p>
-</li>
-<li>
-<p>Así, el dueño de producto puede <strong class="blue">filtrar fácilmente</strong> “optimización” y cambiar todas las prioridades de este tipo a “baja”, etc.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Bugtracking ID (opcional)</strong>: si tienes un sistema de bug tracking (seguimiento de errores) aparte, es útil mantener un historial de cualquier <strong class="blue">correspondencia directa entre una historia y uno o más errores reportados</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Solicitante (opcional)</strong>: el Dueño de Producto puede querer mantener un historial acerca de qué <strong class="blue">cliente o persona interesada pidió originalmente la historia</strong>, para poder así ofrecerle información actualizada sobre el progreso de la misma.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="sintesis"><strong>Sintesis</strong></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="bibliografía"><strong>Bibliografía</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Obra, Autor y Editor</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-<th class="tableblock halign-left valign-top">Obra, Autor y Editor</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Refactoring (Pearson Addison-Wesley Signature Series)</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Fowler Martin</strong></p>
-</li>
-<li>
-<p>Financial Times Prentice Hall; Edición: 01 (28 de noviembre de 2018)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Refectoring.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Test Driven Development. By Example (The Addison-Wesley Signature Series</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Beck Kent</strong></p>
-</li>
-<li>
-<p>Addison Wesley; Edición: 01 (8 de noviembre de 2002)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TestDrivenDevelopment.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Extreme Programming Explained: Embrace Change: Embracing Change</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Kent Beck</strong>, <strong>Cynthia Andres</strong></p>
-</li>
-<li>
-<p>Addison-Wesley Educational Publishers Inc; Edición: 2nd edition (16 de noviembre de 2004)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Extreme.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Planning Extreme Programming (The Xp Series)</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Beck Kent</strong>,  <strong>Fowler Martin</strong></p>
-</li>
-<li>
-<p>Addison Wesley; Edición: 01 (16 de octubre de 2000)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Planning.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Scrum and XP from the Trenches (Enterprise Software Development)</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Henrik Kniberg</strong></p>
-</li>
-<li>
-<p>Lulu.com; Edición: 1 (4 de octubre de 2007)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Scrum.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Scrum: El revolucionario método para trabajar el doble en la mitad de tiempo</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Jeff Sutherland</strong>,</p>
-</li>
-<li>
-<p>Editorial Ariel (20 de enero de 2015)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ScrumElRevolucionario.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Refactoring Databases: Evolutionary Database Design</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Scott J Ambler</strong>, <strong>Pramod J. Sadalage</strong></p>
-</li>
-<li>
-<p>Addison-Wesley Professional; Edición: 1 (13 de marzo de 2006)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/RefactoringDatabases.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>User Stories Applied: For Agile Software Development</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Cohn, M.</strong></p>
-</li>
-<li>
-<p>Addison Wesley, 2004</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/UserStoriesAppliedForAgileSoftwareDevelopment.jpg" alt="UserStoriesAppliedForAgileSoftwareDevelopment"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Scrum y XP desde las trincheras</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Henrik Kniberg</strong>. Prólogos de <strong>Jeff Sutherland</strong> y <strong>Mike Cohn</strong></p>
-</li>
-<li>
-<p>proyectalis.com</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ScrumXPTrenches.jpg" alt="ScrumXPTrenches"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Diseño Ágil con TDD</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Carlos Blé Jurado</strong></p>
-</li>
-<li>
-<p>Lulu.com</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/DisenoAgilconTDD.jpg" alt="DisenoAgilconTDD"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ponente">Ponente</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 30%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Luis Fernández Muñoz</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Formador/Consultor</em></p>
-</li>
-<li>
-<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
-</li>
-<li>
-<p><em>Ingeniero en Informática por la UMA</em></p>
-</li>
-<li>
-<p><em>Diplomado en Informática por la UPM</em></p>
-</li>
-<li>
-<p><em>Profesor Titular de ETSISI de la UPM</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="footer">
-<div id="footer-text">
-Version 0.0.1<br>
-Last updated 2022-10-16 16:53:34 +0200
-</div>
-</div>
-<script>
-                let speed = 50;
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+ </head>
+ <body class="book">
+  <div id="header">
+   <h1>
+    Historias de Usuario
+   </h1>
+   <div class="details">
+    <span class="author" id="author">
+     Universo Santa Tecla
+    </span>
+    <br/>
+    <span class="email" id="email">
+     <a href="mailto:universoSantaTecla@gmail.com">
+      universoSantaTecla@gmail.com
+     </a>
+    </span>
+    <br/>
+    <span id="revnumber">
+     version 0.0.1
+    </span>
+   </div>
+   <div class="toc" id="toc">
+    <div id="toctitle">
+     Índice
+    </div>
+    <ul class="sectlevel1">
+     <li>
+      <a href="#por-qué">
+       <strong>
+        ¿Por qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#qué">
+       <strong>
+        ¿Qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#para-qué">
+       <strong>
+        ¿Para qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#cómo">
+       <strong>
+        ¿Cómo?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#autor">
+       Autor
+      </a>
+     </li>
+     <li>
+      <a href="#roles-de-usuario">
+       Roles de Usuario
+      </a>
+     </li>
+     <li>
+      <a href="#elementos">
+       Elementos
+      </a>
+     </li>
+     <li>
+      <a href="#historias-técnicas">
+       Historias técnicas
+      </a>
+     </li>
+     <li>
+      <a href="#características">
+       Características
+      </a>
+     </li>
+     <li>
+      <a href="#documentación">
+       Documentación
+      </a>
+     </li>
+     <li>
+      <a href="#sintesis">
+       <strong>
+        Sintesis
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#bibliografía">
+       <strong>
+        Bibliografía
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#ponente">
+       Ponente
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div id="content">
+   <div class="sect1">
+    <h2 id="por-qué">
+     <strong>
+      ¿Por qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  malas variables en su economía
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     ámbito incumplido
+                    </strong>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     tiempo incumplido
+                    </strong>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     coste incumplido
+                    </strong>
+                    ;
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  mala calidad del software
+                 </strong>
+                 ,
+                 <span class="red">
+                  fiabilidad, usabilidad, interoperatividad, seguirdad, …​ (
+                  <em>
+                   -ilities
+                  </em>
+                  )
+                 </span>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  mala mantenibilidad
+                 </strong>
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     viscoso
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede entender con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     rígido
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede cambiar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     frágil
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede probar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     inmovil
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede reutilizar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  complejidad arbitraria
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="davidProyectoImplantacionDiseñoMal" src="images/davidProyectoImplantacionDiseñoMal.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="arbolNoMantenible" src="images/arbolNoMantenible.jpeg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="qué">
+     <strong>
+      ¿Qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 40%;"/>
+       <col style="width: 60%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            Una historia de usuario describe la
+            <strong class="blue">
+             funcionalidad que será valiosa para un usuario o comprador de un sistema o software
+            </strong>
+            .Las Historias de Usuario deben ser escritos para que el cliente pueda valorarlos
+           </blockquote>
+           <div class="attribution">
+            — Cohn
+            <br/>
+            <cite>
+             M.
+            </cite>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="EstructuraHistoriaDeUsuarioTarjeta" src="images/EstructuraHistoriaDeUsuarioTarjeta.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="para-qué">
+     <strong>
+      ¿Para qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Efectividad, eficacia y eficiencia, del Proyecto Software
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buenas variables en su economía
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     ámbito cumplido
+                    </strong>
+                    y
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     tiempo cumplido
+                    </strong>
+                    y
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     coste cumplido
+                    </strong>
+                    ;
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buena calidad del software
+                 </strong>
+                 ,
+                 <span class="green">
+                  fiabilidad, usabilidad, interoperatividad, seguirdad, …​ (
+                  <em>
+                   -ilities
+                  </em>
+                  )
+                 </span>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buena mantenibilidad
+                 </strong>
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     fluido
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede entender con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     flexible
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede cambiar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     fuerte
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede probar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     reusable
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede reutilizar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  complejidad necesaria
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="davidProyectoImplantacionDiseño" src="images/davidProyectoImplantacionDiseño.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="arbolMantenible" src="images/arbolMantenible.jpeg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="cómo">
+     <strong>
+      ¿Cómo?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="autor">
+     Autor
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-center valign-top" colspan="2">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="blue">
+             El equipo cliente
+            </strong>
+            , en lugar de los desarrolladores, escribe las historias de usuario, por dos razones principales:
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              En primer lugar,
+              <strong class="blue">
+               cada historia debe ser escrito en el lenguaje de los negocios
+              </strong>
+              ,
+              <strong>
+               no en la jerga técnica
+              </strong>
+              , por lo que el equipo cliente puede dar prioridad a las historias para su inclusión en iteraciones y comunicados.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              En segundo lugar, como
+              <strong class="blue">
+               visionarios del producto básico, el equipo de atención al cliente está en la mejor posición para describir el comportamiento del producto
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="roles-de-usuario">
+     Roles de Usuario
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 40%;"/>
+       <col style="width: 60%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Un rol de usuario
+              </strong>
+              es una
+              <strong class="blue">
+               colección de atributos que definen las características de una población de usuarios y sus interacciones con el sistema
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Cada rol de usuario llega a su software con una experiencia diferente y con diferentes objetivos, es posible agregar
+              <strong class="blue">
+               usuarios individuales y pensar en ellos en términos de roles de usuario
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 15%;"/>
+       <col style="width: 85%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Pasos
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Descripción
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Lluvia de ideas sobre un conjunto inicial de roles de usuario
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Para identificar los roles de usuario,
+              <strong class="blue">
+               el cliente
+              </strong>
+              y
+              <strong class="red">
+               tantos desarrolladores como sea posible
+              </strong>
+              , se reúnen en una
+              <strong class="blue">
+               habitación
+              </strong>
+              , ya sea con una gran mesa o una
+              <strong class="blue">
+               pared
+              </strong>
+              a la que pueden pegar o
+              <strong class="blue">
+               pinchar tarjetas
+              </strong>
+              .
+             </p>
+            </li>
+            <li>
+             <p>
+              La habitación se llenará de
+              <strong class="blue">
+               discusiones sobre las tarjetas
+              </strong>
+              , de vez en cuando, será apuntado por alguien una nueva tarjeta y se lee el nombre de rol.
+             </p>
+            </li>
+            <li>
+             <p>
+              Continúe
+              <strong class="blue">
+               hasta que el progreso se estabiliza
+              </strong>
+              y los participantes están necesitando tiempo para idear nuevos roles.
+             </p>
+            </li>
+            <li>
+             <p>
+              En ese momento
+              <strong class="blue">
+               puedes no haber identificado todos
+              </strong>
+              los roles pero estás lo suficientemente cerca.
+             </p>
+            </li>
+            <li>
+             <p>
+              Es raro que esta necesidad de durar más de
+              <strong class="blue">
+               quince minutos
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Organizar el conjunto inicial
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              las tarjetas se mueven alrededor de la mesa o pared de modo que sus posiciones indican las
+              <strong class="blue">
+               relaciones entre los roles
+              </strong>
+              .
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               Superposición de funciones
+              </strong>
+              se colocan de manera que sus tarjetas se superponen.
+             </p>
+            </li>
+            <li>
+             <p>
+              Si los papeles se superponen un poco, se
+              <strong class="blue">
+               superponen las tarjetas un poco
+              </strong>
+              .
+             </p>
+            </li>
+            <li>
+             <p>
+              Si los roles se superponen completamente, se
+              <strong class="blue">
+               superponen las tarjetas enteramente
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Consolidar roles
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Comience con las
+              <strong class="blue">
+               tarjetas que son totalmente solapadas
+              </strong>
+              . Los autores de las tarjetas de superposición describen lo que querían decir con esos nombres de rol. Después de una breve discusión, el grupo decide si los
+              <strong class="blue">
+               roles son equivalentes
+              </strong>
+              .
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Si son equivalentes los roles, se pueden consolidar en un solo rol tal vez tomando su
+                 <strong class="blue">
+                  nombre de los dos roles iniciales o una de las primeras tarjetas de rol
+                 </strong>
+                 pueden ser elegidas.
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+            <li>
+             <p>
+              Además, el grupo también debe
+              <strong class="blue">
+               abandonar cualquier tarjeta para los roles que no son importantes
+              </strong>
+              para el éxito del sistema.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Redefinir los roles
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Es posible modelar estas funciones mediante la
+              <strong class="blue">
+               definición de atributos
+              </strong>
+              de cada rol.
+             </p>
+            </li>
+            <li>
+             <p>
+              Un atributo de rol es un
+              <strong class="blue">
+               hecho o información útil
+              </strong>
+              acerca de los usuarios que cumplan el papel.
+             </p>
+            </li>
+            <li>
+             <p>
+              Éstos son
+              <strong class="blue">
+               algunos
+              </strong>
+              de los atributos que se sugieren considerar en la preparación de cualquier modelo a seguir:
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 La
+                 <strong class="blue">
+                  frecuencia
+                 </strong>
+                 con la que el usuario podrá utilizar el software.
+                </p>
+               </li>
+               <li>
+                <p>
+                 El
+                 <strong class="blue">
+                  nivel de experiencia del usuario con el dominio
+                 </strong>
+                 .
+                </p>
+               </li>
+               <li>
+                <p>
+                 Nivel general de
+                 <strong class="blue">
+                  habilidad del usuario con los ordenadores y software
+                 </strong>
+                 .
+                </p>
+               </li>
+               <li>
+                <p>
+                 El nivel de
+                 <strong class="blue">
+                  dominio de usuario con el software que se está desarrollando
+                 </strong>
+                 .
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong class="blue">
+                  Objetivo general del usuario
+                 </strong>
+                 para utilizar el software.
+                </p>
+               </li>
+               <li>
+                <p>
+                 Además de identificar los atributos interesantes para un rol,
+                 <strong class="blue">
+                  escribir notas en la tarjeta
+                 </strong>
+                 .
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-top" colspan="2">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Cuando haya terminado, usted puede
+            <strong class="blue">
+             colgar las tarjetas
+            </strong>
+            de rol en un área común utilizado por el equipo para que puedan ser usados como
+            <strong class="blue">
+             recordatorios
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 70%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="2">
+         Dos técnicas adicionales
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Una persona es una
+              <strong class="blue">
+               representación imaginaria
+              </strong>
+              de un rol de usuario.
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Una persona debe ser descrito suficientemente para que todos en el equipo se sientan como si conocieran la persona (p.e.: Mario, incluso con foto)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Uso de
+              <strong class="blue">
+               personajes extremos
+              </strong>
+              al considerar el diseño de un nuevo sistema.
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Por ejemplo, es fácil imaginar el traficante de drogas y una mujer con varios novios.
+                </p>
+               </li>
+               <li>
+                <p>
+                 Así, mediante los personajes extremos se puede conducir a nuevas historias. Es difícil saber si estas historias serán las que se deban incluir en el producto.
+                </p>
+               </li>
+               <li>
+                <p>
+                 Probablemente no es mucha inversión y vale la pena el tiempo. Como mínimo, puede tener unos minutos de diversión al pensar en cómo el Papa podría utilizar su software y aunque sólo pueda conducir a una idea o dos.
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="elementos">
+     Elementos
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 37.3737%;"/>
+       <col style="width: 25.2525%;"/>
+       <col style="width: 37.3738%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-center valign-top">
+         <strong class="blue">
+          Tarjeta
+         </strong>
+        </th>
+        <th class="tableblock halign-center valign-top">
+         <strong class="blue">
+          Conversación
+         </strong>
+        </th>
+        <th class="tableblock halign-center valign-top">
+         <strong class="blue">
+          Confirmación
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Descripción escrita de la historia utilizada para la planificación y como un recordatorio
+              </strong>
+              . Se escriben tradicionalmente a mano en
+              <strong>
+               tarjetas de papel
+              </strong>
+              .
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong class="blue">
+                  &lt;Rol&gt; quiere &lt;función&gt; para &lt;valor de negocio&gt;
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong class="green">
+                  Ejemplos
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <em>
+                     Un usuario puede buscar puestos de trabajo.
+                    </em>
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <em>
+                     Una empresa puede publicar nuevos puestos de trabajo.
+                    </em>
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <em>
+                     Un usuario puede limitar quién puede ver su hoja de vida
+                    </em>
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    …​
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong class="red">
+                  Contraejemplos:
+                 </strong>
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <em>
+                     El software será escrito en C ++.
+                    </em>
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <em>
+                     El programa se conectará a la base de datos a través de una agrupación de conexiones.
+                    </em>
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Sirve para
+              <strong class="blue">
+               profundizar en los detalles
+              </strong>
+              de la historia.
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong class="red">
+                  En lugar de escribir todos estos detalles
+                 </strong>
+                 como las historias, el mejor enfoque es que el
+                 <strong class="green">
+                  equipo de desarrollo y el cliente discutan estos detalles
+                 </strong>
+                 . Es decir, tener una conversación sobre los detalles en el momento en que los detalles se vuelven importantes.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong class="red">
+                  No hay nada de malo en hacer un par de anotaciones
+                 </strong>
+                 basadas en la discusión en una tarjeta de historia de usuario
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Pruebas que transmiten la documentación de los detalles que se puede utilizar para determinar cuándo una historia está completa
+              </strong>
+              .
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Las
+                 <strong class="red">
+                  descripciones de prueba están destinadas a ser cortas e incompletas
+                 </strong>
+                 .
+                </p>
+               </li>
+               <li>
+                <p>
+                 Así, las pruebas de aceptación son el
+                 <strong class="green">
+                  proceso de verificación
+                 </strong>
+                 de que las historias se desarrollaron de tal manera que cada uno trabaja exactamente en la forma en que el equipo cliente espera que funcione.
+                </p>
+               </li>
+               <li>
+                <p>
+                 Estas expectativas se captan mejor en la forma de las
+                 <strong class="green">
+                  pruebas de aceptación
+                 </strong>
+                 , en lugar de escribir largas listas de "El sistema deberá …​“, … con el estilo de
+                 <strong class="red">
+                  declaraciones de requisitos
+                 </strong>
+                 .
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 42.8571%;"/>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 23.8096%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-center valign-top" colspan="3">
+         <strong class="blue">
+          Pruebas de Aceptación
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" colspan="3">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              El
+              <strong class="blue">
+               cliente debe centrar sus esfuerzos en la escritura de pruebas
+              </strong>
+              que aclaran la intención de la historia a los desarrolladores.
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong class="red">
+                  No buscamos necesariamente metas de cobertura de código del 100%
+                 </strong>
+                 o las pruebas de todas las condiciones de entorno.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong class="red">
+                  Utilizamos nuestra intuición, nuestro conocimiento y nuestra experiencia pasada para guiar nuestro esfuerzo de la prueba
+                 </strong>
+                 .
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="blue">
+             Responsabilidad
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="blue">
+             Desarrollo
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="blue">
+             Ejecución
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              La especificación de las pruebas es a menudo una
+              <strong class="blue">
+               responsabilidad compartida
+              </strong>
+              :
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Debido a que el software que se está desarrollando para cumplir una visión propia del cliente, las pruebas de aceptación deben ser especificadas por el cliente.
+                 <strong class="blue">
+                  El propietario de producto traerá su conocimiento de los objetivos de la organización que impulsan el proyecto
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong class="red">
+                  Pero un desarrollador de pruebas dedicado y cualificado traerá su mentalidad suspicaz para los aspectos más técnicos de esta actividad
+                 </strong>
+                 . Por lo general, aumentará algunas de las historias con las pruebas que considere porque el cliente no es responsable de la identificación de todas las pruebas posibles. Además, tenga en cuenta que un buen equipo de programación tendrá pruebas de unidad para muchos de los casos de bajo nivel.
+                </p>
+               </li>
+               <li>
+                <p>
+                 La prueba se ve mejor como un proceso de
+                 <strong class="blue">
+                  dos pasos
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    Primero,
+                    <strong class="blue">
+                     señalar futuras pruebas apuntadas
+                    </strong>
+                    en la parte posterior de las tarjetas de la historia.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    Segundo, las
+                    <strong class="blue">
+                     notas de las pruebas se convierten en pruebas de pleno derecho
+                    </strong>
+                    que se utilizan para demostrar que la historia ha sido codificada correcta y completamente.
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Es vital que las
+              <strong class="blue">
+               pruebas de las historias de usuario se vean como parte del proceso de desarrollo
+              </strong>
+              , no es algo que sucede "después de la codificación que se añade"
+             </p>
+            </li>
+            <li>
+             <p>
+              Las
+              <strong class="blue">
+               pruebas pueden ser añadidas o eliminadas en cualquier momento
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Pero escribir pruebas tempranamente es muy útil debido a que la mayoría de las suposiciones del equipo del cliente y sus expectativas son comunicados a los desarrolladores antes de la codificación de la historia.
+                 <strong class="blue">
+                  Al inicio de una iteración, se reunirán y especificarán tantas pruebas iniciales como se puedan imaginar
+                 </strong>
+                 .
+                </p>
+               </li>
+               <li>
+                <p>
+                 Pero no se detiene ahí y no se detiene con reunirse una vez por semana con el cliente.
+                 <strong class="blue">
+                  Como los detalles de una historia se elaboran, se especifican pruebas adicionales
+                 </strong>
+                 .
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Como mínimo, las
+              <strong class="blue">
+               pruebas de aceptación deben ser ejecutadas al final de cada iteración
+              </strong>
+              .
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Debido a que el código que funciona en una iteración puede ser roto por el desarrollo en una iteración posterior, es importante
+                 <strong class="blue">
+                  ejecutar pruebas de aceptación de todas las iteraciones anteriores
+                 </strong>
+                 . Esto significa que la ejecución de pruebas de aceptación se vuelve más lento con cada iteración que pasa.
+                </p>
+               </li>
+               <li>
+                <p>
+                 Si es posible, el equipo de desarrollo debe mirar por la
+                 <strong class="blue">
+                  automatización de algunas o todas las pruebas de aceptación
+                 </strong>
+                 .
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="historias-técnicas">
+     Historias técnicas
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 75%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Elementos no-funcionales, cosas que deben hacerse pero que no son un entregable ni están directamente relacionadas con ninguna historia específica, y no son de valor inmediato para el Dueño de Producto
+              </strong>
+              .
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong class="green">
+                  Ejemplos
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <em>
+                     Instalar un servidor de compilación continua
+                    </em>
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     <em>
+                      Refactorizar la capa de acceso a datos
+                     </em>
+                    </strong>
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     <em>
+                      Escribir una descripción general del diseño
+                     </em>
+                    </strong>
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Intentamos evitar las historias técnicas
+              </strong>
+              . Busca efusivamente formas de transformar las historias técnicas en historias normales con valor de negocio mensurable. Así el Dueño de Producto tendrá mejores oportunidades para realizar decisiones correctas entre los pros y los contras.
+             </p>
+            </li>
+            <li>
+             <p>
+              Si no podemos transformar una historia técnica en una historia normal, intentamos ver si es posible hacerla
+              <strong class="blue">
+               como una tarea dentro de otra historia
+              </strong>
+              .
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Por ejemplo, “refactorizar la capa de acceso a datos” podría ser una tarea dentro de la historia “editar usuario”, ya que esto involucra utilizar la capa de acceso a datos.
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+            <li>
+             <p>
+              Si lo anterior falla, definirla como historia técnica y
+              <strong class="blue">
+               mantener una lista separada con dichas historias
+              </strong>
+              .
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong class="blue">
+                  Permitimos al Dueño de Producto que vea dicha lista, pero no que la modifique
+                 </strong>
+                 .
+                </p>
+               </li>
+               <li>
+                <p>
+                 Usamos los factores de dedicación y la velocidad estimada para negociar con el Dueño de Producto y sacar algo de tiempo del Sprint para implementar estas historias.
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+            <li>
+             <p>
+              Por supuesto, la otra opción es simplemente mantener al
+              <strong class="red">
+               Dueño de Producto fuera del ciclo o darle un factor de dedicación no negociable
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="características">
+     Características
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               De valor para los usuarios o clientes
+              </strong>
+              .La mejor manera de asegurarse es que el
+              <strong class="blue">
+               cliente tenga que escribir las historias
+              </strong>
+              .
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Los
+                 <strong class="red">
+                  clientes están a menudo incómodos
+                 </strong>
+                 con este principio, probablemente porque los desarrolladores los han entrenado para pensar en todo lo que escriben como algo que puede ser utilizado en su contra más tarde.
+                </p>
+               </li>
+               <li>
+                <p>
+                 La mayoría de los clientes comienzan a escribir historias en sí mismas una vez que se sientan cómodos con el concepto de que las tarjetas de historia son
+                 <strong class="blue">
+                  recordatorios para hablar más tarde en lugar de compromisos formales o descripciones de la funcionalidad específica
+                 </strong>
+                 .
+                </p>
+               </li>
+               <li>
+                <p>
+                 De la misma manera, vale la pena tratar de
+                 <strong class="blue">
+                  mantener asunciones de interfaz para historias de usuario
+                 </strong>
+                 .
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Independientes
+              </strong>
+              . Las
+              <strong class="blue">
+               dependencias entre historias conducen a problemas de priorización, planificación y la estimación mucho más difícil de lo que debe ser
+              </strong>
+              .
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Cuando se presentan con este tipo de dependencia, hay dos formas de sortearlo:
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong>
+                     Combine las historias dependientes
+                    </strong>
+                    en una más grande, pero la historia independiente
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    Encontrar una
+                    <strong>
+                     manera diferente de dividir las historias
+                    </strong>
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    Si no desea combinar las historias y no puede encontrar una buena manera de separarlos, siempre se puede tomar el
+                    <strong class="red">
+                     enfoque simple de poner dos estimaciones de la tarjeta
+                    </strong>
+                    : una estimación si la historia se hace antes de la otra historia, una estimación más baja si se hace después
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Estimables
+              </strong>
+              . Hay tres razones por las que pueden no ser estimables:
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Los desarrolladores
+                 <strong class="blue">
+                  carecen de conocimiento del dominio
+                 </strong>
+                 . Si no la entienden como está escrita, deben
+                 <strong class="red">
+                  discutirlo con el cliente
+                 </strong>
+                 . Una vez más, no es necesario entender todos los detalles pero necesitan tener un conocimiento general de la historia.
+                </p>
+               </li>
+               <li>
+                <p>
+                 Los desarrolladores
+                 <strong class="blue">
+                  carecen de conocimientos técnicos
+                 </strong>
+                 . La solución es enviar uno o más desarrolladores a un spike (pico), que es un
+                 <strong class="blue">
+                  breve experimento para aprender sobre un área de la aplicación
+                 </strong>
+                 .
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    Al spike en sí siempre se le da una cantidad definida de
+                    <strong class="red">
+                     tiempo máximo
+                    </strong>
+                    .
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    Así, una historia inestimable se convierte en dos: un
+                    <strong class="blue">
+                     <em>
+                      spike
+                     </em>
+                     para reunir información
+                    </strong>
+                    y luego una para hacer
+                    <strong class="red">
+                     el trabajo real
+                    </strong>
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong class="blue">
+                  La historia es demasiado grande
+                 </strong>
+                 . A pesar de que son demasiado grandes para estimar de forma fiable, las
+                 <strong class="red">
+                  epopeyas son útiles como recordatorios sobre grandes partes de un sistema que necesitan ser desarrolladas
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top" rowspan="3">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Pequeñas
+              </strong>
+              . Es mejor tener más historias que tener historias que son demasiado grandes. Es bueno tener
+              <strong class="blue">
+               historias que pueden codificarse y probarse entre medio día y tal vez dos semanas por un o un par de programadores
+              </strong>
+              . La determinación final de si una historia tiene el tamaño adecuado se basa en el equipo, sus capacidades y la tecnologías en uso.
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Cuando una
+                 <strong class="blue">
+                  historia es demasiado grande se refiere a veces como una epopeya
+                 </strong>
+                 . Se pueden dividir en dos categorías:
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="blue">
+                     Historias complejas
+                    </strong>
+                    . Una historia de usuario que es de por sí grande y no puede ser fácilmente desglosada en un conjunto de historias constituyentes.
+                   </p>
+                   <div class="ulist">
+                    <ul>
+                     <li>
+                      <p>
+                       Si una historia es compleja debido a la incertidumbre asociada a ella, es posible que desee dividir la historia en dos historias:
+                       <strong class="blue">
+                        una de investigación
+                       </strong>
+                       (
+                       <em>
+                        spike
+                       </em>
+                       ) y
+                       <strong class="blue">
+                        una de desarrollo de la nueva característica
+                       </strong>
+                       .
+                      </p>
+                     </li>
+                    </ul>
+                   </div>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="blue">
+                     Historias compuestas
+                    </strong>
+                    . Normalmente hay muchas maneras de desglosar una historia compuesta.
+                    <strong class="red">
+                     Este desglose anterior es en el sentido de operaciones de crear, editar y eliminar (CRUD)
+                    </strong>
+                    .
+                   </p>
+                   <div class="ulist">
+                    <ul>
+                     <li>
+                      <p>
+                       Una alternativa es
+                       <strong class="blue">
+                        desglosar a lo “largo” con límites de los datos
+                       </strong>
+                       .
+                      </p>
+                     </li>
+                    </ul>
+                   </div>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 A veces las
+                 <strong class="blue">
+                  historias son demasiado pequeñas
+                 </strong>
+                 . Típicamente, una que
+                 <strong class="blue">
+                  el desarrollador dice de ella que no quiere que se escriba o estime porque haciendo eso puede llevar más tiempo que hacer el cambio
+                 </strong>
+                 .
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    Los informes de fallos y cambios en la interfaz de usuario son ejemplos comunes de historias que a menudo son demasiado pequeñas.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    Un buen enfoque para las historias pequeñas, comunes entre los equipos XP, es
+                    <strong class="blue">
+                     combinarlas en historias más grandes que representan aproximadamente medio día a varios días de trabajo
+                    </strong>
+                    . La historia combinada se le da un nombre y se programa y trabaja como con cualquier otra historia.
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Negociables
+              </strong>
+              .Son
+              <strong class="blue">
+               breves descripciones de la funcionalidad y los detalles son lo que debe ser negociado en una conversación entre el cliente y el equipo de desarrollo.
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Comprobables
+              </strong>
+              . Las historias deberán ser escritas con el fin de ser comprobables.
+              <strong>
+               Con el éxito de pasar sus pruebas se demuestra que una historia se ha desarrollado con éxito
+              </strong>
+              . Si la historia no puede ser probada, ¿cómo pueden saber los desarrolladores cuando han terminado de codificación?
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="documentación">
+     Documentación
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 20%;"/>
+       <col style="width: 80%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Mantenemos la Pila de Producto en un documento
+              <strong class="blue">
+               Excel con “compartir” habilitado
+              </strong>
+              (es decir, muchos usuarios pueden editar simultáneamente la hoja).
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Esta demostrado ser la manera
+              <strong class="blue">
+               más simple de permitir múltiples editores
+              </strong>
+              diferentes sin causar problemas de bloqueo o fusión de documentos.
+             </p>
+            </li>
+            <li>
+             <p>
+              Por la misma razón,
+              <strong class="blue">
+               no colocamos este documento en el repositorio de control de versiones
+              </strong>
+              ; en vez de eso, lo almacenamos en una unidad de red compartida.
+             </p>
+            </li>
+            <li>
+             <p>
+              Oficialmente,
+              <strong class="blue">
+               el Dueño de Producto es el propietario
+              </strong>
+              del documento, pero no queremos dejar al resto de usuarios fuera. Muchas veces un
+              <strong class="blue">
+               desarrollador necesita abrir el documento para clarificar algo o cambiar una estimación
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 75%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Identificador
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               Nombre
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               Notas
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               Importancia
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               Estimación inicial
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               Como probarlo
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              Opcionales:
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong class="blue">
+                  Componentes
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong class="blue">
+                  Categoría
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong class="blue">
+                  Bug tracking ID
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong class="blue">
+                  Solicitante
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/PilaDeProducto.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               ID
+              </strong>
+              : un identificador único, simplemente un número auto-incremental. Esto nos permite
+              <strong class="blue">
+               no perder la pista a las historias cuando cambiamos su nombre
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top" rowspan="3">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Importancia
+              </strong>
+              : Todos los elementos importantes deberían tener
+              <strong class="blue">
+               ratios de importancia
+              </strong>
+              asignados, diferentes ratios de importancia.
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Cualquier historia sobre la que el Dueño de Producto piense que tiene una
+                 <strong class="blue">
+                  remota posibilidad de incluirse en el Sprint debería tener un nivel de importancia único definido
+                 </strong>
+                 .
+                </p>
+               </li>
+               <li>
+                <p>
+                 El ratio de importancia se emplea
+                 <strong class="blue">
+                  solo para ordenar
+                 </strong>
+                 los elementos por relevancia.
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    Es útil dejar
+                    <strong class="blue">
+                     espacio entre la secuencia de números
+                    </strong>
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    En realidad,
+                    <strong class="blue">
+                     da igual si los elementos menos importantes tienen todos el mismo valor
+                    </strong>
+                    , ya que probablemente no se discutirán durante la planificación de Sprint en cualquier caso.
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    Así que si el elemento A tiene una importancia de 20 y el elemento B una importancia de 100,
+                    <strong class="blue">
+                     simplemente significa que B es más importante que A
+                    </strong>
+                    .
+                    <strong class="red">
+                     No significa que B sea cinco veces más importante que A
+                    </strong>
+                    .
+                    <strong class="blue">
+                     Si B tuviera una importancia de 21, ¡aun significaría lo mismo!
+                    </strong>
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Nombre
+              </strong>
+              : una descripción corta de la historia (
+              <strong class="blue">
+               normalmente, 2 a 10 palabras
+              </strong>
+              ).
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong class="blue">
+                  Suficientemente claro como para que el Dueño de Producto comprenda aproximadamente de qué estamos hablando, y suficientemente clara como para distinguirla de las otras historias
+                 </strong>
+                 .
+                </p>
+               </li>
+               <li>
+                <p>
+                 Por ejemplo,
+                 <em>
+                  Ver tu historial de transacciones
+                 </em>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Notas
+              </strong>
+              :
+              <strong class="blue">
+               cualquier otra información
+              </strong>
+              , clarificación, referencia a otras fuentes de información, etc.
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong class="blue">
+                  Normalmente muy breve
+                 </strong>
+                 .
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Estimación inicial
+              </strong>
+              : la
+              <strong class="blue">
+               valoración inicial del Equipo acerca de cuanto trabajo es necesario para implementar la historia, comparada con otras historias
+              </strong>
+              .
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 La unidad son “
+                 <strong class="blue">
+                  puntos de historia
+                 </strong>
+                 ” y usualmente
+                 <strong class="blue">
+                  corresponde a “días-persona ideales”
+                 </strong>
+                 .
+                </p>
+               </li>
+               <li>
+                <p>
+                 Pregunta al Equipo: “
+                 <strong class="blue">
+                  si tuvierais el número óptimo de personas para esta historia (ni muchos ni pocos, típicamente 2) y os encerraseis en una habitación con cantidad de comida, y trabajaseis sin distracciones, ¿en cuantos días saldríais con una implementación terminada, demostrable, testeada y liberable?
+                 </strong>
+                 ”.
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    Si la respuesta es “con 3 tíos encerrados en una habitación nos llevaría 4 días”, entonces la estimación inicial son 12 puntos.
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 Lo
+                 <strong class="blue">
+                  importante no es que las estimaciones absolutas sean correctas
+                 </strong>
+                 (es decir, que una historia de 2 puntos deba durar 2 días),
+                 <strong class="blue">
+                  lo importante es que las estimaciones relativas sean correctas
+                 </strong>
+                 (es decir, que una historia de 2 puntos debería durar la mitad que una historia de 4 puntos).
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Como probarlo
+              </strong>
+              : una
+              <strong class="blue">
+               descripción a alto nivel de como se demostrará esta historia en la Demo al final del Sprint
+              </strong>
+              .
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Se trata, esencialmente, de una
+                 <strong class="blue">
+                  simple especificación de un test
+                 </strong>
+                 : “Haz esto, entonces haz lo otro, y entonces debería ocurrir aquello”.
+                </p>
+               </li>
+               <li>
+                <p>
+                 Si practicáis desarrollo dirigido por pruebas, esta descripción puede
+                 <strong class="blue">
+                  usarse como pseudo-código para vuestro test de aceptación
+                 </strong>
+                 .
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Componentes (opcional)
+              </strong>
+              : usualmente implementado en la forma de “check-boxes” en el documento Excel, por ejemplo
+              <strong class="red">
+               “base de datos, servidor, cliente”
+              </strong>
+              .
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Aquí, el Dueño de Producto puede identificar qué componentes técnicos estarán involucrados en la implementación de la historia. Esto es útil
+                 <strong class="red">
+                  cuando tienes varios equipos Scrum
+                 </strong>
+                 , por ejemplo un equipo de back-office y otro equipo de cliente, y quieres que sea fácil para cada equipo saber a qué historias deben dedicarse.
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Categoría (opcional)
+              </strong>
+              : una categorización básica de la historia
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Por ejemplo “back-office” o
+                 <strong class="red">
+                  “optimización”
+                 </strong>
+                 .
+                </p>
+               </li>
+               <li>
+                <p>
+                 Así, el dueño de producto puede
+                 <strong class="blue">
+                  filtrar fácilmente
+                 </strong>
+                 “optimización” y cambiar todas las prioridades de este tipo a “baja”, etc.
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Bugtracking ID (opcional)
+              </strong>
+              : si tienes un sistema de bug tracking (seguimiento de errores) aparte, es útil mantener un historial de cualquier
+              <strong class="blue">
+               correspondencia directa entre una historia y uno o más errores reportados
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top" colspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Solicitante (opcional)
+              </strong>
+              : el Dueño de Producto puede querer mantener un historial acerca de qué
+              <strong class="blue">
+               cliente o persona interesada pidió originalmente la historia
+              </strong>
+              , para poder así ofrecerle información actualizada sobre el progreso de la misma.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="sintesis">
+     <strong>
+      Sintesis
+     </strong>
+    </h2>
+    <div class="sectionbody">
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="bibliografía">
+     <strong>
+      Bibliografía
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Editor
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Editor
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Refactoring (Pearson Addison-Wesley Signature Series)
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Fowler Martin
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Financial Times Prentice Hall; Edición: 01 (28 de noviembre de 2018)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/Refectoring.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Test Driven Development. By Example (The Addison-Wesley Signature Series
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Beck Kent
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison Wesley; Edición: 01 (8 de noviembre de 2002)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/TestDrivenDevelopment.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Extreme Programming Explained: Embrace Change: Embracing Change
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Kent Beck
+                 </strong>
+                 ,
+                 <strong>
+                  Cynthia Andres
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley Educational Publishers Inc; Edición: 2nd edition (16 de noviembre de 2004)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/Extreme.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Planning Extreme Programming (The Xp Series)
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Beck Kent
+                 </strong>
+                 ,
+                 <strong>
+                  Fowler Martin
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison Wesley; Edición: 01 (16 de octubre de 2000)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/Planning.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Scrum and XP from the Trenches (Enterprise Software Development)
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Henrik Kniberg
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Lulu.com; Edición: 1 (4 de octubre de 2007)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/Scrum.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Scrum: El revolucionario método para trabajar el doble en la mitad de tiempo
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Jeff Sutherland
+                 </strong>
+                 ,
+                </p>
+               </li>
+               <li>
+                <p>
+                 Editorial Ariel (20 de enero de 2015)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ScrumElRevolucionario.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Refactoring Databases: Evolutionary Database Design
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Scott J Ambler
+                 </strong>
+                 ,
+                 <strong>
+                  Pramod J. Sadalage
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley Professional; Edición: 1 (13 de marzo de 2006)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/RefactoringDatabases.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              User Stories Applied: For Agile Software Development
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Cohn, M.
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison Wesley, 2004
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="UserStoriesAppliedForAgileSoftwareDevelopment" src="images/UserStoriesAppliedForAgileSoftwareDevelopment.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Scrum y XP desde las trincheras
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Henrik Kniberg
+                 </strong>
+                 . Prólogos de
+                 <strong>
+                  Jeff Sutherland
+                 </strong>
+                 y
+                 <strong>
+                  Mike Cohn
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 proyectalis.com
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="ScrumXPTrenches" src="images/ScrumXPTrenches.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Diseño Ágil con TDD
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Carlos Blé Jurado
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Lulu.com
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="DisenoAgilconTDD" src="images/DisenoAgilconTDD.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="ponente">
+     Ponente
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Luis Fernández Muñoz
+               </em>
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Formador/Consultor
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://es.linkedin.com/in/luisfernandezmunyoz">
+                  <em>
+                   Linkedin
+                  </em>
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="setillo" src="images/setillo.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Doctor en Inteligencia Artificial por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Ingeniero en Informática por la UMA
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Diplomado en Informática por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Profesor Titular de ETSISI de la UPM
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div id="footer-text">
+    Version 0.0.1
+    <br/>
+    Last updated 2022-10-16 16:53:34 +0200
+   </div>
+  </div>
+  <script>
+   let speed = 50;
                 
                 function typeWriter(v) {
                   let i = v.getAttribute("typewriter-index")
@@ -1958,6 +3749,6 @@ Last updated 2022-10-16 16:53:34 +0200
                 })
                 
                 setTimeout(typeWriterAll, speed);
-                
-                </script>
+  </script>
+ </body>
 </html>

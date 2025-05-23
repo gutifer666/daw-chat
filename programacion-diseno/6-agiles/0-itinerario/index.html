@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8">
-<meta name="author" content="Universo de Santa Tecla &lt;USantaTecla@gmail.com&gt;">
-<title>Proceso de Desarrollo Ágil</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-<style>
-/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Asciidoctor 2.0.8" name="generator"/>
+  <meta content="Universo de Santa Tecla &lt;USantaTecla@gmail.com&gt;" name="author"/>
+  <title>
+   Proceso de Desarrollo Ágil
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700" rel="stylesheet"/>
+  <style>
+   /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
@@ -434,1051 +436,2565 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="book">
-<div id="header">
-<h1>Proceso de Desarrollo Ágil</h1>
-<div class="details">
-<span id="author" class="author">Universo de Santa Tecla &lt;USantaTecla@gmail.com&gt;</span><br>
-<span id="revnumber">version 0.0.1</span>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Índice</div>
-<ul class="sectlevel1">
-<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
-<li><a href="#qué"><strong>¿Qué?</strong></a></li>
-<li><a href="#manifiesto-ágil">Manifiesto Ágil</a></li>
-<li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
-<li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
-<li><a href="#principios">Principios</a></li>
-<li><a href="#métodos">Métodos</a></li>
-<li><a href="#crítica">Crítica</a></li>
-<li><a href="#itinerario">Itinerario</a></li>
-<li><a href="#síntesis"><strong>Síntesis</strong></a></li>
-<li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
-<li><a href="#ponente">Ponente</a></li>
-</ul>
-</div>
-</div>
-<div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="por-qué"><strong>¿Por qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">malas variables en su economía</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">ámbito incumplido</strong> y/o</p>
-</li>
-<li>
-<p><strong class="red">tiempo incumplido</strong> y/o</p>
-</li>
-<li>
-<p><strong class="red">coste incumplido</strong>;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">mala calidad del software</strong>, <span class="red">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">mala mantenibilidad</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">viscoso</strong>, porque <span class="red">no se puede entender con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">rígido</strong>, porque <span class="red">no se puede cambiar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">frágil</strong>, porque <span class="red">no se puede probar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">inmovil</strong>, porque <span class="red">no se puede reutilizar con facilidad</span> y/o</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">complejidad arbitraria</strong>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/davidProyectoImplantacionDiseñoMal.png" alt="davidProyectoImplantacionDiseñoMal"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/arbolNoMantenible.jpeg" alt="arbolNoMantenible"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="qué"><strong>¿Qué?</strong></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="manifiesto-ágil">Manifiesto Ágil</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 70%;">
-<col style="width: 15%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>K. Beck</strong></em> (<em>XP</em>)</p>
-</li>
-<li>
-<p><em><strong>R. Jeffries</strong></em> (<em>XP</em>)</p>
-</li>
-<li>
-<p><em><strong>M. Fowler</strong></em> (<em>XP</em>)</p>
-</li>
-<li>
-<p><em><strong>W. Cunningham</strong></em> (<em>XP</em>)</p>
-</li>
-<li>
-<p><em><strong>S. Mellor</strong></em> (<em>OMG</em>)</p>
-</li>
-<li>
-<p><em><strong>D. Thomas</strong></em> (<em>Pragmatic Programmer</em>)</p>
-</li>
-<li>
-<p><em>A. Hunt</em> (<em>Pragmatic Programmer</em>)</p>
-</li>
-<li>
-<p><em>M. Beedle</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/manifiestoAgil.png" alt="manifiestoAgil"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>R. C. Martin</strong></em> (<em>Clean Code</em>)</p>
-</li>
-<li>
-<p><em><strong>A. Cockburn</strong></em> (<em>Arquitectura Hexagonal</em>)</p>
-</li>
-<li>
-<p><em><strong>J. Sutherland</strong></em> (<em>Scrum</em>)</p>
-</li>
-<li>
-<p><em>K. Schwaber</em> (<em>Scrum</em>)</p>
-</li>
-<li>
-<p><em>J. Highsmith</em> (<em>ASD</em>)</p>
-</li>
-<li>
-<p><em>J. Grenning</em></p>
-</li>
-<li>
-<p><em>J. Kern</em></p>
-</li>
-<li>
-<p><em>B. Marick</em></p>
-</li>
-<li>
-<p><em>A. v. Bennekum</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-"En febrero de <strong>2001</strong>, un grupo de 17 expertos en procesos [&#8230;&#8203;] interesados en promover métodos y principios de <strong>IID</strong> modernos y simples se reunieron en Utah para discutir un terreno común
-</blockquote>
-<div class="attribution">
-&#8212; Larman y Basili<br>
-<cite>A History of Iterative and Incremental Development IEEE Computer  vol.36  nº6</cite>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="3"><div class="content"><div class="paragraph">
-<p><a href="https://agilemanifesto.org/iso/es/manifesto.html">Manifiesto Ágil</a></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="para-qué"><strong>¿Para qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Efectividad, eficacia y eficiencia, del Proyecto Software</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buenas variables en su economía</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">ámbito cumplido</strong> y</p>
-</li>
-<li>
-<p><strong class="green">tiempo cumplido</strong> y</p>
-</li>
-<li>
-<p><strong class="green">coste cumplido</strong>;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buena calidad del software</strong>, <span class="green">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buena mantenibilidad</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">fluido</strong>, porque <span class="green">se puede entender con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">flexible</strong>, porque <span class="green">se puede cambiar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">fuerte</strong>, porque <span class="green">se puede probar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">reusable</strong>, porque <span class="green">se puede reutilizar con facilidad</span> y/o</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">complejidad inherente</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/davidProyectoImplantacionDiseño.png" alt="davidProyectoImplantacionDiseño"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/arbolMantenible.jpeg" alt="arbolMantenible"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cómo"><strong>¿Cómo?</strong></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="principios">Principios</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Nuestra mayor prioridad es <strong class="green">satisfacer al cliente</strong> mediante la <strong class="green">entrega temprana y continua de software con valor</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Aceptamos que los <strong class="green">requisitos cambien, incluso en etapas tardías del desarrollo</strong>. Los procesos Ágiles aprovechan el cambio para proporcionar ventaja competitiva al cliente.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Entregamos <strong class="green">software funcional frecuentemente</strong>, entre dos semanas y dos meses, con preferencia al <strong class="green">periodo de tiempo más corto posible</strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Los <strong class="green">responsables de negocio y los desarrolladores trabajamos juntos</strong> de forma cotidiana durante todo el proyecto.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Los proyectos se desarrollan en torno a <strong class="green">individuos motivados</strong>. Hay que darles el entorno y el apoyo que necesitan, y confiarles la ejecución del trabajo.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>El método <strong class="green">más eficiente y efectivo de comunicar</strong> información al equipo de desarrollo y entre sus miembros es la <strong class="green">conversación cara a cara</strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>El <strong class="green">software funcionando es la medida principal de progreso</strong>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Los procesos Ágiles promueven el <strong class="green">desarrollo sostenible</strong>. Los promotores, desarrolladores y usuarios debemos ser capaces de mantener un <strong class="green">ritmo constante de forma indefinida</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>La <strong class="green">atención continua a la excelencia técnica y al buen diseño</strong> mejora la Agilidad.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>La <strong class="green">simplicidad, o el arte de maximizar la cantidad de trabajo no realizado, es esencial</strong>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Las <strong class="green">mejores arquitecturas, requisitos y diseños emergen de equipos auto-organizados</strong>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>A <strong class="green">intervalos regulares el equipo reflexiona sobre cómo ser más efectivo</strong> para a continuación ajustar y perfeccionar su comportamiento en consecuencia</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="métodos">Métodos</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 5%;">
-<col style="width: 20%;">
-<col style="width: 45%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Año</th>
-<th class="tableblock halign-left valign-top">Autor</th>
-<th class="tableblock halign-left valign-top">Publicación</th>
-<th class="tableblock halign-left valign-top">Referencia</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2003</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>M. Poppendieck</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Lean Software Development: An Agile Toolkit</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Addison Wesley</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="4"><div class="content"><div class="paragraph">
-<p><a href="https://www.slideshare.net/DocList/agile-in-a-nutshell-11350762/2-Agile_in_a_Nutshell_Steven"><strong>A-gilismo</strong></a>: <a href="https://www.scrum.org/resources/blog/scrum-myths-it-ok-have-sprint-0-design-sprint-hardening-sprint?gclid=Cj0KCQiAkNiMBhCxARIsAIDDKNW6l9Oc9cVx5QsbfOCkkORapdR8pVkGheAsbk1dNzUs6iGWQP5QE3saArR-EALw_wcB"><em>Sprint 0</em>, ¿Fase Inception?</a>; <a href="https://jtbd.info/replacing-the-user-story-with-the-job-story-af7cdee10c27">Job Stories</a> <em>Design Sprint; Hardening Sprint;</em> &#8230;&#8203; <a href="https://josehuerta.es/gestion/agile/que-es-una-epica-y-que-no-es">Epicas, ¿Estimación a largo plazo?</a>; <em>Planning Poker; T-Shirt Sizes; Bucket System; Dot Voting;</em> &#8230;&#8203;</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/piramideAgil.jpg" alt="piramideAgil"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/paraguas1.png" alt="paraguas1"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/paraguas2.jpg" alt="paraguas2"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/paraguas3.webp" alt="paraguas3"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 35%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">¿RUP es Agile?</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>RUP es un <a href="https://martinfowler.com/articles/newMethodology.html#rationalUnifiedProcess">framework</a> que debe configurarse ligero o pesado según el contexto:</p>
-</li>
-<li>
-<p><strong><em>Philip Krutchen</em></strong>, autor de 4+1 Vistas de RUP y cofundador de Agile Vancouver</p>
-</li>
-<li>
-<p><strong><em>Craig Larman</em></strong>, histórico y cronista del movimiento agile y autor de <a href="https://www.amazon.es/UML-y-patrones-Craig-Larman/dp/8420534382">UML y Patrones</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top" rowspan="4"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/contexto.jpg" alt="contexto"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">¿UML es Agile?</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">No</strong> &#8230;&#8203; <a href="https://www.martinfowler.com/articles/designDead.html#UmlAndXp"><strong class="green">Sí</strong></a>?!?!? pero lo usan todos los textos seminales de agilismo</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="crítica">Crítica</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 25%;">
-<col style="width: 60%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">¿Gestor o Scrum Master?</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Scrum</strong>: <em>Product Owner, Scrum Team, <strong>Scrum Master</strong></em></p>
-</li>
-<li>
-<p><strong>XP</strong>: Cliente, Programadores y <strong>Gestor</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle" rowspan="3"><div class="content"><div class="paragraph">
-<p><a href="https://link.springer.com/chapter/10.1007/978-1-4842-4221-6_11"><strong><em>Dark Agile</em></strong></a>
-<span class="image"><img src="images/darkagile.png" alt="darkagile"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">¿Sprint 0 es Agile?</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.agilescrum.cl/post/qu%C3%A9-es-el-sprint-0#:~:text=Tal%20y%20como%20se%20ha,las%20l%C3%ADneas%20principales%20de%20trabajo">¿Qué es el Sprint 0?</a></p>
-</li>
-<li>
-<p><a href="https://www.scrum.org/resources/blog/scrum-myths-it-ok-have-sprint-0-design-sprint-hardening-sprint?gclid=CjwKCAjwloCSBhAeEiwA3hVo_dx9lzuXa5qZEucuFvd3A-xV1aAntqAPFoDw0oj-pyTnOx6Bb1ONpBoC9zQQAvD_BwE">Sprint 0, Design Sprint, Harderning Sprint, &#8230;&#8203;</a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">¿Historias de Usuario vs Casos de Uso?</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Alistair Cockburn</em></strong>: autor de Arquitectura Hexagonal, <a href="http://www.inf.puc-rio.br/~ivan/INF1013/NotasAula/Why%20I%20Still%20Use%20Use%20Cases.pdf?ref=hackernoon.com">Why I Still Use Use Cases </a></p>
-</li>
-<li>
-<p><a href="https://scalingsoftwareagility.files.wordpress.com/2009/11/ch-19-use-cases-draft.pdf">Agile&amp;Software&amp;Requirements</a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">¿Puntos de Historias de Usuario?</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Ron Jefries</em></strong>: <a href="https://ronjeffries.com/articles/019-01ff/story-points/Index.html">I like to say that I may have invented story points, and if I did, I’m sorry now</a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">¿Escuelas Clásica vs Londres en TDD?</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">TDD Escuela Clásica</strong>: no <strong class="red"><em>top/down</em></strong>, no <strong><em>bottom/up</em></strong>?!?!, sí <strong class="green"><em>know/unknow</em></strong></p>
-</li>
-<li>
-<p><strong class="red">TDD Estilo Londres</strong>: <a href="https://josemyduarte.github.io/2018-12-09-tdd-outside-in/">vertical slicing, full stack, &#8230;&#8203;</a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">¿TDD está muerto?</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>David Heinemeier Hansson</em></strong>: referente de Ruby on Rails, <a href="https://dhh.dk/2014/test-induced-design-damage.html">Test-induced design damage</a></p>
-</li>
-<li>
-<p><em>David Heinemeier Hansson</em> vs <em>Kent Beck - Martin Fowler</em>: debate ( <a href="https://www.youtube.com/watch?v=z9quxZsLcfo&amp;t=589s">parte I</a>, <a href="https://www.youtube.com/watch?v=JoTB2mcjU7w">parte II</a>, <a href="https://www.youtube.com/watch?v=YNw4baDz6WA">parte III</a>, <a href="https://www.youtube.com/watch?v=dGtasFJnUxI">parte IV</a> y <a href="https://www.youtube.com/watch?v=gWD6REVeKW4">parte V y VI</a>)</p>
-</li>
-<li>
-<p><em>Jim Coplien</em> vs <em>Robert Martin</em>: <a href="https://www.youtube.com/watch?v=KtHQGs3zFAM">debate</a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 5%;">
-<col style="width: 15%;">
-<col style="width: 25%;">
-<col style="width: 55%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Año</th>
-<th class="tableblock halign-left valign-top">Autor</th>
-<th class="tableblock halign-left valign-top">Publicación</th>
-<th class="tableblock halign-left valign-top"><a href="https://manifesto.softwarecraftsmanship.org/#/es">Movimiento <em>Craftmanship</em></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2009</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>M. Fowler</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://martinfowler.com/bliki/FlaccidScrum.html"><em class="red">Flaccid Scrum</em></a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top" rowspan="4"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/craftmanship.png" alt="craftmanship"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2014</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>D. Thomas</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://pragdave.me/blog/2014/03/04/time-to-kill-agile.html"><em class="red">Agile is dead</a></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2018</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>R. Jeffiers</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://ronjeffries.com/articles/018-01ff/scrum-not-asd-1"><em class="red">Scrum is not an Agile Software Development Framework</em></a></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>2018</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>R. Jeffiers</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://ronjeffries.com/articles/018-01ff/abandon-1"><em class="red">Developers Should Abandon Agile</em></a></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="itinerario">Itinerario</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaPruebas.svg" alt="diagramaPruebas" width="156" height="441">
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Refactoring</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>baby steps</em>, <em>Smell Codes</em>, Catálogo de Refactorizaciones, Granularidad del Refactoring, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Historias de Usuario</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Autor, Roles, Elementos, Historias técnicas, Características, Documentación, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>eXtreme Programming</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Roles, Actividades, Valores, Principios, Prácticas, <em>Test-Driven Development</em>, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Scrum</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Product Owner</em>, Equipo, <em>Scrum Master</em>, <em>Product Backlog</em>, <em>Sprint Backlog</em>, <em>Sprint</em>, Planificación, Realización, <em>Burndown</em>, <em>Daily Meeting</em>, "Demo", Restrospectiva, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="síntesis"><strong>Síntesis</strong></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/davidProyectoDisenyoTecnico.png" alt="davidProyectoDisenyoTecnico"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="bibliografía"><strong>Bibliografía</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Object Solutions. Managing the Object Oriented Project</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Addison-Wesley Professional (1789)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ObjectSolutionsManagingTheObjectOrientedProject.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Object Oriented Analysis and Design with Applications</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Imprint Addison-Wesley Educational s Inc (3 de junio de 2011)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ObjectOrientedAnalysisAndDesignWithApplications.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>The Unified Modeling Language User Guide</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Pearson Education (US); Edición: 2 ed (28 de junio de 2005)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheUnifiedModelingLanguageUserGuide.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>The Mythical Man Month. Essays on Software Engineering</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Frederick P. Brooks</strong></p>
-</li>
-<li>
-<p>Prentice Hall; Edición: Nachdr. 20th Anniversary (1 de enero de 1995)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheMythicalManMonthEssaysOnSoftwareEngineering.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Extreme Programming Explained. Embrace Change. Embracing Change</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Kent Beck, Cynthia Andres</strong></p>
-</li>
-<li>
-<p>Addison-Wesley Educational Publishers Inc; Edición: 2nd edition (16 de noviembre de 2004)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ExtremeProgrammingExplainedEmbraceChangeEmbracingChange.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Refactoring. Improving the Design of Existing Code</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Martin Fowler,Kent Beck,John Brant,William Opdyke,Don Roberts</strong></p>
-</li>
-<li>
-<p>Addison Wesley; Edición: 01 (1 de octubre de 1999)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/RefactoringImprovingTheDesignOfExistingCode.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>UML Distilled. A Brief Guide to the Standard Object Modeling Language</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Martin Fowler,Kendall Scott</strong></p>
-</li>
-<li>
-<p>Addison-Wesley Educational Publishers Inc; Edición: 3 ed (15 de septiembre de 2003)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/UMLDistilledABriefGuideToTheStandardObjectModelingLanguage.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Patrones de diseño</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Erich Gamma et al</strong></p>
-</li>
-<li>
-<p>Grupo Anaya Publicaciones Generales; Edición: 1 (1 de noviembre de 2002)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/PatronesDeDiseño.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Clean Code. A Handbook of Agile Software Craftsmanship</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Robert C. Martin</strong></p>
-</li>
-<li>
-<p>Prentice Hall; Edición: 01 (1 de agosto de 2008)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/CleanCodeAHandbookOfAgileSoftwareCraftsmanship.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Object-Oriented Software Construction</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Bertrand Meyer</strong></p>
-</li>
-<li>
-<p>Prentice Hall; Edición: 2 ed (3 de abril de 1997)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ObjectOrientedSoftwareConstruction.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ponente">Ponente</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 30%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Luis Fernández Muñoz</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Formador/Consultor</em></p>
-</li>
-<li>
-<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
-</li>
-<li>
-<p><em>Ingeniero en Informática por la UMA</em></p>
-</li>
-<li>
-<p><em>Diplomado en Informática por la UPM</em></p>
-</li>
-<li>
-<p><em>Profesor Titular de ETSISI de la UPM</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="footer">
-<div id="footer-text">
-Version 0.0.1<br>
-Last updated 2022-10-16 16:53:04 +0200
-</div>
-</div>
-<script>
-                let speed = 50;
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+ </head>
+ <body class="book">
+  <div id="header">
+   <h1>
+    Proceso de Desarrollo Ágil
+   </h1>
+   <div class="details">
+    <span class="author" id="author">
+     Universo de Santa Tecla &lt;USantaTecla@gmail.com&gt;
+    </span>
+    <br/>
+    <span id="revnumber">
+     version 0.0.1
+    </span>
+   </div>
+   <div class="toc" id="toc">
+    <div id="toctitle">
+     Índice
+    </div>
+    <ul class="sectlevel1">
+     <li>
+      <a href="#por-qué">
+       <strong>
+        ¿Por qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#qué">
+       <strong>
+        ¿Qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#manifiesto-ágil">
+       Manifiesto Ágil
+      </a>
+     </li>
+     <li>
+      <a href="#para-qué">
+       <strong>
+        ¿Para qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#cómo">
+       <strong>
+        ¿Cómo?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#principios">
+       Principios
+      </a>
+     </li>
+     <li>
+      <a href="#métodos">
+       Métodos
+      </a>
+     </li>
+     <li>
+      <a href="#crítica">
+       Crítica
+      </a>
+     </li>
+     <li>
+      <a href="#itinerario">
+       Itinerario
+      </a>
+     </li>
+     <li>
+      <a href="#síntesis">
+       <strong>
+        Síntesis
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#bibliografía">
+       <strong>
+        Bibliografía
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#ponente">
+       Ponente
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div id="content">
+   <div id="preamble">
+    <div class="sectionbody">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="por-qué">
+     <strong>
+      ¿Por qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  malas variables en su economía
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     ámbito incumplido
+                    </strong>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     tiempo incumplido
+                    </strong>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     coste incumplido
+                    </strong>
+                    ;
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  mala calidad del software
+                 </strong>
+                 ,
+                 <span class="red">
+                  fiabilidad, usabilidad, interoperatividad, seguirdad, …​ (
+                  <em>
+                   -ilities
+                  </em>
+                  )
+                 </span>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  mala mantenibilidad
+                 </strong>
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     viscoso
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede entender con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     rígido
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede cambiar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     frágil
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede probar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     inmovil
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede reutilizar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  complejidad arbitraria
+                 </strong>
+                 .
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="davidProyectoImplantacionDiseñoMal" src="images/davidProyectoImplantacionDiseñoMal.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="arbolNoMantenible" src="images/arbolNoMantenible.jpeg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="qué">
+     <strong>
+      ¿Qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="manifiesto-ágil">
+     Manifiesto Ágil
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 15%;"/>
+       <col style="width: 70%;"/>
+       <col style="width: 15%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               <strong>
+                K. Beck
+               </strong>
+              </em>
+              (
+              <em>
+               XP
+              </em>
+              )
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               <strong>
+                R. Jeffries
+               </strong>
+              </em>
+              (
+              <em>
+               XP
+              </em>
+              )
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               <strong>
+                M. Fowler
+               </strong>
+              </em>
+              (
+              <em>
+               XP
+              </em>
+              )
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               <strong>
+                W. Cunningham
+               </strong>
+              </em>
+              (
+              <em>
+               XP
+              </em>
+              )
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               <strong>
+                S. Mellor
+               </strong>
+              </em>
+              (
+              <em>
+               OMG
+              </em>
+              )
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               <strong>
+                D. Thomas
+               </strong>
+              </em>
+              (
+              <em>
+               Pragmatic Programmer
+              </em>
+              )
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               A. Hunt
+              </em>
+              (
+              <em>
+               Pragmatic Programmer
+              </em>
+              )
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               M. Beedle
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="manifiestoAgil" src="images/manifiestoAgil.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               <strong>
+                R. C. Martin
+               </strong>
+              </em>
+              (
+              <em>
+               Clean Code
+              </em>
+              )
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               <strong>
+                A. Cockburn
+               </strong>
+              </em>
+              (
+              <em>
+               Arquitectura Hexagonal
+              </em>
+              )
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               <strong>
+                J. Sutherland
+               </strong>
+              </em>
+              (
+              <em>
+               Scrum
+              </em>
+              )
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               K. Schwaber
+              </em>
+              (
+              <em>
+               Scrum
+              </em>
+              )
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               J. Highsmith
+              </em>
+              (
+              <em>
+               ASD
+              </em>
+              )
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               J. Grenning
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               J. Kern
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               B. Marick
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               A. v. Bennekum
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            "En febrero de
+            <strong>
+             2001
+            </strong>
+            , un grupo de 17 expertos en procesos […​] interesados en promover métodos y principios de
+            <strong>
+             IID
+            </strong>
+            modernos y simples se reunieron en Utah para discutir un terreno común
+           </blockquote>
+           <div class="attribution">
+            — Larman y Basili
+            <br/>
+            <cite>
+             A History of Iterative and Incremental Development IEEE Computer  vol.36  nº6
+            </cite>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle" colspan="3">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <a href="https://agilemanifesto.org/iso/es/manifesto.html">
+             Manifiesto Ágil
+            </a>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="para-qué">
+     <strong>
+      ¿Para qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Efectividad, eficacia y eficiencia, del Proyecto Software
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buenas variables en su economía
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     ámbito cumplido
+                    </strong>
+                    y
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     tiempo cumplido
+                    </strong>
+                    y
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     coste cumplido
+                    </strong>
+                    ;
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buena calidad del software
+                 </strong>
+                 ,
+                 <span class="green">
+                  fiabilidad, usabilidad, interoperatividad, seguirdad, …​ (
+                  <em>
+                   -ilities
+                  </em>
+                  )
+                 </span>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buena mantenibilidad
+                 </strong>
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     fluido
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede entender con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     flexible
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede cambiar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     fuerte
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede probar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     reusable
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede reutilizar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  complejidad inherente
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="davidProyectoImplantacionDiseño" src="images/davidProyectoImplantacionDiseño.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="arbolMantenible" src="images/arbolMantenible.jpeg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="cómo">
+     <strong>
+      ¿Cómo?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="principios">
+     Principios
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3334%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Nuestra mayor prioridad es
+              <strong class="green">
+               satisfacer al cliente
+              </strong>
+              mediante la
+              <strong class="green">
+               entrega temprana y continua de software con valor
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Aceptamos que los
+            <strong class="green">
+             requisitos cambien, incluso en etapas tardías del desarrollo
+            </strong>
+            . Los procesos Ágiles aprovechan el cambio para proporcionar ventaja competitiva al cliente.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Entregamos
+            <strong class="green">
+             software funcional frecuentemente
+            </strong>
+            , entre dos semanas y dos meses, con preferencia al
+            <strong class="green">
+             periodo de tiempo más corto posible
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Los
+            <strong class="green">
+             responsables de negocio y los desarrolladores trabajamos juntos
+            </strong>
+            de forma cotidiana durante todo el proyecto.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Los proyectos se desarrollan en torno a
+            <strong class="green">
+             individuos motivados
+            </strong>
+            . Hay que darles el entorno y el apoyo que necesitan, y confiarles la ejecución del trabajo.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            El método
+            <strong class="green">
+             más eficiente y efectivo de comunicar
+            </strong>
+            información al equipo de desarrollo y entre sus miembros es la
+            <strong class="green">
+             conversación cara a cara
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            El
+            <strong class="green">
+             software funcionando es la medida principal de progreso
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Los procesos Ágiles promueven el
+            <strong class="green">
+             desarrollo sostenible
+            </strong>
+            . Los promotores, desarrolladores y usuarios debemos ser capaces de mantener un
+            <strong class="green">
+             ritmo constante de forma indefinida
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            La
+            <strong class="green">
+             atención continua a la excelencia técnica y al buen diseño
+            </strong>
+            mejora la Agilidad.
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            La
+            <strong class="green">
+             simplicidad, o el arte de maximizar la cantidad de trabajo no realizado, es esencial
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Las
+            <strong class="green">
+             mejores arquitecturas, requisitos y diseños emergen de equipos auto-organizados
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            A
+            <strong class="green">
+             intervalos regulares el equipo reflexiona sobre cómo ser más efectivo
+            </strong>
+            para a continuación ajustar y perfeccionar su comportamiento en consecuencia
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="métodos">
+     Métodos
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 5%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 45%;"/>
+       <col style="width: 30%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Año
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Autor
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Publicación
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Referencia
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            2003
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             <strong>
+              M. Poppendieck
+             </strong>
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Lean Software Development: An Agile Toolkit
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Addison Wesley
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle" colspan="4">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <a href="https://www.slideshare.net/DocList/agile-in-a-nutshell-11350762/2-Agile_in_a_Nutshell_Steven">
+             <strong>
+              A-gilismo
+             </strong>
+            </a>
+            :
+            <a href="https://www.scrum.org/resources/blog/scrum-myths-it-ok-have-sprint-0-design-sprint-hardening-sprint?gclid=Cj0KCQiAkNiMBhCxARIsAIDDKNW6l9Oc9cVx5QsbfOCkkORapdR8pVkGheAsbk1dNzUs6iGWQP5QE3saArR-EALw_wcB">
+             <em>
+              Sprint 0
+             </em>
+             , ¿Fase Inception?
+            </a>
+            ;
+            <a href="https://jtbd.info/replacing-the-user-story-with-the-job-story-af7cdee10c27">
+             Job Stories
+            </a>
+            <em>
+             Design Sprint; Hardening Sprint;
+            </em>
+            …​
+            <a href="https://josehuerta.es/gestion/agile/que-es-una-epica-y-que-no-es">
+             Epicas, ¿Estimación a largo plazo?
+            </a>
+            ;
+            <em>
+             Planning Poker; T-Shirt Sizes; Bucket System; Dot Voting;
+            </em>
+            …​
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="piramideAgil" src="images/piramideAgil.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="paraguas1" src="images/paraguas1.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="paraguas2" src="images/paraguas2.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="paraguas3" src="images/paraguas3.webp"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 15%;"/>
+       <col style="width: 35%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               ¿RUP es Agile?
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              RUP es un
+              <a href="https://martinfowler.com/articles/newMethodology.html#rationalUnifiedProcess">
+               framework
+              </a>
+              que debe configurarse ligero o pesado según el contexto:
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Philip Krutchen
+               </em>
+              </strong>
+              , autor de 4+1 Vistas de RUP y cofundador de Agile Vancouver
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Craig Larman
+               </em>
+              </strong>
+              , histórico y cronista del movimiento agile y autor de
+              <a href="https://www.amazon.es/UML-y-patrones-Craig-Larman/dp/8420534382">
+               UML y Patrones
+              </a>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top" rowspan="4">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="contexto" src="images/contexto.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               ¿UML es Agile?
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               No
+              </strong>
+              …​
+              <a href="https://www.martinfowler.com/articles/designDead.html#UmlAndXp">
+               <strong class="green">
+                Sí
+               </strong>
+              </a>
+              ?!?!? pero lo usan todos los textos seminales de agilismo
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="crítica">
+     Crítica
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 15%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 60%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               ¿Gestor o Scrum Master?
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Scrum
+              </strong>
+              :
+              <em>
+               Product Owner, Scrum Team,
+               <strong>
+                Scrum Master
+               </strong>
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               XP
+              </strong>
+              : Cliente, Programadores y
+              <strong>
+               Gestor
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle" rowspan="3">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <a href="https://link.springer.com/chapter/10.1007/978-1-4842-4221-6_11">
+             <strong>
+              <em>
+               Dark Agile
+              </em>
+             </strong>
+            </a>
+            <span class="image">
+             <img alt="darkagile" src="images/darkagile.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               ¿Sprint 0 es Agile?
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <a href="https://www.agilescrum.cl/post/qu%C3%A9-es-el-sprint-0#:~:text=Tal%20y%20como%20se%20ha,las%20l%C3%ADneas%20principales%20de%20trabajo">
+               ¿Qué es el Sprint 0?
+              </a>
+             </p>
+            </li>
+            <li>
+             <p>
+              <a href="https://www.scrum.org/resources/blog/scrum-myths-it-ok-have-sprint-0-design-sprint-hardening-sprint?gclid=CjwKCAjwloCSBhAeEiwA3hVo_dx9lzuXa5qZEucuFvd3A-xV1aAntqAPFoDw0oj-pyTnOx6Bb1ONpBoC9zQQAvD_BwE">
+               Sprint 0, Design Sprint, Harderning Sprint, …​
+              </a>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               ¿Historias de Usuario vs Casos de Uso?
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Alistair Cockburn
+               </em>
+              </strong>
+              : autor de Arquitectura Hexagonal,
+              <a href="http://www.inf.puc-rio.br/~ivan/INF1013/NotasAula/Why%20I%20Still%20Use%20Use%20Cases.pdf?ref=hackernoon.com">
+               Why I Still Use Use Cases
+              </a>
+             </p>
+            </li>
+            <li>
+             <p>
+              <a href="https://scalingsoftwareagility.files.wordpress.com/2009/11/ch-19-use-cases-draft.pdf">
+               Agile&amp;Software&amp;Requirements
+              </a>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               ¿Puntos de Historias de Usuario?
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top" colspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Ron Jefries
+               </em>
+              </strong>
+              :
+              <a href="https://ronjeffries.com/articles/019-01ff/story-points/Index.html">
+               I like to say that I may have invented story points, and if I did, I’m sorry now
+              </a>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               ¿Escuelas Clásica vs Londres en TDD?
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top" colspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               TDD Escuela Clásica
+              </strong>
+              : no
+              <strong class="red">
+               <em>
+                top/down
+               </em>
+              </strong>
+              , no
+              <strong>
+               <em>
+                bottom/up
+               </em>
+              </strong>
+              ?!?!, sí
+              <strong class="green">
+               <em>
+                know/unknow
+               </em>
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="red">
+               TDD Estilo Londres
+              </strong>
+              :
+              <a href="https://josemyduarte.github.io/2018-12-09-tdd-outside-in/">
+               vertical slicing, full stack, …​
+              </a>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               ¿TDD está muerto?
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top" colspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                David Heinemeier Hansson
+               </em>
+              </strong>
+              : referente de Ruby on Rails,
+              <a href="https://dhh.dk/2014/test-induced-design-damage.html">
+               Test-induced design damage
+              </a>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               David Heinemeier Hansson
+              </em>
+              vs
+              <em>
+               Kent Beck - Martin Fowler
+              </em>
+              : debate (
+              <a href="https://www.youtube.com/watch?v=z9quxZsLcfo&amp;t=589s">
+               parte I
+              </a>
+              ,
+              <a href="https://www.youtube.com/watch?v=JoTB2mcjU7w">
+               parte II
+              </a>
+              ,
+              <a href="https://www.youtube.com/watch?v=YNw4baDz6WA">
+               parte III
+              </a>
+              ,
+              <a href="https://www.youtube.com/watch?v=dGtasFJnUxI">
+               parte IV
+              </a>
+              y
+              <a href="https://www.youtube.com/watch?v=gWD6REVeKW4">
+               parte V y VI
+              </a>
+              )
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Jim Coplien
+              </em>
+              vs
+              <em>
+               Robert Martin
+              </em>
+              :
+              <a href="https://www.youtube.com/watch?v=KtHQGs3zFAM">
+               debate
+              </a>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 5%;"/>
+       <col style="width: 15%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 55%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Año
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Autor
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Publicación
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <a href="https://manifesto.softwarecraftsmanship.org/#/es">
+          Movimiento
+          <em>
+           Craftmanship
+          </em>
+         </a>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            2009
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             <strong>
+              M. Fowler
+             </strong>
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <a href="https://martinfowler.com/bliki/FlaccidScrum.html">
+             <em class="red">
+              Flaccid Scrum
+             </em>
+            </a>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top" rowspan="4">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="craftmanship" src="images/craftmanship.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            2014
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             <strong>
+              D. Thomas
+             </strong>
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <a href="https://pragdave.me/blog/2014/03/04/time-to-kill-agile.html">
+             <em class="red">
+              Agile is dead
+             </em>
+            </a>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            2018
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             <strong>
+              R. Jeffiers
+             </strong>
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <a href="https://ronjeffries.com/articles/018-01ff/scrum-not-asd-1">
+             <em class="red">
+              Scrum is not an Agile Software Development Framework
+             </em>
+            </a>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            2018
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             <strong>
+              R. Jeffiers
+             </strong>
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <a href="https://ronjeffries.com/articles/018-01ff/abandon-1">
+             <em class="red">
+              Developers Should Abandon Agile
+             </em>
+            </a>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="itinerario">
+     Itinerario
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 20%;"/>
+       <col style="width: 80%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="diagramaPruebas" height="441" src="images/diagramaPruebas.svg" width="156"/>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Refactoring
+              </strong>
+              :
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  baby steps
+                 </em>
+                 ,
+                 <em>
+                  Smell Codes
+                 </em>
+                 , Catálogo de Refactorizaciones, Granularidad del Refactoring, …​
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+            <li>
+             <p>
+              <strong>
+               Historias de Usuario
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Autor, Roles, Elementos, Historias técnicas, Características, Documentación, …​
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+            <li>
+             <p>
+              <strong>
+               eXtreme Programming
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Roles, Actividades, Valores, Principios, Prácticas,
+                 <em>
+                  Test-Driven Development
+                 </em>
+                 , …​
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+            <li>
+             <p>
+              <strong>
+               Scrum
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Product Owner
+                 </em>
+                 , Equipo,
+                 <em>
+                  Scrum Master
+                 </em>
+                 ,
+                 <em>
+                  Product Backlog
+                 </em>
+                 ,
+                 <em>
+                  Sprint Backlog
+                 </em>
+                 ,
+                 <em>
+                  Sprint
+                 </em>
+                 , Planificación, Realización,
+                 <em>
+                  Burndown
+                 </em>
+                 ,
+                 <em>
+                  Daily Meeting
+                 </em>
+                 , "Demo", Restrospectiva, …​
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="síntesis">
+     <strong>
+      Síntesis
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+     <table class="tableblock frame-none grid-none stretch">
+      <colgroup>
+       <col style="width: 100%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="davidProyectoDisenyoTecnico" src="images/davidProyectoDisenyoTecnico.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="bibliografía">
+     <strong>
+      Bibliografía
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Object Solutions. Managing the Object Oriented Project
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley Professional (1789)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ObjectSolutionsManagingTheObjectOrientedProject.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Object Oriented Analysis and Design with Applications
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Imprint Addison-Wesley Educational s Inc (3 de junio de 2011)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ObjectOrientedAnalysisAndDesignWithApplications.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              The Unified Modeling Language User Guide
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Pearson Education (US); Edición: 2 ed (28 de junio de 2005)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/TheUnifiedModelingLanguageUserGuide.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              The Mythical Man Month. Essays on Software Engineering
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Frederick P. Brooks
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Prentice Hall; Edición: Nachdr. 20th Anniversary (1 de enero de 1995)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/TheMythicalManMonthEssaysOnSoftwareEngineering.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Extreme Programming Explained. Embrace Change. Embracing Change
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Kent Beck, Cynthia Andres
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley Educational Publishers Inc; Edición: 2nd edition (16 de noviembre de 2004)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ExtremeProgrammingExplainedEmbraceChangeEmbracingChange.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Refactoring. Improving the Design of Existing Code
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Martin Fowler,Kent Beck,John Brant,William Opdyke,Don Roberts
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison Wesley; Edición: 01 (1 de octubre de 1999)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/RefactoringImprovingTheDesignOfExistingCode.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              UML Distilled. A Brief Guide to the Standard Object Modeling Language
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Martin Fowler,Kendall Scott
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley Educational Publishers Inc; Edición: 3 ed (15 de septiembre de 2003)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/UMLDistilledABriefGuideToTheStandardObjectModelingLanguage.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Patrones de diseño
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Erich Gamma et al
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Grupo Anaya Publicaciones Generales; Edición: 1 (1 de noviembre de 2002)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/PatronesDeDiseño.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Clean Code. A Handbook of Agile Software Craftsmanship
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Robert C. Martin
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Prentice Hall; Edición: 01 (1 de agosto de 2008)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/CleanCodeAHandbookOfAgileSoftwareCraftsmanship.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Object-Oriented Software Construction
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Bertrand Meyer
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Prentice Hall; Edición: 2 ed (3 de abril de 1997)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ObjectOrientedSoftwareConstruction.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="ponente">
+     Ponente
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Luis Fernández Muñoz
+               </em>
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Formador/Consultor
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://es.linkedin.com/in/luisfernandezmunyoz">
+                  <em>
+                   Linkedin
+                  </em>
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="setillo" src="images/setillo.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Doctor en Inteligencia Artificial por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Ingeniero en Informática por la UMA
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Diplomado en Informática por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Profesor Titular de ETSISI de la UPM
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div id="footer-text">
+    Version 0.0.1
+    <br/>
+    Last updated 2022-10-16 16:53:04 +0200
+   </div>
+  </div>
+  <script>
+   let speed = 50;
                 
                 function typeWriter(v) {
                   let i = v.getAttribute("typewriter-index")
@@ -1510,6 +3026,6 @@ Last updated 2022-10-16 16:53:04 +0200
                 })
                 
                 setTimeout(typeWriterAll, speed);
-                
-                </script>
+  </script>
+ </body>
 </html>

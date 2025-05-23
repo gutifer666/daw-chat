@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8">
-<meta name="author" content="Universo Santa Tecla">
-<title>JSON</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-<style>
-/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Asciidoctor 2.0.8" name="generator"/>
+  <meta content="Universo Santa Tecla" name="author"/>
+  <title>
+   JSON
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700" rel="stylesheet"/>
+  <style>
+   /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
@@ -434,633 +436,1194 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="book">
-<div id="header">
-<h1>JSON</h1>
-<div class="details">
-<span id="author" class="author">Universo Santa Tecla</span><br>
-<span id="email" class="email"><a href="mailto:universoSantaTecla@gmail.com">universoSantaTecla@gmail.com</a></span><br>
-<span id="revnumber">version 0.0.1</span>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Índice</div>
-<ul class="sectlevel1">
-<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
-<li><a href="#qué"><strong>¿Qué?</strong></a></li>
-<li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
-<li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
-<li><a href="#sintaxis">Sintaxis</a></li>
-<li><a href="#antipatrones">Antipatrones</a></li>
-<li><a href="#patrones">Patrones</a>
-<ul class="sectlevel2">
-<li><a href="#colección-heterogénea">Colección heterogénea</a></li>
-<li><a href="#colección-homogénea">Colección homogénea</a></li>
-<li><a href="#árboles">Árboles</a></li>
-<li><a href="#grafos">Grafos</a></li>
-</ul>
-</li>
-<li><a href="#síntesis"><strong>Síntesis</strong></a></li>
-<li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
-<li><a href="#ponente">Ponente</a></li>
-</ul>
-</div>
-</div>
-<div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/JSON.png" alt="JSON" width="250" height="330"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Códigos disponibles en <a href="https://github.com/USantaTecla-tech-json">git</a>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="por-qué"><strong>¿Por qué?</strong></h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="images/contextoXML.svg" alt="contextoXML" width="1165" height="906">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="qué"><strong>¿Qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 35%;">
-<col style="width: 35%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La <a href="https://datatracker.ietf.org/doc/html/rfc7159"><strong class="blue">Notación de Objetos de JavaScript (JSON)</strong></a> es un <strong class="blue">formato de intercambio de datos ligero, basado en texto e independiente del idioma</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>JSON define un pequeño conjunto de reglas de formato para la representación portátil de <strong class="blue">datos estructurados</strong>.</p>
-</li>
-<li>
-<p>Se derivó del estándar de lenguaje de programación <em><strong>ECMAScript</strong></em>.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="red">Pero no es un subconjunto!!!</span> Añade <strong>comillas dobles</strong> al identificador de la <strong>clave</strong> de los miembros (clave/valor) de los <strong>objetos</strong> porque no podría aceptar un identificador coincidente con palabras reservadas del lenguaje Javascript: <em>for, let, function, &#8230;&#8203;</em> que alguien podría querer usar para transmitir su información</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="green"><em>JSON</em></strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red"><em>JavaScript</em></strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span class="key"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Luis Fernández</span><span class="delimiter">&quot;</span></span>,
-  <span class="key"><span class="delimiter">&quot;</span><span class="content">function</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">profesor</span><span class="delimiter">&quot;</span></span>
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+ </head>
+ <body class="book">
+  <div id="header">
+   <h1>
+    JSON
+   </h1>
+   <div class="details">
+    <span class="author" id="author">
+     Universo Santa Tecla
+    </span>
+    <br/>
+    <span class="email" id="email">
+     <a href="mailto:universoSantaTecla@gmail.com">
+      universoSantaTecla@gmail.com
+     </a>
+    </span>
+    <br/>
+    <span id="revnumber">
+     version 0.0.1
+    </span>
+   </div>
+   <div class="toc" id="toc">
+    <div id="toctitle">
+     Índice
+    </div>
+    <ul class="sectlevel1">
+     <li>
+      <a href="#por-qué">
+       <strong>
+        ¿Por qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#qué">
+       <strong>
+        ¿Qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#para-qué">
+       <strong>
+        ¿Para qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#cómo">
+       <strong>
+        ¿Cómo?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#sintaxis">
+       Sintaxis
+      </a>
+     </li>
+     <li>
+      <a href="#antipatrones">
+       Antipatrones
+      </a>
+     </li>
+     <li>
+      <a href="#patrones">
+       Patrones
+      </a>
+      <ul class="sectlevel2">
+       <li>
+        <a href="#colección-heterogénea">
+         Colección heterogénea
+        </a>
+       </li>
+       <li>
+        <a href="#colección-homogénea">
+         Colección homogénea
+        </a>
+       </li>
+       <li>
+        <a href="#árboles">
+         Árboles
+        </a>
+       </li>
+       <li>
+        <a href="#grafos">
+         Grafos
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="#síntesis">
+       <strong>
+        Síntesis
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#bibliografía">
+       <strong>
+        Bibliografía
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#ponente">
+       Ponente
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div id="content">
+   <div id="preamble">
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="sintesis" src="images/sintesis.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="JSON" height="330" src="images/JSON.png" width="250"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="admonitionblock caution">
+      <table>
+       <tr>
+        <td class="icon">
+         <i class="fa icon-caution" title="Caution">
+         </i>
+        </td>
+        <td class="content">
+         Códigos disponibles en
+         <a href="https://github.com/USantaTecla-tech-json">
+          git
+         </a>
+        </td>
+       </tr>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="por-qué">
+     <strong>
+      ¿Por qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="imageblock">
+      <div class="content">
+       <img alt="contextoXML" height="906" src="images/contextoXML.svg" width="1165"/>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="qué">
+     <strong>
+      ¿Qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 35%;"/>
+       <col style="width: 35%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="3">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              La
+              <a href="https://datatracker.ietf.org/doc/html/rfc7159">
+               <strong class="blue">
+                Notación de Objetos de JavaScript (JSON)
+               </strong>
+              </a>
+              es un
+              <strong class="blue">
+               formato de intercambio de datos ligero, basado en texto e independiente del idioma
+              </strong>
+              .
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 JSON define un pequeño conjunto de reglas de formato para la representación portátil de
+                 <strong class="blue">
+                  datos estructurados
+                 </strong>
+                 .
+                </p>
+               </li>
+               <li>
+                <p>
+                 Se derivó del estándar de lenguaje de programación
+                 <em>
+                  <strong>
+                   ECMAScript
+                  </strong>
+                 </em>
+                 .
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top" colspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="red">
+               Pero no es un subconjunto!!!
+              </span>
+              Añade
+              <strong>
+               comillas dobles
+              </strong>
+              al identificador de la
+              <strong>
+               clave
+              </strong>
+              de los miembros (clave/valor) de los
+              <strong>
+               objetos
+              </strong>
+              porque no podría aceptar un identificador coincidente con palabras reservadas del lenguaje Javascript:
+              <em>
+               for, let, function, …​
+              </em>
+              que alguien podría querer usar para transmitir su información
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="green">
+             <em>
+              JSON
+             </em>
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             <em>
+              JavaScript
+             </em>
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="json">{
+  <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Luis Fernández</span><span class="delimiter">"</span></span>,
+  <span class="key"><span class="delimiter">"</span><span class="content">function</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">profesor</span><span class="delimiter">"</span></span>
 }</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="javascript">{
-  <span class="key">name</span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Luis Fernández</span><span class="delimiter">&quot;</span></span>,
-  <span class="key">functionality</span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">profesor</span><span class="delimiter">&quot;</span></span>
-  <span class="comment">//function : &quot;profesor&quot;</span>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="javascript">{
+  <span class="key">name</span> : <span class="string"><span class="delimiter">"</span><span class="content">Luis Fernández</span><span class="delimiter">"</span></span>,
+  <span class="key">functionality</span> : <span class="string"><span class="delimiter">"</span><span class="content">profesor</span><span class="delimiter">"</span></span>
+  <span class="comment">//function : "profesor"</span>
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="para-qué"><strong>¿Para qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Persistencia</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">"pequeñas Bases de Datos"</strong> para una configuración o una web estática: tu curriculum, tus recetas, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/visualCode.png" alt="visualCode">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Interoperabilidad</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>intercambio de datos entre sistemas heterogéneos: servicios Web, <a href="https://restcountries.com/"><em>API REST</em></a> (<a href="https://restcountries.com/v3.1/name/spain">datos</a>, <a href="https://flagcdn.com/w320/es.png">imágenes</a>, <a href="https://www.google.com/maps/place/Espa%C3%B1a/@39.8596584,-12.7036393,5z/data=!4m5!3m4!1s0xc42e3783261bc8b:0xa6ec2c940768a3ec!8m2!3d40.463667!4d-3.74922">hiperenlaces</a>, &#8230;&#8203;) para <em>node.js, php, &#8230;&#8203;</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/swagger.png" alt="swagger">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cómo"><strong>¿Cómo?</strong></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="sintaxis">Sintaxis</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/x-gramatica/value.png" alt="value"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/x-gramatica/whitespace.png" alt="whitespace"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/x-gramatica/object.png" alt="object"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/x-gramatica/array.png" alt="array"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/x-gramatica/string.png" alt="string"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/x-gramatica/number.png" alt="number"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json"><span class="value">true</span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/conElemento.png" alt="conElemento"></span></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/conElemento.svg" alt="conElemento" width="101" height="54">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span class="key"><span class="delimiter">&quot;</span><span class="content">property</span><span class="delimiter">&quot;</span></span> : <span class="value">null</span>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="para-qué">
+     <strong>
+      ¿Para qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Persistencia
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong class="red">
+                  "pequeñas Bases de Datos"
+                 </strong>
+                 para una configuración o una web estática: tu curriculum, tus recetas, …​
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+          <div class="imageblock">
+           <div class="content">
+            <img alt="visualCode" src="images/visualCode.png"/>
+           </div>
+          </div>
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Interoperabilidad
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 intercambio de datos entre sistemas heterogéneos: servicios Web,
+                 <a href="https://restcountries.com/">
+                  <em>
+                   API REST
+                  </em>
+                 </a>
+                 (
+                 <a href="https://restcountries.com/v3.1/name/spain">
+                  datos
+                 </a>
+                 ,
+                 <a href="https://flagcdn.com/w320/es.png">
+                  imágenes
+                 </a>
+                 ,
+                 <a href="https://www.google.com/maps/place/Espa%C3%B1a/@39.8596584,-12.7036393,5z/data=!4m5!3m4!1s0xc42e3783261bc8b:0xa6ec2c940768a3ec!8m2!3d40.463667!4d-3.74922">
+                  hiperenlaces
+                 </a>
+                 , …​) para
+                 <em>
+                  node.js, php, …​
+                 </em>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="swagger" src="images/swagger.png"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="cómo">
+     <strong>
+      ¿Cómo?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="sintaxis">
+     Sintaxis
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="value" src="images/x-gramatica/value.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="whitespace" src="images/x-gramatica/whitespace.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="object" src="images/x-gramatica/object.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="array" src="images/x-gramatica/array.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="string" src="images/x-gramatica/string.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="number" src="images/x-gramatica/number.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="json"><span class="value">true</span></code></pre>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="conElemento" src="images/conElemento.png"/>
+            </span>
+           </p>
+          </div>
+          <div class="imageblock">
+           <div class="content">
+            <img alt="conElemento" height="54" src="images/conElemento.svg" width="101"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="json">{
+  <span class="key"><span class="delimiter">"</span><span class="content">property</span><span class="delimiter">"</span></span> : <span class="value">null</span>
 }</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/elementoVacioV1.png" alt="elementoVacioV1"></span></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/elementoVacioV1.svg" alt="elementoVacioV1" width="151" height="54">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">property1</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">property2</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">property3</span><span class="delimiter">&quot;</span></span> : {
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">property31</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">property32</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">property33</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="elementoVacioV1" src="images/elementoVacioV1.png"/>
+            </span>
+           </p>
+          </div>
+          <div class="imageblock">
+           <div class="content">
+            <img alt="elementoVacioV1" height="54" src="images/elementoVacioV1.svg" width="151"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="json">{
+    <span class="key"><span class="delimiter">"</span><span class="content">property1</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">property2</span><span class="delimiter">"</span></span> : <span class="integer">0</span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">property3</span><span class="delimiter">"</span></span> : {
+        <span class="key"><span class="delimiter">"</span><span class="content">property31</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">property32</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">property33</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span>
     },
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">propertyN</span><span class="delimiter">&quot;</span></span> : <span class="value">true</span>
+    <span class="key"><span class="delimiter">"</span><span class="content">propertyN</span><span class="delimiter">"</span></span> : <span class="value">true</span>
 }</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/objectObject.png" alt="objectObject"></span></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/objectObject.svg" alt="objectObject" width="358" height="83">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">property1</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">property2</span><span class="delimiter">&quot;</span></span> : <span class="integer">0</span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">properties</span><span class="delimiter">&quot;</span></span> : [
-        <span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span>,
-        <span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span>,
-        <span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="objectObject" src="images/objectObject.png"/>
+            </span>
+           </p>
+          </div>
+          <div class="imageblock">
+           <div class="content">
+            <img alt="objectObject" height="83" src="images/objectObject.svg" width="358"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="json">{
+    <span class="key"><span class="delimiter">"</span><span class="content">property1</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">property2</span><span class="delimiter">"</span></span> : <span class="integer">0</span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">properties</span><span class="delimiter">"</span></span> : [
+        <span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span>,
+        <span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span>,
+        <span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span>
     ],
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">propertyN</span><span class="delimiter">&quot;</span></span> : <span class="value">true</span>
+    <span class="key"><span class="delimiter">"</span><span class="content">propertyN</span><span class="delimiter">"</span></span> : <span class="value">true</span>
 }</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/elementoEstructurado.png" alt="elementoEstructurado"></span></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/elementoEstructurado.svg" alt="elementoEstructurado" width="593" height="83">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">[
-    <span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span>,
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="elementoEstructurado" src="images/elementoEstructurado.png"/>
+            </span>
+           </p>
+          </div>
+          <div class="imageblock">
+           <div class="content">
+            <img alt="elementoEstructurado" height="83" src="images/elementoEstructurado.svg" width="593"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="json">[
+    <span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span>,
     <span class="integer">0</span>,
     [
-        <span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span>,
-        <span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span>,
-        <span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span>
+        <span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span>,
+        <span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span>,
+        <span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span>
     ],
     <span class="value">true</span>
 ]</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/arrayArray.png" alt="arrayArray"></span></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/elementoEstructurado.svg" alt="elementoEstructurado" width="355" height="393">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">[
-  <span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span>,
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="arrayArray" src="images/arrayArray.png"/>
+            </span>
+           </p>
+          </div>
+          <div class="imageblock">
+           <div class="content">
+            <img alt="elementoEstructurado" height="393" src="images/elementoEstructurado.svg" width="355"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="json">[
+  <span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span>,
   {
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">property</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span>
+    <span class="key"><span class="delimiter">"</span><span class="content">property</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span>
   },
-  <span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span>,
+  <span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span>,
   {
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">property</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span>
+    <span class="key"><span class="delimiter">"</span><span class="content">property</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span>
   },
-  <span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span>
+  <span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span>
 ]</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/elementoMixto.png" alt="elementoMixto"></span></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/elementoEstructurado.svg" alt="elementoEstructurado" width="732" height="58">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="antipatrones">Antipatrones</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">MIT</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">77 Massachusetts Avenue. Cambridge</span><span class="char">\n</span><span class="content">Massachusetts 02139. United States of America</span><span class="delimiter">&quot;</span></span>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="elementoMixto" src="images/elementoMixto.png"/>
+            </span>
+           </p>
+          </div>
+          <div class="imageblock">
+           <div class="content">
+            <img alt="elementoEstructurado" height="58" src="images/elementoEstructurado.svg" width="732"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="antipatrones">
+     Antipatrones
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" colspan="2">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="json">{
+    <span class="key"><span class="delimiter">"</span><span class="content">MIT</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">77 Massachusetts Avenue. Cambridge</span><span class="char">\n</span><span class="content">Massachusetts 02139. United States of America</span><span class="delimiter">"</span></span>
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/error.png" alt="error"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/error.svg" alt="error" width="257" height="71">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="red">Error: <strong>Confunde metainformación e información</strong></span>, impidiendo consultas de información futuras. Los identificadores de los elementos deben coincidir con los campos de una estructura, registro, atributos de clase, entidad, &#8230;&#8203; No sus valores particulares, <span class="red">imposibles de adivinar por parte del procesador, validador, formateador, &#8230;&#8203;</span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="red">Error: <strong>Formatea la información</strong></span> con saltos de linea, subrayados, &#8230;&#8203; <span class="red">perjudicando el tratamiento de información</span> para un formato no previsto en un nuevo dispositivo</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="red">Posible error: <strong>Inadecuada estructuración</strong></span>, estructurando en <span class="red">exceso o defecto</span> la información suministrada, inadecuada para el procesamiento necesario</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Correcto</strong> o <strong class="red">incorrecto</strong> si el sistema de información necesita tratar la calle y/o la ciudad por separado y/o &#8230;&#8203;</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Obligando al programador a analizar la información</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">addressee</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">MIT</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">street</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">77 Massachusetts Avenue. Cambridge</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">country</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Massachusetts 02139. United States of America</span><span class="delimiter">&quot;</span></span>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="error" src="images/error.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="error" height="71" src="images/error.svg" width="257"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="red">
+               Error:
+               <strong>
+                Confunde metainformación e información
+               </strong>
+              </span>
+              , impidiendo consultas de información futuras. Los identificadores de los elementos deben coincidir con los campos de una estructura, registro, atributos de clase, entidad, …​ No sus valores particulares,
+              <span class="red">
+               imposibles de adivinar por parte del procesador, validador, formateador, …​
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="red">
+               Error:
+               <strong>
+                Formatea la información
+               </strong>
+              </span>
+              con saltos de linea, subrayados, …​
+              <span class="red">
+               perjudicando el tratamiento de información
+              </span>
+              para un formato no previsto en un nuevo dispositivo
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="red">
+               Posible error:
+               <strong>
+                Inadecuada estructuración
+               </strong>
+              </span>
+              , estructurando en
+              <span class="red">
+               exceso o defecto
+              </span>
+              la información suministrada, inadecuada para el procesamiento necesario
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Correcto
+              </strong>
+              o
+              <strong class="red">
+               incorrecto
+              </strong>
+              si el sistema de información necesita tratar la calle y/o la ciudad por separado y/o …​
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong class="red">
+                  Obligando al programador a analizar la información
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 40%;"/>
+       <col style="width: 60%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="json">{
+    <span class="key"><span class="delimiter">"</span><span class="content">addressee</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">MIT</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">street</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">77 Massachusetts Avenue. Cambridge</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">country</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Massachusetts 02139. United States of America</span><span class="delimiter">"</span></span>
 }</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/incorrecto.png" alt="incorrecto"></span></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/incorrecto.svg" alt="incorrecto" width="297" height="83">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">addressee</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">MIT</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">street</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">77 Massachusetts Avenue</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">village</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Cambridge</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">county</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Massachusetts</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">country</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">United States of America</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">postcode</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">02139</span><span class="delimiter">&quot;</span></span>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="incorrecto" src="images/incorrecto.png"/>
+            </span>
+           </p>
+          </div>
+          <div class="imageblock">
+           <div class="content">
+            <img alt="incorrecto" height="83" src="images/incorrecto.svg" width="297"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="json">{
+    <span class="key"><span class="delimiter">"</span><span class="content">addressee</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">MIT</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">street</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">77 Massachusetts Avenue</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">village</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Cambridge</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">county</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Massachusetts</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">country</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">United States of America</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">postcode</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">02139</span><span class="delimiter">"</span></span>
 }</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/correctoV1.png" alt="correctoV1"></span></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/correctoV1.svg" alt="correctoV1" width="191" height="121">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json"><span class="error">i</span><span class="error">m</span><span class="error">a</span><span class="error">g</span><span class="error">e</span>:<span class="error">c</span><span class="error">o</span><span class="error">r</span><span class="error">r</span><span class="error">e</span><span class="error">c</span><span class="error">t</span><span class="error">o</span><span class="error">V</span><span class="integer">2</span><span class="error">.</span><span class="error">p</span><span class="error">n</span><span class="error">g</span>[]
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="correctoV1" src="images/correctoV1.png"/>
+            </span>
+           </p>
+          </div>
+          <div class="imageblock">
+           <div class="content">
+            <img alt="correctoV1" height="121" src="images/correctoV1.svg" width="191"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="json"><span class="error">i</span><span class="error">m</span><span class="error">a</span><span class="error">g</span><span class="error">e</span>:<span class="error">c</span><span class="error">o</span><span class="error">r</span><span class="error">r</span><span class="error">e</span><span class="error">c</span><span class="error">t</span><span class="error">o</span><span class="error">V</span><span class="integer">2</span><span class="error">.</span><span class="error">p</span><span class="error">n</span><span class="error">g</span>[]
 {
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">addressee</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">MIT</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">number</span><span class="delimiter">&quot;</span></span> : <span class="integer">77</span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">street</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Massachusetts Avenue</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">village</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Cambridge</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">county</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Massachusetts</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">country</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">United States of America</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">postcode</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">02139</span><span class="delimiter">&quot;</span></span>
+    <span class="key"><span class="delimiter">"</span><span class="content">addressee</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">MIT</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">number</span><span class="delimiter">"</span></span> : <span class="integer">77</span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">street</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Massachusetts Avenue</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">village</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Cambridge</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">county</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Massachusetts</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">country</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">United States of America</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">postcode</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">02139</span><span class="delimiter">"</span></span>
 }</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/correctoV2.png" alt="correctoV2"></span></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/correctoV2.svg" alt="correctoV2" width="191" height="134">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="patrones">Patrones</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="colección-heterogénea">Colección heterogénea</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="3"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Los nombres de los elementos coinciden con los nombres de los <strong class="blue">campos o atributos de las entidades,registros, estructuras, &#8230;&#8203;, clases, &#8230;&#8203;</strong> de los lenguajes de programación</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">No se permiten nombres de propiedad repetidos</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">field_A</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">data_A</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">field_B</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">data_B</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">field_Z</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">data_Z</span><span class="delimiter">&quot;</span></span>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="correctoV2" src="images/correctoV2.png"/>
+            </span>
+           </p>
+          </div>
+          <div class="imageblock">
+           <div class="content">
+            <img alt="correctoV2" height="134" src="images/correctoV2.svg" width="191"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="patrones">
+     Patrones
+    </h2>
+    <div class="sectionbody">
+     <div class="sect2">
+      <h3 id="colección-heterogénea">
+       Colección heterogénea
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3334%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="3">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Los nombres de los elementos coinciden con los nombres de los
+               <strong class="blue">
+                campos o atributos de las entidades,registros, estructuras, …​, clases, …​
+               </strong>
+               de los lenguajes de programación
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <strong class="red">
+                   No se permiten nombres de propiedad repetidos
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="json">{
+    <span class="key"><span class="delimiter">"</span><span class="content">field_A</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">data_A</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">field_B</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">data_B</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">field_Z</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">data_Z</span><span class="delimiter">"</span></span>
 }</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/src.png" alt="src"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Edsger Wybe</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">surname</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Dijkstra</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">birthday</span><span class="delimiter">&quot;</span></span> : {
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">day</span><span class="delimiter">&quot;</span></span> : <span class="integer">11</span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">month</span><span class="delimiter">&quot;</span></span> : <span class="integer">5</span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">year</span><span class="delimiter">&quot;</span></span> : <span class="integer">1930</span>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="src" src="images/src.png"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="json">{
+    <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Edsger Wybe</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">surname</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Dijkstra</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">birthday</span><span class="delimiter">"</span></span> : {
+        <span class="key"><span class="delimiter">"</span><span class="content">day</span><span class="delimiter">"</span></span> : <span class="integer">11</span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">month</span><span class="delimiter">"</span></span> : <span class="integer">5</span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">year</span><span class="delimiter">"</span></span> : <span class="integer">1930</span>
     },
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">turingAward</span><span class="delimiter">&quot;</span></span> : <span class="integer">1972</span>
+    <span class="key"><span class="delimiter">"</span><span class="content">turingAward</span><span class="delimiter">"</span></span> : <span class="integer">1972</span>
 }</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/author.png" alt="author"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="colección-homogénea">Colección homogénea</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Los <strong class="blue">items</strong> coinciden con los <strong class="blue">elementos de los arrays, vectores, listas, &#8230;&#8203;</strong> de los lenguajes de programación</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">[
-    <span class="string"><span class="delimiter">&quot;</span><span class="content">item_A</span><span class="delimiter">&quot;</span></span>,
-    <span class="string"><span class="delimiter">&quot;</span><span class="content">item_B</span><span class="delimiter">&quot;</span></span>,
-    <span class="string"><span class="delimiter">&quot;</span><span class="content">item_C</span><span class="delimiter">&quot;</span></span>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="author" src="images/author.png"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="colección-homogénea">
+       Colección homogénea
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Los
+               <strong class="blue">
+                items
+               </strong>
+               coinciden con los
+               <strong class="blue">
+                elementos de los arrays, vectores, listas, …​
+               </strong>
+               de los lenguajes de programación
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="json">[
+    <span class="string"><span class="delimiter">"</span><span class="content">item_A</span><span class="delimiter">"</span></span>,
+    <span class="string"><span class="delimiter">"</span><span class="content">item_B</span><span class="delimiter">"</span></span>,
+    <span class="string"><span class="delimiter">"</span><span class="content">item_C</span><span class="delimiter">"</span></span>
 ]</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/src2.png" alt="src2"></span></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">[
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="src2" src="images/src2.png"/>
+             </span>
+            </p>
+           </div>
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code></code></pre>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="json">[
         <span class="integer">877</span>,
         <span class="integer">743</span>,
         <span class="integer">33</span>,
@@ -1070,529 +1633,823 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-json">git</
         <span class="integer">55</span>,
         <span class="integer">689</span>
 ]</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/keys.png" alt="keys"></span></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">[
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="keys" src="images/keys.png"/>
+             </span>
+            </p>
+           </div>
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code></code></pre>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="json">[
     {
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Ingeniería del Software</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">courses</span><span class="delimiter">&quot;</span></span>: [
-            <span class="string"><span class="delimiter">&quot;</span><span class="content">Programación</span><span class="delimiter">&quot;</span></span>,
-            <span class="string"><span class="delimiter">&quot;</span><span class="content">Diseño</span><span class="delimiter">&quot;</span></span>,
-            <span class="string"><span class="delimiter">&quot;</span><span class="content">Pruebas</span><span class="delimiter">&quot;</span></span>,
-            <span class="string"><span class="delimiter">&quot;</span><span class="content">Análisis</span><span class="delimiter">&quot;</span></span>,
-            <span class="string"><span class="delimiter">&quot;</span><span class="content">Requisitos</span><span class="delimiter">&quot;</span></span>,
-            <span class="string"><span class="delimiter">&quot;</span><span class="content">Gestión</span><span class="delimiter">&quot;</span></span>
+        <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Ingeniería del Software</span><span class="delimiter">"</span></span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">courses</span><span class="delimiter">"</span></span>: [
+            <span class="string"><span class="delimiter">"</span><span class="content">Programación</span><span class="delimiter">"</span></span>,
+            <span class="string"><span class="delimiter">"</span><span class="content">Diseño</span><span class="delimiter">"</span></span>,
+            <span class="string"><span class="delimiter">"</span><span class="content">Pruebas</span><span class="delimiter">"</span></span>,
+            <span class="string"><span class="delimiter">"</span><span class="content">Análisis</span><span class="delimiter">"</span></span>,
+            <span class="string"><span class="delimiter">"</span><span class="content">Requisitos</span><span class="delimiter">"</span></span>,
+            <span class="string"><span class="delimiter">"</span><span class="content">Gestión</span><span class="delimiter">"</span></span>
         ]
     },
     {
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Ingeniería Web</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">courses</span><span class="delimiter">&quot;</span></span>: [
-            <span class="string"><span class="delimiter">&quot;</span><span class="content">Visión General</span><span class="delimiter">&quot;</span></span>,
-            <span class="string"><span class="delimiter">&quot;</span><span class="content">Front-End Web</span><span class="delimiter">&quot;</span></span>,
-            <span class="string"><span class="delimiter">&quot;</span><span class="content">Front-End Móvil</span><span class="delimiter">&quot;</span></span>,
-            <span class="string"><span class="delimiter">&quot;</span><span class="content">Back-End de Código Abierto</span><span class="delimiter">&quot;</span></span>,
-            <span class="string"><span class="delimiter">&quot;</span><span class="content">Back-End de Código Libre</span><span class="delimiter">&quot;</span></span>,
-            <span class="string"><span class="delimiter">&quot;</span><span class="content">Back-End de Código Privativo</span><span class="delimiter">&quot;</span></span>
+        <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Ingeniería Web</span><span class="delimiter">"</span></span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">courses</span><span class="delimiter">"</span></span>: [
+            <span class="string"><span class="delimiter">"</span><span class="content">Visión General</span><span class="delimiter">"</span></span>,
+            <span class="string"><span class="delimiter">"</span><span class="content">Front-End Web</span><span class="delimiter">"</span></span>,
+            <span class="string"><span class="delimiter">"</span><span class="content">Front-End Móvil</span><span class="delimiter">"</span></span>,
+            <span class="string"><span class="delimiter">"</span><span class="content">Back-End de Código Abierto</span><span class="delimiter">"</span></span>,
+            <span class="string"><span class="delimiter">"</span><span class="content">Back-End de Código Libre</span><span class="delimiter">"</span></span>,
+            <span class="string"><span class="delimiter">"</span><span class="content">Back-End de Código Privativo</span><span class="delimiter">"</span></span>
         ]
     }
 ]</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/studies.png" alt="studies"></span></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">[
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="studies" src="images/studies.png"/>
+             </span>
+            </p>
+           </div>
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code></code></pre>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="json">[
         {
-                <span class="key"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Sr. Francisco Ansó García</span><span class="delimiter">&quot;</span></span>,
-                <span class="key"><span class="delimiter">&quot;</span><span class="content">street</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Calle Lucas Rey Kalea, 15, 5ºB</span><span class="delimiter">&quot;</span></span>,
-                <span class="key"><span class="delimiter">&quot;</span><span class="content">postalCode</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">01468 Amurrio</span><span class="delimiter">&quot;</span></span>,
-                <span class="key"><span class="delimiter">&quot;</span><span class="content">province</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Álava</span><span class="delimiter">&quot;</span></span>
+                <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Sr. Francisco Ansó García</span><span class="delimiter">"</span></span>,
+                <span class="key"><span class="delimiter">"</span><span class="content">street</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Calle Lucas Rey Kalea, 15, 5ºB</span><span class="delimiter">"</span></span>,
+                <span class="key"><span class="delimiter">"</span><span class="content">postalCode</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">01468 Amurrio</span><span class="delimiter">"</span></span>,
+                <span class="key"><span class="delimiter">"</span><span class="content">province</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Álava</span><span class="delimiter">"</span></span>
         },
         {
-                <span class="key"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Dña. Antonia Fernandez García</span><span class="delimiter">&quot;</span></span>,
-                <span class="key"><span class="delimiter">&quot;</span><span class="content">street</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Av. de las Delicias, 14, 1º Dcha.</span><span class="delimiter">&quot;</span></span>,
-                <span class="key"><span class="delimiter">&quot;</span><span class="content">postalCode</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">15810  Arzúa</span><span class="delimiter">&quot;</span></span>,
-                <span class="key"><span class="delimiter">&quot;</span><span class="content">province</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">La Coruña</span><span class="delimiter">&quot;</span></span>
+                <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Dña. Antonia Fernandez García</span><span class="delimiter">"</span></span>,
+                <span class="key"><span class="delimiter">"</span><span class="content">street</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Av. de las Delicias, 14, 1º Dcha.</span><span class="delimiter">"</span></span>,
+                <span class="key"><span class="delimiter">"</span><span class="content">postalCode</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">15810  Arzúa</span><span class="delimiter">"</span></span>,
+                <span class="key"><span class="delimiter">"</span><span class="content">province</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">La Coruña</span><span class="delimiter">"</span></span>
         },
         {
-                <span class="key"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Sr. Raúl Peña Peña</span><span class="delimiter">&quot;</span></span>,
-                <span class="key"><span class="delimiter">&quot;</span><span class="content">street</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Calle Murcia, 22, Bajo C</span><span class="delimiter">&quot;</span></span>,
-                <span class="key"><span class="delimiter">&quot;</span><span class="content">postalCode</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">28020 Madrid</span><span class="delimiter">&quot;</span></span>,
-                <span class="key"><span class="delimiter">&quot;</span><span class="content">province</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Madrid</span><span class="delimiter">&quot;</span></span>
+                <span class="key"><span class="delimiter">"</span><span class="content">name</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Sr. Raúl Peña Peña</span><span class="delimiter">"</span></span>,
+                <span class="key"><span class="delimiter">"</span><span class="content">street</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Calle Murcia, 22, Bajo C</span><span class="delimiter">"</span></span>,
+                <span class="key"><span class="delimiter">"</span><span class="content">postalCode</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">28020 Madrid</span><span class="delimiter">"</span></span>,
+                <span class="key"><span class="delimiter">"</span><span class="content">province</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Madrid</span><span class="delimiter">"</span></span>
         }
 ]</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/addresses.png" alt="addresses"></span></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><em class="green">Aplicación</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#3-curriculumv0">2-texts/3-curriculum</a>: <a href="https://github.com/USantaTecla-tech-json/simpleDomains/blob/master/2-texts/3-curriculum/v0.0/data.json">v0.0</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#6-timetablev0">6-collections/timetable</a> - <a href="https://github.com/USantaTecla-tech-json/0-simpleDomains/blob/master/6-collections/6-timetable/v0.0/data.json">v0.0</a> - <a href="https://github.com/USantaTecla-tech-json/0-simpleDomains/blob/master/6-collections/6-timetable/v0.1/data.json">v0.1</a> - <a href="https://github.com/USantaTecla-tech-json/0-simpleDomains/blob/master/6-collections/6-timetable/v0.2/data.json">v0.2</a> - <a href="https://github.com/USantaTecla-tech-json/0-simpleDomains/blob/master/6-collections/6-timetable/v0.3/data.json">v0.3</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-domains/game-ticTacToe/tree/master/0.0.dataLanguages">game-ticTacToe/0.0.dataLanguages</a> - <a href="https://github.com/USantaTecla-tech-json/game-ticTacToe/blob/master/0.0.1.dataLanguages.json">v0.1</a> y <a href="https://github.com/USantaTecla-tech-json/game-ticTacToe/blob/master/0.0.2.dataLanguages.json">v0.2</a></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="árboles">Árboles</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/src3.png" alt="src3"></span></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">node</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Elemento_1</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">trees</span><span class="delimiter">&quot;</span></span>: [
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="addresses" src="images/addresses.png"/>
+             </span>
+            </p>
+           </div>
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code></code></pre>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3334%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="3">
+          <em class="green">
+           Aplicación
+          </em>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#3-curriculumv0">
+              2-texts/3-curriculum
+             </a>
+             :
+             <a href="https://github.com/USantaTecla-tech-json/simpleDomains/blob/master/2-texts/3-curriculum/v0.0/data.json">
+              v0.0
+             </a>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#6-timetablev0">
+              6-collections/timetable
+             </a>
+             -
+             <a href="https://github.com/USantaTecla-tech-json/0-simpleDomains/blob/master/6-collections/6-timetable/v0.0/data.json">
+              v0.0
+             </a>
+             -
+             <a href="https://github.com/USantaTecla-tech-json/0-simpleDomains/blob/master/6-collections/6-timetable/v0.1/data.json">
+              v0.1
+             </a>
+             -
+             <a href="https://github.com/USantaTecla-tech-json/0-simpleDomains/blob/master/6-collections/6-timetable/v0.2/data.json">
+              v0.2
+             </a>
+             -
+             <a href="https://github.com/USantaTecla-tech-json/0-simpleDomains/blob/master/6-collections/6-timetable/v0.3/data.json">
+              v0.3
+             </a>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <a href="https://github.com/USantaTecla-0-domains/game-ticTacToe/tree/master/0.0.dataLanguages">
+              game-ticTacToe/0.0.dataLanguages
+             </a>
+             -
+             <a href="https://github.com/USantaTecla-tech-json/game-ticTacToe/blob/master/0.0.1.dataLanguages.json">
+              v0.1
+             </a>
+             y
+             <a href="https://github.com/USantaTecla-tech-json/game-ticTacToe/blob/master/0.0.2.dataLanguages.json">
+              v0.2
+             </a>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="árboles">
+       Árboles
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="src3" src="images/src3.png"/>
+             </span>
+            </p>
+           </div>
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code></code></pre>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="json">{
+    <span class="key"><span class="delimiter">"</span><span class="content">node</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Elemento_1</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">trees</span><span class="delimiter">"</span></span>: [
         {
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">node</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Elemento_11</span><span class="delimiter">&quot;</span></span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">trees</span><span class="delimiter">&quot;</span></span>: [
+            <span class="key"><span class="delimiter">"</span><span class="content">node</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Elemento_11</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">trees</span><span class="delimiter">"</span></span>: [
                 {
-                    <span class="key"><span class="delimiter">&quot;</span><span class="content">node</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Elemento_111</span><span class="delimiter">&quot;</span></span>,
-                    <span class="key"><span class="delimiter">&quot;</span><span class="content">trees</span><span class="delimiter">&quot;</span></span>: []
+                    <span class="key"><span class="delimiter">"</span><span class="content">node</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Elemento_111</span><span class="delimiter">"</span></span>,
+                    <span class="key"><span class="delimiter">"</span><span class="content">trees</span><span class="delimiter">"</span></span>: []
                 },
                 {
-                    <span class="key"><span class="delimiter">&quot;</span><span class="content">node</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Elemento_112</span><span class="delimiter">&quot;</span></span>,
-                    <span class="key"><span class="delimiter">&quot;</span><span class="content">trees</span><span class="delimiter">&quot;</span></span>: []
+                    <span class="key"><span class="delimiter">"</span><span class="content">node</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Elemento_112</span><span class="delimiter">"</span></span>,
+                    <span class="key"><span class="delimiter">"</span><span class="content">trees</span><span class="delimiter">"</span></span>: []
                 },
                 {
-                    <span class="key"><span class="delimiter">&quot;</span><span class="content">node</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Elemento_113</span><span class="delimiter">&quot;</span></span>,
-                    <span class="key"><span class="delimiter">&quot;</span><span class="content">trees</span><span class="delimiter">&quot;</span></span>: [
+                    <span class="key"><span class="delimiter">"</span><span class="content">node</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Elemento_113</span><span class="delimiter">"</span></span>,
+                    <span class="key"><span class="delimiter">"</span><span class="content">trees</span><span class="delimiter">"</span></span>: [
                         {
-                            <span class="key"><span class="delimiter">&quot;</span><span class="content">node</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Elemento_1131</span><span class="delimiter">&quot;</span></span>,
-                            <span class="key"><span class="delimiter">&quot;</span><span class="content">trees</span><span class="delimiter">&quot;</span></span>: []
+                            <span class="key"><span class="delimiter">"</span><span class="content">node</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Elemento_1131</span><span class="delimiter">"</span></span>,
+                            <span class="key"><span class="delimiter">"</span><span class="content">trees</span><span class="delimiter">"</span></span>: []
                         }
                     ]
                 }
             ]
         },
         {
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">node</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Elemento_12</span><span class="delimiter">&quot;</span></span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">trees</span><span class="delimiter">&quot;</span></span>: []
+            <span class="key"><span class="delimiter">"</span><span class="content">node</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Elemento_12</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">trees</span><span class="delimiter">"</span></span>: []
         }
     ]
 }</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Chrome</span><span class="delimiter">&quot;</span></span>,
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">options</span><span class="delimiter">&quot;</span></span> : [
-        <span class="string"><span class="delimiter">&quot;</span><span class="content">Nueva pestaña</span><span class="delimiter">&quot;</span></span>,
-        <span class="string"><span class="delimiter">&quot;</span><span class="content">Nueva ventana</span><span class="delimiter">&quot;</span></span>,
-        <span class="string"><span class="delimiter">&quot;</span><span class="content">Nueva ventana de incógnito</span><span class="delimiter">&quot;</span></span>,
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="json">{
+    <span class="key"><span class="delimiter">"</span><span class="content">title</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Chrome</span><span class="delimiter">"</span></span>,
+    <span class="key"><span class="delimiter">"</span><span class="content">options</span><span class="delimiter">"</span></span> : [
+        <span class="string"><span class="delimiter">"</span><span class="content">Nueva pestaña</span><span class="delimiter">"</span></span>,
+        <span class="string"><span class="delimiter">"</span><span class="content">Nueva ventana</span><span class="delimiter">"</span></span>,
+        <span class="string"><span class="delimiter">"</span><span class="content">Nueva ventana de incógnito</span><span class="delimiter">"</span></span>,
         {
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Ayuda</span><span class="delimiter">&quot;</span></span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">options</span><span class="delimiter">&quot;</span></span> : [
-                <span class="string"><span class="delimiter">&quot;</span><span class="content">Información de Google Chrome</span><span class="delimiter">&quot;</span></span>,
-                <span class="string"><span class="delimiter">&quot;</span><span class="content">Centro de Ayuda</span><span class="delimiter">&quot;</span></span>,
-                <span class="string"><span class="delimiter">&quot;</span><span class="content">Notificar un error</span><span class="delimiter">&quot;</span></span>
+            <span class="key"><span class="delimiter">"</span><span class="content">title</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Ayuda</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">options</span><span class="delimiter">"</span></span> : [
+                <span class="string"><span class="delimiter">"</span><span class="content">Información de Google Chrome</span><span class="delimiter">"</span></span>,
+                <span class="string"><span class="delimiter">"</span><span class="content">Centro de Ayuda</span><span class="delimiter">"</span></span>,
+                <span class="string"><span class="delimiter">"</span><span class="content">Notificar un error</span><span class="delimiter">"</span></span>
             ]
         },
-        <span class="string"><span class="delimiter">&quot;</span><span class="content">Salir</span><span class="delimiter">&quot;</span></span>
+        <span class="string"><span class="delimiter">"</span><span class="content">Salir</span><span class="delimiter">"</span></span>
     ]
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/menu.png" alt="menu"></span></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="grafos">Grafos</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/src4.png" alt="src4"></span></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">nodes</span><span class="delimiter">&quot;</span></span> : [
-        <span class="string"><span class="delimiter">&quot;</span><span class="content">kA</span><span class="delimiter">&quot;</span></span>,
-        <span class="string"><span class="delimiter">&quot;</span><span class="content">kB</span><span class="delimiter">&quot;</span></span>,
-        <span class="string"><span class="delimiter">&quot;</span><span class="content">kZ</span><span class="delimiter">&quot;</span></span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="menu" src="images/menu.png"/>
+             </span>
+            </p>
+           </div>
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code></code></pre>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="grafos">
+       Grafos
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="src4" src="images/src4.png"/>
+             </span>
+            </p>
+           </div>
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code></code></pre>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="json">{
+    <span class="key"><span class="delimiter">"</span><span class="content">nodes</span><span class="delimiter">"</span></span> : [
+        <span class="string"><span class="delimiter">"</span><span class="content">kA</span><span class="delimiter">"</span></span>,
+        <span class="string"><span class="delimiter">"</span><span class="content">kB</span><span class="delimiter">"</span></span>,
+        <span class="string"><span class="delimiter">"</span><span class="content">kZ</span><span class="delimiter">"</span></span>
     ],
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">edges</span><span class="delimiter">&quot;</span></span> : [
+    <span class="key"><span class="delimiter">"</span><span class="content">edges</span><span class="delimiter">"</span></span> : [
         {
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">from</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">kB</span><span class="delimiter">&quot;</span></span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">to</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">kA</span><span class="delimiter">&quot;</span></span>
+            <span class="key"><span class="delimiter">"</span><span class="content">from</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">kB</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">to</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">kA</span><span class="delimiter">"</span></span>
         },
         {
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">from</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">kZ</span><span class="delimiter">&quot;</span></span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">to</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">kA</span><span class="delimiter">&quot;</span></span>
+            <span class="key"><span class="delimiter">"</span><span class="content">from</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">kZ</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">to</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">kA</span><span class="delimiter">"</span></span>
         },
         {
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">from</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">kZ</span><span class="delimiter">&quot;</span></span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">to</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">kB</span><span class="delimiter">&quot;</span></span>
+            <span class="key"><span class="delimiter">"</span><span class="content">from</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">kZ</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">to</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">kB</span><span class="delimiter">"</span></span>
         }
     ]
 }</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">[
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="json">[
     {
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">node</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">kA</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">edges</span><span class="delimiter">&quot;</span></span> : [
+        <span class="key"><span class="delimiter">"</span><span class="content">node</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">kA</span><span class="delimiter">"</span></span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">edges</span><span class="delimiter">"</span></span> : [
         ]
     },
     {
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">node</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">kB</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">edges</span><span class="delimiter">&quot;</span></span> : [
-            <span class="string"><span class="delimiter">&quot;</span><span class="content">kA</span><span class="delimiter">&quot;</span></span>
+        <span class="key"><span class="delimiter">"</span><span class="content">node</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">kB</span><span class="delimiter">"</span></span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">edges</span><span class="delimiter">"</span></span> : [
+            <span class="string"><span class="delimiter">"</span><span class="content">kA</span><span class="delimiter">"</span></span>
         ]
     },
     {
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">node</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">kZ</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">edges</span><span class="delimiter">&quot;</span></span> : [
-            <span class="string"><span class="delimiter">&quot;</span><span class="content">kA</span><span class="delimiter">&quot;</span></span>,
-            <span class="string"><span class="delimiter">&quot;</span><span class="content">kB</span><span class="delimiter">&quot;</span></span>
+        <span class="key"><span class="delimiter">"</span><span class="content">node</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">kZ</span><span class="delimiter">"</span></span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">edges</span><span class="delimiter">"</span></span> : [
+            <span class="string"><span class="delimiter">"</span><span class="content">kA</span><span class="delimiter">"</span></span>,
+            <span class="string"><span class="delimiter">"</span><span class="content">kB</span><span class="delimiter">"</span></span>
         ]
     }
 ]</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/src5.png" alt="src5"></span></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/bibliography0.png" alt="bibliography0"></span></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">books</span><span class="delimiter">&quot;</span></span> : [
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="src5" src="images/src5.png"/>
+             </span>
+            </p>
+           </div>
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code></code></pre>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="bibliography0" src="images/bibliography0.png"/>
+             </span>
+            </p>
+           </div>
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code></code></pre>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="json">{
+    <span class="key"><span class="delimiter">"</span><span class="content">books</span><span class="delimiter">"</span></span> : [
         {
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> : <span class="integer">1</span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">author</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Frederick P. Brooks</span><span class="delimiter">&quot;</span></span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">The Mythical Man Month. Essays on Software Engineering</span><span class="delimiter">&quot;</span></span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">year</span><span class="delimiter">&quot;</span></span> : <span class="integer">1995</span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">publisher</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Prentice Hall</span><span class="delimiter">&quot;</span></span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">referemces</span><span class="delimiter">&quot;</span></span> :[
+            <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span> : <span class="integer">1</span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">author</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Frederick P. Brooks</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">title</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">The Mythical Man Month. Essays on Software Engineering</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">year</span><span class="delimiter">"</span></span> : <span class="integer">1995</span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">publisher</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Prentice Hall</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">referemces</span><span class="delimiter">"</span></span> :[
             ]
         },
         {
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> : <span class="integer">2</span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">author</span><span class="delimiter">&quot;</span></span> :  <span class="string"><span class="delimiter">&quot;</span><span class="content">Grady Booch</span><span class="delimiter">&quot;</span></span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Object Oriented Analysis and Design with Applications</span><span class="delimiter">&quot;</span></span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">year</span><span class="delimiter">&quot;</span></span> : <span class="integer">2011</span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">publisher</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Addison-Wesley</span><span class="delimiter">&quot;</span></span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">referemces</span><span class="delimiter">&quot;</span></span> :[
+            <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span> : <span class="integer">2</span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">author</span><span class="delimiter">"</span></span> :  <span class="string"><span class="delimiter">"</span><span class="content">Grady Booch</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">title</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Object Oriented Analysis and Design with Applications</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">year</span><span class="delimiter">"</span></span> : <span class="integer">2011</span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">publisher</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Addison-Wesley</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">referemces</span><span class="delimiter">"</span></span> :[
                 <span class="integer">1</span>
             ]
         },
         {
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> : <span class="integer">1</span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">author</span><span class="delimiter">&quot;</span></span> :  <span class="string"><span class="delimiter">&quot;</span><span class="content">Robert C. Martin</span><span class="delimiter">&quot;</span></span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Clean Code. A Handbook of Agile Software Craftsmanship</span><span class="delimiter">&quot;</span></span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">year</span><span class="delimiter">&quot;</span></span> : <span class="integer">2008</span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">publisher</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Prentice Hall</span><span class="delimiter">&quot;</span></span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">referemces</span><span class="delimiter">&quot;</span></span> :[
+            <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span> : <span class="integer">1</span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">author</span><span class="delimiter">"</span></span> :  <span class="string"><span class="delimiter">"</span><span class="content">Robert C. Martin</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">title</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Clean Code. A Handbook of Agile Software Craftsmanship</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">year</span><span class="delimiter">"</span></span> : <span class="integer">2008</span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">publisher</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Prentice Hall</span><span class="delimiter">"</span></span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">referemces</span><span class="delimiter">"</span></span> :[
                 <span class="integer">1</span>,
                 <span class="integer">2</span>
             ]
         }
     ],
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">references</span><span class="delimiter">&quot;</span></span> : [
+    <span class="key"><span class="delimiter">"</span><span class="content">references</span><span class="delimiter">"</span></span> : [
         {
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">from</span><span class="delimiter">&quot;</span></span> : <span class="integer">2</span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">to</span><span class="delimiter">&quot;</span></span> : <span class="integer">1</span>
+            <span class="key"><span class="delimiter">"</span><span class="content">from</span><span class="delimiter">"</span></span> : <span class="integer">2</span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">to</span><span class="delimiter">"</span></span> : <span class="integer">1</span>
         },
         {
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">from</span><span class="delimiter">&quot;</span></span> : <span class="integer">3</span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">to</span><span class="delimiter">&quot;</span></span> : <span class="integer">2</span>
+            <span class="key"><span class="delimiter">"</span><span class="content">from</span><span class="delimiter">"</span></span> : <span class="integer">3</span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">to</span><span class="delimiter">"</span></span> : <span class="integer">2</span>
         },
         {
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">from</span><span class="delimiter">&quot;</span></span> : <span class="integer">3</span>,
-            <span class="key"><span class="delimiter">&quot;</span><span class="content">to</span><span class="delimiter">&quot;</span></span> : <span class="integer">1</span>
+            <span class="key"><span class="delimiter">"</span><span class="content">from</span><span class="delimiter">"</span></span> : <span class="integer">3</span>,
+            <span class="key"><span class="delimiter">"</span><span class="content">to</span><span class="delimiter">"</span></span> : <span class="integer">1</span>
         }
     ]
 }</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">[
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="json">[
     {
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> : <span class="integer">1</span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">author</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Frederick P. Brooks</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">The Mythical Man Month. Essays on Software Engineering</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">year</span><span class="delimiter">&quot;</span></span> : <span class="integer">1995</span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">publisher</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Prentice Hall</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">referemces</span><span class="delimiter">&quot;</span></span> :[
+        <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span> : <span class="integer">1</span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">author</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Frederick P. Brooks</span><span class="delimiter">"</span></span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">title</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">The Mythical Man Month. Essays on Software Engineering</span><span class="delimiter">"</span></span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">year</span><span class="delimiter">"</span></span> : <span class="integer">1995</span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">publisher</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Prentice Hall</span><span class="delimiter">"</span></span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">referemces</span><span class="delimiter">"</span></span> :[
         ]
     },
     {
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> : <span class="integer">2</span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">author</span><span class="delimiter">&quot;</span></span> :  <span class="string"><span class="delimiter">&quot;</span><span class="content">Grady Booch</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Object Oriented Analysis and Design with Applications</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">year</span><span class="delimiter">&quot;</span></span> : <span class="integer">2011</span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">publisher</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Addison-Wesley</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">referemces</span><span class="delimiter">&quot;</span></span> :[
+        <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span> : <span class="integer">2</span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">author</span><span class="delimiter">"</span></span> :  <span class="string"><span class="delimiter">"</span><span class="content">Grady Booch</span><span class="delimiter">"</span></span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">title</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Object Oriented Analysis and Design with Applications</span><span class="delimiter">"</span></span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">year</span><span class="delimiter">"</span></span> : <span class="integer">2011</span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">publisher</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Addison-Wesley</span><span class="delimiter">"</span></span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">referemces</span><span class="delimiter">"</span></span> :[
             <span class="integer">1</span>
         ]
     },
     {
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span> : <span class="integer">1</span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">author</span><span class="delimiter">&quot;</span></span> :  <span class="string"><span class="delimiter">&quot;</span><span class="content">Robert C. Martin</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">title</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Clean Code. A Handbook of Agile Software Craftsmanship</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">year</span><span class="delimiter">&quot;</span></span> : <span class="integer">2008</span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">publisher</span><span class="delimiter">&quot;</span></span> : <span class="string"><span class="delimiter">&quot;</span><span class="content">Prentice Hall</span><span class="delimiter">&quot;</span></span>,
-        <span class="key"><span class="delimiter">&quot;</span><span class="content">referemces</span><span class="delimiter">&quot;</span></span> :[
+        <span class="key"><span class="delimiter">"</span><span class="content">id</span><span class="delimiter">"</span></span> : <span class="integer">1</span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">author</span><span class="delimiter">"</span></span> :  <span class="string"><span class="delimiter">"</span><span class="content">Robert C. Martin</span><span class="delimiter">"</span></span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">title</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Clean Code. A Handbook of Agile Software Craftsmanship</span><span class="delimiter">"</span></span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">year</span><span class="delimiter">"</span></span> : <span class="integer">2008</span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">publisher</span><span class="delimiter">"</span></span> : <span class="string"><span class="delimiter">"</span><span class="content">Prentice Hall</span><span class="delimiter">"</span></span>,
+        <span class="key"><span class="delimiter">"</span><span class="content">referemces</span><span class="delimiter">"</span></span> :[
             <span class="integer">1</span>,
             <span class="integer">2</span>
         ]
     }
 ]</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/bibliography1.png" alt="bibliography1"></span></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><em class="green">Aplicación</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#7-familytreev0">6-collections/7-familyTree/v0</a>: <a href="https://github.com/USantaTecla-tech-json/simpleDomains/blob/master/6-collections/7-familyTree/v0.0/data.json">v0.0</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#7-familytreev1">6-collections/7-familyTree/v1</a>: <a href="https://github.com/USantaTecla-tech-json/simpleDomains/blob/master/6-collections/7-familyTree/v1.0/data.json">v1.0</a> - <a href="https://github.com/USantaTecla-tech-json/simpleDomains/blob/master/6-collections/7-familyTree/v1.1/data.json">v1.1</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="síntesis"><strong>Síntesis</strong></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="bibliografía"><strong>Bibliografía</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 30%;">
-<col style="width: 20%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.json.org/json-en.html">www.json.org</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/jsonOrg.gif" alt="jsonOrg"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ponente">Ponente</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 30%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Luis Fernández Muñoz</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Formador/Consultor</em></p>
-</li>
-<li>
-<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
-</li>
-<li>
-<p><em>Ingeniero en Informática por la UMA</em></p>
-</li>
-<li>
-<p><em>Diplomado en Informática por la UPM</em></p>
-</li>
-<li>
-<p><em>Profesor Titular de ETSISI de la UPM</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="footer">
-<div id="footer-text">
-Version 0.0.1<br>
-Last updated 2022-11-14 10:31:45 +0100
-</div>
-</div>
-<style>
-/* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="bibliography1" src="images/bibliography1.png"/>
+             </span>
+            </p>
+           </div>
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code></code></pre>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3334%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="3">
+          <em class="green">
+           Aplicación
+          </em>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#7-familytreev0">
+              6-collections/7-familyTree/v0
+             </a>
+             :
+             <a href="https://github.com/USantaTecla-tech-json/simpleDomains/blob/master/6-collections/7-familyTree/v0.0/data.json">
+              v0.0
+             </a>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#7-familytreev1">
+              6-collections/7-familyTree/v1
+             </a>
+             :
+             <a href="https://github.com/USantaTecla-tech-json/simpleDomains/blob/master/6-collections/7-familyTree/v1.0/data.json">
+              v1.0
+             </a>
+             -
+             <a href="https://github.com/USantaTecla-tech-json/simpleDomains/blob/master/6-collections/7-familyTree/v1.1/data.json">
+              v1.1
+             </a>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="síntesis">
+     <strong>
+      Síntesis
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="bibliografía">
+     <strong>
+      Bibliografía
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 20%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 30%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <a href="https://www.json.org/json-en.html">
+               www.json.org
+              </a>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="jsonOrg" src="images/jsonOrg.gif"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="ponente">
+     Ponente
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Luis Fernández Muñoz
+               </em>
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Formador/Consultor
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://es.linkedin.com/in/luisfernandezmunyoz">
+                  <em>
+                   Linkedin
+                  </em>
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="setillo" src="images/setillo.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Doctor en Inteligencia Artificial por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Ingeniero en Informática por la UMA
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Diplomado en Informática por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Profesor Titular de ETSISI de la UPM
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div id="footer-text">
+    Version 0.0.1
+    <br/>
+    Last updated 2022-11-14 10:31:45 +0100
+   </div>
+  </div>
+  <style>
+   /* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
 pre.CodeRay{background:#f7f7f8}
 .CodeRay .line-numbers{border-right:1px solid currentColor;opacity:.35;padding:0 .5em 0 0}
 .CodeRay span.line-numbers{display:inline-block;margin-right:.75em}
@@ -1679,9 +2536,9 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 .CodeRay .delete .delete{color:#800}
 .CodeRay .change .change{color:#66f}
 .CodeRay .head .head{color:#f4f}
-</style>
-<script>
-                let speed = 50;
+  </style>
+  <script>
+   let speed = 50;
                 
                 function typeWriter(v) {
                   let i = v.getAttribute("typewriter-index")
@@ -1713,6 +2570,6 @@ table.CodeRay td.code{padding:0 0 0 .75em}
                 })
                 
                 setTimeout(typeWriterAll, speed);
-                
-                </script>
+  </script>
+ </body>
 </html>

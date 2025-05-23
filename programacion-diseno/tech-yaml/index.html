@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8">
-<meta name="author" content="Universo Santa Tecla">
-<title>YAML</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-<style>
-/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Asciidoctor 2.0.8" name="generator"/>
+  <meta content="Universo Santa Tecla" name="author"/>
+  <title>
+   YAML
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700" rel="stylesheet"/>
+  <style>
+   /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
@@ -434,578 +436,1064 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="book">
-<div id="header">
-<h1>YAML</h1>
-<div class="details">
-<span id="author" class="author">Universo Santa Tecla</span><br>
-<span id="email" class="email"><a href="mailto:universoSantaTecla@gmail.com">universoSantaTecla@gmail.com</a></span><br>
-<span id="revnumber">version 0.0.1</span>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Índice</div>
-<ul class="sectlevel1">
-<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
-<li><a href="#qué"><strong>¿Qué?</strong></a></li>
-<li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
-<li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
-<li><a href="#sintaxis">Sintaxis</a></li>
-<li><a href="#antipatrones">Antipatrones</a></li>
-<li><a href="#patrones">Patrones</a>
-<ul class="sectlevel2">
-<li><a href="#colección-heterogénea">Colección heterogénea</a></li>
-<li><a href="#colección-homogénea">Colección homogénea</a></li>
-<li><a href="#árboles">Árboles</a></li>
-<li><a href="#grafos">Grafos</a></li>
-</ul>
-</li>
-<li><a href="#síntesis"><strong>Síntesis</strong></a></li>
-<li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
-<li><a href="#ponente">Ponente</a></li>
-</ul>
-</div>
-</div>
-<div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/yaml.jpg" alt="yaml" width="250" height="330"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Códigos disponibles en <a href="https://github.com/USantaTecla-tech-yaml">git</a>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="por-qué"><strong>¿Por qué?</strong></h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="images/contextoXML.svg" alt="contextoXML" width="1148" height="856">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="qué"><strong>¿Qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://yaml.org/spec/1.2.2/">YAML</a> es un lenguaje de <strong class="blue">serialización de datos</strong> basado en <em>Unicode</em>, <strong class="blue">amigable</strong> para los humanos, diseñado en torno a los <strong class="blue">tipos de datos</strong> nativos comunes de
-los lenguajes de programación dinámicos</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.yaml.info/index.html">Tutorial</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">title</span>: <span class="string"><span class="content">Object-Oriented Software Construction</span></span>
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+ </head>
+ <body class="book">
+  <div id="header">
+   <h1>
+    YAML
+   </h1>
+   <div class="details">
+    <span class="author" id="author">
+     Universo Santa Tecla
+    </span>
+    <br/>
+    <span class="email" id="email">
+     <a href="mailto:universoSantaTecla@gmail.com">
+      universoSantaTecla@gmail.com
+     </a>
+    </span>
+    <br/>
+    <span id="revnumber">
+     version 0.0.1
+    </span>
+   </div>
+   <div class="toc" id="toc">
+    <div id="toctitle">
+     Índice
+    </div>
+    <ul class="sectlevel1">
+     <li>
+      <a href="#por-qué">
+       <strong>
+        ¿Por qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#qué">
+       <strong>
+        ¿Qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#para-qué">
+       <strong>
+        ¿Para qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#cómo">
+       <strong>
+        ¿Cómo?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#sintaxis">
+       Sintaxis
+      </a>
+     </li>
+     <li>
+      <a href="#antipatrones">
+       Antipatrones
+      </a>
+     </li>
+     <li>
+      <a href="#patrones">
+       Patrones
+      </a>
+      <ul class="sectlevel2">
+       <li>
+        <a href="#colección-heterogénea">
+         Colección heterogénea
+        </a>
+       </li>
+       <li>
+        <a href="#colección-homogénea">
+         Colección homogénea
+        </a>
+       </li>
+       <li>
+        <a href="#árboles">
+         Árboles
+        </a>
+       </li>
+       <li>
+        <a href="#grafos">
+         Grafos
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="#síntesis">
+       <strong>
+        Síntesis
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#bibliografía">
+       <strong>
+        Bibliografía
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#ponente">
+       Ponente
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div id="content">
+   <div id="preamble">
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="sintesis" src="images/sintesis.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="yaml" height="330" src="images/yaml.jpg" width="250"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="admonitionblock caution">
+      <table>
+       <tr>
+        <td class="icon">
+         <i class="fa icon-caution" title="Caution">
+         </i>
+        </td>
+        <td class="content">
+         Códigos disponibles en
+         <a href="https://github.com/USantaTecla-tech-yaml">
+          git
+         </a>
+        </td>
+       </tr>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="por-qué">
+     <strong>
+      ¿Por qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="imageblock">
+      <div class="content">
+       <img alt="contextoXML" height="856" src="images/contextoXML.svg" width="1148"/>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="qué">
+     <strong>
+      ¿Qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <a href="https://yaml.org/spec/1.2.2/">
+               YAML
+              </a>
+              es un lenguaje de
+              <strong class="blue">
+               serialización de datos
+              </strong>
+              basado en
+              <em>
+               Unicode
+              </em>
+              ,
+              <strong class="blue">
+               amigable
+              </strong>
+              para los humanos, diseñado en torno a los
+              <strong class="blue">
+               tipos de datos
+              </strong>
+              nativos comunes de
+los lenguajes de programación dinámicos
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <a href="https://www.yaml.info/index.html">
+                  Tutorial
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">title</span>: <span class="string"><span class="content">Object-Oriented Software Construction</span></span>
 <span class="key">author</span>: <span class="string"><span class="content">Bertrand Meyer</span></span>
 <span class="key">editions</span>:
   - <span class="string"><span class="content">editorial: Prentice Hall</span></span>
     <span class="key">date</span>: <span class="string"><span class="content">1988</span></span>
   - <span class="string"><span class="content">editorial: Prentice Hall</span></span>
     <span class="key">date</span>: <span class="string"><span class="content">1997</span></span></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="para-qué"><strong>¿Para qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2857%;">
-<col style="width: 14.2858%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="7">YAML debería ser:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>ser fácilmente <strong class="green">legible</strong> por humanos</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>con datos <strong class="green">portables</strong> entre lenguajes de programación</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>correspondiente con las <strong class="green">estructuras de datos</strong> nativas de los lenguajes dinámicos</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>tener un <strong class="green">modelo</strong> consistente para el soporte de herramientas genéricas</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>soportar un procesamiento de <strong class="green">una pasada</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>ser expresivo y <strong class="green">extensible</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>ser <strong class="green">fácil</strong> de implementar y usar</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Persistencia en ficheros de configuración</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Intercambio de datos en <em>Internet</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/swagger.png" alt="swagger">
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/googleTrends.png" alt="googleTrends">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cómo"><strong>¿Cómo?</strong></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="sintaxis">Sintaxis</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">property</span>:</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/elementoVacioV1.png" alt="elementoVacioV1"></span></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/elementoVacioV1.svg" alt="elementoVacioV1" width="151" height="54">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">property1</span>: <span class="string"><span class="content">informacion</span></span>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="para-qué">
+     <strong>
+      ¿Para qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 14.2857%;"/>
+       <col style="width: 14.2857%;"/>
+       <col style="width: 14.2857%;"/>
+       <col style="width: 14.2857%;"/>
+       <col style="width: 14.2857%;"/>
+       <col style="width: 14.2857%;"/>
+       <col style="width: 14.2858%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="7">
+         YAML debería ser:
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              ser fácilmente
+              <strong class="green">
+               legible
+              </strong>
+              por humanos
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              con datos
+              <strong class="green">
+               portables
+              </strong>
+              entre lenguajes de programación
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              correspondiente con las
+              <strong class="green">
+               estructuras de datos
+              </strong>
+              nativas de los lenguajes dinámicos
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              tener un
+              <strong class="green">
+               modelo
+              </strong>
+              consistente para el soporte de herramientas genéricas
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              soportar un procesamiento de
+              <strong class="green">
+               una pasada
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              ser expresivo y
+              <strong class="green">
+               extensible
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              ser
+              <strong class="green">
+               fácil
+              </strong>
+              de implementar y usar
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Persistencia en ficheros de configuración
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Intercambio de datos en
+              <em>
+               Internet
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="swagger" src="images/swagger.png"/>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="googleTrends" src="images/googleTrends.png"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="cómo">
+     <strong>
+      ¿Cómo?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="sintaxis">
+     Sintaxis
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">property</span>:</code></pre>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="elementoVacioV1" src="images/elementoVacioV1.png"/>
+            </span>
+           </p>
+          </div>
+          <div class="imageblock">
+           <div class="content">
+            <img alt="elementoVacioV1" height="54" src="images/elementoVacioV1.svg" width="151"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">property1</span>: <span class="string"><span class="content">informacion</span></span>
 <span class="key">property2</span>: <span class="string"><span class="content">0</span></span>
 <span class="key">property3</span>:
   <span class="key">property31</span>: <span class="string"><span class="content">informacion</span></span>
   <span class="key">property32</span>: <span class="string"><span class="content">informacion</span></span>
   <span class="key">property33</span>: <span class="string"><span class="content">informacion</span></span>
 <span class="key">propertyN</span>: <span class="string"><span class="content">true</span></span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/objectObject.png" alt="objectObject"></span></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/objectObject.svg" alt="objectObject" width="358" height="83">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">property1</span>: <span class="string"><span class="content">informacion</span></span>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="objectObject" src="images/objectObject.png"/>
+            </span>
+           </p>
+          </div>
+          <div class="imageblock">
+           <div class="content">
+            <img alt="objectObject" height="83" src="images/objectObject.svg" width="358"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">property1</span>: <span class="string"><span class="content">informacion</span></span>
 <span class="key">property2</span>: <span class="string"><span class="content">0</span></span>
 <span class="key">properties</span>:
 - <span class="string"><span class="content">informacion</span></span>
 - <span class="string"><span class="content">informacion</span></span>
 - <span class="string"><span class="content">informacion</span></span>
 <span class="key">propertyN</span>: <span class="string"><span class="content">true</span></span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/elementoEstructurado.png" alt="elementoEstructurado"></span></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/elementoEstructurado.svg" alt="elementoEstructurado" width="593" height="83">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml">- <span class="string"><span class="content">informacion</span></span>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="elementoEstructurado" src="images/elementoEstructurado.png"/>
+            </span>
+           </p>
+          </div>
+          <div class="imageblock">
+           <div class="content">
+            <img alt="elementoEstructurado" height="83" src="images/elementoEstructurado.svg" width="593"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="yaml">- <span class="string"><span class="content">informacion</span></span>
 - <span class="string"><span class="content">0</span></span>
 - <span class="string"><span class="content">- informacion</span></span>
   - <span class="string"><span class="content">informacion</span></span>
   - <span class="string"><span class="content">informacion</span></span>
 - <span class="string"><span class="content">true</span></span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/arrayArray.png" alt="arrayArray"></span></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/elementoEstructurado.svg" alt="elementoEstructurado" width="355" height="393">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml">- <span class="string"><span class="content">informacion</span></span>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="arrayArray" src="images/arrayArray.png"/>
+            </span>
+           </p>
+          </div>
+          <div class="imageblock">
+           <div class="content">
+            <img alt="elementoEstructurado" height="393" src="images/elementoEstructurado.svg" width="355"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="yaml">- <span class="string"><span class="content">informacion</span></span>
 - <span class="string"><span class="content">property: informacion</span></span>
 - <span class="string"><span class="content">informacion</span></span>
 - <span class="string"><span class="content">property: informacion</span></span>
 - <span class="string"><span class="content">informacion</span></span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/elementoMixto.png" alt="elementoMixto"></span></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/elementoEstructurado.svg" alt="elementoEstructurado" width="732" height="58">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="antipatrones">Antipatrones</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="red">Error: <strong>Confunde metainformación e información</strong></span>, impidiendo consultas de información futuras.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Los identificadores de los elementos deben coincidir con los campos de una estructura, registro, atributos de clase, entidad, &#8230;&#8203;</p>
-</li>
-<li>
-<p>No sus valores particulares, <span class="red">imposibles de adivinar por parte del procesador, validador, formateador, &#8230;&#8203;</span></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="red">Error: <strong>Formatea la información</strong></span> con saltos de linea, subrayados, &#8230;&#8203; <span class="red">perjudicando el tratamiento de información</span> para un formato no previsto en un nuevo dispositivo</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/error.png" alt="error"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="red">Posible error: <strong>Inadecuada estructuración</strong></span>, estructurando en <span class="red">exceso o defecto</span> la información suministrada, inadecuada para el procesamiento necesario</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/error.svg" alt="error" width="257" height="71">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Correcto</strong> o <strong class="red">incorrecto</strong> si el sistema de información necesita tratar la calle y/o la ciudad por separado y/o &#8230;&#8203;</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Obligando al programador a analizar la información</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">addressee</span>: <span class="string"><span class="content">MIT</span></span>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="elementoMixto" src="images/elementoMixto.png"/>
+            </span>
+           </p>
+          </div>
+          <div class="imageblock">
+           <div class="content">
+            <img alt="elementoEstructurado" height="58" src="images/elementoEstructurado.svg" width="732"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="antipatrones">
+     Antipatrones
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" colspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="red">
+               Error:
+               <strong>
+                Confunde metainformación e información
+               </strong>
+              </span>
+              , impidiendo consultas de información futuras.
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Los identificadores de los elementos deben coincidir con los campos de una estructura, registro, atributos de clase, entidad, …​
+                </p>
+               </li>
+               <li>
+                <p>
+                 No sus valores particulares,
+                 <span class="red">
+                  imposibles de adivinar por parte del procesador, validador, formateador, …​
+                 </span>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="red">
+               Error:
+               <strong>
+                Formatea la información
+               </strong>
+              </span>
+              con saltos de linea, subrayados, …​
+              <span class="red">
+               perjudicando el tratamiento de información
+              </span>
+              para un formato no previsto en un nuevo dispositivo
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="error" src="images/error.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="red">
+               Posible error:
+               <strong>
+                Inadecuada estructuración
+               </strong>
+              </span>
+              , estructurando en
+              <span class="red">
+               exceso o defecto
+              </span>
+              la información suministrada, inadecuada para el procesamiento necesario
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="error" height="71" src="images/error.svg" width="257"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 40%;"/>
+       <col style="width: 60%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Correcto
+              </strong>
+              o
+              <strong class="red">
+               incorrecto
+              </strong>
+              si el sistema de información necesita tratar la calle y/o la ciudad por separado y/o …​
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong class="red">
+                  Obligando al programador a analizar la información
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">addressee</span>: <span class="string"><span class="content">MIT</span></span>
 <span class="key">street</span>: <span class="string"><span class="content">77 Massachusetts Avenue. Cambridge</span></span>
 <span class="key">country</span>: <span class="string"><span class="content">Massachusetts 02139. United States of America</span></span></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/incorrecto.png" alt="incorrecto"></span></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/incorrecto.svg" alt="incorrecto" width="297" height="83">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">addressee</span>: <span class="string"><span class="content">MIT</span></span>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="incorrecto" src="images/incorrecto.png"/>
+            </span>
+           </p>
+          </div>
+          <div class="imageblock">
+           <div class="content">
+            <img alt="incorrecto" height="83" src="images/incorrecto.svg" width="297"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">addressee</span>: <span class="string"><span class="content">MIT</span></span>
 <span class="key">street</span>: <span class="string"><span class="content">77 Massachusetts Avenue</span></span>
 <span class="key">village</span>: <span class="string"><span class="content">Cambridge</span></span>
 <span class="key">county</span>: <span class="string"><span class="content">Massachusetts</span></span>
 <span class="key">country</span>: <span class="string"><span class="content">United States of America</span></span>
 <span class="key">postcode</span>: <span class="string"><span class="content">'02139'</span></span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/correctoV1.png" alt="correctoV1"></span></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/correctoV1.svg" alt="correctoV1" width="191" height="121">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">addressee</span>: <span class="string"><span class="content">MIT</span></span>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="correctoV1" src="images/correctoV1.png"/>
+            </span>
+           </p>
+          </div>
+          <div class="imageblock">
+           <div class="content">
+            <img alt="correctoV1" height="121" src="images/correctoV1.svg" width="191"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">addressee</span>: <span class="string"><span class="content">MIT</span></span>
 <span class="key">number</span>: <span class="string"><span class="content">77</span></span>
 <span class="key">street</span>: <span class="string"><span class="content">Massachusetts Avenue</span></span>
 <span class="key">village</span>: <span class="string"><span class="content">Cambridge</span></span>
 <span class="key">county</span>: <span class="string"><span class="content">Massachusetts</span></span>
 <span class="key">country</span>: <span class="string"><span class="content">United States of America</span></span>
 <span class="key">postcode</span>: <span class="string"><span class="content">'02139'</span></span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/correctoV2.png" alt="correctoV2"></span></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/correctoV2.svg" alt="correctoV2" width="191" height="134">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="patrones">Patrones</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="colección-heterogénea">Colección heterogénea</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Los nombres de los elementos coinciden con los nombres de los <strong class="blue">campos o atributos de las entidades,registros, estructuras, &#8230;&#8203;, clases, &#8230;&#8203;</strong> de los lenguajes de programación</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">No se permiten nombres de propiedad repetidos</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">name</span>: <span class="string"><span class="content">Edsger Wybe</span></span>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="correctoV2" src="images/correctoV2.png"/>
+            </span>
+           </p>
+          </div>
+          <div class="imageblock">
+           <div class="content">
+            <img alt="correctoV2" height="134" src="images/correctoV2.svg" width="191"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="patrones">
+     Patrones
+    </h2>
+    <div class="sectionbody">
+     <div class="sect2">
+      <h3 id="colección-heterogénea">
+       Colección heterogénea
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Los nombres de los elementos coinciden con los nombres de los
+               <strong class="blue">
+                campos o atributos de las entidades,registros, estructuras, …​, clases, …​
+               </strong>
+               de los lenguajes de programación
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <strong class="red">
+                   No se permiten nombres de propiedad repetidos
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top" rowspan="2">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">name</span>: <span class="string"><span class="content">Edsger Wybe</span></span>
 <span class="key">surname</span>: <span class="string"><span class="content">Dijkstra</span></span>
 <span class="key">birthday</span>:
   <span class="key">day</span>: <span class="string"><span class="content">11</span></span>
   <span class="key">month</span>: <span class="string"><span class="content">5</span></span>
   <span class="key">year</span>: <span class="string"><span class="content">1930</span></span>
 <span class="key">turingAward</span>: <span class="string"><span class="content">1972</span></span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/author.png" alt="author"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">field_A</span>: <span class="string"><span class="content">data_A</span></span>
+            </div>
+           </div>
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="author" src="images/author.png"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">field_A</span>: <span class="string"><span class="content">data_A</span></span>
 <span class="key">field_B</span>: <span class="string"><span class="content">data_B</span></span>
 <span class="key">field_Z</span>: <span class="string"><span class="content">data_Z</span></span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/src.png" alt="src"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="colección-homogénea">Colección homogénea</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="4"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Los <strong class="blue">items</strong> coinciden con los <strong class="blue">elementos de los arrays, vectores, listas, &#8230;&#8203;</strong> de los lenguajes de programación</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml">- <span class="string"><span class="content">item_A</span></span>
+            </div>
+           </div>
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="src" src="images/src.png"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="colección-homogénea">
+       Colección homogénea
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 25%;"/>
+        <col style="width: 25%;"/>
+        <col style="width: 25%;"/>
+        <col style="width: 25%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="4">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Los
+               <strong class="blue">
+                items
+               </strong>
+               coinciden con los
+               <strong class="blue">
+                elementos de los arrays, vectores, listas, …​
+               </strong>
+               de los lenguajes de programación
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="yaml">- <span class="string"><span class="content">item_A</span></span>
 - <span class="string"><span class="content">item_B</span></span>
 - <span class="string"><span class="content">item_C</span></span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/src2.png" alt="src2"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml">- <span class="string"><span class="content">877</span></span>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="src2" src="images/src2.png"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="yaml">- <span class="string"><span class="content">877</span></span>
 - <span class="string"><span class="content">743</span></span>
 - <span class="string"><span class="content">33</span></span>
 - <span class="string"><span class="content">7980</span></span>
@@ -1013,16 +1501,28 @@ los lenguajes de programación dinámicos</p>
 - <span class="string"><span class="content">234</span></span>
 - <span class="string"><span class="content">55</span></span>
 - <span class="string"><span class="content">689</span></span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/keys.png" alt="keys"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml">- <span class="string"><span class="content">name: Ingeniería del Software</span></span>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="keys" src="images/keys.png"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="yaml">- <span class="string"><span class="content">name: Ingeniería del Software</span></span>
   <span class="key">courses</span>:
   - <span class="string"><span class="content">Programación</span></span>
   - <span class="string"><span class="content">Diseño</span></span>
@@ -1038,16 +1538,28 @@ los lenguajes de programación dinámicos</p>
   - <span class="string"><span class="content">Back-End de Código Abierto</span></span>
   - <span class="string"><span class="content">Back-End de Código Libre</span></span>
   - <span class="string"><span class="content">Back-End de Código Privativo</span></span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/studies.png" alt="studies"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml">- <span class="string"><span class="content">name: Sr. Francisco Ansó García</span></span>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="studies" src="images/studies.png"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="yaml">- <span class="string"><span class="content">name: Sr. Francisco Ansó García</span></span>
   <span class="key">street</span>: <span class="string"><span class="content">Calle Lucas Rey Kalea, 15, 5ºB</span></span>
   <span class="key">postalCode</span>: <span class="string"><span class="content">'01468 Amurrio'</span></span>
   <span class="key">province</span>: <span class="string"><span class="content">Álava</span></span>
@@ -1059,62 +1571,140 @@ los lenguajes de programación dinámicos</p>
   <span class="key">street</span>: <span class="string"><span class="content">Calle Murcia, 22, Bajo C</span></span>
   <span class="key">postalCode</span>: <span class="string"><span class="content">28020 Madrid</span></span>
   <span class="key">province</span>: <span class="string"><span class="content">Madrid</span></span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/addresses.png" alt="addresses"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><em class="green">Aplicación</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#3-curriculumv0">2-texts/3-curriculum</a>: <a href="https://github.com/USantaTecla-tech-yaml/0-simpleDomains/blob/main/2-texts/3-curriculum/v0.0/data.yaml">v0.0</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#6-timetablev0">6-collections/timetable</a> - <a href="https://github.com/USantaTecla-tech-yaml/0-simpleDomains/blob/main/6-collections/6-timetable/v0.0/data.yaml">v0.0</a> - <a href="https://github.com/USantaTecla-tech-yaml/0-simpleDomains/blob/main/6-collections/6-timetable/v0.1/data.yaml">v0.1</a> - <a href="https://github.com/USantaTecla-tech-yaml/0-simpleDomains/blob/main/6-collections/6-timetable/v0.2/data.yaml">v0.2</a> - <a href="https://github.com/USantaTecla-tech-yaml/0-simpleDomains/blob/main/6-collections/6-timetable/v0.3/data.yaml">v0.3</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-domains/game-ticTacToe/tree/master/0.0.dataLanguages">game-ticTacToe/0.0.dataLanguages</a> - <a href="https://github.com/USantaTecla-tech-yaml/game-ticTacToe/blob/main/0.0.1.dataLanguages.yaml">v0.0</a> y <a href="https://github.com/USantaTecla-tech-yaml/game-ticTacToe/blob/main/0.0.2.dataLanguages.yaml">v0.1</a></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="árboles">Árboles</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/src3.png" alt="src3"></span></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">node</span>: <span class="string"><span class="content">Elemento_1</span></span>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="addresses" src="images/addresses.png"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3334%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="3">
+          <em class="green">
+           Aplicación
+          </em>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#3-curriculumv0">
+              2-texts/3-curriculum
+             </a>
+             :
+             <a href="https://github.com/USantaTecla-tech-yaml/0-simpleDomains/blob/main/2-texts/3-curriculum/v0.0/data.yaml">
+              v0.0
+             </a>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#6-timetablev0">
+              6-collections/timetable
+             </a>
+             -
+             <a href="https://github.com/USantaTecla-tech-yaml/0-simpleDomains/blob/main/6-collections/6-timetable/v0.0/data.yaml">
+              v0.0
+             </a>
+             -
+             <a href="https://github.com/USantaTecla-tech-yaml/0-simpleDomains/blob/main/6-collections/6-timetable/v0.1/data.yaml">
+              v0.1
+             </a>
+             -
+             <a href="https://github.com/USantaTecla-tech-yaml/0-simpleDomains/blob/main/6-collections/6-timetable/v0.2/data.yaml">
+              v0.2
+             </a>
+             -
+             <a href="https://github.com/USantaTecla-tech-yaml/0-simpleDomains/blob/main/6-collections/6-timetable/v0.3/data.yaml">
+              v0.3
+             </a>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <a href="https://github.com/USantaTecla-0-domains/game-ticTacToe/tree/master/0.0.dataLanguages">
+              game-ticTacToe/0.0.dataLanguages
+             </a>
+             -
+             <a href="https://github.com/USantaTecla-tech-yaml/game-ticTacToe/blob/main/0.0.1.dataLanguages.yaml">
+              v0.0
+             </a>
+             y
+             <a href="https://github.com/USantaTecla-tech-yaml/game-ticTacToe/blob/main/0.0.2.dataLanguages.yaml">
+              v0.1
+             </a>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="árboles">
+       Árboles
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="src3" src="images/src3.png"/>
+             </span>
+            </p>
+           </div>
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code></code></pre>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">node</span>: <span class="string"><span class="content">Elemento_1</span></span>
 <span class="key">trees</span>:
 - <span class="string"><span class="content">node: Elemento_11</span></span>
   <span class="key">trees</span>:
@@ -1128,11 +1718,15 @@ los lenguajes de programación dinámicos</p>
       <span class="key">trees</span>: <span class="string"><span class="content">[]</span></span>
 - <span class="string"><span class="content">node: Elemento_12</span></span>
   <span class="key">trees</span>: <span class="string"><span class="content">[]</span></span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">title</span>: <span class="string"><span class="content">Chrome</span></span>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">title</span>: <span class="string"><span class="content">Chrome</span></span>
 <span class="key">options</span>:
 - <span class="string"><span class="content">Nueva pestaña</span></span>
 - <span class="string"><span class="content">Nueva ventana</span></span>
@@ -1143,36 +1737,50 @@ los lenguajes de programación dinámicos</p>
   - <span class="string"><span class="content">Centro de Ayuda</span></span>
   - <span class="string"><span class="content">Notificar un error</span></span>
 - <span class="string"><span class="content">Salir</span></span></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/menu.png" alt="menu"></span></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="grafos">Grafos</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">nodes</span>:
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="menu" src="images/menu.png"/>
+             </span>
+            </p>
+           </div>
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code></code></pre>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="grafos">
+       Grafos
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 25%;"/>
+        <col style="width: 25%;"/>
+        <col style="width: 25%;"/>
+        <col style="width: 25%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">nodes</span>:
 - <span class="string"><span class="content">kA</span></span>
 - <span class="string"><span class="content">kB</span></span>
 - <span class="string"><span class="content">kZ</span></span>
@@ -1183,14 +1791,26 @@ los lenguajes de programación dinámicos</p>
   <span class="key">to</span>: <span class="string"><span class="content">kA</span></span>
 - <span class="string"><span class="content">from: kZ</span></span>
   <span class="key">to</span>: <span class="string"><span class="content">kB</span></span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/src4.png" alt="src4"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml">- <span class="string"><span class="content">node: kA</span></span>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="src4" src="images/src4.png"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="yaml">- <span class="string"><span class="content">node: kA</span></span>
   <span class="key">edges</span>: <span class="string"><span class="content">[]</span></span>
 - <span class="string"><span class="content">node: kB</span></span>
   <span class="key">edges</span>:
@@ -1199,21 +1819,41 @@ los lenguajes de programación dinámicos</p>
   <span class="key">edges</span>:
   - <span class="string"><span class="content">kA</span></span>
   - <span class="string"><span class="content">kB</span></span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/src5.png" alt="src5"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="4"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/bibliography0.png" alt="bibliography0"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">books</span>:
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="src5" src="images/src5.png"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="4">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="bibliography0" src="images/bibliography0.png"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">books</span>:
 - <span class="string"><span class="content">id: 1</span></span>
   <span class="key">author</span>: <span class="string"><span class="content">Frederick P. Brooks</span></span>
   <span class="key">title</span>: <span class="string"><span class="content">The Mythical Man Month. Essays on Software Engineering</span></span>
@@ -1242,11 +1882,15 @@ los lenguajes de programación dinámicos</p>
   <span class="key">to</span>: <span class="string"><span class="content">2</span></span>
 - <span class="string"><span class="content">from: 3</span></span>
   <span class="key">to</span>: <span class="string"><span class="content">1</span></span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml">- <span class="string"><span class="content">id: 1</span></span>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="yaml">- <span class="string"><span class="content">id: 1</span></span>
   <span class="key">author</span>: <span class="string"><span class="content">Frederick P. Brooks</span></span>
   <span class="key">title</span>: <span class="string"><span class="content">The Mythical Man Month. Essays on Software Engineering</span></span>
   <span class="key">year</span>: <span class="string"><span class="content">1995</span></span>
@@ -1267,148 +1911,283 @@ los lenguajes de programación dinámicos</p>
   <span class="key">referemces</span>:
   - <span class="string"><span class="content">1</span></span>
   - <span class="string"><span class="content">2</span></span></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="4"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/bibliography1.png" alt="bibliography1"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><em class="green">Aplicación</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#7-familytreev0">6-collections/7-familyTree/v0</a>: <a href="https://github.com/USantaTecla-tech-yaml/0-simpleDomains/blob/main/6-collections/7-familyTree/v0.0/data.yaml">v0.0</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#7-familytreev1">6-collections/7-familyTree/v1</a>: <a href="https://github.com/USantaTecla-tech-yaml/0-simpleDomains/blob/main/6-collections/7-familyTree/v1.0/data.yaml">v1.0</a> - <a href="https://github.com/USantaTecla-tech-yaml/0-simpleDomains/blob/main/6-collections/7-familyTree/v1.1/data.yaml">v1.1</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="síntesis"><strong>Síntesis</strong></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="bibliografía"><strong>Bibliografía</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 30%;">
-<col style="width: 20%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="" class="bare"></a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p>image:[]</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ponente">Ponente</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 30%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Luis Fernández Muñoz</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Formador/Consultor</em></p>
-</li>
-<li>
-<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
-</li>
-<li>
-<p><em>Ingeniero en Informática por la UMA</em></p>
-</li>
-<li>
-<p><em>Diplomado en Informática por la UPM</em></p>
-</li>
-<li>
-<p><em>Profesor Titular de ETSISI de la UPM</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="footer">
-<div id="footer-text">
-Version 0.0.1<br>
-Last updated 2022-11-14 11:15:03 +0100
-</div>
-</div>
-<style>
-/* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="4">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="bibliography1" src="images/bibliography1.png"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3334%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="3">
+          <em class="green">
+           Aplicación
+          </em>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#7-familytreev0">
+              6-collections/7-familyTree/v0
+             </a>
+             :
+             <a href="https://github.com/USantaTecla-tech-yaml/0-simpleDomains/blob/main/6-collections/7-familyTree/v0.0/data.yaml">
+              v0.0
+             </a>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#7-familytreev1">
+              6-collections/7-familyTree/v1
+             </a>
+             :
+             <a href="https://github.com/USantaTecla-tech-yaml/0-simpleDomains/blob/main/6-collections/7-familyTree/v1.0/data.yaml">
+              v1.0
+             </a>
+             -
+             <a href="https://github.com/USantaTecla-tech-yaml/0-simpleDomains/blob/main/6-collections/7-familyTree/v1.1/data.yaml">
+              v1.1
+             </a>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="síntesis">
+     <strong>
+      Síntesis
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="bibliografía">
+     <strong>
+      Bibliografía
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 20%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 30%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <a class="bare" href="">
+              </a>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            image:[]
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="ponente">
+     Ponente
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Luis Fernández Muñoz
+               </em>
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Formador/Consultor
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://es.linkedin.com/in/luisfernandezmunyoz">
+                  <em>
+                   Linkedin
+                  </em>
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="setillo" src="images/setillo.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Doctor en Inteligencia Artificial por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Ingeniero en Informática por la UMA
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Diplomado en Informática por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Profesor Titular de ETSISI de la UPM
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div id="footer-text">
+    Version 0.0.1
+    <br/>
+    Last updated 2022-11-14 11:15:03 +0100
+   </div>
+  </div>
+  <style>
+   /* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
 pre.CodeRay{background:#f7f7f8}
 .CodeRay .line-numbers{border-right:1px solid currentColor;opacity:.35;padding:0 .5em 0 0}
 .CodeRay span.line-numbers{display:inline-block;margin-right:.75em}
@@ -1495,9 +2274,9 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 .CodeRay .delete .delete{color:#800}
 .CodeRay .change .change{color:#66f}
 .CodeRay .head .head{color:#f4f}
-</style>
-<script>
-                let speed = 50;
+  </style>
+  <script>
+   let speed = 50;
                 
                 function typeWriter(v) {
                   let i = v.getAttribute("typewriter-index")
@@ -1529,6 +2308,6 @@ table.CodeRay td.code{padding:0 0 0 .75em}
                 })
                 
                 setTimeout(typeWriterAll, speed);
-                
-                </script>
+  </script>
+ </body>
 </html>

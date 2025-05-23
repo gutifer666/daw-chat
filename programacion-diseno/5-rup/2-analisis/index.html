@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8">
-<meta name="author" content="Universo Santa Tecla">
-<title>Disciplina de Analisis</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-<style>
-/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Asciidoctor 2.0.8" name="generator"/>
+  <meta content="Universo Santa Tecla" name="author"/>
+  <title>
+   Disciplina de Analisis
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700" rel="stylesheet"/>
+  <style>
+   /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
@@ -434,1506 +436,3131 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="book">
-<div id="header">
-<h1>Disciplina de Analisis</h1>
-<div class="details">
-<span id="author" class="author">Universo Santa Tecla</span><br>
-<span id="email" class="email"><a href="mailto:universoSantaTecla@gmail.com">universoSantaTecla@gmail.com</a></span><br>
-<span id="revnumber">version 0.0.1</span>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Índice</div>
-<ul class="sectlevel1">
-<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
-<li><a href="#qué"><strong>¿Qué?</strong></a></li>
-<li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
-<li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
-<li><a href="#actividades">Actividades</a>
-<ul class="sectlevel2">
-<li><a href="#analizar-la-arquitectura">Analizar la Arquitectura</a></li>
-<li><a href="#analizar-casos-de-uso">Analizar Casos de Uso</a></li>
-<li><a href="#analizar-clases">Analizar Clases</a></li>
-<li><a href="#analizar-paquetes">Analizar Paquetes</a></li>
-</ul>
-</li>
-<li><a href="#artefactos">Artefactos</a>
-<ul class="sectlevel2">
-<li><a href="#41-vistas">4+1 Vistas</a></li>
-<li><a href="#vista-lógica">Vista Lógica</a></li>
-</ul>
-</li>
-<li><a href="#síntesis"><strong>Síntesis</strong></a></li>
-<li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
-<li><a href="#ponente">Ponente</a></li>
-</ul>
-</div>
-</div>
-<div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="por-qué"><strong>¿Por qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">malas variables en su economía</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">ámbito incumplido</strong> y/o</p>
-</li>
-<li>
-<p><strong class="red">tiempo incumplido</strong> y/o</p>
-</li>
-<li>
-<p><strong class="red">coste incumplido</strong>;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">mala calidad del software</strong>, <span class="red">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">mala mantenibilidad</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">viscoso</strong>, porque <span class="red">no se puede entender con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">rígido</strong>, porque <span class="red">no se puede cambiar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">frágil</strong>, porque <span class="red">no se puede probar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">inmovil</strong>, porque <span class="red">no se puede reutilizar con facilidad</span> y/o</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">complejidad arbitraria</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/davidProyectoImplantacionDiseñoMal.png" alt="davidProyectoImplantacionDiseñoMal"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/arbolNoMantenible.jpeg" alt="arbolNoMantenible"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="green">Soy el cliente de la aplicación que deseo</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="red">Eres el jefe de proyecto de la aplicación</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="red">Soy un miembro del equipo directivos de tu empresa</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="green">¿Sabrías qué y cómo preguntarme, en qué orden y hasta qué nivel de detalle y cuándo?</em></p>
-</li>
-<li>
-<p><em class="green">¿Cuál sería el formato adecuado del resultado de las reuniones?</em></p>
-</li>
-<li>
-<p><em class="green">¿Cómo repartirías las tareas de requisitos entre las personas del equipo de desarrollo? ¿Con cuántas personas empezarías?</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red"><em>¿Por qué parte comenzarías, continuarías y terminarias la producción de código?</em></strong></p>
-</li>
-<li>
-<p><strong class="red"><em>¿Qué medidas aplicarías para obtener la calidad del software adecuada para facilitar la depuración de errores, la mantenibilidad corrective, perfective o adaptativa?</em></strong></p>
-</li>
-<li>
-<p><strong class="red"><em>¿Cómo repartirías las tareas de producción entre las personas del equipo de desarrollo?</em></strong></p>
-</li>
-<li>
-<p><strong class="red"><em>¿Cuánta gente incorporarías?</em></strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red">¿Sabrías justificarme mes a mes qué tiempo se tardará en terminar el proyecto con el personal asignado en distintos momentos de proyecto?</em></p>
-</li>
-<li>
-<p><em class="red">¿Sabrías justificarme el grado de satisfacción del cliente durante el transcurso del proyecto?</em></p>
-</li>
-<li>
-<p><em class="red">¿Sabrías justificarme cuántas personas añadir al proyecto para reducir el tiempo de desarrollo?</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="qué"><strong>¿Qué?</strong></h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong><span class="blue">Disciplina de Análisis</span></strong>: flujo de trabajo (realización de casos de uso que incluyen trabajadores, actividades y diagramas) cuyo propósito principal es <strong><span class="blue">analizar los requisitos de la captura de requisitos a través de su refinamiento y la estructura para lograr una comprensión más precisa de los requisitos</span></strong>, una descripción de los requisitos que es fácil de mantener y nos ayudan a estructurar el sistema</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="para-qué"><strong>¿Para qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Efectividad, eficacia y eficiencia, del Proyecto Software</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buenas variables en su economía</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">ámbito cumplido</strong> y</p>
-</li>
-<li>
-<p><strong class="green">tiempo cumplido</strong> y</p>
-</li>
-<li>
-<p><strong class="green">coste cumplido</strong>;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buena calidad del software</strong>, <span class="green">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buena mantenibilidad</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">fluido</strong>, porque <span class="green">se puede entender con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">flexible</strong>, porque <span class="green">se puede cambiar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">fuerte</strong>, porque <span class="green">se puede probar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">reusable</strong>, porque <span class="green">se puede reutilizar con facilidad</span> y/o</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">complejidad necesaria</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/davidProyectoImplantacionDiseño.png" alt="davidProyectoImplantacionDiseño"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/arbolMantenible.jpeg" alt="arbolMantenible"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="4"><strong class="blue">Objetivos</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Producir una <strong><span class="green">especificación más precisa</span></strong> de las necesidades que tenemos que en los resultados de la captura de requisitos, incluyendo el modelo de casos de uso</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="green">Estructurar los requisitos</span></strong> de una manera que facilite la comprensión, preparándolos, cambiándolos, y, en general, manteniéndolos</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Describir con el <strong><span class="green">uso de el lenguaje de los desarrolladores</span></strong> y poder introducir con ello más formalismo y ser usado para razonar sobre el funcionamiento interno del sistema</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="green">Acortar el modelo de diseño</span></strong> (aunque el análisis es un modelo en sí mismo) y es, por lo tanto, una entrada esencial cuando el sistema está formándose en el diseño e implementación</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><strong class="green">desde</strong> la disciplina de <strong class="green">Requisitos</strong></p>
-</div></div></td>
-<td class="tableblock halign-center valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><strong class="green">hacia</strong> la disciplina de <strong class="green">Diseño</strong></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cómo"><strong>¿Cómo?</strong></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="actividades">Actividades</h2>
-<div class="sectionbody">
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/Analysis.svg" alt="Analysis" width="1009" height="1311">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Introduccion.jpg" alt="Introduccion"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="sect2">
-<h3 id="analizar-la-arquitectura">Analizar la Arquitectura</h3>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/AnalyzeArchitecture.svg" alt="AnalyzeArchitecture" width="1143" height="686">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/analizarArquitectura.jpg" alt="analizarArquitectura"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 30%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="blue">Identificar Clases Obvias</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Una <strong><span class="blue">Clase de Vista</span></strong> por cada actor humano siendo ésta clase representante de la ventana principal en el interfaz de usuario en el que actor interactúa</p>
-</li>
-<li>
-<p>Una <strong><span class="blue">Clase de Vista</span></strong> primitiva por cada Clase de Modelo encontrada anteriormente</p>
-</li>
-<li>
-<p>Una <strong><span class="blue">Clase de Vista</span></strong> central por cada actor que sea un sistema externo representando el interfaz de comunicaciones</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Una <strong><span class="blue">Clase Controladora</span></strong> responsable de manejar el control y coordinación de la realización del Caso de Uso y entonces refinar esta clase de control acorde a los requisitos del Caso de Uso</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Las <strong><span class="blue">Clases de Modelo</span></strong> estudiando la descripción de los Casos de Uso y el Modelo de Dominio existente</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Identificar Paquetes de Análisis</span></strong></th>
-<th class="tableblock halign-left valign-top"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Colocar porciones de un número de casos de uso en un paquete específico</strong> (p.e. casos de uso requeridos para soportar un actor específico o un proceso de negocio específico)</p>
-</li>
-<li>
-<p><strong class="blue">Gestionar lo común entre Paquetes de Análisis</strong>. A menudo se da el caso de que cosas comunes se encuentran entre paquetes definidos anteriormente. Entonces, debes extraer las clases compartidas, ponerlas en su propio paquete y que otros paquetes sean dependientes de este paquete más general</p>
-</li>
-<li>
-<p><strong class="blue">Definir dependencias entre Paquetes de Análisis</strong>. Las dependencias entre Paquetes de Análisis serían si sus contenidos tienen relaciones con otros. La dirección de la dependencia sería la misma dirección que la relación</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaAnalisisArquitectura.svg" alt="diagramaAnalisisArquitectura" width="766" height="1232">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 85%;">
-<col style="width: 15%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Identificar Requisitos Especiales Comunes</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Un requisito especial es un requisito que ocurre durante el análisis y es importante capturarlo para que sea <strong class="blue">manejado apropiadamente en el diseño</strong> subsecuente. Por ejemplo:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Persistencia</strong></p>
-</li>
-<li>
-<p><strong class="blue">Distribución y concurrencia</strong></p>
-</li>
-<li>
-<p><strong class="blue">Características de seguridad</strong></p>
-</li>
-<li>
-<p><strong class="blue">Tolerancia a fallos</strong></p>
-</li>
-<li>
-<p><strong class="blue">Gestión de transacciones</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Recolectar todos los aspectos previos con <strong class="blue">diagramas de Clases/Paquetes estereotipados</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 35%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><em>Requisitos del Sistema</em></th>
-<th class="tableblock halign-left valign-top"><em>Análisis de la Arquitectura</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La <strong class="blue">aplicación sistemática del estilo arquitectónico MV</strong>* arroja un número considerable de triadas dependiendo de los requisitos de una aplicación concreta.</p>
-</li>
-<li>
-<p>En concreto, de forma sistemática y aproximada, se puede considerar:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Un <strong class="blue">Modelo</strong> por cada <strong class="blue">entidad de negocio</strong>. Más las clases abstractas al jerarquízarlos</p>
-</li>
-<li>
-<p>Una <strong class="blue">Vista</strong> por cada <strong class="blue">pantalla</strong> y <strong class="blue">componentes</strong> reutilizables (diálogos, subpaneles, botoneras, &#8230;&#8203; dispatchers, &#8230;&#8203;) jerárquicamente. Más las clases abstractas al jerarquízarlas</p>
-</li>
-<li>
-<p>Y, dependiendo del estilo arquitectónico, la vista conoce al controlador/presentador</p>
-<div class="ulist">
-<ul>
-<li>
-<p>un <strong>Controlador</strong> por cada <strong>caso de uso</strong> o agrupaciones de Controladores semánticamente cerradas con una media de 15 métodos por Controlador “compartido”. Más las clases abstractas al jerarquízarlos</p>
-</li>
-<li>
-<p>un <strong>Presentador</strong> como máximo por cada pantalla, porque alguno podría ser reutilizable. Más las clases abstractas al jerarquízarlos</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Una aplicación con</em>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>El modelo de negocio arroja <strong>36 entidades</strong></em></p>
-</li>
-<li>
-<p><em>El prototipo de la interfaz arroja <strong>26 pantallas con 31 sub-pantallas</strong></em></p>
-</li>
-<li>
-<p><em>La elicitación de requisitos <strong>196 casos de uso</strong></em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><em>Implicaría un <strong>volumen de software</strong>:</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em><strong>Modelos</strong>= 36 Modelos + 36*5-10% Modelo abstractos = <strong>[38,40]</strong> clases</em></p>
-</li>
-<li>
-<p><em><strong>Vistas</strong> = (26+31=)57 Vistas + 57*5-10% Vistas abstractas = <strong>[60,63]</strong> clases</em></p>
-</li>
-<li>
-<p><em>Controladores/Presentadores:</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Controladores</em>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em><strong>Controladores sin agrupar</strong> = 196 Controladores + 196*510% Controladores abstractos = <strong>[205,215]</strong> clases</em></p>
-</li>
-<li>
-<p><em><strong>Controladores agrupados</strong> = 196/15 = 13 Controladores + 13*5-10% Controladores abstractos = <strong>14</strong> clases</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><em><strong>Presentadores</strong> = (26+31=)57 Presentadores como máximo + 57*5-10% de Presentadores abstractos = <strong>[60,63]</strong> clases</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><em>Repartido en una <strong>arquitectura</strong>:</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em><strong>Paquetes de modelos</strong> = 40 modelos /[12-20] = <strong>[3,4]</strong> paquetes</em></p>
-</li>
-<li>
-<p><em><strong>Paquetes de Vistas</strong> = 60 Vistas / [12-20] = <strong>[3, 5]</strong> paquetes</em></p>
-</li>
-<li>
-<p><em>Paquetes de Controladores/Presentadores:</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Paquetes de Controladores:</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em><strong>Paquetes de Controladores sin agrupar</strong> = 215 Controladores / [12-20] = <strong>[11, 18]</strong> paquetes</em></p>
-</li>
-<li>
-<p><em><strong>Paquetes de Controladores agrupados</strong> = 14 Controladores / [1220] = <strong>1</strong> paquetes</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><em><strong>Paquetes de Presentadores</strong> = 60 Presentadores / [12-20] = <strong>[3, 5]</strong> paquetes</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="imageblock">
-<div class="content">
-<img src="images/arquitectura.svg" alt="arquitectura" width="1069" height="404">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="analizar-casos-de-uso">Analizar Casos de Uso</h3>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/Analyze%20Use%20Case.svg" alt="Analyze Use Case" width="1143" height="686">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/AnalizarCasoUso.jpg" alt="AnalizarCasoUso"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Identificar Clases de Análisis</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Identificar Clases de Control, Entidad y Vista necesarias para realizar el Caso de Uso</strong> y trazar sus nombres, responsabilidades y relaciones en un <em>Diagrama de Clases</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaAnalisisCasosUsoClases.svg" alt="diagramaAnalisisCasosUsoClases" width="1027" height="612">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Describir las Interacciones entre Objetos de Análisis</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Necesitamos <strong class="blue">describir cómo interactúan sus correspondientes objetos</strong> de análisis. Esto se hace con <strong class="red"><em>Diagramas de Colaboración</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>El <strong class="blue">caso de uso es invocado por un mensaje desde la instancia del actor a un objeto vista</strong></p>
-</li>
-<li>
-<p>Cada clase de análisis identificada en el paso precedente tendría al menos un objeto de análisis participando en el diagrama de colaboración, por <strong class="blue">trazabilidad</strong></p>
-</li>
-<li>
-<p>Los enlaces en el diagrama a menudo necesitan instancias de asociación entre las clases de análisis</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La <strong class="red">secuencia en el diagrama no debería ser el foco principal</strong> y puede ser excluido. En vez de ello, las relaciones (<strong class="green">enlaces</strong>) entre los objetos y los requerimientos (<strong class="green">mensajes</strong>) sobre cada objeto son el <strong class="green">foco principal</strong></p>
-</li>
-<li>
-<p>Un <strong class="green">mensaje debería indicar la intención</strong> del objeto invocante en la interacción con el objeto invocado</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaAnalisisCasoUsoColaboracion.svg" alt="diagramaAnalisisCasoUsoColaboracion" width="1355" height="848">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Capturar los Requisito Especiales</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Capturando todos los requisitos, tales como los requisitos no funcionales, son identificados en el análisis pero serán gestionados en el diseño e implementación</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="analizar-clases">Analizar Clases</h3>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/analyzeClass.svg" alt="analyzeClass" width="527" height="686">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/AnalizisClase.jpg" alt="AnalizisClase"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue"><span class="blue">Identificar Responsabilidades</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Las responsabilidades de una clase pueden ser reunidas por <strong class="blue">combinar todos los roles que juega en la realización de diferentes Casos de Uso</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaAnalizarClasesMetodos.svg" alt="diagramaAnalizarClasesMetodos" width="126" height="224">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Identificar Atributos</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>A menudo es implícito y requerido por las responsabilidades de su clase pero:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>El nombre de un atributo sería un <strong class="blue">sustantivo</strong></p>
-</li>
-<li>
-<p>Recordar que los <strong class="blue">tipos de atributos deberían ser conceptuales</strong>, no deberían ser restringidos por el entorno de implementación.</p>
-</li>
-<li>
-<p>Intentar <strong class="blue">reusar</strong> los que ya existan</p>
-</li>
-<li>
-<p>Un sola instancia de atributo <strong class="blue">no puede ser compartido</strong> por varios objetos de análisis</p>
-</li>
-<li>
-<p>Si una clase de análisis llega a ser demasiado complicada de comprender por sus atributos, algunos de estos <strong class="blue">atributos pueden ser separados</strong> en una clase de su propiedad</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaAnalizarClasesAtributos.svg" alt="diagramaAnalizarClasesAtributos" width="234" height="288">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>A menudo es implícito y requerido por las responsabilidades de su clase pero:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Los atributos de una <strong class="blue">Clases de Entidad</strong> son a menudo obvios porque existe <strong class="blue">trazabilidad con las clases de dominio</strong></p>
-</li>
-<li>
-<p>Los atributos de las <strong class="blue">Clases de Vistas</strong> representan <strong class="blue">controles de información que manipulan los actores</strong></p>
-</li>
-<li>
-<p>Los atributos de las <strong class="blue">Clases Controladoras</strong> son <strong class="blue">raros por su corto tiempo de vida</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Identificar Relaciones</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="blue">Identificar Asociaciones y Agregaciones</span></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>El ingeniero de componentes también define las multiplicidades, nombres de roles, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong><span class="blue">Identificar las Generalizaciones</span></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Para extraer el comportamiento común compartido entre varias clases de análisis. Deben mantenerse en un nivel alto y conceptual y podrían desaparecer en el diseño</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaAnalisisClase.svg" alt="diagramaAnalisisClase" width="587" height="385">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Capturar los Requisitos Especiales</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Revisar los requisitos especiales precedentes</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="analizar-paquetes">Analizar Paquetes</h3>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/Analyze%20Package.svg" alt="Analyze Package" width="539" height="660">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/AnalizarPaquete.jpg" alt="AnalizarPaquete"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="blue">Definir y mantener las dependencias</span></strong> de los Paquetes sobre otros paquetes cuyas clases contenidas están asociadas con el paquete</p>
-</li>
-<li>
-<p><strong><span class="blue">Asegurar que el Paquete contiene las clases correctas</span></strong>. Intentar hacer el paquete cohesivo incluyendo solo funcionalidad de objetos relacionados</p>
-</li>
-<li>
-<p><strong><span class="blue">Limitar las dependencias a otros paquetes</span></strong>. Considerar realojar estas clases del paquete que son también dependientes desde otros paquetes</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaAnalisisPaquete.svg" alt="diagramaAnalisisPaquete" width="319" height="293">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="artefactos">Artefactos</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="41-vistas">4+1 Vistas</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 85%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Índice</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Enlaces a 4+1 vistas y modelo del dominio</p>
-</li>
-<li>
-<p>Cardinalidad: <strong>1</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagrama4Mas1Vistas.svg" alt="diagrama4Mas1Vistas" width="349" height="371">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="vista-lógica">Vista Lógica</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 85%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Índice</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Enlaces a Análisis de Arquitectura, Casos de Uso, Clases y Paquetes</p>
-</li>
-<li>
-<p>Cardinalidad: <strong>1</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaVistaLogica.svg" alt="diagramaVistaLogica" width="492" height="626">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Analisis de la Arquitectura</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Diagrama de Paquetes</p>
-</li>
-<li>
-<p>Cardinalidad: <strong>1..&lt;paquetes&gt;</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaAnalisisArquitectura.svg" alt="diagramaAnalisisArquitectura" width="766" height="1232">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Análisis de Casos de Uso</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Diagrama de Clases</p>
-</li>
-<li>
-<p>Diagrama de Comunicación</p>
-</li>
-<li>
-<p>Cardinalidad: <strong>1..&lt;casosUso&gt;</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaAnalisisCasosUsoClases.svg" alt="diagramaAnalisisCasosUsoClases" width="1027" height="612">
-</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/diagramaAnalisisCasoUsoColaboracion.svg" alt="diagramaAnalisisCasoUsoColaboracion" width="1355" height="848">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Análisis de Clases</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Diagrama de Clases con <strong class="red">clases relacionadas, aferentes y eferentes</strong></p>
-</li>
-<li>
-<p>Cardinalidad: <strong class="red">1..&lt;clases&gt;</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaAnalisisClase.svg" alt="diagramaAnalisisClase" width="587" height="385">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Análisis de Paquetes</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Diagrama de Paqutes, con <strong class="red">paquetes relacionados, aferentes y eferentes</strong></p>
-</li>
-<li>
-<p>Cardinalidad: <strong>1..&lt;paquetes&gt;</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaAnalisisPaquete.svg" alt="diagramaAnalisisPaquete" width="319" height="293">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="síntesis"><strong>Síntesis</strong></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 45%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><em class="blue">Eres el jefe de proyecto de la aplicación</em>:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red">¿Por qué parte comenzarías, continuarías y terminarias la producción de código?</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red">¿Qué medidas aplicarías para obtener la calidad del software adecuada para facilitar la depuración de errores, la mantenibilidad corrective, perfective o adaptativa?</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red">¿Cómo repartirías las tareas de producción entre las personas del equipo de desarrollo?</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Casos de Uso Priorizados y especificados</strong>,</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Análisis de la Arquitectura</strong></p>
-</li>
-<li>
-<p><strong class="green">Análisis de Casos de Uso</strong></p>
-</li>
-<li>
-<p><strong class="green">Análisis de Clases</strong>, revisión</p>
-</li>
-<li>
-<p><strong class="green">Análisis de Paquetes</strong>, revisión</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Estimando cada actividad</strong>, entre 2 y 20 horas, y</p>
-</li>
-<li>
-<p><strong class="green">Repartiendo cohesivamente</strong> entre el equipo de desarrollo</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" colspan="3"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203; con <strong class="green">trazabilidad</strong> de todo!</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="bibliografía"><strong>Bibliografía</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Unified Software Development Process</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch, Ivar Jacobson y James Rumbaugh</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (1999)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheUnifiedSoftwareDevelopmentProcess.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Rational Unified Process Made Easy, The: A Practitioner&#8217;s Guide to the RUP</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch, , Ivar Jacobson y James Rumbaugh</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2003)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/RationalUnifiedProcessMadeEasy.png" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Craig Larman</strong></p>
-</li>
-<li>
-<p>Pearson; (2004)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ApplyingUML.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Object Solutions. Managing the Object Oriented Project</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Benjamin Cummings; (1995)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ObjectSolutionsManagingObjectOrientedProject.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Object Oriented Analysis and Design with Applications</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2011)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ObjectOrientedAnalysisAndDesingnWhitApplications.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>The Unified Modeling Language User Guide</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Pearson; (2005)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheUnifiedModelingLanguageUserGuide.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>UML Distilled. A Brief Guide to the Standard Object Modeling Language</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Martin Fowler,Kendall Scott</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2003)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/UMLDistilledABriefGuideStandardObjectModelingLanguage.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ponente">Ponente</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 30%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Luis Fernández Muñoz</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Formador/Consultor</em></p>
-</li>
-<li>
-<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
-</li>
-<li>
-<p><em>Ingeniero en Informática por la UMA</em></p>
-</li>
-<li>
-<p><em>Diplomado en Informática por la UPM</em></p>
-</li>
-<li>
-<p><em>Profesor Titular de ETSISI de la UPM</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="footer">
-<div id="footer-text">
-Version 0.0.1<br>
-Last updated 2022-10-16 16:31:10 +0200
-</div>
-</div>
-<script>
-                let speed = 50;
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+ </head>
+ <body class="book">
+  <div id="header">
+   <h1>
+    Disciplina de Analisis
+   </h1>
+   <div class="details">
+    <span class="author" id="author">
+     Universo Santa Tecla
+    </span>
+    <br/>
+    <span class="email" id="email">
+     <a href="mailto:universoSantaTecla@gmail.com">
+      universoSantaTecla@gmail.com
+     </a>
+    </span>
+    <br/>
+    <span id="revnumber">
+     version 0.0.1
+    </span>
+   </div>
+   <div class="toc" id="toc">
+    <div id="toctitle">
+     Índice
+    </div>
+    <ul class="sectlevel1">
+     <li>
+      <a href="#por-qué">
+       <strong>
+        ¿Por qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#qué">
+       <strong>
+        ¿Qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#para-qué">
+       <strong>
+        ¿Para qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#cómo">
+       <strong>
+        ¿Cómo?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#actividades">
+       Actividades
+      </a>
+      <ul class="sectlevel2">
+       <li>
+        <a href="#analizar-la-arquitectura">
+         Analizar la Arquitectura
+        </a>
+       </li>
+       <li>
+        <a href="#analizar-casos-de-uso">
+         Analizar Casos de Uso
+        </a>
+       </li>
+       <li>
+        <a href="#analizar-clases">
+         Analizar Clases
+        </a>
+       </li>
+       <li>
+        <a href="#analizar-paquetes">
+         Analizar Paquetes
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="#artefactos">
+       Artefactos
+      </a>
+      <ul class="sectlevel2">
+       <li>
+        <a href="#41-vistas">
+         4+1 Vistas
+        </a>
+       </li>
+       <li>
+        <a href="#vista-lógica">
+         Vista Lógica
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="#síntesis">
+       <strong>
+        Síntesis
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#bibliografía">
+       <strong>
+        Bibliografía
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#ponente">
+       Ponente
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div id="content">
+   <div id="preamble">
+    <div class="sectionbody">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="por-qué">
+     <strong>
+      ¿Por qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  malas variables en su economía
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     ámbito incumplido
+                    </strong>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     tiempo incumplido
+                    </strong>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     coste incumplido
+                    </strong>
+                    ;
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  mala calidad del software
+                 </strong>
+                 ,
+                 <span class="red">
+                  fiabilidad, usabilidad, interoperatividad, seguirdad, …​ (
+                  <em>
+                   -ilities
+                  </em>
+                  )
+                 </span>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  mala mantenibilidad
+                 </strong>
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     viscoso
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede entender con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     rígido
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede cambiar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     frágil
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede probar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     inmovil
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede reutilizar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  complejidad arbitraria
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="davidProyectoImplantacionDiseñoMal" src="images/davidProyectoImplantacionDiseñoMal.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="arbolNoMantenible" src="images/arbolNoMantenible.jpeg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3334%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         <strong class="green">
+          Soy el cliente de la aplicación que deseo
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="red">
+          Eres el jefe de proyecto de la aplicación
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="red">
+          Soy un miembro del equipo directivos de tu empresa
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="green">
+               ¿Sabrías qué y cómo preguntarme, en qué orden y hasta qué nivel de detalle y cuándo?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="green">
+               ¿Cuál sería el formato adecuado del resultado de las reuniones?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="green">
+               ¿Cómo repartirías las tareas de requisitos entre las personas del equipo de desarrollo? ¿Con cuántas personas empezarías?
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               <em>
+                ¿Por qué parte comenzarías, continuarías y terminarias la producción de código?
+               </em>
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="red">
+               <em>
+                ¿Qué medidas aplicarías para obtener la calidad del software adecuada para facilitar la depuración de errores, la mantenibilidad corrective, perfective o adaptativa?
+               </em>
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="red">
+               <em>
+                ¿Cómo repartirías las tareas de producción entre las personas del equipo de desarrollo?
+               </em>
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="red">
+               <em>
+                ¿Cuánta gente incorporarías?
+               </em>
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               ¿Sabrías justificarme mes a mes qué tiempo se tardará en terminar el proyecto con el personal asignado en distintos momentos de proyecto?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="red">
+               ¿Sabrías justificarme el grado de satisfacción del cliente durante el transcurso del proyecto?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="red">
+               ¿Sabrías justificarme cuántas personas añadir al proyecto para reducir el tiempo de desarrollo?
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="qué">
+     <strong>
+      ¿Qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="ulist">
+      <ul>
+       <li>
+        <p>
+         <strong>
+          <span class="blue">
+           Disciplina de Análisis
+          </span>
+         </strong>
+         : flujo de trabajo (realización de casos de uso que incluyen trabajadores, actividades y diagramas) cuyo propósito principal es
+         <strong>
+          <span class="blue">
+           analizar los requisitos de la captura de requisitos a través de su refinamiento y la estructura para lograr una comprensión más precisa de los requisitos
+          </span>
+         </strong>
+         , una descripción de los requisitos que es fácil de mantener y nos ayudan a estructurar el sistema
+        </p>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="para-qué">
+     <strong>
+      ¿Para qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Efectividad, eficacia y eficiencia, del Proyecto Software
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buenas variables en su economía
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     ámbito cumplido
+                    </strong>
+                    y
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     tiempo cumplido
+                    </strong>
+                    y
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     coste cumplido
+                    </strong>
+                    ;
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buena calidad del software
+                 </strong>
+                 ,
+                 <span class="green">
+                  fiabilidad, usabilidad, interoperatividad, seguirdad, …​ (
+                  <em>
+                   -ilities
+                  </em>
+                  )
+                 </span>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buena mantenibilidad
+                 </strong>
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     fluido
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede entender con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     flexible
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede cambiar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     fuerte
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede probar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     reusable
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede reutilizar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  complejidad necesaria
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="davidProyectoImplantacionDiseño" src="images/davidProyectoImplantacionDiseño.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="arbolMantenible" src="images/arbolMantenible.jpeg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="4">
+         <strong class="blue">
+          Objetivos
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Producir una
+              <strong>
+               <span class="green">
+                especificación más precisa
+               </span>
+              </strong>
+              de las necesidades que tenemos que en los resultados de la captura de requisitos, incluyendo el modelo de casos de uso
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <span class="green">
+                Estructurar los requisitos
+               </span>
+              </strong>
+              de una manera que facilite la comprensión, preparándolos, cambiándolos, y, en general, manteniéndolos
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Describir con el
+              <strong>
+               <span class="green">
+                uso de el lenguaje de los desarrolladores
+               </span>
+              </strong>
+              y poder introducir con ello más formalismo y ser usado para razonar sobre el funcionamiento interno del sistema
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <span class="green">
+                Acortar el modelo de diseño
+               </span>
+              </strong>
+              (aunque el análisis es un modelo en sí mismo) y es, por lo tanto, una entrada esencial cuando el sistema está formándose en el diseño e implementación
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-top" colspan="2">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="green">
+             desde
+            </strong>
+            la disciplina de
+            <strong class="green">
+             Requisitos
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-top" colspan="2">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="green">
+             hacia
+            </strong>
+            la disciplina de
+            <strong class="green">
+             Diseño
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="cómo">
+     <strong>
+      ¿Cómo?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="actividades">
+     Actividades
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-none grid-none stretch">
+      <colgroup>
+       <col style="width: 100%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="Analysis" height="1311" src="images/Analysis.svg" width="1009"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="Introduccion" src="images/Introduccion.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="sect2">
+      <h3 id="analizar-la-arquitectura">
+       Analizar la Arquitectura
+      </h3>
+      <table class="tableblock frame-none grid-none stretch">
+       <colgroup>
+        <col style="width: 100%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="AnalyzeArchitecture" height="686" src="images/AnalyzeArchitecture.svg" width="1143"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="analizarArquitectura" src="images/analizarArquitectura.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 30%;"/>
+        <col style="width: 20%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="3">
+          <strong class="blue">
+           Identificar Clases Obvias
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Una
+               <strong>
+                <span class="blue">
+                 Clase de Vista
+                </span>
+               </strong>
+               por cada actor humano siendo ésta clase representante de la ventana principal en el interfaz de usuario en el que actor interactúa
+              </p>
+             </li>
+             <li>
+              <p>
+               Una
+               <strong>
+                <span class="blue">
+                 Clase de Vista
+                </span>
+               </strong>
+               primitiva por cada Clase de Modelo encontrada anteriormente
+              </p>
+             </li>
+             <li>
+              <p>
+               Una
+               <strong>
+                <span class="blue">
+                 Clase de Vista
+                </span>
+               </strong>
+               central por cada actor que sea un sistema externo representando el interfaz de comunicaciones
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Una
+               <strong>
+                <span class="blue">
+                 Clase Controladora
+                </span>
+               </strong>
+               responsable de manejar el control y coordinación de la realización del Caso de Uso y entonces refinar esta clase de control acorde a los requisitos del Caso de Uso
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Las
+               <strong>
+                <span class="blue">
+                 Clases de Modelo
+                </span>
+               </strong>
+               estudiando la descripción de los Casos de Uso y el Modelo de Dominio existente
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Identificar Paquetes de Análisis
+           </span>
+          </strong>
+         </th>
+         <th class="tableblock halign-left valign-top">
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="blue">
+                Colocar porciones de un número de casos de uso en un paquete específico
+               </strong>
+               (p.e. casos de uso requeridos para soportar un actor específico o un proceso de negocio específico)
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong class="blue">
+                Gestionar lo común entre Paquetes de Análisis
+               </strong>
+               . A menudo se da el caso de que cosas comunes se encuentran entre paquetes definidos anteriormente. Entonces, debes extraer las clases compartidas, ponerlas en su propio paquete y que otros paquetes sean dependientes de este paquete más general
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong class="blue">
+                Definir dependencias entre Paquetes de Análisis
+               </strong>
+               . Las dependencias entre Paquetes de Análisis serían si sus contenidos tienen relaciones con otros. La dirección de la dependencia sería la misma dirección que la relación
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="diagramaAnalisisArquitectura" height="1232" src="images/diagramaAnalisisArquitectura.svg" width="766"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 85%;"/>
+        <col style="width: 15%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          <strong>
+           <span class="blue">
+            Identificar Requisitos Especiales Comunes
+           </span>
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Un requisito especial es un requisito que ocurre durante el análisis y es importante capturarlo para que sea
+               <strong class="blue">
+                manejado apropiadamente en el diseño
+               </strong>
+               subsecuente. Por ejemplo:
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   Persistencia
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   Distribución y concurrencia
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   Características de seguridad
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   Tolerancia a fallos
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   Gestión de transacciones
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Recolectar todos los aspectos previos con
+               <strong class="blue">
+                diagramas de Clases/Paquetes estereotipados
+               </strong>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 35%;"/>
+        <col style="width: 65%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          <em>
+           Requisitos del Sistema
+          </em>
+         </th>
+         <th class="tableblock halign-left valign-top">
+          <em>
+           Análisis de la Arquitectura
+          </em>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               La
+               <strong class="blue">
+                aplicación sistemática del estilo arquitectónico MV
+               </strong>
+               * arroja un número considerable de triadas dependiendo de los requisitos de una aplicación concreta.
+              </p>
+             </li>
+             <li>
+              <p>
+               En concreto, de forma sistemática y aproximada, se puede considerar:
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Un
+                  <strong class="blue">
+                   Modelo
+                  </strong>
+                  por cada
+                  <strong class="blue">
+                   entidad de negocio
+                  </strong>
+                  . Más las clases abstractas al jerarquízarlos
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Una
+                  <strong class="blue">
+                   Vista
+                  </strong>
+                  por cada
+                  <strong class="blue">
+                   pantalla
+                  </strong>
+                  y
+                  <strong class="blue">
+                   componentes
+                  </strong>
+                  reutilizables (diálogos, subpaneles, botoneras, …​ dispatchers, …​) jerárquicamente. Más las clases abstractas al jerarquízarlas
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Y, dependiendo del estilo arquitectónico, la vista conoce al controlador/presentador
+                 </p>
+                 <div class="ulist">
+                  <ul>
+                   <li>
+                    <p>
+                     un
+                     <strong>
+                      Controlador
+                     </strong>
+                     por cada
+                     <strong>
+                      caso de uso
+                     </strong>
+                     o agrupaciones de Controladores semánticamente cerradas con una media de 15 métodos por Controlador “compartido”. Más las clases abstractas al jerarquízarlos
+                    </p>
+                   </li>
+                   <li>
+                    <p>
+                     un
+                     <strong>
+                      Presentador
+                     </strong>
+                     como máximo por cada pantalla, porque alguno podría ser reutilizable. Más las clases abstractas al jerarquízarlos
+                    </p>
+                   </li>
+                  </ul>
+                 </div>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <em>
+                Una aplicación con
+               </em>
+               :
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <em>
+                   El modelo de negocio arroja
+                   <strong>
+                    36 entidades
+                   </strong>
+                  </em>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <em>
+                   El prototipo de la interfaz arroja
+                   <strong>
+                    26 pantallas con 31 sub-pantallas
+                   </strong>
+                  </em>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <em>
+                   La elicitación de requisitos
+                   <strong>
+                    196 casos de uso
+                   </strong>
+                  </em>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+             <li>
+              <p>
+               <em>
+                Implicaría un
+                <strong>
+                 volumen de software
+                </strong>
+                :
+               </em>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <em>
+                   <strong>
+                    Modelos
+                   </strong>
+                   = 36 Modelos + 36*5-10% Modelo abstractos =
+                   <strong>
+                    [38,40]
+                   </strong>
+                   clases
+                  </em>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <em>
+                   <strong>
+                    Vistas
+                   </strong>
+                   = (26+31=)57 Vistas + 57*5-10% Vistas abstractas =
+                   <strong>
+                    [60,63]
+                   </strong>
+                   clases
+                  </em>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <em>
+                   Controladores/Presentadores:
+                  </em>
+                 </p>
+                 <div class="ulist">
+                  <ul>
+                   <li>
+                    <p>
+                     <em>
+                      Controladores
+                     </em>
+                     :
+                    </p>
+                    <div class="ulist">
+                     <ul>
+                      <li>
+                       <p>
+                        <em>
+                         <strong>
+                          Controladores sin agrupar
+                         </strong>
+                         = 196 Controladores + 196*510% Controladores abstractos =
+                         <strong>
+                          [205,215]
+                         </strong>
+                         clases
+                        </em>
+                       </p>
+                      </li>
+                      <li>
+                       <p>
+                        <em>
+                         <strong>
+                          Controladores agrupados
+                         </strong>
+                         = 196/15 = 13 Controladores + 13*5-10% Controladores abstractos =
+                         <strong>
+                          14
+                         </strong>
+                         clases
+                        </em>
+                       </p>
+                      </li>
+                     </ul>
+                    </div>
+                   </li>
+                   <li>
+                    <p>
+                     <em>
+                      <strong>
+                       Presentadores
+                      </strong>
+                      = (26+31=)57 Presentadores como máximo + 57*5-10% de Presentadores abstractos =
+                      <strong>
+                       [60,63]
+                      </strong>
+                      clases
+                     </em>
+                    </p>
+                   </li>
+                  </ul>
+                 </div>
+                </li>
+               </ul>
+              </div>
+             </li>
+             <li>
+              <p>
+               <em>
+                Repartido en una
+                <strong>
+                 arquitectura
+                </strong>
+                :
+               </em>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <em>
+                   <strong>
+                    Paquetes de modelos
+                   </strong>
+                   = 40 modelos /[12-20] =
+                   <strong>
+                    [3,4]
+                   </strong>
+                   paquetes
+                  </em>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <em>
+                   <strong>
+                    Paquetes de Vistas
+                   </strong>
+                   = 60 Vistas / [12-20] =
+                   <strong>
+                    [3, 5]
+                   </strong>
+                   paquetes
+                  </em>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <em>
+                   Paquetes de Controladores/Presentadores:
+                  </em>
+                 </p>
+                 <div class="ulist">
+                  <ul>
+                   <li>
+                    <p>
+                     <em>
+                      Paquetes de Controladores:
+                     </em>
+                    </p>
+                    <div class="ulist">
+                     <ul>
+                      <li>
+                       <p>
+                        <em>
+                         <strong>
+                          Paquetes de Controladores sin agrupar
+                         </strong>
+                         = 215 Controladores / [12-20] =
+                         <strong>
+                          [11, 18]
+                         </strong>
+                         paquetes
+                        </em>
+                       </p>
+                      </li>
+                      <li>
+                       <p>
+                        <em>
+                         <strong>
+                          Paquetes de Controladores agrupados
+                         </strong>
+                         = 14 Controladores / [1220] =
+                         <strong>
+                          1
+                         </strong>
+                         paquetes
+                        </em>
+                       </p>
+                      </li>
+                     </ul>
+                    </div>
+                   </li>
+                   <li>
+                    <p>
+                     <em>
+                      <strong>
+                       Paquetes de Presentadores
+                      </strong>
+                      = 60 Presentadores / [12-20] =
+                      <strong>
+                       [3, 5]
+                      </strong>
+                      paquetes
+                     </em>
+                    </p>
+                   </li>
+                  </ul>
+                 </div>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="imageblock">
+       <div class="content">
+        <img alt="arquitectura" height="404" src="images/arquitectura.svg" width="1069"/>
+       </div>
+      </div>
+     </div>
+     <div class="sect2">
+      <h3 id="analizar-casos-de-uso">
+       Analizar Casos de Uso
+      </h3>
+      <table class="tableblock frame-none grid-none stretch">
+       <colgroup>
+        <col style="width: 100%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="Analyze Use Case" height="686" src="images/Analyze%20Use%20Case.svg" width="1143"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="AnalizarCasoUso" src="images/AnalizarCasoUso.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 30%;"/>
+        <col style="width: 70%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          <strong>
+           <span class="blue">
+            Identificar Clases de Análisis
+           </span>
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="blue">
+                Identificar Clases de Control, Entidad y Vista necesarias para realizar el Caso de Uso
+               </strong>
+               y trazar sus nombres, responsabilidades y relaciones en un
+               <em>
+                Diagrama de Clases
+               </em>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="diagramaAnalisisCasosUsoClases" height="612" src="images/diagramaAnalisisCasosUsoClases.svg" width="1027"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          <strong>
+           <span class="blue">
+            Describir las Interacciones entre Objetos de Análisis
+           </span>
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Necesitamos
+               <strong class="blue">
+                describir cómo interactúan sus correspondientes objetos
+               </strong>
+               de análisis. Esto se hace con
+               <strong class="red">
+                <em>
+                 Diagramas de Colaboración
+                </em>
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  El
+                  <strong class="blue">
+                   caso de uso es invocado por un mensaje desde la instancia del actor a un objeto vista
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Cada clase de análisis identificada en el paso precedente tendría al menos un objeto de análisis participando en el diagrama de colaboración, por
+                  <strong class="blue">
+                   trazabilidad
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Los enlaces en el diagrama a menudo necesitan instancias de asociación entre las clases de análisis
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               La
+               <strong class="red">
+                secuencia en el diagrama no debería ser el foco principal
+               </strong>
+               y puede ser excluido. En vez de ello, las relaciones (
+               <strong class="green">
+                enlaces
+               </strong>
+               ) entre los objetos y los requerimientos (
+               <strong class="green">
+                mensajes
+               </strong>
+               ) sobre cada objeto son el
+               <strong class="green">
+                foco principal
+               </strong>
+              </p>
+             </li>
+             <li>
+              <p>
+               Un
+               <strong class="green">
+                mensaje debería indicar la intención
+               </strong>
+               del objeto invocante en la interacción con el objeto invocado
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="diagramaAnalisisCasoUsoColaboracion" height="848" src="images/diagramaAnalisisCasoUsoColaboracion.svg" width="1355"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 100%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Capturar los Requisito Especiales
+           </span>
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Capturando todos los requisitos, tales como los requisitos no funcionales, son identificados en el análisis pero serán gestionados en el diseño e implementación
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="analizar-clases">
+       Analizar Clases
+      </h3>
+      <table class="tableblock frame-none grid-none stretch">
+       <colgroup>
+        <col style="width: 100%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="analyzeClass" height="686" src="images/analyzeClass.svg" width="527"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="AnalizisClase" src="images/AnalizisClase.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 40%;"/>
+        <col style="width: 60%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          <strong class="blue">
+           <span class="blue">
+            Identificar Responsabilidades
+           </span>
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Las responsabilidades de una clase pueden ser reunidas por
+               <strong class="blue">
+                combinar todos los roles que juega en la realización de diferentes Casos de Uso
+               </strong>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="diagramaAnalizarClasesMetodos" height="224" src="images/diagramaAnalizarClasesMetodos.svg" width="126"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 40%;"/>
+        <col style="width: 60%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          <strong>
+           <span class="blue">
+            Identificar Atributos
+           </span>
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top" rowspan="2">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               A menudo es implícito y requerido por las responsabilidades de su clase pero:
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  El nombre de un atributo sería un
+                  <strong class="blue">
+                   sustantivo
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Recordar que los
+                  <strong class="blue">
+                   tipos de atributos deberían ser conceptuales
+                  </strong>
+                  , no deberían ser restringidos por el entorno de implementación.
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Intentar
+                  <strong class="blue">
+                   reusar
+                  </strong>
+                  los que ya existan
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Un sola instancia de atributo
+                  <strong class="blue">
+                   no puede ser compartido
+                  </strong>
+                  por varios objetos de análisis
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Si una clase de análisis llega a ser demasiado complicada de comprender por sus atributos, algunos de estos
+                  <strong class="blue">
+                   atributos pueden ser separados
+                  </strong>
+                  en una clase de su propiedad
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="diagramaAnalizarClasesAtributos" height="288" src="images/diagramaAnalizarClasesAtributos.svg" width="234"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               A menudo es implícito y requerido por las responsabilidades de su clase pero:
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Los atributos de una
+                  <strong class="blue">
+                   Clases de Entidad
+                  </strong>
+                  son a menudo obvios porque existe
+                  <strong class="blue">
+                   trazabilidad con las clases de dominio
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Los atributos de las
+                  <strong class="blue">
+                   Clases de Vistas
+                  </strong>
+                  representan
+                  <strong class="blue">
+                   controles de información que manipulan los actores
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Los atributos de las
+                  <strong class="blue">
+                   Clases Controladoras
+                  </strong>
+                  son
+                  <strong class="blue">
+                   raros por su corto tiempo de vida
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 40%;"/>
+        <col style="width: 60%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          <strong>
+           <span class="blue">
+            Identificar Relaciones
+           </span>
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                <span class="blue">
+                 Identificar Asociaciones y Agregaciones
+                </span>
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  El ingeniero de componentes también define las multiplicidades, nombres de roles, …​
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+             <li>
+              <p>
+               <strong>
+                <span class="blue">
+                 Identificar las Generalizaciones
+                </span>
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Para extraer el comportamiento común compartido entre varias clases de análisis. Deben mantenerse en un nivel alto y conceptual y podrían desaparecer en el diseño
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="diagramaAnalisisClase" height="385" src="images/diagramaAnalisisClase.svg" width="587"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 100%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Capturar los Requisitos Especiales
+           </span>
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Revisar los requisitos especiales precedentes
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="analizar-paquetes">
+       Analizar Paquetes
+      </h3>
+      <table class="tableblock frame-none grid-none stretch">
+       <colgroup>
+        <col style="width: 100%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="Analyze Package" height="660" src="images/Analyze%20Package.svg" width="539"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="AnalizarPaquete" src="images/AnalizarPaquete.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 40%;"/>
+        <col style="width: 60%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                <span class="blue">
+                 Definir y mantener las dependencias
+                </span>
+               </strong>
+               de los Paquetes sobre otros paquetes cuyas clases contenidas están asociadas con el paquete
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                <span class="blue">
+                 Asegurar que el Paquete contiene las clases correctas
+                </span>
+               </strong>
+               . Intentar hacer el paquete cohesivo incluyendo solo funcionalidad de objetos relacionados
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                <span class="blue">
+                 Limitar las dependencias a otros paquetes
+                </span>
+               </strong>
+               . Considerar realojar estas clases del paquete que son también dependientes desde otros paquetes
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="diagramaAnalisisPaquete" height="293" src="images/diagramaAnalisisPaquete.svg" width="319"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="artefactos">
+     Artefactos
+    </h2>
+    <div class="sectionbody">
+     <div class="sect2">
+      <h3 id="41-vistas">
+       4+1 Vistas
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 15%;"/>
+        <col style="width: 85%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Índice
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Enlaces a 4+1 vistas y modelo del dominio
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Cardinalidad:
+                  <strong>
+                   1
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="diagrama4Mas1Vistas" height="371" src="images/diagrama4Mas1Vistas.svg" width="349"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="vista-lógica">
+       Vista Lógica
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 15%;"/>
+        <col style="width: 85%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Índice
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Enlaces a Análisis de Arquitectura, Casos de Uso, Clases y Paquetes
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Cardinalidad:
+                  <strong>
+                   1
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="diagramaVistaLogica" height="626" src="images/diagramaVistaLogica.svg" width="492"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Analisis de la Arquitectura
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Diagrama de Paquetes
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Cardinalidad:
+                  <strong>
+                   1..&lt;paquetes&gt;
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="diagramaAnalisisArquitectura" height="1232" src="images/diagramaAnalisisArquitectura.svg" width="766"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Análisis de Casos de Uso
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Diagrama de Clases
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Diagrama de Comunicación
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Cardinalidad:
+                  <strong>
+                   1..&lt;casosUso&gt;
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="diagramaAnalisisCasosUsoClases" height="612" src="images/diagramaAnalisisCasosUsoClases.svg" width="1027"/>
+            </div>
+           </div>
+           <div class="imageblock">
+            <div class="content">
+             <img alt="diagramaAnalisisCasoUsoColaboracion" height="848" src="images/diagramaAnalisisCasoUsoColaboracion.svg" width="1355"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="red">
+                Análisis de Clases
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Diagrama de Clases con
+                  <strong class="red">
+                   clases relacionadas, aferentes y eferentes
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Cardinalidad:
+                  <strong class="red">
+                   1..&lt;clases&gt;
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="diagramaAnalisisClase" height="385" src="images/diagramaAnalisisClase.svg" width="587"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="red">
+                Análisis de Paquetes
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Diagrama de Paqutes, con
+                  <strong class="red">
+                   paquetes relacionados, aferentes y eferentes
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Cardinalidad:
+                  <strong>
+                   1..&lt;paquetes&gt;
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="diagramaAnalisisPaquete" height="293" src="images/diagramaAnalisisPaquete.svg" width="319"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="síntesis">
+     <strong>
+      Síntesis
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 45%;"/>
+       <col style="width: 30%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="3">
+         <em class="blue">
+          Eres el jefe de proyecto de la aplicación
+         </em>
+         :
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               ¿Por qué parte comenzarías, continuarías y terminarias la producción de código?
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               ¿Qué medidas aplicarías para obtener la calidad del software adecuada para facilitar la depuración de errores, la mantenibilidad corrective, perfective o adaptativa?
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               ¿Cómo repartirías las tareas de producción entre las personas del equipo de desarrollo?
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Casos de Uso Priorizados y especificados
+              </strong>
+              ,
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Análisis de la Arquitectura
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="green">
+               Análisis de Casos de Uso
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="green">
+               Análisis de Clases
+              </strong>
+              , revisión
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="green">
+               Análisis de Paquetes
+              </strong>
+              , revisión
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Estimando cada actividad
+              </strong>
+              , entre 2 y 20 horas, y
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="green">
+               Repartiendo cohesivamente
+              </strong>
+              entre el equipo de desarrollo
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-top" colspan="3">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              …​ con
+              <strong class="green">
+               trazabilidad
+              </strong>
+              de todo!
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="bibliografía">
+     <strong>
+      Bibliografía
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Unified Software Development Process
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch, Ivar Jacobson y James Rumbaugh
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (1999)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/TheUnifiedSoftwareDevelopmentProcess.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Rational Unified Process Made Easy, The: A Practitioner’s Guide to the RUP
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch, , Ivar Jacobson y James Rumbaugh
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2003)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/RationalUnifiedProcessMadeEasy.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Craig Larman
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Pearson; (2004)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ApplyingUML.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Object Solutions. Managing the Object Oriented Project
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Benjamin Cummings; (1995)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ObjectSolutionsManagingObjectOrientedProject.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Object Oriented Analysis and Design with Applications
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2011)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ObjectOrientedAnalysisAndDesingnWhitApplications.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              The Unified Modeling Language User Guide
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Pearson; (2005)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/TheUnifiedModelingLanguageUserGuide.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              UML Distilled. A Brief Guide to the Standard Object Modeling Language
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Martin Fowler,Kendall Scott
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2003)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/UMLDistilledABriefGuideStandardObjectModelingLanguage.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="ponente">
+     Ponente
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Luis Fernández Muñoz
+               </em>
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Formador/Consultor
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://es.linkedin.com/in/luisfernandezmunyoz">
+                  <em>
+                   Linkedin
+                  </em>
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="setillo" src="images/setillo.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Doctor en Inteligencia Artificial por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Ingeniero en Informática por la UMA
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Diplomado en Informática por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Profesor Titular de ETSISI de la UPM
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div id="footer-text">
+    Version 0.0.1
+    <br/>
+    Last updated 2022-10-16 16:31:10 +0200
+   </div>
+  </div>
+  <script>
+   let speed = 50;
                 
                 function typeWriter(v) {
                   let i = v.getAttribute("typewriter-index")
@@ -1965,6 +3592,6 @@ Last updated 2022-10-16 16:31:10 +0200
                 })
                 
                 setTimeout(typeWriterAll, speed);
-                
-                </script>
+  </script>
+ </body>
 </html>

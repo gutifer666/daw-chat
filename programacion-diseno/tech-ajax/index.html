@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8">
-<meta name="author" content="Santa Tecla">
-<title>AJAX</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-<style>
-/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Asciidoctor 2.0.8" name="generator"/>
+  <meta content="Santa Tecla" name="author"/>
+  <title>
+   AJAX
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700" rel="stylesheet"/>
+  <style>
+   /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
@@ -434,377 +436,848 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="book">
-<div id="header">
-<h1>AJAX</h1>
-<div class="details">
-<span id="author" class="author">Santa Tecla</span><br>
-<span id="email" class="email"><a href="mailto:parqueNaturalSantaTecla@gmail.com">parqueNaturalSantaTecla@gmail.com</a></span><br>
-<span id="revnumber">version 0.0.1</span>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Índice</div>
-<ul class="sectlevel1">
-<li><a href="#contexto"><strong>Contexto</strong></a></li>
-<li><a href="#descripción"><strong>Descripción</strong></a></li>
-<li><a href="#sintesis"><strong>Sintesis</strong></a></li>
-<li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
-<li><a href="#ponente">Ponente</a></li>
-</ul>
-</div>
-</div>
-<div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Ajax_Logo.jpg" alt="Ajax Logo"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Códigos disponibles en <a href="https://github.com/USantaTecla-tech-ajax">git</a>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="contexto"><strong>Contexto</strong></h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="images/contexto.svg" alt="contexto" width="1536" height="1055">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="descripción"><strong>Descripción</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Antecedentes:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Objetos <strong><em>iframe</em></strong> en 1996 y <strong><em>layer</em></strong> en 1997</p>
-</li>
-<li>
-<p><strong>Remote Scripting</strong> de Microsoft en 1998</p>
-</li>
-<li>
-<p><strong><em>Applets Java</em></strong>, de Sun Microsystems en 1993</p>
-</li>
-<li>
-<p><strong><em>XMLHttpRequest</em></strong> en 2002</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Tecnologías:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><em>HTML</em></strong> y <strong><em>CSS</em></strong>, para el diseño de la presentación</p>
-</li>
-<li>
-<p><strong><em>DOM</em></strong>, para mostrar e interactuar con los datos presentados</p>
-</li>
-<li>
-<p><strong><em>JSON</em></strong> ó <strong><em>XML</em></strong>, para el intercambio, manejo y presentación de los datos con el servidor</p>
-</li>
-<li>
-<p><strong><em>XMLHttpRequest</em></strong>, para el intercambio asíncrono con el servidor</p>
-</li>
-<li>
-<p><strong><em>JavaScript</em></strong>, para unir todas las tecnologías anteriores</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La petición y recepcción asíncrona de los datos del servidor se realizan a través del objeto <strong><em>XMLHttpRequest</em></strong> con las siguientes propiedades:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><em>readyState</em></strong>, devuelve el estado del objeto: 0 = sin inicializar, 1 = abierto, 2 =
-cabeceras recibidas, 3 = cargando y 4 = completado.</p>
-</li>
-<li>
-<p><strong><em>responseType</em></strong>, si se asigna el valor <strong><em>json</em></strong> el objeto realiza la llamada al método <em>JSON.parse</em> de manera automática, evitando que el programador lo haga.</p>
-</li>
-<li>
-<p><strong><em>onload</em></strong>, se dispara cuando la propiedad readyState == 4, con lo que se puede evitar esa comprobación en el procesamiento de la respuesta</p>
-</li>
-<li>
-<p><strong><em>status</em></strong>, devuelve el estado como un número:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><em>404</em></strong> para <em>Not Found</em></p>
-</li>
-<li>
-<p><strong><em>200</em></strong> para <em>OK</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong><em>response</em></strong>, contendrá la respuesta después de ser tratada dependiendo del valor de responseType. Es el equivalente a <em>responseText</em> o <em>responseXML</em></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>y con los métodos:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><em>open</em></strong>(<em>método</em>, <em>URL</em>[, <em>asíncrono</em> [, <em>usuario</em> [, <em>clave</em>]]]), para configurar la petición con los parámetros:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><em>método</em></strong>, toma los valores <strong><em>GET</em></strong>, <strong><em>POST</em></strong> o <strong><em>HEAD</em></strong></p>
-</li>
-<li>
-<p><strong><em>URL</em></strong>, destino de la petición</p>
-</li>
-<li>
-<p><strong><em>asíncrono</em></strong>, si toma valor true, el script continúa la ejecución después del método <strong><em>send</em></strong>(), y si es false el script se detiene hasta que termine la operación</p>
-</li>
-<li>
-<p><strong><em>usuario</em></strong> y <strong><em>clave</em></strong>, para autenticar</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong><em>send</em></strong>(), para envíar al servidor la petición</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="html"><span class="doctype">&lt;!DOCTYPE html&gt;</span>
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+ </head>
+ <body class="book">
+  <div id="header">
+   <h1>
+    AJAX
+   </h1>
+   <div class="details">
+    <span class="author" id="author">
+     Santa Tecla
+    </span>
+    <br/>
+    <span class="email" id="email">
+     <a href="mailto:parqueNaturalSantaTecla@gmail.com">
+      parqueNaturalSantaTecla@gmail.com
+     </a>
+    </span>
+    <br/>
+    <span id="revnumber">
+     version 0.0.1
+    </span>
+   </div>
+   <div class="toc" id="toc">
+    <div id="toctitle">
+     Índice
+    </div>
+    <ul class="sectlevel1">
+     <li>
+      <a href="#contexto">
+       <strong>
+        Contexto
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#descripción">
+       <strong>
+        Descripción
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#sintesis">
+       <strong>
+        Sintesis
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#bibliografía">
+       <strong>
+        Bibliografía
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#ponente">
+       Ponente
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div id="content">
+   <div id="preamble">
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="sintesis" src="images/sintesis.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="Ajax Logo" src="images/Ajax_Logo.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="admonitionblock caution">
+      <table>
+       <tr>
+        <td class="icon">
+         <i class="fa icon-caution" title="Caution">
+         </i>
+        </td>
+        <td class="content">
+         Códigos disponibles en
+         <a href="https://github.com/USantaTecla-tech-ajax">
+          git
+         </a>
+        </td>
+       </tr>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="contexto">
+     <strong>
+      Contexto
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="imageblock">
+      <div class="content">
+       <img alt="contexto" height="1055" src="images/contexto.svg" width="1536"/>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="descripción">
+     <strong>
+      Descripción
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Antecedentes:
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Objetos
+                 <strong>
+                  <em>
+                   iframe
+                  </em>
+                 </strong>
+                 en 1996 y
+                 <strong>
+                  <em>
+                   layer
+                  </em>
+                 </strong>
+                 en 1997
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  Remote Scripting
+                 </strong>
+                 de Microsoft en 1998
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  <em>
+                   Applets Java
+                  </em>
+                 </strong>
+                 , de Sun Microsystems en 1993
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  <em>
+                   XMLHttpRequest
+                  </em>
+                 </strong>
+                 en 2002
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Tecnologías:
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  <em>
+                   HTML
+                  </em>
+                 </strong>
+                 y
+                 <strong>
+                  <em>
+                   CSS
+                  </em>
+                 </strong>
+                 , para el diseño de la presentación
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  <em>
+                   DOM
+                  </em>
+                 </strong>
+                 , para mostrar e interactuar con los datos presentados
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  <em>
+                   JSON
+                  </em>
+                 </strong>
+                 ó
+                 <strong>
+                  <em>
+                   XML
+                  </em>
+                 </strong>
+                 , para el intercambio, manejo y presentación de los datos con el servidor
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  <em>
+                   XMLHttpRequest
+                  </em>
+                 </strong>
+                 , para el intercambio asíncrono con el servidor
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  <em>
+                   JavaScript
+                  </em>
+                 </strong>
+                 , para unir todas las tecnologías anteriores
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 40%;"/>
+       <col style="width: 60%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              La petición y recepcción asíncrona de los datos del servidor se realizan a través del objeto
+              <strong>
+               <em>
+                XMLHttpRequest
+               </em>
+              </strong>
+              con las siguientes propiedades:
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  <em>
+                   readyState
+                  </em>
+                 </strong>
+                 , devuelve el estado del objeto: 0 = sin inicializar, 1 = abierto, 2 =
+cabeceras recibidas, 3 = cargando y 4 = completado.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  <em>
+                   responseType
+                  </em>
+                 </strong>
+                 , si se asigna el valor
+                 <strong>
+                  <em>
+                   json
+                  </em>
+                 </strong>
+                 el objeto realiza la llamada al método
+                 <em>
+                  JSON.parse
+                 </em>
+                 de manera automática, evitando que el programador lo haga.
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  <em>
+                   onload
+                  </em>
+                 </strong>
+                 , se dispara cuando la propiedad readyState == 4, con lo que se puede evitar esa comprobación en el procesamiento de la respuesta
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  <em>
+                   status
+                  </em>
+                 </strong>
+                 , devuelve el estado como un número:
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong>
+                     <em>
+                      404
+                     </em>
+                    </strong>
+                    para
+                    <em>
+                     Not Found
+                    </em>
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong>
+                     <em>
+                      200
+                     </em>
+                    </strong>
+                    para
+                    <em>
+                     OK
+                    </em>
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  <em>
+                   response
+                  </em>
+                 </strong>
+                 , contendrá la respuesta después de ser tratada dependiendo del valor de responseType. Es el equivalente a
+                 <em>
+                  responseText
+                 </em>
+                 o
+                 <em>
+                  responseXML
+                 </em>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+            <li>
+             <p>
+              y con los métodos:
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  <em>
+                   open
+                  </em>
+                 </strong>
+                 (
+                 <em>
+                  método
+                 </em>
+                 ,
+                 <em>
+                  URL
+                 </em>
+                 [,
+                 <em>
+                  asíncrono
+                 </em>
+                 [,
+                 <em>
+                  usuario
+                 </em>
+                 [,
+                 <em>
+                  clave
+                 </em>
+                 ]]]), para configurar la petición con los parámetros:
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong>
+                     <em>
+                      método
+                     </em>
+                    </strong>
+                    , toma los valores
+                    <strong>
+                     <em>
+                      GET
+                     </em>
+                    </strong>
+                    ,
+                    <strong>
+                     <em>
+                      POST
+                     </em>
+                    </strong>
+                    o
+                    <strong>
+                     <em>
+                      HEAD
+                     </em>
+                    </strong>
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong>
+                     <em>
+                      URL
+                     </em>
+                    </strong>
+                    , destino de la petición
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong>
+                     <em>
+                      asíncrono
+                     </em>
+                    </strong>
+                    , si toma valor true, el script continúa la ejecución después del método
+                    <strong>
+                     <em>
+                      send
+                     </em>
+                    </strong>
+                    (), y si es false el script se detiene hasta que termine la operación
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong>
+                     <em>
+                      usuario
+                     </em>
+                    </strong>
+                    y
+                    <strong>
+                     <em>
+                      clave
+                     </em>
+                    </strong>
+                    , para autenticar
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  <em>
+                   send
+                  </em>
+                 </strong>
+                 (), para envíar al servidor la petición
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="html"><span class="doctype">&lt;!DOCTYPE html&gt;</span>
 <span class="tag">&lt;html&gt;</span>
   <span class="tag">&lt;head&gt;</span>
     <span class="tag">&lt;title&gt;</span>AJAX<span class="tag">&lt;/title&gt;</span>
     <span class="tag">&lt;script&gt;</span>
 <span class="inline">      let url =
-        <span class="string"><span class="delimiter">&quot;</span><span class="content">https://restcountries.eu/rest/v2/all</span><span class="delimiter">&quot;</span></span>;
+        <span class="string"><span class="delimiter">"</span><span class="content">https://restcountries.eu/rest/v2/all</span><span class="delimiter">"</span></span>;
       let httpRequest =
         <span class="keyword">new</span> XMLHttpRequest();
 
       <span class="keyword">function</span> <span class="function">request</span>() {
-        httpRequest.open(<span class="string"><span class="delimiter">&quot;</span><span class="content">GET</span><span class="delimiter">&quot;</span></span>,
+        httpRequest.open(<span class="string"><span class="delimiter">"</span><span class="content">GET</span><span class="delimiter">"</span></span>,
             encodeURI(url), <span class="predefined-constant">true</span>);
-        httpRequest.responseType = <span class="string"><span class="delimiter">&quot;</span><span class="content">json</span><span class="delimiter">&quot;</span></span>;
+        httpRequest.responseType = <span class="string"><span class="delimiter">"</span><span class="content">json</span><span class="delimiter">"</span></span>;
         httpRequest.onload = () =&gt; {
         <span class="keyword">if</span> (httpRequest.status === <span class="integer">200</span>){
-          document.getElementById(<span class="string"><span class="delimiter">&quot;</span><span class="content">data</span><span class="delimiter">&quot;</span></span>).innerHTML
+          document.getElementById(<span class="string"><span class="delimiter">"</span><span class="content">data</span><span class="delimiter">"</span></span>).innerHTML
             = JSON.stringify(httpRequest.response);
         } <span class="keyword">else</span> {
-          alert(<span class="string"><span class="delimiter">&quot;</span><span class="content">No hay conexión</span><span class="delimiter">&quot;</span></span>);
+          alert(<span class="string"><span class="delimiter">"</span><span class="content">No hay conexión</span><span class="delimiter">"</span></span>);
         }};
         httpRequest.send();
       }</span>
 
     <span class="tag">&lt;/script&gt;</span>
   <span class="tag">&lt;/head&gt;</span>
-  <span class="tag">&lt;body</span> <span class="attribute-name">onload</span>=<span class="string"><span class="delimiter">&quot;</span>request();<span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
-    <span class="tag">&lt;p</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">data</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;body</span> <span class="attribute-name">onload</span>=<span class="string"><span class="delimiter">"</span>request();<span class="delimiter">"</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;p</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">data</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/p&gt;</span>
   <span class="tag">&lt;/body&gt;</span>
 <span class="tag">&lt;/html&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/encodeURI"><strong><em>encodeURI</em></strong></a> codifica un Identificador de Recurso Uniforme (<em>Uniform Resource Identifier</em>, <strong><em>URI</em></strong>) reemplazando cada instancia de ciertos carácteres por uno, dos o tres secuencias de escape representando el carácter codificado en UTF-8.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="">countries</a> : <a href="https://github.com/USantaTecla-tech-ajax/src/tree/master/manager/countries/1-dinamico">1-dinamico</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="sintesis"><strong>Sintesis</strong></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="bibliografía"><strong>Bibliografía</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ponente">Ponente</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 30%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Luis Fernández Muñoz</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Formador/Consultor</em></p>
-</li>
-<li>
-<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
-</li>
-<li>
-<p><em>Ingeniero en Informática por la UMA</em></p>
-</li>
-<li>
-<p><em>Diplomado en Informática por la UPM</em></p>
-</li>
-<li>
-<p><em>Profesor Titular de ETSISI de la UPM</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="footer">
-<div id="footer-text">
-Version 0.0.1<br>
-Last updated 2022-11-14 10:10:19 +0100
-</div>
-</div>
-<style>
-/* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/encodeURI">
+               <strong>
+                <em>
+                 encodeURI
+                </em>
+               </strong>
+              </a>
+              codifica un Identificador de Recurso Uniforme (
+              <em>
+               Uniform Resource Identifier
+              </em>
+              ,
+              <strong>
+               <em>
+                URI
+               </em>
+              </strong>
+              ) reemplazando cada instancia de ciertos carácteres por uno, dos o tres secuencias de escape representando el carácter codificado en UTF-8.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3334%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="3">
+         <strong class="green">
+          Aplicaciones
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <a href="">
+               countries
+              </a>
+              :
+              <a href="https://github.com/USantaTecla-tech-ajax/src/tree/master/manager/countries/1-dinamico">
+               1-dinamico
+              </a>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="sintesis">
+     <strong>
+      Sintesis
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="bibliografía">
+     <strong>
+      Bibliografía
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="ponente">
+     Ponente
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Luis Fernández Muñoz
+               </em>
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Formador/Consultor
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://es.linkedin.com/in/luisfernandezmunyoz">
+                  <em>
+                   Linkedin
+                  </em>
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="setillo" src="images/setillo.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Doctor en Inteligencia Artificial por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Ingeniero en Informática por la UMA
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Diplomado en Informática por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Profesor Titular de ETSISI de la UPM
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div id="footer-text">
+    Version 0.0.1
+    <br/>
+    Last updated 2022-11-14 10:10:19 +0100
+   </div>
+  </div>
+  <style>
+   /* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
 pre.CodeRay{background:#f7f7f8}
 .CodeRay .line-numbers{border-right:1px solid currentColor;opacity:.35;padding:0 .5em 0 0}
 .CodeRay span.line-numbers{display:inline-block;margin-right:.75em}
@@ -891,9 +1364,9 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 .CodeRay .delete .delete{color:#800}
 .CodeRay .change .change{color:#66f}
 .CodeRay .head .head{color:#f4f}
-</style>
-<script>
-                let speed = 50;
+  </style>
+  <script>
+   let speed = 50;
                 
                 function typeWriter(v) {
                   let i = v.getAttribute("typewriter-index")
@@ -925,6 +1398,6 @@ table.CodeRay td.code{padding:0 0 0 .75em}
                 })
                 
                 setTimeout(typeWriterAll, speed);
-                
-                </script>
+  </script>
+ </body>
 </html>

@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8">
-<meta name="author" content="Universo Santa Tecla">
-<title>Disciplina de Requisitos</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-<style>
-/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Asciidoctor 2.0.8" name="generator"/>
+  <meta content="Universo Santa Tecla" name="author"/>
+  <title>
+   Disciplina de Requisitos
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700" rel="stylesheet"/>
+  <style>
+   /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
@@ -434,1581 +436,3263 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="book">
-<div id="header">
-<h1>Disciplina de Requisitos</h1>
-<div class="details">
-<span id="author" class="author">Universo Santa Tecla</span><br>
-<span id="email" class="email"><a href="mailto:universoSantaTecla@gmail.com">universoSantaTecla@gmail.com</a></span><br>
-<span id="revnumber">version 0.0.1</span>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Índice</div>
-<ul class="sectlevel1">
-<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
-<li><a href="#qué"><strong>¿Qué?</strong></a></li>
-<li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
-<li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
-<li><a href="#actividades">Actividades</a>
-<ul class="sectlevel2">
-<li><a href="#encontrar-actores-y-casos-de-uso">Encontrar Actores y Casos de Uso</a></li>
-<li><a href="#priorizar-casos-de-uso">Priorizar Casos de Uso</a></li>
-<li><a href="#especificar-casos-de-uso">Especificar Casos de Uso</a></li>
-<li><a href="#estructurar-casos-de-uso">Estructurar Casos de Uso</a></li>
-<li><a href="#prototipar-interfaz-de-usuario">Prototipar Interfaz de Usuario</a></li>
-</ul>
-</li>
-<li><a href="#artefactos">Artefactos</a>
-<ul class="sectlevel2">
-<li><a href="#41-vistas">4+1 Vistas</a></li>
-<li><a href="#vista-de-casos-de-uso">Vista de Casos de Uso</a></li>
-</ul>
-</li>
-<li><a href="#síntesis"><strong>Síntesis</strong></a></li>
-<li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
-<li><a href="#ponente">Ponente</a></li>
-</ul>
-</div>
-</div>
-<div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="por-qué"><strong>¿Por qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">malas variables en su economía</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">ámbito incumplido</strong> y/o</p>
-</li>
-<li>
-<p><strong class="red">tiempo incumplido</strong> y/o</p>
-</li>
-<li>
-<p><strong class="red">coste incumplido</strong>;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">mala calidad del software</strong>, <span class="red">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">mala mantenibilidad</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">viscoso</strong>, porque <span class="red">no se puede entender con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">rígido</strong>, porque <span class="red">no se puede cambiar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">frágil</strong>, porque <span class="red">no se puede probar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">inmovil</strong>, porque <span class="red">no se puede reutilizar con facilidad</span> y/o</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">complejidad arbitraria</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/davidProyectoImplantacionDiseñoMal.png" alt="davidProyectoImplantacionDiseñoMal"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/arbolNoMantenible.jpeg" alt="arbolNoMantenible"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="red">Soy el cliente de la aplicación que deseo</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="red">Eres el jefe de proyecto de la aplicación</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="red">Soy un miembro del equipo directivos de tu empresa</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red"><strong>¿Sabrías qué y cómo preguntarme, en qué orden y hasta qué nivel de detalle y cuándo?</strong></em></p>
-</li>
-<li>
-<p><em class="red"><strong>¿Cuál sería el formato adecuado del resultado de las reuniones?</strong></em></p>
-</li>
-<li>
-<p><em class="red"><strong>¿Cómo repartirías las tareas de requisitos entre las personas del equipo de desarrollo? ¿Con cuántas personas empezarías?</strong></em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red">¿Por qué parte comenzarías, continuarías y terminarias la producción de código?</em></p>
-</li>
-<li>
-<p><em class="red">¿Qué medidas aplicarías para obtener la calidad del software adecuada para facilitar la depuración de errores, la mantenibilidad corrective, perfective o adaptativa?</em></p>
-</li>
-<li>
-<p><em class="red">¿Cómo repartirías las tareas de producción entre las personas del equipo de desarrollo?</em></p>
-</li>
-<li>
-<p><em class="red">¿Cuánta gente incorporarías?</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red">¿Sabrías justificarme mes a mes qué tiempo se tardará en terminar el proyecto con el personal asignado en distintos momentos de proyecto?</em></p>
-</li>
-<li>
-<p><em class="red">¿Sabrías justificarme el grado de satisfacción del cliente durante el transcurso del proyecto?</em></p>
-</li>
-<li>
-<p><em class="red">¿Sabrías justificarme cuántas personas añadir al proyecto para reducir el tiempo de desarrollo?</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="qué"><strong>¿Qué?</strong></h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong><span class="blue">Disciplina de Requisitos</span></strong> es el flujo de trabajo (realización de casos de uso que incluye roles, actividades y artefactos) cuyo principal propósito es <strong><span class="blue">dirigir el desarrollo hacia el sistema correcto</span></strong> describiendo los requisitos del sistema de tal forma que se alcance el acuerdo entre el cliente, usuarios y desarrolladores sobre lo que el sistema debería hacer</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="para-qué"><strong>¿Para qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Efectividad, eficacia y eficiencia, del Proyecto Software</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buenas variables en su economía</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">ámbito cumplido</strong> y</p>
-</li>
-<li>
-<p><strong class="green">tiempo cumplido</strong> y</p>
-</li>
-<li>
-<p><strong class="green">coste cumplido</strong>;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buena calidad del software</strong>, <span class="green">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buena mantenibilidad</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">fluido</strong>, porque <span class="green">se puede entender con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">flexible</strong>, porque <span class="green">se puede cambiar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">fuerte</strong>, porque <span class="green">se puede probar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">reusable</strong>, porque <span class="green">se puede reutilizar con facilidad</span> y/o</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">complejidad necesaria</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/davidProyectoImplantacionDiseño.png" alt="davidProyectoImplantacionDiseño"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/arbolMantenible.jpeg" alt="arbolMantenible"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 22%;">
-<col style="width: 22%;">
-<col style="width: 12%;">
-<col style="width: 22%;">
-<col style="width: 22%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="5"><strong class="blue">Objetivos</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="green">Establecer y mantener el acuerdo</span></strong> con los clientes y otros implicados sobre lo que el sistema debería hacer</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Proveer a los desarrolladores del sistema con un <strong><span class="green">mejor comprensión</span></strong> del los requisitos del sistema</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Definir los <strong><span class="green">límites del sistema</span></strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Proveer las bases para <strong><span class="green">planificar los contenidos técnicos de cada iteración</span></strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Proveer las bases para la <strong><span class="green">estimación de costes y tiempos para desarrollar el sistema</span></strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" colspan="3"><div class="content"><div class="paragraph">
-<p><strong class="green">para</strong> las disciplinas técnicas: <strong class="green">análsis</strong>, <strong class="green">diseño</strong>, <strong class="green">implementación</strong> y <strong class="green">pruebas</strong></p>
-</div></div></td>
-<td class="tableblock halign-center valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p><strong class="green">para</strong> las disciplinas de infraestructuras: <strong class="green"><em>devop</em></strong> y <strong class="green">gestión</strong></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cómo"><strong>¿Cómo?</strong></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="actividades">Actividades</h2>
-<div class="sectionbody">
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/requirementDiscipline.svg" alt="requirementDiscipline" width="1200" height="1311">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Introduccion.jpg" alt="Introduccion"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="sect2">
-<h3 id="encontrar-actores-y-casos-de-uso">Encontrar Actores y Casos de Uso</h3>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/FindActorUseCases.svg" alt="FindActorUseCases" width="1054" height="803">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/EncontrarActoresCasosDeUso.jpg" alt="EncontrarActoresCasosDeUso"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Artefactos de Entrada</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="blue">Modelo del Dominio</span></strong></p>
-</li>
-<li>
-<p><strong><span class="blue">Requisitos Suplementarios</span></strong>: Requisitos no funcionales que especifican propiedades del sistema tales como restricciones de entorno e implementación, rendimiento, plataforma, mantenibilidad, extensibilidad y confiabilidad (-ilidades).</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/EncontrarActoresCasosDeUso3.svg" alt="EncontrarActoresCasosDeUso3" width="1100" height="575">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="blue">Lista de Características</span></strong>: muchas buenas ideas que podrían convertirse en requisitos reales (contrato). Cada característica tiene un nombre corto y una breve explicación o definición, justo con la información suficiente para ser posible hablar sobre la característica durante la planificación del producto. Cada característica podría incluir:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Estado (p.e. propuesto, aprobado, incorporado o validado)</p>
-</li>
-<li>
-<p>Coste estimado para la implementación (en términos de tipos de recursos y persona-hora)</p>
-</li>
-<li>
-<p>Prioridad (p.e. crítico, importante o irrelevante)</p>
-</li>
-<li>
-<p>Nivel de riesgo asociado en la implementación de la característica (p.e. crítico, significativo u ordinario)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/EncontrarActoresCasosDeUso2.svg" alt="EncontrarActoresCasosDeUso2" width="758" height="659">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Encontrar actores</span></strong></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Encontrar Casos de Uso</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Un actor especifica un rol que adopta una entidad externa cuando <strong class="blue">interactúa con el sistema directamente</strong> (<span class="red">no en respuesta</span>). Puede representar el rol de un <strong class="blue">usuario</strong> o el rol jugado por otro <strong class="blue">sistema que toca los límites de tu sistema</strong>. Los actores representan roles que personas o cosas juegan en relación con el sistema, <span class="red">no personas o cosas específicas</span> (p.e. administrador, no Pepe).</p>
-<div class="ulist">
-<ul>
-<li>
-<p>¿Quién o qué usa el sistema?</p>
-</li>
-<li>
-<p>¿Quién obtiene y provee información al sistema?</p>
-</li>
-<li>
-<p>¿Qué roles juegan en la interacción?</p>
-</li>
-<li>
-<p>Cuando necesitas modelar <span class="red">cosas que suceden en tu sistema en un punto específico del tiempo pero no parecen ser lanzados por ningún actor</span>, puedes introducir un <strong class="blue">actor Tiempo</strong> (p.e. sistema automático de backup, …)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Un caso de uso es una <strong class="blue">especificación de secuencias de acciones, incluyendo variaciones, que el sistema puede realizar y que dan un resultado observable de interés a un actor particular</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>El actor típicamente necesitará casos de uso para soportar su trabajo para <strong class="blue">crear, cambiar, seguir, borrar o estudiar objetos de negocio</strong></p>
-</li>
-<li>
-<p>Algunos de los casos de uso candidatos no llegarán a ser casos de uso en sí mismos. En vez de ello, <span class="red">mejor pueden ser partes de otros casos de uso</span></p>
-</li>
-<li>
-<p>Recordar que intentamos crear casos de uso que son fáciles de modificar, revisar, probar y gestionar como una <strong class="blue">unidad</strong></p>
-</li>
-<li>
-<p>Es útil modelar la <strong class="blue">trazabilidad entre los requisitos y la lista de características</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/EncontrarActoresCasosDeUso4.svg" alt="EncontrarActoresCasosDeUso4" width="381" height="717">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/EncontrarActoresCasosDeUso5.svg" alt="EncontrarActoresCasosDeUso5" width="873" height="538">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 35%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Describir brevemente cada caso de uso</span></strong></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Describir el modelo de casos de uso como un todo</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">A veces</strong> garabatear unas <strong class="blue">pocas palabras para explicar cada caso de uso</strong> y a veces simplemente escribir los nombres, que a menudo comienza con un verbo</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Explicar el <strong class="blue">modelo de casos de uso en su conjunto, particularmente la forma en el que los casos de uso se relacionan entre sí con diagramas de estado y de los actores con los diagramas de casos de uso</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Este paso incluye preparar un <strong class="blue">glosario de términos</strong></p>
-</li>
-<li>
-<p>Es muy útil permitir a las <strong class="blue">personas que no son parte del equipo de desarrollo aprobar el modelo de casos</strong> de uso conducido con una entrevista informal</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 70%;">
-<col style="width: 30%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/EncontrarActoresCasosDeUso6.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Diagrama de estados con transiciones de casos de uso asociados a los actores</em></p>
-</li>
-<li>
-<p><em>Se entiende que la transición se realiza en caso satisfactorio</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="priorizar-casos-de-uso">Priorizar Casos de Uso</h3>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/prioritizeUseCases.svg" alt="prioritizeUseCases" width="925" height="660">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/PriorizarCasosDeUso.jpg" alt="PriorizarCasosDeUso"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Priorizar Casos de Uso</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Determinar cuáles de ellos serán desarrollados</strong> (es decir, analizados, diseñados, implementados, y probados) en las <strong class="blue">primeras iteraciones</strong>, y cuáles se puede desarrollar en posteriores iteraciones tomando en consideración:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Aspectos técnicos</p>
-</li>
-<li>
-<p>Aspectos de redundancia</p>
-</li>
-<li>
-<p>Aspectos económicos</p>
-</li>
-<li>
-<p>Aspectos de negocio</p>
-</li>
-<li>
-<p>Aspectos obscuros de requisitos</p>
-</li>
-<li>
-<p>&#8230;&#8203; cualquier riesgo</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/PriorizarCasosDeUso2.svg" alt="PriorizarCasosDeUso2" width="1020" height="349">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="especificar-casos-de-uso">Especificar Casos de Uso</h3>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/detailUseCases.svg" alt="detailUseCases" width="877" height="660">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/DetallarCasosDeUso.jpg" alt="DetallarCasosDeUso"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 40%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong><span class="blue">Estructurar la descripción de los Casos de Uso</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Tenemos que <strong class="blue">describir la secuencia de acciones de los casos de uso, cómo estas acciones son invocadas por los actores y cómo es el resultado de su ejecución a petición del actor</strong></p>
-</li>
-<li>
-<p>Debería definir el <strong class="blue">estado de arranque como pre-condiciones</strong> y las posibles <strong class="blue">estados finales como post-condiciones</strong></p>
-</li>
-<li>
-<p>Elegir un <strong class="blue">camino básico completo desde el estado de arranque al estado final, en una sección, lo que dé el valor más obvio al actor</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Describir el <strong class="blue">resto de caminos como alternativas o desviaciones del camino básico</strong>, cada una en secciones separadas o si son suficientemente pequeñas pueden se explicadas “en línea”</p>
-</li>
-<li>
-<p>Estas variaciones pueden ocurrir por muchas razones:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Actor lo <strong class="blue">cancela</strong></p>
-</li>
-<li>
-<p>Sistema puede detectar <strong class="blue">errores</strong> de entrada</p>
-</li>
-<li>
-<p>Sistema puede estar mal funcionando por el sistema de <strong class="blue">recursos</strong></p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Especificar los <strong class="blue">requisitos no funcionales</strong> (p.e. velocidad, disponibilidad, precisión, tiempo de respuesta, tiempo de recuperación, &#8230;&#8203; con la que el sistema debe realizar un caso de uso dado</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 66.6666%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong><span class="blue">Formalizarlas descripciones de los casos de uso con diagramas de estados, actividad o secuencia</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Pero usar estas clases de <strong class="blue">diagramas con cuidado y suelen ser suficientes descripciones textuales</strong> puras</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="red">Contraindicaciones</span></strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>No incluir términos referentes al <strong class="red">“pensamiento o intenciones”</strong> del actor <em>(p.e.</em> <span class="red"><em>el jugador mira …, decide …, …</em></span>)  porque no atañe a nuestro sistema, no se van a “programar”</p>
-</li>
-<li>
-<p>No incluir términos referentes a la <strong class="red">ejecución del software</strong> <em>(p.e.</em> <span class="red"><em>se graba en la base de datos …, validar …, …</em></span>)  porque no atañe a los requisitos sino al análisis/diseño del software y serían decisiones prematuras</p>
-</li>
-<li>
-<p>No incluir términos referentes al diseño de la <strong class="red">interfaz de usuario</strong> <em>(p.e.</em> <span class="red">botón …, arrastra el ratón …, ventana de …, …_</span>)  porque no atañe a esta actividad, será en la última actividad de requisitos</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="green">Indicaciones:</span></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="green"><em>El actor introduce …, selecciona …y solicita …</em></span></p>
-</li>
-<li>
-<p><span class="green"><em>El sistema: permite introducir, permite seleccionar, permite solicitar … y presenta/muestra/visualiza …</em></span></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/DetallarCasosDeUso3.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/DetallarCasosDeUso2.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/DetallarCasosDeUso4.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="estructurar-casos-de-uso">Estructurar Casos de Uso</h3>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/structuringUseCases.svg" alt="structuringUseCases" width="877" height="660">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/EstructurarCasosDeUso.jpg" alt="EstructurarCasosDeUso"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Identificar descripciones de funcionalidad compartida</span></strong></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Identificar descripciones opcionales y adicionales de funcionalidad</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Para reducir la redundancia, deberíamos mirar por las <strong class="blue">acciones o partes de acciones que son comunes</strong> o compartidas por varios casos de uso</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Una <strong class="blue">generalización</strong> de un caso de uso A aun caso de uso B indica que una instancia del caso de uso A también <strong class="blue">incluiría el comportamiento especificado</strong> por B</p>
-</li>
-<li>
-<p>Los casos de uso concretos son iniciados por un actor y sus instancias constituyen una secuencia completa de acciones realizadas por el sistema</p>
-</li>
-<li>
-<p>Los <strong class="blue">casos de uso abstractos</strong> no serán instanciados por sí mismos, existen solo por otros casos de uso para su <strong class="blue">reusabilidad</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Una <strong class="blue">inclusión/extensión</strong> se comporta como si fuera algo que se <strong class="blue">añade en la descripción original</strong> de un caso de uso</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Una <strong class="blue">relación de extensión</strong> desde un caso de uso A aun caso de uso B indica que una instancia del caso de uso B <strong class="blue">puede incluir</strong> el comportamiento especificado por A. Incluye una condición para la extensión</p>
-</li>
-<li>
-<p>Una <strong class="blue">relación de inclusión</strong> puede pensarse simplemente como la inversa de la relación de extensión que provee una <strong class="blue">explícita e incondicional extensión</strong> a un caso de uso</p>
-</li>
-<li>
-<p>En ambos casos, incluye una <strong class="blue">referencia al punto de extensión en el caso de uso destino</strong>, esto es, una posición (sujeto a las condiciones establecidas en la extensión) en el caso de uso donde la extensión puede ser hecha</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/EstructurarCasosDeUso2.svg" alt="EstructurarCasosDeUso2" width="609" height="464">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="prototipar-interfaz-de-usuario">Prototipar Interfaz de Usuario</h3>
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/prototypeUserInterface.svg" alt="prototypeUserInterface" width="1112" height="660">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/PrototiparInterfazDeUsuario.jpg" alt="PrototiparInterfazDeUsuario"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 65%;">
-<col style="width: 35%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Crear un diseño lógico de la Interfaz de Usuario</span></strong></th>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Crear un diseño físico de la Interfaz de usuario</span></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>¿Qué necesita la interfaz de usuario para permitir los casos de uso para cada actor?</p>
-</li>
-<li>
-<p>¿Qué elementos de la interfaz de usuario son necesarios para permitir la realización del casos de uso (p.e. iconos, lista de ítems, carpetas u objetos sobre un mapas en 2D)</p>
-</li>
-<li>
-<p>¿Cómo deberían ser relacionado con otros?</p>
-</li>
-<li>
-<p>¿Cómo se usarán en distintos casos?</p>
-</li>
-<li>
-<p>¿Qué aspecto tienen?</p>
-</li>
-<li>
-<p>¿Cómo deberían ser manipulados?</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Preparar bocetos de la constelación de elementos de interfaz de usuario que forman la interfaz de usuario útil para los actores</p>
-</li>
-<li>
-<p>Esbozar elementos adicionales que se necesitan para combinar los distinto elementos de la interfaz de usuario para completarla (p.e. carpetas, ventanas, barras de herramientas y controles)</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong><span class="blue">Preparar un prototipo ejecutable</span></strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Diseño de Ventanas y flujo</strong> con <a href="https://www.google.com/search?q=mockups+software+tool&amp;rlz=1C1DIMC_esES879ES879&amp;sxsrf=AOaemvLc0Qzsh-zyh8nTREFCRuGmrf_65A:1638481785631&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwji57WmjMb0AhUsh_0HHW5vDQ8Q_AUoAXoECAEQAw&amp;biw=1680&amp;bih=882&amp;dpr=1"><strong class="blue">Mockups</strong></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Herramientas de prototipado rápido para cada actor</p>
-</li>
-<li>
-<p>Validar la interfaz de usuario a través de entrevistas con los prototipos y bocetos en un punto inicial puede prevenir errores que serán más caros de corregir más tarde</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/PrototiparInterfazDeUsuario3.png" alt="height32">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-Si una imagen vale más que mil palabras, un prototipo vale más que mil reuniones
-</blockquote>
-<div class="attribution">
-&#8212; Tom and David Kelley<br>
-<cite>IDEO</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/PrototiparInterfazDeUsuario2.png" alt="height32">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Trazabilidad Casos de Uso x Pantalla</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Trazabilidad Estados del Contexto x Pantalla</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/PrototiparInterfazDeUsuario6.png" alt="height32">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/PrototiparInterfazDeUsuario7.png" alt="height32">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="artefactos">Artefactos</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="41-vistas">4+1 Vistas</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 85%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Índice</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Enlaces a 4+1 vistas y modelo del dominio</p>
-</li>
-<li>
-<p>Cardinalidad: <strong>1</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/viewIndex.svg" alt="viewIndex" width="352" height="371">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="vista-de-casos-de-uso">Vista de Casos de Uso</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 85%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Índice</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Enlaces a actores, casos de uso, &#8230;&#8203;</p>
-</li>
-<li>
-<p>Cardinalidad: <strong>1</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/caseViewIndex.svg" alt="caseViewIndex" width="497" height="515">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Actores</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Diagrama de Casos de Uso</p>
-</li>
-<li>
-<p>Cardinalidad: <strong class="red">0..&lt;paquetesActores&gt;</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/actors.svg" alt="actors" width="502" height="407">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Casos de Uso</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Diagrama de Casos de Uso</p>
-</li>
-<li>
-<p>Cardinalidad: <strong>1..&lt;paquetesCasosUso&gt;</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/useCases.svg" alt="useCases" width="678" height="535">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Contexto</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Diagrama de Estados, <strong class="red">transición con casos de uso</strong></p>
-</li>
-<li>
-<p>Cardinalidad: <strong>1..&lt;subestados&gt;</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/context.svg" alt="context" width="1853" height="1163">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Especificación de Casos de Uso</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Diagrama de Estados, <strong class="red">transición con acciones entre actor y sistema (caja negra)</strong></p>
-</li>
-<li>
-<p>Cardinalidad: <strong>1..&lt;casosUso&gt;</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/specification.svg" alt="specification" width="1863" height="2163">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Prototipo</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Diagrama de Casos de Uso</p>
-</li>
-<li>
-<p>Cardinalidad: <strong>1..&lt;ventanas&gt;</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/prototipo.png" alt="prototipo"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="síntesis"><strong>Síntesis</strong></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 50%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><em class="blue">Soy un cliente con dinero para pagar a tu empresa si tu equipo desarrolla la aplicación que deseo</em>:</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red">¿Sabrías qué y cómo preguntarme, en qué orden y hasta qué nivel de detalle?</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red">¿Cuál sería el formato adecuado del resultado de las reuniones?</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red">¿Como repartirías las tareas de requisitos entre las personas del equipo de desarrollo? ¿Con cuántas personas empezarías?</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Modelo del Dominio</strong>,</p>
-</li>
-<li>
-<p><strong class="green">Actores</strong>,</p>
-</li>
-<li>
-<p><strong class="green">Casos de Uso</strong>,</p>
-</li>
-<li>
-<p><strong class="green">Detalle de Casos de Uso</strong>,</p>
-</li>
-<li>
-<p><strong class="green">Prototipo de Interfaz</strong>,</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Diagramas de Clases, Objetos, Actividad, Estados, &#8230;&#8203; para el Modelo de Dominio</strong>,</p>
-</li>
-<li>
-<p><strong class="green">Diagramas de Casos de Uso para Actores y Casos de Uso</strong>,</p>
-</li>
-<li>
-<p><strong class="green">Diagramas de Estados o Actividad o Secuencia o textos para el detalle de Casos de Uso</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Estimando cada actividad</strong>, entre 2 y 20 horas, y</p>
-</li>
-<li>
-<p><strong class="green">Repartiendo cohesivamente</strong> entre el equipo de desarrollo</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" colspan="3"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203; con <strong class="green">trazabilidad</strong> de todo!</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="bibliografía"><strong>Bibliografía</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Unified Software Development Process</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch, Ivar Jacobson y James Rumbaugh</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (1999)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheUnifiedSoftwareDevelopmentProcess.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Rational Unified Process Made Easy, The: A Practitioner&#8217;s Guide to the RUP</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch, , Ivar Jacobson y James Rumbaugh</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2003)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/RationalUnifiedProcessMadeEasy.png" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Craig Larman</strong></p>
-</li>
-<li>
-<p>Pearson; (2004)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ApplyingUML.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Object Solutions. Managing the Object Oriented Project</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Benjamin Cummings; (1995)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ObjectSolutionsManagingObjectOrientedProject.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Object Oriented Analysis and Design with Applications</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2011)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ObjectOrientedAnalysisAndDesingnWhitApplications.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>The Unified Modeling Language User Guide</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Pearson; (2005)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheUnifiedModelingLanguageUserGuide.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>UML Distilled. A Brief Guide to the Standard Object Modeling Language</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Martin Fowler,Kendall Scott</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2003)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/UMLDistilledABriefGuideStandardObjectModelingLanguage.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ponente">Ponente</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 30%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Luis Fernández Muñoz</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Formador/Consultor</em></p>
-</li>
-<li>
-<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
-</li>
-<li>
-<p><em>Ingeniero en Informática por la UMA</em></p>
-</li>
-<li>
-<p><em>Diplomado en Informática por la UPM</em></p>
-</li>
-<li>
-<p><em>Profesor Titular de ETSISI de la UPM</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="footer">
-<div id="footer-text">
-Version 0.0.1<br>
-Last updated 2022-10-16 16:31:02 +0200
-</div>
-</div>
-<script>
-                let speed = 50;
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+ </head>
+ <body class="book">
+  <div id="header">
+   <h1>
+    Disciplina de Requisitos
+   </h1>
+   <div class="details">
+    <span class="author" id="author">
+     Universo Santa Tecla
+    </span>
+    <br/>
+    <span class="email" id="email">
+     <a href="mailto:universoSantaTecla@gmail.com">
+      universoSantaTecla@gmail.com
+     </a>
+    </span>
+    <br/>
+    <span id="revnumber">
+     version 0.0.1
+    </span>
+   </div>
+   <div class="toc" id="toc">
+    <div id="toctitle">
+     Índice
+    </div>
+    <ul class="sectlevel1">
+     <li>
+      <a href="#por-qué">
+       <strong>
+        ¿Por qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#qué">
+       <strong>
+        ¿Qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#para-qué">
+       <strong>
+        ¿Para qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#cómo">
+       <strong>
+        ¿Cómo?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#actividades">
+       Actividades
+      </a>
+      <ul class="sectlevel2">
+       <li>
+        <a href="#encontrar-actores-y-casos-de-uso">
+         Encontrar Actores y Casos de Uso
+        </a>
+       </li>
+       <li>
+        <a href="#priorizar-casos-de-uso">
+         Priorizar Casos de Uso
+        </a>
+       </li>
+       <li>
+        <a href="#especificar-casos-de-uso">
+         Especificar Casos de Uso
+        </a>
+       </li>
+       <li>
+        <a href="#estructurar-casos-de-uso">
+         Estructurar Casos de Uso
+        </a>
+       </li>
+       <li>
+        <a href="#prototipar-interfaz-de-usuario">
+         Prototipar Interfaz de Usuario
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="#artefactos">
+       Artefactos
+      </a>
+      <ul class="sectlevel2">
+       <li>
+        <a href="#41-vistas">
+         4+1 Vistas
+        </a>
+       </li>
+       <li>
+        <a href="#vista-de-casos-de-uso">
+         Vista de Casos de Uso
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="#síntesis">
+       <strong>
+        Síntesis
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#bibliografía">
+       <strong>
+        Bibliografía
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#ponente">
+       Ponente
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div id="content">
+   <div id="preamble">
+    <div class="sectionbody">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="por-qué">
+     <strong>
+      ¿Por qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  malas variables en su economía
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     ámbito incumplido
+                    </strong>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     tiempo incumplido
+                    </strong>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     coste incumplido
+                    </strong>
+                    ;
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  mala calidad del software
+                 </strong>
+                 ,
+                 <span class="red">
+                  fiabilidad, usabilidad, interoperatividad, seguirdad, …​ (
+                  <em>
+                   -ilities
+                  </em>
+                  )
+                 </span>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  mala mantenibilidad
+                 </strong>
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     viscoso
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede entender con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     rígido
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede cambiar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     frágil
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede probar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     inmovil
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede reutilizar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  complejidad arbitraria
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="davidProyectoImplantacionDiseñoMal" src="images/davidProyectoImplantacionDiseñoMal.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="arbolNoMantenible" src="images/arbolNoMantenible.jpeg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3334%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         <strong class="red">
+          Soy el cliente de la aplicación que deseo
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="red">
+          Eres el jefe de proyecto de la aplicación
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="red">
+          Soy un miembro del equipo directivos de tu empresa
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               <strong>
+                ¿Sabrías qué y cómo preguntarme, en qué orden y hasta qué nivel de detalle y cuándo?
+               </strong>
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="red">
+               <strong>
+                ¿Cuál sería el formato adecuado del resultado de las reuniones?
+               </strong>
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="red">
+               <strong>
+                ¿Cómo repartirías las tareas de requisitos entre las personas del equipo de desarrollo? ¿Con cuántas personas empezarías?
+               </strong>
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               ¿Por qué parte comenzarías, continuarías y terminarias la producción de código?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="red">
+               ¿Qué medidas aplicarías para obtener la calidad del software adecuada para facilitar la depuración de errores, la mantenibilidad corrective, perfective o adaptativa?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="red">
+               ¿Cómo repartirías las tareas de producción entre las personas del equipo de desarrollo?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="red">
+               ¿Cuánta gente incorporarías?
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               ¿Sabrías justificarme mes a mes qué tiempo se tardará en terminar el proyecto con el personal asignado en distintos momentos de proyecto?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="red">
+               ¿Sabrías justificarme el grado de satisfacción del cliente durante el transcurso del proyecto?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="red">
+               ¿Sabrías justificarme cuántas personas añadir al proyecto para reducir el tiempo de desarrollo?
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="qué">
+     <strong>
+      ¿Qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="ulist">
+      <ul>
+       <li>
+        <p>
+         <strong>
+          <span class="blue">
+           Disciplina de Requisitos
+          </span>
+         </strong>
+         es el flujo de trabajo (realización de casos de uso que incluye roles, actividades y artefactos) cuyo principal propósito es
+         <strong>
+          <span class="blue">
+           dirigir el desarrollo hacia el sistema correcto
+          </span>
+         </strong>
+         describiendo los requisitos del sistema de tal forma que se alcance el acuerdo entre el cliente, usuarios y desarrolladores sobre lo que el sistema debería hacer
+        </p>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="para-qué">
+     <strong>
+      ¿Para qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Efectividad, eficacia y eficiencia, del Proyecto Software
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buenas variables en su economía
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     ámbito cumplido
+                    </strong>
+                    y
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     tiempo cumplido
+                    </strong>
+                    y
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     coste cumplido
+                    </strong>
+                    ;
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buena calidad del software
+                 </strong>
+                 ,
+                 <span class="green">
+                  fiabilidad, usabilidad, interoperatividad, seguirdad, …​ (
+                  <em>
+                   -ilities
+                  </em>
+                  )
+                 </span>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buena mantenibilidad
+                 </strong>
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     fluido
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede entender con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     flexible
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede cambiar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     fuerte
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede probar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     reusable
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede reutilizar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  complejidad necesaria
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="davidProyectoImplantacionDiseño" src="images/davidProyectoImplantacionDiseño.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="arbolMantenible" src="images/arbolMantenible.jpeg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 22%;"/>
+       <col style="width: 22%;"/>
+       <col style="width: 12%;"/>
+       <col style="width: 22%;"/>
+       <col style="width: 22%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="5">
+         <strong class="blue">
+          Objetivos
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <span class="green">
+                Establecer y mantener el acuerdo
+               </span>
+              </strong>
+              con los clientes y otros implicados sobre lo que el sistema debería hacer
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Proveer a los desarrolladores del sistema con un
+              <strong>
+               <span class="green">
+                mejor comprensión
+               </span>
+              </strong>
+              del los requisitos del sistema
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Definir los
+              <strong>
+               <span class="green">
+                límites del sistema
+               </span>
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Proveer las bases para
+              <strong>
+               <span class="green">
+                planificar los contenidos técnicos de cada iteración
+               </span>
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Proveer las bases para la
+              <strong>
+               <span class="green">
+                estimación de costes y tiempos para desarrollar el sistema
+               </span>
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-top" colspan="3">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="green">
+             para
+            </strong>
+            las disciplinas técnicas:
+            <strong class="green">
+             análsis
+            </strong>
+            ,
+            <strong class="green">
+             diseño
+            </strong>
+            ,
+            <strong class="green">
+             implementación
+            </strong>
+            y
+            <strong class="green">
+             pruebas
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-top" colspan="2">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="green">
+             para
+            </strong>
+            las disciplinas de infraestructuras:
+            <strong class="green">
+             <em>
+              devop
+             </em>
+            </strong>
+            y
+            <strong class="green">
+             gestión
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="cómo">
+     <strong>
+      ¿Cómo?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="actividades">
+     Actividades
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-none grid-none stretch">
+      <colgroup>
+       <col style="width: 100%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="requirementDiscipline" height="1311" src="images/requirementDiscipline.svg" width="1200"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="Introduccion" src="images/Introduccion.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="sect2">
+      <h3 id="encontrar-actores-y-casos-de-uso">
+       Encontrar Actores y Casos de Uso
+      </h3>
+      <table class="tableblock frame-none grid-none stretch">
+       <colgroup>
+        <col style="width: 100%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="FindActorUseCases" height="803" src="images/FindActorUseCases.svg" width="1054"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="EncontrarActoresCasosDeUso" src="images/EncontrarActoresCasosDeUso.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 60%;"/>
+        <col style="width: 40%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          <strong>
+           <span class="blue">
+            Artefactos de Entrada
+           </span>
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                <span class="blue">
+                 Modelo del Dominio
+                </span>
+               </strong>
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                <span class="blue">
+                 Requisitos Suplementarios
+                </span>
+               </strong>
+               : Requisitos no funcionales que especifican propiedades del sistema tales como restricciones de entorno e implementación, rendimiento, plataforma, mantenibilidad, extensibilidad y confiabilidad (-ilidades).
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="EncontrarActoresCasosDeUso3" height="575" src="images/EncontrarActoresCasosDeUso3.svg" width="1100"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                <span class="blue">
+                 Lista de Características
+                </span>
+               </strong>
+               : muchas buenas ideas que podrían convertirse en requisitos reales (contrato). Cada característica tiene un nombre corto y una breve explicación o definición, justo con la información suficiente para ser posible hablar sobre la característica durante la planificación del producto. Cada característica podría incluir:
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Estado (p.e. propuesto, aprobado, incorporado o validado)
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Coste estimado para la implementación (en términos de tipos de recursos y persona-hora)
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Prioridad (p.e. crítico, importante o irrelevante)
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Nivel de riesgo asociado en la implementación de la característica (p.e. crítico, significativo u ordinario)
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="EncontrarActoresCasosDeUso2" height="659" src="images/EncontrarActoresCasosDeUso2.svg" width="758"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Encontrar actores
+           </span>
+          </strong>
+         </th>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Encontrar Casos de Uso
+           </span>
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Un actor especifica un rol que adopta una entidad externa cuando
+               <strong class="blue">
+                interactúa con el sistema directamente
+               </strong>
+               (
+               <span class="red">
+                no en respuesta
+               </span>
+               ). Puede representar el rol de un
+               <strong class="blue">
+                usuario
+               </strong>
+               o el rol jugado por otro
+               <strong class="blue">
+                sistema que toca los límites de tu sistema
+               </strong>
+               . Los actores representan roles que personas o cosas juegan en relación con el sistema,
+               <span class="red">
+                no personas o cosas específicas
+               </span>
+               (p.e. administrador, no Pepe).
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  ¿Quién o qué usa el sistema?
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  ¿Quién obtiene y provee información al sistema?
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  ¿Qué roles juegan en la interacción?
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Cuando necesitas modelar
+                  <span class="red">
+                   cosas que suceden en tu sistema en un punto específico del tiempo pero no parecen ser lanzados por ningún actor
+                  </span>
+                  , puedes introducir un
+                  <strong class="blue">
+                   actor Tiempo
+                  </strong>
+                  (p.e. sistema automático de backup, …)
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Un caso de uso es una
+               <strong class="blue">
+                especificación de secuencias de acciones, incluyendo variaciones, que el sistema puede realizar y que dan un resultado observable de interés a un actor particular
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  El actor típicamente necesitará casos de uso para soportar su trabajo para
+                  <strong class="blue">
+                   crear, cambiar, seguir, borrar o estudiar objetos de negocio
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Algunos de los casos de uso candidatos no llegarán a ser casos de uso en sí mismos. En vez de ello,
+                  <span class="red">
+                   mejor pueden ser partes de otros casos de uso
+                  </span>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Recordar que intentamos crear casos de uso que son fáciles de modificar, revisar, probar y gestionar como una
+                  <strong class="blue">
+                   unidad
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Es útil modelar la
+                  <strong class="blue">
+                   trazabilidad entre los requisitos y la lista de características
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="EncontrarActoresCasosDeUso4" height="717" src="images/EncontrarActoresCasosDeUso4.svg" width="381"/>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="EncontrarActoresCasosDeUso5" height="538" src="images/EncontrarActoresCasosDeUso5.svg" width="873"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 35%;"/>
+        <col style="width: 65%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Describir brevemente cada caso de uso
+           </span>
+          </strong>
+         </th>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Describir el modelo de casos de uso como un todo
+           </span>
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="red">
+                A veces
+               </strong>
+               garabatear unas
+               <strong class="blue">
+                pocas palabras para explicar cada caso de uso
+               </strong>
+               y a veces simplemente escribir los nombres, que a menudo comienza con un verbo
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Explicar el
+               <strong class="blue">
+                modelo de casos de uso en su conjunto, particularmente la forma en el que los casos de uso se relacionan entre sí con diagramas de estado y de los actores con los diagramas de casos de uso
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Este paso incluye preparar un
+                  <strong class="blue">
+                   glosario de términos
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Es muy útil permitir a las
+                  <strong class="blue">
+                   personas que no son parte del equipo de desarrollo aprobar el modelo de casos
+                  </strong>
+                  de uso conducido con una entrevista informal
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 70%;"/>
+        <col style="width: 30%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="height32" src="images/EncontrarActoresCasosDeUso6.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <em>
+                Diagrama de estados con transiciones de casos de uso asociados a los actores
+               </em>
+              </p>
+             </li>
+             <li>
+              <p>
+               <em>
+                Se entiende que la transición se realiza en caso satisfactorio
+               </em>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="priorizar-casos-de-uso">
+       Priorizar Casos de Uso
+      </h3>
+      <table class="tableblock frame-none grid-none stretch">
+       <colgroup>
+        <col style="width: 100%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="prioritizeUseCases" height="660" src="images/prioritizeUseCases.svg" width="925"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="PriorizarCasosDeUso" src="images/PriorizarCasosDeUso.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          <strong>
+           <span class="blue">
+            Priorizar Casos de Uso
+           </span>
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="blue">
+                Determinar cuáles de ellos serán desarrollados
+               </strong>
+               (es decir, analizados, diseñados, implementados, y probados) en las
+               <strong class="blue">
+                primeras iteraciones
+               </strong>
+               , y cuáles se puede desarrollar en posteriores iteraciones tomando en consideración:
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Aspectos técnicos
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Aspectos de redundancia
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Aspectos económicos
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Aspectos de negocio
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Aspectos obscuros de requisitos
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  …​ cualquier riesgo
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="PriorizarCasosDeUso2" height="349" src="images/PriorizarCasosDeUso2.svg" width="1020"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="especificar-casos-de-uso">
+       Especificar Casos de Uso
+      </h3>
+      <table class="tableblock frame-none grid-none stretch">
+       <colgroup>
+        <col style="width: 100%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="detailUseCases" height="660" src="images/detailUseCases.svg" width="877"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="DetallarCasosDeUso" src="images/DetallarCasosDeUso.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 40%;"/>
+        <col style="width: 40%;"/>
+        <col style="width: 20%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="3">
+          <strong>
+           <span class="blue">
+            Estructurar la descripción de los Casos de Uso
+           </span>
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Tenemos que
+               <strong class="blue">
+                describir la secuencia de acciones de los casos de uso, cómo estas acciones son invocadas por los actores y cómo es el resultado de su ejecución a petición del actor
+               </strong>
+              </p>
+             </li>
+             <li>
+              <p>
+               Debería definir el
+               <strong class="blue">
+                estado de arranque como pre-condiciones
+               </strong>
+               y las posibles
+               <strong class="blue">
+                estados finales como post-condiciones
+               </strong>
+              </p>
+             </li>
+             <li>
+              <p>
+               Elegir un
+               <strong class="blue">
+                camino básico completo desde el estado de arranque al estado final, en una sección, lo que dé el valor más obvio al actor
+               </strong>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Describir el
+               <strong class="blue">
+                resto de caminos como alternativas o desviaciones del camino básico
+               </strong>
+               , cada una en secciones separadas o si son suficientemente pequeñas pueden se explicadas “en línea”
+              </p>
+             </li>
+             <li>
+              <p>
+               Estas variaciones pueden ocurrir por muchas razones:
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Actor lo
+                  <strong class="blue">
+                   cancela
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Sistema puede detectar
+                  <strong class="blue">
+                   errores
+                  </strong>
+                  de entrada
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Sistema puede estar mal funcionando por el sistema de
+                  <strong class="blue">
+                   recursos
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  …​
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Especificar los
+               <strong class="blue">
+                requisitos no funcionales
+               </strong>
+               (p.e. velocidad, disponibilidad, precisión, tiempo de respuesta, tiempo de recuperación, …​ con la que el sistema debe realizar un caso de uso dado
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 66.6666%;"/>
+        <col style="width: 33.3334%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          <strong>
+           <span class="blue">
+            Formalizarlas descripciones de los casos de uso con diagramas de estados, actividad o secuencia
+           </span>
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Pero usar estas clases de
+               <strong class="blue">
+                diagramas con cuidado y suelen ser suficientes descripciones textuales
+               </strong>
+               puras
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                <span class="red">
+                 Contraindicaciones
+                </span>
+               </strong>
+               :
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  No incluir términos referentes al
+                  <strong class="red">
+                   “pensamiento o intenciones”
+                  </strong>
+                  del actor
+                  <em>
+                   (p.e.
+                  </em>
+                  <span class="red">
+                   <em>
+                    el jugador mira …, decide …, …
+                   </em>
+                  </span>
+                  )  porque no atañe a nuestro sistema, no se van a “programar”
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  No incluir términos referentes a la
+                  <strong class="red">
+                   ejecución del software
+                  </strong>
+                  <em>
+                   (p.e.
+                  </em>
+                  <span class="red">
+                   <em>
+                    se graba en la base de datos …, validar …, …
+                   </em>
+                  </span>
+                  )  porque no atañe a los requisitos sino al análisis/diseño del software y serían decisiones prematuras
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  No incluir términos referentes al diseño de la
+                  <strong class="red">
+                   interfaz de usuario
+                  </strong>
+                  <em>
+                   (p.e.
+                  </em>
+                  <span class="red">
+                   botón …, arrastra el ratón …, ventana de …, …_
+                  </span>
+                  )  porque no atañe a esta actividad, será en la última actividad de requisitos
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                <span class="green">
+                 Indicaciones:
+                </span>
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <span class="green">
+                   <em>
+                    El actor introduce …, selecciona …y solicita …
+                   </em>
+                  </span>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <span class="green">
+                   <em>
+                    El sistema: permite introducir, permite seleccionar, permite solicitar … y presenta/muestra/visualiza …
+                   </em>
+                  </span>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle" colspan="2">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="height32" src="images/DetallarCasosDeUso3.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle" colspan="2">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="height32" src="images/DetallarCasosDeUso2.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle" colspan="2">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="height32" src="images/DetallarCasosDeUso4.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="estructurar-casos-de-uso">
+       Estructurar Casos de Uso
+      </h3>
+      <table class="tableblock frame-none grid-none stretch">
+       <colgroup>
+        <col style="width: 100%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="structuringUseCases" height="660" src="images/structuringUseCases.svg" width="877"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="EstructurarCasosDeUso" src="images/EstructurarCasosDeUso.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Identificar descripciones de funcionalidad compartida
+           </span>
+          </strong>
+         </th>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Identificar descripciones opcionales y adicionales de funcionalidad
+           </span>
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Para reducir la redundancia, deberíamos mirar por las
+               <strong class="blue">
+                acciones o partes de acciones que son comunes
+               </strong>
+               o compartidas por varios casos de uso
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Una
+                  <strong class="blue">
+                   generalización
+                  </strong>
+                  de un caso de uso A aun caso de uso B indica que una instancia del caso de uso A también
+                  <strong class="blue">
+                   incluiría el comportamiento especificado
+                  </strong>
+                  por B
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Los casos de uso concretos son iniciados por un actor y sus instancias constituyen una secuencia completa de acciones realizadas por el sistema
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Los
+                  <strong class="blue">
+                   casos de uso abstractos
+                  </strong>
+                  no serán instanciados por sí mismos, existen solo por otros casos de uso para su
+                  <strong class="blue">
+                   reusabilidad
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Una
+               <strong class="blue">
+                inclusión/extensión
+               </strong>
+               se comporta como si fuera algo que se
+               <strong class="blue">
+                añade en la descripción original
+               </strong>
+               de un caso de uso
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Una
+                  <strong class="blue">
+                   relación de extensión
+                  </strong>
+                  desde un caso de uso A aun caso de uso B indica que una instancia del caso de uso B
+                  <strong class="blue">
+                   puede incluir
+                  </strong>
+                  el comportamiento especificado por A. Incluye una condición para la extensión
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Una
+                  <strong class="blue">
+                   relación de inclusión
+                  </strong>
+                  puede pensarse simplemente como la inversa de la relación de extensión que provee una
+                  <strong class="blue">
+                   explícita e incondicional extensión
+                  </strong>
+                  a un caso de uso
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  En ambos casos, incluye una
+                  <strong class="blue">
+                   referencia al punto de extensión en el caso de uso destino
+                  </strong>
+                  , esto es, una posición (sujeto a las condiciones establecidas en la extensión) en el caso de uso donde la extensión puede ser hecha
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle" colspan="2">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="EstructurarCasosDeUso2" height="464" src="images/EstructurarCasosDeUso2.svg" width="609"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="prototipar-interfaz-de-usuario">
+       Prototipar Interfaz de Usuario
+      </h3>
+      <table class="tableblock frame-none grid-none stretch">
+       <colgroup>
+        <col style="width: 100%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="prototypeUserInterface" height="660" src="images/prototypeUserInterface.svg" width="1112"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="PrototiparInterfazDeUsuario" src="images/PrototiparInterfazDeUsuario.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 65%;"/>
+        <col style="width: 35%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Crear un diseño lógico de la Interfaz de Usuario
+           </span>
+          </strong>
+         </th>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Crear un diseño físico de la Interfaz de usuario
+           </span>
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               ¿Qué necesita la interfaz de usuario para permitir los casos de uso para cada actor?
+              </p>
+             </li>
+             <li>
+              <p>
+               ¿Qué elementos de la interfaz de usuario son necesarios para permitir la realización del casos de uso (p.e. iconos, lista de ítems, carpetas u objetos sobre un mapas en 2D)
+              </p>
+             </li>
+             <li>
+              <p>
+               ¿Cómo deberían ser relacionado con otros?
+              </p>
+             </li>
+             <li>
+              <p>
+               ¿Cómo se usarán en distintos casos?
+              </p>
+             </li>
+             <li>
+              <p>
+               ¿Qué aspecto tienen?
+              </p>
+             </li>
+             <li>
+              <p>
+               ¿Cómo deberían ser manipulados?
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Preparar bocetos de la constelación de elementos de interfaz de usuario que forman la interfaz de usuario útil para los actores
+              </p>
+             </li>
+             <li>
+              <p>
+               Esbozar elementos adicionales que se necesitan para combinar los distinto elementos de la interfaz de usuario para completarla (p.e. carpetas, ventanas, barras de herramientas y controles)
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 66.6667%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           <span class="blue">
+            Preparar un prototipo ejecutable
+           </span>
+          </strong>
+         </th>
+         <th class="tableblock halign-left valign-top">
+          <strong class="blue">
+           Diseño de Ventanas y flujo
+          </strong>
+          con
+          <a href="https://www.google.com/search?q=mockups+software+tool&amp;rlz=1C1DIMC_esES879ES879&amp;sxsrf=AOaemvLc0Qzsh-zyh8nTREFCRuGmrf_65A:1638481785631&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwji57WmjMb0AhUsh_0HHW5vDQ8Q_AUoAXoECAEQAw&amp;biw=1680&amp;bih=882&amp;dpr=1">
+           <strong class="blue">
+            Mockups
+           </strong>
+          </a>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Herramientas de prototipado rápido para cada actor
+              </p>
+             </li>
+             <li>
+              <p>
+               Validar la interfaz de usuario a través de entrevistas con los prototipos y bocetos en un punto inicial puede prevenir errores que serán más caros de corregir más tarde
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="height32" src="images/PrototiparInterfazDeUsuario3.png"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="quoteblock">
+            <blockquote>
+             Si una imagen vale más que mil palabras, un prototipo vale más que mil reuniones
+            </blockquote>
+            <div class="attribution">
+             — Tom and David Kelley
+             <br/>
+             <cite>
+              IDEO
+             </cite>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="height32" src="images/PrototiparInterfazDeUsuario2.png"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          <strong class="blue">
+           Trazabilidad Casos de Uso x Pantalla
+          </strong>
+         </th>
+         <th class="tableblock halign-left valign-top">
+          <strong class="blue">
+           Trazabilidad Estados del Contexto x Pantalla
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="height32" src="images/PrototiparInterfazDeUsuario6.png"/>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="height32" src="images/PrototiparInterfazDeUsuario7.png"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="artefactos">
+     Artefactos
+    </h2>
+    <div class="sectionbody">
+     <div class="sect2">
+      <h3 id="41-vistas">
+       4+1 Vistas
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 15%;"/>
+        <col style="width: 85%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Índice
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Enlaces a 4+1 vistas y modelo del dominio
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Cardinalidad:
+                  <strong>
+                   1
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="viewIndex" height="371" src="images/viewIndex.svg" width="352"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="vista-de-casos-de-uso">
+       Vista de Casos de Uso
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 15%;"/>
+        <col style="width: 85%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Índice
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Enlaces a actores, casos de uso, …​
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Cardinalidad:
+                  <strong>
+                   1
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="caseViewIndex" height="515" src="images/caseViewIndex.svg" width="497"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="red">
+                Actores
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Diagrama de Casos de Uso
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Cardinalidad:
+                  <strong class="red">
+                   0..&lt;paquetesActores&gt;
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="actors" height="407" src="images/actors.svg" width="502"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Casos de Uso
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Diagrama de Casos de Uso
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Cardinalidad:
+                  <strong>
+                   1..&lt;paquetesCasosUso&gt;
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="useCases" height="535" src="images/useCases.svg" width="678"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Contexto
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Diagrama de Estados,
+                  <strong class="red">
+                   transición con casos de uso
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Cardinalidad:
+                  <strong>
+                   1..&lt;subestados&gt;
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="context" height="1163" src="images/context.svg" width="1853"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Especificación de Casos de Uso
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Diagrama de Estados,
+                  <strong class="red">
+                   transición con acciones entre actor y sistema (caja negra)
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Cardinalidad:
+                  <strong>
+                   1..&lt;casosUso&gt;
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="specification" height="2163" src="images/specification.svg" width="1863"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Prototipo
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Diagrama de Casos de Uso
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Cardinalidad:
+                  <strong>
+                   1..&lt;ventanas&gt;
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="prototipo" src="images/prototipo.png"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="síntesis">
+     <strong>
+      Síntesis
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 50%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="3">
+         <em class="blue">
+          Soy un cliente con dinero para pagar a tu empresa si tu equipo desarrolla la aplicación que deseo
+         </em>
+         :
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               ¿Sabrías qué y cómo preguntarme, en qué orden y hasta qué nivel de detalle?
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               ¿Cuál sería el formato adecuado del resultado de las reuniones?
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               ¿Como repartirías las tareas de requisitos entre las personas del equipo de desarrollo? ¿Con cuántas personas empezarías?
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Modelo del Dominio
+              </strong>
+              ,
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="green">
+               Actores
+              </strong>
+              ,
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="green">
+               Casos de Uso
+              </strong>
+              ,
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="green">
+               Detalle de Casos de Uso
+              </strong>
+              ,
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="green">
+               Prototipo de Interfaz
+              </strong>
+              ,
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Diagramas de Clases, Objetos, Actividad, Estados, …​ para el Modelo de Dominio
+              </strong>
+              ,
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="green">
+               Diagramas de Casos de Uso para Actores y Casos de Uso
+              </strong>
+              ,
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="green">
+               Diagramas de Estados o Actividad o Secuencia o textos para el detalle de Casos de Uso
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Estimando cada actividad
+              </strong>
+              , entre 2 y 20 horas, y
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="green">
+               Repartiendo cohesivamente
+              </strong>
+              entre el equipo de desarrollo
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-top" colspan="3">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              …​ con
+              <strong class="green">
+               trazabilidad
+              </strong>
+              de todo!
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="bibliografía">
+     <strong>
+      Bibliografía
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Unified Software Development Process
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch, Ivar Jacobson y James Rumbaugh
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (1999)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/TheUnifiedSoftwareDevelopmentProcess.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Rational Unified Process Made Easy, The: A Practitioner’s Guide to the RUP
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch, , Ivar Jacobson y James Rumbaugh
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2003)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/RationalUnifiedProcessMadeEasy.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Craig Larman
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Pearson; (2004)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ApplyingUML.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Object Solutions. Managing the Object Oriented Project
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Benjamin Cummings; (1995)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ObjectSolutionsManagingObjectOrientedProject.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Object Oriented Analysis and Design with Applications
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2011)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ObjectOrientedAnalysisAndDesingnWhitApplications.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              The Unified Modeling Language User Guide
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Pearson; (2005)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/TheUnifiedModelingLanguageUserGuide.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              UML Distilled. A Brief Guide to the Standard Object Modeling Language
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Martin Fowler,Kendall Scott
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2003)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/UMLDistilledABriefGuideStandardObjectModelingLanguage.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="ponente">
+     Ponente
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Luis Fernández Muñoz
+               </em>
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Formador/Consultor
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://es.linkedin.com/in/luisfernandezmunyoz">
+                  <em>
+                   Linkedin
+                  </em>
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="setillo" src="images/setillo.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Doctor en Inteligencia Artificial por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Ingeniero en Informática por la UMA
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Diplomado en Informática por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Profesor Titular de ETSISI de la UPM
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div id="footer-text">
+    Version 0.0.1
+    <br/>
+    Last updated 2022-10-16 16:31:02 +0200
+   </div>
+  </div>
+  <script>
+   let speed = 50;
                 
                 function typeWriter(v) {
                   let i = v.getAttribute("typewriter-index")
@@ -2040,6 +3724,6 @@ Last updated 2022-10-16 16:31:02 +0200
                 })
                 
                 setTimeout(typeWriterAll, speed);
-                
-                </script>
+  </script>
+ </body>
 </html>

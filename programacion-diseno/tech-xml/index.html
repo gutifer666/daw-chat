@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8">
-<meta name="author" content="Universo Santa Tecla">
-<title>XML</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-<style>
-/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Asciidoctor 2.0.8" name="generator"/>
+  <meta content="Universo Santa Tecla" name="author"/>
+  <title>
+   XML
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700" rel="stylesheet"/>
+  <style>
+   /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
@@ -434,714 +436,1523 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="book">
-<div id="header">
-<h1>XML</h1>
-<div class="details">
-<span id="author" class="author">Universo Santa Tecla</span><br>
-<span id="email" class="email"><a href="mailto:universoSantaTecla@gmail.com">universoSantaTecla@gmail.com</a></span><br>
-<span id="revnumber">version 0.0.1</span>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Índice</div>
-<ul class="sectlevel1">
-<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
-<li><a href="#gmlsgml">GML/SGML</a></li>
-<li><a href="#xml">XML</a></li>
-<li><a href="#qué"><strong>¿Qué?</strong></a></li>
-<li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
-<li><a href="#colaboradores">Colaboradores</a></li>
-<li><a href="#alternativas">Alternativas</a></li>
-<li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
-<li><a href="#documento-bien-formado">Documento bien formado</a>
-<ul class="sectlevel2">
-<li><a href="#restricciones">Restricciones</a></li>
-</ul>
-</li>
-<li><a href="#antipatrones">Antipatrones</a></li>
-<li><a href="#patrones">Patrones</a>
-<ul class="sectlevel2">
-<li><a href="#colección-heterogénea">Colección heterogénea</a></li>
-<li><a href="#colección-homogénea">Colección homogénea</a></li>
-<li><a href="#árboles">Árboles</a></li>
-<li><a href="#grafos">Grafos</a></li>
-</ul>
-</li>
-<li><a href="#síntesis"><strong>Síntesis</strong></a></li>
-<li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
-<li><a href="#ponente">Ponente</a></li>
-</ul>
-</div>
-</div>
-<div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/xml2.png" alt="xml2" width="250" height="330"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml">git</a>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="por-qué"><strong>¿Por qué?</strong></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="gmlsgml">GML/SGML</h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="images/contextoSGML.svg" alt="contextoSGML" width="1184" height="859">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="xml">XML</h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="images/contextoXML.svg" alt="contextoXML" width="1209" height="892">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="qué"><strong>¿Qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">- <strong class="blue">Lenguaje</strong></th>
-<th class="tableblock halign-left valign-top">- <em>Castellano</em></th>
-<th class="tableblock halign-left valign-top">- <em>Semáforo</em></th>
-<th class="tableblock halign-left valign-top">- <em>Java</em></th>
-<th class="tableblock halign-left valign-top">- <strong class="red">XML</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">reglas léxicográfica</strong> para los <strong class="blue">elementos</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green"><em>palabras, signos de puntuación, &#8230;&#8203;</em></span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green"><em>rojo, verde y ambar</em></span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green"><em>palabras reservadas, operadores, literales, símbolos, &#8230;&#8203;</em></span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="red">no están definidas</span></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">reglas sintácticas</strong> para el <strong class="blue">orden</strong> de los elementos</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green"><em>&lt;sustantivo&gt; &lt;verbo&gt; &lt;predicado&gt;</em></span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green"><em>de verde a ambar, de ambar a rojo y de rojo a verde</em></span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green"><em>if (&lt;expresion&gt;) &lt;sentencia&gt; [ else &lt;sentencia&gt;]</em></span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="red">no están definidas</span></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">reglas semánticas</strong> para el <strong class="blue">significado</strong> del orden de los elementos</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green"><em>transmite información</em></span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green"><em>gestiona el tráfico</em></span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green"><em>ejecuta las sentencias</em></span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="red">no están definidas</span></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Metalenguaje</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="green">Ejemplos</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red">Contraejemplos</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>es un lenguaje con capacidad expresiva para definir léxica, sintáctica y semánticamente un lenguaje, otro o a sí mismo!!!</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Castellano</p>
-</li>
-<li>
-<p>EBNF (<em>extended Backus-Naur Form</em>), XML Schema, DTD, &#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="red">Semáforo</span></p>
-</li>
-<li>
-<p><strong class="red">XML</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/elementos.svg" alt="elementos" width="860" height="711">
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">XML no es un lenguaje y menos aún un metalenguaje</strong>, es un marco tecnológíco (<em>framework</em>) que <strong class="blue">facilita la definición de nuevos lenguajes y manipulación de sus documentos para cualquier sistema de información</strong></p>
-</li>
-<li>
-<p>Establece un <strong class="blue">marco de reglas mínimas que pueden ser extendidas</strong> con otras reglas sintácticas (gramática) para conformar un nuevo lenguaje, llamado <strong>vocabulario</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Documento bien formado</strong>, si cumple las reglas mínimas <a href="https://jsonformatter.org/xml-editor"><em>(herramienta)</em></a></p>
-</li>
-<li>
-<p><strong class="blue">Documento válido</strong>, si cumple las reglas extendidas de cierto vocabulario</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="5">Que fuera</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">idéntico al HTML</strong> a la hora de servir, recibir y procesar la información, para aprovechar toda la tecnología implantada para este último.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">formal y conciso</strong> desde el punto de vista de los datos y la manera de guardarlos.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">extensible</strong>, para que lo puedan utilizar en todos los campos del conocimiento.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">fácil de leer y editar</strong>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">fácil de implantar</strong>, programar y aplicar a los distintos sistemas</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="para-qué"><strong>¿Para qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">- <strong class="blue">Persistencia</strong></th>
-<th class="tableblock halign-left valign-top">- <strong class="blue">Interoperabilidad</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">"pequeñas Bases de Datos"</strong> para una configuración o una web estática: tu curriculum, tus recetas, &#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>intercambio de datos entre sistemas heterogéneos: servicios Web, &#8230;&#8203;</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>estándares globales</strong>: <em>xHTML, MathML, WSDL, JavaML, NewsML, &#8230;&#8203;</em>,</p>
-</li>
-<li>
-<p><strong>estánderes verticales</strong>: financieras para intercambio de información de morosos, informes médicos para traslados de expedientes entre estados, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Configuración de Visual Code: <em>pom.xml</em> de <em>maven</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Gráficos vecotriales escalables: <em>SVG</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/pomxml.png" alt="pomxml"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/svgxml.png" alt="svgxml"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Publicación científica: <em>MathML</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Lenguajes de programación: <a href="https://constraints.cs.washington.edu/web/badros-javaml-www9/"><em>JavaML</em></a>, <em>cppML</em>, &#8230;&#8203; para métricas, documentación o transformaciones automáticas</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/mathML.png" alt="mathML"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/javaml.jpg" alt="javaml"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="colaboradores">Colaboradores</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Validadores</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Estableciendo un <strong class="blue">contrato entre el cliente y servidor</strong> de información mediante la precisión de una <strong class="blue">gramática de la estructura de información</strong> deseada</p>
-</li>
-<li>
-<p>Ahorrando 20% del código de una apliación dedicado a la <strong class="red">detección de errores</strong> en los datos de entrada</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/validadores.svg" alt="validadores" width="660" height="413">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>DTD, Definition Type Document</strong></em>, sin tecnologías XML</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.w3schools.com/xml/xml_dtd_intro.asp">Tutorial</a></p>
-</li>
-<li>
-<p><a href="http://zvon.org/comp/r/tut-DTD.html">Ejemplos</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>XML Schema</strong></em>, con tecnologías XML</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.w3schools.com/xml/schema_intro.asp">Tutorial</a></p>
-</li>
-<li>
-<p><a href="https://www.w3schools.com/xml/schema_elements_ref.asp">Referencia</a></p>
-</li>
-<li>
-<p><a href="https://www.w3schools.com/xml/schema_example.asp">Ejemplos</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Formateadores</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Generando la visualización en cualquier formato mediante otro documento que especifica el estilo para cada tipo de elemento de la gramática</p>
-</li>
-<li>
-<p>Evitando la <strong class="red">complejidad del acoplamiento entre la vista y la modelo</strong> y rigidez de un <strong class="red">único formato</strong> de presentación</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/formateadores.svg" alt="formateadores" width="746" height="509">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>XSLT, eXtensible Stylesheet Language Transformations</strong></em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.w3schools.com/xml/xsl_intro.asp">Tutorial</a></p>
-</li>
-<li>
-<p><a href="https://www.w3schools.com/xml/xsl_elementref.asp">Referencia</a></p>
-</li>
-<li>
-<p><a href="https://www.w3schools.com/xml/xsl_examples.asp">Ejemplos</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>CSS, Cascade Style Sheet</strong></em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.w3schools.com/css/default.asp">Tutorial</a></p>
-</li>
-<li>
-<p><a href="https://www.w3schools.com/cssref/default.asp">Referencia</a></p>
-</li>
-<li>
-<p><a href="https://www.w3schools.com/css/css_examples.asp">Ejemplos</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Procesadores</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Permitiendo cualquier proceso ad hoc <strong class="blue">recorriendo la estructura de la gramática</strong> mediante bibliotecas específicas basadas en el patrón observador/observado e intérprete</p>
-</li>
-<li>
-<p>Evitando la necesidad de <strong class="red">conocimientos de teorías de lenguajes</strong>, gramáticas, lexicografía, compiladores/intérpretes &#8230;&#8203; con técnicas LL(1), LR, &#8230;&#8203; herramientas lex, yacc, &#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/procesadores.svg" alt="procesadores" width="751" height="433">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>SAX, Simple Access XML</strong></em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://devs4j.com/2017/06/06/como-leer-un-xml-con-java-utilizando-sax/">Tutorial</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>DOM, Document Object Model</strong></em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.w3schools.com/xml/dom_intro.asp">Tutorial</a></p>
-</li>
-<li>
-<p><a href="https://www.w3schools.com/xml/dom_nodetype.asp">Referencia</a></p>
-</li>
-<li>
-<p><a href="">Ejemplos</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="alternativas">Alternativas</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/alternativas.svg" alt="alternativas" width="510" height="237">
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Formatos alternativos cada vez más ligeros (eficientes) y legibles (eficaces)</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.freeformatter.com/xml-to-json-converter.html">Conversor XML a JSON</a></p>
-</li>
-<li>
-<p><a href="https://www.json2yaml.com/">Conversor JSON a YAML</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 30%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="green">XML</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="red">JSON</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">YAML</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+ </head>
+ <body class="book">
+  <div id="header">
+   <h1>
+    XML
+   </h1>
+   <div class="details">
+    <span class="author" id="author">
+     Universo Santa Tecla
+    </span>
+    <br/>
+    <span class="email" id="email">
+     <a href="mailto:universoSantaTecla@gmail.com">
+      universoSantaTecla@gmail.com
+     </a>
+    </span>
+    <br/>
+    <span id="revnumber">
+     version 0.0.1
+    </span>
+   </div>
+   <div class="toc" id="toc">
+    <div id="toctitle">
+     Índice
+    </div>
+    <ul class="sectlevel1">
+     <li>
+      <a href="#por-qué">
+       <strong>
+        ¿Por qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#gmlsgml">
+       GML/SGML
+      </a>
+     </li>
+     <li>
+      <a href="#xml">
+       XML
+      </a>
+     </li>
+     <li>
+      <a href="#qué">
+       <strong>
+        ¿Qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#para-qué">
+       <strong>
+        ¿Para qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#colaboradores">
+       Colaboradores
+      </a>
+     </li>
+     <li>
+      <a href="#alternativas">
+       Alternativas
+      </a>
+     </li>
+     <li>
+      <a href="#cómo">
+       <strong>
+        ¿Cómo?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#documento-bien-formado">
+       Documento bien formado
+      </a>
+      <ul class="sectlevel2">
+       <li>
+        <a href="#restricciones">
+         Restricciones
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="#antipatrones">
+       Antipatrones
+      </a>
+     </li>
+     <li>
+      <a href="#patrones">
+       Patrones
+      </a>
+      <ul class="sectlevel2">
+       <li>
+        <a href="#colección-heterogénea">
+         Colección heterogénea
+        </a>
+       </li>
+       <li>
+        <a href="#colección-homogénea">
+         Colección homogénea
+        </a>
+       </li>
+       <li>
+        <a href="#árboles">
+         Árboles
+        </a>
+       </li>
+       <li>
+        <a href="#grafos">
+         Grafos
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="#síntesis">
+       <strong>
+        Síntesis
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#bibliografía">
+       <strong>
+        Bibliografía
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#ponente">
+       Ponente
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div id="content">
+   <div id="preamble">
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="sintesis" src="images/sintesis.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="xml2" height="330" src="images/xml2.png" width="250"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="admonitionblock caution">
+      <table>
+       <tr>
+        <td class="icon">
+         <i class="fa icon-caution" title="Caution">
+         </i>
+        </td>
+        <td class="content">
+         Códigos disponibles en
+         <a href="https://github.com/USantaTecla-tech-xml">
+          git
+         </a>
+        </td>
+       </tr>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="por-qué">
+     <strong>
+      ¿Por qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="gmlsgml">
+     GML/SGML
+    </h2>
+    <div class="sectionbody">
+     <div class="imageblock">
+      <div class="content">
+       <img alt="contextoSGML" height="859" src="images/contextoSGML.svg" width="1184"/>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="xml">
+     XML
+    </h2>
+    <div class="sectionbody">
+     <div class="imageblock">
+      <div class="content">
+       <img alt="contextoXML" height="892" src="images/contextoXML.svg" width="1209"/>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="qué">
+     <strong>
+      ¿Qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 20%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 20%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         -
+         <strong class="blue">
+          Lenguaje
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         -
+         <em>
+          Castellano
+         </em>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         -
+         <em>
+          Semáforo
+         </em>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         -
+         <em>
+          Java
+         </em>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         -
+         <strong class="red">
+          XML
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               reglas léxicográfica
+              </strong>
+              para los
+              <strong class="blue">
+               elementos
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="green">
+               <em>
+                palabras, signos de puntuación, …​
+               </em>
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="green">
+               <em>
+                rojo, verde y ambar
+               </em>
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="green">
+               <em>
+                palabras reservadas, operadores, literales, símbolos, …​
+               </em>
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="red">
+               no están definidas
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               reglas sintácticas
+              </strong>
+              para el
+              <strong class="blue">
+               orden
+              </strong>
+              de los elementos
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="green">
+               <em>
+                &lt;sustantivo&gt; &lt;verbo&gt; &lt;predicado&gt;
+               </em>
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="green">
+               <em>
+                de verde a ambar, de ambar a rojo y de rojo a verde
+               </em>
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="green">
+               <em>
+                if (&lt;expresion&gt;) &lt;sentencia&gt; [ else &lt;sentencia&gt;]
+               </em>
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="red">
+               no están definidas
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               reglas semánticas
+              </strong>
+              para el
+              <strong class="blue">
+               significado
+              </strong>
+              del orden de los elementos
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="green">
+               <em>
+                transmite información
+               </em>
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="green">
+               <em>
+                gestiona el tráfico
+               </em>
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="green">
+               <em>
+                ejecuta las sentencias
+               </em>
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="red">
+               no están definidas
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3334%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Metalenguaje
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="green">
+               Ejemplos
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               Contraejemplos
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              es un lenguaje con capacidad expresiva para definir léxica, sintáctica y semánticamente un lenguaje, otro o a sí mismo!!!
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Castellano
+             </p>
+            </li>
+            <li>
+             <p>
+              EBNF (
+              <em>
+               extended Backus-Naur Form
+              </em>
+              ), XML Schema, DTD, …​
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="red">
+               Semáforo
+              </span>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="red">
+               XML
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="elementos" height="711" src="images/elementos.svg" width="860"/>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               XML no es un lenguaje y menos aún un metalenguaje
+              </strong>
+              , es un marco tecnológíco (
+              <em>
+               framework
+              </em>
+              ) que
+              <strong class="blue">
+               facilita la definición de nuevos lenguajes y manipulación de sus documentos para cualquier sistema de información
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              Establece un
+              <strong class="blue">
+               marco de reglas mínimas que pueden ser extendidas
+              </strong>
+              con otras reglas sintácticas (gramática) para conformar un nuevo lenguaje, llamado
+              <strong>
+               vocabulario
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong class="blue">
+                  Documento bien formado
+                 </strong>
+                 , si cumple las reglas mínimas
+                 <a href="https://jsonformatter.org/xml-editor">
+                  <em>
+                   (herramienta)
+                  </em>
+                 </a>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong class="blue">
+                  Documento válido
+                 </strong>
+                 , si cumple las reglas extendidas de cierto vocabulario
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 10%;"/>
+       <col style="width: 20%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="5">
+         Que fuera
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="blue">
+             idéntico al HTML
+            </strong>
+            a la hora de servir, recibir y procesar la información, para aprovechar toda la tecnología implantada para este último.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="blue">
+             formal y conciso
+            </strong>
+            desde el punto de vista de los datos y la manera de guardarlos.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="blue">
+             extensible
+            </strong>
+            , para que lo puedan utilizar en todos los campos del conocimiento.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="blue">
+             fácil de leer y editar
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="blue">
+             fácil de implantar
+            </strong>
+            , programar y aplicar a los distintos sistemas
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="para-qué">
+     <strong>
+      ¿Para qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         -
+         <strong class="blue">
+          Persistencia
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         -
+         <strong class="blue">
+          Interoperabilidad
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               "pequeñas Bases de Datos"
+              </strong>
+              para una configuración o una web estática: tu curriculum, tus recetas, …​
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              intercambio de datos entre sistemas heterogéneos: servicios Web, …​
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  estándares globales
+                 </strong>
+                 :
+                 <em>
+                  xHTML, MathML, WSDL, JavaML, NewsML, …​
+                 </em>
+                 ,
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  estánderes verticales
+                 </strong>
+                 : financieras para intercambio de información de morosos, informes médicos para traslados de expedientes entre estados, …​
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Configuración de Visual Code:
+            <em>
+             pom.xml
+            </em>
+            de
+            <em>
+             maven
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Gráficos vecotriales escalables:
+            <em>
+             SVG
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="pomxml" src="images/pomxml.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="svgxml" src="images/svgxml.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Publicación científica:
+            <em>
+             MathML
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Lenguajes de programación:
+            <a href="https://constraints.cs.washington.edu/web/badros-javaml-www9/">
+             <em>
+              JavaML
+             </em>
+            </a>
+            ,
+            <em>
+             cppML
+            </em>
+            , …​ para métricas, documentación o transformaciones automáticas
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="mathML" src="images/mathML.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="javaml" src="images/javaml.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="colaboradores">
+     Colaboradores
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="2">
+         <strong class="blue">
+          Validadores
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Estableciendo un
+              <strong class="blue">
+               contrato entre el cliente y servidor
+              </strong>
+              de información mediante la precisión de una
+              <strong class="blue">
+               gramática de la estructura de información
+              </strong>
+              deseada
+             </p>
+            </li>
+            <li>
+             <p>
+              Ahorrando 20% del código de una apliación dedicado a la
+              <strong class="red">
+               detección de errores
+              </strong>
+              en los datos de entrada
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="validadores" height="413" src="images/validadores.svg" width="660"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               <strong>
+                DTD, Definition Type Document
+               </strong>
+              </em>
+              , sin tecnologías XML
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <a href="https://www.w3schools.com/xml/xml_dtd_intro.asp">
+                  Tutorial
+                 </a>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="http://zvon.org/comp/r/tut-DTD.html">
+                  Ejemplos
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               <strong>
+                XML Schema
+               </strong>
+              </em>
+              , con tecnologías XML
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <a href="https://www.w3schools.com/xml/schema_intro.asp">
+                  Tutorial
+                 </a>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://www.w3schools.com/xml/schema_elements_ref.asp">
+                  Referencia
+                 </a>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://www.w3schools.com/xml/schema_example.asp">
+                  Ejemplos
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="2">
+         <strong class="blue">
+          Formateadores
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Generando la visualización en cualquier formato mediante otro documento que especifica el estilo para cada tipo de elemento de la gramática
+             </p>
+            </li>
+            <li>
+             <p>
+              Evitando la
+              <strong class="red">
+               complejidad del acoplamiento entre la vista y la modelo
+              </strong>
+              y rigidez de un
+              <strong class="red">
+               único formato
+              </strong>
+              de presentación
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="formateadores" height="509" src="images/formateadores.svg" width="746"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               <strong>
+                XSLT, eXtensible Stylesheet Language Transformations
+               </strong>
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <a href="https://www.w3schools.com/xml/xsl_intro.asp">
+                  Tutorial
+                 </a>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://www.w3schools.com/xml/xsl_elementref.asp">
+                  Referencia
+                 </a>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://www.w3schools.com/xml/xsl_examples.asp">
+                  Ejemplos
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               <strong>
+                CSS, Cascade Style Sheet
+               </strong>
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <a href="https://www.w3schools.com/css/default.asp">
+                  Tutorial
+                 </a>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://www.w3schools.com/cssref/default.asp">
+                  Referencia
+                 </a>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://www.w3schools.com/css/css_examples.asp">
+                  Ejemplos
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="2">
+         <strong class="blue">
+          Procesadores
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Permitiendo cualquier proceso ad hoc
+              <strong class="blue">
+               recorriendo la estructura de la gramática
+              </strong>
+              mediante bibliotecas específicas basadas en el patrón observador/observado e intérprete
+             </p>
+            </li>
+            <li>
+             <p>
+              Evitando la necesidad de
+              <strong class="red">
+               conocimientos de teorías de lenguajes
+              </strong>
+              , gramáticas, lexicografía, compiladores/intérpretes …​ con técnicas LL(1), LR, …​ herramientas lex, yacc, …​
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="procesadores" height="433" src="images/procesadores.svg" width="751"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               <strong>
+                SAX, Simple Access XML
+               </strong>
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <a href="https://devs4j.com/2017/06/06/como-leer-un-xml-con-java-utilizando-sax/">
+                  Tutorial
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               <strong>
+                DOM, Document Object Model
+               </strong>
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <a href="https://www.w3schools.com/xml/dom_intro.asp">
+                  Tutorial
+                 </a>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://www.w3schools.com/xml/dom_nodetype.asp">
+                  Referencia
+                 </a>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="">
+                  Ejemplos
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="alternativas">
+     Alternativas
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="alternativas" height="237" src="images/alternativas.svg" width="510"/>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Formatos alternativos cada vez más ligeros (eficientes) y legibles (eficaces)
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <a href="https://www.freeformatter.com/xml-to-json-converter.html">
+                  Conversor XML a JSON
+                 </a>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://www.json2yaml.com/">
+                  Conversor JSON a YAML
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 40%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 30%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         <strong class="green">
+          XML
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="red">
+          JSON
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="blue">
+          YAML
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;adress&gt;</span>
   <span class="tag">&lt;number&gt;</span>77<span class="tag">&lt;/number&gt;</span>
   <span class="tag">&lt;street&gt;</span>Massachusetts Avenue<span class="tag">&lt;/street&gt;</span>
@@ -1150,312 +1961,553 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml">git</a
   <span class="tag">&lt;country&gt;</span>United States of America<span class="tag">&lt;/country&gt;</span>
   <span class="tag">&lt;postcode&gt;</span>02139<span class="tag">&lt;/postcode&gt;</span>
 <span class="tag">&lt;/adress&gt;</span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-   <span class="key"><span class="delimiter">&quot;</span><span class="content">number</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">77</span><span class="delimiter">&quot;</span></span>,
-   <span class="key"><span class="delimiter">&quot;</span><span class="content">street</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Massachusetts Avenue</span><span class="delimiter">&quot;</span></span>,
-   <span class="key"><span class="delimiter">&quot;</span><span class="content">village</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Cambridge</span><span class="delimiter">&quot;</span></span>,
-   <span class="key"><span class="delimiter">&quot;</span><span class="content">county</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Massachusetts</span><span class="delimiter">&quot;</span></span>,
-   <span class="key"><span class="delimiter">&quot;</span><span class="content">country</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">United States of America</span><span class="delimiter">&quot;</span></span>,
-   <span class="key"><span class="delimiter">&quot;</span><span class="content">postcode</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">02139</span><span class="delimiter">&quot;</span></span>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="json">{
+   <span class="key"><span class="delimiter">"</span><span class="content">number</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">77</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">street</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Massachusetts Avenue</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">village</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Cambridge</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">county</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">Massachusetts</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">country</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">United States of America</span><span class="delimiter">"</span></span>,
+   <span class="key"><span class="delimiter">"</span><span class="content">postcode</span><span class="delimiter">"</span></span>: <span class="string"><span class="delimiter">"</span><span class="content">02139</span><span class="delimiter">"</span></span>
 }</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">number</span>: <span class="string"><span class="content">'77'</span></span>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">number</span>: <span class="string"><span class="content">'77'</span></span>
 <span class="key">street</span>: <span class="string"><span class="content">Massachusetts Avenue</span></span>
 <span class="key">village</span>: <span class="string"><span class="content">Cambridge</span></span>
 <span class="key">county</span>: <span class="string"><span class="content">Massachusetts</span></span>
 <span class="key">country</span>: <span class="string"><span class="content">United States of America</span></span>
 <span class="key">postcode</span>: <span class="string"><span class="content">'02139'</span></span></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cómo"><strong>¿Cómo?</strong></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="documento-bien-formado">Documento bien formado</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Documento XML bien formado</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/x-gramatica/Documento.png" alt="Documento"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Instrucción de Procesamiento</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Con información para el validador, estilizador, transformador, &#8230;&#8203; prepocesador que lo procese</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/x-gramatica/InstruccionProcesamiento.png" alt="InstruccionProcesamiento"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>En particular, para el validador, la versión actual es 1.0 y la codificación recomendada para el español es UTF-8</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Comentario</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>No permite contener la secuencia '&lt;!--'</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/x-gramatica/Comentario.png" alt="Comentario"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="cómo">
+     <strong>
+      ¿Cómo?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="documento-bien-formado">
+     Documento bien formado
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 20%;"/>
+       <col style="width: 80%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Documento XML bien formado
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="Documento" src="images/x-gramatica/Documento.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 40%;"/>
+       <col style="width: 60%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Instrucción de Procesamiento
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Con información para el validador, estilizador, transformador, …​ prepocesador que lo procese
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="InstruccionProcesamiento" src="images/x-gramatica/InstruccionProcesamiento.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top" colspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               En particular, para el validador, la versión actual es 1.0 y la codificación recomendada para el español es UTF-8
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 40%;"/>
+       <col style="width: 60%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Comentario
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 No permite contener la secuencia '&lt;!--'
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="Comentario" src="images/x-gramatica/Comentario.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="listingblock">
+      <div class="content">
+       <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="comment">&lt;!-- xml bien formado sin información alguna --&gt;</span></code></pre>
-</div>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 66.6667%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Elemento textual</strong>, sin elementos anidados, solo con caracteres para la información. Es la <strong>unidad</strong></p>
-</li>
-<li>
-<p><strong>Elemento estructurado</strong>, solo con elementos anidados, sin caracteres para la información. Es el <strong>compuesto</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Elemento mixto</strong>, con elementos anidados y caracteres para la información</p>
-<div class="ulist">
-<ul>
-<li>
-<p>En sentido estricto todos los <span class="red">elementos estructurados son mixtos</span> cuando se separan por tabuladores, espacios o sáltos de línea para mostrar con <span class="green">márgenes la jerarquía</span> subyacente en el flujo de caracteres.</p>
-</li>
-<li>
-<p>Pero entendemos por estructurado si no hay caracteres de información directamente dentro del elemento, ni fuera de los elementos anidados, que es el mismo espacio</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/x-gramatica/Elemento.png" alt="Elemento"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Identificador</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Para la metainformación</p>
-</li>
-<li>
-<p>Diferencia mayúsculas de minúsculas</p>
-</li>
-<li>
-<p>Recomendado en <em>CamelCase</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/x-gramatica/Metainformacion.png" alt="Metainformacion"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Caracter</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Letra</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Digito</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>CaracterEspecial</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/x-gramatica/Caracter.png" alt="Caracter"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/x-gramatica/Letra.png" alt="Letra"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/x-gramatica/Digito.png" alt="Digito"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/x-gramatica/CaracterEspecial.png" alt="CaracterEspecial"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="4"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Los caracteres reservados "&lt;", "&gt;", "'", """ y "&amp;"", para la definición de elementos y atributos propia del XML, se escriben con entidades predefinidas: <em>"&amp;lt;", "&amp;gt;", "&amp;amp;", "&amp;apos;" y "&amp;quot;"</em>, respectivamente</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+      </div>
+     </div>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 66.6667%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Elemento textual
+              </strong>
+              , sin elementos anidados, solo con caracteres para la información. Es la
+              <strong>
+               unidad
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               Elemento estructurado
+              </strong>
+              , solo con elementos anidados, sin caracteres para la información. Es el
+              <strong>
+               compuesto
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Elemento mixto
+              </strong>
+              , con elementos anidados y caracteres para la información
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 En sentido estricto todos los
+                 <span class="red">
+                  elementos estructurados son mixtos
+                 </span>
+                 cuando se separan por tabuladores, espacios o sáltos de línea para mostrar con
+                 <span class="green">
+                  márgenes la jerarquía
+                 </span>
+                 subyacente en el flujo de caracteres.
+                </p>
+               </li>
+               <li>
+                <p>
+                 Pero entendemos por estructurado si no hay caracteres de información directamente dentro del elemento, ni fuera de los elementos anidados, que es el mismo espacio
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle" colspan="2">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="Elemento" src="images/x-gramatica/Elemento.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Identificador
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Para la metainformación
+                </p>
+               </li>
+               <li>
+                <p>
+                 Diferencia mayúsculas de minúsculas
+                </p>
+               </li>
+               <li>
+                <p>
+                 Recomendado en
+                 <em>
+                  CamelCase
+                 </em>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="Metainformacion" src="images/x-gramatica/Metainformacion.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Caracter
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Letra
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Digito
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               CaracterEspecial
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="Caracter" src="images/x-gramatica/Caracter.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="Letra" src="images/x-gramatica/Letra.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="Digito" src="images/x-gramatica/Digito.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="CaracterEspecial" src="images/x-gramatica/CaracterEspecial.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top" colspan="4">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Los caracteres reservados "&lt;", "&gt;", "'", """ y "&amp;"", para la definición de elementos y atributos propia del XML, se escriben con entidades predefinidas:
+              <em>
+               "&amp;lt;", "&amp;gt;", "&amp;amp;", "&amp;apos;" y "&amp;quot;"
+              </em>
+              , respectivamente
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;elementoVacio</span><span class="tag">/&gt;</span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;elementoVacio&gt;</span><span class="tag">&lt;/elementoVacio&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;elementoNoVacio&gt;</span>
     <span class="tag">&lt;elementoVacio&gt;</span><span class="tag">&lt;/elementoVacio&gt;</span>
     <span class="tag">&lt;elementoVacio</span><span class="tag">/&gt;</span>
 <span class="tag">&lt;/elementoNoVacio&gt;</span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;elemento&gt;</span>informacion<span class="tag">&lt;/elemento&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;elementoEstructurado&gt;</span>
     <span class="tag">&lt;subElemento1&gt;</span>informacion<span class="tag">&lt;/subElemento1&gt;</span>
     <span class="tag">&lt;subElemento2&gt;</span>informacion<span class="tag">&lt;/subElemento2&gt;</span>
@@ -1466,192 +2518,315 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml">git</a
     <span class="comment">&lt;!-- otros --&gt;</span>
     <span class="tag">&lt;subElementoN&gt;</span>informacion<span class="tag">&lt;/subElementoN&gt;</span>
 <span class="tag">&lt;/elementoEstructurado&gt;</span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;elementoMixto&gt;</span>informacion <span class="tag">&lt;subElemento&gt;</span> informacion <span class="tag">&lt;/subElemento&gt;</span> informacion <span class="tag">&lt;subElemento&gt;</span>informacion <span class="tag">&lt;/subElemento&gt;</span> informacion <span class="tag">&lt;/elementoMixto&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Atributo</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Únicamente en la marca/etiqueta de apertura</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/x-gramatica/Atributo.png" alt="Atributo"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Atributo
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Únicamente en la marca/etiqueta de apertura
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="Atributo" src="images/x-gramatica/Atributo.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 100%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;elementoEstructurado&gt;</span>
-  <span class="tag">&lt;elementoTextual</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>informacion<span class="tag">&lt;/elementoTextual&gt;</span>
-  <span class="tag">&lt;elementoEstructurado</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+  <span class="tag">&lt;elementoTextual</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>informacion<span class="tag">&lt;/elementoTextual&gt;</span>
+  <span class="tag">&lt;elementoEstructurado</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
       <span class="tag">&lt;subElemento&gt;</span>informacion<span class="tag">&lt;/subElemento&gt;</span>
-      <span class="tag">&lt;subElemento</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>informacion<span class="tag">&lt;/subElemento&gt;</span>
+      <span class="tag">&lt;subElemento</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>informacion<span class="tag">&lt;/subElemento&gt;</span>
   <span class="tag">&lt;/elementoEstructurado&gt;</span>
-  <span class="tag">&lt;elementoVacio</span> <span class="attribute-name">atributo1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">atributo2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-  <span class="tag">&lt;elementoVacio</span> <span class="attribute-name">atributo1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">atributo2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span><span class="tag">&lt;/elementoVacio&gt;</span>
+  <span class="tag">&lt;elementoVacio</span> <span class="attribute-name">atributo1</span>=<span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span> <span class="attribute-name">atributo2</span>=<span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+  <span class="tag">&lt;elementoVacio</span> <span class="attribute-name">atributo1</span>=<span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span> <span class="attribute-name">atributo2</span>=<span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span><span class="tag">&gt;</span><span class="tag">&lt;/elementoVacio&gt;</span>
 <span class="tag">&lt;/elementoEstructurado&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="tag">&lt;elementoMixto</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span> informacion <span class="tag">&lt;subElemento</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span> informacion <span class="tag">&lt;/subElemento&gt;</span> informacion <span class="tag">&lt;subElemento</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span> informacion<span class="tag">&lt;/subElemento&gt;</span> informacion <span class="tag">&lt;/elementoMixto&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>No existe un criterio claro para decidir si la información reside como contenido de un elemento entre sus marcas o como valor de un atributo. Se recomienda como <strong>atributos</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Información de valores cortos</strong>, p.e. cadenas de pocas palabras</p>
-</li>
-<li>
-<p><strong>Información de valores enumerados</strong>, p.e. Mercurio, Venus, &#8230;&#8203;</p>
-</li>
-<li>
-<p><strong>Meta-información de la implantación</strong>, p.e. códigos no visibles para el usuario, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;elementoMixto</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> informacion <span class="tag">&lt;subElemento</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> informacion <span class="tag">&lt;/subElemento&gt;</span> informacion <span class="tag">&lt;subElemento</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> informacion<span class="tag">&lt;/subElemento&gt;</span> informacion <span class="tag">&lt;/elementoMixto&gt;</span></code></pre>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="3">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              No existe un criterio claro para decidir si la información reside como contenido de un elemento entre sus marcas o como valor de un atributo. Se recomienda como
+              <strong>
+               atributos
+              </strong>
+              :
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Información de valores cortos
+                 </strong>
+                 , p.e. cadenas de pocas palabras
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  Información de valores enumerados
+                 </strong>
+                 , p.e. Mercurio, Venus, …​
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  Meta-información de la implantación
+                 </strong>
+                 , p.e. códigos no visibles para el usuario, …​
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;elemento&gt;</span>informacion<span class="tag">&lt;/elemento&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="tag">&lt;elemento</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span> informacion<span class="tag">&lt;/elemento&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="tag">&lt;elemento</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 55%;">
-<col style="width: 45%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Los <strong class="blue">elementos vacíos</strong> sirven como <strong class="blue">tipo lógico</strong>, <em>boolean</em>, con su presencia o su ausencia dentro de otro elemento o para reunir cohesivamente la información de varios atributos</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Los <strong class="blue">elementos mixtos</strong> sirven para <strong class="blue">textos en línea</strong> con distintos formatos de tipografía, tamaño, color, &#8230;&#8203;.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;elemento</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> informacion<span class="tag">&lt;/elemento&gt;</span></code></pre>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;elemento</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span></code></pre>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 55%;"/>
+       <col style="width: 45%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Los
+              <strong class="blue">
+               elementos vacíos
+              </strong>
+              sirven como
+              <strong class="blue">
+               tipo lógico
+              </strong>
+              ,
+              <em>
+               boolean
+              </em>
+              , con su presencia o su ausencia dentro de otro elemento o para reunir cohesivamente la información de varios atributos
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Los
+              <strong class="blue">
+               elementos mixtos
+              </strong>
+              sirven para
+              <strong class="blue">
+               textos en línea
+              </strong>
+              con distintos formatos de tipografía, tamaño, color, …​.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;package&gt;</span>
-    <span class="tag">&lt;dimension</span> <span class="attribute-name">width</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">34</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">height</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">55</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">depth</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">23</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;dimension</span> <span class="attribute-name">width</span>=<span class="string"><span class="delimiter">"</span><span class="content">34</span><span class="delimiter">"</span></span> <span class="attribute-name">height</span>=<span class="string"><span class="delimiter">"</span><span class="content">55</span><span class="delimiter">"</span></span> <span class="attribute-name">depth</span>=<span class="string"><span class="delimiter">"</span><span class="content">23</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;fragile</span><span class="tag">/&gt;</span>
 <span class="tag">&lt;/package&gt;</span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="tag">&lt;elementoMixto</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span> informacion <span class="tag">&lt;subElemento</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span> informacion <span class="tag">&lt;/subElemento&gt;</span> informacion <span class="tag">&lt;subElemento</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">informacion</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span> informacion<span class="tag">&lt;/subElemento&gt;</span> informacion <span class="tag">&lt;/elementoMixto&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="sect2">
-<h3 id="restricciones">Restricciones</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="red">En los identificadores de los elementos</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>No existen</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;elementoMixto</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> informacion <span class="tag">&lt;subElemento</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> informacion <span class="tag">&lt;/subElemento&gt;</span> informacion <span class="tag">&lt;subElemento</span> <span class="attribute-name">atributo</span>=<span class="string"><span class="delimiter">"</span><span class="content">informacion</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> informacion<span class="tag">&lt;/subElemento&gt;</span> informacion <span class="tag">&lt;/elementoMixto&gt;</span></code></pre>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="sect2">
+      <h3 id="restricciones">
+       Restricciones
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 40%;"/>
+        <col style="width: 60%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          <strong class="red">
+           En los identificadores de los elementos
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               No existen
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;elementoEstructurado&gt;</span>
     <span class="tag">&lt;subElemento&gt;</span>informacion<span class="tag">&lt;/subElemento&gt;</span>
     ...
@@ -1662,174 +2837,338 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml">git</a
     <span class="tag">&lt;subElemento&gt;</span>informacion<span class="tag">&lt;/subElemento&gt;</span>
     <span class="tag">&lt;otroElemento&gt;</span>informacion<span class="tag">&lt;/otroElemento&gt;</span>
 <span class="tag">&lt;/elementoEstructurado&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="red">En los identificadores de los atributos</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Deben ser  <strong class="red">únicos</strong> dentro de cada elemento</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="tag">&lt;elemento</span> <span class="attribute-name">atributo1</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">valor</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">atributo2</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">valor</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>informacion<span class="tag">&lt;/elemento&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="red">En los valores de atributos <em>id</em> e <em>idref</em></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Sus valores deben ambos <strong class="red">comenzar por una letra</strong></p>
-</li>
-<li>
-<p>Sirven para:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Nombrar</strong>, con el valor del <strong class="blue">atributo <em>id</em></strong> debe ser <strong class="red">único</strong> en el conjunto de valores de todos los atributos <em>id</em> de cualquier elemento del documento</p>
-</li>
-<li>
-<p><strong class="blue">Referenciar</strong>, con el valor del <strong class="blue">atributo <em>idref</em></strong> debe <strong class="red">existir</strong> en el conjunto de valores de todos los atributos <em>id</em> de cualquier elemento del documento</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 20%;"/>
+        <col style="width: 80%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          <strong class="red">
+           En los identificadores de los atributos
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Deben ser
+               <strong class="red">
+                únicos
+               </strong>
+               dentro de cada elemento
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="tag">&lt;elemento</span> <span class="attribute-name">atributo1</span>=<span class="string"><span class="delimiter">"</span><span class="content">valor</span><span class="delimiter">"</span></span> <span class="attribute-name">atributo2</span>=<span class="string"><span class="delimiter">"</span><span class="content">valor</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>informacion<span class="tag">&lt;/elemento&gt;</span></code></pre>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 40%;"/>
+        <col style="width: 60%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          <strong class="red">
+           En los valores de atributos
+           <em>
+            id
+           </em>
+           e
+           <em>
+            idref
+           </em>
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Sus valores deben ambos
+               <strong class="red">
+                comenzar por una letra
+               </strong>
+              </p>
+             </li>
+             <li>
+              <p>
+               Sirven para:
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   Nombrar
+                  </strong>
+                  , con el valor del
+                  <strong class="blue">
+                   atributo
+                   <em>
+                    id
+                   </em>
+                  </strong>
+                  debe ser
+                  <strong class="red">
+                   único
+                  </strong>
+                  en el conjunto de valores de todos los atributos
+                  <em>
+                   id
+                  </em>
+                  de cualquier elemento del documento
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong class="blue">
+                   Referenciar
+                  </strong>
+                  , con el valor del
+                  <strong class="blue">
+                   atributo
+                   <em>
+                    idref
+                   </em>
+                  </strong>
+                  debe
+                  <strong class="red">
+                   existir
+                  </strong>
+                  en el conjunto de valores de todos los atributos
+                  <em>
+                   id
+                  </em>
+                  de cualquier elemento del documento
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;raiz&gt;</span>
     ...
     <span class="tag">&lt;origen&gt;</span>
         ...
-        <span class="tag">&lt;destino</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k24</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;destino</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">k24</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
         ...
     <span class="tag">&lt;/origen&gt;</span>
     ...
-    <span class="tag">&lt;elemento</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k24</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;elemento</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">k24</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
         ...
     <span class="tag">&lt;/elemento&gt;</span>
     ...
 <span class="tag">&lt;/raiz&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="listingblock">
+       <div class="content">
+        <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;definitions&gt;</span>
-  <span class="tag">&lt;definition</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Proceso Unificado de Desarrollo</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span> es un <span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">proceso de desarrollo software</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-     con tres caracterísitcas: <span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">basado en componentes</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>,
-     <span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">dirigido por Casos de Uso</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span> y
-     <span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">centrado en la Arquitectura</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>.<span class="tag">&lt;/definition&gt;</span>
-  <span class="tag">&lt;definition</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">proceso de desarrollo software</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>es la aplicación
+  <span class="tag">&lt;definition</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">Proceso Unificado de Desarrollo</span><span class="delimiter">"</span></span><span class="tag">&gt;</span> es un <span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">proceso de desarrollo software</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+     con tres caracterísitcas: <span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">basado en componentes</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>,
+     <span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">dirigido por Casos de Uso</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span> y
+     <span class="tag">&lt;refDefinition</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">centrado en la Arquitectura</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>.<span class="tag">&lt;/definition&gt;</span>
+  <span class="tag">&lt;definition</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">proceso de desarrollo software</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>es la aplicación
     de las actividades y procesos de mantenimiento del software que generan
     una nueva [blue]versión operativa de un software con una funcionalidad de usuario
     o propiedades cambiadas a partir de una versión anterior junto con los procesos
     y actividades de garantía de calidad y con la gestión de esos procesos
     <span class="tag">&lt;/definition&gt;</span>
 <span class="tag">&lt;/definitions&gt;</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="antipatrones">Antipatrones</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;MIT&gt;</span> <i class="conum" data-value="1"></i><b>(1)</b>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="antipatrones">
+     Antipatrones
+    </h2>
+    <div class="sectionbody">
+     <div class="listingblock">
+      <div class="content">
+       <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;MIT&gt;</span> <i class="conum" data-value="1"></i><b>(1)</b>
     77 Massachusetts Avenue. Cambridge <i class="conum" data-value="2"></i><b>(2)</b>
     Massachusetts 02139. United States of America <i class="conum" data-value="3"></i><b>(3)</b>
 <span class="tag">&lt;/MIT&gt;</span></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td><span class="red">Error: <strong>Confunde metainformación e información</strong></span>, impidiendo consultas de información futuras. Los identificadores de los elementos deben coincidir con los campos de una estructura, registro, atributos de clase, entidad, &#8230;&#8203; No sus valores particulares, <span class="red">imposibles de adivinar por parte del procesador, validador, formateador, &#8230;&#8203;</span></td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td><span class="red">Error: <strong>Formatea la información</strong></span> con saltos de linea, subrayados, &#8230;&#8203; <span class="red">perjudicando el tratamiento de información</span> para un formato no previsto en un nuevo dispositivo</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td><span class="red">Posible error: <strong>Inadecuada estructuración</strong></span>, estructurando en <span class="red">exceso o defecto</span> la información suministrada, inadecuada para el procesamiento necesario</td>
-</tr>
-</table>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Correcto</strong> o <strong class="red">incorrecto</strong> si el sistema de información necesita tratar la calle y/o la ciudad por separado y/o &#8230;&#8203;</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Obligando al programador a analizar la información</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+      </div>
+     </div>
+     <div class="colist arabic">
+      <table>
+       <tr>
+        <td>
+         <i class="conum" data-value="1">
+         </i>
+         <b>
+          1
+         </b>
+        </td>
+        <td>
+         <span class="red">
+          Error:
+          <strong>
+           Confunde metainformación e información
+          </strong>
+         </span>
+         , impidiendo consultas de información futuras. Los identificadores de los elementos deben coincidir con los campos de una estructura, registro, atributos de clase, entidad, …​ No sus valores particulares,
+         <span class="red">
+          imposibles de adivinar por parte del procesador, validador, formateador, …​
+         </span>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <i class="conum" data-value="2">
+         </i>
+         <b>
+          2
+         </b>
+        </td>
+        <td>
+         <span class="red">
+          Error:
+          <strong>
+           Formatea la información
+          </strong>
+         </span>
+         con saltos de linea, subrayados, …​
+         <span class="red">
+          perjudicando el tratamiento de información
+         </span>
+         para un formato no previsto en un nuevo dispositivo
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <i class="conum" data-value="3">
+         </i>
+         <b>
+          3
+         </b>
+        </td>
+        <td>
+         <span class="red">
+          Posible error:
+          <strong>
+           Inadecuada estructuración
+          </strong>
+         </span>
+         , estructurando en
+         <span class="red">
+          exceso o defecto
+         </span>
+         la información suministrada, inadecuada para el procesamiento necesario
+        </td>
+       </tr>
+      </table>
+     </div>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 20%;"/>
+       <col style="width: 80%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="3">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Correcto
+              </strong>
+              o
+              <strong class="red">
+               incorrecto
+              </strong>
+              si el sistema de información necesita tratar la calle y/o la ciudad por separado y/o …​
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong class="red">
+                  Obligando al programador a analizar la información
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;adress&gt;</span>
     <span class="tag">&lt;street&gt;</span>77 Massachusetts Avenue. Cambridge<span class="tag">&lt;/street&gt;</span>
     <span class="tag">&lt;country&gt;</span>Massachusetts 02139. United States of America<span class="tag">&lt;/country&gt;</span>
 <span class="tag">&lt;/adress&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;adress&gt;</span>
     <span class="tag">&lt;street&gt;</span>77 Massachusetts Avenue<span class="tag">&lt;/street&gt;</span>
     <span class="tag">&lt;village&gt;</span>Cambridge<span class="tag">&lt;/village&gt;</span>
@@ -1837,13 +3176,17 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml">git</a
     <span class="tag">&lt;country&gt;</span>United States of America<span class="tag">&lt;/country&gt;</span>
     <span class="tag">&lt;postcode&gt;</span>02139<span class="tag">&lt;/postcode&gt;</span>
 <span class="tag">&lt;/adress&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="listingblock">
+           <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;adress&gt;</span>
     <span class="tag">&lt;number&gt;</span>77<span class="tag">&lt;/number&gt;</span>
     <span class="tag">&lt;street&gt;</span>Massachusetts Avenue<span class="tag">&lt;/street&gt;</span>
@@ -1852,43 +3195,65 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml">git</a
     <span class="tag">&lt;country&gt;</span>United States of America<span class="tag">&lt;/country&gt;</span>
     <span class="tag">&lt;postcode&gt;</span>02139<span class="tag">&lt;/postcode&gt;</span>
 <span class="tag">&lt;/adress&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="patrones">Patrones</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="colección-heterogénea">Colección heterogénea</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Los nombres de los elementos coinciden con los nombres de los <strong>campos, propiedades o atributos de las estructuras, registros, objetos, entidades, &#8230;&#8203;</strong> de los lenguajes de programación</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;record&gt;</span>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="patrones">
+     Patrones
+    </h2>
+    <div class="sectionbody">
+     <div class="sect2">
+      <h3 id="colección-heterogénea">
+       Colección heterogénea
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 40%;"/>
+        <col style="width: 60%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             Los nombres de los elementos coinciden con los nombres de los
+             <strong>
+              campos, propiedades o atributos de las estructuras, registros, objetos, entidades, …​
+             </strong>
+             de los lenguajes de programación
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;record&gt;</span>
     <span class="tag">&lt;field_A&gt;</span>data_A<span class="tag">&lt;/field_A&gt;</span>
     <span class="tag">&lt;field_B&gt;</span>data_B<span class="tag">&lt;/field_B&gt;</span>
     ...
     <span class="tag">&lt;field_Z&gt;</span>data_Z<span class="tag">&lt;/field_Z&gt;</span>
 <span class="tag">&lt;/record&gt;</span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;author&gt;</span>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;author&gt;</span>
     <span class="tag">&lt;name&gt;</span>Edsger Wybe<span class="tag">&lt;/name&gt;</span>
     <span class="tag">&lt;surname&gt;</span>Dijkstra<span class="tag">&lt;/surname&gt;</span>
     <span class="tag">&lt;birthday&gt;</span>
@@ -1896,42 +3261,66 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml">git</a
         <span class="tag">&lt;month&gt;</span>5<span class="tag">&lt;/month&gt;</span>
         <span class="tag">&lt;year&gt;</span>1930<span class="tag">&lt;/year&gt;</span>
     <span class="tag">&lt;/birthday&gt;</span>
-    <span class="tag">&lt;turingAward</span> <span class="attribute-name">year</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">1972</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+    <span class="tag">&lt;turingAward</span> <span class="attribute-name">year</span>=<span class="string"><span class="delimiter">"</span><span class="content">1972</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
 <span class="tag">&lt;/author&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="colección-homogénea">Colección homogénea</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 45%;">
-<col style="width: 55%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="paragraph">
-<p>Los <strong>items</strong> coinciden con los <strong>elementos de los arrays, vectores, listas, &#8230;&#8203;</strong> de los lenguajes de programación</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="colección-homogénea">
+       Colección homogénea
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 45%;"/>
+        <col style="width: 55%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top" colspan="2">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             Los
+             <strong>
+              items
+             </strong>
+             coinciden con los
+             <strong>
+              elementos de los arrays, vectores, listas, …​
+             </strong>
+             de los lenguajes de programación
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;items&gt;</span>
     <span class="tag">&lt;item&gt;</span>item_A<span class="tag">&lt;/item&gt;</span>
     <span class="tag">&lt;item&gt;</span>item_B<span class="tag">&lt;/item&gt;</span>
     ...
     <span class="tag">&lt;item&gt;</span>item_C<span class="tag">&lt;/item&gt;</span>
 <span class="tag">&lt;/items&gt;</span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;keys&gt;</span>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;keys&gt;</span>
         <span class="tag">&lt;key&gt;</span>877<span class="tag">&lt;/key&gt;</span>
         <span class="tag">&lt;key&gt;</span>743<span class="tag">&lt;/key&gt;</span>
         <span class="tag">&lt;key&gt;</span>33<span class="tag">&lt;/key&gt;</span>
@@ -1941,13 +3330,17 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml">git</a
         <span class="tag">&lt;key&gt;</span>55<span class="tag">&lt;/key&gt;</span>
         <span class="tag">&lt;key&gt;</span>689<span class="tag">&lt;/key&gt;</span>
 <span class="tag">&lt;/keys&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;studies&gt;</span>
     <span class="tag">&lt;study&gt;</span>
         <span class="tag">&lt;name&gt;</span>Ingeniería del Software<span class="tag">&lt;/name&gt;</span>
@@ -1971,11 +3364,15 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml">git</a
     <span class="tag">&lt;/study&gt;</span>
     ...
 <span class="tag">&lt;/studies&gt;</span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;addresses&gt;</span>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;addresses&gt;</span>
         <span class="tag">&lt;address&gt;</span>
                 <span class="tag">&lt;name&gt;</span>Sr. Francisco Ansó García<span class="tag">&lt;/name&gt;</span>
                 <span class="tag">&lt;street&gt;</span>Calle Lucas Rey Kalea, 15, 5ºB<span class="tag">&lt;/street&gt;</span>
@@ -1995,49 +3392,115 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml">git</a
                 <span class="tag">&lt;province&gt;</span>Madrid<span class="tag">&lt;/province&gt;</span>
         <span class="tag">&lt;/address&gt;</span>
 <span class="tag">&lt;/addresses&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><em class="green">Aplicación</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#3-curriculumv0">2-texts/3-curriculum</a>: <a href="https://github.com/USantaTecla-tech-xml/simpleDomains/blob/master/2-texts/3-curriculum/v0.0/data.xml">v0.0</a> - <a href="https://github.com/USantaTecla-tech-xml/simpleDomains/blob/master/2-texts/3-curriculum/v0.1/data.xml">v0.1</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#6-timetablev0">6-collections/timetable</a>: - <a href="https://github.com/USantaTecla-tech-xml/0-simpleDomains/blob/master/6-collections/6-timetable/v0.0/data.xml">v0.0</a> - <a href="https://github.com/USantaTecla-tech-xml/0-simpleDomains/blob/master/6-collections/6-timetable/v0.1/data.xml">v0.1</a> - <a href="https://github.com/USantaTecla-tech-xml/0-simpleDomains/blob/master/6-collections/6-timetable/v0.2/data.xml">v0.2</a> - <a href="https://github.com/USantaTecla-tech-xml/0-simpleDomains/blob/master/6-collections/6-timetable/v0.3/data.xml">v0.3</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-domains/game-ticTacToe/tree/master/0.0.dataLanguages">game-ticTacToe/0.0.dataLanguages</a> - <a href="https://github.com/USantaTecla-tech-xml/game-ticTacToe/blob/master/0.0.dataLanguages/v0.0/data.xml">v0.0</a> y <a href="https://github.com/USantaTecla-tech-xml/game-ticTacToe/blob/master/0.0.dataLanguages/v0.1/data.xml">v0.1</a></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="árboles">Árboles</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;tree&gt;</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3334%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="3">
+          <em class="green">
+           Aplicación
+          </em>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/2-texts.md#3-curriculumv0">
+              2-texts/3-curriculum
+             </a>
+             :
+             <a href="https://github.com/USantaTecla-tech-xml/simpleDomains/blob/master/2-texts/3-curriculum/v0.0/data.xml">
+              v0.0
+             </a>
+             -
+             <a href="https://github.com/USantaTecla-tech-xml/simpleDomains/blob/master/2-texts/3-curriculum/v0.1/data.xml">
+              v0.1
+             </a>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#6-timetablev0">
+              6-collections/timetable
+             </a>
+             : -
+             <a href="https://github.com/USantaTecla-tech-xml/0-simpleDomains/blob/master/6-collections/6-timetable/v0.0/data.xml">
+              v0.0
+             </a>
+             -
+             <a href="https://github.com/USantaTecla-tech-xml/0-simpleDomains/blob/master/6-collections/6-timetable/v0.1/data.xml">
+              v0.1
+             </a>
+             -
+             <a href="https://github.com/USantaTecla-tech-xml/0-simpleDomains/blob/master/6-collections/6-timetable/v0.2/data.xml">
+              v0.2
+             </a>
+             -
+             <a href="https://github.com/USantaTecla-tech-xml/0-simpleDomains/blob/master/6-collections/6-timetable/v0.3/data.xml">
+              v0.3
+             </a>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <a href="https://github.com/USantaTecla-0-domains/game-ticTacToe/tree/master/0.0.dataLanguages">
+              game-ticTacToe/0.0.dataLanguages
+             </a>
+             -
+             <a href="https://github.com/USantaTecla-tech-xml/game-ticTacToe/blob/master/0.0.dataLanguages/v0.0/data.xml">
+              v0.0
+             </a>
+             y
+             <a href="https://github.com/USantaTecla-tech-xml/game-ticTacToe/blob/master/0.0.dataLanguages/v0.1/data.xml">
+              v0.1
+             </a>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="árboles">
+       Árboles
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;tree&gt;</span>
     <span class="tag">&lt;node&gt;</span>Elemento_1<span class="tag">&lt;/node&gt;</span>
     <span class="tag">&lt;tree&gt;</span>
         <span class="tag">&lt;node&gt;</span>Elemento_11<span class="tag">&lt;/node&gt;</span>
@@ -2061,11 +3524,15 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml">git</a
     <span class="tag">&lt;/tree&gt;</span>
     ...
 <span class="tag">&lt;/tree&gt;</span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;menu&gt;</span>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;menu&gt;</span>
     <span class="tag">&lt;title&gt;</span>Chrome<span class="tag">&lt;/title&gt;</span>
     <span class="tag">&lt;option&gt;</span>Nueva pestaña<span class="tag">&lt;/option&gt;</span>
     <span class="tag">&lt;option&gt;</span>Nueva ventana<span class="tag">&lt;/option&gt;</span>
@@ -2079,302 +3546,488 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-xml">git</a
     <span class="tag">&lt;/menu&gt;</span>
     <span class="tag">&lt;option&gt;</span>Salir<span class="tag">&lt;/option&gt;</span>
 <span class="tag">&lt;/menu&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="grafos">Grafos</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="grafos">
+       Grafos
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 40%;"/>
+        <col style="width: 60%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;graph&gt;</span>
-    <span class="tag">&lt;node</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kA</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>node_A<span class="tag">&lt;/node&gt;</span>
-    <span class="tag">&lt;node</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kB</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>node_B<span class="tag">&lt;/node&gt;</span>
+    <span class="tag">&lt;node</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">kA</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>node_A<span class="tag">&lt;/node&gt;</span>
+    <span class="tag">&lt;node</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">kB</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>node_B<span class="tag">&lt;/node&gt;</span>
     ...
-    <span class="tag">&lt;node</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kZ</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>node_Z<span class="tag">&lt;/node&gt;</span>
+    <span class="tag">&lt;node</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">kZ</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>node_Z<span class="tag">&lt;/node&gt;</span>
     <span class="tag">&lt;edge&gt;</span>
-        <span class="tag">&lt;from</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kB</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;to</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kA</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;from</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">kB</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;to</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">kA</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/edge&gt;</span>
     <span class="tag">&lt;edge&gt;</span>
-        <span class="tag">&lt;from</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kZ</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;to</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kA</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;from</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">kZ</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;to</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">kA</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/edge&gt;</span>
     ...
     <span class="tag">&lt;edge&gt;</span>
-        <span class="tag">&lt;from</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kZ</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;to</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kB</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;from</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">kZ</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;to</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">kB</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/edge&gt;</span>
 <span class="tag">&lt;/graph&gt;</span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;graph&gt;</span>
-    <span class="tag">&lt;node</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kA</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;node</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">kA</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
         <span class="tag">&lt;data&gt;</span>node_A<span class="tag">&lt;/data&gt;</span>
     <span class="tag">&lt;/node&gt;</span>
-    <span class="tag">&lt;node</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kB</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;node</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">kB</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
         <span class="tag">&lt;data&gt;</span>node_B<span class="tag">&lt;/data&gt;</span>
-        <span class="tag">&lt;edge</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kA</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;edge</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">kA</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/node&gt;</span>
     ...
-    <span class="tag">&lt;node</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kZ</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;node</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">kZ</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
         <span class="tag">&lt;data&gt;</span>node_Z<span class="tag">&lt;/data&gt;</span>
-        <span class="tag">&lt;edge</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kA</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;edge</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">kB</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;edge</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">kA</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;edge</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">kB</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/node&gt;</span>
 <span class="tag">&lt;/graph&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;bibliography&gt;</span>
-    <span class="tag">&lt;book</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k1</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;book</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">k1</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
         <span class="tag">&lt;author&gt;</span>Frederick P. Brooks<span class="tag">&lt;/author&gt;</span>
         <span class="tag">&lt;title&gt;</span>The Mythical Man Month. Essays on Software Engineering<span class="tag">&lt;/title&gt;</span>
         <span class="tag">&lt;year&gt;</span>1995<span class="tag">&lt;/year&gt;</span>
         <span class="tag">&lt;publisher&gt;</span>Prentice Hall<span class="tag">&lt;/publisher&gt;</span>
     <span class="tag">&lt;/book&gt;</span>
-    <span class="tag">&lt;book</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k2</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;book</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">k2</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
         <span class="tag">&lt;author&gt;</span>Grady Booch<span class="tag">&lt;/author&gt;</span>
         <span class="tag">&lt;title&gt;</span>Object Oriented Analysis and Design with Applications<span class="tag">&lt;/title&gt;</span>
         <span class="tag">&lt;year&gt;</span>2011<span class="tag">&lt;/year&gt;</span>
         <span class="tag">&lt;publisher&gt;</span>Addison-Wesley<span class="tag">&lt;/publisher&gt;</span>
     <span class="tag">&lt;/book&gt;</span>
     ...
-    <span class="tag">&lt;book</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k78</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;book</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">k78</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
         <span class="tag">&lt;author&gt;</span>Robert C. Martin<span class="tag">&lt;/author&gt;</span>
         <span class="tag">&lt;title&gt;</span>Clean Code. A Handbook of Agile Software Craftsmanship<span class="tag">&lt;/title&gt;</span>
         <span class="tag">&lt;year&gt;</span>2008<span class="tag">&lt;/year&gt;</span>
         <span class="tag">&lt;publisher&gt;</span>Prentice Hall<span class="tag">&lt;/publisher&gt;</span>
     <span class="tag">&lt;/book&gt;</span>
     <span class="tag">&lt;reference&gt;</span>
-        <span class="tag">&lt;from</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k2</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;to</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k1</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;from</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">k2</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;to</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">k1</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/reference&gt;</span>
     <span class="tag">&lt;reference&gt;</span>
-        <span class="tag">&lt;from</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k78</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;to</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k1</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;from</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">k78</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;to</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">k1</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/reference&gt;</span>
     ...
     <span class="tag">&lt;reference&gt;</span>
-        <span class="tag">&lt;from</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k78</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;to</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k2</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;from</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">k78</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;to</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">k2</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/reference&gt;</span>
 <span class="tag">&lt;/bibliography&gt;</span></code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="xml"><span class="preprocessor">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="tag">&lt;bibliography&gt;</span>
-    <span class="tag">&lt;book</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k1</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;book</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">k1</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
         <span class="tag">&lt;author&gt;</span>Frederick P. Brooks<span class="tag">&lt;/author&gt;</span>
         <span class="tag">&lt;title&gt;</span>The Mythical Man Month. Essays on Software Engineering<span class="tag">&lt;/title&gt;</span>
         <span class="tag">&lt;year&gt;</span>1995<span class="tag">&lt;/year&gt;</span>
         <span class="tag">&lt;publisher&gt;</span>Prentice Hall<span class="tag">&lt;/publisher&gt;</span>
     <span class="tag">&lt;/book&gt;</span>
-    <span class="tag">&lt;book</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k2</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;book</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">k2</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
         <span class="tag">&lt;author&gt;</span>Grady Booch<span class="tag">&lt;/author&gt;</span>
         <span class="tag">&lt;title&gt;</span>Object Oriented Analysis and Design with Applications<span class="tag">&lt;/title&gt;</span>
         <span class="tag">&lt;year&gt;</span>2011<span class="tag">&lt;/year&gt;</span>
         <span class="tag">&lt;publisher&gt;</span>Addison-Wesley<span class="tag">&lt;/publisher&gt;</span>
-        <span class="tag">&lt;reference</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k1</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;reference</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">k1</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/book&gt;</span>
     ...
-    <span class="tag">&lt;book</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k78</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;book</span> <span class="attribute-name">id</span>=<span class="string"><span class="delimiter">"</span><span class="content">k78</span><span class="delimiter">"</span></span><span class="tag">&gt;</span>
         <span class="tag">&lt;author&gt;</span>Robert C. Martin<span class="tag">&lt;/author&gt;</span>
         <span class="tag">&lt;title&gt;</span>Clean Code. A Handbook of Agile Software Craftsmanship<span class="tag">&lt;/title&gt;</span>
         <span class="tag">&lt;year&gt;</span>2008<span class="tag">&lt;/year&gt;</span>
         <span class="tag">&lt;publisher&gt;</span>Prentice Hall<span class="tag">&lt;/publisher&gt;</span>
-        <span class="tag">&lt;reference</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k1</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-        <span class="tag">&lt;reference</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">k2</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;reference</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">k1</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
+        <span class="tag">&lt;reference</span> <span class="attribute-name">idref</span>=<span class="string"><span class="delimiter">"</span><span class="content">k2</span><span class="delimiter">"</span></span><span class="tag">/&gt;</span>
     <span class="tag">&lt;/book&gt;</span>
 <span class="tag">&lt;/bibliography&gt;</span></code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><em class="green">Aplicación</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#7-familytreev0">6-collections/7-familyTree/v0</a>: <a href="https://github.com/USantaTecla-tech-xml/simpleDomains/blob/master/6-collections/7-familyTree/v0.0/data.xml">v0.0</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#7-familytreev1">6-collections/7-familyTree/v1</a>: <a href="https://github.com/USantaTecla-tech-xml/simpleDomains/blob/master/6-collections/7-familyTree/v1.0/data.xml">v1.0</a> - <a href="https://github.com/USantaTecla-tech-xml/simpleDomains/blob/master/6-collections/7-familyTree/v1.1/data.xml">v1.1</a></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="síntesis"><strong>Síntesis</strong></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="bibliografía"><strong>Bibliografía</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 30%;">
-<col style="width: 20%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="http://zvon.org/comp/r/tut-XML.html#Pages~XML_Declaration">zvon</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/logoZVON.png" alt="logoZVON"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.w3schools.com/xml/default.asp">w3schools</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/logoW3S.jfif" alt="logoW3S"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>XML al descubierto</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Michael Morrison</em></p>
-</li>
-<li>
-<p>Prentice Hall, 2000</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/XMLAlDescubierto.jpg" alt="XMLAlDescubierto"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ponente">Ponente</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 30%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Luis Fernández Muñoz</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Formador/Consultor</em></p>
-</li>
-<li>
-<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
-</li>
-<li>
-<p><em>Ingeniero en Informática por la UMA</em></p>
-</li>
-<li>
-<p><em>Diplomado en Informática por la UPM</em></p>
-</li>
-<li>
-<p><em>Profesor Titular de ETSISI de la UPM</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="footer">
-<div id="footer-text">
-Version 0.0.1<br>
-Last updated 2022-11-14 11:04:23 +0100
-</div>
-</div>
-<style>
-/* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3334%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="3">
+          <em class="green">
+           Aplicación
+          </em>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#7-familytreev0">
+              6-collections/7-familyTree/v0
+             </a>
+             :
+             <a href="https://github.com/USantaTecla-tech-xml/simpleDomains/blob/master/6-collections/7-familyTree/v0.0/data.xml">
+              v0.0
+             </a>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <a href="https://github.com/USantaTecla-0-domains/0-simpleDomains/blob/master/docs/6-collections.md#7-familytreev1">
+              6-collections/7-familyTree/v1
+             </a>
+             :
+             <a href="https://github.com/USantaTecla-tech-xml/simpleDomains/blob/master/6-collections/7-familyTree/v1.0/data.xml">
+              v1.0
+             </a>
+             -
+             <a href="https://github.com/USantaTecla-tech-xml/simpleDomains/blob/master/6-collections/7-familyTree/v1.1/data.xml">
+              v1.1
+             </a>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="síntesis">
+     <strong>
+      Síntesis
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="bibliografía">
+     <strong>
+      Bibliografía
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 20%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 30%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <a href="http://zvon.org/comp/r/tut-XML.html#Pages~XML_Declaration">
+               zvon
+              </a>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="logoZVON" src="images/logoZVON.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <a href="https://www.w3schools.com/xml/default.asp">
+               w3schools
+              </a>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="logoW3S" src="images/logoW3S.jfif"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               XML al descubierto
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Michael Morrison
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Prentice Hall, 2000
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="XMLAlDescubierto" src="images/XMLAlDescubierto.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="ponente">
+     Ponente
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Luis Fernández Muñoz
+               </em>
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Formador/Consultor
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://es.linkedin.com/in/luisfernandezmunyoz">
+                  <em>
+                   Linkedin
+                  </em>
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="setillo" src="images/setillo.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Doctor en Inteligencia Artificial por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Ingeniero en Informática por la UMA
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Diplomado en Informática por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Profesor Titular de ETSISI de la UPM
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div id="footer-text">
+    Version 0.0.1
+    <br/>
+    Last updated 2022-11-14 11:04:23 +0100
+   </div>
+  </div>
+  <style>
+   /* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
 pre.CodeRay{background:#f7f7f8}
 .CodeRay .line-numbers{border-right:1px solid currentColor;opacity:.35;padding:0 .5em 0 0}
 .CodeRay span.line-numbers{display:inline-block;margin-right:.75em}
@@ -2461,9 +4114,9 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 .CodeRay .delete .delete{color:#800}
 .CodeRay .change .change{color:#66f}
 .CodeRay .head .head{color:#f4f}
-</style>
-<script>
-                let speed = 50;
+  </style>
+  <script>
+   let speed = 50;
                 
                 function typeWriter(v) {
                   let i = v.getAttribute("typewriter-index")
@@ -2495,6 +4148,6 @@ table.CodeRay td.code{padding:0 0 0 .75em}
                 })
                 
                 setTimeout(typeWriterAll, speed);
-                
-                </script>
+  </script>
+ </body>
 </html>

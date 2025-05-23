@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8">
-<meta name="author" content="Universo Santa Tecla">
-<title>Disciplina de Pruebas</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-<style>
-/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Asciidoctor 2.0.8" name="generator"/>
+  <meta content="Universo Santa Tecla" name="author"/>
+  <title>
+   Disciplina de Pruebas
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700" rel="stylesheet"/>
+  <style>
+   /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
@@ -434,1527 +436,3790 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="book">
-<div id="header">
-<h1>Disciplina de Pruebas</h1>
-<div class="details">
-<span id="author" class="author">Universo Santa Tecla</span><br>
-<span id="email" class="email"><a href="mailto:USantaTecla@gmail.com">USantaTecla@gmail.com</a></span><br>
-<span id="revnumber">version 0.0.1</span>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Índice</div>
-<ul class="sectlevel1">
-<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
-<li><a href="#qué"><strong>¿Qué?</strong></a></li>
-<li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
-<li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
-<li><a href="#gestión-de-calidad-software">Gestión de Calidad Software</a></li>
-<li><a href="#itinerario">Itinerario</a></li>
-<li><a href="#sintesis"><strong>Sintesis</strong></a></li>
-<li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
-<li><a href="#ponente">Ponente</a></li>
-</ul>
-</div>
-</div>
-<div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="por-qué"><strong>¿Por qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>porque</strong> tiene <strong class="blue">malas variables en su economía</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">ámbito incumplido</strong> y/o</p>
-</li>
-<li>
-<p><strong class="blue">tiempo incumplido</strong> y/o</p>
-</li>
-<li>
-<p><strong class="blue">coste incumplido</strong>;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="blue">mala calidad del software</strong>, <span class="blue">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="blue">mala mantenibilidad</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">viscoso</strong>, porque <span class="blue">no se puede entender con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="blue">rígido</strong>, porque <span class="blue">no se puede cambiar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="blue">frágil</strong>, porque <span class="blue">no se puede</span> <strong class="red">probar</strong> <span class="blue">con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="blue">inmovil</strong>, porque <span class="blue">no se puede reutilizar con facilidad</span> y/o</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="blue">complejidad arbitraria</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/davidProyectoImplantacionDiseñoMal.png" alt="davidProyectoImplantacionDiseñoMal"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/arbolNoMantenible.jpeg" alt="arbolNoMantenible"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 5%;">
-<col style="width: 40%;">
-<col style="width: 40%;">
-<col style="width: 15%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Fecha</th>
-<th class="tableblock halign-left valign-top">Desastre</th>
-<th class="tableblock halign-left valign-top">Causa</th>
-<th class="tableblock halign-left valign-top">Coste</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>1962</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>El <strong class="red">cohete Mariner 1</strong>, en una investigación espacial destinada a Venus, se desvió de su trayectoria de vuelo poco después de su lanzamiento. El control de la misión destruyó el cohete pasados 293 segundos desde el despegue.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Un programador <strong class="red">codificó incorrectamente en el software una fórmula manuscrita</strong>, saltándose un simple guión sobre una expresión. Sin la función de suavizado indicada por este símbolo, el software interpretó como serias las variaciones normales de velocidad y causó correcciones erróneas en el rumbo que hicieron que el cohete saliera de su trayectoria.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">18,5 millones de dólares</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>1978</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Sólo unas horas después de que miles de aficionados al hockey abandonaran el <strong class="red">Hartford Coliseum, la estructura de acero de su techo se desplomaba debido al peso de la nieve</strong>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>El desarrollador del <strong class="red">software de diseño asistido (CAD) utilizado para diseñar el coliseo asumió incorrectamente que los soportes de acero del techo sólo debían aguantar la compresión de la propia estructura</strong>. Sin embargo, cuando uno de estos soportes se dobló debido al peso de la nieve, inició una reacción en cadena que hizo caer a las demás secciones del techo como si se tratara de piezas de dominó.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">70 millones de dólares</strong>, más <strong class="red">otros 20 millones</strong> en daños a la economía local.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>1982</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>El <strong class="red">software de control se volvió loco y produjo una presión excesiva en la tubería de gas transsiberiana</strong>, provocando la mayor explosión no nuclear, causada por el hombre, de la historia de la tierra.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>los agentes de la <strong class="red">CIA supuestamente introdujeron un error</strong> en el sistema informático canadiense adquirido por los soviéticos para controlar sus tuberías de gas. La compra era parte de un estratégico plan soviético para robar u obtener de forma encubierta tecnología secreta de los Estados Unidos. Cuando la CIA descubrió la compra, sabotearon el software de forma que éste superara la inspección
-soviética pero fallara una vez operativo</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">Millones de dólares</strong>, daño significativo a la economía soviética.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>1983</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>El <strong class="red">sistema soviético de alerta temprana indicó erróneamente que los Estados Unidos habían lanzado cinco misiles balísticos</strong>. Afortunadamente, el oficial de servicio, con un gran instinto, razonó que si realmente les estuvieran atacando les habrían lanzado más de cinco misiles, por lo que informó del aparente ataque como una falsa alarma.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>un <strong class="red">error en el software soviético hizo que los efectos de la reflexión de la luz solar en las nubes fueran considerados misiles</strong> por el sistema.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">prácticamente toda la humanidad</strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>1985</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>La máquina de <strong class="red">terapia radiactiva canadiense Therac-25 falló y emitió dosis letales de radiación a los pacientes</strong>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Debido a un <strong class="red">sutil bug llamado race condition</strong> (condición de carrera), un técnico pudo accidentalmente configurar el Therac-25 de forma que el haz de electrones se disparase en modo de alta potencia sin que el paciente contara con la protección apropiada.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">Tres personas muertas, otras tres heridas gravemente</strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>1987</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>El <strong class="red">"lunes negro", 19 de octubre de 1987</strong>, el Dow Jones se desplomó 508 puntos, perdiendo el 22,6% de su valor total. El S&amp;P 500 cayó el 20,4%. Ha sido la mayor pérdida que ha sufrido Wall Street en un único día.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Un prolongado mercado alcista fue frenado por una serie de investigaciones del SEC sobre abuso de información privilegiada y otras causas de mercado. Como los inversores huyeron en un éxodo masivo, los <strong class="red">programas informáticos generaron una auténtica riada de órdenes de venta</strong>, saturando el mercado, bloqueando los sistemas y dejando a los inversores realmente a ciegas.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">500.000 millones de dólares en un solo día</strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>1990</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>un simple <strong class="red">conmutador de uno de los 114 centros de conmutación de AT&amp;T sufrió un pequeño problema mecánico y desactivó el centro</strong>. Cuando éste volvió a estar habilitado, envió un mensaje a los otros nodos haciendo que todos ellos dejaran de funcionar, lo que provocó una caída de 9 horas en la red de la compañía.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Una <strong class="red">simple línea de código errónea</strong> en una compleja actualización de software destinada a acelerar las llamadas provocó una reacción que echó abajo la red.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">75 millones de llamadas telefónicas afectadas; 200.000 reservas de vuelo perdidas.</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>1991</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Durante la Guerra del Golfo, un <strong class="red">sistema de misiles americanos Patriot en Arabia Saudita falló</strong> en la intercepción de un misil iraquí Scud. El misil destruyó una barraca de la armada americana.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Un <strong class="red">error de redondeo</strong> hizo que se calculara el tiempo de forma incorrecta, provocando que el Patriot ignorara al misil Scud atacante.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">28 soldados muertos, 100 heridos</strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>1993</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>el promocionadísimo <strong class="red">chip de Intel, Pentium, producía errores al dividir números en coma flotante</strong> que se encontraban en un rango determinado. Por ejemplo, dividiendo 4195835,0/3145727,0 se obtenía 1,33374 en lugar de 1,33382, un error del 0,006%. Aunque el error afectaba a pocos usuarios, se convirtió en una pesadilla en cuanto a sus relaciones públicas; con unos 5 millones de chips en circulación,
-Intel ofreció reemplazar los Pentium sólo de aquellos clientes que demostraran que necesitaban alta precisión en sus cálculos. Finalmente, reemplazó los chips de todos los que lo solicitaron.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>El divisor en la unidad de coma flotante contaba con <strong class="red">una tabla de división incorrecta, donde faltaban cinco entradas sobre mil</strong>, y que provocaba estos errores en los redondeos.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">475 millones de dólares, credibilidad de Intel</strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>1996</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>El <strong class="red">Ariane 5</strong>, el más novedoso cohete espacial no tripulado Europeo, fue <strong class="red">destruido intencionadamente segundos después de su lanzamiento en su vuelo inaugural</strong>. Con él se destruyó su carga de cuatro satélites científicos destinados a estudiar la interacción del campo magnético de la tierra con los vientos solares.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>El problema surgió cuando el sistema de guiado <strong class="red">intentó convertir la velocidad lateral de la nave de 64 a 16 bits</strong>. El número era demasiado alto y se produjo un error de desbordamiento, lo que hizo que el sistema de guiado se detuviera. En ese momento, el control pasó a un sistema idéntico redundante, que también falló al ejecutar el mismo algoritmo.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">500 millones de dólares</strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>1997</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">Operadores humanos intentan apagar la red informática global Skynet, y ésta responde lanzando misiles nucleares americanos a Rusia, iniciando una guerra nuclear global conocida como Día del Juicio Final</strong> (29 de agosto de 1997).</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Cyberdyne, compañía líder en fabricación de armamento, instaló la tecnología Skynet en todo el hardware militar, incluyendo bombarderos Stealth y sistemas de misiles de defensa. La tecnología Skynet formaba una red perfecta, sin fisuras, y liminaba el factor humano en la defensa estratégica. Finalmente, Skynet se <strong class="red">hizo consciente y fue amenazada cuando los humanos trataron de desconectarla, y buscando su supervivencia respondió iniciando la guerra nuclear</strong>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>6.000 millones de muertos, prácticamente la destrucción total de la civilización humana y ecosistemas animales (en la <strong class="red">ficción</strong>).</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>1998</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Después de un viaje de 286 días desde la tierra, la <strong class="red">nave "Mars Climate Orbiter"</strong> encendió sus motores para ponerse en órbita alrededor de Marte. Los motores arrancaron, pero el ingenio <strong class="red">entró demasiado en la atmósfera del planeta, provocando que se estrellara en su superficie</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>El software que controlaba los propulsores del Mars Orbiter usaban <strong class="red">unidades imperiales (<em>libras de fuerza</em>) en lugar de unidades métricas (<em>newtons</em>)</strong>, como especificaba la NASA.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">125 millones de dólares</strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>1999</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>En este irónico caso, el software utilizado para analizar desastres era un desastre en sí mismo. La publicación <strong class="red">New England Journal of Medicine publicó un estudio relacionando el incremento de ratios de suicidio después de desastres naturales</strong>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Un error de programación causó que <strong class="red">el número de suicidios de un año se sumaran dos veces</strong>, lo cual fue suficiente para echar por tierra todo el estudio.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">Credibilidad científica</strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>1999</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>La <strong class="red">agencia de pasaportes del Reino Unido implantó un nuevo sistema informático que falló en la emisión de pasaportes a medio millón de ciudadanos británicos</strong>. La agencia tuvo que pagar millones en compensaciones, horas extra y paraguas para la gente que hacía cola bajo la lluvia esperando su documento.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>La agencia de pasaportes puso en marcha este nuevo sistema sin las pruebas adecuadas ni formar a su personal. Al mismo tiempo se produjo un cambio de ley, <strong class="red">obligando a todos los menores de 16 años que viajaran al exterior a obtener un pasaporte, lo que provocó un pico de demanda que colapsó el nuevo sistema informático</strong>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">12,6 millones de libras esterlinas, molestias masivas</strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>1999</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>El desastre para unos es la suerte de otros, como demostró el tristemente célebre error del <strong class="red">año 2000 (<em>Y2K</em>). Las compañías gastaron millones en programadores para arreglar un problema en las aplicaciones antiguas</strong>. Mientras no se produjeron fallos informáticos significativos, la preparación para el bug Y2K tuvo un importante impacto en coste y tiempo en todas las industrias que utilizaban tecnología informática.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Para ahorrar espacio de almacenamiento, los sistemas antiguos solían guardar los años de las fechas como un número de dos dígitos, como "99" para "1999". al llegar el año 2000, las aplicaciones iban a <strong class="red">interpretar "00" como 1900</strong>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">500.000 millones de dólares</strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>2000</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>la <strong class="red">burbuja especulativa creada entre 1995 y 2001</strong> alimentó un rápido aumento en inversiones en capital riesgo y valores bursátiles en Internet y los sectores tecnológicos. La <strong class="red">burbuja "punto com"</strong> comenzó a hundirse al principio del 2000, eliminando billones en valores, miles de compañías y empleos, y comenzando una recesión global.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Las compañías e inversores <strong class="red">obviaron los modelos de negocio habituales</strong>, centrándose en cambio en el aumento de cuota de mercado a expensas de los beneficios.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">5 billones de dólares en valores, fracaso de miles de compañías</strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>2000</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>El <strong class="red">gusano LoveLetter</strong> infectó millones de ordenadores y causó más daño que cualquier otro virus informático en la historia. El gusano eliminaba archivos, modificaba la página de inicio de los usuarios y el registro de Windows.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>LoveLetter <strong class="red">infectaba a los usuarios vía email, chats y carpetas compartidas</strong>. Enviaba a través de correo electrónico un mensaje con el asunto "ILOVEYOU" y un archivo adjunto; cuando el usuario abría el archivo, el virus infectaba su ordenador y se autoenviaba a todos los contactos de la libreta de direcciones.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">8.750 millones de dólares, millones de ordenadores infectados, importantes pérdidas de información</strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>2000</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>El software de <strong class="red">radiación terapéutica creado por Multidata Systems International</strong> fallaba al calcular la dosis apropiada, exponiendo a los pacientes a peligrosos, y en algunos casos mortales, niveles de radiación. Los físicos, a los que legalmente se exige una doble comprobación de los cálculos del software, fueron acusados de asesinato.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>El software calculaba la <strong class="red">dosis de radiación basándose en el orden en que los datos eran introducidos</strong>, lo que provocaba que a veces generara una dosis doble de radiación.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">8 personas muertas, 20 heridas de gravedad</strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>2004</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>El gigante de servicios EDS desarrolló un sistema informático para la <strong class="red">agencia británica "Child Support Agency (CSA)"</strong> que accidentalmente pagó más de lo debido a 1.900.000 personas, pagó de menos a otras 700.000, tenía 3.500 millones de libras de manutención de niños sin cobrar, un atraso de 239.000 casos, 36.000 nuevos casos bloqueados en el sistema, y todavía hay más de 500 bugs documentados.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>EDS introdujo un <strong class="red">enorme y complejo sistema de información en la CSA de forma simultánea a una reestructuración de la agencia</strong>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">539 millones de libras, y sumando</strong>.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>2005</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>El FBI desechó su nuevo sistema informático después de cuatro años de esfuerzo. El <strong class="red">macro-proyecto Trilogy, era un archivo virtual integrado</strong> que permitiría a los agentes compartir expedientes de casos y otra información.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>La <strong class="red">mala gestión</strong>, y un intento de construir un proyecto a largo plazo sobre tecnología que era obsoleta antes de que el proyecto se completara, resultando en un <strong class="red">sistema complejo e inutilizable</strong>.</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">105 millones de dólares, aún sin disponer de una solución de archivo efectiva</strong>.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="qué"><strong>¿Qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 12.5%;">
-<col style="width: 12.5%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">- <strong class="red">Fase 0</strong></th>
-<th class="tableblock halign-left valign-top">- <span class="red">Fase 1</span></th>
-<th class="tableblock halign-left valign-top">- <strong class="gray">Fase 2</strong></th>
-<th class="tableblock halign-left valign-top">- <span class="green">Fase 3</span></th>
-<th class="tableblock halign-left valign-top">- <strong class="green">Fase 4</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">No hay ninguna diferencia entre la prueba y la depuración</strong>, aparte del soporte a la depuración, las pruebas no tiene ningún propósito</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>El objetivo de la  de la prueba es <span class="red">demostrar que el software funciona</span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>El objetivo de la prueba es <strong class="gray">demostrar que el software no funciona</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>El propósito de la prueba no es demostrar nada, sino <span class="green">reducir el riesgo percibido cuando el software no trabaja en valores aceptables</span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Las pruebas no son un acto. <strong class="green">Es una diciplina mental que arroja software de bajo riesgo sin mucho esfuerzo en pruebas</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="red"><strong>Muy mal</strong></span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.youtube.com/watch?v=981Pl9-pCLQ"><span class="red">Mal</span></a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="gray">Regular</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green">Bien</span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="green"><strong>Muy bien</strong></span></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 55%;">
-<col style="width: 20%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><span class="red">Probar la corrección de sistemas</span></strong> reales está todavia <strong><span class="red">mucho mas allá de nuestras capacidades</span></strong>.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Independientemente de la regurosidad con la que se haya planeado el <strong class="red">proceso de pruebas de un producto</strong>, <strong class="red">nunca será posible garantizar</strong> al ejecutar este proceso, la <strong class="red">ausencia total de defectos de un producto en su paso a producción</strong> debido, entre otras cosas, a que no se permite escribir y ejecutar casos de pruebas de manera exhaustiva</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Escribir <strong><span class="red">software libre de defectos</span></strong>, es sumamente <strong><span class="red">difícil</span></strong>.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top" colspan="3"><div class="content"><div class="paragraph">
-<p><span class="red">La <strong>especificación</strong> del comportamiento es igualmente desafiante</span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="para-qué"><strong>¿Para qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Efectividad, eficacia y eficiencia, del Proyecto Software</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buenas variables en su economía</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">ámbito cumplido</strong> y</p>
-</li>
-<li>
-<p><strong class="green">tiempo cumplido</strong> y</p>
-</li>
-<li>
-<p><strong class="green">coste cumplido</strong>;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buena calidad del software</strong>, <span class="green">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buena mantenibilidad</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">fluido</strong>, porque <span class="green">se puede entender con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">flexible</strong>, porque <span class="green">se puede cambiar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">fuerte</strong>, porque <span class="green">se puede probar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">reusable</strong>, porque <span class="green">se puede reutilizar con facilidad</span> y/o</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">complejidad inherente</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/davidProyectoImplantacionDiseño.png" alt="davidProyectoImplantacionDiseño"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/arbolMantenible.jpeg" alt="arbolMantenible"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cómo"><strong>¿Cómo?</strong></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="gestión-de-calidad-software">Gestión de Calidad Software</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 40%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><span class="green">Calidad, <em>Quality</em></span></th>
-<th class="tableblock halign-left valign-top"><span class="green">Garantía de la calidad, <em>Quality Assurance</em></span></th>
-<th class="tableblock halign-left valign-top"><span class="green">Control calidad, <em>Quality control</em></span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Apto para uso o propósito.</p>
-</li>
-<li>
-<p>Se trata de satisfacer las necesidades y expectativas de los clientes con respecto a</p>
-<div class="ulist">
-<ul>
-<li>
-<p>la <span class="blue">funcionalidad</span>,</p>
-</li>
-<li>
-<p>el <span class="green">diseño</span>,</p>
-</li>
-<li>
-<p>la <strong class="red">confiabilidad</strong>,</p>
-</li>
-<li>
-<p>la durabilidad y</p>
-</li>
-<li>
-<p>el precio del producto.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La garantía no es más que una declaración positiva sobre un <strong class="blue">producto o servicio</strong>, que da <strong class="green">confianza</strong>.</p>
-</li>
-<li>
-<p>Es la certeza de un producto o servicio, que <strong class="green">funcionará bien</strong>.</p>
-</li>
-<li>
-<p>Proporciona una garantía de que el producto funcionará sin problemas <strong class="red">según las expectativas o requisitos</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>El conjunto de los <strong class="blue">mecanismos, acciones y herramientas</strong> realizadas para <strong class="green">detectar la presencia de errores</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 20%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-middle" colspan="4"><strong class="blue">Garantía de Calidad Software</strong>, <em>Software Quality Assurance</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">Planificar</strong>, <em>Plan</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="green">Hacer</strong>, <em>Do</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">Verificar</strong>, <em>Check</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="red">Actuar</strong>, <em>Act</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">planificar y establecer los objetivos</strong> relacionados con el proceso y determinar los <strong class="red">procesos</strong> que se requieren para entregar un producto final de alta calidad.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">desarrollo</strong> y <strong class="green">prueba de procesos</strong> (y también "hacer" cambios en los procesos</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Monitorear</strong> procesos, modificar los procesos y <strong class="red">verificar si cumple con los objetivos predeterminados</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>implementar las acciones necesarias para lograr <strong class="red">mejoras en los procesos</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="4"><div class="content"><div class="paragraph">
-<p><em>Ciclo de Deming</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="green">Control de Calidad (CQ)</strong></th>
-<th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong class="red">Garantía de Calidad (AQ)</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Revisar</strong>, <em>code reviews, walkthrougs</em></p>
-</li>
-<li>
-<p><strong class="green">Pruebas</strong>, <em>software testing</em></p>
-</li>
-<li>
-<p><strong class="red">Inspección</strong>, <em>inspections</em></p>
-</li>
-<li>
-<p><strong class="red">Depuración</strong>, <em>debuggers</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/QAvsQC.png" alt="QAvsQC">
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Auditoría de calidad</p>
-</li>
-<li>
-<p>Definir procesos</p>
-</li>
-<li>
-<p>Identificación y selección de herramientas</p>
-</li>
-<li>
-<p>Capacitación de estándares y procesos de calidad</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="green">Revisión, <em>code reviews, walkthrougs</em></strong></th>
-<th class="tableblock halign-left valign-top"><strong class="red">Inspección, <em>inspections</em></strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Es <strong class="green">informal</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Es <strong class="red">formal</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Iniciado por el <strong class="green">autor</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Iniciado por el <strong class="red">equipo del proyecto</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Por lo general, los <strong class="green">miembros del equipo del mismo proyecto</strong> participan en el recorrido. El propio autor actúa como líder del recorrido.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Un grupo de <strong class="red">personas relevantes de diferentes departamentos</strong> participa en la inspección.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>No se utiliza <strong class="green">ninguna lista de verificación</strong> en la revisión.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La <strong class="red">lista de verificación</strong> se utiliza para encontrar fallas.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>El proceso de recorrido incluye descripción general, <strong class="green">poca o ninguna preparación</strong>, <strong class="green">poca o ninguna examinación de preparación</strong> (reunión de recorrido real) y <strong class="green">reelaboración</strong> y <strong class="green">seguimiento</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Los procesos de inspección incluyen descripción general, <strong class="red">preparación</strong>, <strong class="red">inspección</strong>, <strong class="red">reelaboración</strong> y <strong class="red">seguimiento</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Sin trámite</strong> formalizado en los trámites.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Procedimiento <strong class="red">formalizado</strong> en cada paso.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Se invierte <strong class="green">menos tiempo</strong> en el recorrido, ya que no se utiliza una lista de verificación formal para evaluar el programa.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La inspección lleva <strong class="red">más tiempo</strong> ya que la lista de elementos en la lista de verificación se rastrea hasta su finalización.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">No planificado</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Reunión planificada</strong> con los roles fijos asignados a todos los miembros involucrados.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>El <strong class="green">autor</strong> lee el código del producto y su compañero de equipo presenta los defectos o sugerencias.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>El <strong class="red">lector</strong> lee el código del producto. Todos lo inspeccionan y detectan.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>El autor toma <strong class="green">nota de los defectos</strong> y sugerencias ofrecidos por su compañero de equipo.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Registrador <strong class="red">registra los defectos</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Informal, por lo que <strong class="green">no hay moderador</strong>.</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>El moderador tiene el papel de <strong class="red">moderador</strong> asegurándose de que las discusiones avancen en las líneas productivas.</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="itinerario">Itinerario</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaPruebasPruebasSoftware.svg" alt="diagramaPruebasPruebasSoftware" width="255" height="813">
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Pruebas del Software</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue"><em>JUnit</em></strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Validar, Verificar, Probar vs Demostrar y Depurar</p>
-</li>
-<li>
-<p>Caracrerística, <em>SUT, DOC</em>, Caso de Prueba</p>
-</li>
-<li>
-<p>Ejecución de Prueba, Verde/Exito/Negativo, Falso Negativo, Rojo/Fallo/Positivo, Falso Positivo</p>
-</li>
-<li>
-<p>Coste de Conformidad vs de No Conformidad</p>
-</li>
-<li>
-<p>Cobertura de Pruebas</p>
-</li>
-<li>
-<p>Pruebas de Aceptación, de Sistema, de Integración , de Componentes y Unitarias</p>
-</li>
-<li>
-<p>Pruebas de Rendimiento, de Escalabilidad , de Usabilidad , de Seguridad, &#8230;&#8203;</p>
-</li>
-<li>
-<p>Pruebas Estáticas vs Dinámicas</p>
-</li>
-<li>
-<p><em>SonarQube, Understand, TestComplete, &#8230;&#8203; JUnit, mockito</em></p>
-</li>
-<li>
-<p><em>TDD, BDD, TFD y TLD</em></p>
-</li>
-<li>
-<p>Integración Continua, Pruebas de Regresión y de Humo</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Metaclases y Anotaciones</p>
-</li>
-<li>
-<p><em>Framework</em></p>
-</li>
-<li>
-<p><em>@Test, timeout, @Before, @After, @Beforeclass, @AfterClass, @RunWith, @SuiteClasses</em></p>
-</li>
-<li>
-<p><em>assertThat, assertEquals, assertNull, assertTrue, fail, &#8230;&#8203;</em></p>
-</li>
-<li>
-<p><em>Arrange/Setup/Given, Act/When, Assert/Then, TearDown</em></p>
-</li>
-<li>
-<p><em>@IncludeCategory, @ExcludeCategory, @Category, @Ignored, @Parameters y @Parameter</em></p>
-</li>
-<li>
-<p>Pruebas de Componentes, Integración y Sistemas, sobre-diseño</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Pruebas Unitarias</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Diseño de Casos de Pruebas Unitarias</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Dobles en Pruebas Unitarias</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Riesgos, Inocuas, Red de Seguridad</p>
-</li>
-<li>
-<p>Automatizadas, Auto-verificables, Repetibles, Independientes, Rápidas</p>
-</li>
-<li>
-<p>Mantenimiento, Profesionales, Fáciles de Leer/Escribir, Cohesivas, Sencillas, Expresivas</p>
-</li>
-<li>
-<p>Legibilidad, Documentación, Calidad, Repelentes de Errores, Localizan Defectos y Especificación</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Estrategias de Caja Negra/Comportamiento vs Caja Blanca/Estructural</p>
-</li>
-<li>
-<p>Variables independientes, Variables dependientes, Clases de Equivalencia, Factor, Análisis de Valores Límite</p>
-</li>
-<li>
-<p>Vectores de Pares vs Vector Ortogonal</p>
-</li>
-<li>
-<p>Grafo de Control de Flujo de Ejecución y Complejidad Ciclomática</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Dobles en el proceso de desarrollo: TLD, TFD, TDD</p>
-</li>
-<li>
-<p>Escuelas de Chicago vs Londres</p>
-</li>
-<li>
-<p>Dobles, <em>Dummy, Fake, Stub, Mock</em> y <em>Spy</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Mockito</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>@InjectMocks, @Mock, @Spy</em></p>
-</li>
-<li>
-<p><em>matchers, Hamfcrest, ArgumentMatcher, ArgumentCaptor, InOrder</em></p>
-</li>
-<li>
-<p><em>when, thenReturn, doReturn, doNothing, doAnswer, thenAnswer, doThrow, thenThrow, verify, times, atLeastOnce, verifyZeroInteractions</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="3"><div class="content"><div class="paragraph">
-<p><em>Ejemplos: TicTacToe, Mastermind, &#8230;&#8203;</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="sintesis"><strong>Sintesis</strong></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="bibliografía"><strong>Bibliografía</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>xUnit Test Patterns: Refactoring Test Code</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Gerard Meszaros</strong></p>
-</li>
-<li>
-<p>Addison-Wesley Educational Publishers Inc; Edición: 01 (21 de mayo de 2007)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/xUnitTestPatternsRefactoringTestCode.jpg" alt="xUnitTestPatternsRefactoringTestCode"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Effective Unit Testing</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Lasse Koskela</strong></p>
-</li>
-<li>
-<p>Manning Publications Company; Edición: 1 (16 de febrero de 2013)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/EffectiveUnitTesting.jpg" alt="EffectiveUnitTesting"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>The Art of Software Testing</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Glenford J. Myers</strong></p>
-</li>
-<li>
-<p>John Wiley &amp; Sons Inc; Edición: 3. Auflage (16 de diciembre de 2011)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheArtofSoftwareTesting.jpg" alt="TheArtofSoftwareTesting"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Pragmatic Unit Testing in Java with JUnit</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Andy Hunt, Dave Thomas</strong></p>
-</li>
-<li>
-<p>The Pragmatic Programmers (1674)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/PragmaticUnitTestinginJavawithJUnit.jpg" alt="PragmaticUnitTestinginJavawithJUnit">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Testing Computer Software</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Cem Kaner,Jack Falk,Hung Q. Nguyen</strong></p>
-</li>
-<li>
-<p>Wiley John + Sons; Edición: 2nd (12 de abril de 1999)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TestingComputerSoftware.jpg" alt="TestingComputerSoftware"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Diseno Agil con TDD</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Ble Jurado, Carlos</strong></p>
-</li>
-<li>
-<p>Lulu.com (18 de enero de 2010)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/DisenoAgilconTDD.jpg" alt="DisenoAgilconTDD"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Test Driven Development</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Kent Beck</strong></p>
-</li>
-<li>
-<p>Addison Wesley; Edición: 01 (8 de noviembre de 2002)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TestDrivenDevelopment.jpg" alt="TestDrivenDevelopment"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Growing Object-Oriented Software, Guided by Tests</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Steve Freeman</strong></p>
-</li>
-<li>
-<p>Addison-Wesley Professional (12 de octubre de 2009)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/GrowingObjectOrientedSoftware,GuidedbyTests.jpg" alt="GrowingObjectOrientedSoftware,GuidedbyTests"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>How Google Tests Software</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>James A. Whittaker,Jason Arbon,Jeff Carollo</strong></p>
-</li>
-<li>
-<p>Addison-Wesley Educational Publishers Inc; Edición: 01 (2 de abril de 2012)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/HowGoogleTestsSoftware.jpg" alt="HowGoogleTestsSoftware"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Pragmatic Project Automation: How to Build, Deploy, and Monitor Java Apps</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Mike Clark</strong></p>
-</li>
-<li>
-<p>The Pragmatic Programmers (1900)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/PragmaticProjectAutomation.jpg" alt="PragmaticProjectAutomation"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ponente">Ponente</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 30%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Luis Fernández Muñoz</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Formador/Consultor</em></p>
-</li>
-<li>
-<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/setillo.jpg" alt="setillo">
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
-</li>
-<li>
-<p><em>Ingeniero en Informática por la UMA</em></p>
-</li>
-<li>
-<p><em>Diplomado en Informática por la UPM</em></p>
-</li>
-<li>
-<p><em>Profesor Titular de ETSISI de la UPM</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="footer">
-<div id="footer-text">
-Version 0.0.1<br>
-Last updated 2022-10-16 16:28:16 +0200
-</div>
-</div>
-<script>
-                let speed = 50;
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+ </head>
+ <body class="book">
+  <div id="header">
+   <h1>
+    Disciplina de Pruebas
+   </h1>
+   <div class="details">
+    <span class="author" id="author">
+     Universo Santa Tecla
+    </span>
+    <br/>
+    <span class="email" id="email">
+     <a href="mailto:USantaTecla@gmail.com">
+      USantaTecla@gmail.com
+     </a>
+    </span>
+    <br/>
+    <span id="revnumber">
+     version 0.0.1
+    </span>
+   </div>
+   <div class="toc" id="toc">
+    <div id="toctitle">
+     Índice
+    </div>
+    <ul class="sectlevel1">
+     <li>
+      <a href="#por-qué">
+       <strong>
+        ¿Por qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#qué">
+       <strong>
+        ¿Qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#para-qué">
+       <strong>
+        ¿Para qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#cómo">
+       <strong>
+        ¿Cómo?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#gestión-de-calidad-software">
+       Gestión de Calidad Software
+      </a>
+     </li>
+     <li>
+      <a href="#itinerario">
+       Itinerario
+      </a>
+     </li>
+     <li>
+      <a href="#sintesis">
+       <strong>
+        Sintesis
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#bibliografía">
+       <strong>
+        Bibliografía
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#ponente">
+       Ponente
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div id="content">
+   <div id="preamble">
+    <div class="sectionbody">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="por-qué">
+     <strong>
+      ¿Por qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="blue">
+                  malas variables en su economía
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="blue">
+                     ámbito incumplido
+                    </strong>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="blue">
+                     tiempo incumplido
+                    </strong>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="blue">
+                     coste incumplido
+                    </strong>
+                    ;
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="blue">
+                  mala calidad del software
+                 </strong>
+                 ,
+                 <span class="blue">
+                  fiabilidad, usabilidad, interoperatividad, seguirdad, …​ (
+                  <em>
+                   -ilities
+                  </em>
+                  )
+                 </span>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="blue">
+                  mala mantenibilidad
+                 </strong>
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="blue">
+                     viscoso
+                    </strong>
+                    , porque
+                    <span class="blue">
+                     no se puede entender con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="blue">
+                     rígido
+                    </strong>
+                    , porque
+                    <span class="blue">
+                     no se puede cambiar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="blue">
+                     frágil
+                    </strong>
+                    , porque
+                    <span class="blue">
+                     no se puede
+                    </span>
+                    <strong class="red">
+                     probar
+                    </strong>
+                    <span class="blue">
+                     con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="blue">
+                     inmovil
+                    </strong>
+                    , porque
+                    <span class="blue">
+                     no se puede reutilizar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="blue">
+                  complejidad arbitraria
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="davidProyectoImplantacionDiseñoMal" src="images/davidProyectoImplantacionDiseñoMal.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="arbolNoMantenible" src="images/arbolNoMantenible.jpeg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 5%;"/>
+       <col style="width: 40%;"/>
+       <col style="width: 40%;"/>
+       <col style="width: 15%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Fecha
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Desastre
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Causa
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Coste
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             1962
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            El
+            <strong class="red">
+             cohete Mariner 1
+            </strong>
+            , en una investigación espacial destinada a Venus, se desvió de su trayectoria de vuelo poco después de su lanzamiento. El control de la misión destruyó el cohete pasados 293 segundos desde el despegue.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Un programador
+            <strong class="red">
+             codificó incorrectamente en el software una fórmula manuscrita
+            </strong>
+            , saltándose un simple guión sobre una expresión. Sin la función de suavizado indicada por este símbolo, el software interpretó como serias las variaciones normales de velocidad y causó correcciones erróneas en el rumbo que hicieron que el cohete saliera de su trayectoria.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             18,5 millones de dólares
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             1978
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Sólo unas horas después de que miles de aficionados al hockey abandonaran el
+            <strong class="red">
+             Hartford Coliseum, la estructura de acero de su techo se desplomaba debido al peso de la nieve
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            El desarrollador del
+            <strong class="red">
+             software de diseño asistido (CAD) utilizado para diseñar el coliseo asumió incorrectamente que los soportes de acero del techo sólo debían aguantar la compresión de la propia estructura
+            </strong>
+            . Sin embargo, cuando uno de estos soportes se dobló debido al peso de la nieve, inició una reacción en cadena que hizo caer a las demás secciones del techo como si se tratara de piezas de dominó.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               70 millones de dólares
+              </strong>
+              , más
+              <strong class="red">
+               otros 20 millones
+              </strong>
+              en daños a la economía local.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             1982
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            El
+            <strong class="red">
+             software de control se volvió loco y produjo una presión excesiva en la tubería de gas transsiberiana
+            </strong>
+            , provocando la mayor explosión no nuclear, causada por el hombre, de la historia de la tierra.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            los agentes de la
+            <strong class="red">
+             CIA supuestamente introdujeron un error
+            </strong>
+            en el sistema informático canadiense adquirido por los soviéticos para controlar sus tuberías de gas. La compra era parte de un estratégico plan soviético para robar u obtener de forma encubierta tecnología secreta de los Estados Unidos. Cuando la CIA descubrió la compra, sabotearon el software de forma que éste superara la inspección
+soviética pero fallara una vez operativo
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             Millones de dólares
+            </strong>
+            , daño significativo a la economía soviética.
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             1983
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            El
+            <strong class="red">
+             sistema soviético de alerta temprana indicó erróneamente que los Estados Unidos habían lanzado cinco misiles balísticos
+            </strong>
+            . Afortunadamente, el oficial de servicio, con un gran instinto, razonó que si realmente les estuvieran atacando les habrían lanzado más de cinco misiles, por lo que informó del aparente ataque como una falsa alarma.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            un
+            <strong class="red">
+             error en el software soviético hizo que los efectos de la reflexión de la luz solar en las nubes fueran considerados misiles
+            </strong>
+            por el sistema.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             prácticamente toda la humanidad
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             1985
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            La máquina de
+            <strong class="red">
+             terapia radiactiva canadiense Therac-25 falló y emitió dosis letales de radiación a los pacientes
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Debido a un
+              <strong class="red">
+               sutil bug llamado race condition
+              </strong>
+              (condición de carrera), un técnico pudo accidentalmente configurar el Therac-25 de forma que el haz de electrones se disparase en modo de alta potencia sin que el paciente contara con la protección apropiada.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             Tres personas muertas, otras tres heridas gravemente
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             1987
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            El
+            <strong class="red">
+             "lunes negro", 19 de octubre de 1987
+            </strong>
+            , el Dow Jones se desplomó 508 puntos, perdiendo el 22,6% de su valor total. El S&amp;P 500 cayó el 20,4%. Ha sido la mayor pérdida que ha sufrido Wall Street en un único día.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Un prolongado mercado alcista fue frenado por una serie de investigaciones del SEC sobre abuso de información privilegiada y otras causas de mercado. Como los inversores huyeron en un éxodo masivo, los
+            <strong class="red">
+             programas informáticos generaron una auténtica riada de órdenes de venta
+            </strong>
+            , saturando el mercado, bloqueando los sistemas y dejando a los inversores realmente a ciegas.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             500.000 millones de dólares en un solo día
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             1990
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            un simple
+            <strong class="red">
+             conmutador de uno de los 114 centros de conmutación de AT&amp;T sufrió un pequeño problema mecánico y desactivó el centro
+            </strong>
+            . Cuando éste volvió a estar habilitado, envió un mensaje a los otros nodos haciendo que todos ellos dejaran de funcionar, lo que provocó una caída de 9 horas en la red de la compañía.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Una
+            <strong class="red">
+             simple línea de código errónea
+            </strong>
+            en una compleja actualización de software destinada a acelerar las llamadas provocó una reacción que echó abajo la red.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             75 millones de llamadas telefónicas afectadas; 200.000 reservas de vuelo perdidas.
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             1991
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Durante la Guerra del Golfo, un
+            <strong class="red">
+             sistema de misiles americanos Patriot en Arabia Saudita falló
+            </strong>
+            en la intercepción de un misil iraquí Scud. El misil destruyó una barraca de la armada americana.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Un
+            <strong class="red">
+             error de redondeo
+            </strong>
+            hizo que se calculara el tiempo de forma incorrecta, provocando que el Patriot ignorara al misil Scud atacante.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             28 soldados muertos, 100 heridos
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             1993
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            el promocionadísimo
+            <strong class="red">
+             chip de Intel, Pentium, producía errores al dividir números en coma flotante
+            </strong>
+            que se encontraban en un rango determinado. Por ejemplo, dividiendo 4195835,0/3145727,0 se obtenía 1,33374 en lugar de 1,33382, un error del 0,006%. Aunque el error afectaba a pocos usuarios, se convirtió en una pesadilla en cuanto a sus relaciones públicas; con unos 5 millones de chips en circulación,
+Intel ofreció reemplazar los Pentium sólo de aquellos clientes que demostraran que necesitaban alta precisión en sus cálculos. Finalmente, reemplazó los chips de todos los que lo solicitaron.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            El divisor en la unidad de coma flotante contaba con
+            <strong class="red">
+             una tabla de división incorrecta, donde faltaban cinco entradas sobre mil
+            </strong>
+            , y que provocaba estos errores en los redondeos.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             475 millones de dólares, credibilidad de Intel
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             1996
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            El
+            <strong class="red">
+             Ariane 5
+            </strong>
+            , el más novedoso cohete espacial no tripulado Europeo, fue
+            <strong class="red">
+             destruido intencionadamente segundos después de su lanzamiento en su vuelo inaugural
+            </strong>
+            . Con él se destruyó su carga de cuatro satélites científicos destinados a estudiar la interacción del campo magnético de la tierra con los vientos solares.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            El problema surgió cuando el sistema de guiado
+            <strong class="red">
+             intentó convertir la velocidad lateral de la nave de 64 a 16 bits
+            </strong>
+            . El número era demasiado alto y se produjo un error de desbordamiento, lo que hizo que el sistema de guiado se detuviera. En ese momento, el control pasó a un sistema idéntico redundante, que también falló al ejecutar el mismo algoritmo.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             500 millones de dólares
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             1997
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             Operadores humanos intentan apagar la red informática global Skynet, y ésta responde lanzando misiles nucleares americanos a Rusia, iniciando una guerra nuclear global conocida como Día del Juicio Final
+            </strong>
+            (29 de agosto de 1997).
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Cyberdyne, compañía líder en fabricación de armamento, instaló la tecnología Skynet en todo el hardware militar, incluyendo bombarderos Stealth y sistemas de misiles de defensa. La tecnología Skynet formaba una red perfecta, sin fisuras, y liminaba el factor humano en la defensa estratégica. Finalmente, Skynet se
+            <strong class="red">
+             hizo consciente y fue amenazada cuando los humanos trataron de desconectarla, y buscando su supervivencia respondió iniciando la guerra nuclear
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            6.000 millones de muertos, prácticamente la destrucción total de la civilización humana y ecosistemas animales (en la
+            <strong class="red">
+             ficción
+            </strong>
+            ).
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             1998
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Después de un viaje de 286 días desde la tierra, la
+            <strong class="red">
+             nave "Mars Climate Orbiter"
+            </strong>
+            encendió sus motores para ponerse en órbita alrededor de Marte. Los motores arrancaron, pero el ingenio
+            <strong class="red">
+             entró demasiado en la atmósfera del planeta, provocando que se estrellara en su superficie
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            El software que controlaba los propulsores del Mars Orbiter usaban
+            <strong class="red">
+             unidades imperiales (
+             <em>
+              libras de fuerza
+             </em>
+             ) en lugar de unidades métricas (
+             <em>
+              newtons
+             </em>
+             )
+            </strong>
+            , como especificaba la NASA.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             125 millones de dólares
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             1999
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            En este irónico caso, el software utilizado para analizar desastres era un desastre en sí mismo. La publicación
+            <strong class="red">
+             New England Journal of Medicine publicó un estudio relacionando el incremento de ratios de suicidio después de desastres naturales
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Un error de programación causó que
+            <strong class="red">
+             el número de suicidios de un año se sumaran dos veces
+            </strong>
+            , lo cual fue suficiente para echar por tierra todo el estudio.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             Credibilidad científica
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             1999
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            La
+            <strong class="red">
+             agencia de pasaportes del Reino Unido implantó un nuevo sistema informático que falló en la emisión de pasaportes a medio millón de ciudadanos británicos
+            </strong>
+            . La agencia tuvo que pagar millones en compensaciones, horas extra y paraguas para la gente que hacía cola bajo la lluvia esperando su documento.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            La agencia de pasaportes puso en marcha este nuevo sistema sin las pruebas adecuadas ni formar a su personal. Al mismo tiempo se produjo un cambio de ley,
+            <strong class="red">
+             obligando a todos los menores de 16 años que viajaran al exterior a obtener un pasaporte, lo que provocó un pico de demanda que colapsó el nuevo sistema informático
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             12,6 millones de libras esterlinas, molestias masivas
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             1999
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            El desastre para unos es la suerte de otros, como demostró el tristemente célebre error del
+            <strong class="red">
+             año 2000 (
+             <em>
+              Y2K
+             </em>
+             ). Las compañías gastaron millones en programadores para arreglar un problema en las aplicaciones antiguas
+            </strong>
+            . Mientras no se produjeron fallos informáticos significativos, la preparación para el bug Y2K tuvo un importante impacto en coste y tiempo en todas las industrias que utilizaban tecnología informática.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Para ahorrar espacio de almacenamiento, los sistemas antiguos solían guardar los años de las fechas como un número de dos dígitos, como "99" para "1999". al llegar el año 2000, las aplicaciones iban a
+            <strong class="red">
+             interpretar "00" como 1900
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             500.000 millones de dólares
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             2000
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            la
+            <strong class="red">
+             burbuja especulativa creada entre 1995 y 2001
+            </strong>
+            alimentó un rápido aumento en inversiones en capital riesgo y valores bursátiles en Internet y los sectores tecnológicos. La
+            <strong class="red">
+             burbuja "punto com"
+            </strong>
+            comenzó a hundirse al principio del 2000, eliminando billones en valores, miles de compañías y empleos, y comenzando una recesión global.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Las compañías e inversores
+            <strong class="red">
+             obviaron los modelos de negocio habituales
+            </strong>
+            , centrándose en cambio en el aumento de cuota de mercado a expensas de los beneficios.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             5 billones de dólares en valores, fracaso de miles de compañías
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             2000
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            El
+            <strong class="red">
+             gusano LoveLetter
+            </strong>
+            infectó millones de ordenadores y causó más daño que cualquier otro virus informático en la historia. El gusano eliminaba archivos, modificaba la página de inicio de los usuarios y el registro de Windows.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            LoveLetter
+            <strong class="red">
+             infectaba a los usuarios vía email, chats y carpetas compartidas
+            </strong>
+            . Enviaba a través de correo electrónico un mensaje con el asunto "ILOVEYOU" y un archivo adjunto; cuando el usuario abría el archivo, el virus infectaba su ordenador y se autoenviaba a todos los contactos de la libreta de direcciones.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             8.750 millones de dólares, millones de ordenadores infectados, importantes pérdidas de información
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             2000
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            El software de
+            <strong class="red">
+             radiación terapéutica creado por Multidata Systems International
+            </strong>
+            fallaba al calcular la dosis apropiada, exponiendo a los pacientes a peligrosos, y en algunos casos mortales, niveles de radiación. Los físicos, a los que legalmente se exige una doble comprobación de los cálculos del software, fueron acusados de asesinato.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            El software calculaba la
+            <strong class="red">
+             dosis de radiación basándose en el orden en que los datos eran introducidos
+            </strong>
+            , lo que provocaba que a veces generara una dosis doble de radiación.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             8 personas muertas, 20 heridas de gravedad
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             2004
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            El gigante de servicios EDS desarrolló un sistema informático para la
+            <strong class="red">
+             agencia británica "Child Support Agency (CSA)"
+            </strong>
+            que accidentalmente pagó más de lo debido a 1.900.000 personas, pagó de menos a otras 700.000, tenía 3.500 millones de libras de manutención de niños sin cobrar, un atraso de 239.000 casos, 36.000 nuevos casos bloqueados en el sistema, y todavía hay más de 500 bugs documentados.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            EDS introdujo un
+            <strong class="red">
+             enorme y complejo sistema de información en la CSA de forma simultánea a una reestructuración de la agencia
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             539 millones de libras, y sumando
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             2005
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            El FBI desechó su nuevo sistema informático después de cuatro años de esfuerzo. El
+            <strong class="red">
+             macro-proyecto Trilogy, era un archivo virtual integrado
+            </strong>
+            que permitiría a los agentes compartir expedientes de casos y otra información.
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            La
+            <strong class="red">
+             mala gestión
+            </strong>
+            , y un intento de construir un proyecto a largo plazo sobre tecnología que era obsoleta antes de que el proyecto se completara, resultando en un
+            <strong class="red">
+             sistema complejo e inutilizable
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             105 millones de dólares, aún sin disponer de una solución de archivo efectiva
+            </strong>
+            .
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="qué">
+     <strong>
+      ¿Qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 12.5%;"/>
+       <col style="width: 12.5%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         -
+         <strong class="red">
+          Fase 0
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         -
+         <span class="red">
+          Fase 1
+         </span>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         -
+         <strong class="gray">
+          Fase 2
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         -
+         <span class="green">
+          Fase 3
+         </span>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         -
+         <strong class="green">
+          Fase 4
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               No hay ninguna diferencia entre la prueba y la depuración
+              </strong>
+              , aparte del soporte a la depuración, las pruebas no tiene ningún propósito
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              El objetivo de la  de la prueba es
+              <span class="red">
+               demostrar que el software funciona
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              El objetivo de la prueba es
+              <strong class="gray">
+               demostrar que el software no funciona
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              El propósito de la prueba no es demostrar nada, sino
+              <span class="green">
+               reducir el riesgo percibido cuando el software no trabaja en valores aceptables
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Las pruebas no son un acto.
+              <strong class="green">
+               Es una diciplina mental que arroja software de bajo riesgo sin mucho esfuerzo en pruebas
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="red">
+               <strong>
+                Muy mal
+               </strong>
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <a href="https://www.youtube.com/watch?v=981Pl9-pCLQ">
+               <span class="red">
+                Mal
+               </span>
+              </a>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="gray">
+               Regular
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="green">
+               Bien
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="green">
+               <strong>
+                Muy bien
+               </strong>
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 55%;"/>
+       <col style="width: 20%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <span class="red">
+                Probar la corrección de sistemas
+               </span>
+              </strong>
+              reales está todavia
+              <strong>
+               <span class="red">
+                mucho mas allá de nuestras capacidades
+               </span>
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Independientemente de la regurosidad con la que se haya planeado el
+              <strong class="red">
+               proceso de pruebas de un producto
+              </strong>
+              ,
+              <strong class="red">
+               nunca será posible garantizar
+              </strong>
+              al ejecutar este proceso, la
+              <strong class="red">
+               ausencia total de defectos de un producto en su paso a producción
+              </strong>
+              debido, entre otras cosas, a que no se permite escribir y ejecutar casos de pruebas de manera exhaustiva
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Escribir
+              <strong>
+               <span class="red">
+                software libre de defectos
+               </span>
+              </strong>
+              , es sumamente
+              <strong>
+               <span class="red">
+                difícil
+               </span>
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-top" colspan="3">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="red">
+             La
+             <strong>
+              especificación
+             </strong>
+             del comportamiento es igualmente desafiante
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="para-qué">
+     <strong>
+      ¿Para qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Efectividad, eficacia y eficiencia, del Proyecto Software
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buenas variables en su economía
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     ámbito cumplido
+                    </strong>
+                    y
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     tiempo cumplido
+                    </strong>
+                    y
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     coste cumplido
+                    </strong>
+                    ;
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buena calidad del software
+                 </strong>
+                 ,
+                 <span class="green">
+                  fiabilidad, usabilidad, interoperatividad, seguirdad, …​ (
+                  <em>
+                   -ilities
+                  </em>
+                  )
+                 </span>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buena mantenibilidad
+                 </strong>
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     fluido
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede entender con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     flexible
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede cambiar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     fuerte
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede probar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     reusable
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede reutilizar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  complejidad inherente
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="davidProyectoImplantacionDiseño" src="images/davidProyectoImplantacionDiseño.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="arbolMantenible" src="images/arbolMantenible.jpeg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="cómo">
+     <strong>
+      ¿Cómo?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="gestión-de-calidad-software">
+     Gestión de Calidad Software
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 40%;"/>
+       <col style="width: 40%;"/>
+       <col style="width: 20%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         <span class="green">
+          Calidad,
+          <em>
+           Quality
+          </em>
+         </span>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <span class="green">
+          Garantía de la calidad,
+          <em>
+           Quality Assurance
+          </em>
+         </span>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <span class="green">
+          Control calidad,
+          <em>
+           Quality control
+          </em>
+         </span>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Apto para uso o propósito.
+             </p>
+            </li>
+            <li>
+             <p>
+              Se trata de satisfacer las necesidades y expectativas de los clientes con respecto a
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 la
+                 <span class="blue">
+                  funcionalidad
+                 </span>
+                 ,
+                </p>
+               </li>
+               <li>
+                <p>
+                 el
+                 <span class="green">
+                  diseño
+                 </span>
+                 ,
+                </p>
+               </li>
+               <li>
+                <p>
+                 la
+                 <strong class="red">
+                  confiabilidad
+                 </strong>
+                 ,
+                </p>
+               </li>
+               <li>
+                <p>
+                 la durabilidad y
+                </p>
+               </li>
+               <li>
+                <p>
+                 el precio del producto.
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              La garantía no es más que una declaración positiva sobre un
+              <strong class="blue">
+               producto o servicio
+              </strong>
+              , que da
+              <strong class="green">
+               confianza
+              </strong>
+              .
+             </p>
+            </li>
+            <li>
+             <p>
+              Es la certeza de un producto o servicio, que
+              <strong class="green">
+               funcionará bien
+              </strong>
+              .
+             </p>
+            </li>
+            <li>
+             <p>
+              Proporciona una garantía de que el producto funcionará sin problemas
+              <strong class="red">
+               según las expectativas o requisitos
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              El conjunto de los
+              <strong class="blue">
+               mecanismos, acciones y herramientas
+              </strong>
+              realizadas para
+              <strong class="green">
+               detectar la presencia de errores
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-center valign-middle" colspan="4">
+         <strong class="blue">
+          Garantía de Calidad Software
+         </strong>
+         ,
+         <em>
+          Software Quality Assurance
+         </em>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             Planificar
+            </strong>
+            ,
+            <em>
+             Plan
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="green">
+             Hacer
+            </strong>
+            ,
+            <em>
+             Do
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             Verificar
+            </strong>
+            ,
+            <em>
+             Check
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong class="red">
+             Actuar
+            </strong>
+            ,
+            <em>
+             Act
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               planificar y establecer los objetivos
+              </strong>
+              relacionados con el proceso y determinar los
+              <strong class="red">
+               procesos
+              </strong>
+              que se requieren para entregar un producto final de alta calidad.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               desarrollo
+              </strong>
+              y
+              <strong class="green">
+               prueba de procesos
+              </strong>
+              (y también "hacer" cambios en los procesos
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               Monitorear
+              </strong>
+              procesos, modificar los procesos y
+              <strong class="red">
+               verificar si cumple con los objetivos predeterminados
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              implementar las acciones necesarias para lograr
+              <strong class="red">
+               mejoras en los procesos
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle" colspan="4">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Ciclo de Deming
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3334%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         <strong class="green">
+          Control de Calidad (CQ)
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="red">
+          Garantía de Calidad (AQ)
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Revisar
+              </strong>
+              ,
+              <em>
+               code reviews, walkthrougs
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="green">
+               Pruebas
+              </strong>
+              ,
+              <em>
+               software testing
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="red">
+               Inspección
+              </strong>
+              ,
+              <em>
+               inspections
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="red">
+               Depuración
+              </strong>
+              ,
+              <em>
+               debuggers
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="QAvsQC" src="images/QAvsQC.png"/>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Auditoría de calidad
+             </p>
+            </li>
+            <li>
+             <p>
+              Definir procesos
+             </p>
+            </li>
+            <li>
+             <p>
+              Identificación y selección de herramientas
+             </p>
+            </li>
+            <li>
+             <p>
+              Capacitación de estándares y procesos de calidad
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         <strong class="green">
+          Revisión,
+          <em>
+           code reviews, walkthrougs
+          </em>
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="red">
+          Inspección,
+          <em>
+           inspections
+          </em>
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Es
+              <strong class="green">
+               informal
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Es
+              <strong class="red">
+               formal
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Iniciado por el
+              <strong class="green">
+               autor
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Iniciado por el
+              <strong class="red">
+               equipo del proyecto
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Por lo general, los
+              <strong class="green">
+               miembros del equipo del mismo proyecto
+              </strong>
+              participan en el recorrido. El propio autor actúa como líder del recorrido.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Un grupo de
+              <strong class="red">
+               personas relevantes de diferentes departamentos
+              </strong>
+              participa en la inspección.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              No se utiliza
+              <strong class="green">
+               ninguna lista de verificación
+              </strong>
+              en la revisión.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              La
+              <strong class="red">
+               lista de verificación
+              </strong>
+              se utiliza para encontrar fallas.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              El proceso de recorrido incluye descripción general,
+              <strong class="green">
+               poca o ninguna preparación
+              </strong>
+              ,
+              <strong class="green">
+               poca o ninguna examinación de preparación
+              </strong>
+              (reunión de recorrido real) y
+              <strong class="green">
+               reelaboración
+              </strong>
+              y
+              <strong class="green">
+               seguimiento
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Los procesos de inspección incluyen descripción general,
+              <strong class="red">
+               preparación
+              </strong>
+              ,
+              <strong class="red">
+               inspección
+              </strong>
+              ,
+              <strong class="red">
+               reelaboración
+              </strong>
+              y
+              <strong class="red">
+               seguimiento
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Sin trámite
+              </strong>
+              formalizado en los trámites.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Procedimiento
+              <strong class="red">
+               formalizado
+              </strong>
+              en cada paso.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Se invierte
+              <strong class="green">
+               menos tiempo
+              </strong>
+              en el recorrido, ya que no se utiliza una lista de verificación formal para evaluar el programa.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              La inspección lleva
+              <strong class="red">
+               más tiempo
+              </strong>
+              ya que la lista de elementos en la lista de verificación se rastrea hasta su finalización.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               No planificado
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               Reunión planificada
+              </strong>
+              con los roles fijos asignados a todos los miembros involucrados.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              El
+              <strong class="green">
+               autor
+              </strong>
+              lee el código del producto y su compañero de equipo presenta los defectos o sugerencias.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              El
+              <strong class="red">
+               lector
+              </strong>
+              lee el código del producto. Todos lo inspeccionan y detectan.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              El autor toma
+              <strong class="green">
+               nota de los defectos
+              </strong>
+              y sugerencias ofrecidos por su compañero de equipo.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Registrador
+              <strong class="red">
+               registra los defectos
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Informal, por lo que
+              <strong class="green">
+               no hay moderador
+              </strong>
+              .
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              El moderador tiene el papel de
+              <strong class="red">
+               moderador
+              </strong>
+              asegurándose de que las discusiones avancen en las líneas productivas.
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="itinerario">
+     Itinerario
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3334%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="diagramaPruebasPruebasSoftware" height="813" src="images/diagramaPruebasPruebasSoftware.svg" width="255"/>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Pruebas del Software
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               <em>
+                JUnit
+               </em>
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Validar, Verificar, Probar vs Demostrar y Depurar
+             </p>
+            </li>
+            <li>
+             <p>
+              Caracrerística,
+              <em>
+               SUT, DOC
+              </em>
+              , Caso de Prueba
+             </p>
+            </li>
+            <li>
+             <p>
+              Ejecución de Prueba, Verde/Exito/Negativo, Falso Negativo, Rojo/Fallo/Positivo, Falso Positivo
+             </p>
+            </li>
+            <li>
+             <p>
+              Coste de Conformidad vs de No Conformidad
+             </p>
+            </li>
+            <li>
+             <p>
+              Cobertura de Pruebas
+             </p>
+            </li>
+            <li>
+             <p>
+              Pruebas de Aceptación, de Sistema, de Integración , de Componentes y Unitarias
+             </p>
+            </li>
+            <li>
+             <p>
+              Pruebas de Rendimiento, de Escalabilidad , de Usabilidad , de Seguridad, …​
+             </p>
+            </li>
+            <li>
+             <p>
+              Pruebas Estáticas vs Dinámicas
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               SonarQube, Understand, TestComplete, …​ JUnit, mockito
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               TDD, BDD, TFD y TLD
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              Integración Continua, Pruebas de Regresión y de Humo
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Metaclases y Anotaciones
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Framework
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               @Test, timeout, @Before, @After, @Beforeclass, @AfterClass, @RunWith, @SuiteClasses
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               assertThat, assertEquals, assertNull, assertTrue, fail, …​
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Arrange/Setup/Given, Act/When, Assert/Then, TearDown
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               @IncludeCategory, @ExcludeCategory, @Category, @Ignored, @Parameters y @Parameter
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              Pruebas de Componentes, Integración y Sistemas, sobre-diseño
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Pruebas Unitarias
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Diseño de Casos de Pruebas Unitarias
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Dobles en Pruebas Unitarias
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="3">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Riesgos, Inocuas, Red de Seguridad
+             </p>
+            </li>
+            <li>
+             <p>
+              Automatizadas, Auto-verificables, Repetibles, Independientes, Rápidas
+             </p>
+            </li>
+            <li>
+             <p>
+              Mantenimiento, Profesionales, Fáciles de Leer/Escribir, Cohesivas, Sencillas, Expresivas
+             </p>
+            </li>
+            <li>
+             <p>
+              Legibilidad, Documentación, Calidad, Repelentes de Errores, Localizan Defectos y Especificación
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top" rowspan="3">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Estrategias de Caja Negra/Comportamiento vs Caja Blanca/Estructural
+             </p>
+            </li>
+            <li>
+             <p>
+              Variables independientes, Variables dependientes, Clases de Equivalencia, Factor, Análisis de Valores Límite
+             </p>
+            </li>
+            <li>
+             <p>
+              Vectores de Pares vs Vector Ortogonal
+             </p>
+            </li>
+            <li>
+             <p>
+              Grafo de Control de Flujo de Ejecución y Complejidad Ciclomática
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Dobles en el proceso de desarrollo: TLD, TFD, TDD
+             </p>
+            </li>
+            <li>
+             <p>
+              Escuelas de Chicago vs Londres
+             </p>
+            </li>
+            <li>
+             <p>
+              Dobles,
+              <em>
+               Dummy, Fake, Stub, Mock
+              </em>
+              y
+              <em>
+               Spy
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Mockito
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               @InjectMocks, @Mock, @Spy
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               matchers, Hamfcrest, ArgumentMatcher, ArgumentCaptor, InOrder
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               when, thenReturn, doReturn, doNothing, doAnswer, thenAnswer, doThrow, thenThrow, verify, times, atLeastOnce, verifyZeroInteractions
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle" colspan="3">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <em>
+             Ejemplos: TicTacToe, Mastermind, …​
+            </em>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="sintesis">
+     <strong>
+      Sintesis
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="bibliografía">
+     <strong>
+      Bibliografía
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               xUnit Test Patterns: Refactoring Test Code
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Gerard Meszaros
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley Educational Publishers Inc; Edición: 01 (21 de mayo de 2007)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="xUnitTestPatternsRefactoringTestCode" src="images/xUnitTestPatternsRefactoringTestCode.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Effective Unit Testing
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Lasse Koskela
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Manning Publications Company; Edición: 1 (16 de febrero de 2013)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="EffectiveUnitTesting" src="images/EffectiveUnitTesting.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               The Art of Software Testing
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Glenford J. Myers
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 John Wiley &amp; Sons Inc; Edición: 3. Auflage (16 de diciembre de 2011)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="TheArtofSoftwareTesting" src="images/TheArtofSoftwareTesting.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Pragmatic Unit Testing in Java with JUnit
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Andy Hunt, Dave Thomas
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 The Pragmatic Programmers (1674)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="PragmaticUnitTestinginJavawithJUnit" src="images/PragmaticUnitTestinginJavawithJUnit.jpg"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Testing Computer Software
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Cem Kaner,Jack Falk,Hung Q. Nguyen
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Wiley John + Sons; Edición: 2nd (12 de abril de 1999)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="TestingComputerSoftware" src="images/TestingComputerSoftware.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Diseno Agil con TDD
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Ble Jurado, Carlos
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Lulu.com (18 de enero de 2010)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="DisenoAgilconTDD" src="images/DisenoAgilconTDD.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Test Driven Development
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Kent Beck
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison Wesley; Edición: 01 (8 de noviembre de 2002)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="TestDrivenDevelopment" src="images/TestDrivenDevelopment.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Growing Object-Oriented Software, Guided by Tests
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Steve Freeman
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley Professional (12 de octubre de 2009)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="GrowingObjectOrientedSoftware,GuidedbyTests" src="images/GrowingObjectOrientedSoftware,GuidedbyTests.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               How Google Tests Software
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  James A. Whittaker,Jason Arbon,Jeff Carollo
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley Educational Publishers Inc; Edición: 01 (2 de abril de 2012)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="HowGoogleTestsSoftware" src="images/HowGoogleTestsSoftware.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Pragmatic Project Automation: How to Build, Deploy, and Monitor Java Apps
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Mike Clark
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 The Pragmatic Programmers (1900)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="PragmaticProjectAutomation" src="images/PragmaticProjectAutomation.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="ponente">
+     Ponente
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Luis Fernández Muñoz
+               </em>
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Formador/Consultor
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://es.linkedin.com/in/luisfernandezmunyoz">
+                  <em>
+                   Linkedin
+                  </em>
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="setillo" src="images/setillo.jpg"/>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Doctor en Inteligencia Artificial por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Ingeniero en Informática por la UMA
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Diplomado en Informática por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Profesor Titular de ETSISI de la UPM
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div id="footer-text">
+    Version 0.0.1
+    <br/>
+    Last updated 2022-10-16 16:28:16 +0200
+   </div>
+  </div>
+  <script>
+   let speed = 50;
                 
                 function typeWriter(v) {
                   let i = v.getAttribute("typewriter-index")
@@ -1986,6 +4251,6 @@ Last updated 2022-10-16 16:28:16 +0200
                 })
                 
                 setTimeout(typeWriterAll, speed);
-                
-                </script>
+  </script>
+ </body>
 </html>

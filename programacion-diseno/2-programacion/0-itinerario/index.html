@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8">
-<meta name="author" content="Universo Santa Tecla">
-<title>Disciplina de Programación</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-<style>
-/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Asciidoctor 2.0.8" name="generator"/>
+  <meta content="Universo Santa Tecla" name="author"/>
+  <title>
+   Disciplina de Programación
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700" rel="stylesheet"/>
+  <style>
+   /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
@@ -434,877 +436,2214 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="book">
-<div id="header">
-<h1>Disciplina de Programación</h1>
-<div class="details">
-<span id="author" class="author">Universo Santa Tecla</span><br>
-<span id="email" class="email"><a href="mailto:USantaTecla@gmail.com">USantaTecla@gmail.com</a></span><br>
-<span id="revnumber">version 0.0.1</span>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Índice</div>
-<ul class="sectlevel1">
-<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
-<li><a href="#hardware">Hardware</a></li>
-<li><a href="#qué"><strong>¿Qué?</strong></a></li>
-<li><a href="#sistema-de-información">Sistema de Información</a></li>
-<li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
-<li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
-<li><a href="#lenguajes-de-programación">Lenguajes de Programación</a>
-<ul class="sectlevel2">
-<li><a href="#clasificación-por-el-nivel">Clasificación por el Nivel</a></li>
-<li><a href="#clasificación-por-el-sistema-de-tipos">Clasificación por el Sistema de Tipos</a></li>
-<li><a href="#clasificación-por-la-ejecución">Clasificación por la Ejecución</a></li>
-</ul>
-</li>
-<li><a href="#paradigmas-del-software">Paradigmas del Software</a>
-<ul class="sectlevel2">
-<li><a href="#paradigmas-imperativo-vs-declarativo">Paradigmas Imperativo vs Declarativo</a></li>
-<li><a href="#paradigmas-spaguetti-vs-estructurado">Paradigmas <em>spaguetti</em> vs Estructurado</a></li>
-<li><a href="#paradigmas-orientados-a-procesos-a-datos-y-a-objetos">Paradigmas orientados a Procesos, a Datos y a Objetos</a></li>
-<li><a href="#otros-paradigmas">Otros Paradigmas</a></li>
-</ul>
-</li>
-<li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
-<li><a href="#ponente">Ponente</a></li>
-</ul>
-</div>
-</div>
-<div id="content">
-<div class="sect1">
-<h2 id="por-qué"><strong>¿Por qué?</strong></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="hardware">Hardware</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 60%;">
-<col style="width: 20%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/telar.jpg" alt="telar"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La humanidad gracias a sus herramientas y, en particular, al conocimiento (ciencias, ingenierías, &#8230;&#8203;), ha construido grandes sistemas artificiales: acueductos, telares con tarjetas perforadas, red eléctrica, red telefónica, &#8230;&#8203; para <strong>automatizar tareas</strong>, o sea, <strong>simplificar y reutilizar</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>8000 aec., Los sumerios construyen telares para cubrirse</p>
-</li>
-<li>
-<p>1642 ec., <strong>Blaise Pascal</strong> construye la Pascalina, primera calculadora mecánica girando ruedas</p>
-</li>
-<li>
-<p>1801 ec., <strong>Jacquard</strong> construye el primer telar mecánico y automático con tarjetas perforadas para definir los dibujos</p>
-</li>
-<li>
-<p>1842 ec., <strong>Charles Babbage</strong> y <strong>Ada Lovalace</strong> trabajan sobre la <strong>Máquina Analítica</strong>, con las tarjetas perforadas de los telares &#8230;&#8203; pero no llegó a funcionar aunque Ada ya escribió las primeras líneas de código de la historia.</p>
-</li>
-<li>
-<p>1884 ec., <strong>Hollerith</strong> desarrolló la <strong>Máquina Tabular</strong> de tarjetas perforadas para ordenar el registro de propiedad en la Conquista del Oeste</p>
-</li>
-<li>
-<p>1936 ec., <strong>Konrad Zuse</strong>, ingeniero alemán, diseñó y fabricó la Z1, la que para muchos es la primera computadora programable de la historia</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/telarMecanico.jpg" alt="telarMecanico"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/pascalina.jpg" alt="pascalina"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/tarjetaPerforada.jpg" alt="tarjetaPerforada"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/maquinaTabular.gif" alt="maquinaTabular"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/primeraComputadora.jpg" alt="primeraComputadora"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="qué"><strong>¿Qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-Software es la <strong class="blue">información que suministra el desarrollador a la computadora para que manipule de forma automática la información que suministrará el usuario</strong>
-</blockquote>
-<div class="attribution">
-&#8212; Brad Cox
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/informacionRecursiva.svg" alt="informacionRecursiva" width="393" height="633">
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Programas en <strong>lenguajes de programación</strong>: <strong class="green"><em>Javascript</em></strong>, <strong class="green"><em>Java</em></strong>, <span class="red">Scala, PHP, C</span>, C/C++, Python, R#, &#8230;&#8203;</p>
-</li>
-<li>
-<p>Scripts para la creación, gestión y consultas de las tablas de las <strong>bases de datos</strong>: <em>SQL, 4GL</em>, &#8230;&#8203;</p>
-</li>
-<li>
-<p>Scripts para la generación de <strong>páginas dinámicas en aplicaciones Web</strong>: <em>JSP, PHP, ASP</em>, &#8230;&#8203;</p>
-</li>
-<li>
-<p>Presentaciones en <strong>lenguajes de publicación</strong> para aplicaciones <strong>Web</strong>: <em>HTML, CSS</em>, &#8230;&#8203;</p>
-</li>
-<li>
-<p><strong>Datos de configuración</strong> en diversos formatos: texto libre, <em>XML, JSON, YAML</em>, &#8230;&#8203;</p>
-</li>
-<li>
-<p><strong>Multimedia</strong> en formatos de imagen, sonido o video para elementos gráficos en la Interfaz de Usuario: <em>png, waw, mpeg</em>, &#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="sistema-de-información">Sistema de Información</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 35%;">
-<col style="width: 30%;">
-<col style="width: 35%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-Un sistema de información es un <strong class="blue">conjunto de elementos orientados al tratamiento y administración de datos e información, organizados y listos para su uso posterior, generados para cubrir una necesidad o un objetivo</strong>
-</blockquote>
-<div class="attribution">
-&#8212; Sistema Información<br>
-<cite>Wiki</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Gestión</strong> (<strong><em>CRUD</em></strong>), es el tratamiento de la información, <strong class="blue">Informática</strong>!!!
-<span class="image"><img src="images/crud.png" alt="crud"></span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">altas</strong> (<em>Create</em>) de información en el sistema</p>
-</li>
-<li>
-<p><strong class="blue">bajas</strong> (<em>Delete</em>) de información en el sistema</p>
-</li>
-<li>
-<p><strong class="blue">modificaciones</strong> (<em>Update</em>) de información en el sistema</p>
-</li>
-<li>
-<p><strong class="blue">consultas</strong> (<em>Read</em>) de información en el sistema</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="para-qué"><strong>¿Para qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 15.7894%;">
-<col style="width: 42.1052%;">
-<col style="width: 42.1054%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Objeto</th>
-<th class="tableblock halign-left valign-top">Capacidad cualitativa</th>
-<th class="tableblock halign-left valign-top">Capacidad cuantitativa</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Ser humano</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Muy <strong class="lime">buena</strong>: reconocimiento de patrones, asociaciones, recursividad, &#8230;&#8203;</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Muy <strong class="red">mala</strong>: pequeña, errores por cansancio, desmotivación, &#8230;&#8203; y muy lentos</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Hardware</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Muy <strong class="red">mala</strong>: ningún computador superó la prueba de Turing</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Muy <strong class="lime">buena</strong>: sin errores y a toda velocidad</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Efectividad</strong> en la <strong class="blue">gestión de sistemas de información</strong>, requeridos por <strong class="blue">clientes</strong> para diferentes <strong class="blue">usuarios</strong>, con</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Eficacia</strong>, sin errores en <strong>cálculos</strong>, <strong>filtrados</strong>, <strong>secuencias de acciones</strong>, &#8230;&#8203;</p>
-</li>
-<li>
-<p><strong>Eficiencia</strong>, con escaso consumo de recuros:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>hardware</strong> y <strong>energía eléctrica</strong></p>
-</li>
-<li>
-<p><strong>tiempo de los usuarios</strong> para aprender y <strong>explotar</strong> el producto software</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/software.svg" alt="software" width="699" height="385">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cómo"><strong>¿Cómo?</strong></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="lenguajes-de-programación">Lenguajes de Programación</h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="images/lenguajesProgramacion.svg" alt="lenguajesProgramacion" width="1637" height="5557">
-</div>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 20%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Lexicografía</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Sintaxis</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Semántica</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>palabras reservadas</strong> (<em>if, function, package/module/unit/namespace, &#8230;&#8203;</em>) para la estructura de las sentencias</p>
-</li>
-<li>
-<p><strong>símbolos</strong> (<em>+, /, (, ), &#8230;&#8203;</em>) para operadores, signos de puntuación, &#8230;&#8203; e</p>
-</li>
-<li>
-<p><strong>identificadores</strong> del desarrollador (<em>customer, date, &#8230;&#8203;</em>) para</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Compromiso entre la <strong>legibilidad</strong> y <strong>concisión</strong> (azucar sintáctico)</p>
-<div class="ulist">
-<ul>
-<li>
-<p>actualmente muchos comparten la propuesta de C</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Constructores</strong> para la organización de miles/millones de líneas de código:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>asignación</strong> o no,</p>
-</li>
-<li>
-<p><strong>bucles</strong> o no,</p>
-</li>
-<li>
-<p><strong>funciones</strong> o no,</p>
-</li>
-<li>
-<p><strong>clases/objetos</strong> o no,</p>
-</li>
-<li>
-<p>&#8230;&#8203; determinando su paradigma</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="3"><div class="content"><div class="paragraph">
-<p>al margen de la <a href="https://www.tiobe.com/tiobe-index/">popularidad</a> de cada lenguaje y su evolución <a href="https://www.youtube.com/watch?v=FASnAg-uReQ">tiempo</a></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="sect2">
-<h3 id="clasificación-por-el-nivel">Clasificación por el Nivel</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong>Bajo nivel</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Medio nivel</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Alto nivel</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Enfocados a la máquina</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Enfocados a la máquina y al desarrollador</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Enfocados al desarrollador</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ensamblador.png" alt="ensamblador"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/c.jpg" alt="c"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/javascript.png" alt="javascript"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>código binario, ensamblador, &#8230;&#8203;</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>C, C++, &#8230;&#8203;</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Java, Javascript, Scala, PHP, Basic, &#8230;&#8203;</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="clasificación-por-el-sistema-de-tipos">Clasificación por el Sistema de Tipos</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong>Lenguajes Fuertemente Tipados</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Lenguajes Debilmente Tipados</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Lenguajes con Inferencia de Tipos</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/fuerte.svg" alt="fuerte" width="273" height="363">
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/debil.svg" alt="debil" width="127" height="361">
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/inferencia.svg" alt="inferencia" width="273" height="363">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Java, &#8230;&#8203;</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Javascript, &#8230;&#8203;</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Typescript, &#8230;&#8203;</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="clasificación-por-la-ejecución">Clasificación por la Ejecución</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Interpretado</th>
-<th class="tableblock halign-left valign-top">Compilado</th>
-<th class="tableblock halign-left valign-top">Hibrido</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/interprete.svg" alt="interprete" width="218" height="260">
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/compilador.svg" alt="compilador" width="347" height="260">
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/hibrido.svg" alt="hibrido" width="395" height="260">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Javascript, Typescript, &#8230;&#8203;</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>C/C++, &#8230;&#8203;</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Java</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-middle"><strong class="blue"><em>Lenguaje</em></strong></th>
-<th class="tableblock halign-center valign-middle">Tiempo de desarrollo</th>
-<th class="tableblock halign-center valign-middle">Tiempo de ejecución</th>
-<th class="tableblock halign-center valign-middle">Portabilidad</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><strong class="blue"><em>Interpretado</em></strong></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="green"><strong>Bajo</strong></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="red"><strong>Alto</strong></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="green"><strong>Alta</strong></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><strong class="blue"><em>Compilado</em></strong></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="red"><strong>Alto</strong></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="green"><strong>Bajo</strong></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="red"><strong>Bajo</strong></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><strong class="blue"><em>Híbrido</em></strong></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="green">Medio</span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="green">Medio</span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="green"><strong>Alta</strong></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="4"><div class="content"><div class="paragraph">
-<p><em><strong>Portabilidad</strong>: facilidad de migración sobre otros sistemas operativos/ plataformas/ hardware, &#8230;&#8203;</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="paradigmas-del-software">Paradigmas del Software</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="quoteblock">
-<blockquote>
-&#8230;&#8203;'ciencia normal' significa investigación basada firmemente en una o más realizaciones científicas pasadas, realizaciones que alguna comunidad científica particular reconoce, durante cierto tiempo, como fundamento para su práctica posterior. [&#8230;&#8203;] Voy a llamar, de ahora en adelante, a las realizaciones que comparten esas dos características, 'paradigmas', término que se relaciona estrechamente con 'ciencia normal'. <strong>Paradigma es un conjunto de prácticas y saberes que definen una disciplina científica durante un período específico</strong>
-</blockquote>
-<div class="attribution">
-&#8212; Thomas S. Kuhn<br>
-<cite>La estructura de las revoluciones científicas</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/paradigma.jpg" alt="paradigma"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-En su famoso libro The Structure of Scientific Revolutions de 1970, el historiador Thomas Khun extendió la definición de la plabra para abarcar un <strong>conjunto de teorías, estándares, métodos que juntos representan una forma de organizar el conocimiento, esto es, una forma de ver el mundo</strong>
-</blockquote>
-<div class="attribution">
-&#8212; Budd<br>
-<cite>1994</cite>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="sect2">
-<h3 id="paradigmas-imperativo-vs-declarativo">Paradigmas Imperativo vs Declarativo</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 11.1111%;">
-<col style="width: 11.1111%;">
-<col style="width: 27.7777%;">
-<col style="width: 16.6668%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Matemática</th>
-<th class="tableblock halign-left valign-top">Modelo</th>
-<th class="tableblock halign-left valign-top">Paradigma</th>
-<th class="tableblock halign-left valign-top">Enfoque</th>
-<th class="tableblock halign-left valign-top">Lenguajes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle" rowspan="3"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Fundamentos.jpg" alt="Fundamentos"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="lime">Máquina de Turing</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Paradigma Imperativo</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>basado en <strong>asignación de valores a variables</strong> para cambios de estado</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Cobol, Fortran, C, Ada, &#8230;&#8203;</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="lime">Cálculo Lambda</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Paradigma Funcional</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>basado en <strong>funciones puras</strong> como reglas de correspondencia matemáticas (inyectivas, biyectivas, suprayectivas) entre valores del conjunto origen y valores del conjunto imagen</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Lisp, FP, Scheme, ML, Haskell, &#8230;&#8203;</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="lime">Cláusulas de Horn</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="blue">Paradigma Lógico</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>basado en <strong>hechos y predicados lógicos</strong> con el algoritmo de Unificacion para las reglas de sustitución</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Prolog, &#8230;&#8203;</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Se llama conjuntamente <strong class="blue">Pardigma Declarativo</strong>, unión del Paradigma Funcional y Lógico, enfrentado al Paradigma Imperativo, porque carece de variables con estado y, por tanto, de bucles.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Sus soluciones son eminentemente <strong class="red">recursivas</strong>, declarando la solución de un problema como alguna operación sobre la solución del problema en un grado menos.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ParadigmasFundamento.jpg" alt="ParadigmasFundamento"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="paradigmas-spaguetti-vs-estructurado">Paradigmas <em>spaguetti</em> vs Estructurado</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 5%;">
-<col style="width: 20%;">
-<col style="width: 45%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Año</th>
-<th class="tableblock halign-left valign-top">Autor</th>
-<th class="tableblock halign-left valign-top">Publicación</th>
-<th class="tableblock halign-left valign-top">Referencia</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1966</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Bohm, C., Giuseppe J</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>Flow Diagrams, Turing Machines and Languages with Only Two Formation Rules</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Communications of the ACM 9 (5): 366-371</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1968</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>E. Dijkstra</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>Go To Statement Considered Harmful</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Communications of the ACM 11 (3): 147-148</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1968</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>F.L. Bauer</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Ingeniería del Software</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>OTAN, Munich</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1972</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>O.J. Dahl, E.W. Dijkstra, C.A.R.Hoare</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>Structured Programming</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Academic Press</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1972</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>E. W. Dijkstra</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>The Humble Programmer</em> <span class="red">Desprecio por el programador, la calidad, &#8230;&#8203; subcontratación, &#8230;&#8203;</span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>ACM Turing Lecture</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1974</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>D. Knuth</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>Structured Programming with go to Statements</strong></em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Computing Surveys, Volume 6, Number 4, pages 261-301</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 45%;">
-<col style="width: 20%;">
-<col style="width: 35%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Programación <em>spaguetti</em></th>
-<th class="tableblock halign-left valign-top" colspan="2">Programación Estructurada</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/goto.jpg" alt="goto"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Enfocado en la <strong class="green">demostración de la corrección del software basada en la lógica de precondiciones, postcondiciones e invariantes de las estructuras de control de flujo de ejecución</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Algoritmos como <strong class="blue">bloques recursivamente anidados</strong> de sentencias simples, secuenciales, alternativas e iterativas, <strong class="red">sin sentencia GOTO!!!</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="literalblock">
-<div class="content">
-<pre>int key;
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+ </head>
+ <body class="book">
+  <div id="header">
+   <h1>
+    Disciplina de Programación
+   </h1>
+   <div class="details">
+    <span class="author" id="author">
+     Universo Santa Tecla
+    </span>
+    <br/>
+    <span class="email" id="email">
+     <a href="mailto:USantaTecla@gmail.com">
+      USantaTecla@gmail.com
+     </a>
+    </span>
+    <br/>
+    <span id="revnumber">
+     version 0.0.1
+    </span>
+   </div>
+   <div class="toc" id="toc">
+    <div id="toctitle">
+     Índice
+    </div>
+    <ul class="sectlevel1">
+     <li>
+      <a href="#por-qué">
+       <strong>
+        ¿Por qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#hardware">
+       Hardware
+      </a>
+     </li>
+     <li>
+      <a href="#qué">
+       <strong>
+        ¿Qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#sistema-de-información">
+       Sistema de Información
+      </a>
+     </li>
+     <li>
+      <a href="#para-qué">
+       <strong>
+        ¿Para qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#cómo">
+       <strong>
+        ¿Cómo?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#lenguajes-de-programación">
+       Lenguajes de Programación
+      </a>
+      <ul class="sectlevel2">
+       <li>
+        <a href="#clasificación-por-el-nivel">
+         Clasificación por el Nivel
+        </a>
+       </li>
+       <li>
+        <a href="#clasificación-por-el-sistema-de-tipos">
+         Clasificación por el Sistema de Tipos
+        </a>
+       </li>
+       <li>
+        <a href="#clasificación-por-la-ejecución">
+         Clasificación por la Ejecución
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="#paradigmas-del-software">
+       Paradigmas del Software
+      </a>
+      <ul class="sectlevel2">
+       <li>
+        <a href="#paradigmas-imperativo-vs-declarativo">
+         Paradigmas Imperativo vs Declarativo
+        </a>
+       </li>
+       <li>
+        <a href="#paradigmas-spaguetti-vs-estructurado">
+         Paradigmas
+         <em>
+          spaguetti
+         </em>
+         vs Estructurado
+        </a>
+       </li>
+       <li>
+        <a href="#paradigmas-orientados-a-procesos-a-datos-y-a-objetos">
+         Paradigmas orientados a Procesos, a Datos y a Objetos
+        </a>
+       </li>
+       <li>
+        <a href="#otros-paradigmas">
+         Otros Paradigmas
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="#bibliografía">
+       <strong>
+        Bibliografía
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#ponente">
+       Ponente
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div id="content">
+   <div class="sect1">
+    <h2 id="por-qué">
+     <strong>
+      ¿Por qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="hardware">
+     Hardware
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 20%;"/>
+       <col style="width: 60%;"/>
+       <col style="width: 20%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="telar" src="images/telar.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top" rowspan="3">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              La humanidad gracias a sus herramientas y, en particular, al conocimiento (ciencias, ingenierías, …​), ha construido grandes sistemas artificiales: acueductos, telares con tarjetas perforadas, red eléctrica, red telefónica, …​ para
+              <strong>
+               automatizar tareas
+              </strong>
+              , o sea,
+              <strong>
+               simplificar y reutilizar
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 8000 aec., Los sumerios construyen telares para cubrirse
+                </p>
+               </li>
+               <li>
+                <p>
+                 1642 ec.,
+                 <strong>
+                  Blaise Pascal
+                 </strong>
+                 construye la Pascalina, primera calculadora mecánica girando ruedas
+                </p>
+               </li>
+               <li>
+                <p>
+                 1801 ec.,
+                 <strong>
+                  Jacquard
+                 </strong>
+                 construye el primer telar mecánico y automático con tarjetas perforadas para definir los dibujos
+                </p>
+               </li>
+               <li>
+                <p>
+                 1842 ec.,
+                 <strong>
+                  Charles Babbage
+                 </strong>
+                 y
+                 <strong>
+                  Ada Lovalace
+                 </strong>
+                 trabajan sobre la
+                 <strong>
+                  Máquina Analítica
+                 </strong>
+                 , con las tarjetas perforadas de los telares …​ pero no llegó a funcionar aunque Ada ya escribió las primeras líneas de código de la historia.
+                </p>
+               </li>
+               <li>
+                <p>
+                 1884 ec.,
+                 <strong>
+                  Hollerith
+                 </strong>
+                 desarrolló la
+                 <strong>
+                  Máquina Tabular
+                 </strong>
+                 de tarjetas perforadas para ordenar el registro de propiedad en la Conquista del Oeste
+                </p>
+               </li>
+               <li>
+                <p>
+                 1936 ec.,
+                 <strong>
+                  Konrad Zuse
+                 </strong>
+                 , ingeniero alemán, diseñó y fabricó la Z1, la que para muchos es la primera computadora programable de la historia
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="telarMecanico" src="images/telarMecanico.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="pascalina" src="images/pascalina.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="tarjetaPerforada" src="images/tarjetaPerforada.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="maquinaTabular" src="images/maquinaTabular.gif"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="primeraComputadora" src="images/primeraComputadora.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="qué">
+     <strong>
+      ¿Qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 20%;"/>
+       <col style="width: 40%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            Software es la
+            <strong class="blue">
+             información que suministra el desarrollador a la computadora para que manipule de forma automática la información que suministrará el usuario
+            </strong>
+           </blockquote>
+           <div class="attribution">
+            — Brad Cox
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="informacionRecursiva" height="633" src="images/informacionRecursiva.svg" width="393"/>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Programas en
+              <strong>
+               lenguajes de programación
+              </strong>
+              :
+              <strong class="green">
+               <em>
+                Javascript
+               </em>
+              </strong>
+              ,
+              <strong class="green">
+               <em>
+                Java
+               </em>
+              </strong>
+              ,
+              <span class="red">
+               Scala, PHP, C
+              </span>
+              , C/C++, Python, R#, …​
+             </p>
+            </li>
+            <li>
+             <p>
+              Scripts para la creación, gestión y consultas de las tablas de las
+              <strong>
+               bases de datos
+              </strong>
+              :
+              <em>
+               SQL, 4GL
+              </em>
+              , …​
+             </p>
+            </li>
+            <li>
+             <p>
+              Scripts para la generación de
+              <strong>
+               páginas dinámicas en aplicaciones Web
+              </strong>
+              :
+              <em>
+               JSP, PHP, ASP
+              </em>
+              , …​
+             </p>
+            </li>
+            <li>
+             <p>
+              Presentaciones en
+              <strong>
+               lenguajes de publicación
+              </strong>
+              para aplicaciones
+              <strong>
+               Web
+              </strong>
+              :
+              <em>
+               HTML, CSS
+              </em>
+              , …​
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               Datos de configuración
+              </strong>
+              en diversos formatos: texto libre,
+              <em>
+               XML, JSON, YAML
+              </em>
+              , …​
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               Multimedia
+              </strong>
+              en formatos de imagen, sonido o video para elementos gráficos en la Interfaz de Usuario:
+              <em>
+               png, waw, mpeg
+              </em>
+              , …​
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="sistema-de-información">
+     Sistema de Información
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 35%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 35%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            Un sistema de información es un
+            <strong class="blue">
+             conjunto de elementos orientados al tratamiento y administración de datos e información, organizados y listos para su uso posterior, generados para cubrir una necesidad o un objetivo
+            </strong>
+           </blockquote>
+           <div class="attribution">
+            — Sistema Información
+            <br/>
+            <cite>
+             Wiki
+            </cite>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Gestión
+              </strong>
+              (
+              <strong>
+               <em>
+                CRUD
+               </em>
+              </strong>
+              ), es el tratamiento de la información,
+              <strong class="blue">
+               Informática
+              </strong>
+              !!!
+              <span class="image">
+               <img alt="crud" src="images/crud.png"/>
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               altas
+              </strong>
+              (
+              <em>
+               Create
+              </em>
+              ) de información en el sistema
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               bajas
+              </strong>
+              (
+              <em>
+               Delete
+              </em>
+              ) de información en el sistema
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               modificaciones
+              </strong>
+              (
+              <em>
+               Update
+              </em>
+              ) de información en el sistema
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               consultas
+              </strong>
+              (
+              <em>
+               Read
+              </em>
+              ) de información en el sistema
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="para-qué">
+     <strong>
+      ¿Para qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 15.7894%;"/>
+       <col style="width: 42.1052%;"/>
+       <col style="width: 42.1054%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Objeto
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Capacidad cualitativa
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Capacidad cuantitativa
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             Ser humano
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Muy
+            <strong class="lime">
+             buena
+            </strong>
+            : reconocimiento de patrones, asociaciones, recursividad, …​
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Muy
+            <strong class="red">
+             mala
+            </strong>
+            : pequeña, errores por cansancio, desmotivación, …​ y muy lentos
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <strong>
+             Hardware
+            </strong>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Muy
+            <strong class="red">
+             mala
+            </strong>
+            : ningún computador superó la prueba de Turing
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Muy
+            <strong class="lime">
+             buena
+            </strong>
+            : sin errores y a toda velocidad
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Efectividad
+              </strong>
+              en la
+              <strong class="blue">
+               gestión de sistemas de información
+              </strong>
+              , requeridos por
+              <strong class="blue">
+               clientes
+              </strong>
+              para diferentes
+              <strong class="blue">
+               usuarios
+              </strong>
+              , con
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Eficacia
+                 </strong>
+                 , sin errores en
+                 <strong>
+                  cálculos
+                 </strong>
+                 ,
+                 <strong>
+                  filtrados
+                 </strong>
+                 ,
+                 <strong>
+                  secuencias de acciones
+                 </strong>
+                 , …​
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  Eficiencia
+                 </strong>
+                 , con escaso consumo de recuros:
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong>
+                     hardware
+                    </strong>
+                    y
+                    <strong>
+                     energía eléctrica
+                    </strong>
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong>
+                     tiempo de los usuarios
+                    </strong>
+                    para aprender y
+                    <strong>
+                     explotar
+                    </strong>
+                    el producto software
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="software" height="385" src="images/software.svg" width="699"/>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="cómo">
+     <strong>
+      ¿Cómo?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="lenguajes-de-programación">
+     Lenguajes de Programación
+    </h2>
+    <div class="sectionbody">
+     <div class="imageblock">
+      <div class="content">
+       <img alt="lenguajesProgramacion" height="5557" src="images/lenguajesProgramacion.svg" width="1637"/>
+      </div>
+     </div>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 40%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         <strong class="blue">
+          Lexicografía
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="blue">
+          Sintaxis
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="blue">
+          Semántica
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               palabras reservadas
+              </strong>
+              (
+              <em>
+               if, function, package/module/unit/namespace, …​
+              </em>
+              ) para la estructura de las sentencias
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               símbolos
+              </strong>
+              (
+              <em>
+               +, /, (, ), …​
+              </em>
+              ) para operadores, signos de puntuación, …​ e
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               identificadores
+              </strong>
+              del desarrollador (
+              <em>
+               customer, date, …​
+              </em>
+              ) para
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Compromiso entre la
+              <strong>
+               legibilidad
+              </strong>
+              y
+              <strong>
+               concisión
+              </strong>
+              (azucar sintáctico)
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 actualmente muchos comparten la propuesta de C
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Constructores
+              </strong>
+              para la organización de miles/millones de líneas de código:
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  asignación
+                 </strong>
+                 o no,
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  bucles
+                 </strong>
+                 o no,
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  funciones
+                 </strong>
+                 o no,
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  clases/objetos
+                 </strong>
+                 o no,
+                </p>
+               </li>
+               <li>
+                <p>
+                 …​ determinando su paradigma
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle" colspan="3">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            al margen de la
+            <a href="https://www.tiobe.com/tiobe-index/">
+             popularidad
+            </a>
+            de cada lenguaje y su evolución
+            <a href="https://www.youtube.com/watch?v=FASnAg-uReQ">
+             tiempo
+            </a>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="sect2">
+      <h3 id="clasificación-por-el-nivel">
+       Clasificación por el Nivel
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3334%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           Bajo nivel
+          </strong>
+         </th>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           Medio nivel
+          </strong>
+         </th>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           Alto nivel
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             Enfocados a la máquina
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             Enfocados a la máquina y al desarrollador
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             Enfocados al desarrollador
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="ensamblador" src="images/ensamblador.png"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="c" src="images/c.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="javascript" src="images/javascript.png"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              código binario, ensamblador, …​
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              C, C++, …​
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Java, Javascript, Scala, PHP, Basic, …​
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="clasificación-por-el-sistema-de-tipos">
+       Clasificación por el Sistema de Tipos
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3334%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           Lenguajes Fuertemente Tipados
+          </strong>
+         </th>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           Lenguajes Debilmente Tipados
+          </strong>
+         </th>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           Lenguajes con Inferencia de Tipos
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="fuerte" height="363" src="images/fuerte.svg" width="273"/>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="debil" height="361" src="images/debil.svg" width="127"/>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="inferencia" height="363" src="images/inferencia.svg" width="273"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Java, …​
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Javascript, …​
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Typescript, …​
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="clasificación-por-la-ejecución">
+       Clasificación por la Ejecución
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3334%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          Interpretado
+         </th>
+         <th class="tableblock halign-left valign-top">
+          Compilado
+         </th>
+         <th class="tableblock halign-left valign-top">
+          Hibrido
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="interprete" height="260" src="images/interprete.svg" width="218"/>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="compilador" height="260" src="images/compilador.svg" width="347"/>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="hibrido" height="260" src="images/hibrido.svg" width="395"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Javascript, Typescript, …​
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              C/C++, …​
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Java
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 25%;"/>
+        <col style="width: 25%;"/>
+        <col style="width: 25%;"/>
+        <col style="width: 25%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-center valign-middle">
+          <strong class="blue">
+           <em>
+            Lenguaje
+           </em>
+          </strong>
+         </th>
+         <th class="tableblock halign-center valign-middle">
+          Tiempo de desarrollo
+         </th>
+         <th class="tableblock halign-center valign-middle">
+          Tiempo de ejecución
+         </th>
+         <th class="tableblock halign-center valign-middle">
+          Portabilidad
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <strong class="blue">
+              <em>
+               Interpretado
+              </em>
+             </strong>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="green">
+              <strong>
+               Bajo
+              </strong>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="red">
+              <strong>
+               Alto
+              </strong>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="green">
+              <strong>
+               Alta
+              </strong>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <strong class="blue">
+              <em>
+               Compilado
+              </em>
+             </strong>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="red">
+              <strong>
+               Alto
+              </strong>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="green">
+              <strong>
+               Bajo
+              </strong>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="red">
+              <strong>
+               Bajo
+              </strong>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <strong class="blue">
+              <em>
+               Híbrido
+              </em>
+             </strong>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="green">
+              Medio
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="green">
+              Medio
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="green">
+              <strong>
+               Alta
+              </strong>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle" colspan="4">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              <strong>
+               Portabilidad
+              </strong>
+              : facilidad de migración sobre otros sistemas operativos/ plataformas/ hardware, …​
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="paradigmas-del-software">
+     Paradigmas del Software
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            …​'ciencia normal' significa investigación basada firmemente en una o más realizaciones científicas pasadas, realizaciones que alguna comunidad científica particular reconoce, durante cierto tiempo, como fundamento para su práctica posterior. […​] Voy a llamar, de ahora en adelante, a las realizaciones que comparten esas dos características, 'paradigmas', término que se relaciona estrechamente con 'ciencia normal'.
+            <strong>
+             Paradigma es un conjunto de prácticas y saberes que definen una disciplina científica durante un período específico
+            </strong>
+           </blockquote>
+           <div class="attribution">
+            — Thomas S. Kuhn
+            <br/>
+            <cite>
+             La estructura de las revoluciones científicas
+            </cite>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="paradigma" src="images/paradigma.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="quoteblock">
+           <blockquote>
+            En su famoso libro The Structure of Scientific Revolutions de 1970, el historiador Thomas Khun extendió la definición de la plabra para abarcar un
+            <strong>
+             conjunto de teorías, estándares, métodos que juntos representan una forma de organizar el conocimiento, esto es, una forma de ver el mundo
+            </strong>
+           </blockquote>
+           <div class="attribution">
+            — Budd
+            <br/>
+            <cite>
+             1994
+            </cite>
+           </div>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="sect2">
+      <h3 id="paradigmas-imperativo-vs-declarativo">
+       Paradigmas Imperativo vs Declarativo
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 11.1111%;"/>
+        <col style="width: 11.1111%;"/>
+        <col style="width: 27.7777%;"/>
+        <col style="width: 16.6668%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          Matemática
+         </th>
+         <th class="tableblock halign-left valign-top">
+          Modelo
+         </th>
+         <th class="tableblock halign-left valign-top">
+          Paradigma
+         </th>
+         <th class="tableblock halign-left valign-top">
+          Enfoque
+         </th>
+         <th class="tableblock halign-left valign-top">
+          Lenguajes
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-center valign-middle" rowspan="3">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="Fundamentos" src="images/Fundamentos.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <strong class="lime">
+              Máquina de Turing
+             </strong>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <strong class="blue">
+              Paradigma Imperativo
+             </strong>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             basado en
+             <strong>
+              asignación de valores a variables
+             </strong>
+             para cambios de estado
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Cobol, Fortran, C, Ada, …​
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <strong class="lime">
+              Cálculo Lambda
+             </strong>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <strong class="blue">
+              Paradigma Funcional
+             </strong>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             basado en
+             <strong>
+              funciones puras
+             </strong>
+             como reglas de correspondencia matemáticas (inyectivas, biyectivas, suprayectivas) entre valores del conjunto origen y valores del conjunto imagen
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Lisp, FP, Scheme, ML, Haskell, …​
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <strong class="lime">
+              Cláusulas de Horn
+             </strong>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <strong class="blue">
+              Paradigma Lógico
+             </strong>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             basado en
+             <strong>
+              hechos y predicados lógicos
+             </strong>
+             con el algoritmo de Unificacion para las reglas de sustitución
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Prolog, …​
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Se llama conjuntamente
+               <strong class="blue">
+                Pardigma Declarativo
+               </strong>
+               , unión del Paradigma Funcional y Lógico, enfrentado al Paradigma Imperativo, porque carece de variables con estado y, por tanto, de bucles.
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Sus soluciones son eminentemente
+                  <strong class="red">
+                   recursivas
+                  </strong>
+                  , declarando la solución de un problema como alguna operación sobre la solución del problema en un grado menos.
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="ParadigmasFundamento" src="images/ParadigmasFundamento.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="paradigmas-spaguetti-vs-estructurado">
+       Paradigmas
+       <em>
+        spaguetti
+       </em>
+       vs Estructurado
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 5%;"/>
+        <col style="width: 20%;"/>
+        <col style="width: 45%;"/>
+        <col style="width: 30%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          Año
+         </th>
+         <th class="tableblock halign-left valign-top">
+          Autor
+         </th>
+         <th class="tableblock halign-left valign-top">
+          Publicación
+         </th>
+         <th class="tableblock halign-left valign-top">
+          Referencia
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             1966
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Bohm, C., Giuseppe J
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              <strong>
+               Flow Diagrams, Turing Machines and Languages with Only Two Formation Rules
+              </strong>
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Communications of the ACM 9 (5): 366-371
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             1968
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              E. Dijkstra
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              <strong>
+               Go To Statement Considered Harmful
+              </strong>
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Communications of the ACM 11 (3): 147-148
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             1968
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              F.L. Bauer
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Ingeniería del Software
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              OTAN, Munich
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             1972
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              O.J. Dahl, E.W. Dijkstra, C.A.R.Hoare
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              <strong>
+               Structured Programming
+              </strong>
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Academic Press
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             1972
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              E. W. Dijkstra
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              The Humble Programmer
+             </em>
+             <span class="red">
+              Desprecio por el programador, la calidad, …​ subcontratación, …​
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              ACM Turing Lecture
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             1974
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              D. Knuth
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              <strong>
+               Structured Programming with go to Statements
+              </strong>
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Computing Surveys, Volume 6, Number 4, pages 261-301
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 45%;"/>
+        <col style="width: 20%;"/>
+        <col style="width: 35%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          Programación
+          <em>
+           spaguetti
+          </em>
+         </th>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          Programación Estructurada
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="goto" src="images/goto.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Enfocado en la
+               <strong class="green">
+                demostración de la corrección del software basada en la lógica de precondiciones, postcondiciones e invariantes de las estructuras de control de flujo de ejecución
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Algoritmos como
+                  <strong class="blue">
+                   bloques recursivamente anidados
+                  </strong>
+                  de sentencias simples, secuenciales, alternativas e iterativas,
+                  <strong class="red">
+                   sin sentencia GOTO!!!
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="literalblock">
+            <div class="content">
+             <pre>int key;
 int values[];
 
 int i = 0;
@@ -1317,11 +2656,11 @@ while (!end)
         end = true;
     else
         i++;</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>int key;
+            </div>
+           </div>
+           <div class="literalblock">
+            <div class="content">
+             <pre>int key;
 int values[];
 
 int i = 0;
@@ -1329,325 +2668,697 @@ while (i&lt;values.length-1 &amp;&amp; values[i]!=key)
     i++;
 if (values[i]==key)
     System.out.println(key);</pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="paradigmas-orientados-a-procesos-a-datos-y-a-objetos">Paradigmas orientados a Procesos, a Datos y a Objetos</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 5%;">
-<col style="width: 20%;">
-<col style="width: 45%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Año</th>
-<th class="tableblock halign-left valign-top">Autor</th>
-<th class="tableblock halign-left valign-top">Publicación</th>
-<th class="tableblock halign-left valign-top">Referencia</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1962</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>O.J. Dahl, K. Nygaard</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Simula</em> Primer lenguaje orientado a clases</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Conferencia de Trabajo en Lenguajes de Simulación IFIO TC 2, Oslo</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1971</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>A. Kay, A. Goldberg, D. Ingalls</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Smalltalk</em> Comunidad generadora del 1ªLOO, interfaz de ventanas, patrones de diseño, arquitectura MVC, xUnit, &#8230;&#8203;</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Xerox Palo Alto Research Center (PARC)</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>1972</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>O.J. Dahl, E.W. Dijkstra, C.A.R.Hoare</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em><strong>Structured Programming</strong></em> <span class="red">Simula!!!</span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Academic Press</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong>Paradigma Orientado a Procesos</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Paradigma Orientado a Datos</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Paradigma Orientado a Objetos</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Preponderancia de las operaciones sobre los datos</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Preponderancia de los datos sobre las operaciones (1ª forma normal, 2ª forma normal, &#8230;&#8203;, Boyce-Codd)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Equilibrio entre datos y operaciones, conformando una clase de objetos reinstanciable</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>C, Pascal, &#8230;&#8203;</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>SQL (4GL), &#8230;&#8203;</em></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Smalltalk, C++, Java, CLOS, Python, &#8230;&#8203;</em></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 75%;">
-<col style="width: 25%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-Mi conjetura es que la orientación a objetos será en los 80 lo que la programación estructurada en los 70. Todo el mundo estará a favor suyo. Cada productor prometerá que sus productos lo soportan. Cada director pagará con la boca pequeña el servirlo. Cada programador lo practicará. Y nadie sabrá exactamente lo que es!
-</blockquote>
-<div class="attribution">
-&#8212; Rentsch<br>
-<cite>Object-Oriented Programming. SIGPLAN Notices vol. 17(12). 1982</cite>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="quoteblock">
-<blockquote>
-X es bueno. Orientado a Objetos es bueno. Ergo, X es Orientado a Objetos
-</blockquote>
-<div class="attribution">
-&#8212; Stroupstrup<br>
-<cite>The C++ Programming Language. 1988</cite>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Orientación a Objetos = clases + herencia</strong></p>
-<div class="quoteblock">
-<blockquote>
-Emplear las <strong>consultas de tipo durante la ejecución</strong> para implantar un enunciado de conmutación [estructura de control de flujo swicht o if/then/else encadenados] en un <strong>campo de tipo destruye toda la modularidad de un programa y anula los objetivos de la programación orientada a objetos</strong>. También es propensa a errores; […] La experiencia demuestra que los programadores que se formaron con lenguajes como Pascal o C encuentran esta trampa muy difícil de resistir. Una razón es que este estilo <strong>requiere menos premeditación</strong> […]; en este contexto, semejante falta de premeditación muchas veces <strong>no es más que una chapuza</strong>.”
-</blockquote>
-<div class="attribution">
-&#8212; Stroupstrup<br>
-<cite>The C++ Programming Language. 1993</cite>
-</div>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/pooMal.svg" alt="pooMal" width="640" height="495">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong class="green">Principio Abierto/Cerrado</strong>: diseño abierto a la extensión, cerrado a la modificación de <em>B. Meyer</em> que conduce a la <strong>Inversión de Dependencias</strong> y cumplimiento del <strong>Principio de Sustitución de Liskov</strong>, herencia vs composición/delegación</p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/pooBien.svg" alt="pooBien" width="803" height="495">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="otros-paradigmas">Otros Paradigmas</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Paradigma Concurrente</strong>,</p>
-</li>
-<li>
-<p><strong>Paradigma Orientado a Eventos</strong>,</p>
-</li>
-<li>
-<p><strong>Paradigma Orientado a Aspectos</strong>, &#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Paradigmas Exotéricos</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>bidimensionales, bioinspirados, multicriteriales,</p>
-</li>
-<li>
-<p><strong class="green">multiparadigma:</strong> <a href="https://github.com/Henry/Leda"><strong class="green">Leda</strong></a>, &#8230;&#8203;, <a href="https://stackoverflow.com/questions/3962604/is-javascript-a-functional-programming-language"><strong class="red">Javascript!?!</strong></a>, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Paradigmas.jpg" alt="Paradigmas"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TabalaPeriodicaLenguajes.jpg" alt="TabalaPeriodicaLenguajes"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="bibliografía"><strong>Bibliografía</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ponente">Ponente</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 30%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Luis Fernández Muñoz</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Formador/Consultor</em></p>
-</li>
-<li>
-<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
-</li>
-<li>
-<p><em>Ingeniero en Informática por la UMA</em></p>
-</li>
-<li>
-<p><em>Diplomado en Informática por la UPM</em></p>
-</li>
-<li>
-<p><em>Profesor Titular de ETSISI de la UPM</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="footer">
-<div id="footer-text">
-Version 0.0.1<br>
-Last updated 2022-11-30 18:27:56 +0100
-</div>
-</div>
-<script>
-                let speed = 50;
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="paradigmas-orientados-a-procesos-a-datos-y-a-objetos">
+       Paradigmas orientados a Procesos, a Datos y a Objetos
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 5%;"/>
+        <col style="width: 20%;"/>
+        <col style="width: 45%;"/>
+        <col style="width: 30%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          Año
+         </th>
+         <th class="tableblock halign-left valign-top">
+          Autor
+         </th>
+         <th class="tableblock halign-left valign-top">
+          Publicación
+         </th>
+         <th class="tableblock halign-left valign-top">
+          Referencia
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             1962
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              O.J. Dahl, K. Nygaard
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Simula
+             </em>
+             Primer lenguaje orientado a clases
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Conferencia de Trabajo en Lenguajes de Simulación IFIO TC 2, Oslo
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             1971
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              A. Kay, A. Goldberg, D. Ingalls
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Smalltalk
+             </em>
+             Comunidad generadora del 1ªLOO, interfaz de ventanas, patrones de diseño, arquitectura MVC, xUnit, …​
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Xerox Palo Alto Research Center (PARC)
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             1972
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              O.J. Dahl, E.W. Dijkstra, C.A.R.Hoare
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              <strong>
+               Structured Programming
+              </strong>
+             </em>
+             <span class="red">
+              Simula!!!
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Academic Press
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3334%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           Paradigma Orientado a Procesos
+          </strong>
+         </th>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           Paradigma Orientado a Datos
+          </strong>
+         </th>
+         <th class="tableblock halign-left valign-top">
+          <strong>
+           Paradigma Orientado a Objetos
+          </strong>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             Preponderancia de las operaciones sobre los datos
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             Preponderancia de los datos sobre las operaciones (1ª forma normal, 2ª forma normal, …​, Boyce-Codd)
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             Equilibrio entre datos y operaciones, conformando una clase de objetos reinstanciable
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              C, Pascal, …​
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              SQL (4GL), …​
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <em>
+              Smalltalk, C++, Java, CLOS, Python, …​
+             </em>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 75%;"/>
+        <col style="width: 25%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="quoteblock">
+            <blockquote>
+             Mi conjetura es que la orientación a objetos será en los 80 lo que la programación estructurada en los 70. Todo el mundo estará a favor suyo. Cada productor prometerá que sus productos lo soportan. Cada director pagará con la boca pequeña el servirlo. Cada programador lo practicará. Y nadie sabrá exactamente lo que es!
+            </blockquote>
+            <div class="attribution">
+             — Rentsch
+             <br/>
+             <cite>
+              Object-Oriented Programming. SIGPLAN Notices vol. 17(12). 1982
+             </cite>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="quoteblock">
+            <blockquote>
+             X es bueno. Orientado a Objetos es bueno. Ergo, X es Orientado a Objetos
+            </blockquote>
+            <div class="attribution">
+             — Stroupstrup
+             <br/>
+             <cite>
+              The C++ Programming Language. 1988
+             </cite>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong class="red">
+                Orientación a Objetos = clases + herencia
+               </strong>
+              </p>
+              <div class="quoteblock">
+               <blockquote>
+                Emplear las
+                <strong>
+                 consultas de tipo durante la ejecución
+                </strong>
+                para implantar un enunciado de conmutación [estructura de control de flujo swicht o if/then/else encadenados] en un
+                <strong>
+                 campo de tipo destruye toda la modularidad de un programa y anula los objetivos de la programación orientada a objetos
+                </strong>
+                . También es propensa a errores; […] La experiencia demuestra que los programadores que se formaron con lenguajes como Pascal o C encuentran esta trampa muy difícil de resistir. Una razón es que este estilo
+                <strong>
+                 requiere menos premeditación
+                </strong>
+                […]; en este contexto, semejante falta de premeditación muchas veces
+                <strong>
+                 no es más que una chapuza
+                </strong>
+                .”
+               </blockquote>
+               <div class="attribution">
+                — Stroupstrup
+                <br/>
+                <cite>
+                 The C++ Programming Language. 1993
+                </cite>
+               </div>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="pooMal" height="495" src="images/pooMal.svg" width="640"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <strong class="green">
+              Principio Abierto/Cerrado
+             </strong>
+             : diseño abierto a la extensión, cerrado a la modificación de
+             <em>
+              B. Meyer
+             </em>
+             que conduce a la
+             <strong>
+              Inversión de Dependencias
+             </strong>
+             y cumplimiento del
+             <strong>
+              Principio de Sustitución de Liskov
+             </strong>
+             , herencia vs composición/delegación
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="pooBien" height="495" src="images/pooBien.svg" width="803"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="otros-paradigmas">
+       Otros Paradigmas
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Paradigma Concurrente
+               </strong>
+               ,
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                Paradigma Orientado a Eventos
+               </strong>
+               ,
+              </p>
+             </li>
+             <li>
+              <p>
+               <strong>
+                Paradigma Orientado a Aspectos
+               </strong>
+               , …​
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Paradigmas Exotéricos
+               </strong>
+               :
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  bidimensionales, bioinspirados, multicriteriales,
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong class="green">
+                   multiparadigma:
+                  </strong>
+                  <a href="https://github.com/Henry/Leda">
+                   <strong class="green">
+                    Leda
+                   </strong>
+                  </a>
+                  , …​,
+                  <a href="https://stackoverflow.com/questions/3962604/is-javascript-a-functional-programming-language">
+                   <strong class="red">
+                    Javascript!?!
+                   </strong>
+                  </a>
+                  , …​
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="Paradigmas" src="images/Paradigmas.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="TabalaPeriodicaLenguajes" src="images/TabalaPeriodicaLenguajes.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="bibliografía">
+     <strong>
+      Bibliografía
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="ponente">
+     Ponente
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Luis Fernández Muñoz
+               </em>
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Formador/Consultor
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://es.linkedin.com/in/luisfernandezmunyoz">
+                  <em>
+                   Linkedin
+                  </em>
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="setillo" src="images/setillo.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Doctor en Inteligencia Artificial por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Ingeniero en Informática por la UMA
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Diplomado en Informática por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Profesor Titular de ETSISI de la UPM
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div id="footer-text">
+    Version 0.0.1
+    <br/>
+    Last updated 2022-11-30 18:27:56 +0100
+   </div>
+  </div>
+  <script>
+   let speed = 50;
                 
                 function typeWriter(v) {
                   let i = v.getAttribute("typewriter-index")
@@ -1679,6 +3390,6 @@ Last updated 2022-11-30 18:27:56 +0100
                 })
                 
                 setTimeout(typeWriterAll, speed);
-                
-                </script>
+  </script>
+ </body>
 </html>

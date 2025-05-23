@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8">
-<meta name="author" content="Santa Tecla">
-<title>Mockito</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-<style>
-/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Asciidoctor 2.0.8" name="generator"/>
+  <meta content="Santa Tecla" name="author"/>
+  <title>
+   Mockito
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700" rel="stylesheet"/>
+  <style>
+   /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
@@ -434,337 +436,712 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="book">
-<div id="header">
-<h1>Mockito</h1>
-<div class="details">
-<span id="author" class="author">Santa Tecla</span><br>
-<span id="email" class="email"><a href="mailto:parqueNaturalSantaTecla@gmail.com">parqueNaturalSantaTecla@gmail.com</a></span><br>
-<span id="revnumber">version 0.0.1</span>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Índice</div>
-<ul class="sectlevel1">
-<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
-<li><a href="#qué"><strong>¿Qué?</strong></a></li>
-<li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
-<li><a href="#cómo"><strong>¿Cómo?</strong></a>
-<ul class="sectlevel2">
-<li><a href="#tipos-de-dobles">Tipos de Dobles</a></li>
-<li><a href="#inicialización-del-doble">Inicialización del Doble</a></li>
-<li><a href="#verificación">Verificación</a></li>
-<li><a href="#configuración">Configuración</a></li>
-<li><a href="#múltiples-dobles">Múltiples Dobles</a></li>
-</ul>
-</li>
-<li><a href="#sintesis"><strong>Sintesis</strong></a></li>
-<li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
-<li><a href="#ponente">Ponente</a></li>
-</ul>
-</div>
-</div>
-<div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/mockito.jpg" alt="mockito" width="250" height="330"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Códigos disponibles en <a href="https://github.com/USantaTecla-tech-mockito/src/tree/main/src">git</a>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="por-qué"><strong>¿Por qué?</strong></h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Prueba lenta</strong>: porque el DOC realiza cálculos extensivos o accesos a memoria secundaria o a base de datos, …</p>
-</li>
-<li>
-<p><strong>Prueba errática</strong>: porque el DOC suministra al SUT valores de entrada “descontrolados” (aleatório, hora, señal de sensor, …)</p>
-</li>
-<li>
-<p><strong>Prueba interventora</strong>: porque el DOC es una interfaz de usuario, como en MVC, cuando el SUT es el controlador.</p>
-</li>
-<li>
-<p><strong>Prueba con Sermón de Preparación</strong>: porque la construcción del DOC es un esfuerzo superior a la configuración de un doble</p>
-</li>
-<li>
-<p><strong>Prueba con Dependencia Oculta</strong>: porque el DOC es parte de otro componente, <em>por ejemplo, librería de acceso a otro servidor vía tcp/ip</em>, o no debe cambiar su estado <em>por ejemplo, un servicio de correo y no se desea desplegar un servicio de correo alternativo</em></p>
-</li>
-<li>
-<p><strong>DOC no está disponible</strong>: porque no está finalizada por parte de un compañero, o es posterior en desarrollo es <em>top/down</em>, <em>TDD outside-in</em>, &#8230;&#8203; o porque están con una versión anterior</p>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203; la gran desventaja es que son <strong class="red">frágiles al depender de la implantación</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="qué"><strong>¿Qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-none grid-none stretch">
-<colgroup>
-<col style="width: 70%;">
-<col style="width: 30%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Los <strong>dobles</strong> son los <strong>objetos que imitan el comportamiento de objetos reales de una forma controlada en el entorno de prueba</strong>.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Por ejemplo</em>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><em class="green">Al igual que los ingenieros de automóviles utilizan un muñeco, <strong>crash dummy</strong>, cuando simulan un accidente para estudiarlo y evitar pruebas con personas reales. Luego entregan un coche que se conducirá por una persona real</em></p>
-</li>
-<li>
-<p><em class="red">Directores de cine usan “dobles” para las tomas que entrañan riesgos para el actor principal … pero cuidado!?! a producción entregan la película con las escenas del “doble”?!? No sería una buena analogía</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/dummies.jpg" alt="dummies"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="para-qué"><strong>¿Para qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 40%;">
-<col style="width: 20%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">¿Cómo pruebo un SUT con técnicas de Caja Negra</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><span class="red">cuya entrada depende de un DOC o</span></p>
-</li>
-<li>
-<p><span class="red">cuya salida va hacia un DOC?</span></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><span class="red">no está implementado, o</span></p>
-</li>
-<li>
-<p><span class="red">está en producción y no se puede alterar, o</span></p>
-</li>
-<li>
-<p><span class="red">es un componente externo a la prueba unitaria, o</span></p>
-</li>
-<li>
-<p><span class="red">es muy lento, o</span></p>
-</li>
-<li>
-<p><span class="red">&#8230;&#8203;?</span></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">¿Cómo pruebo un SUT con técnicas de Caja Blanca?</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cómo"><strong>¿Cómo?</strong></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="tipos-de-dobles">Tipos de Dobles</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Entradas</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>argumentos en la preparación y ejercicio del SUT</strong></p>
-</li>
-<li>
-<p><strong>atributos del SUT</strong>, <strong class="red">precisa dobles</strong></p>
-</li>
-<li>
-<p><strong>retornos del DOC</strong>, <strong class="red">precisa dobles</strong></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Salidas</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>retornos del SUT en la comprobación</strong></p>
-</li>
-<li>
-<p><strong>atributos del SUT</strong>, a veces, <strong class="red">precisa dobles</strong></p>
-</li>
-<li>
-<p><strong>argumentos del DOC</strong>, <strong class="red">precisa dobles</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/sinDobles.svg" alt="sinDobles" width="528" height="468">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Con <em>Spy</em></strong>, interceptor con capacidad de doblar parcialmente</p>
-<div class="ulist">
-<ul>
-<li>
-<p>crea el doble y el DOC, intercediendo y reenviando los mensajes</p>
-</li>
-<li>
-<p>permite configuración del doble</p>
-</li>
-<li>
-<p>permite su verificación del doble</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Con <em>Mock</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>crea el doble pero no el objeto</p>
-</li>
-<li>
-<p><span class="red">requiere</span> configuración del doble</p>
-</li>
-<li>
-<p>permite verificación del doble</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/conSpia.svg" alt="conSpia" width="732" height="552">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/conMock.svg" alt="conMock" width="486" height="468">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="inicialización-del-doble">Inicialización del Doble</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33%;">
-<col style="width: 33%;">
-<col style="width: 34%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Con <em>initMocks</em></th>
-<th class="tableblock halign-left valign-top">Con <em>Rule</em></th>
-<th class="tableblock halign-left valign-top">Con <em>Runwith</em>, <span class="red">obsoleto</span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">InitSutTest</span> {
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+ </head>
+ <body class="book">
+  <div id="header">
+   <h1>
+    Mockito
+   </h1>
+   <div class="details">
+    <span class="author" id="author">
+     Santa Tecla
+    </span>
+    <br/>
+    <span class="email" id="email">
+     <a href="mailto:parqueNaturalSantaTecla@gmail.com">
+      parqueNaturalSantaTecla@gmail.com
+     </a>
+    </span>
+    <br/>
+    <span id="revnumber">
+     version 0.0.1
+    </span>
+   </div>
+   <div class="toc" id="toc">
+    <div id="toctitle">
+     Índice
+    </div>
+    <ul class="sectlevel1">
+     <li>
+      <a href="#por-qué">
+       <strong>
+        ¿Por qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#qué">
+       <strong>
+        ¿Qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#para-qué">
+       <strong>
+        ¿Para qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#cómo">
+       <strong>
+        ¿Cómo?
+       </strong>
+      </a>
+      <ul class="sectlevel2">
+       <li>
+        <a href="#tipos-de-dobles">
+         Tipos de Dobles
+        </a>
+       </li>
+       <li>
+        <a href="#inicialización-del-doble">
+         Inicialización del Doble
+        </a>
+       </li>
+       <li>
+        <a href="#verificación">
+         Verificación
+        </a>
+       </li>
+       <li>
+        <a href="#configuración">
+         Configuración
+        </a>
+       </li>
+       <li>
+        <a href="#múltiples-dobles">
+         Múltiples Dobles
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="#sintesis">
+       <strong>
+        Sintesis
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#bibliografía">
+       <strong>
+        Bibliografía
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#ponente">
+       Ponente
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div id="content">
+   <div id="preamble">
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="sintesis" src="images/sintesis.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="mockito" height="330" src="images/mockito.jpg" width="250"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="admonitionblock caution">
+      <table>
+       <tr>
+        <td class="icon">
+         <i class="fa icon-caution" title="Caution">
+         </i>
+        </td>
+        <td class="content">
+         Códigos disponibles en
+         <a href="https://github.com/USantaTecla-tech-mockito/src/tree/main/src">
+          git
+         </a>
+        </td>
+       </tr>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="por-qué">
+     <strong>
+      ¿Por qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="ulist">
+      <ul>
+       <li>
+        <p>
+         <strong>
+          Prueba lenta
+         </strong>
+         : porque el DOC realiza cálculos extensivos o accesos a memoria secundaria o a base de datos, …
+        </p>
+       </li>
+       <li>
+        <p>
+         <strong>
+          Prueba errática
+         </strong>
+         : porque el DOC suministra al SUT valores de entrada “descontrolados” (aleatório, hora, señal de sensor, …)
+        </p>
+       </li>
+       <li>
+        <p>
+         <strong>
+          Prueba interventora
+         </strong>
+         : porque el DOC es una interfaz de usuario, como en MVC, cuando el SUT es el controlador.
+        </p>
+       </li>
+       <li>
+        <p>
+         <strong>
+          Prueba con Sermón de Preparación
+         </strong>
+         : porque la construcción del DOC es un esfuerzo superior a la configuración de un doble
+        </p>
+       </li>
+       <li>
+        <p>
+         <strong>
+          Prueba con Dependencia Oculta
+         </strong>
+         : porque el DOC es parte de otro componente,
+         <em>
+          por ejemplo, librería de acceso a otro servidor vía tcp/ip
+         </em>
+         , o no debe cambiar su estado
+         <em>
+          por ejemplo, un servicio de correo y no se desea desplegar un servicio de correo alternativo
+         </em>
+        </p>
+       </li>
+       <li>
+        <p>
+         <strong>
+          DOC no está disponible
+         </strong>
+         : porque no está finalizada por parte de un compañero, o es posterior en desarrollo es
+         <em>
+          top/down
+         </em>
+         ,
+         <em>
+          TDD outside-in
+         </em>
+         , …​ o porque están con una versión anterior
+        </p>
+        <div class="ulist">
+         <ul>
+          <li>
+           <p>
+            …​ la gran desventaja es que son
+            <strong class="red">
+             frágiles al depender de la implantación
+            </strong>
+           </p>
+          </li>
+         </ul>
+        </div>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="qué">
+     <strong>
+      ¿Qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-none grid-none stretch">
+      <colgroup>
+       <col style="width: 70%;"/>
+       <col style="width: 30%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Los
+              <strong>
+               dobles
+              </strong>
+              son los
+              <strong>
+               objetos que imitan el comportamiento de objetos reales de una forma controlada en el entorno de prueba
+              </strong>
+              .
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Por ejemplo
+                 </em>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <em class="green">
+                     Al igual que los ingenieros de automóviles utilizan un muñeco,
+                     <strong>
+                      crash dummy
+                     </strong>
+                     , cuando simulan un accidente para estudiarlo y evitar pruebas con personas reales. Luego entregan un coche que se conducirá por una persona real
+                    </em>
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <em class="red">
+                     Directores de cine usan “dobles” para las tomas que entrañan riesgos para el actor principal … pero cuidado!?! a producción entregan la película con las escenas del “doble”?!? No sería una buena analogía
+                    </em>
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="dummies" src="images/dummies.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="para-qué">
+     <strong>
+      ¿Para qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 40%;"/>
+       <col style="width: 40%;"/>
+       <col style="width: 20%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               ¿Cómo pruebo un SUT con técnicas de Caja Negra
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <span class="red">
+                  cuya entrada depende de un DOC o
+                 </span>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <span class="red">
+                  cuya salida va hacia un DOC?
+                 </span>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <span class="red">
+               no está implementado, o
+              </span>
+             </p>
+            </li>
+            <li>
+             <p>
+              <span class="red">
+               está en producción y no se puede alterar, o
+              </span>
+             </p>
+            </li>
+            <li>
+             <p>
+              <span class="red">
+               es un componente externo a la prueba unitaria, o
+              </span>
+             </p>
+            </li>
+            <li>
+             <p>
+              <span class="red">
+               es muy lento, o
+              </span>
+             </p>
+            </li>
+            <li>
+             <p>
+              <span class="red">
+               …​?
+              </span>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               ¿Cómo pruebo un SUT con técnicas de Caja Blanca?
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="cómo">
+     <strong>
+      ¿Cómo?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="sect2">
+      <h3 id="tipos-de-dobles">
+       Tipos de Dobles
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Entradas
+               </strong>
+               :
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <strong>
+                   argumentos en la preparación y ejercicio del SUT
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   atributos del SUT
+                  </strong>
+                  ,
+                  <strong class="red">
+                   precisa dobles
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   retornos del DOC
+                  </strong>
+                  ,
+                  <strong class="red">
+                   precisa dobles
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+             <li>
+              <p>
+               <strong>
+                Salidas
+               </strong>
+               :
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <strong>
+                   retornos del SUT en la comprobación
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   atributos del SUT
+                  </strong>
+                  , a veces,
+                  <strong class="red">
+                   precisa dobles
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <strong>
+                   argumentos del DOC
+                  </strong>
+                  ,
+                  <strong class="red">
+                   precisa dobles
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="sinDobles" height="468" src="images/sinDobles.svg" width="528"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Con
+                <em>
+                 Spy
+                </em>
+               </strong>
+               , interceptor con capacidad de doblar parcialmente
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  crea el doble y el DOC, intercediendo y reenviando los mensajes
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  permite configuración del doble
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  permite su verificación del doble
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Con
+                <em>
+                 Mock
+                </em>
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  crea el doble pero no el objeto
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <span class="red">
+                   requiere
+                  </span>
+                  configuración del doble
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  permite verificación del doble
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="conSpia" height="552" src="images/conSpia.svg" width="732"/>
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="conMock" height="468" src="images/conMock.svg" width="486"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="inicialización-del-doble">
+       Inicialización del Doble
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 33%;"/>
+        <col style="width: 33%;"/>
+        <col style="width: 34%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          Con
+          <em>
+           initMocks
+          </em>
+         </th>
+         <th class="tableblock halign-left valign-top">
+          Con
+          <em>
+           Rule
+          </em>
+         </th>
+         <th class="tableblock halign-left valign-top">
+          Con
+          <em>
+           Runwith
+          </em>
+          ,
+          <span class="red">
+           obsoleto
+          </span>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">InitSutTest</span> {
 
 ...
 <span class="annotation">@Before</span>
@@ -774,70 +1151,131 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-mockito/src
 }
 ...
 }</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>En <em>org.mockito.MockitoAnnotations.initMocks</em></td>
-</tr>
-</table>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">RuleSutTest</span> {
+            </div>
+           </div>
+           <div class="colist arabic">
+            <table>
+             <tr>
+              <td>
+               <i class="conum" data-value="1">
+               </i>
+               <b>
+                1
+               </b>
+              </td>
+              <td>
+               En
+               <em>
+                org.mockito.MockitoAnnotations.initMocks
+               </em>
+              </td>
+             </tr>
+            </table>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">RuleSutTest</span> {
 
 ...
 <span class="annotation">@Rule</span>
 <span class="directive">public</span> MockitoRule initRule = MockitoJUnit.rule();<i class="conum" data-value="1"></i><b>(1)</b>
 ...
 }</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>En <em>org.junit.Rule</em>, <em>org.mockito.junit.MockitoRule</em> y <em>org.mockito.junit.MockitoJUnit</em></td>
-</tr>
-</table>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@RunWith</span>( MockitoJUnitRunner.class)<i class="conum" data-value="1"></i><b>(1)</b>
+            </div>
+           </div>
+           <div class="colist arabic">
+            <table>
+             <tr>
+              <td>
+               <i class="conum" data-value="1">
+               </i>
+               <b>
+                1
+               </b>
+              </td>
+              <td>
+               En
+               <em>
+                org.junit.Rule
+               </em>
+               ,
+               <em>
+                org.mockito.junit.MockitoRule
+               </em>
+               y
+               <em>
+                org.mockito.junit.MockitoJUnit
+               </em>
+              </td>
+             </tr>
+            </table>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@RunWith</span>( MockitoJUnitRunner.class)<i class="conum" data-value="1"></i><b>(1)</b>
 <span class="directive">public</span> <span class="type">class</span> <span class="class">RunWithSutTest</span> {
 ...
 }</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>En <em>org.junit.runner.RunWith</em> y <em>org.mockito.junit.MockitoJUnitRunner</em></td>
-</tr>
-</table>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">SUT.java</th>
-<th class="tableblock halign-left valign-top">DOC.java</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">SUT</span> {
+            </div>
+           </div>
+           <div class="colist arabic">
+            <table>
+             <tr>
+              <td>
+               <i class="conum" data-value="1">
+               </i>
+               <b>
+                1
+               </b>
+              </td>
+              <td>
+               En
+               <em>
+                org.junit.runner.RunWith
+               </em>
+               y
+               <em>
+                org.mockito.junit.MockitoJUnitRunner
+               </em>
+              </td>
+             </tr>
+            </table>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          SUT.java
+         </th>
+         <th class="tableblock halign-left valign-top">
+          DOC.java
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">SUT</span> {
 
   <span class="directive">private</span> DOC doc;
   <span class="directive">private</span> <span class="type">int</span> attribute;
@@ -848,35 +1286,35 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-mockito/src
   }
 
   <span class="directive">public</span> <span class="type">void</span> voidMethod(){
-    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">voidMethod of SUT</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">"</span><span class="content">voidMethod of SUT</span><span class="delimiter">"</span></span>);
     <span class="local-variable">this</span>.attribute++;
     <span class="local-variable">this</span>.doc.voidMethod();
   }
 
   <span class="directive">public</span> <span class="type">void</span> voidMethodWithParemeters(<span class="type">int</span> parameter, Other other){
-    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">voidMethodWithParemeters of SUT</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">"</span><span class="content">voidMethodWithParemeters of SUT</span><span class="delimiter">"</span></span>);
     <span class="local-variable">this</span>.attribute++;
     <span class="local-variable">this</span>.doc.voidMethodWithParemeters(parameter, other);
   }
 
   <span class="directive">public</span> <span class="type">void</span> voidMethodWithExcpetion() <span class="directive">throws</span> <span class="exception">Exception</span> {
-    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">voidMethodWithExcpetion of SUT</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">"</span><span class="content">voidMethodWithExcpetion of SUT</span><span class="delimiter">"</span></span>);
     <span class="local-variable">this</span>.attribute++;
     <span class="local-variable">this</span>.doc.voidMethodWithExcpetion();
   }
 
   <span class="directive">public</span> <span class="type">int</span> returnMethod() {
-    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">returnMethod of SUT</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">"</span><span class="content">returnMethod of SUT</span><span class="delimiter">"</span></span>);
     <span class="keyword">return</span> <span class="local-variable">this</span>.attribute + <span class="local-variable">this</span>.doc.returnMethod();
   }
 
   <span class="directive">public</span> <span class="type">int</span> returnMethodWithParemeters(<span class="type">int</span> parameter){
-    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">returnMethodWithParemeters of SUT</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">"</span><span class="content">returnMethodWithParemeters of SUT</span><span class="delimiter">"</span></span>);
     <span class="keyword">return</span> parameter + <span class="local-variable">this</span>.attribute + <span class="local-variable">this</span>.doc.returnMethodWithParemeters(parameter);
   }
 
   <span class="directive">public</span> <span class="type">int</span> returnMethodWithExcpetion() <span class="directive">throws</span> <span class="exception">Exception</span> {
-    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">returnMethodWithExcpetion of SUT</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">"</span><span class="content">returnMethodWithExcpetion of SUT</span><span class="delimiter">"</span></span>);
     <span class="keyword">return</span> + <span class="local-variable">this</span>.attribute + <span class="local-variable">this</span>.doc.returnMethodWithExcpetion();
   }
 
@@ -885,11 +1323,15 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-mockito/src
   }
 
 }</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">DOC</span> {
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">DOC</span> {
 
   <span class="directive">private</span> <span class="type">int</span> attribute;
 
@@ -898,35 +1340,35 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-mockito/src
   }
 
   <span class="directive">public</span> <span class="type">void</span> voidMethod() {
-    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">voidMethod of DOC</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">"</span><span class="content">voidMethod of DOC</span><span class="delimiter">"</span></span>);
     <span class="local-variable">this</span>.attribute++;
   }
 
   <span class="directive">public</span> <span class="type">void</span> voidMethodWithParemeters(<span class="type">int</span> parameter, Other reDoc) {
-    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">voidMethodWithParemeters of DOC</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">"</span><span class="content">voidMethodWithParemeters of DOC</span><span class="delimiter">"</span></span>);
     <span class="local-variable">this</span>.attribute++;
     <span class="local-variable">this</span>.attribute += parameter;
   }
 
   <span class="directive">public</span> <span class="type">void</span> voidMethodWithExcpetion() <span class="directive">throws</span> <span class="exception">Exception</span> {
-    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">voidMethodWithExcpetion of DOC</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">"</span><span class="content">voidMethodWithExcpetion of DOC</span><span class="delimiter">"</span></span>);
     <span class="local-variable">this</span>.attribute++;
-    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">Exception</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span>);
+    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">Exception</span>(<span class="string"><span class="delimiter">"</span><span class="content">message</span><span class="delimiter">"</span></span>);
   }
 
   <span class="directive">public</span> <span class="type">int</span> returnMethod() {
-    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">returnMethod of DOC</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">"</span><span class="content">returnMethod of DOC</span><span class="delimiter">"</span></span>);
     <span class="keyword">return</span> <span class="local-variable">this</span>.attribute;
   }
 
   <span class="directive">public</span> <span class="type">int</span> returnMethodWithParemeters(<span class="type">int</span> parameter) {
-    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">returnMethodWithParemeters of DOC</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">"</span><span class="content">returnMethodWithParemeters of DOC</span><span class="delimiter">"</span></span>);
     <span class="keyword">return</span> parameter + <span class="local-variable">this</span>.attribute;
   }
 
   <span class="directive">public</span> <span class="type">int</span> returnMethodWithExcpetion() <span class="directive">throws</span> <span class="exception">Exception</span> {
-    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">returnMethodWithExcpetion of DOC</span><span class="delimiter">&quot;</span></span>);
-    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">Exception</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">message</span><span class="delimiter">&quot;</span></span>);
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">"</span><span class="content">returnMethodWithExcpetion of DOC</span><span class="delimiter">"</span></span>);
+    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="exception">Exception</span>(<span class="string"><span class="delimiter">"</span><span class="content">message</span><span class="delimiter">"</span></span>);
     <span class="comment">//    return this.attribute++;</span>
   }
 
@@ -936,33 +1378,45 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-mockito/src
   }
 
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle" colspan="2"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/sutDoc.svg" alt="sutDoc" width="836" height="739">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><em>Mocks</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">SutTest</span> {
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-middle" colspan="2">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="sutDoc" height="739" src="images/sutDoc.svg" width="836"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          <em>
+           Mocks
+          </em>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">SutTest</span> {
 
   <span class="directive">private</span> SUT sut;
   <span class="directive">private</span> DOC doc;
@@ -973,19 +1427,34 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-mockito/src
     <span class="local-variable">this</span>.doc = mock(DOC.class); <i class="conum" data-value="1"></i><b>(1)</b>
     <span class="local-variable">this</span>.sut = <span class="keyword">new</span> SUT(<span class="local-variable">this</span>.doc);
   }</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>En <em>org.mockito.Mockito.mock</em></td>
-</tr>
-</table>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">SutTest</span> {
+            </div>
+           </div>
+           <div class="colist arabic">
+            <table>
+             <tr>
+              <td>
+               <i class="conum" data-value="1">
+               </i>
+               <b>
+                1
+               </b>
+              </td>
+              <td>
+               En
+               <em>
+                org.mockito.Mockito.mock
+               </em>
+              </td>
+             </tr>
+            </table>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">SutTest</span> {
 
     <span class="annotation">@InjectMocks</span> <i class="conum" data-value="1"></i><b>(1)</b>
     <span class="directive">private</span> SUT sut;
@@ -996,46 +1465,88 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-mockito/src
     <span class="directive">public</span> <span class="type">void</span> before(){
         initMocks(<span class="local-variable">this</span>);
     }</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>En <em>org.mockito.InjectMocks</em></td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>En <em>org.mockito.Mock</em></td>
-</tr>
-</table>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><em>Spies</em></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Con métodos estáticos</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Con anotaciones</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">SutTest</span> {
+            </div>
+           </div>
+           <div class="colist arabic">
+            <table>
+             <tr>
+              <td>
+               <i class="conum" data-value="1">
+               </i>
+               <b>
+                1
+               </b>
+              </td>
+              <td>
+               En
+               <em>
+                org.mockito.InjectMocks
+               </em>
+              </td>
+             </tr>
+             <tr>
+              <td>
+               <i class="conum" data-value="2">
+               </i>
+               <b>
+                2
+               </b>
+              </td>
+              <td>
+               En
+               <em>
+                org.mockito.Mock
+               </em>
+              </td>
+             </tr>
+            </table>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top" colspan="2">
+          <em>
+           Spies
+          </em>
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             Con métodos estáticos
+            </p>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             Con anotaciones
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">SutTest</span> {
 
   <span class="directive">private</span> SUT sut;
   <span class="directive">private</span> DOC doc;
@@ -1046,19 +1557,34 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-mockito/src
     <span class="local-variable">this</span>.doc = spy(<span class="keyword">new</span> DOC()); <i class="conum" data-value="1"></i><b>(1)</b>
     <span class="local-variable">this</span>.sut = <span class="keyword">new</span> SUT(<span class="local-variable">this</span>.doc);
   }</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>En <em>org.mockito.Mockito.spy</em></td>
-</tr>
-</table>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">SutTest</span> {
+            </div>
+           </div>
+           <div class="colist arabic">
+            <table>
+             <tr>
+              <td>
+               <i class="conum" data-value="1">
+               </i>
+               <b>
+                1
+               </b>
+              </td>
+              <td>
+               En
+               <em>
+                org.mockito.Mockito.spy
+               </em>
+              </td>
+             </tr>
+            </table>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">SutTest</span> {
 
     <span class="annotation">@InjectMocks</span> <i class="conum" data-value="1"></i><b>(1)</b>
     <span class="directive">private</span> SUT sut;
@@ -1069,160 +1595,309 @@ Códigos disponibles en <a href="https://github.com/USantaTecla-tech-mockito/src
     <span class="directive">public</span> <span class="type">void</span> before(){
         initMocks(<span class="local-variable">this</span>);
     }</code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>En <em>org.mockito.InjectMocks</em></td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>En <em>org.mockito.Spy</em></td>
-</tr>
-</table>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="verificación">Verificación</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>verify</strong>(&lt;doble&gt;)</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>.&lt;mensaje&gt;(&lt;argumentos);</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.voidMethod();
+            </div>
+           </div>
+           <div class="colist arabic">
+            <table>
+             <tr>
+              <td>
+               <i class="conum" data-value="1">
+               </i>
+               <b>
+                1
+               </b>
+              </td>
+              <td>
+               En
+               <em>
+                org.mockito.InjectMocks
+               </em>
+              </td>
+             </tr>
+             <tr>
+              <td>
+               <i class="conum" data-value="2">
+               </i>
+               <b>
+                2
+               </b>
+              </td>
+              <td>
+               En
+               <em>
+                org.mockito.Spy
+               </em>
+              </td>
+             </tr>
+            </table>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="verificación">
+       Verificación
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <em>
+                <strong>
+                 verify
+                </strong>
+                (&lt;doble&gt;)
+               </em>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <em>
+                   .&lt;mensaje&gt;(&lt;argumentos);
+                  </em>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.voidMethod();
 verify(<span class="local-variable">this</span>.doc).voidMethod();</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>verifica que el doble recibió el mensaje</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">1</span>, <span class="keyword">new</span> Other(<span class="integer">0</span>));
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               verifica que el doble recibió el mensaje
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">1</span>, <span class="keyword">new</span> Other(<span class="integer">0</span>));
 <span class="local-variable">this</span>.sut.voidMethod();
 verify(<span class="local-variable">this</span>.doc).voidMethod();</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>independientemente del orden de ejecución y verificación</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">1</span>, <span class="keyword">new</span> Other(<span class="integer">0</span>));
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               independientemente del orden de ejecución y verificación
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">1</span>, <span class="keyword">new</span> Other(<span class="integer">0</span>));
 <span class="local-variable">this</span>.sut.voidMethod();
 verify(<span class="local-variable">this</span>.doc).voidMethod();
 verify(<span class="local-variable">this</span>.doc).voidMethodWithParemeters(<span class="integer">1</span>, <span class="keyword">new</span> Other(<span class="integer">0</span>));</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>múltiples intercepciones requiere el argumento <em><strong>times</strong>(n)</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">1</span>, <span class="keyword">new</span> Other(<span class="integer">0</span>));
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               múltiples intercepciones requiere el argumento
+               <em>
+                <strong>
+                 times
+                </strong>
+                (n)
+               </em>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">1</span>, <span class="keyword">new</span> Other(<span class="integer">0</span>));
 <span class="local-variable">this</span>.sut.voidMethod();
 <span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">0</span>, <span class="predefined-constant">null</span>);
 <span class="local-variable">this</span>.sut.voidMethod();
 verify(<span class="local-variable">this</span>.doc).voidMethodWithParemeters(<span class="integer">0</span>, <span class="predefined-constant">null</span>);
 verify(<span class="local-variable">this</span>.doc, times(<span class="integer">2</span>)).voidMethod();
 verify(<span class="local-variable">this</span>.doc).voidMethodWithParemeters(<span class="integer">1</span>, <span class="keyword">new</span> Other(<span class="integer">0</span>));</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>variaciones de frecuencia: <em><strong>atLeastOnce</strong>(), <strong>atLeast</strong>(n), <strong>atMost</strong>(n), <strong>never</strong>()</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.voidMethod();
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               variaciones de frecuencia:
+               <em>
+                <strong>
+                 atLeastOnce
+                </strong>
+                (),
+                <strong>
+                 atLeast
+                </strong>
+                (n),
+                <strong>
+                 atMost
+                </strong>
+                (n),
+                <strong>
+                 never
+                </strong>
+                ()
+               </em>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.voidMethod();
 verify(<span class="local-variable">this</span>.doc, times(<span class="integer">1</span>)).voidMethod(); <span class="comment">// default</span>
 verify(<span class="local-variable">this</span>.doc, atLeastOnce()).voidMethod();
 verify(<span class="local-variable">this</span>.doc, atLeast(<span class="integer">1</span>)).voidMethod();
 verify(<span class="local-variable">this</span>.doc, atMost(<span class="integer">1</span>)).voidMethod();
 verify(<span class="local-variable">this</span>.doc, never()).voidMethodWithParemeters(<span class="integer">0</span>, <span class="predefined-constant">null</span>);</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>verifyZeroInteractions</strong>(&lt;doble&gt;);</em>, permite comprobar que no hubo otras interacciones</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">verifyZeroInteractions(<span class="local-variable">this</span>.doc);</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.voidMethod();
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top" rowspan="2">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <em>
+                <strong>
+                 verifyZeroInteractions
+                </strong>
+                (&lt;doble&gt;);
+               </em>
+               , permite comprobar que no hubo otras interacciones
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java">verifyZeroInteractions(<span class="local-variable">this</span>.doc);</code></pre>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.voidMethod();
 verify(<span class="local-variable">this</span>.doc).voidMethod();
 verifyNoMoreInteractions(<span class="local-variable">this</span>.doc);</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Se permiten <em><strong>matchers</strong></em> de <a href="https://javadoc.io/static/org.mockito/mockito-core/3.6.0/org/mockito/ArgumentMatchers.html#isNotNull-java.lang.Class-"><em>Hamfcrest</em></a>: anyInt(n), anyBoolean(b), &#8230;&#8203;, any(o), any(), &#8230;&#8203;anyList(), &#8230;&#8203;</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">0</span>, <span class="predefined-constant">null</span>);
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Se permiten
+               <em>
+                <strong>
+                 matchers
+                </strong>
+               </em>
+               de
+               <a href="https://javadoc.io/static/org.mockito/mockito-core/3.6.0/org/mockito/ArgumentMatchers.html#isNotNull-java.lang.Class-">
+                <em>
+                 Hamfcrest
+                </em>
+               </a>
+               : anyInt(n), anyBoolean(b), …​, any(o), any(), …​anyList(), …​
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">0</span>, <span class="predefined-constant">null</span>);
 <span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">1</span>, <span class="keyword">new</span> Other(<span class="integer">0</span>));
 verify(<span class="local-variable">this</span>.doc).voidMethodWithParemeters(<span class="integer">1</span>, <span class="keyword">new</span> Other(<span class="integer">0</span>));
 verify(<span class="local-variable">this</span>.doc)
@@ -1235,51 +1910,92 @@ verify(<span class="local-variable">this</span>.doc)
   .voidMethodWithParemeters(eq(<span class="integer">0</span>), (Other) isNull());
 verify(<span class="local-variable">this</span>.doc)
   .voidMethodWithParemeters(intThat(greaterThan(-<span class="integer">1</span>)), (Other) isNull());</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Se pueden <strong>especializar los <em>matchers</em></strong> implementando <em><strong>ArgumentMatcher</strong></em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">0</span>, <span class="keyword">new</span> Other(<span class="integer">1</span>));
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top" rowspan="2">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Se pueden
+               <strong>
+                especializar los
+                <em>
+                 matchers
+                </em>
+               </strong>
+               implementando
+               <em>
+                <strong>
+                 ArgumentMatcher
+                </strong>
+               </em>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">0</span>, <span class="keyword">new</span> Other(<span class="integer">1</span>));
 verify(<span class="local-variable">this</span>.doc)
   .voidMethodWithParemeters(anyInt(), argThat(<span class="keyword">new</span> isValidOther()));</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">isValidOther</span> <span class="directive">implements</span> ArgumentMatcher&lt;Other&gt; {
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="type">class</span> <span class="class">isValidOther</span> <span class="directive">implements</span> ArgumentMatcher&lt;Other&gt; {
   <span class="directive">public</span> <span class="type">boolean</span> matches(Other other) {
       <span class="keyword">return</span> <span class="integer">0</span> &lt;= other.attribute &amp;&amp; other.attribute &lt;= <span class="integer">2</span>;
   }
   <span class="directive">public</span> <span class="predefined-type">String</span> toString() {
-      <span class="keyword">return</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">[isValidOther]</span><span class="delimiter">&quot;</span></span>;
+      <span class="keyword">return</span> <span class="string"><span class="delimiter">"</span><span class="content">[isValidOther]</span><span class="delimiter">"</span></span>;
   }
 
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Permite captura del argumento del mensaje que el DOC recibe del SUT con <em><strong>ArgumentCaptor</strong></em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">ArgumentCaptor&lt;<span class="predefined-type">Integer</span>&gt; value = ArgumentCaptor.forClass(<span class="predefined-type">Integer</span>.class);
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Permite captura del argumento del mensaje que el DOC recibe del SUT con
+               <em>
+                <strong>
+                 ArgumentCaptor
+                </strong>
+               </em>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java">ArgumentCaptor&lt;<span class="predefined-type">Integer</span>&gt; value = ArgumentCaptor.forClass(<span class="predefined-type">Integer</span>.class);
 ArgumentCaptor&lt;Other&gt; other = ArgumentCaptor.forClass(Other.class);
 <span class="local-variable">this</span>.sut.voidMethod();
 <span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">1</span>, <span class="keyword">new</span> Other(-<span class="integer">1</span>));
@@ -1287,20 +2003,35 @@ verify(<span class="local-variable">this</span>.doc).voidMethod();
 verify(<span class="local-variable">this</span>.doc).voidMethodWithParemeters(value.capture(), other.capture());
 assertThat(value.getValue(), is(<span class="integer">1</span>));
 assertThat(other.getValue().attribute, is(-<span class="integer">1</span>));</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Permite configurar el orden de verificación con <em><strong>InOrder</strong></em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">Other other = <span class="keyword">new</span> Other(<span class="integer">0</span>);
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Permite configurar el orden de verificación con
+               <em>
+                <strong>
+                 InOrder
+                </strong>
+               </em>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java">Other other = <span class="keyword">new</span> Other(<span class="integer">0</span>);
 <span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">1</span>, other);
 <span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">2</span>, other);
 <span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">3</span>, other);
@@ -1308,20 +2039,35 @@ InOrder inOrder = inOrder(<span class="local-variable">this</span>.doc);
 inOrder.verify(<span class="local-variable">this</span>.doc).voidMethodWithParemeters(<span class="integer">1</span>, other);
 inOrder.verify(<span class="local-variable">this</span>.doc).voidMethodWithParemeters(<span class="integer">2</span>, other);
 inOrder.verify(<span class="local-variable">this</span>.doc).voidMethodWithParemeters(<span class="integer">3</span>, other);</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Incluso entre varios dobles argumentos de <em><strong>InOrder</strong></em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">Other other = <span class="keyword">new</span> Other(<span class="integer">0</span>);
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Incluso entre varios dobles argumentos de
+               <em>
+                <strong>
+                 InOrder
+                </strong>
+               </em>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java">Other other = <span class="keyword">new</span> Other(<span class="integer">0</span>);
 DOC doc = spy(DOC.class);
 SUT sut = <span class="keyword">new</span> SUT(doc);
 <span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">1</span>, other);
@@ -1333,77 +2079,132 @@ inOrder.verify(<span class="local-variable">this</span>.doc).voidMethodWithParem
 inOrder.verify(doc).voidMethodWithParemeters(<span class="integer">1</span>, other);
 inOrder.verify(<span class="local-variable">this</span>.doc).voidMethodWithParemeters(<span class="integer">2</span>, other);
 inOrder.verify(doc).voidMethodWithParemeters(<span class="integer">2</span>, other);</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Permite configurar el mensaje en el informe de pruebas con <em><strong>description</strong></em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.voidMethod();
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Permite configurar el mensaje en el informe de pruebas con
+               <em>
+                <strong>
+                 description
+                </strong>
+               </em>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.voidMethod();
 verify(<span class="local-variable">this</span>.doc, times(<span class="integer">1</span>)
-  .description(<span class="string"><span class="delimiter">&quot;</span><span class="content">Mensaje</span><span class="delimiter">&quot;</span></span>)).voidMethod();
+  .description(<span class="string"><span class="delimiter">"</span><span class="content">Mensaje</span><span class="delimiter">"</span></span>)).voidMethod();
 verify(<span class="local-variable">this</span>.doc, atLeastOnce()
-  .description(<span class="string"><span class="delimiter">&quot;</span><span class="content">Mensaje</span><span class="delimiter">&quot;</span></span>)).voidMethod();
+  .description(<span class="string"><span class="delimiter">"</span><span class="content">Mensaje</span><span class="delimiter">"</span></span>)).voidMethod();
 verify(<span class="local-variable">this</span>.doc, atLeast(<span class="integer">1</span>)
-  .description(<span class="string"><span class="delimiter">&quot;</span><span class="content">Mensaje</span><span class="delimiter">&quot;</span></span>)).voidMethod();
+  .description(<span class="string"><span class="delimiter">"</span><span class="content">Mensaje</span><span class="delimiter">"</span></span>)).voidMethod();
 verify(<span class="local-variable">this</span>.doc, atMost(<span class="integer">1</span>)
-  .description(<span class="string"><span class="delimiter">&quot;</span><span class="content">Mensaje</span><span class="delimiter">&quot;</span></span>)).voidMethod();
+  .description(<span class="string"><span class="delimiter">"</span><span class="content">Mensaje</span><span class="delimiter">"</span></span>)).voidMethod();
 verify(<span class="local-variable">this</span>.doc, never()
-  .description(<span class="string"><span class="delimiter">&quot;</span><span class="content">Mensaje</span><span class="delimiter">&quot;</span></span>)).voidMethodWithParemeters(<span class="integer">0</span>, <span class="predefined-constant">null</span>);</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Permite establecer expiración con <em><strong>timeout</strong></em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.slowMethod();
+  .description(<span class="string"><span class="delimiter">"</span><span class="content">Mensaje</span><span class="delimiter">"</span></span>)).voidMethodWithParemeters(<span class="integer">0</span>, <span class="predefined-constant">null</span>);</code></pre>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Permite establecer expiración con
+               <em>
+                <strong>
+                 timeout
+                </strong>
+               </em>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="local-variable">this</span>.sut.slowMethod();
 verify(<span class="local-variable">this</span>.doc, timeout(<span class="integer">1</span>)).slowMethod();</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="configuración">Configuración</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 70%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>when</strong>(&lt;doble&gt;.&lt;mensaje&gt;({&lt;argumentos&gt;,}))</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>.<strong>thenReturn</strong>({&lt;expresión&gt;,});</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="configuración">
+       Configuración
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 30%;"/>
+        <col style="width: 70%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <em>
+                <strong>
+                 when
+                </strong>
+                (&lt;doble&gt;.&lt;mensaje&gt;({&lt;argumentos&gt;,}))
+               </em>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <em>
+                   .
+                   <strong>
+                    thenReturn
+                   </strong>
+                   ({&lt;expresión&gt;,});
+                  </em>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
 <span class="directive">public</span> <span class="type">void</span> testSameThenReturn() {
   when(<span class="local-variable">this</span>.doc.returnMethod()).thenReturn(<span class="integer">0</span>);
   <span class="local-variable">this</span>.sut.voidMethod();
@@ -1412,20 +2213,30 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
   assertThat(<span class="local-variable">this</span>.sut.returnMethod(), is(<span class="integer">2</span>));
   assertThat(<span class="local-variable">this</span>.sut.returnMethod(), is(<span class="integer">2</span>));
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>permite configurar la salida del DOC, siempre igual</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               permite configurar la salida del DOC, siempre igual
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
 <span class="directive">public</span> <span class="type">void</span> testSameDoReturn() {
   doReturn(<span class="integer">0</span>).when(<span class="local-variable">this</span>.doc).returnMethod();
   <span class="local-variable">this</span>.sut.voidMethod();
@@ -1434,20 +2245,30 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
   assertThat(<span class="local-variable">this</span>.sut.returnMethod(), is(<span class="integer">2</span>));
   assertThat(<span class="local-variable">this</span>.sut.returnMethod(), is(<span class="integer">2</span>));
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Permite variaciones y fija a partir de último</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Permite variaciones y fija a partir de último
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
 <span class="directive">public</span> <span class="type">void</span> testSeveralThenReturn() {
   when(<span class="local-variable">this</span>.doc.returnMethod()).thenReturn(<span class="integer">0</span>, <span class="integer">1</span>);
   <span class="local-variable">this</span>.sut.voidMethod();
@@ -1456,27 +2277,50 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
   assertThat(<span class="local-variable">this</span>.sut.returnMethod(), is(<span class="integer">3</span>));
   assertThat(<span class="local-variable">this</span>.sut.returnMethod(), is(<span class="integer">3</span>));
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>doReturn</strong>({&lt;expresiones&gt;,})</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>.<strong>when</strong>(&lt;doble&gt;).&lt;mensaje&gt;({&lt;argumentos&gt;,});</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <em>
+                <strong>
+                 doReturn
+                </strong>
+                ({&lt;expresiones&gt;,})
+               </em>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <em>
+                   .
+                   <strong>
+                    when
+                   </strong>
+                   (&lt;doble&gt;).&lt;mensaje&gt;({&lt;argumentos&gt;,});
+                  </em>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
 <span class="directive">public</span> <span class="type">void</span> testSeveralDoReturn() {
   doReturn(<span class="integer">0</span>, <span class="integer">1</span>).when(<span class="local-variable">this</span>.doc).returnMethod();
   <span class="local-variable">this</span>.sut.voidMethod();
@@ -1485,20 +2329,30 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
   assertThat(<span class="local-variable">this</span>.sut.returnMethod(), is(<span class="integer">3</span>));
   assertThat(<span class="local-variable">this</span>.sut.returnMethod(), is(<span class="integer">3</span>));
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Permite configurar distintos valores en distintos momentos</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Permite configurar distintos valores en distintos momentos
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
 <span class="directive">public</span> <span class="type">void</span> testWithDisjointValuesThenReturn() {
   when(<span class="local-variable">this</span>.doc.returnMethodWithParemeters(<span class="integer">0</span>)).thenReturn(<span class="integer">0</span>);
   when(<span class="local-variable">this</span>.doc.returnMethodWithParemeters(<span class="integer">1</span>)).thenReturn(<span class="integer">1</span>);
@@ -1509,20 +2363,35 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
   assertThat(<span class="local-variable">this</span>.sut.returnMethodWithParemeters(<span class="integer">1</span>), is(<span class="integer">4</span>));
   assertThat(<span class="local-variable">this</span>.sut.returnMethodWithParemeters(<span class="integer">2</span>), is(<span class="integer">6</span>));
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>versión con <em><strong>doReturn</strong></em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               versión con
+               <em>
+                <strong>
+                 doReturn
+                </strong>
+               </em>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
 <span class="directive">public</span> <span class="type">void</span> testWithDisjointValuesDoReturn() {
   doReturn(<span class="integer">0</span>).when(<span class="local-variable">this</span>.doc).returnMethodWithParemeters(<span class="integer">0</span>);
   doReturn(<span class="integer">1</span>).when(<span class="local-variable">this</span>.doc).returnMethodWithParemeters(<span class="integer">1</span>);
@@ -1533,20 +2402,35 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
   assertThat(<span class="local-variable">this</span>.sut.returnMethodWithParemeters(<span class="integer">1</span>), is(<span class="integer">4</span>));
   assertThat(<span class="local-variable">this</span>.sut.returnMethodWithParemeters(<span class="integer">2</span>), is(<span class="integer">6</span>));
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Permite la configuración mediante <em><strong>matchers</strong></em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Permite la configuración mediante
+               <em>
+                <strong>
+                 matchers
+                </strong>
+               </em>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
 <span class="directive">public</span> <span class="type">void</span> testWithSametMatchers() {
   when(<span class="local-variable">this</span>.doc.returnMethodWithParemeters(anyInt()))
     .thenReturn(<span class="integer">0</span>);
@@ -1556,20 +2440,36 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
   assertThat(<span class="local-variable">this</span>.sut.returnMethodWithParemeters(<span class="integer">1</span>), is(<span class="integer">3</span>));
   assertThat(<span class="local-variable">this</span>.sut.returnMethodWithParemeters(<span class="integer">2</span>), is(<span class="integer">4</span>));
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>El orden y restricción de los <em><strong>matchers</strong></em> determina la configuración final</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               El orden y restricción de los
+               <em>
+                <strong>
+                 matchers
+                </strong>
+               </em>
+               determina la configuración final
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
 <span class="directive">public</span> <span class="type">void</span> testWithMixedValuestMatchers() {
   when(<span class="local-variable">this</span>.doc.returnMethodWithParemeters(<span class="integer">2</span>))
     .thenReturn(-<span class="integer">100</span>); <span class="comment">// of no effect</span>
@@ -1586,20 +2486,41 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
   assertThat(<span class="local-variable">this</span>.sut
     .returnMethodWithParemeters(<span class="integer">2</span>), is(<span class="integer">7</span>));
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Permite la especialización de <em><strong>matchers</strong></em> mediante <em><strong>ArgumentMatcher</strong></em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Permite la especialización de
+               <em>
+                <strong>
+                 matchers
+                </strong>
+               </em>
+               mediante
+               <em>
+                <strong>
+                 ArgumentMatcher
+                </strong>
+               </em>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
 <span class="directive">public</span> <span class="type">void</span> testWithArgumentMatcher() {
   doNothing().when(<span class="local-variable">this</span>.doc)
     .voidMethodWithParemeters(
@@ -1609,20 +2530,39 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
   <span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">1</span>, <span class="keyword">new</span> Other(<span class="integer">3</span>));
   assertThat(<span class="local-variable">this</span>.sut.returnMethod(), is(<span class="integer">3</span>));
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>doNothing</strong>().<strong>when</strong>(&lt;doble&gt;).&lt;mensaje&gt;({&lt;argumentos&gt;,});</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <em>
+                <strong>
+                 doNothing
+                </strong>
+                ().
+                <strong>
+                 when
+                </strong>
+                (&lt;doble&gt;).&lt;mensaje&gt;({&lt;argumentos&gt;,});
+               </em>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
 <span class="directive">public</span> <span class="type">void</span> testVoid() {
   doNothing().when(<span class="local-variable">this</span>.doc).voidMethod();
   doNothing().when(<span class="local-variable">this</span>.doc)
@@ -1631,39 +2571,88 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
   <span class="local-variable">this</span>.sut.voidMethodWithParemeters(<span class="integer">1</span>, <span class="keyword">new</span> Other(<span class="integer">0</span>));
   assertThat(<span class="local-variable">this</span>.sut.returnMethod(), is(<span class="integer">2</span>));
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>doAnswer</strong>(new <strong>Answer</strong>(){</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>public Object <strong>answer</strong>(<strong>InvocationOnMock</strong> invocation) {</em></p>
-</li>
-<li>
-<p>Object[] args = invocation.getArguments();</p>
-</li>
-<li>
-<p><em>return &lt;expresión&gt;;</em></p>
-</li>
-<li>
-<p><em>}</em></p>
-</li>
-<li>
-<p><em>}).<strong>when</strong>(&lt;doble&gt;).&lt;mensaje&gt;({&lt;argumento&gt;,});</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <em>
+                <strong>
+                 doAnswer
+                </strong>
+                (new
+                <strong>
+                 Answer
+                </strong>
+                (){
+               </em>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <em>
+                   public Object
+                   <strong>
+                    answer
+                   </strong>
+                   (
+                   <strong>
+                    InvocationOnMock
+                   </strong>
+                   invocation) {
+                  </em>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Object[] args = invocation.getArguments();
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <em>
+                   return &lt;expresión&gt;;
+                  </em>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <em>
+                   }
+                  </em>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <em>
+                   }).
+                   <strong>
+                    when
+                   </strong>
+                   (&lt;doble&gt;).&lt;mensaje&gt;({&lt;argumento&gt;,});
+                  </em>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
 <span class="directive">public</span> <span class="type">void</span> testWithDoAnswer() {
   doAnswer(<span class="keyword">new</span> Answer() {
     <span class="directive">public</span> <span class="predefined-type">Object</span> answer(InvocationOnMock invocation) {
@@ -1675,20 +2664,35 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
   assertThat(<span class="local-variable">this</span>.sut
     .returnMethodWithParemeters(<span class="integer">5</span>), is(<span class="integer">15</span>));
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Versión <em><strong>thenAnswer</strong></em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Versión
+               <em>
+                <strong>
+                 thenAnswer
+                </strong>
+               </em>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
 <span class="directive">public</span> <span class="type">void</span> testWithThenAnswer() {
   when(<span class="local-variable">this</span>.doc.returnMethodWithParemeters(<span class="integer">5</span>))
     .thenAnswer(<span class="keyword">new</span> Answer() {
@@ -1701,148 +2705,228 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
   assertThat(<span class="local-variable">this</span>.sut
     .returnMethodWithParemeters(<span class="integer">5</span>), is(<span class="integer">15</span>));
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>doThrow</strong>(&lt;excepción&gt;)</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>.<strong>when</strong>(&lt;doble&gt;).&lt;mensaje&gt;({&lt;argumento&gt;,});</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>(expected = <span class="exception">Error</span>.class)
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <em>
+                <strong>
+                 doThrow
+                </strong>
+                (&lt;excepción&gt;)
+               </em>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <em>
+                   .
+                   <strong>
+                    when
+                   </strong>
+                   (&lt;doble&gt;).&lt;mensaje&gt;({&lt;argumento&gt;,});
+                  </em>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>(expected = <span class="exception">Error</span>.class)
 <span class="directive">public</span> <span class="type">void</span> testWithExceptions() <span class="directive">throws</span> <span class="exception">Exception</span> {
-  doThrow(<span class="keyword">new</span> <span class="exception">Error</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span>)).when(<span class="local-variable">this</span>.doc)
+  doThrow(<span class="keyword">new</span> <span class="exception">Error</span>(<span class="string"><span class="delimiter">"</span><span class="content">test</span><span class="delimiter">"</span></span>)).when(<span class="local-variable">this</span>.doc)
     .voidMethodWithExcpetion();
   <span class="local-variable">this</span>.sut.voidMethodWithExcpetion();
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em><strong>when</strong>(&lt;doble&gt;.&lt;mensaje&gt;({&lt;argumento&gt;,}))</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>.<strong>thenThrow</strong>(&lt;excepción&gt;)</em></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>(expected = <span class="exception">Error</span>.class)
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <em>
+                <strong>
+                 when
+                </strong>
+                (&lt;doble&gt;.&lt;mensaje&gt;({&lt;argumento&gt;,}))
+               </em>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <em>
+                   .
+                   <strong>
+                    thenThrow
+                   </strong>
+                   (&lt;excepción&gt;)
+                  </em>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>(expected = <span class="exception">Error</span>.class)
 <span class="directive">public</span> <span class="type">void</span> testWithReturnsAndExceptions() <span class="directive">throws</span> <span class="exception">Exception</span> {
   when(<span class="local-variable">this</span>.doc.returnMethodWithExcpetion())
-    .thenReturn(<span class="integer">0</span>).thenThrow(<span class="keyword">new</span> <span class="exception">Error</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span>));
+    .thenReturn(<span class="integer">0</span>).thenThrow(<span class="keyword">new</span> <span class="exception">Error</span>(<span class="string"><span class="delimiter">"</span><span class="content">test</span><span class="delimiter">"</span></span>));
   <span class="local-variable">this</span>.sut.returnMethodWithExcpetion();
   <span class="local-variable">this</span>.sut.returnMethodWithExcpetion();
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Valores diferentes de salida</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Valores diferentes de salida
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="annotation">@Test</span>
 <span class="directive">public</span> <span class="type">void</span> testWithExceptionsAndReturns() <span class="directive">throws</span> <span class="exception">Exception</span> {
   when(<span class="local-variable">this</span>.doc.returnMethodWithExcpetion())
-    .thenThrow(<span class="keyword">new</span> <span class="exception">Error</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">test</span><span class="delimiter">&quot;</span></span>)).thenReturn(<span class="integer">0</span>);
+    .thenThrow(<span class="keyword">new</span> <span class="exception">Error</span>(<span class="string"><span class="delimiter">"</span><span class="content">test</span><span class="delimiter">"</span></span>)).thenReturn(<span class="integer">0</span>);
   <span class="keyword">try</span> {
     <span class="local-variable">this</span>.sut.returnMethodWithExcpetion();
   } <span class="keyword">catch</span> (<span class="exception">Error</span> ex) {
   }
   assertThat(<span class="local-variable">this</span>.sut.returnMethodWithExcpetion(), is(<span class="integer">0</span>));
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="múltiples-dobles">Múltiples Dobles</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">DOC</th>
-<th class="tableblock halign-left valign-top">DOC</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">Y</span> {
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+     <div class="sect2">
+      <h3 id="múltiples-dobles">
+       Múltiples Dobles
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <thead>
+        <tr>
+         <th class="tableblock halign-left valign-top">
+          DOC
+         </th>
+         <th class="tableblock halign-left valign-top">
+          DOC
+         </th>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">Y</span> {
 
   <span class="directive">public</span> <span class="type">int</span> m() {
-    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">m de Y </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>);
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">"</span><span class="content">m de Y </span><span class="delimiter">"</span></span> + <span class="local-variable">this</span>);
     <span class="keyword">return</span> -<span class="integer">1</span>;
   }
 
 }</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">Z</span> {
+            </div>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="listingblock">
+            <div class="content">
+             <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">Z</span> {
 
   <span class="directive">public</span> <span class="type">int</span> m() {
-    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">m de Z </span><span class="delimiter">&quot;</span></span>+ <span class="local-variable">this</span>);
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">"</span><span class="content">m de Z </span><span class="delimiter">"</span></span>+ <span class="local-variable">this</span>);
     <span class="keyword">return</span> -<span class="integer">1</span>;
   }
 
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="sect3">
-<h4 id="dobles-en-parámetros">Dobles en Parámetros</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Test</th>
-<th class="tableblock halign-left valign-top">SUT y DOC</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">XDoubleTest</span> {
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <div class="sect3">
+       <h4 id="dobles-en-parámetros">
+        Dobles en Parámetros
+       </h4>
+       <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+         <col style="width: 50%;"/>
+         <col style="width: 50%;"/>
+        </colgroup>
+        <thead>
+         <tr>
+          <th class="tableblock halign-left valign-top">
+           Test
+          </th>
+          <th class="tableblock halign-left valign-top">
+           SUT y DOC
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">XDoubleTest</span> {
 
   <span class="annotation">@Mock</span>
   <span class="directive">private</span> Y y;
@@ -1865,11 +2949,15 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
   }
 
 }</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">X</span> {
+             </div>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">X</span> {
 
   <span class="directive">private</span> <span class="type">int</span> result;
 
@@ -1881,51 +2969,85 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
                 Z z1, Z z2) {
     <span class="local-variable">this</span>.result = y1.m() + y2.m()
       + z1.m() + z2.m();
-    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">m de X con </span><span class="delimiter">&quot;</span></span>
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">"</span><span class="content">m de X con </span><span class="delimiter">"</span></span>
       + <span class="local-variable">this</span>.result);
   }
 
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>(<strong>Y</strong> igual que la anterior)</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>(<strong>Z</strong> igual que la anterior)</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="dobles-en-atributos">Dobles en Atributos</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 40%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Test</th>
-<th class="tableblock halign-left valign-top">SUT y DOC</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">XDoubleTest</span> {
+             </div>
+            </div>
+           </div>
+          </td>
+         </tr>
+         <tr>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <em>
+                 (
+                 <strong>
+                  Y
+                 </strong>
+                 igual que la anterior)
+                </em>
+               </p>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <em>
+                 (
+                 <strong>
+                  Z
+                 </strong>
+                 igual que la anterior)
+                </em>
+               </p>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+      <div class="sect3">
+       <h4 id="dobles-en-atributos">
+        Dobles en Atributos
+       </h4>
+       <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+         <col style="width: 40%;"/>
+         <col style="width: 60%;"/>
+        </colgroup>
+        <thead>
+         <tr>
+          <th class="tableblock halign-left valign-top">
+           Test
+          </th>
+          <th class="tableblock halign-left valign-top">
+           SUT y DOC
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">XDoubleTest</span> {
 
   <span class="annotation">@Mock</span>
   Z z;
@@ -1947,11 +3069,15 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
   }
 
 }</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">X</span> {
+             </div>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">X</span> {
 
   <span class="directive">private</span> Y y1;
   <span class="directive">private</span> Y y2;
@@ -1970,50 +3096,84 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
   <span class="directive">public</span> <span class="type">void</span> m() {
     <span class="local-variable">this</span>.result = <span class="local-variable">this</span>.y1.m() + <span class="local-variable">this</span>.y2.m()
       + <span class="local-variable">this</span>.z1.m() + <span class="local-variable">this</span>.z2.m();
-    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">m de X con </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.result);
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">"</span><span class="content">m de X con </span><span class="delimiter">"</span></span> + <span class="local-variable">this</span>.result);
   }
 
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>(<strong>Y</strong> igual que la anterior)</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>(<strong>Z</strong> igual que la anterior)</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="dobles-en-locales">Dobles en Locales</h4>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 45%;">
-<col style="width: 55%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Test</th>
-<th class="tableblock halign-left valign-top">SUT y DOC</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">XDoubleTest</span> {
+             </div>
+            </div>
+           </div>
+          </td>
+         </tr>
+         <tr>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <em>
+                 (
+                 <strong>
+                  Y
+                 </strong>
+                 igual que la anterior)
+                </em>
+               </p>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <em>
+                 (
+                 <strong>
+                  Z
+                 </strong>
+                 igual que la anterior)
+                </em>
+               </p>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+      <div class="sect3">
+       <h4 id="dobles-en-locales">
+        Dobles en Locales
+       </h4>
+       <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+         <col style="width: 45%;"/>
+         <col style="width: 55%;"/>
+        </colgroup>
+        <thead>
+         <tr>
+          <th class="tableblock halign-left valign-top">
+           Test
+          </th>
+          <th class="tableblock halign-left valign-top">
+           SUT y DOC
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">XDoubleTest</span> {
 
   <span class="annotation">@Mock</span>
   Y y;
@@ -2040,11 +3200,15 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
   }
 
 }</code></pre>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">X</span> {
+             </div>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="listingblock">
+             <div class="content">
+              <pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">class</span> <span class="class">X</span> {
 
   <span class="directive">private</span> <span class="type">int</span> result;
 
@@ -2054,7 +3218,7 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
 
   <span class="directive">public</span> <span class="type">void</span> m() {
     <span class="local-variable">this</span>.result = <span class="local-variable">this</span>.createY().m() + <span class="keyword">new</span> Y().m() + <span class="local-variable">this</span>.createZ().m() + <span class="keyword">new</span> Z().m();
-    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">m de X con </span><span class="delimiter">&quot;</span></span> + <span class="local-variable">this</span>.result);
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">"</span><span class="content">m de X con </span><span class="delimiter">"</span></span> + <span class="local-variable">this</span>.result);
   }
 
   Y createY() {
@@ -2066,408 +3230,822 @@ verify(<span class="local-variable">this</span>.doc, timeout(<span class="intege
   }
 
 }</code></pre>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>(<strong>Y</strong> igual que la anterior)</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>(<strong>Z</strong> igual que la anterior)</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="3"><strong class="green">Aplicaciones</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/main/java/usantatecla/tictactoe/views/CoordinateView.java">CoordinateView</a> - <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/test/java/usantatecla/tictactoe/views/CoordinateViewTest.java">CoordinateViewTest</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/main/java/usantatecla/tictactoe/views/MachinePlayerView.java">MachinePlayerView</a> - <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/test/java/usantatecla/tictactoe/views/MachinePlayerViewTest.java">MachinePlayerViewTest</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="" class="bare"></a> - <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/test/java/usantatecla/tictactoe/views/StartViewTest.java">StartViewTest</a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/main/java/usantatecla/tictactoe/views/PlayView.java">PlayView</a> - <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/test/java/usantatecla/tictactoe/views/PlayViewTest.java">PlayViewTest</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/main/java/usantatecla/tictactoe/views/ErrorView.java">ErrorView</a> - <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/test/java/usantatecla/tictactoe/views/ErrorViewTest.java">ErrorViewTest</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="" class="bare"></a> - <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/test/java/usantatecla/tictactoe/distributed/dispatchers/PutTokenDispatcherTest.java">PutTokenDispatcherTest</a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="" class="bare"></a> - <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/test/java/usantatecla/tictactoe/distributed/dispatchers/TokenCharDispatcherTest.java">TokenCharDispatcherTest</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>-</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="sintesis"><strong>Sintesis</strong></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="bibliografía"><strong>Bibliografía</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>xUnit Test Patterns: Refactoring Test Code</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Gerard Meszaros</strong></p>
-</li>
-<li>
-<p>Addison-Wesley Educational Publishers Inc; Edición: 01 (21 de mayo de 2007)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/xUnitTestPatternsRefactoringTestCode.jpg" alt="xUnitTestPatternsRefactoringTestCode" width="177" height="266"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Effective Unit Testing</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Lasse Koskela</strong></p>
-</li>
-<li>
-<p>Manning Publications Company; Edición: 1 (16 de febrero de 2013)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/EffectiveUnitTesting.jpg" alt="EffectiveUnitTesting" width="177" height="266"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>The Art of Software Testing</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Glenford J. Myers</strong></p>
-</li>
-<li>
-<p>John Wiley &amp; Sons Inc; Edición: 3. Auflage (16 de diciembre de 2011)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheArtofSoftwareTesting.jpg" alt="TheArtofSoftwareTesting" width="177" height="266"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Pragmatic Unit Testing in Java with JUnit</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Andy Hunt, Dave Thomas</strong></p>
-</li>
-<li>
-<p>The Pragmatic Programmers (1674)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/PragmaticUnitTestinginJavawithJUnit.jpg" alt="PragmaticUnitTestinginJavawithJUnit" width="177" height="266"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Testing Computer Software</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Cem Kaner,Jack Falk,Hung Q. Nguyen</strong></p>
-</li>
-<li>
-<p>Wiley John + Sons; Edición: 2nd (12 de abril de 1999)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TestingComputerSoftware.jpg" alt="TestingComputerSoftware" width="177" height="266"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Diseno Agil con TDD</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Ble Jurado, Carlos</strong></p>
-</li>
-<li>
-<p>Lulu.com (18 de enero de 2010)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/DisenoAgilconTDD.jpg" alt="DisenoAgilconTDD" width="177" height="266"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Test Driven Development</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Kent Beck</strong></p>
-</li>
-<li>
-<p>Addison Wesley; Edición: 01 (8 de noviembre de 2002)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TestDrivenDevelopment.jpg" alt="TestDrivenDevelopment" width="177" height="266"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Growing Object-Oriented Software, Guided by Tests</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Steve Freeman</strong></p>
-</li>
-<li>
-<p>Addison-Wesley Professional (12 de octubre de 2009)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/GrowingObjectOrientedSoftware,GuidedbyTests.jpg" alt="GrowingObjectOrientedSoftware,GuidedbyTests" width="177" height="266"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>How Google Tests Software</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>James A. Whittaker,Jason Arbon,Jeff Carollo</strong></p>
-</li>
-<li>
-<p>Addison-Wesley Educational Publishers Inc; Edición: 01 (2 de abril de 2012)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/HowGoogleTestsSoftware.jpg" alt="HowGoogleTestsSoftware" width="177" height="266"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Pragmatic Project Automation: How to Build, Deploy, and Monitor Java Apps</em></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Mike Clark</strong></p>
-</li>
-<li>
-<p>The Pragmatic Programmers (1900)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/PragmaticProjectAutomation.jpg" alt="PragmaticProjectAutomation" width="177" height="266"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ponente">Ponente</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 30%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Luis Fernández Muñoz</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Formador/Consultor</em></p>
-</li>
-<li>
-<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
-</li>
-<li>
-<p><em>Ingeniero en Informática por la UMA</em></p>
-</li>
-<li>
-<p><em>Diplomado en Informática por la UPM</em></p>
-</li>
-<li>
-<p><em>Profesor Titular de ETSISI de la UPM</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="footer">
-<div id="footer-text">
-Version 0.0.1<br>
-Last updated 2022-11-04 18:58:35 +0100
-</div>
-</div>
-<style>
-/* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
+             </div>
+            </div>
+           </div>
+          </td>
+         </tr>
+         <tr>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <em>
+                 (
+                 <strong>
+                  Y
+                 </strong>
+                 igual que la anterior)
+                </em>
+               </p>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <em>
+                 (
+                 <strong>
+                  Z
+                 </strong>
+                 igual que la anterior)
+                </em>
+               </p>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+       <table class="tableblock frame-all grid-all stretch">
+        <colgroup>
+         <col style="width: 33.3333%;"/>
+         <col style="width: 33.3333%;"/>
+         <col style="width: 33.3334%;"/>
+        </colgroup>
+        <thead>
+         <tr>
+          <th class="tableblock halign-left valign-top" colspan="3">
+           <strong class="green">
+            Aplicaciones
+           </strong>
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/main/java/usantatecla/tictactoe/views/CoordinateView.java">
+                 CoordinateView
+                </a>
+                -
+                <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/test/java/usantatecla/tictactoe/views/CoordinateViewTest.java">
+                 CoordinateViewTest
+                </a>
+               </p>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/main/java/usantatecla/tictactoe/views/MachinePlayerView.java">
+                 MachinePlayerView
+                </a>
+                -
+                <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/test/java/usantatecla/tictactoe/views/MachinePlayerViewTest.java">
+                 MachinePlayerViewTest
+                </a>
+               </p>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <a class="bare" href="">
+                </a>
+                -
+                <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/test/java/usantatecla/tictactoe/views/StartViewTest.java">
+                 StartViewTest
+                </a>
+               </p>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </td>
+         </tr>
+         <tr>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/main/java/usantatecla/tictactoe/views/PlayView.java">
+                 PlayView
+                </a>
+                -
+                <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/test/java/usantatecla/tictactoe/views/PlayViewTest.java">
+                 PlayViewTest
+                </a>
+               </p>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/main/java/usantatecla/tictactoe/views/ErrorView.java">
+                 ErrorView
+                </a>
+                -
+                <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/test/java/usantatecla/tictactoe/views/ErrorViewTest.java">
+                 ErrorViewTest
+                </a>
+               </p>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <a class="bare" href="">
+                </a>
+                -
+                <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/test/java/usantatecla/tictactoe/distributed/dispatchers/PutTokenDispatcherTest.java">
+                 PutTokenDispatcherTest
+                </a>
+               </p>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </td>
+         </tr>
+         <tr>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="ulist">
+             <ul>
+              <li>
+               <p>
+                <a class="bare" href="">
+                </a>
+                -
+                <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/blob/master/modelViewPresenter/presentationModel/withoutProxy/src/test/java/usantatecla/tictactoe/distributed/dispatchers/TokenCharDispatcherTest.java">
+                 TokenCharDispatcherTest
+                </a>
+               </p>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="paragraph">
+             <p>
+              -
+             </p>
+            </div>
+           </div>
+          </td>
+          <td class="tableblock halign-left valign-top">
+           <div class="content">
+            <div class="paragraph">
+             <p>
+              -
+             </p>
+            </div>
+           </div>
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="sintesis">
+     <strong>
+      Sintesis
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="bibliografía">
+     <strong>
+      Bibliografía
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               xUnit Test Patterns: Refactoring Test Code
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Gerard Meszaros
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley Educational Publishers Inc; Edición: 01 (21 de mayo de 2007)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="xUnitTestPatternsRefactoringTestCode" height="266" src="images/xUnitTestPatternsRefactoringTestCode.jpg" width="177"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Effective Unit Testing
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Lasse Koskela
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Manning Publications Company; Edición: 1 (16 de febrero de 2013)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="EffectiveUnitTesting" height="266" src="images/EffectiveUnitTesting.jpg" width="177"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               The Art of Software Testing
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Glenford J. Myers
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 John Wiley &amp; Sons Inc; Edición: 3. Auflage (16 de diciembre de 2011)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="TheArtofSoftwareTesting" height="266" src="images/TheArtofSoftwareTesting.jpg" width="177"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Pragmatic Unit Testing in Java with JUnit
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Andy Hunt, Dave Thomas
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 The Pragmatic Programmers (1674)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="PragmaticUnitTestinginJavawithJUnit" height="266" src="images/PragmaticUnitTestinginJavawithJUnit.jpg" width="177"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Testing Computer Software
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Cem Kaner,Jack Falk,Hung Q. Nguyen
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Wiley John + Sons; Edición: 2nd (12 de abril de 1999)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="TestingComputerSoftware" height="266" src="images/TestingComputerSoftware.jpg" width="177"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Diseno Agil con TDD
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Ble Jurado, Carlos
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Lulu.com (18 de enero de 2010)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="DisenoAgilconTDD" height="266" src="images/DisenoAgilconTDD.jpg" width="177"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Test Driven Development
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Kent Beck
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison Wesley; Edición: 01 (8 de noviembre de 2002)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="TestDrivenDevelopment" height="266" src="images/TestDrivenDevelopment.jpg" width="177"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Growing Object-Oriented Software, Guided by Tests
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Steve Freeman
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley Professional (12 de octubre de 2009)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="GrowingObjectOrientedSoftware,GuidedbyTests" height="266" src="images/GrowingObjectOrientedSoftware,GuidedbyTests.jpg" width="177"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               How Google Tests Software
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  James A. Whittaker,Jason Arbon,Jeff Carollo
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley Educational Publishers Inc; Edición: 01 (2 de abril de 2012)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="HowGoogleTestsSoftware" height="266" src="images/HowGoogleTestsSoftware.jpg" width="177"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Pragmatic Project Automation: How to Build, Deploy, and Monitor Java Apps
+              </em>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Mike Clark
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 The Pragmatic Programmers (1900)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="PragmaticProjectAutomation" height="266" src="images/PragmaticProjectAutomation.jpg" width="177"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="ponente">
+     Ponente
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Luis Fernández Muñoz
+               </em>
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Formador/Consultor
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://es.linkedin.com/in/luisfernandezmunyoz">
+                  <em>
+                   Linkedin
+                  </em>
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="setillo" src="images/setillo.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Doctor en Inteligencia Artificial por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Ingeniero en Informática por la UMA
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Diplomado en Informática por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Profesor Titular de ETSISI de la UPM
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div id="footer-text">
+    Version 0.0.1
+    <br/>
+    Last updated 2022-11-04 18:58:35 +0100
+   </div>
+  </div>
+  <style>
+   /* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
 pre.CodeRay{background:#f7f7f8}
 .CodeRay .line-numbers{border-right:1px solid currentColor;opacity:.35;padding:0 .5em 0 0}
 .CodeRay span.line-numbers{display:inline-block;margin-right:.75em}
@@ -2554,9 +4132,9 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 .CodeRay .delete .delete{color:#800}
 .CodeRay .change .change{color:#66f}
 .CodeRay .head .head{color:#f4f}
-</style>
-<script>
-                let speed = 50;
+  </style>
+  <script>
+   let speed = 50;
                 
                 function typeWriter(v) {
                   let i = v.getAttribute("typewriter-index")
@@ -2588,6 +4166,6 @@ table.CodeRay td.code{padding:0 0 0 .75em}
                 })
                 
                 setTimeout(typeWriterAll, speed);
-                
-                </script>
+  </script>
+ </body>
 </html>

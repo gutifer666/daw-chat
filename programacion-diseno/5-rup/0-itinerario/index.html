@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.8">
-<meta name="author" content="Universo Santa Tecla">
-<title>Proceso Unificado de Desarrollo</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
-<style>
-/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Asciidoctor 2.0.8" name="generator"/>
+  <meta content="Universo Santa Tecla" name="author"/>
+  <title>
+   Proceso Unificado de Desarrollo
+  </title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700" rel="stylesheet"/>
+  <style>
+   /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment @import statement to use as custom stylesheet */
 /*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}
@@ -434,1566 +436,3181 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer{background:none}
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body class="book">
-<div id="header">
-<h1>Proceso Unificado de Desarrollo</h1>
-<div class="details">
-<span id="author" class="author">Universo Santa Tecla</span><br>
-<span id="email" class="email"><a href="mailto:universoSantaTecla@gmail.com">universoSantaTecla@gmail.com</a></span><br>
-<span id="revnumber">version 0.0.1</span>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Índice</div>
-<ul class="sectlevel1">
-<li><a href="#por-qué"><strong>¿Por qué?</strong></a></li>
-<li><a href="#cuándo-dónde-quién"><strong>¿Cuándo? ¿Dónde? ¿Quién?</strong></a></li>
-<li><a href="#qué"><strong>¿Qué?</strong></a></li>
-<li><a href="#proceso-dirigido-por-casos-de-uso">Proceso Dirigido por Casos de Uso</a></li>
-<li><a href="#proceso-centrado-en-la-arquitectura">Proceso Centrado en la Arquitectura</a></li>
-<li><a href="#proceso-iterativo-e-incremental">Proceso Iterativo e Incremental</a></li>
-<li><a href="#para-qué"><strong>¿Para qué?</strong></a></li>
-<li><a href="#cómo"><strong>¿Cómo?</strong></a></li>
-<li><a href="#roles-del-equipo">Roles del Equipo</a></li>
-<li><a href="#fases-del-proyecto">Fases del Proyecto</a>
-<ul class="sectlevel2">
-<li><a href="#iteraciones-en-las-fases">Iteraciones en las Fases</a></li>
-<li><a href="#actividades-de-la-iteraciones">Actividades de la Iteraciones</a></li>
-</ul>
-</li>
-<li><a href="#artefactos-del-proyecto">Artefactos del Proyecto</a>
-<ul class="sectlevel2">
-<li><a href="#41-vistas">4+1 Vistas</a></li>
-</ul>
-</li>
-<li><a href="#itinerario">Itinerario</a></li>
-<li><a href="#sintesis"><strong>Sintesis</strong></a></li>
-<li><a href="#bibliografía"><strong>Bibliografía</strong></a></li>
-<li><a href="#ponente">Ponente</a></li>
-</ul>
-</div>
-</div>
-<div id="content">
-<div id="preamble">
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="images/sintesis.png" alt="sintesis">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="por-qué"><strong>¿Por qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="red">Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">malas variables en su economía</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">ámbito incumplido</strong> y/o</p>
-</li>
-<li>
-<p><strong class="red">tiempo incumplido</strong> y/o</p>
-</li>
-<li>
-<p><strong class="red">coste incumplido</strong>;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">mala calidad del software</strong>, <span class="red">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">mala mantenibilidad</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="red">viscoso</strong>, porque <span class="red">no se puede entender con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">rígido</strong>, porque <span class="red">no se puede cambiar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">frágil</strong>, porque <span class="red">no se puede probar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="red">inmovil</strong>, porque <span class="red">no se puede reutilizar con facilidad</span> y/o</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="red">complejidad arbitraria</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/davidProyectoImplantacionDiseñoMal.png" alt="davidProyectoImplantacionDiseñoMal"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/arbolNoMantenible.jpeg" alt="arbolNoMantenible"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="red">Soy el cliente de la aplicación que deseo</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="red">Eres el jefe de proyecto de la aplicación</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="red">Soy un miembro del equipo directivos de tu empresa</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red">¿Sabrías qué y cómo preguntarme, en qué orden y hasta qué nivel de detalle y cuándo?</em></p>
-</li>
-<li>
-<p><em class="red">¿Cuál sería el formato adecuado del resultado de las reuniones?</em></p>
-</li>
-<li>
-<p><em class="red">¿Cómo repartirías las tareas de requisitos entre las personas del equipo de desarrollo? ¿Con cuántas personas empezarías?</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red">¿Por qué parte comenzarías, continuarías y terminarias la producción de código?</em></p>
-</li>
-<li>
-<p><em class="red">¿Qué medidas aplicarías para obtener la calidad del software adecuada para facilitar la depuración de errores, la mantenibilidad correctiva, perfectiva o adaptativa?</em></p>
-</li>
-<li>
-<p><em class="red">¿Cómo repartirías las tareas de producción entre las personas del equipo de desarrollo?</em></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em class="red">¿Sabrías justificarme mes a mes qué tiempo se tardará en terminar el proyecto con el personal asignado en distintos momentos de proyecto?</em></p>
-</li>
-<li>
-<p><em class="red">¿Sabrías justificarme el grado de satisfacción del cliente durante el transcurso del proyecto?</em></p>
-</li>
-<li>
-<p><em class="red">¿Sabrías justificarme cuántas personas añadir al proyecto para reducir el tiempo de desarrollo?</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cuándo-dónde-quién"><strong>¿Cuándo? ¿Dónde? ¿Quién?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-center valign-middle">Grady Booch</th>
-<th class="tableblock halign-center valign-middle">Ivar Jacobson</th>
-<th class="tableblock halign-center valign-middle">James Rumbaugh</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/G.Booch.png" alt="G.Booch"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/I.Jacobson.png" alt="I.Jacobson"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/JRumbaugh.png" alt="JRumbaugh"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Dpto. Defensa USA, IBM, &#8230;&#8203;</strong></p>
-</li>
-<li>
-<p>Método de Desarrollo:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Object Oriented Analysis and Design</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Ericsson</strong></p>
-</li>
-<li>
-<p>Método de Desarrollo:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Objectory</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>MIT</strong>,</p>
-</li>
-<li>
-<p>Método de Desarrollo:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Object Modeling Technique</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Evolucion.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Rational (IBM), 1998</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/logo.png" alt="logo"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="qué"><strong>¿Qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Proceso de desarrollo software <strong class="blue">basado en componentes</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>lo cual significa que el sistema software es construido por</p>
-<div class="ulist">
-<ul>
-<li>
-<p>componentes software interconectados y</p>
-</li>
-<li>
-<p>bien definidos vía sus interfaces</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Dirigido por Casos de Uso</strong></p>
-</li>
-<li>
-<p><strong class="blue">Centrado en la Arquitectura</strong></p>
-</li>
-<li>
-<p><strong class="blue">Iterativo e incremental</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="proceso-dirigido-por-casos-de-uso">Proceso Dirigido por Casos de Uso</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Usados como un <strong class="blue">artefacto primordial</strong> para establecer el comportamiento deseado del sistema y para comunicar este comportamiento entre los implicados en el sistema.</p>
-</li>
-<li>
-<p><strong class="blue">Forma sistemática e intuitiva</strong> para capturar los requisitos funcionales, adecuadamente representados para los usuarios, clientes y desarrolladores</p>
-</li>
-<li>
-<p><strong class="blue">Primera entrada para el análisis, diseño, implementación y pruebas</strong> del sistema, incluyendo la creación, verificación y validación de la arquitectura del sistema.</p>
-</li>
-<li>
-<p>Facilitan el mantenimiento de la aplicación gracias a la <strong class="blue">trazabilidad y ortogonalidad</strong> con las clases</p>
-</li>
-<li>
-<p>Facilitan la <strong class="blue">planificación de actividades</strong> de los roles</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/DirigidoPorCasosDeUso.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="proceso-centrado-en-la-arquitectura">Proceso Centrado en la Arquitectura</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>La arquitectura del sistema es usada como un <strong class="blue">artefacto primordial para la conceptualización, construcción, gestión y evolución del sistema bajo desarrollo</strong>.</p>
-</li>
-<li>
-<p>Esta clave incluye:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Disciplina de Análisis</strong></p>
-</li>
-<li>
-<p><strong class="blue">Disciplina de Diseño</strong></p>
-</li>
-<li>
-<p><strong class="blue">Disciplina de Implementación</strong></p>
-</li>
-<li>
-<p><strong class="blue">Disciplina de Pruebas</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Vistas.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="proceso-iterativo-e-incremental">Proceso Iterativo e Incremental</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">iterativo</strong>, lo que significa que el proceso involucra un flujo de entregas ejecutables, e</p>
-</li>
-<li>
-<p><strong class="blue">incremental</strong>, lo que significa que el proceso involucra la integración continua de la arquitectura del sistema para producir con cada nueva entrega un incremento que aumenta a otra anterior</p>
-</li>
-<li>
-<p>Esto incluye:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="blue">Disciplina de Gestión del Proyecto</strong></p>
-</li>
-<li>
-<p><strong class="blue">Disciplina de Entorno</strong></p>
-</li>
-<li>
-<p><strong class="blue">Disciplina de Configuración y Gestión de Cambios</strong></p>
-</li>
-<li>
-<p><strong class="blue">Disciplina de Despliegue</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/IterativoIncremental.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="para-qué"><strong>¿Para qué?</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 60%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Efectividad, eficacia y eficiencia, del Proyecto Software</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buenas variables en su economía</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">ámbito cumplido</strong> y</p>
-</li>
-<li>
-<p><strong class="green">tiempo cumplido</strong> y</p>
-</li>
-<li>
-<p><strong class="green">coste cumplido</strong>;</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buena calidad del software</strong>, <span class="green">fiabilidad, usabilidad, interoperatividad, seguirdad, &#8230;&#8203; (<em>-ilities</em>)</span></p>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">buena mantenibilidad</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong class="green">fluido</strong>, porque <span class="green">se puede entender con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">flexible</strong>, porque <span class="green">se puede cambiar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">fuerte</strong>, porque <span class="green">se puede probar con facilidad</span> y/o</p>
-</li>
-<li>
-<p><strong class="green">reusable</strong>, porque <span class="green">se puede reutilizar con facilidad</span> y/o</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>porque</strong> tiene <strong class="green">complejidad necesaria</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/davidProyectoImplantacionDiseño.png" alt="davidProyectoImplantacionDiseño"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/arbolMantenible.jpeg" alt="arbolMantenible"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="green">Beneficios</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong class="green">Construir el sistema en el tiempo de forma incremental</strong> en lugar de todo a la vez cerca del final cuando el cambio se convierte en muy caro</p>
-</li>
-<li>
-<p>Proporcionar un marco que maneje mejor los <strong class="green">requisitos cambiantes e inevitables y otros cambios</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Proporcionar un proceso de desarrollo a través del cual el <strong class="green">personal puede trabajar más eficazmente</strong></p>
-</li>
-<li>
-<p>Disponer de una <strong class="green">estructura para guiar el desarrollo de software</strong></p>
-</li>
-<li>
-<p>Conseguir <strong class="green">gestión temprana del riesgo crítico</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="5">Empresas</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Rational Software</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Grady Booch</p>
-</li>
-<li>
-<p>Jim Rumbaugh</p>
-</li>
-<li>
-<p>Ivar Jacobson</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://projects.eclipse.org/projects/technology.epf">Eclipse</a></p>
-</li>
-<li>
-<p>IBM</p>
-</li>
-<li>
-<p>Microsoft</p>
-</li>
-<li>
-<p>Oracle Corp.</p>
-</li>
-<li>
-<p>Hewlett-Packard</p>
-</li>
-<li>
-<p>Digital Equipment</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Intellicorp and James Martin &amp; co.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>James Odell</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Texas Instruments</p>
-</li>
-<li>
-<p>Unisys</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>i-Logix</p>
-<div class="ulist">
-<ul>
-<li>
-<p>David Harel</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Taskon</p>
-</li>
-<li>
-<p>MCI Systemhouse</p>
-</li>
-<li>
-<p>ObjecTime</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>ICON  Computing</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Desmond D´Souza</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Plantinium Technology</p>
-</li>
-<li>
-<p>Sterling Software</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="cómo"><strong>¿Cómo?</strong></h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="roles-del-equipo">Roles del Equipo</h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="images/role.svg" alt="role" width="1468" height="353">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="fases-del-proyecto">Fases del Proyecto</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top" colspan="2"><strong class="blue">Fase: lapso de tiempo entre dos hitos principales del proceso de desarrollo</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="3"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/project.svg" alt="project" width="632" height="1149">
-</div>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Fase.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Disciplinas4.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Distribucion.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 22%;">
-<col style="width: 28%;">
-<col style="width: 22%;">
-<col style="width: 28%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong class="blue">Inicio</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Elaboración</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Construcción</strong></th>
-<th class="tableblock halign-left valign-top"><strong class="blue">Transición</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>donde la <strong class="blue">idea inicial</strong> se llevará hasta el punto de ser <strong class="blue">suficientemente fundada</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>donde se <strong class="blue">define la arquitectura</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>donde el <strong class="blue">software</strong> se lleva su <strong class="blue">completitud</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>donde el software se pone en manos de la <strong class="blue">comunidad de usuarios</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Delimitar el <strong class="blue">ámbito del sistema</strong> propuesto</p>
-</li>
-<li>
-<p>Demostrar a los potenciales usuarios y/o clientes que el sistema propuesto es capaz de solventar su problema o soportar los objetivos del negocio construyendo un <strong class="blue">prototipo como prueba de concepto</strong></p>
-</li>
-<li>
-<p>Describir o <strong class="blue">esbozar la arquitectura</strong> candidata</p>
-</li>
-<li>
-<p>Identificar los <strong class="blue">riesgos críticos</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Identifica los <strong class="blue">riesgos significativos</strong>, lo que significa riesgos que podrían <strong class="blue">alterar los planes, costos y horarios de las fases posteriores</strong></p>
-</li>
-<li>
-<p>Crea una <strong class="blue">línea de base arquitectónica que cubre la funcionalidad significativa del sistema y las características importantes</strong> para los implicados</p>
-</li>
-<li>
-<p>Especifica los niveles que deben alcanzar los <strong class="blue">atributos de calidad</strong></p>
-</li>
-<li>
-<p>Captura <strong class="blue">casos de uso a aproximadamente 80%</strong> de los requerimientos funcionales</p>
-</li>
-<li>
-<p>Prepara una <strong class="blue">oferta que cubre horario, personal necesario y el costo</strong> en el plazo establecido por las prácticas comerciales</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Extiende la <strong class="blue">identificación de casos de uso, la descripción y realización a todo el cuerpo de casos de uso</strong></p>
-</li>
-<li>
-<p>Acaba el <strong class="blue">análisis, diseño, implementación y pruebas</strong></p>
-</li>
-<li>
-<p>Mantiene la <strong class="blue">integridad de la arquitectura, modificando cuando sea necesario</strong></p>
-</li>
-<li>
-<p><strong class="blue">Monitoriza los riesgos críticos y significatovos</strong> heredados de las dos primeras fases y, en caso de que se materialicen, mitigarlos</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Actividades de preparación, como el <strong class="blue">sitio web</strong></p>
-</li>
-<li>
-<p>Asesorar al cliente sobre la <strong class="blue">actualización del entorno</strong> en el que el software operará</p>
-</li>
-<li>
-<p>Elaboración de <strong class="blue">manuales y otros documentos</strong> para la entrega a producción</p>
-</li>
-<li>
-<p><strong class="blue">Ajuste del software para operar bajo los parámetros reales</strong> del entorno del usuario</p>
-</li>
-<li>
-<p><strong class="blue">Corrección de los defectos</strong> encontrados después de la retroalimentación de la prueba beta</p>
-</li>
-<li>
-<p>Modificaciones del software a la luz de los <strong class="blue">problemas imprevistos</strong></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="sect2">
-<h3 id="iteraciones-en-las-fases">Iteraciones en las Fases</h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/Time.svg" alt="Time" width="1995" height="1907">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="actividades-de-la-iteraciones">Actividades de la Iteraciones</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="2"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Disciplina de Reqeuisitos</p>
-<div class="ulist">
-<ul>
-<li>
-<p>1. <strong class="blue">Encontrar Actores y Casos de Uso</strong></p>
-</li>
-<li>
-<p>2. <strong class="blue">Priorizar Casos de Uso</strong></p>
-</li>
-<li>
-<p>3. <strong class="blue">Detallar Caso de Uso</strong></p>
-</li>
-<li>
-<p>4. <strong class="blue">Estructurar Casos de Uso</strong></p>
-</li>
-<li>
-<p>5. <strong class="blue">PrototiparInterfaz de Usuario</strong></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Disciplina de Análisis</p>
-<div class="ulist">
-<ul>
-<li>
-<p>6. <strong class="blue">Análisis de la Arquitectura</strong></p>
-</li>
-<li>
-<p>7. <strong class="blue">Análisis de Caso de Uso</strong></p>
-</li>
-<li>
-<p>8. <strong class="blue">Análisis de Clase</strong></p>
-</li>
-<li>
-<p>9. <strong class="blue">Análisis de Paquete</strong></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Disciplina de Diseño</p>
-<div class="ulist">
-<ul>
-<li>
-<p>10. <strong class="blue">Diseño de la Arquitectura</strong></p>
-</li>
-<li>
-<p>11. <strong class="blue">Diseño de Caso de Uso</strong></p>
-</li>
-<li>
-<p>12. <strong class="blue">Diseño de Clase</strong></p>
-</li>
-<li>
-<p>13. <strong class="blue">Diseño de Paquete</strong></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Disciplina de Implementación</p>
-<div class="ulist">
-<ul>
-<li>
-<p>14. <strong class="blue">Implementar la Arquitectura</strong></p>
-</li>
-<li>
-<p>15. <strong class="blue">Integración de Sistemas</strong></p>
-</li>
-<li>
-<p>16. <strong class="blue">Implementar Clase</strong></p>
-</li>
-<li>
-<p>17. <strong class="blue">Pruebas Unitarias</strong></p>
-</li>
-<li>
-<p>18. <strong class="blue">Implementar Subsistema</strong></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Disciplina de Pruebas</p>
-<div class="ulist">
-<ul>
-<li>
-<p>19. <strong class="blue">Planificar Pruebas</strong></p>
-</li>
-<li>
-<p>20. <strong class="blue">Diseñar Pruebas</strong></p>
-</li>
-<li>
-<p>21. <strong class="blue">Implementar Pruebas</strong></p>
-</li>
-<li>
-<p>22. <strong class="blue">Realizar Pruebas de Integración</strong></p>
-</li>
-<li>
-<p>23. <strong class="blue">Realizar Pruebas de Sistemas</strong></p>
-</li>
-<li>
-<p>24. <strong class="blue">Evaluar Pruebas</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Disciplinas3.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/disciplinas.svg" alt="disciplinas" width="640" height="2132">
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 90%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Iteración de Inicio</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Disciplinas5.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Iteración de Elaboración</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Disciplinas6.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Iteración de Construcción</strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/Disciplinas7.jpg" alt="height32"></span></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="artefactos-del-proyecto">Artefactos del Proyecto</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="41-vistas">4+1 Vistas</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 85%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Índice</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Enlaces a 4+1 vistas y modelo del dominio</p>
-</li>
-<li>
-<p>Cardinalidad: <strong>1</strong></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/viewIndex.svg" alt="viewIndex" width="486" height="404">
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top" colspan="3"><div class="content"><div class="paragraph">
-<p><strong>Ejemplos</strong></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.notion.so/Gestor-de-taller-mec-nico-AgrimManager-a8d44826c2494e15bcb235fc1019938d#cd3ccf181d9c4a1b9253416cd9b74f57">Gestor de taller mecánico AgrimManager</a></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.notion.so/Trabajo-fin-de-grado-repositorio-b748afe1e54e46c189f5f85914d4474c">Documentación</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://drive.google.com/file/d/1Zt4tgtnFJ53uZrJv_zxlBb5QdMSK7nIg/view?usp=sharing">Aplicación Web de Gestión de Donaciones</a></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.google.com/document/d/1e0QTVMxo_TYzE6yfgxRs9498SYF103vW/edit?usp=sharing&amp;ouid=108788722992578291386&amp;rtpof=true&amp;sd=true">RUP y Arquitecturas Ágiles</a></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>TicTacToe</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://github.com/USantaTecla-0-domains/game-ticTacToe#domainmodel">Modelo del dominio</a></p>
-</li>
-<li>
-<p><a href="https://github.com/USantaTecla-0-domains/game-ticTacToe/blob/master/1.0.basic/README.md">Vista de Casos de Uso</a></p>
-</li>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/domainModel/basic#vista-de-l%C3%B3gicadise%C3%B1o">Vista de Diseño</a></p>
-</li>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/domainModel/basic#vista-de-desarrolloimplementaci%C3%B3n">Vista de Implementación</a></p>
-</li>
-<li>
-<p><a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/domainModel/basic#vista-de-desplieguef%C3%ADsica">Vista de Despliegue</a></p>
-</li>
-<li>
-<p>Vista de Procesos</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Mastermind</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Modelo del dominio</p>
-</li>
-<li>
-<p>Vista de Casos de Uso</p>
-</li>
-<li>
-<p>Vista de Diseño</p>
-</li>
-<li>
-<p>Vista de Implementación</p>
-</li>
-<li>
-<p>Vista de Despliegue</p>
-</li>
-<li>
-<p>Vista de Procesos</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Damas</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Modelo del dominio</p>
-</li>
-<li>
-<p>Vista de Casos de Uso</p>
-</li>
-<li>
-<p>Vista de Diseño</p>
-</li>
-<li>
-<p>Vista de Implementación</p>
-</li>
-<li>
-<p>Vista de Despliegue</p>
-</li>
-<li>
-<p>Vista de Procesos</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="itinerario">Itinerario</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 60%;">
-<col style="width: 15%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Temas</th>
-<th class="tableblock halign-left valign-top">Contenidos</th>
-<th class="tableblock halign-left valign-top">Característica</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top" rowspan="5"><div class="content"><div class="imageblock">
-<div class="content">
-<img src="images/diagramaDisenyo.svg" alt="diagramaDisenyo" width="187" height="763">
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Disciplina de Gestión</strong>: <strong><em>Estimación del Desarrollo Software, Evaluar el Ámbito y Riesgo del Proyecto, Planificar Fases e Iteraciones, Gestionar el principio, fin y revisión de cada iteración, Cerrar fase asegurando y Seguimiento del Desarrollo Software</em></strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Iterativo e Incremental</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Disciplina de Pruebas</strong>: Planificar Pruebas, Diseñar Pruebas, Implementar Pruebas, Realizar Pruebas de Integración, Realizar Pruebas de Sistemas y Evaluar Pruebas</p>
-</li>
-<li>
-<p><strong>Disciplina de Implementación</strong>: Implementar la Arquitectura, Integración de Sistemas, Implementar Clase, Pruebas Unitarias y Implementar Subsistema</p>
-</li>
-<li>
-<p><strong>Disciplina de Diseño</strong>: Diseño de la Arquitectura, Diseño de Caso de Uso, Diseño de Clase y Diseño de Paquete</p>
-</li>
-<li>
-<p><strong>Disciplina de Análisis</strong>: <strong><em>Análisis de la Arquitectura, Análisis de Caso de Uso, Análisis de Clase y Análisis de Paquete</em></strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Centrado en la Arquitectura</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong>Disciplina de Requisitos</strong>:  <strong><em>Encontrar Actores y Casos de Uso, Priorizar Casos de Uso, Detallar Caso de Uso, Estructurar Casos de Uso y PrototiparInterfaz de Usuario</em></strong></p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Dirigido por Casos de Uso</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="sintesis"><strong>Sintesis</strong></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="image"><img src="images/sintesis.png" alt="sintesis"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="bibliografía"><strong>Bibliografía</strong></h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-<th class="tableblock halign-left valign-top">Obra, Autor y Edición</th>
-<th class="tableblock halign-left valign-top">Portada</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Unified Software Development Process</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch, Ivar Jacobson y James Rumbaugh</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (1999)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheUnifiedSoftwareDevelopmentProcess.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Rational Unified Process Made Easy, The: A Practitioner&#8217;s Guide to the RUP</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch, , Ivar Jacobson y James Rumbaugh</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2003)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/RationalUnifiedProcessMadeEasy.png" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Craig Larman</strong></p>
-</li>
-<li>
-<p>Pearson; (2004)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ApplyingUML.jpg" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Object Solutions. Managing the Object Oriented Project</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Benjamin Cummings; (1995)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ObjectSolutionsManagingObjectOrientedProject.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Object Oriented Analysis and Design with Applications</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2011)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/ObjectOrientedAnalysisAndDesingnWhitApplications.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>The Unified Modeling Language User Guide</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Grady Booch</strong></p>
-</li>
-<li>
-<p>Pearson; (2005)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/TheUnifiedModelingLanguageUserGuide.JPG" alt="height32"></span></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>UML Distilled. A Brief Guide to the Standard Object Modeling Language</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Martin Fowler,Kendall Scott</strong></p>
-</li>
-<li>
-<p>Addison-Wesley; (2003)</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/UMLDistilledABriefGuideStandardObjectModelingLanguage.JPG" alt="height32"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="ponente">Ponente</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 30%;">
-<col style="width: 30%;">
-<col style="width: 40%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><strong><em>Luis Fernández Muñoz</em></strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Formador/Consultor</em></p>
-</li>
-<li>
-<p><a href="https://es.linkedin.com/in/luisfernandezmunyoz"><em>Linkedin</em></a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-center valign-middle"><div class="content"><div class="paragraph">
-<p><span class="image"><img src="images/setillo.jpg" alt="setillo"></span></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p><em>Doctor en Inteligencia Artificial por la UPM</em></p>
-</li>
-<li>
-<p><em>Ingeniero en Informática por la UMA</em></p>
-</li>
-<li>
-<p><em>Diplomado en Informática por la UPM</em></p>
-</li>
-<li>
-<p><em>Profesor Titular de ETSISI de la UPM</em></p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="footer">
-<div id="footer-text">
-Version 0.0.1<br>
-Last updated 2022-10-16 16:30:52 +0200
-</div>
-</div>
-<script>
-                let speed = 50;
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+ </head>
+ <body class="book">
+  <div id="header">
+   <h1>
+    Proceso Unificado de Desarrollo
+   </h1>
+   <div class="details">
+    <span class="author" id="author">
+     Universo Santa Tecla
+    </span>
+    <br/>
+    <span class="email" id="email">
+     <a href="mailto:universoSantaTecla@gmail.com">
+      universoSantaTecla@gmail.com
+     </a>
+    </span>
+    <br/>
+    <span id="revnumber">
+     version 0.0.1
+    </span>
+   </div>
+   <div class="toc" id="toc">
+    <div id="toctitle">
+     Índice
+    </div>
+    <ul class="sectlevel1">
+     <li>
+      <a href="#por-qué">
+       <strong>
+        ¿Por qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#cuándo-dónde-quién">
+       <strong>
+        ¿Cuándo? ¿Dónde? ¿Quién?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#qué">
+       <strong>
+        ¿Qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#proceso-dirigido-por-casos-de-uso">
+       Proceso Dirigido por Casos de Uso
+      </a>
+     </li>
+     <li>
+      <a href="#proceso-centrado-en-la-arquitectura">
+       Proceso Centrado en la Arquitectura
+      </a>
+     </li>
+     <li>
+      <a href="#proceso-iterativo-e-incremental">
+       Proceso Iterativo e Incremental
+      </a>
+     </li>
+     <li>
+      <a href="#para-qué">
+       <strong>
+        ¿Para qué?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#cómo">
+       <strong>
+        ¿Cómo?
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#roles-del-equipo">
+       Roles del Equipo
+      </a>
+     </li>
+     <li>
+      <a href="#fases-del-proyecto">
+       Fases del Proyecto
+      </a>
+      <ul class="sectlevel2">
+       <li>
+        <a href="#iteraciones-en-las-fases">
+         Iteraciones en las Fases
+        </a>
+       </li>
+       <li>
+        <a href="#actividades-de-la-iteraciones">
+         Actividades de la Iteraciones
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="#artefactos-del-proyecto">
+       Artefactos del Proyecto
+      </a>
+      <ul class="sectlevel2">
+       <li>
+        <a href="#41-vistas">
+         4+1 Vistas
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <a href="#itinerario">
+       Itinerario
+      </a>
+     </li>
+     <li>
+      <a href="#sintesis">
+       <strong>
+        Sintesis
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#bibliografía">
+       <strong>
+        Bibliografía
+       </strong>
+      </a>
+     </li>
+     <li>
+      <a href="#ponente">
+       Ponente
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+  <div id="content">
+   <div id="preamble">
+    <div class="sectionbody">
+     <div class="imageblock">
+      <div class="content">
+       <img alt="sintesis" src="images/sintesis.png"/>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="por-qué">
+     <strong>
+      ¿Por qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="red">
+               Inefectividad, ineficacia y/o ineficiencia, del Proyecto Software
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  malas variables en su economía
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     ámbito incumplido
+                    </strong>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     tiempo incumplido
+                    </strong>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     coste incumplido
+                    </strong>
+                    ;
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  mala calidad del software
+                 </strong>
+                 ,
+                 <span class="red">
+                  fiabilidad, usabilidad, interoperatividad, seguirdad, …​ (
+                  <em>
+                   -ilities
+                  </em>
+                  )
+                 </span>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  mala mantenibilidad
+                 </strong>
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     viscoso
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede entender con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     rígido
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede cambiar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     frágil
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede probar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="red">
+                     inmovil
+                    </strong>
+                    , porque
+                    <span class="red">
+                     no se puede reutilizar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="red">
+                  complejidad arbitraria
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="davidProyectoImplantacionDiseñoMal" src="images/davidProyectoImplantacionDiseñoMal.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="arbolNoMantenible" src="images/arbolNoMantenible.jpeg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3334%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         <strong class="red">
+          Soy el cliente de la aplicación que deseo
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="red">
+          Eres el jefe de proyecto de la aplicación
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="red">
+          Soy un miembro del equipo directivos de tu empresa
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               ¿Sabrías qué y cómo preguntarme, en qué orden y hasta qué nivel de detalle y cuándo?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="red">
+               ¿Cuál sería el formato adecuado del resultado de las reuniones?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="red">
+               ¿Cómo repartirías las tareas de requisitos entre las personas del equipo de desarrollo? ¿Con cuántas personas empezarías?
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               ¿Por qué parte comenzarías, continuarías y terminarias la producción de código?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="red">
+               ¿Qué medidas aplicarías para obtener la calidad del software adecuada para facilitar la depuración de errores, la mantenibilidad correctiva, perfectiva o adaptativa?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="red">
+               ¿Cómo repartirías las tareas de producción entre las personas del equipo de desarrollo?
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em class="red">
+               ¿Sabrías justificarme mes a mes qué tiempo se tardará en terminar el proyecto con el personal asignado en distintos momentos de proyecto?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="red">
+               ¿Sabrías justificarme el grado de satisfacción del cliente durante el transcurso del proyecto?
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em class="red">
+               ¿Sabrías justificarme cuántas personas añadir al proyecto para reducir el tiempo de desarrollo?
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="cuándo-dónde-quién">
+     <strong>
+      ¿Cuándo? ¿Dónde? ¿Quién?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3333%;"/>
+       <col style="width: 33.3334%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-center valign-middle">
+         Grady Booch
+        </th>
+        <th class="tableblock halign-center valign-middle">
+         Ivar Jacobson
+        </th>
+        <th class="tableblock halign-center valign-middle">
+         James Rumbaugh
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="G.Booch" src="images/G.Booch.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="I.Jacobson" src="images/I.Jacobson.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="JRumbaugh" src="images/JRumbaugh.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Dpto. Defensa USA, IBM, …​
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              Método de Desarrollo:
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Object Oriented Analysis and Design
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Ericsson
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              Método de Desarrollo:
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Objectory
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               MIT
+              </strong>
+              ,
+             </p>
+            </li>
+            <li>
+             <p>
+              Método de Desarrollo:
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Object Modeling Technique
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/Evolucion.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Rational (IBM), 1998
+             </p>
+            </li>
+           </ul>
+          </div>
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="logo" src="images/logo.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="qué">
+     <strong>
+      ¿Qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Proceso de desarrollo software
+              <strong class="blue">
+               basado en componentes
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 lo cual significa que el sistema software es construido por
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    componentes software interconectados y
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    bien definidos vía sus interfaces
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               Dirigido por Casos de Uso
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               Centrado en la Arquitectura
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               Iterativo e incremental
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="proceso-dirigido-por-casos-de-uso">
+     Proceso Dirigido por Casos de Uso
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Usados como un
+              <strong class="blue">
+               artefacto primordial
+              </strong>
+              para establecer el comportamiento deseado del sistema y para comunicar este comportamiento entre los implicados en el sistema.
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               Forma sistemática e intuitiva
+              </strong>
+              para capturar los requisitos funcionales, adecuadamente representados para los usuarios, clientes y desarrolladores
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               Primera entrada para el análisis, diseño, implementación y pruebas
+              </strong>
+              del sistema, incluyendo la creación, verificación y validación de la arquitectura del sistema.
+             </p>
+            </li>
+            <li>
+             <p>
+              Facilitan el mantenimiento de la aplicación gracias a la
+              <strong class="blue">
+               trazabilidad y ortogonalidad
+              </strong>
+              con las clases
+             </p>
+            </li>
+            <li>
+             <p>
+              Facilitan la
+              <strong class="blue">
+               planificación de actividades
+              </strong>
+              de los roles
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/DirigidoPorCasosDeUso.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="proceso-centrado-en-la-arquitectura">
+     Proceso Centrado en la Arquitectura
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              La arquitectura del sistema es usada como un
+              <strong class="blue">
+               artefacto primordial para la conceptualización, construcción, gestión y evolución del sistema bajo desarrollo
+              </strong>
+              .
+             </p>
+            </li>
+            <li>
+             <p>
+              Esta clave incluye:
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong class="blue">
+                  Disciplina de Análisis
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong class="blue">
+                  Disciplina de Diseño
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong class="blue">
+                  Disciplina de Implementación
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong class="blue">
+                  Disciplina de Pruebas
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/Vistas.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="proceso-iterativo-e-incremental">
+     Proceso Iterativo e Incremental
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="blue">
+               iterativo
+              </strong>
+              , lo que significa que el proceso involucra un flujo de entregas ejecutables, e
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               incremental
+              </strong>
+              , lo que significa que el proceso involucra la integración continua de la arquitectura del sistema para producir con cada nueva entrega un incremento que aumenta a otra anterior
+             </p>
+            </li>
+            <li>
+             <p>
+              Esto incluye:
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong class="blue">
+                  Disciplina de Gestión del Proyecto
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong class="blue">
+                  Disciplina de Entorno
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong class="blue">
+                  Disciplina de Configuración y Gestión de Cambios
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong class="blue">
+                  Disciplina de Despliegue
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/IterativoIncremental.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="para-qué">
+     <strong>
+      ¿Para qué?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 60%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="2">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Efectividad, eficacia y eficiencia, del Proyecto Software
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buenas variables en su economía
+                 </strong>
+                 :
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     ámbito cumplido
+                    </strong>
+                    y
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     tiempo cumplido
+                    </strong>
+                    y
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     coste cumplido
+                    </strong>
+                    ;
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buena calidad del software
+                 </strong>
+                 ,
+                 <span class="green">
+                  fiabilidad, usabilidad, interoperatividad, seguirdad, …​ (
+                  <em>
+                   -ilities
+                  </em>
+                  )
+                 </span>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  buena mantenibilidad
+                 </strong>
+                </p>
+                <div class="ulist">
+                 <ul>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     fluido
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede entender con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     flexible
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede cambiar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     fuerte
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede probar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                  <li>
+                   <p>
+                    <strong class="green">
+                     reusable
+                    </strong>
+                    , porque
+                    <span class="green">
+                     se puede reutilizar con facilidad
+                    </span>
+                    y/o
+                   </p>
+                  </li>
+                 </ul>
+                </div>
+               </li>
+               <li>
+                <p>
+                 <strong>
+                  porque
+                 </strong>
+                 tiene
+                 <strong class="green">
+                  complejidad necesaria
+                 </strong>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="davidProyectoImplantacionDiseño" src="images/davidProyectoImplantacionDiseño.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="arbolMantenible" src="images/arbolMantenible.jpeg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="2">
+         <strong class="green">
+          Beneficios
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong class="green">
+               Construir el sistema en el tiempo de forma incremental
+              </strong>
+              en lugar de todo a la vez cerca del final cuando el cambio se convierte en muy caro
+             </p>
+            </li>
+            <li>
+             <p>
+              Proporcionar un marco que maneje mejor los
+              <strong class="green">
+               requisitos cambiantes e inevitables y otros cambios
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Proporcionar un proceso de desarrollo a través del cual el
+              <strong class="green">
+               personal puede trabajar más eficazmente
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              Disponer de una
+              <strong class="green">
+               estructura para guiar el desarrollo de software
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              Conseguir
+              <strong class="green">
+               gestión temprana del riesgo crítico
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 20%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 20%;"/>
+       <col style="width: 20%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="5">
+         Empresas
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Rational Software
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Grady Booch
+                </p>
+               </li>
+               <li>
+                <p>
+                 Jim Rumbaugh
+                </p>
+               </li>
+               <li>
+                <p>
+                 Ivar Jacobson
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <a href="https://projects.eclipse.org/projects/technology.epf">
+               Eclipse
+              </a>
+             </p>
+            </li>
+            <li>
+             <p>
+              IBM
+             </p>
+            </li>
+            <li>
+             <p>
+              Microsoft
+             </p>
+            </li>
+            <li>
+             <p>
+              Oracle Corp.
+             </p>
+            </li>
+            <li>
+             <p>
+              Hewlett-Packard
+             </p>
+            </li>
+            <li>
+             <p>
+              Digital Equipment
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Intellicorp and James Martin &amp; co.
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 James Odell
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+            <li>
+             <p>
+              Texas Instruments
+             </p>
+            </li>
+            <li>
+             <p>
+              Unisys
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              i-Logix
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 David Harel
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+            <li>
+             <p>
+              Taskon
+             </p>
+            </li>
+            <li>
+             <p>
+              MCI Systemhouse
+             </p>
+            </li>
+            <li>
+             <p>
+              ObjecTime
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              ICON  Computing
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 Desmond D´Souza
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+            <li>
+             <p>
+              Plantinium Technology
+             </p>
+            </li>
+            <li>
+             <p>
+              Sterling Software
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="cómo">
+     <strong>
+      ¿Cómo?
+     </strong>
+    </h2>
+    <div class="sectionbody">
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="roles-del-equipo">
+     Roles del Equipo
+    </h2>
+    <div class="sectionbody">
+     <div class="imageblock">
+      <div class="content">
+       <img alt="role" height="353" src="images/role.svg" width="1468"/>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="fases-del-proyecto">
+     Fases del Proyecto
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 50%;"/>
+       <col style="width: 50%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top" colspan="2">
+         <strong class="blue">
+          Fase: lapso de tiempo entre dos hitos principales del proceso de desarrollo
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="3">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="project" height="1149" src="images/project.svg" width="632"/>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/Fase.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/Disciplinas4.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/Distribucion.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 22%;"/>
+       <col style="width: 28%;"/>
+       <col style="width: 22%;"/>
+       <col style="width: 28%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         <strong class="blue">
+          Inicio
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="blue">
+          Elaboración
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="blue">
+          Construcción
+         </strong>
+        </th>
+        <th class="tableblock halign-left valign-top">
+         <strong class="blue">
+          Transición
+         </strong>
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              donde la
+              <strong class="blue">
+               idea inicial
+              </strong>
+              se llevará hasta el punto de ser
+              <strong class="blue">
+               suficientemente fundada
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              donde se
+              <strong class="blue">
+               define la arquitectura
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              donde el
+              <strong class="blue">
+               software
+              </strong>
+              se lleva su
+              <strong class="blue">
+               completitud
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              donde el software se pone en manos de la
+              <strong class="blue">
+               comunidad de usuarios
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Delimitar el
+              <strong class="blue">
+               ámbito del sistema
+              </strong>
+              propuesto
+             </p>
+            </li>
+            <li>
+             <p>
+              Demostrar a los potenciales usuarios y/o clientes que el sistema propuesto es capaz de solventar su problema o soportar los objetivos del negocio construyendo un
+              <strong class="blue">
+               prototipo como prueba de concepto
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              Describir o
+              <strong class="blue">
+               esbozar la arquitectura
+              </strong>
+              candidata
+             </p>
+            </li>
+            <li>
+             <p>
+              Identificar los
+              <strong class="blue">
+               riesgos críticos
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Identifica los
+              <strong class="blue">
+               riesgos significativos
+              </strong>
+              , lo que significa riesgos que podrían
+              <strong class="blue">
+               alterar los planes, costos y horarios de las fases posteriores
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              Crea una
+              <strong class="blue">
+               línea de base arquitectónica que cubre la funcionalidad significativa del sistema y las características importantes
+              </strong>
+              para los implicados
+             </p>
+            </li>
+            <li>
+             <p>
+              Especifica los niveles que deben alcanzar los
+              <strong class="blue">
+               atributos de calidad
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              Captura
+              <strong class="blue">
+               casos de uso a aproximadamente 80%
+              </strong>
+              de los requerimientos funcionales
+             </p>
+            </li>
+            <li>
+             <p>
+              Prepara una
+              <strong class="blue">
+               oferta que cubre horario, personal necesario y el costo
+              </strong>
+              en el plazo establecido por las prácticas comerciales
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Extiende la
+              <strong class="blue">
+               identificación de casos de uso, la descripción y realización a todo el cuerpo de casos de uso
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              Acaba el
+              <strong class="blue">
+               análisis, diseño, implementación y pruebas
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              Mantiene la
+              <strong class="blue">
+               integridad de la arquitectura, modificando cuando sea necesario
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               Monitoriza los riesgos críticos y significatovos
+              </strong>
+              heredados de las dos primeras fases y, en caso de que se materialicen, mitigarlos
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Actividades de preparación, como el
+              <strong class="blue">
+               sitio web
+              </strong>
+             </p>
+            </li>
+            <li>
+             <p>
+              Asesorar al cliente sobre la
+              <strong class="blue">
+               actualización del entorno
+              </strong>
+              en el que el software operará
+             </p>
+            </li>
+            <li>
+             <p>
+              Elaboración de
+              <strong class="blue">
+               manuales y otros documentos
+              </strong>
+              para la entrega a producción
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               Ajuste del software para operar bajo los parámetros reales
+              </strong>
+              del entorno del usuario
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong class="blue">
+               Corrección de los defectos
+              </strong>
+              encontrados después de la retroalimentación de la prueba beta
+             </p>
+            </li>
+            <li>
+             <p>
+              Modificaciones del software a la luz de los
+              <strong class="blue">
+               problemas imprevistos
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+     <div class="sect2">
+      <h3 id="iteraciones-en-las-fases">
+       Iteraciones en las Fases
+      </h3>
+      <div class="imageblock">
+       <div class="content">
+        <img alt="Time" height="1907" src="images/Time.svg" width="1995"/>
+       </div>
+      </div>
+     </div>
+     <div class="sect2">
+      <h3 id="actividades-de-la-iteraciones">
+       Actividades de la Iteraciones
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 50%;"/>
+        <col style="width: 50%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top" rowspan="2">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               Disciplina de Reqeuisitos
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  1.
+                  <strong class="blue">
+                   Encontrar Actores y Casos de Uso
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  2.
+                  <strong class="blue">
+                   Priorizar Casos de Uso
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  3.
+                  <strong class="blue">
+                   Detallar Caso de Uso
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  4.
+                  <strong class="blue">
+                   Estructurar Casos de Uso
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  5.
+                  <strong class="blue">
+                   PrototiparInterfaz de Usuario
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+             <li>
+              <p>
+               Disciplina de Análisis
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  6.
+                  <strong class="blue">
+                   Análisis de la Arquitectura
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  7.
+                  <strong class="blue">
+                   Análisis de Caso de Uso
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  8.
+                  <strong class="blue">
+                   Análisis de Clase
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  9.
+                  <strong class="blue">
+                   Análisis de Paquete
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+             <li>
+              <p>
+               Disciplina de Diseño
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  10.
+                  <strong class="blue">
+                   Diseño de la Arquitectura
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  11.
+                  <strong class="blue">
+                   Diseño de Caso de Uso
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  12.
+                  <strong class="blue">
+                   Diseño de Clase
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  13.
+                  <strong class="blue">
+                   Diseño de Paquete
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+             <li>
+              <p>
+               Disciplina de Implementación
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  14.
+                  <strong class="blue">
+                   Implementar la Arquitectura
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  15.
+                  <strong class="blue">
+                   Integración de Sistemas
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  16.
+                  <strong class="blue">
+                   Implementar Clase
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  17.
+                  <strong class="blue">
+                   Pruebas Unitarias
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  18.
+                  <strong class="blue">
+                   Implementar Subsistema
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+             <li>
+              <p>
+               Disciplina de Pruebas
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  19.
+                  <strong class="blue">
+                   Planificar Pruebas
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  20.
+                  <strong class="blue">
+                   Diseñar Pruebas
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  21.
+                  <strong class="blue">
+                   Implementar Pruebas
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  22.
+                  <strong class="blue">
+                   Realizar Pruebas de Integración
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  23.
+                  <strong class="blue">
+                   Realizar Pruebas de Sistemas
+                  </strong>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  24.
+                  <strong class="blue">
+                   Evaluar Pruebas
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="height32" src="images/Disciplinas3.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="disciplinas" height="2132" src="images/disciplinas.svg" width="640"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 10%;"/>
+        <col style="width: 90%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Iteración de Inicio
+               </strong>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="height32" src="images/Disciplinas5.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Iteración de Elaboración
+               </strong>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="height32" src="images/Disciplinas6.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Iteración de Construcción
+               </strong>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <span class="image">
+              <img alt="height32" src="images/Disciplinas7.jpg"/>
+             </span>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="artefactos-del-proyecto">
+     Artefactos del Proyecto
+    </h2>
+    <div class="sectionbody">
+     <div class="sect2">
+      <h3 id="41-vistas">
+       4+1 Vistas
+      </h3>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 15%;"/>
+        <col style="width: 85%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Índice
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Enlaces a 4+1 vistas y modelo del dominio
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Cardinalidad:
+                  <strong>
+                   1
+                  </strong>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-middle">
+          <div class="content">
+           <div class="imageblock">
+            <div class="content">
+             <img alt="viewIndex" height="404" src="images/viewIndex.svg" width="486"/>
+            </div>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+          </div>
+         </td>
+         <td class="tableblock halign-left valign-top">
+          <div class="content">
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+      <table class="tableblock frame-all grid-all stretch">
+       <colgroup>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3333%;"/>
+        <col style="width: 33.3334%;"/>
+       </colgroup>
+       <tbody>
+        <tr>
+         <td class="tableblock halign-center valign-top" colspan="3">
+          <div class="content">
+           <div class="paragraph">
+            <p>
+             <strong>
+              Ejemplos
+             </strong>
+            </p>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <a href="https://www.notion.so/Gestor-de-taller-mec-nico-AgrimManager-a8d44826c2494e15bcb235fc1019938d#cd3ccf181d9c4a1b9253416cd9b74f57">
+                Gestor de taller mecánico AgrimManager
+               </a>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <a href="https://www.notion.so/Trabajo-fin-de-grado-repositorio-b748afe1e54e46c189f5f85914d4474c">
+                   Documentación
+                  </a>
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <a href="https://drive.google.com/file/d/1Zt4tgtnFJ53uZrJv_zxlBb5QdMSK7nIg/view?usp=sharing">
+                Aplicación Web de Gestión de Donaciones
+               </a>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <a href="https://docs.google.com/document/d/1e0QTVMxo_TYzE6yfgxRs9498SYF103vW/edit?usp=sharing&amp;ouid=108788722992578291386&amp;rtpof=true&amp;sd=true">
+                RUP y Arquitecturas Ágiles
+               </a>
+              </p>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td class="tableblock halign-center valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                TicTacToe
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  <a href="https://github.com/USantaTecla-0-domains/game-ticTacToe#domainmodel">
+                   Modelo del dominio
+                  </a>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <a href="https://github.com/USantaTecla-0-domains/game-ticTacToe/blob/master/1.0.basic/README.md">
+                   Vista de Casos de Uso
+                  </a>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/domainModel/basic#vista-de-l%C3%B3gicadise%C3%B1o">
+                   Vista de Diseño
+                  </a>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/domainModel/basic#vista-de-desarrolloimplementaci%C3%B3n">
+                   Vista de Implementación
+                  </a>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  <a href="https://github.com/USantaTecla-tech-java/game-ticTacToe/tree/master/domainModel/basic#vista-de-desplieguef%C3%ADsica">
+                   Vista de Despliegue
+                  </a>
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Vista de Procesos
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Mastermind
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Modelo del dominio
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Vista de Casos de Uso
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Vista de Diseño
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Vista de Implementación
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Vista de Despliegue
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Vista de Procesos
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+         <td class="tableblock halign-center valign-top">
+          <div class="content">
+           <div class="ulist">
+            <ul>
+             <li>
+              <p>
+               <strong>
+                Damas
+               </strong>
+              </p>
+              <div class="ulist">
+               <ul>
+                <li>
+                 <p>
+                  Modelo del dominio
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Vista de Casos de Uso
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Vista de Diseño
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Vista de Implementación
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Vista de Despliegue
+                 </p>
+                </li>
+                <li>
+                 <p>
+                  Vista de Procesos
+                 </p>
+                </li>
+               </ul>
+              </div>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="itinerario">
+     Itinerario
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 60%;"/>
+       <col style="width: 15%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Temas
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Contenidos
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Característica
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top" rowspan="5">
+         <div class="content">
+          <div class="imageblock">
+           <div class="content">
+            <img alt="diagramaDisenyo" height="763" src="images/diagramaDisenyo.svg" width="187"/>
+           </div>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Disciplina de Gestión
+              </strong>
+              :
+              <strong>
+               <em>
+                Estimación del Desarrollo Software, Evaluar el Ámbito y Riesgo del Proyecto, Planificar Fases e Iteraciones, Gestionar el principio, fin y revisión de cada iteración, Cerrar fase asegurando y Seguimiento del Desarrollo Software
+               </em>
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Iterativo e Incremental
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Disciplina de Pruebas
+              </strong>
+              : Planificar Pruebas, Diseñar Pruebas, Implementar Pruebas, Realizar Pruebas de Integración, Realizar Pruebas de Sistemas y Evaluar Pruebas
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               Disciplina de Implementación
+              </strong>
+              : Implementar la Arquitectura, Integración de Sistemas, Implementar Clase, Pruebas Unitarias y Implementar Subsistema
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               Disciplina de Diseño
+              </strong>
+              : Diseño de la Arquitectura, Diseño de Caso de Uso, Diseño de Clase y Diseño de Paquete
+             </p>
+            </li>
+            <li>
+             <p>
+              <strong>
+               Disciplina de Análisis
+              </strong>
+              :
+              <strong>
+               <em>
+                Análisis de la Arquitectura, Análisis de Caso de Uso, Análisis de Clase y Análisis de Paquete
+               </em>
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Centrado en la Arquitectura
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               Disciplina de Requisitos
+              </strong>
+              :
+              <strong>
+               <em>
+                Encontrar Actores y Casos de Uso, Priorizar Casos de Uso, Detallar Caso de Uso, Estructurar Casos de Uso y PrototiparInterfaz de Usuario
+               </em>
+              </strong>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            Dirigido por Casos de Uso
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="sintesis">
+     <strong>
+      Sintesis
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <div class="paragraph">
+      <p>
+       <span class="image">
+        <img alt="sintesis" src="images/sintesis.png"/>
+       </span>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="bibliografía">
+     <strong>
+      Bibliografía
+     </strong>
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+       <col style="width: 25%;"/>
+      </colgroup>
+      <thead>
+       <tr>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Obra, Autor y Edición
+        </th>
+        <th class="tableblock halign-left valign-top">
+         Portada
+        </th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Unified Software Development Process
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch, Ivar Jacobson y James Rumbaugh
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (1999)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/TheUnifiedSoftwareDevelopmentProcess.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Rational Unified Process Made Easy, The: A Practitioner’s Guide to the RUP
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch, , Ivar Jacobson y James Rumbaugh
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2003)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/RationalUnifiedProcessMadeEasy.png"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Craig Larman
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Pearson; (2004)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ApplyingUML.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Object Solutions. Managing the Object Oriented Project
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Benjamin Cummings; (1995)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ObjectSolutionsManagingObjectOrientedProject.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              Object Oriented Analysis and Design with Applications
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2011)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/ObjectOrientedAnalysisAndDesingnWhitApplications.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              The Unified Modeling Language User Guide
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Grady Booch
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Pearson; (2005)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/TheUnifiedModelingLanguageUserGuide.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+       </tr>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              UML Distilled. A Brief Guide to the Standard Object Modeling Language
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <strong>
+                  Martin Fowler,Kendall Scott
+                 </strong>
+                </p>
+               </li>
+               <li>
+                <p>
+                 Addison-Wesley; (2003)
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="height32" src="images/UMLDistilledABriefGuideStandardObjectModelingLanguage.JPG"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+   <div class="sect1">
+    <h2 id="ponente">
+     Ponente
+    </h2>
+    <div class="sectionbody">
+     <table class="tableblock frame-all grid-all stretch">
+      <colgroup>
+       <col style="width: 30%;"/>
+       <col style="width: 30%;"/>
+       <col style="width: 40%;"/>
+      </colgroup>
+      <tbody>
+       <tr>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <strong>
+               <em>
+                Luis Fernández Muñoz
+               </em>
+              </strong>
+             </p>
+             <div class="ulist">
+              <ul>
+               <li>
+                <p>
+                 <em>
+                  Formador/Consultor
+                 </em>
+                </p>
+               </li>
+               <li>
+                <p>
+                 <a href="https://es.linkedin.com/in/luisfernandezmunyoz">
+                  <em>
+                   Linkedin
+                  </em>
+                 </a>
+                </p>
+               </li>
+              </ul>
+             </div>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-center valign-middle">
+         <div class="content">
+          <div class="paragraph">
+           <p>
+            <span class="image">
+             <img alt="setillo" src="images/setillo.jpg"/>
+            </span>
+           </p>
+          </div>
+         </div>
+        </td>
+        <td class="tableblock halign-left valign-top">
+         <div class="content">
+          <div class="ulist">
+           <ul>
+            <li>
+             <p>
+              <em>
+               Doctor en Inteligencia Artificial por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Ingeniero en Informática por la UMA
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Diplomado en Informática por la UPM
+              </em>
+             </p>
+            </li>
+            <li>
+             <p>
+              <em>
+               Profesor Titular de ETSISI de la UPM
+              </em>
+             </p>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+  </div>
+  <div id="footer">
+   <div id="footer-text">
+    Version 0.0.1
+    <br/>
+    Last updated 2022-10-16 16:30:52 +0200
+   </div>
+  </div>
+  <script>
+   let speed = 50;
                 
                 function typeWriter(v) {
                   let i = v.getAttribute("typewriter-index")
@@ -2025,6 +3642,6 @@ Last updated 2022-10-16 16:30:52 +0200
                 })
                 
                 setTimeout(typeWriterAll, speed);
-                
-                </script>
+  </script>
+ </body>
 </html>
