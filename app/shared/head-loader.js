@@ -39,8 +39,10 @@ function loadRecopilaFilesUT10() {
 }
 
 function loadMetaTags (title, description) {
+  const basePath = location.hostname.includes('github.io') ? '/daw-chat' : '';
+
   document.write(`
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="${basePath}/css/style.css">
     <title>${title}</title>
     <meta name="description" content="${description}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
