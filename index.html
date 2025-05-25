@@ -1,67 +1,144 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="utf-8"/>
-    <title>
-        Página de Inicio - Ciclo DAW
-    </title>
-    <link rel="stylesheet" href="./app/home/infrastructure/home-style.css"/>
-</head>
-<body>
-<nav class="sidebar-home">
-    <h2>
-        Asignaturas
-    </h2>
-    <ul class="menu" id="menu">
-        <li data-asig="SI">
-            Sistemas Informáticos (SI)
-        </li>
-        <li data-asig="BD">
-            Bases de Datos (BD)
-        </li>
-        <li data-asig="PROG">
-            Programación (PROG)
-        </li>
-        <li data-asig="LMSGI">
-            Lenguajes de Marcas y Sistemas de Gestión de Información (LMSGI)
-        </li>
-        <li data-asig="ED">
-            Entornos de Desarrollo (ED)
-        </li>
-        <li data-asig="FOL">
-            Formación y Orientación Laboral (FOL)
-        </li>
-        <li data-asig="DWEC">
-            Desarrollo Web en Entorno Cliente (DWEC)
-        </li>
-        <li data-asig="DWES">
-            Desarrollo Web en Entorno Servidor (DWES)
-        </li>
-        <li data-asig="DAW">
-            Despliegue de Aplicaciones Web (DAW)
-        </li>
-        <li data-asig="DIW">
-            Diseño de Interfaces Web (DIW)
-        </li>
-        <li data-asig="EIE">
-            Empresa e Iniciativa Emprendedora (EIE)
-        </li>
-        <li data-asig="PROY">
-            Proyecto de Desarrollo de Aplicaciones Web
-        </li>
-        <li data-asig="FCT">
-            Formación en Centros de Trabajo (FCT)
-        </li>
-    </ul>
-</nav>
-<main class="content" id="content">
-    <h3>
-        Bienvenido
-    </h3>
-    <p>
-        Selecciona una asignatura en el menú lateral para ver sus temas.
-    </p>
-</main>
-<script src="app/home/application/get-UT.js"></script>
-</body>
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Página de Inicio - Ciclo DAW
+  </title>
+  <style>
+   body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+    .sidebar-home {
+      width: 300px;
+      background: #2c3e50;
+      color: #fff;
+      padding: 0;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar-home h2 {
+      text-align: center;
+      margin: 20px 0 10px 0;
+      font-size: 1.3em;
+      letter-spacing: 1px;
+    }
+    .menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex: 1;
+    }
+    .menu li {
+      padding: 15px 25px;
+      cursor: pointer;
+      border-bottom: 1px solid #34495e;
+      transition: background 0.2s;
+    }
+    .menu li:hover, .menu li.active {
+      background: #34495e;
+    }
+   /* Contenido principal */
+   .content {
+    flex: 1;
+    padding: 40px;
+    background: #f4f4f4;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   }
+
+   .content h3 {
+    margin: 0 0 20px 0;
+    font-size: 2em;
+    color: #34495e;
+   }
+
+   .content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+   }
+
+   .content ul li {
+    margin: 10px 0;
+   }
+
+   .content ul li a {
+    text-decoration: none;
+    color: #3498db;
+    font-size: 1.1em;
+    transition: color 0.2s;
+   }
+
+   .content ul li a:hover {
+    color: #1abc9c;
+   }
+
+  </style>
+ </head>
+ <body>
+  <nav class="sidebar-home">
+   <h2>
+    Asignaturas
+   </h2>
+   <ul class="menu" id="menu">
+    <li data-asig="SI">
+     Sistemas Informáticos (SI)
+    </li>
+    <li data-asig="BD">
+     Bases de Datos (BD)
+    </li>
+    <li data-asig="PROG">
+     Programación (PROG)
+    </li>
+    <li data-asig="LMSGI">
+     Lenguajes de Marcas y Sistemas de Gestión de Información (LMSGI)
+    </li>
+    <li data-asig="ED">
+     Entornos de Desarrollo (ED)
+    </li>
+    <li data-asig="FOL">
+     Formación y Orientación Laboral (FOL)
+    </li>
+    <li data-asig="DWEC">
+     Desarrollo Web en Entorno Cliente (DWEC)
+    </li>
+    <li data-asig="DWES">
+     Desarrollo Web en Entorno Servidor (DWES)
+    </li>
+    <li data-asig="DAW">
+     Despliegue de Aplicaciones Web (DAW)
+    </li>
+    <li data-asig="DIW">
+     Diseño de Interfaces Web (DIW)
+    </li>
+    <li data-asig="EIE">
+     Empresa e Iniciativa Emprendedora (EIE)
+    </li>
+    <li data-asig="PROY">
+     Proyecto de Desarrollo de Aplicaciones Web
+    </li>
+    <li data-asig="FCT">
+     Formación en Centros de Trabajo (FCT)
+    </li>
+   </ul>
+  </nav>
+  <main class="content" id="content">
+   <h3>
+    Bienvenido
+   </h3>
+   <p>
+    Selecciona una asignatura en el menú lateral para ver sus temas.
+   </p>
+  </main>
+  <script type="module" src="app/home/application/get-UT.js"></script>
+ </body>
 </html>
