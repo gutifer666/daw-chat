@@ -4,7 +4,6 @@ html {
 	font-size: 125%; /* Puedes ajustar este valor según necesites */
 }
 
-/* O alternativamente */
 body {
 	font-size: 125%; /* Puedes ajustar este valor según necesites */
 }
@@ -19,8 +18,6 @@ body {
 	flex: 0 0 67%;
 	max-width: 67%;
 }
-
-/* Sidebar */
 
 .sidebar {
 	position: fixed;  /* Cambiar de sticky a fixed */
