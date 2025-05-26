@@ -5,6 +5,8 @@
     <title>
         Página de Inicio - Ciclo DAW
     </title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet" href="./app/home/infrastructure/star-call-to-action.css">
     <link rel="stylesheet" type="text/css" href="./app/home/infrastructure/home-style.css"/>
 </head>
 <body>
@@ -55,13 +57,104 @@
     </ul>
 </nav>
 <main class="content" id="content">
-    <h3>
-        Bienvenido
-    </h3>
-    <p>
-        Selecciona una asignatura en el menú lateral para ver sus temas.
-    </p>
+    <h3>Bienvenido</h3>
+    <p>Selecciona una asignatura en el menú lateral para ver sus temas.</p>
 </main>
 <script type="module" src="app/home/application/get-UT.js"></script>
+<script src="./app/home/application/star-call-to-action.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  // Crear rayos de la estrella
+  const createStarRays = () => {
+    const starRays = document.querySelector('.star-rays');
+    if (!starRays) return;
+
+    const numRays = 12;
+
+    for (let i = 0; i < numRays; i++) {
+      const ray = document.createElement('div');
+      ray.className = 'ray';
+
+      const angle = i * (360 / numRays);
+      const length = Math.random() * 20 + 30; // entre 30px y 50px
+
+      ray.style.width = `${length}px`;
+      ray.style.transform = `rotate(${angle}deg)`;
+      ray.style.animation = `star-pulse ${Math.random() * 1 + 1.5}s infinite ease-in-out`;
+
+      starRays.appendChild(ray);
+    }
+  };
+
+  // Añadir el call to action solo si no existe
+  const addGithubCallToAction = (repoUrl = "https://github.com/tu-usuario/tu-repo") => {
+    if (document.querySelector('.github-cta')) {
+      console.info('El call to action ya está presente.');
+      return;
+    }
+
+    const mainContent = document.getElementById('content');
+    if (!mainContent) return;
+
+    const ctaHTML = `
+      <div class="github-cta">
+        <div class="star-container floating">
+          <div class="star">★</div>
+          <div class="star-rays"></div>
+        </div>
+        <h2 class="github-cta-title">¡Lleva el DAW contigo!</h2>
+        <p class="github-cta-subtitle">
+          Descarga esta aplicación y accede a todo el contenido incluso sin conexión.
+        </p>
+
+        <div class="github-steps">
+          <h4>Cómo obtener tu copia:</h4>
+          <ol>
+            <li>Haz un <code>fork</code> del repositorio para crear tu propia copia.</li>
+            <li>Clona el repositorio en tu ordenador:
+              <code>git clone ${repoUrl}.git</code>
+            </li>
+            <li>Instala las dependencias: <code>npm install</code></li>
+            <li>Ejecuta la aplicación: <code>npm start</code></li>
+            <li>
+              ¡No olvides marcar el repositorio con una ⭐ para ayudar a otros estudiantes!
+            </li>
+          </ol>
+        </div>
+        
+        <div class="github-cta-buttons">
+          <a href="${repoUrl}/fork" target="_blank" class="github-btn fork-btn">
+            <i class="fas fa-code-branch"></i> Fork
+          </a>
+          <a href="${repoUrl}" target="_blank" class="github-btn clone-btn">
+            <i class="fas fa-download"></i> Clonar
+          </a>
+          <a href="${repoUrl}/stargazers" target="_blank" class="github-btn star-btn">
+            <i class="fas fa-star"></i> ¡Dale una estrella!
+          </a>
+        </div>
+
+        <p style="margin-top: 20px; font-size: 0.9rem;">
+          ¿Encontraste un error o quieres contribuir?
+          <a href="${repoUrl}/issues" style="color: white; text-decoration: underline;" target="_blank">
+            Revisa las issues
+          </a>
+        </p>
+      </div>
+    `;
+
+    // Insertar el CTA dinámicamente
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = ctaHTML;
+    mainContent.appendChild(tempDiv.firstElementChild);
+
+    // Inicializar los efectos visuales
+    createStarRays();
+  };
+
+  // Llamar a la función para agregar el call to action
+  addGithubCallToAction("https://github.com/gutifer666/daw-chat");
+});
+</script>
 </body>
 </html>
