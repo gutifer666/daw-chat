@@ -1,0 +1,272 @@
+<test v="2.0">
+    <p>
+        <t>Programación - UD1  - DAW - Tests</t>
+        <d>Introducción a la programación</d>
+        <a>Francisco Javier Gutiérrez Pérez</a>
+        <c>8</c>
+        <v/>
+        <e>396008856613348</e>
+        <r>34036022506705</r>
+    </p>
+    <f/>
+    <c>
+        <c>
+            <t>0</t>
+            <p>Dado a=0, b=10 y c=20, ¿cuál de las siguientes expresiones sería falso?</p>
+            <c>1121</c>
+            <r>
+                <o>a&gt;b || c&gt;b</o>
+                <o>a!=b || c&gt;b</o>
+                <o>a==b || c&lt;b</o>
+                <o>a&gt;=b || c&gt;=b</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>La codificación es una etapa que forma parte de la fase de la programación conocida como...</p>
+            <c>1211</c>
+            <r>
+                <o>Análisis</o>
+                <o>Implementación</o>
+                <o>Diseño</o>
+                <o>Validación</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>El operador que se usa para la toma de decisiones es...</p>
+            <c>1112</c>
+            <r>
+                <o>:?</o>
+                <o>:</o>
+                <o>?;</o>
+                <o>?:</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>Los operadores aritméticos *, /, %, + y - tienen el mismo nivel de precedencia.¿Verdadero o Falso?</p>
+            <c>12</c>
+            <r>
+                <o>Verdadero</o>
+                <o>Falso</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>Los tipos de datos primitivos son:</p>
+            <c>1211</c>
+            <r>
+                <o>boolean, String, byte, short, int, long, float, double.</o>
+                <o>boolean, char, byte, short, int, long, float, double.</o>
+                <o>boolean, char, byte, short, int, long, float, double, array, String.</o>
+                <o>boolean, char, byte, short, int, long, float, double, array.</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>La compilación de aplicaciones en Java se realiza mediante el programa javac dando lugar a archivos de bytecodes con la extensión...</p>
+            <c>1211</c>
+            <r>
+                <o>.java</o>
+                <o>.class.</o>
+                <o>.obj.</o>
+                <o>.bytecode.</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>Indica los valores de x y z después de las siguientes sentencias:
+int x = 10;
+int z = x++%5;</p>
+            <c>1211</c>
+            <r>
+                <o>x es 9 y z es 1.
+                </o>
+                <o>x es 11 y z es 0.
+                </o>
+                <o>x es 9 y z es 0.
+                </o>
+                <o>x es 11 yz es 1.
+                </o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>El elemento de Java que permite reducir la fragmentación de memoria es: </p>
+            <c>1112</c>
+            <r>
+                <o>La Máquina Virtual Java.</o>
+                <o>Los registros.</o>
+                <o>Los punteros.</o>
+                <o>Recolector de basura.</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>Señala cuál no es un tipo primitivo en Java.</p>
+            <c>2111</c>
+            <r>
+                <o>String</o>
+                <o>short</o>
+                <o>double</o>
+                <o>boolean</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>¿Cuál de los siguientes entornos no es de pago?</p>
+            <c>2111</c>
+            <r>
+                <o>BlueJ</o>
+                <o>JBuilder</o>
+                <o>JDeveloper</o>
+                <o>IntelliJ IDEA.</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>¿Cuál de las siguiente plataformas está pensada para la creación de aplicaciones del lado del servidor?</p>
+            <c>1211</c>
+            <r>
+                <o>J2SE</o>
+                <o>J2EE</o>
+                <o>J2ME</o>
+                <o>JDK</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>Para las cadenas de caracteres (String), el método equals() indica si dos cadenas son o no iguales. Pero si deseamos ignorar las mayúsculas en la comparación deberíamos utilizar el método
+            </p>
+            <c>1211</c>
+            <r>
+                <o>toUpperCase()</o>
+                <o>equalsIgnoreCase()</o>
+                <o>inAnyCase()</o>
+                <o>metaCase()</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>Dada la asignación c = 54.8 + 34, la variable c debería estar declarada como
+
+            </p>
+            <c>1121</c>
+            <r>
+                <o>Carácter</o>
+                <o>Entero</o>
+                <o>Real</o>
+                <o>Booleano</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>Para el desarrollo de programas en Java, es necesario el Java Development Kit, que provee un compilador y el Java Runtime Environment. ¿Verdadero o falso?</p>
+            <c>21</c>
+            <r>
+                <o>Verdadero</o>
+                <o>Falso</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>Si la solución a un problema se hace en un tiempo mínimo y de manera óptima, decimos que esta solución es _____, por el uso correcto de los recursos del sistema.
+            </p>
+            <c>1112</c>
+            <r>
+                <o>Fiable</o>
+                <o>Eficaz</o>
+                <o>Correcta</o>
+                <o>Eficiente</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>¿Qué problema observas en la siguiente declaración en Java?
+
+public enum Days {YESTERDAY, TODAY, TOMORROW};</p>
+            <c>2111</c>
+            <r>
+                <o>No hay ningún problema en esa declaración. Es la declaración de un tipo enumerado y debería funcionar perfectamente.</o>
+                <o>No puede usarse la palabra Days como identificador para una variable, pues esa palabra ya está reservada en el lenguaje Java y se utiliza para almacenar días de la semana.</o>
+                <o>Se produce una pérdida de precisión.</o>
+                <o>La palabra reservada enum no existe en el lenguaje Java.</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>El operador utilizado en Java para comparar si dos valores son iguales es el signo igual igual ( == ). ¿Verdadero o falso?</p>
+            <c>21</c>
+            <r>
+                <o>Verdadero</o>
+                <o>Falso</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>¿En cuál de las fases de la programación se realiza la compilación del programa?</p>
+            <c>1211</c>
+            <r>
+                <o>En la fase de resolución del problema.</o>
+                <o>En la fase de implementación.</o>
+                <o>En la fase de explotación.</o>
+                <o>En la fase de mantenimiento.</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>Un programa que recibe el código fuente, realiza un análisis lexicográfico, semántico y sintáctico, genera un código intermedio no optimizado, optimiza dicho código y finalmente, genera el código objeto para una plataforma específica es un...</p>
+            <c>1211</c>
+            <r>
+                <o>Intérprete.</o>
+                <o>Compilador</o>
+                <o>Validador.</o>
+                <o>Implementador</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>Dada la asignación c = 54.8 + 34, la variable c debería estar declarada como</p>
+            <c>1121</c>
+            <r>
+                <o>Carácter.</o>
+                <o>Entero.</o>
+                <o>Real.</o>
+                <o>Booleano.</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>El operador utilizado para comparar si dos valores son iguales es el signo igual ( = ). ¿Verdadero o falso?</p>
+            <c>12</c>
+            <r>
+                <o>Verdadero</o>
+                <o>Falso</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>Un identificador es una secuencia ilimitada sin espacios de _____ que pertenecen al código Unicode.</p>
+            <c>1112</c>
+            <r>
+                <o>símbolos ASCII</o>
+                <o>dígitos</o>
+                <o>letras</o>
+                <o>letras y dígitos</o>
+            </r>
+        </c>
+        <c>
+            <t>0</t>
+            <p>Dada la siguiente expresión double x = 15/2.0;:</p>
+            <c>1211</c>
+            <r>
+                <o>x vale 7 ya que el operador / es división entera.</o>
+                <o>x vale 7.5 ya que al ser uno de los operandos de tipo real la división será real.</o>
+                <o>No se puede evaluar porque 15 es de tipo entero y 2.0 es de tipo real.</o>
+                <o>Todas las respuestas anteriores son falsas.</o>
+            </r>
+        </c>
+    </c>
+    <i/>
+</test>

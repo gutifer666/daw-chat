@@ -11,6 +11,8 @@
         );
         loadRecopilaFiles();
     </script>
+
+    <script src="../../app/quiz/quiz-component.js" type="module"></script>
 </head>
 
 <body class="js with-sidebar" cz-shortcut-listen="true" style="">
@@ -192,6 +194,9 @@
     <aside class="sidebar">
         <!-- Business logic will be placed here -->
         <p>Aquí va el componente con la lógica de negocio...</p>
+
+        <quiz-component request-info="programacion-ut1.xml"></quiz-component>
+
     </aside>
 </div>
 <script src="./recopila_files/_fpd_js.js" type="text/javascript">
